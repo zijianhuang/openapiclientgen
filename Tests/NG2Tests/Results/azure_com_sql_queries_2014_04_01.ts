@@ -47,7 +47,10 @@ export namespace MyNS {
 		/** The unit of measurement */
 		unit?: QueryMetricUnit | null;
 
-		/** The measured value */
+		/**
+		 * The measured value
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -63,7 +66,10 @@ export namespace MyNS {
 		/** The unit of measurement */
 		unit: FormControl<QueryMetricUnit | null | undefined>,
 
-		/** The measured value */
+		/**
+		 * The measured value
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryMetricFormGroup() {

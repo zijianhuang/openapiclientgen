@@ -60,7 +60,10 @@ export namespace MyNS {
 		/** Specifies an array of e-mail addresses to which the alert is sent. */
 		emailAddresses?: Array<string>;
 
-		/** Specifies the number of days to keep in the Threat Detection audit logs. */
+		/**
+		 * Specifies the number of days to keep in the Threat Detection audit logs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays?: number | null;
 
 		/**
@@ -85,7 +88,10 @@ export namespace MyNS {
 		/** Specifies that the alert is sent to the account administrators. */
 		emailAccountAdmins: FormControl<boolean | null | undefined>,
 
-		/** Specifies the number of days to keep in the Threat Detection audit logs. */
+		/**
+		 * Specifies the number of days to keep in the Threat Detection audit logs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays: FormControl<number | null | undefined>,
 
 		/**

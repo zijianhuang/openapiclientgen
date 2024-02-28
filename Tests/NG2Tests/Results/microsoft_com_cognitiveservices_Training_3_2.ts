@@ -10,24 +10,28 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: number;
 
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: number;
 
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: number;
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: number;
 	}
@@ -38,24 +42,28 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: FormControl<number | null | undefined>,
 
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: FormControl<number | null | undefined>,
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -202,7 +210,10 @@ export namespace MyNS {
 		/** Date the image was created. */
 		created?: Date | null;
 
-		/** Height of the image. */
+		/**
+		 * Height of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Id of the image. */
@@ -223,7 +234,10 @@ export namespace MyNS {
 		/** The URI to the thumbnail of the original image. */
 		thumbnailUri?: string | null;
 
-		/** Width of the image. */
+		/**
+		 * Width of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -233,7 +247,10 @@ export namespace MyNS {
 		/** Date the image was created. */
 		created: FormControl<Date | null | undefined>,
 
-		/** Height of the image. */
+		/**
+		 * Height of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Id of the image. */
@@ -248,7 +265,10 @@ export namespace MyNS {
 		/** The URI to the thumbnail of the original image. */
 		thumbnailUri: FormControl<string | null | undefined>,
 
-		/** Width of the image. */
+		/**
+		 * Width of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageFormGroup() {
@@ -270,12 +290,14 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: number;
 
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: number;
 		regionId?: string | null;
@@ -290,12 +312,14 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: number;
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: number;
 	}
@@ -305,12 +329,14 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: FormControl<number | null | undefined>,
 		regionId: FormControl<string | null | undefined>,
@@ -325,12 +351,14 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: FormControl<number | null | undefined>,
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -451,12 +479,14 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: number;
 
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: number;
 
@@ -469,12 +499,14 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: number;
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: number;
 	}
@@ -483,12 +515,14 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: FormControl<number | null | undefined>,
 
@@ -501,12 +535,14 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: FormControl<number | null | undefined>,
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -556,6 +592,8 @@ export namespace MyNS {
 	/** Image performance model. */
 	export interface ImagePerformance {
 		created?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		id?: string | null;
 		imageUri?: string | null;
@@ -563,16 +601,22 @@ export namespace MyNS {
 		regions?: Array<ImageRegion>;
 		tags?: Array<ImageTag>;
 		thumbnailUri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 
 	/** Image performance model. */
 	export interface ImagePerformanceFormProperties {
 		created: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		imageUri: FormControl<string | null | undefined>,
 		thumbnailUri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImagePerformanceFormGroup() {
@@ -594,7 +638,10 @@ export namespace MyNS {
 		/** Bounding box that defines a region of an image. */
 		boundingBox?: BoundingBox;
 
-		/** Probability of the tag. */
+		/**
+		 * Probability of the tag.
+		 * Type: float
+		 */
 		probability?: number | null;
 
 		/** Id of the predicted tag. */
@@ -607,7 +654,10 @@ export namespace MyNS {
 	/** Prediction result. */
 	export interface PredictionFormProperties {
 
-		/** Probability of the tag. */
+		/**
+		 * Probability of the tag.
+		 * Type: float
+		 */
 		probability: FormControl<number | null | undefined>,
 
 		/** Id of the predicted tag. */
@@ -719,6 +769,7 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: number;
 
@@ -731,6 +782,7 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: number;
 
@@ -743,12 +795,14 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: number;
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: number;
 	}
@@ -759,6 +813,7 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: FormControl<number | null | undefined>,
 
@@ -771,6 +826,7 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: FormControl<number | null | undefined>,
 
@@ -783,12 +839,14 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: FormControl<number | null | undefined>,
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -810,6 +868,7 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: number;
 		imageId?: string | null;
@@ -817,6 +876,7 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: number;
 		regionId?: string | null;
@@ -831,12 +891,14 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: number;
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: number;
 	}
@@ -846,6 +908,7 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: FormControl<number | null | undefined>,
 		imageId: FormControl<string | null | undefined>,
@@ -853,6 +916,7 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: FormControl<number | null | undefined>,
 		regionId: FormControl<string | null | undefined>,
@@ -867,12 +931,14 @@ export namespace MyNS {
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: FormControl<number | null | undefined>,
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -925,9 +991,13 @@ export namespace MyNS {
 
 		/** Bounding box that defines a region of an image. */
 		boundingBox?: BoundingBox;
+
+		/** Type: float */
 		confidence?: number | null;
 	}
 	export interface RegionProposalFormProperties {
+
+		/** Type: float */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateRegionProposalFormGroup() {
@@ -1099,7 +1169,10 @@ export namespace MyNS {
 		/** Name of the published model. */
 		publishName?: string | null;
 
-		/** Gets the reserved advanced training budget for the iteration. */
+		/**
+		 * Gets the reserved advanced training budget for the iteration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedBudgetInHours?: number | null;
 
 		/** Gets the current iteration status. */
@@ -1108,7 +1181,10 @@ export namespace MyNS {
 		/** Gets the time this iteration was last modified. */
 		trainedAt?: Date | null;
 
-		/** Gets the training time for the iteration. */
+		/**
+		 * Gets the training time for the iteration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trainingTimeInMinutes?: number | null;
 
 		/** Gets the training type of the iteration. */
@@ -1151,7 +1227,10 @@ export namespace MyNS {
 		/** Name of the published model. */
 		publishName: FormControl<string | null | undefined>,
 
-		/** Gets the reserved advanced training budget for the iteration. */
+		/**
+		 * Gets the reserved advanced training budget for the iteration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedBudgetInHours: FormControl<number | null | undefined>,
 
 		/** Gets the current iteration status. */
@@ -1160,7 +1239,10 @@ export namespace MyNS {
 		/** Gets the time this iteration was last modified. */
 		trainedAt: FormControl<Date | null | undefined>,
 
-		/** Gets the training time for the iteration. */
+		/**
+		 * Gets the training time for the iteration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trainingTimeInMinutes: FormControl<number | null | undefined>,
 
 		/** Gets the training type of the iteration. */
@@ -1195,41 +1277,71 @@ export namespace MyNS {
 	/** Represents the detailed performance data for a trained iteration. */
 	export interface IterationPerformance {
 
-		/** Gets the average precision when applicable. */
+		/**
+		 * Gets the average precision when applicable.
+		 * Type: float
+		 */
 		averagePrecision?: number | null;
 
 		/** Gets the per-tag performance details for this iteration. */
 		perTagPerformance?: Array<TagPerformance>;
 
-		/** Gets the precision. */
+		/**
+		 * Gets the precision.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Gets the standard deviation for the precision. */
+		/**
+		 * Gets the standard deviation for the precision.
+		 * Type: float
+		 */
 		precisionStdDeviation?: number | null;
 
-		/** Gets the recall. */
+		/**
+		 * Gets the recall.
+		 * Type: float
+		 */
 		recall?: number | null;
 
-		/** Gets the standard deviation for the recall. */
+		/**
+		 * Gets the standard deviation for the recall.
+		 * Type: float
+		 */
 		recallStdDeviation?: number | null;
 	}
 
 	/** Represents the detailed performance data for a trained iteration. */
 	export interface IterationPerformanceFormProperties {
 
-		/** Gets the average precision when applicable. */
+		/**
+		 * Gets the average precision when applicable.
+		 * Type: float
+		 */
 		averagePrecision: FormControl<number | null | undefined>,
 
-		/** Gets the precision. */
+		/**
+		 * Gets the precision.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Gets the standard deviation for the precision. */
+		/**
+		 * Gets the standard deviation for the precision.
+		 * Type: float
+		 */
 		precisionStdDeviation: FormControl<number | null | undefined>,
 
-		/** Gets the recall. */
+		/**
+		 * Gets the recall.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 
-		/** Gets the standard deviation for the recall. */
+		/**
+		 * Gets the standard deviation for the recall.
+		 * Type: float
+		 */
 		recallStdDeviation: FormControl<number | null | undefined>,
 	}
 	export function CreateIterationPerformanceFormGroup() {
@@ -1247,42 +1359,72 @@ export namespace MyNS {
 	/** Represents performance data for a particular tag in a trained iteration. */
 	export interface TagPerformance {
 
-		/** Gets the average precision when applicable. */
+		/**
+		 * Gets the average precision when applicable.
+		 * Type: float
+		 */
 		averagePrecision?: number | null;
 		id?: string | null;
 		name?: string | null;
 
-		/** Gets the precision. */
+		/**
+		 * Gets the precision.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Gets the standard deviation for the precision. */
+		/**
+		 * Gets the standard deviation for the precision.
+		 * Type: float
+		 */
 		precisionStdDeviation?: number | null;
 
-		/** Gets the recall. */
+		/**
+		 * Gets the recall.
+		 * Type: float
+		 */
 		recall?: number | null;
 
-		/** Gets the standard deviation for the recall. */
+		/**
+		 * Gets the standard deviation for the recall.
+		 * Type: float
+		 */
 		recallStdDeviation?: number | null;
 	}
 
 	/** Represents performance data for a particular tag in a trained iteration. */
 	export interface TagPerformanceFormProperties {
 
-		/** Gets the average precision when applicable. */
+		/**
+		 * Gets the average precision when applicable.
+		 * Type: float
+		 */
 		averagePrecision: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 
-		/** Gets the precision. */
+		/**
+		 * Gets the precision.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Gets the standard deviation for the precision. */
+		/**
+		 * Gets the standard deviation for the precision.
+		 * Type: float
+		 */
 		precisionStdDeviation: FormControl<number | null | undefined>,
 
-		/** Gets the recall. */
+		/**
+		 * Gets the recall.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 
-		/** Gets the standard deviation for the recall. */
+		/**
+		 * Gets the standard deviation for the recall.
+		 * Type: float
+		 */
 		recallStdDeviation: FormControl<number | null | undefined>,
 	}
 	export function CreateTagPerformanceFormGroup() {
@@ -1394,6 +1536,8 @@ export namespace MyNS {
 		continuation?: string | null;
 		endTime?: Date | null;
 		iterationId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxCount?: number | null;
 		orderBy?: PredictionQueryTokenOrderBy | null;
 		session?: string | null;
@@ -1405,6 +1549,8 @@ export namespace MyNS {
 		continuation: FormControl<string | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
 		iterationId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxCount: FormControl<number | null | undefined>,
 		orderBy: FormControl<PredictionQueryTokenOrderBy | null | undefined>,
 		session: FormControl<string | null | undefined>,
@@ -1428,12 +1574,20 @@ export namespace MyNS {
 
 	export interface PredictionQueryTag {
 		id?: string | null;
+
+		/** Type: float */
 		maxThreshold?: number | null;
+
+		/** Type: float */
 		minThreshold?: number | null;
 	}
 	export interface PredictionQueryTagFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		maxThreshold: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		minThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreatePredictionQueryTagFormGroup() {
@@ -1590,19 +1744,32 @@ export namespace MyNS {
 		/**
 		 * Estimated time this project will take to import, can change based on network connectivity and load between
 		 * source and destination regions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		estimatedImportTimeInMS?: number | null;
 
-		/** Count of images that will be exported. */
+		/**
+		 * Count of images that will be exported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		imageCount?: number | null;
 
-		/** Count of iterations that will be exported. */
+		/**
+		 * Count of iterations that will be exported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		iterationCount?: number | null;
 
-		/** Count of regions that will be exported. */
+		/**
+		 * Count of regions that will be exported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		regionCount?: number | null;
 
-		/** Count of tags that will be exported. */
+		/**
+		 * Count of tags that will be exported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tagCount?: number | null;
 
 		/**
@@ -1618,19 +1785,32 @@ export namespace MyNS {
 		/**
 		 * Estimated time this project will take to import, can change based on network connectivity and load between
 		 * source and destination regions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		estimatedImportTimeInMS: FormControl<number | null | undefined>,
 
-		/** Count of images that will be exported. */
+		/**
+		 * Count of images that will be exported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		imageCount: FormControl<number | null | undefined>,
 
-		/** Count of iterations that will be exported. */
+		/**
+		 * Count of iterations that will be exported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		iterationCount: FormControl<number | null | undefined>,
 
-		/** Count of regions that will be exported. */
+		/**
+		 * Count of regions that will be exported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		regionCount: FormControl<number | null | undefined>,
 
-		/** Count of tags that will be exported. */
+		/**
+		 * Count of tags that will be exported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tagCount: FormControl<number | null | undefined>,
 
 		/**
@@ -1661,7 +1841,10 @@ export namespace MyNS {
 		/** Domain used for the prediction. */
 		domain?: string | null;
 
-		/** Height of the resized image. */
+		/**
+		 * Height of the resized image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Prediction Id. */
@@ -1673,7 +1856,10 @@ export namespace MyNS {
 		/** The URI to the original prediction image. */
 		originalImageUri?: string | null;
 
-		/** Uncertainty (entropy) of suggested tags or regions per image. */
+		/**
+		 * Uncertainty (entropy) of suggested tags or regions per image.
+		 * Type: double
+		 */
 		predictionUncertainty?: number | null;
 
 		/** List of predictions. */
@@ -1688,7 +1874,10 @@ export namespace MyNS {
 		/** The URI to the thumbnail of the original prediction image. */
 		thumbnailUri?: string | null;
 
-		/** Width of the resized image. */
+		/**
+		 * Width of the resized image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -1701,7 +1890,10 @@ export namespace MyNS {
 		/** Domain used for the prediction. */
 		domain: FormControl<string | null | undefined>,
 
-		/** Height of the resized image. */
+		/**
+		 * Height of the resized image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Prediction Id. */
@@ -1713,7 +1905,10 @@ export namespace MyNS {
 		/** The URI to the original prediction image. */
 		originalImageUri: FormControl<string | null | undefined>,
 
-		/** Uncertainty (entropy) of suggested tags or regions per image. */
+		/**
+		 * Uncertainty (entropy) of suggested tags or regions per image.
+		 * Type: double
+		 */
 		predictionUncertainty: FormControl<number | null | undefined>,
 
 		/** Project Id. */
@@ -1725,7 +1920,10 @@ export namespace MyNS {
 		/** The URI to the thumbnail of the original prediction image. */
 		thumbnailUri: FormControl<string | null | undefined>,
 
-		/** Width of the resized image. */
+		/**
+		 * Width of the resized image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateStoredSuggestedTagAndRegionFormGroup() {
@@ -1758,7 +1956,10 @@ export namespace MyNS {
 		/** Iteration Id. */
 		iteration?: string | null;
 
-		/** Uncertainty (entropy) of suggested tags or regions per image. */
+		/**
+		 * Uncertainty (entropy) of suggested tags or regions per image.
+		 * Type: double
+		 */
 		predictionUncertainty?: number | null;
 
 		/** List of predictions. */
@@ -1780,7 +1981,10 @@ export namespace MyNS {
 		/** Iteration Id. */
 		iteration: FormControl<string | null | undefined>,
 
-		/** Uncertainty (entropy) of suggested tags or regions per image. */
+		/**
+		 * Uncertainty (entropy) of suggested tags or regions per image.
+		 * Type: double
+		 */
 		predictionUncertainty: FormControl<number | null | undefined>,
 
 		/** Project Id. */
@@ -1830,7 +2034,10 @@ export namespace MyNS {
 		/** Continuation Id for database pagination. Initially null but later used to paginate. */
 		continuation?: string | null;
 
-		/** Maximum number of results you want to be returned in the response. */
+		/**
+		 * Maximum number of results you want to be returned in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxCount?: number | null;
 
 		/** SessionId for database query. Initially set to null but later used to paginate. */
@@ -1842,7 +2049,10 @@ export namespace MyNS {
 		/** Existing TagIds in project to filter suggested tags on. */
 		tagIds?: Array<string>;
 
-		/** Confidence threshold to filter suggested tags on. */
+		/**
+		 * Confidence threshold to filter suggested tags on.
+		 * Type: double
+		 */
 		threshold?: number | null;
 	}
 
@@ -1855,7 +2065,10 @@ export namespace MyNS {
 		/** Continuation Id for database pagination. Initially null but later used to paginate. */
 		continuation: FormControl<string | null | undefined>,
 
-		/** Maximum number of results you want to be returned in the response. */
+		/**
+		 * Maximum number of results you want to be returned in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxCount: FormControl<number | null | undefined>,
 
 		/** SessionId for database query. Initially set to null but later used to paginate. */
@@ -1864,7 +2077,10 @@ export namespace MyNS {
 		/** OrderBy. Ordering mechanism for your results. */
 		sortBy: FormControl<SuggestedTagAndRegionQueryTokenSortBy | null | undefined>,
 
-		/** Confidence threshold to filter suggested tags on. */
+		/**
+		 * Confidence threshold to filter suggested tags on.
+		 * Type: double
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateSuggestedTagAndRegionQueryTokenFormGroup() {
@@ -1893,7 +2109,10 @@ export namespace MyNS {
 		/** Gets the Tag ID. */
 		id?: string | null;
 
-		/** Gets the number of images with this tag. */
+		/**
+		 * Gets the number of images with this tag.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		imageCount?: number | null;
 
 		/**
@@ -1921,7 +2140,10 @@ export namespace MyNS {
 		/** Gets the Tag ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Gets the number of images with this tag. */
+		/**
+		 * Gets the number of images with this tag.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		imageCount: FormControl<number | null | undefined>,
 
 		/**
@@ -1956,14 +2178,20 @@ export namespace MyNS {
 		/** Existing TagIds in project to get suggested tags count for. */
 		tagIds?: Array<string>;
 
-		/** Confidence threshold to filter suggested tags on. */
+		/**
+		 * Confidence threshold to filter suggested tags on.
+		 * Type: double
+		 */
 		threshold?: number | null;
 	}
 
 	/** Model that query for counting of images whose suggested tags match given tags and their probability are greater than or equal to the given threshold. */
 	export interface TagFilterFormProperties {
 
-		/** Confidence threshold to filter suggested tags on. */
+		/**
+		 * Confidence threshold to filter suggested tags on.
+		 * Type: double
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateTagFilterFormGroup() {

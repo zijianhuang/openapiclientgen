@@ -10,28 +10,49 @@ export namespace MyNS {
 		/** User friendly name of the assessed disk. */
 		displayName?: string | null;
 
-		/** Gigabytes of storage provided by the recommended Azure disk size. */
+		/**
+		 * Gigabytes of storage provided by the recommended Azure disk size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gigabytesForRecommendedDiskSize?: number | null;
 
-		/** Gigabytes of storage provisioned for this disk. */
+		/**
+		 * Gigabytes of storage provisioned for this disk.
+		 * Type: double
+		 */
 		gigabytesProvisioned?: number | null;
 
-		/** Disk throughput in MegaBytes per second. */
+		/**
+		 * Disk throughput in MegaBytes per second.
+		 * Type: double
+		 */
 		megabytesPerSecondOfRead?: number | null;
 
-		/** Disk throughput in MegaBytes per second. */
+		/**
+		 * Disk throughput in MegaBytes per second.
+		 * Type: double
+		 */
 		megabytesPerSecondOfWrite?: number | null;
 
-		/** Estimated aggregate storage cost for a 31-day month for this disk. */
+		/**
+		 * Estimated aggregate storage cost for a 31-day month for this disk.
+		 * Type: double
+		 */
 		monthlyStorageCost?: number | null;
 
 		/** Name of the assessed disk. */
 		name?: string | null;
 
-		/** Number of read operations per second for the disk. */
+		/**
+		 * Number of read operations per second for the disk.
+		 * Type: double
+		 */
 		numberOfReadOperationsPerSecond?: number | null;
 
-		/** Number of read and write operations per second for the disk. */
+		/**
+		 * Number of read and write operations per second for the disk.
+		 * Type: double
+		 */
 		numberOfWriteOperationsPerSecond?: number | null;
 
 		/** Recommended Azure size for the disk, given utilization data and preferences set on Assessment. */
@@ -56,28 +77,49 @@ export namespace MyNS {
 		/** User friendly name of the assessed disk. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Gigabytes of storage provided by the recommended Azure disk size. */
+		/**
+		 * Gigabytes of storage provided by the recommended Azure disk size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gigabytesForRecommendedDiskSize: FormControl<number | null | undefined>,
 
-		/** Gigabytes of storage provisioned for this disk. */
+		/**
+		 * Gigabytes of storage provisioned for this disk.
+		 * Type: double
+		 */
 		gigabytesProvisioned: FormControl<number | null | undefined>,
 
-		/** Disk throughput in MegaBytes per second. */
+		/**
+		 * Disk throughput in MegaBytes per second.
+		 * Type: double
+		 */
 		megabytesPerSecondOfRead: FormControl<number | null | undefined>,
 
-		/** Disk throughput in MegaBytes per second. */
+		/**
+		 * Disk throughput in MegaBytes per second.
+		 * Type: double
+		 */
 		megabytesPerSecondOfWrite: FormControl<number | null | undefined>,
 
-		/** Estimated aggregate storage cost for a 31-day month for this disk. */
+		/**
+		 * Estimated aggregate storage cost for a 31-day month for this disk.
+		 * Type: double
+		 */
 		monthlyStorageCost: FormControl<number | null | undefined>,
 
 		/** Name of the assessed disk. */
 		name: FormControl<string | null | undefined>,
 
-		/** Number of read operations per second for the disk. */
+		/**
+		 * Number of read operations per second for the disk.
+		 * Type: double
+		 */
 		numberOfReadOperationsPerSecond: FormControl<number | null | undefined>,
 
-		/** Number of read and write operations per second for the disk. */
+		/**
+		 * Number of read and write operations per second for the disk.
+		 * Type: double
+		 */
 		numberOfWriteOperationsPerSecond: FormControl<number | null | undefined>,
 
 		/** Recommended Azure size for the disk, given utilization data and preferences set on Assessment. */
@@ -177,7 +219,10 @@ export namespace MyNS {
 		/** Boot type of the machine. */
 		bootType?: AssessedMachinePropertiesBootType | null;
 
-		/** Confidence rating of assessed machine. */
+		/**
+		 * Confidence rating of assessed machine.
+		 * Type: double
+		 */
 		confidenceRatingInPercentage?: number | null;
 
 		/** Time when this machine was created. Date-Time represented in ISO-8601 format. */
@@ -201,34 +246,61 @@ export namespace MyNS {
 		/** User readable name of the machine as defined by the user in their private datacenter. */
 		displayName?: string | null;
 
-		/** Memory in Megabytes. */
+		/**
+		 * Memory in Megabytes.
+		 * Type: double
+		 */
 		megabytesOfMemory?: number | null;
 
-		/** Megabytes of memory in the Recommended Azure VM Size. */
+		/**
+		 * Megabytes of memory in the Recommended Azure VM Size.
+		 * Type: double
+		 */
 		megabytesOfMemoryForRecommendedSize?: number | null;
 
-		/** Monthly network cost estimate for the network adapters that are attached to this machine as a group, for a 31-day month. */
+		/**
+		 * Monthly network cost estimate for the network adapters that are attached to this machine as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyBandwidthCost?: number | null;
 
-		/** Compute Cost for a 31-day month, if the machine is migrated to Azure with the Recommended Size. */
+		/**
+		 * Compute Cost for a 31-day month, if the machine is migrated to Azure with the Recommended Size.
+		 * Type: double
+		 */
 		monthlyComputeCostForRecommendedSize?: number | null;
 
-		/** Monthly premium storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month. */
+		/**
+		 * Monthly premium storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyPremiumStorageCost?: number | null;
 
-		/** Monthly standard SSD storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month. */
+		/**
+		 * Monthly standard SSD storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyStandardSSDStorageCost?: number | null;
 
-		/** Monthly storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month. */
+		/**
+		 * Monthly storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyStorageCost?: number | null;
 
 		/** Dictionary of network adapters attached to the machine. Key is name of the adapter. Value is a network adapter object. */
 		networkAdapters?: {[id: string]: AssessedNetworkAdapter };
 
-		/** Processor count. */
+		/**
+		 * Processor count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCores?: number | null;
 
-		/** Number of CPU cores in the Recommended Azure VM Size. */
+		/**
+		 * Number of CPU cores in the Recommended Azure VM Size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCoresForRecommendedSize?: number | null;
 
 		/** Operating System name of the machine. */
@@ -240,10 +312,16 @@ export namespace MyNS {
 		/** Operating System version of the machine. */
 		operatingSystemVersion?: string | null;
 
-		/** Utilization percentage of the processor core as observed in the private data center, in the Time Range selected on Assessment, reported as the Percentile value based on the percentile number selected in assessment. */
+		/**
+		 * Utilization percentage of the processor core as observed in the private data center, in the Time Range selected on Assessment, reported as the Percentile value based on the percentile number selected in assessment.
+		 * Type: double
+		 */
 		percentageCoresUtilization?: number | null;
 
-		/** Utilization percentage of the memory as observed in the private data center, in the Time Range selected on Assessment, reported as the Percentile value based on the percentile number selected in assessment. */
+		/**
+		 * Utilization percentage of the memory as observed in the private data center, in the Time Range selected on Assessment, reported as the Percentile value based on the percentile number selected in assessment.
+		 * Type: double
+		 */
 		percentageMemoryUtilization?: number | null;
 
 		/** Recommended Azure size for this machine. */
@@ -268,7 +346,10 @@ export namespace MyNS {
 		/** Boot type of the machine. */
 		bootType: FormControl<AssessedMachinePropertiesBootType | null | undefined>,
 
-		/** Confidence rating of assessed machine. */
+		/**
+		 * Confidence rating of assessed machine.
+		 * Type: double
+		 */
 		confidenceRatingInPercentage: FormControl<number | null | undefined>,
 
 		/** Time when this machine was created. Date-Time represented in ISO-8601 format. */
@@ -292,34 +373,61 @@ export namespace MyNS {
 		/** User readable name of the machine as defined by the user in their private datacenter. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Memory in Megabytes. */
+		/**
+		 * Memory in Megabytes.
+		 * Type: double
+		 */
 		megabytesOfMemory: FormControl<number | null | undefined>,
 
-		/** Megabytes of memory in the Recommended Azure VM Size. */
+		/**
+		 * Megabytes of memory in the Recommended Azure VM Size.
+		 * Type: double
+		 */
 		megabytesOfMemoryForRecommendedSize: FormControl<number | null | undefined>,
 
-		/** Monthly network cost estimate for the network adapters that are attached to this machine as a group, for a 31-day month. */
+		/**
+		 * Monthly network cost estimate for the network adapters that are attached to this machine as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyBandwidthCost: FormControl<number | null | undefined>,
 
-		/** Compute Cost for a 31-day month, if the machine is migrated to Azure with the Recommended Size. */
+		/**
+		 * Compute Cost for a 31-day month, if the machine is migrated to Azure with the Recommended Size.
+		 * Type: double
+		 */
 		monthlyComputeCostForRecommendedSize: FormControl<number | null | undefined>,
 
-		/** Monthly premium storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month. */
+		/**
+		 * Monthly premium storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyPremiumStorageCost: FormControl<number | null | undefined>,
 
-		/** Monthly standard SSD storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month. */
+		/**
+		 * Monthly standard SSD storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyStandardSSDStorageCost: FormControl<number | null | undefined>,
 
-		/** Monthly storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month. */
+		/**
+		 * Monthly storage cost estimate for the disks that are attached to this machine as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyStorageCost: FormControl<number | null | undefined>,
 
 		/** Dictionary of network adapters attached to the machine. Key is name of the adapter. Value is a network adapter object. */
 		networkAdapters: FormControl<{[id: string]: AssessedNetworkAdapter } | null | undefined>,
 
-		/** Processor count. */
+		/**
+		 * Processor count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCores: FormControl<number | null | undefined>,
 
-		/** Number of CPU cores in the Recommended Azure VM Size. */
+		/**
+		 * Number of CPU cores in the Recommended Azure VM Size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCoresForRecommendedSize: FormControl<number | null | undefined>,
 
 		/** Operating System name of the machine. */
@@ -331,10 +439,16 @@ export namespace MyNS {
 		/** Operating System version of the machine. */
 		operatingSystemVersion: FormControl<string | null | undefined>,
 
-		/** Utilization percentage of the processor core as observed in the private data center, in the Time Range selected on Assessment, reported as the Percentile value based on the percentile number selected in assessment. */
+		/**
+		 * Utilization percentage of the processor core as observed in the private data center, in the Time Range selected on Assessment, reported as the Percentile value based on the percentile number selected in assessment.
+		 * Type: double
+		 */
 		percentageCoresUtilization: FormControl<number | null | undefined>,
 
-		/** Utilization percentage of the memory as observed in the private data center, in the Time Range selected on Assessment, reported as the Percentile value based on the percentile number selected in assessment. */
+		/**
+		 * Utilization percentage of the memory as observed in the private data center, in the Time Range selected on Assessment, reported as the Percentile value based on the percentile number selected in assessment.
+		 * Type: double
+		 */
 		percentageMemoryUtilization: FormControl<number | null | undefined>,
 
 		/** Recommended Azure size for this machine. */
@@ -402,16 +516,28 @@ export namespace MyNS {
 		/** MAC Address of the network adapter. */
 		macAddress?: string | null;
 
-		/** Adapter throughput for incoming traffic in MegaBytes per second. */
+		/**
+		 * Adapter throughput for incoming traffic in MegaBytes per second.
+		 * Type: double
+		 */
 		megabytesPerSecondReceived?: number | null;
 
-		/** Adapter throughput for outgoing traffic in MegaBytes per second. */
+		/**
+		 * Adapter throughput for outgoing traffic in MegaBytes per second.
+		 * Type: double
+		 */
 		megabytesPerSecondTransmitted?: number | null;
 
-		/** Monthly cost estimate for network bandwidth used by this network adapter. */
+		/**
+		 * Monthly cost estimate for network bandwidth used by this network adapter.
+		 * Type: double
+		 */
 		monthlyBandwidthCosts?: number | null;
 
-		/** Gigabytes transmitted through this adapter each month. */
+		/**
+		 * Gigabytes transmitted through this adapter each month.
+		 * Type: double
+		 */
 		netGigabytesTransmittedPerMonth?: number | null;
 
 		/** Whether this adapter is suitable for Azure. */
@@ -433,16 +559,28 @@ export namespace MyNS {
 		/** MAC Address of the network adapter. */
 		macAddress: FormControl<string | null | undefined>,
 
-		/** Adapter throughput for incoming traffic in MegaBytes per second. */
+		/**
+		 * Adapter throughput for incoming traffic in MegaBytes per second.
+		 * Type: double
+		 */
 		megabytesPerSecondReceived: FormControl<number | null | undefined>,
 
-		/** Adapter throughput for outgoing traffic in MegaBytes per second. */
+		/**
+		 * Adapter throughput for outgoing traffic in MegaBytes per second.
+		 * Type: double
+		 */
 		megabytesPerSecondTransmitted: FormControl<number | null | undefined>,
 
-		/** Monthly cost estimate for network bandwidth used by this network adapter. */
+		/**
+		 * Monthly cost estimate for network bandwidth used by this network adapter.
+		 * Type: double
+		 */
 		monthlyBandwidthCosts: FormControl<number | null | undefined>,
 
-		/** Gigabytes transmitted through this adapter each month. */
+		/**
+		 * Gigabytes transmitted through this adapter each month.
+		 * Type: double
+		 */
 		netGigabytesTransmittedPerMonth: FormControl<number | null | undefined>,
 
 		/** Whether this adapter is suitable for Azure. */
@@ -593,7 +731,10 @@ export namespace MyNS {
 		 */
 		azureVmFamilies: Array<string>;
 
-		/** Confidence rating percentage for assessment. Can be in the range [0, 100]. */
+		/**
+		 * Confidence rating percentage for assessment. Can be in the range [0, 100].
+		 * Type: double
+		 */
 		confidenceRatingInPercentage?: number | null;
 
 		/** Time when this project was created. Date-Time represented in ISO-8601 format. */
@@ -608,28 +749,47 @@ export namespace MyNS {
 		/**
 		 * Custom discount percentage to be applied on final costs. Can be in the range [0, 100].
 		 * Required
+		 * Type: double
 		 */
 		discountPercentage: number;
 
 		/** Enterprise agreement subscription arm id. */
 		eaSubscriptionId?: string | null;
 
-		/** Monthly network cost estimate for the machines that are part of this assessment as a group, for a 31-day month. */
+		/**
+		 * Monthly network cost estimate for the machines that are part of this assessment as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyBandwidthCost?: number | null;
 
-		/** Monthly compute cost estimate for the machines that are part of this assessment as a group, for a 31-day month. */
+		/**
+		 * Monthly compute cost estimate for the machines that are part of this assessment as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyComputeCost?: number | null;
 
-		/** Monthly premium storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month. */
+		/**
+		 * Monthly premium storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyPremiumStorageCost?: number | null;
 
-		/** Monthly standard SSD storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month. */
+		/**
+		 * Monthly standard SSD storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyStandardSSDStorageCost?: number | null;
 
-		/** Monthly storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month. */
+		/**
+		 * Monthly storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyStorageCost?: number | null;
 
-		/** Number of assessed machines part of this assessment. */
+		/**
+		 * Number of assessed machines part of this assessment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfMachines?: number | null;
 
 		/**
@@ -656,6 +816,7 @@ export namespace MyNS {
 		/**
 		 * Scaling factor used over utilization data to add a performance buffer for new machines to be created in Azure. Min Value = 1.0, Max value = 1.9, Default = 1.3.
 		 * Required
+		 * Type: double
 		 */
 		scalingFactor: number;
 
@@ -726,7 +887,10 @@ export namespace MyNS {
 		 */
 		azureStorageRedundancy: FormControl<AssessmentPropertiesAzureStorageRedundancy | null | undefined>,
 
-		/** Confidence rating percentage for assessment. Can be in the range [0, 100]. */
+		/**
+		 * Confidence rating percentage for assessment. Can be in the range [0, 100].
+		 * Type: double
+		 */
 		confidenceRatingInPercentage: FormControl<number | null | undefined>,
 
 		/** Time when this project was created. Date-Time represented in ISO-8601 format. */
@@ -741,28 +905,47 @@ export namespace MyNS {
 		/**
 		 * Custom discount percentage to be applied on final costs. Can be in the range [0, 100].
 		 * Required
+		 * Type: double
 		 */
 		discountPercentage: FormControl<number | null | undefined>,
 
 		/** Enterprise agreement subscription arm id. */
 		eaSubscriptionId: FormControl<string | null | undefined>,
 
-		/** Monthly network cost estimate for the machines that are part of this assessment as a group, for a 31-day month. */
+		/**
+		 * Monthly network cost estimate for the machines that are part of this assessment as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyBandwidthCost: FormControl<number | null | undefined>,
 
-		/** Monthly compute cost estimate for the machines that are part of this assessment as a group, for a 31-day month. */
+		/**
+		 * Monthly compute cost estimate for the machines that are part of this assessment as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyComputeCost: FormControl<number | null | undefined>,
 
-		/** Monthly premium storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month. */
+		/**
+		 * Monthly premium storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyPremiumStorageCost: FormControl<number | null | undefined>,
 
-		/** Monthly standard SSD storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month. */
+		/**
+		 * Monthly standard SSD storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyStandardSSDStorageCost: FormControl<number | null | undefined>,
 
-		/** Monthly storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month. */
+		/**
+		 * Monthly storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month.
+		 * Type: double
+		 */
 		monthlyStorageCost: FormControl<number | null | undefined>,
 
-		/** Number of assessed machines part of this assessment. */
+		/**
+		 * Number of assessed machines part of this assessment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfMachines: FormControl<number | null | undefined>,
 
 		/**
@@ -789,6 +972,7 @@ export namespace MyNS {
 		/**
 		 * Scaling factor used over utilization data to add a performance buffer for new machines to be created in Azure. Min Value = 1.0, Max value = 1.9, Default = 1.3.
 		 * Required
+		 * Type: double
 		 */
 		scalingFactor: FormControl<number | null | undefined>,
 
@@ -1181,7 +1365,10 @@ export namespace MyNS {
 		/** User friendly name of the disk. */
 		displayName?: string | null;
 
-		/** Gigabytes of storage provisioned for this disk. */
+		/**
+		 * Gigabytes of storage provisioned for this disk.
+		 * Type: double
+		 */
 		gigabytesAllocated?: number | null;
 	}
 
@@ -1191,7 +1378,10 @@ export namespace MyNS {
 		/** User friendly name of the disk. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Gigabytes of storage provisioned for this disk. */
+		/**
+		 * Gigabytes of storage provisioned for this disk.
+		 * Type: double
+		 */
 		gigabytesAllocated: FormControl<number | null | undefined>,
 	}
 	export function CreateDiskFormGroup() {
@@ -1294,7 +1484,10 @@ export namespace MyNS {
 		/** Whether the group has been created and is valid. */
 		groupStatus?: GroupPropertiesGroupStatus | null;
 
-		/** Number of machines part of this group. */
+		/**
+		 * Number of machines part of this group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		machineCount?: number | null;
 
 		/** Time when this group was last updated. Date-Time represented in ISO-8601 format. */
@@ -1313,7 +1506,10 @@ export namespace MyNS {
 		/** Whether the group has been created and is valid. */
 		groupStatus: FormControl<GroupPropertiesGroupStatus | null | undefined>,
 
-		/** Number of machines part of this group. */
+		/**
+		 * Number of machines part of this group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		machineCount: FormControl<number | null | undefined>,
 
 		/** Time when this group was last updated. Date-Time represented in ISO-8601 format. */
@@ -1491,13 +1687,19 @@ export namespace MyNS {
 		/** List of references to the groups that the machine is member of. */
 		groups?: Array<string>;
 
-		/** Memory in Megabytes. */
+		/**
+		 * Memory in Megabytes.
+		 * Type: double
+		 */
 		megabytesOfMemory?: number | null;
 
 		/** Dictionary of network adapters attached to the machine. Key is ID of network adapter. Value is a network adapter object */
 		networkAdapters?: {[id: string]: NetworkAdapter };
 
-		/** Processor count. */
+		/**
+		 * Processor count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCores?: number | null;
 
 		/** Operating System name of the machine. */
@@ -1540,13 +1742,19 @@ export namespace MyNS {
 		/** User readable name of the machine as defined by the user in their private datacenter. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Memory in Megabytes. */
+		/**
+		 * Memory in Megabytes.
+		 * Type: double
+		 */
 		megabytesOfMemory: FormControl<number | null | undefined>,
 
 		/** Dictionary of network adapters attached to the machine. Key is ID of network adapter. Value is a network adapter object */
 		networkAdapters: FormControl<{[id: string]: NetworkAdapter } | null | undefined>,
 
-		/** Processor count. */
+		/**
+		 * Processor count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCores: FormControl<number | null | undefined>,
 
 		/** Operating System name of the machine. */
@@ -1801,13 +2009,22 @@ export namespace MyNS {
 		/** Time when last assessment was created. Date-Time represented in ISO-8601 format. This value will be null until assessment is created. */
 		lastAssessmentTimestamp?: Date | null;
 
-		/** Number of assessments created in the project. */
+		/**
+		 * Number of assessments created in the project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfAssessments?: number | null;
 
-		/** Number of groups created in the project. */
+		/**
+		 * Number of groups created in the project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfGroups?: number | null;
 
-		/** Number of machines in the project. */
+		/**
+		 * Number of machines in the project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfMachines?: number | null;
 
 		/** Assessment project status. */
@@ -1841,13 +2058,22 @@ export namespace MyNS {
 		/** Time when last assessment was created. Date-Time represented in ISO-8601 format. This value will be null until assessment is created. */
 		lastAssessmentTimestamp: FormControl<Date | null | undefined>,
 
-		/** Number of assessments created in the project. */
+		/**
+		 * Number of assessments created in the project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfAssessments: FormControl<number | null | undefined>,
 
-		/** Number of groups created in the project. */
+		/**
+		 * Number of groups created in the project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfGroups: FormControl<number | null | undefined>,
 
-		/** Number of machines in the project. */
+		/**
+		 * Number of machines in the project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfMachines: FormControl<number | null | undefined>,
 
 		/** Assessment project status. */

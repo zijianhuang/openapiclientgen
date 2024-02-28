@@ -683,7 +683,10 @@ export namespace MyNS {
 		/** Pre Restore partition. */
 		partition?: string | null;
 
-		/** Pre Restore pause wait for sync drain time period in seconds. */
+		/**
+		 * Pre Restore pause wait for sync drain time period in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pauseWaitForSyncDrainTimePeriodInSeconds?: number | null;
 
 		/** Pre Restore replica group. */
@@ -714,7 +717,10 @@ export namespace MyNS {
 		/** Pre Restore partition. */
 		partition: FormControl<string | null | undefined>,
 
-		/** Pre Restore pause wait for sync drain time period in seconds. */
+		/**
+		 * Pre Restore pause wait for sync drain time period in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pauseWaitForSyncDrainTimePeriodInSeconds: FormControl<number | null | undefined>,
 
 		/** Pre Restore replica group. */
@@ -838,7 +844,10 @@ export namespace MyNS {
 		/** Registered Server serverId */
 		serverId?: string | null;
 
-		/** Registered Server Management Error Code */
+		/**
+		 * Registered Server Management Error Code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		serverManagementErrorCode?: number | null;
 
 		/** Registered Server OS Version */
@@ -899,7 +908,10 @@ export namespace MyNS {
 		/** Registered Server serverId */
 		serverId: FormControl<string | null | undefined>,
 
-		/** Registered Server Management Error Code */
+		/**
+		 * Registered Server Management Error Code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		serverManagementErrorCode: FormControl<number | null | undefined>,
 
 		/** Registered Server OS Version */
@@ -1222,7 +1234,10 @@ export namespace MyNS {
 		/** Type of the cloud tiering health state */
 		health?: ServerEndpointCloudTieringStatusHealth | null;
 
-		/** Last cloud tiering result (HResult) */
+		/**
+		 * Last cloud tiering result (HResult)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastCloudTieringResult?: number | null;
 
 		/** Last cloud tiering success timestamp */
@@ -1238,7 +1253,10 @@ export namespace MyNS {
 		/** Type of the cloud tiering health state */
 		health: FormControl<ServerEndpointCloudTieringStatusHealth | null | undefined>,
 
-		/** Last cloud tiering result (HResult) */
+		/**
+		 * Last cloud tiering result (HResult)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastCloudTieringResult: FormControl<number | null | undefined>,
 
 		/** Last cloud tiering success timestamp */
@@ -1273,7 +1291,7 @@ export namespace MyNS {
 		 * Total count of recall errors.
 		 * Minimum: 0
 		 */
-		totalRecallErrorsCount?: number | null;
+		totalRecallErrorsCount?: string | null;
 	}
 
 	/** Server endpoint recall status object. */
@@ -1286,12 +1304,12 @@ export namespace MyNS {
 		 * Total count of recall errors.
 		 * Minimum: 0
 		 */
-		totalRecallErrorsCount: FormControl<number | null | undefined>,
+		totalRecallErrorsCount: FormControl<string | null | undefined>,
 	}
 	export function CreateServerEndpointRecallStatusFormGroup() {
 		return new FormGroup<ServerEndpointRecallStatusFormProperties>({
 			lastUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			totalRecallErrorsCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			totalRecallErrorsCount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1304,9 +1322,12 @@ export namespace MyNS {
 		 * Count of occurences of the error
 		 * Minimum: 0
 		 */
-		count?: number | null;
+		count?: string | null;
 
-		/** Error code (HResult) */
+		/**
+		 * Error code (HResult)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode?: number | null;
 	}
 
@@ -1317,14 +1338,17 @@ export namespace MyNS {
 		 * Count of occurences of the error
 		 * Minimum: 0
 		 */
-		count: FormControl<number | null | undefined>,
+		count: FormControl<string | null | undefined>,
 
-		/** Error code (HResult) */
+		/**
+		 * Error code (HResult)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode: FormControl<number | null | undefined>,
 	}
 	export function CreateServerEndpointRecallErrorFormGroup() {
 		return new FormGroup<ServerEndpointRecallErrorFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			count: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			errorCode: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1359,7 +1383,7 @@ export namespace MyNS {
 		 * Total count of persistent files not syncing (combined upload + download).
 		 * Minimum: 0
 		 */
-		totalPersistentFilesNotSyncingCount?: number | null;
+		totalPersistentFilesNotSyncingCount?: string | null;
 
 		/** Sync Session status object. */
 		uploadActivity?: ServerEndpointSyncActivityStatus;
@@ -1393,7 +1417,7 @@ export namespace MyNS {
 		 * Total count of persistent files not syncing (combined upload + download).
 		 * Minimum: 0
 		 */
-		totalPersistentFilesNotSyncingCount: FormControl<number | null | undefined>,
+		totalPersistentFilesNotSyncingCount: FormControl<string | null | undefined>,
 
 		/** Type of the sync health state */
 		uploadHealth: FormControl<ServerEndpointSyncStatusCombinedHealth | null | undefined>,
@@ -1405,7 +1429,7 @@ export namespace MyNS {
 			lastUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			offlineDataTransferStatus: new FormControl<ServerEndpointSyncStatusOfflineDataTransferStatus | null | undefined>(undefined),
 			syncActivity: new FormControl<ServerEndpointSyncStatusSyncActivity | null | undefined>(undefined),
-			totalPersistentFilesNotSyncingCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			totalPersistentFilesNotSyncingCount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			uploadHealth: new FormControl<ServerEndpointSyncStatusCombinedHealth | null | undefined>(undefined),
 		});
 
@@ -1421,19 +1445,19 @@ export namespace MyNS {
 		 * Applied bytes
 		 * Minimum: 0
 		 */
-		appliedBytes?: number | null;
+		appliedBytes?: string | null;
 
 		/**
 		 * Applied item count.
 		 * Minimum: 0
 		 */
-		appliedItemCount?: number | null;
+		appliedItemCount?: string | null;
 
 		/**
 		 * Per item error count
 		 * Minimum: 0
 		 */
-		perItemErrorCount?: number | null;
+		perItemErrorCount?: string | null;
 
 		/** Timestamp when properties were updated */
 		timestamp?: Date | null;
@@ -1442,13 +1466,13 @@ export namespace MyNS {
 		 * Total bytes (if available)
 		 * Minimum: 0
 		 */
-		totalBytes?: number | null;
+		totalBytes?: string | null;
 
 		/**
 		 * Total item count (if available)
 		 * Minimum: 0
 		 */
-		totalItemCount?: number | null;
+		totalItemCount?: string | null;
 	}
 
 	/** Sync Session status object. */
@@ -1458,19 +1482,19 @@ export namespace MyNS {
 		 * Applied bytes
 		 * Minimum: 0
 		 */
-		appliedBytes: FormControl<number | null | undefined>,
+		appliedBytes: FormControl<string | null | undefined>,
 
 		/**
 		 * Applied item count.
 		 * Minimum: 0
 		 */
-		appliedItemCount: FormControl<number | null | undefined>,
+		appliedItemCount: FormControl<string | null | undefined>,
 
 		/**
 		 * Per item error count
 		 * Minimum: 0
 		 */
-		perItemErrorCount: FormControl<number | null | undefined>,
+		perItemErrorCount: FormControl<string | null | undefined>,
 
 		/** Timestamp when properties were updated */
 		timestamp: FormControl<Date | null | undefined>,
@@ -1479,22 +1503,22 @@ export namespace MyNS {
 		 * Total bytes (if available)
 		 * Minimum: 0
 		 */
-		totalBytes: FormControl<number | null | undefined>,
+		totalBytes: FormControl<string | null | undefined>,
 
 		/**
 		 * Total item count (if available)
 		 * Minimum: 0
 		 */
-		totalItemCount: FormControl<number | null | undefined>,
+		totalItemCount: FormControl<string | null | undefined>,
 	}
 	export function CreateServerEndpointSyncActivityStatusFormGroup() {
 		return new FormGroup<ServerEndpointSyncActivityStatusFormProperties>({
-			appliedBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			appliedItemCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			perItemErrorCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			appliedBytes: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			appliedItemCount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			perItemErrorCount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			timestamp: new FormControl<Date | null | undefined>(undefined),
-			totalBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			totalItemCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			totalBytes: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			totalItemCount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1510,9 +1534,12 @@ export namespace MyNS {
 		 * Last sync per item error count.
 		 * Minimum: 0
 		 */
-		lastSyncPerItemErrorCount?: number | null;
+		lastSyncPerItemErrorCount?: string | null;
 
-		/** Last sync result (HResult) */
+		/**
+		 * Last sync result (HResult)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastSyncResult?: number | null;
 
 		/** Last sync success timestamp */
@@ -1525,13 +1552,13 @@ export namespace MyNS {
 		 * Count of persistent files not syncing.
 		 * Minimum: 0
 		 */
-		persistentFilesNotSyncingCount?: number | null;
+		persistentFilesNotSyncingCount?: string | null;
 
 		/**
 		 * Count of transient files not syncing.
 		 * Minimum: 0
 		 */
-		transientFilesNotSyncingCount?: number | null;
+		transientFilesNotSyncingCount?: string | null;
 	}
 
 	/** Sync Session status object. */
@@ -1541,9 +1568,12 @@ export namespace MyNS {
 		 * Last sync per item error count.
 		 * Minimum: 0
 		 */
-		lastSyncPerItemErrorCount: FormControl<number | null | undefined>,
+		lastSyncPerItemErrorCount: FormControl<string | null | undefined>,
 
-		/** Last sync result (HResult) */
+		/**
+		 * Last sync result (HResult)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastSyncResult: FormControl<number | null | undefined>,
 
 		/** Last sync success timestamp */
@@ -1556,22 +1586,22 @@ export namespace MyNS {
 		 * Count of persistent files not syncing.
 		 * Minimum: 0
 		 */
-		persistentFilesNotSyncingCount: FormControl<number | null | undefined>,
+		persistentFilesNotSyncingCount: FormControl<string | null | undefined>,
 
 		/**
 		 * Count of transient files not syncing.
 		 * Minimum: 0
 		 */
-		transientFilesNotSyncingCount: FormControl<number | null | undefined>,
+		transientFilesNotSyncingCount: FormControl<string | null | undefined>,
 	}
 	export function CreateServerEndpointSyncSessionStatusFormGroup() {
 		return new FormGroup<ServerEndpointSyncSessionStatusFormProperties>({
-			lastSyncPerItemErrorCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			lastSyncPerItemErrorCount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			lastSyncResult: new FormControl<number | null | undefined>(undefined),
 			lastSyncSuccessTimestamp: new FormControl<Date | null | undefined>(undefined),
 			lastSyncTimestamp: new FormControl<Date | null | undefined>(undefined),
-			persistentFilesNotSyncingCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			transientFilesNotSyncingCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			persistentFilesNotSyncingCount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			transientFilesNotSyncingCount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1580,45 +1610,51 @@ export namespace MyNS {
 	/** Files not syncing error object */
 	export interface ServerEndpointFilesNotSyncingError {
 
-		/** Error code (HResult) */
+		/**
+		 * Error code (HResult)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode?: number | null;
 
 		/**
 		 * Count of persistent files not syncing with the specified error code
 		 * Minimum: 0
 		 */
-		persistentCount?: number | null;
+		persistentCount?: string | null;
 
 		/**
 		 * Count of transient files not syncing with the specified error code
 		 * Minimum: 0
 		 */
-		transientCount?: number | null;
+		transientCount?: string | null;
 	}
 
 	/** Files not syncing error object */
 	export interface ServerEndpointFilesNotSyncingErrorFormProperties {
 
-		/** Error code (HResult) */
+		/**
+		 * Error code (HResult)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of persistent files not syncing with the specified error code
 		 * Minimum: 0
 		 */
-		persistentCount: FormControl<number | null | undefined>,
+		persistentCount: FormControl<string | null | undefined>,
 
 		/**
 		 * Count of transient files not syncing with the specified error code
 		 * Minimum: 0
 		 */
-		transientCount: FormControl<number | null | undefined>,
+		transientCount: FormControl<string | null | undefined>,
 	}
 	export function CreateServerEndpointFilesNotSyncingErrorFormGroup() {
 		return new FormGroup<ServerEndpointFilesNotSyncingErrorFormProperties>({
 			errorCode: new FormControl<number | null | undefined>(undefined),
-			persistentCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			transientCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			persistentCount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			transientCount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1886,7 +1922,10 @@ export namespace MyNS {
 	/** Storage Sync Service Properties object. */
 	export interface StorageSyncServiceProperties {
 
-		/** Storage Sync service status. */
+		/**
+		 * Storage Sync service status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		storageSyncServiceStatus?: number | null;
 
 		/** Storage Sync service Uid */
@@ -1896,7 +1935,10 @@ export namespace MyNS {
 	/** Storage Sync Service Properties object. */
 	export interface StorageSyncServicePropertiesFormProperties {
 
-		/** Storage Sync service status. */
+		/**
+		 * Storage Sync service status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		storageSyncServiceStatus: FormControl<number | null | undefined>,
 
 		/** Storage Sync service Uid */

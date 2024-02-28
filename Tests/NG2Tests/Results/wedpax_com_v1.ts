@@ -68,33 +68,46 @@ export namespace MyNS {
 	export interface AuthenticateResultModel {
 		accessToken?: string | null;
 		encryptedAccessToken?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expireInSeconds?: number | null;
 		roles?: Array<string>;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 	export interface AuthenticateResultModelFormProperties {
 		accessToken: FormControl<string | null | undefined>,
 		encryptedAccessToken: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expireInSeconds: FormControl<number | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateAuthenticateResultModelFormGroup() {
 		return new FormGroup<AuthenticateResultModelFormProperties>({
 			accessToken: new FormControl<string | null | undefined>(undefined),
 			encryptedAccessToken: new FormControl<string | null | undefined>(undefined),
 			expireInSeconds: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface BaseServices {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		capacity?: number | null;
 
 		/** Required */
 		category: ServiceCategory;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		categoryId: number;
 		creationTime?: Date | null;
 
@@ -104,7 +117,9 @@ export namespace MyNS {
 		 */
 		description: string;
 		geoDetails?: GeoDetails;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 
 		/** Required */
 		images: Array<ServiceImages>;
@@ -117,9 +132,14 @@ export namespace MyNS {
 		user: User;
 	}
 	export interface BaseServicesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		capacity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		categoryId: FormControl<number | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
 
@@ -128,7 +148,9 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		mainImage: FormControl<string | null | undefined>,
 		phone: FormControl<string | null | undefined>,
 		status: FormControl<boolean | null | undefined>,
@@ -140,7 +162,7 @@ export namespace MyNS {
 			categoryId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20)]),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			mainImage: new FormControl<string | null | undefined>(undefined),
 			phone: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<boolean | null | undefined>(undefined),
@@ -154,7 +176,11 @@ export namespace MyNS {
 		children?: Array<ServiceCategory>;
 		creationTime?: Date | null;
 		icon?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parentId?: number | null;
 
 		/** Required */
@@ -163,7 +189,11 @@ export namespace MyNS {
 	export interface ServiceCategoryFormProperties {
 		creationTime: FormControl<Date | null | undefined>,
 		icon: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parentId: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -187,13 +217,21 @@ export namespace MyNS {
 		country?: string | null;
 		creationTime?: Date | null;
 		district?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lng?: number | null;
 		locality?: string | null;
 		place?: string | null;
 		province?: string | null;
-		serviceId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		serviceId?: string | null;
 	}
 	export interface GeoDetailsFormProperties {
 		address: FormControl<string | null | undefined>,
@@ -201,13 +239,21 @@ export namespace MyNS {
 		country: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
 		district: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lng: FormControl<number | null | undefined>,
 		locality: FormControl<string | null | undefined>,
 		place: FormControl<string | null | undefined>,
 		province: FormControl<string | null | undefined>,
-		serviceId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		serviceId: FormControl<string | null | undefined>,
 	}
 	export function CreateGeoDetailsFormGroup() {
 		return new FormGroup<GeoDetailsFormProperties>({
@@ -216,13 +262,13 @@ export namespace MyNS {
 			country: new FormControl<string | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			district: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lat: new FormControl<number | null | undefined>(undefined),
 			lng: new FormControl<number | null | undefined>(undefined),
 			locality: new FormControl<string | null | undefined>(undefined),
 			place: new FormControl<string | null | undefined>(undefined),
 			province: new FormControl<string | null | undefined>(undefined),
-			serviceId: new FormControl<number | null | undefined>(undefined),
+			serviceId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -233,9 +279,13 @@ export namespace MyNS {
 		alt: string;
 		baseServices?: BaseServices;
 		creationTime?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		isMain?: boolean | null;
-		serviceId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		serviceId?: string | null;
 		state?: boolean | null;
 
 		/** Required */
@@ -252,9 +302,13 @@ export namespace MyNS {
 		/** Required */
 		alt: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		isMain: FormControl<boolean | null | undefined>,
-		serviceId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		serviceId: FormControl<string | null | undefined>,
 		state: FormControl<boolean | null | undefined>,
 
 		/** Required */
@@ -270,9 +324,9 @@ export namespace MyNS {
 		return new FormGroup<ServiceImagesFormProperties>({
 			alt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isMain: new FormControl<boolean | null | undefined>(undefined),
-			serviceId: new FormControl<number | null | undefined>(undefined),
+			serviceId: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<boolean | null | undefined>(undefined),
 			thumbUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -282,6 +336,8 @@ export namespace MyNS {
 	}
 
 	export interface User {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessFailedCount?: number | null;
 
 		/**
@@ -290,6 +346,8 @@ export namespace MyNS {
 		 */
 		authenticationSource?: string | null;
 		claims?: Array<UserClaim>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 
 		/**
@@ -299,9 +357,13 @@ export namespace MyNS {
 		concurrencyStamp?: string | null;
 		creationTime?: Date | null;
 		creatorUser?: User;
-		creatorUserId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		creatorUserId?: string | null;
 		deleterUser?: User;
-		deleterUserId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		deleterUserId?: string | null;
 		deletionTime?: Date | null;
 
 		/**
@@ -318,7 +380,9 @@ export namespace MyNS {
 		emailConfirmationCode?: string | null;
 		expireTime?: Date | null;
 		fullName?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		isActive?: boolean | null;
 		isDeleted?: boolean | null;
 		isEmailConfirmed?: boolean | null;
@@ -327,7 +391,9 @@ export namespace MyNS {
 		isTwoFactorEnabled?: boolean | null;
 		lastModificationTime?: Date | null;
 		lastModifierUser?: User;
-		lastModifierUserId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastModifierUserId?: string | null;
 		lockoutEndDateUtc?: Date | null;
 		logins?: Array<UserLogin>;
 
@@ -386,6 +452,8 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		surname: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId?: number | null;
 		tokens?: Array<UserToken>;
 
@@ -397,6 +465,8 @@ export namespace MyNS {
 		userName: string;
 	}
 	export interface UserFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accessFailedCount: FormControl<number | null | undefined>,
 
 		/**
@@ -404,6 +474,8 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		authenticationSource: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 
 		/**
@@ -412,8 +484,12 @@ export namespace MyNS {
 		 */
 		concurrencyStamp: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
-		creatorUserId: FormControl<number | null | undefined>,
-		deleterUserId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		creatorUserId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		deleterUserId: FormControl<string | null | undefined>,
 		deletionTime: FormControl<Date | null | undefined>,
 
 		/**
@@ -430,7 +506,9 @@ export namespace MyNS {
 		emailConfirmationCode: FormControl<string | null | undefined>,
 		expireTime: FormControl<Date | null | undefined>,
 		fullName: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 		isDeleted: FormControl<boolean | null | undefined>,
 		isEmailConfirmed: FormControl<boolean | null | undefined>,
@@ -438,7 +516,9 @@ export namespace MyNS {
 		isPhoneNumberConfirmed: FormControl<boolean | null | undefined>,
 		isTwoFactorEnabled: FormControl<boolean | null | undefined>,
 		lastModificationTime: FormControl<Date | null | undefined>,
-		lastModifierUserId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastModifierUserId: FormControl<string | null | undefined>,
 		lockoutEndDateUtc: FormControl<Date | null | undefined>,
 
 		/**
@@ -493,6 +573,8 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		surname: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId: FormControl<number | null | undefined>,
 
 		/**
@@ -509,14 +591,14 @@ export namespace MyNS {
 			code: new FormControl<number | null | undefined>(undefined),
 			concurrencyStamp: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128)]),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
-			creatorUserId: new FormControl<number | null | undefined>(undefined),
-			deleterUserId: new FormControl<number | null | undefined>(undefined),
+			creatorUserId: new FormControl<string | null | undefined>(undefined),
+			deleterUserId: new FormControl<string | null | undefined>(undefined),
 			deletionTime: new FormControl<Date | null | undefined>(undefined),
 			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 			emailConfirmationCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(328)]),
 			expireTime: new FormControl<Date | null | undefined>(undefined),
 			fullName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isActive: new FormControl<boolean | null | undefined>(undefined),
 			isDeleted: new FormControl<boolean | null | undefined>(undefined),
 			isEmailConfirmed: new FormControl<boolean | null | undefined>(undefined),
@@ -524,7 +606,7 @@ export namespace MyNS {
 			isPhoneNumberConfirmed: new FormControl<boolean | null | undefined>(undefined),
 			isTwoFactorEnabled: new FormControl<boolean | null | undefined>(undefined),
 			lastModificationTime: new FormControl<Date | null | undefined>(undefined),
-			lastModifierUserId: new FormControl<number | null | undefined>(undefined),
+			lastModifierUserId: new FormControl<string | null | undefined>(undefined),
 			lockoutEndDateUtc: new FormControl<Date | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(64)]),
 			normalizedEmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
@@ -549,10 +631,18 @@ export namespace MyNS {
 		claimType?: string | null;
 		claimValue?: string | null;
 		creationTime?: Date | null;
-		creatorUserId?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		creatorUserId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId?: number | null;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 	export interface UserClaimFormProperties {
 
@@ -563,26 +653,36 @@ export namespace MyNS {
 		claimType: FormControl<string | null | undefined>,
 		claimValue: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
-		creatorUserId: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		creatorUserId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId: FormControl<number | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateUserClaimFormGroup() {
 		return new FormGroup<UserClaimFormProperties>({
 			claimType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
 			claimValue: new FormControl<string | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
-			creatorUserId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			creatorUserId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			tenantId: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UserLogin {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 
 		/**
 		 * Required
@@ -597,11 +697,17 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		providerKey: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId?: number | null;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 	export interface UserLoginFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
@@ -616,24 +722,32 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		providerKey: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId: FormControl<number | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateUserLoginFormGroup() {
 		return new FormGroup<UserLoginFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			loginProvider: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(128)]),
 			providerKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 			tenantId: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UserPermissionSetting {
 		creationTime?: Date | null;
-		creatorUserId?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		creatorUserId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		isGranted?: boolean | null;
 
 		/**
@@ -642,13 +756,21 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId?: number | null;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 	export interface UserPermissionSettingFormProperties {
 		creationTime: FormControl<Date | null | undefined>,
-		creatorUserId: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		creatorUserId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		isGranted: FormControl<boolean | null | undefined>,
 
 		/**
@@ -657,56 +779,86 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId: FormControl<number | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateUserPermissionSettingFormGroup() {
 		return new FormGroup<UserPermissionSettingFormProperties>({
 			creationTime: new FormControl<Date | null | undefined>(undefined),
-			creatorUserId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			creatorUserId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isGranted: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(128)]),
 			tenantId: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UserRole {
 		creationTime?: Date | null;
-		creatorUserId?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		creatorUserId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		roleId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId?: number | null;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 	export interface UserRoleFormProperties {
 		creationTime: FormControl<Date | null | undefined>,
-		creatorUserId: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		creatorUserId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		roleId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId: FormControl<number | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateUserRoleFormGroup() {
 		return new FormGroup<UserRoleFormProperties>({
 			creationTime: new FormControl<Date | null | undefined>(undefined),
-			creatorUserId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			creatorUserId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			roleId: new FormControl<number | null | undefined>(undefined),
 			tenantId: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface Setting {
 		creationTime?: Date | null;
-		creatorUserId?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		creatorUserId?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastModificationTime?: Date | null;
-		lastModifierUserId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastModifierUserId?: string | null;
 
 		/**
 		 * Required
@@ -714,8 +866,12 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId?: number | null;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 
 		/**
 		 * Max length: 2000
@@ -725,10 +881,16 @@ export namespace MyNS {
 	}
 	export interface SettingFormProperties {
 		creationTime: FormControl<Date | null | undefined>,
-		creatorUserId: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		creatorUserId: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastModificationTime: FormControl<Date | null | undefined>,
-		lastModifierUserId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastModifierUserId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
@@ -736,8 +898,12 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId: FormControl<number | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2000
@@ -748,13 +914,13 @@ export namespace MyNS {
 	export function CreateSettingFormGroup() {
 		return new FormGroup<SettingFormProperties>({
 			creationTime: new FormControl<Date | null | undefined>(undefined),
-			creatorUserId: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			creatorUserId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastModificationTime: new FormControl<Date | null | undefined>(undefined),
-			lastModifierUserId: new FormControl<number | null | undefined>(undefined),
+			lastModifierUserId: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 			tenantId: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 			value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2000)]),
 		});
 
@@ -762,7 +928,9 @@ export namespace MyNS {
 
 	export interface UserToken {
 		expireDate?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 
 		/**
 		 * Max length: 128
@@ -775,8 +943,12 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId?: number | null;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 
 		/**
 		 * Max length: 512
@@ -786,7 +958,9 @@ export namespace MyNS {
 	}
 	export interface UserTokenFormProperties {
 		expireDate: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
@@ -799,8 +973,12 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId: FormControl<number | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 512
@@ -811,11 +989,11 @@ export namespace MyNS {
 	export function CreateUserTokenFormGroup() {
 		return new FormGroup<UserTokenFormProperties>({
 			expireDate: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			loginProvider: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128)]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128)]),
 			tenantId: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 			value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(512)]),
 		});
 
@@ -888,10 +1066,14 @@ export namespace MyNS {
 	}
 
 	export interface CityDto {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		title?: string | null;
 	}
 	export interface CityDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -905,7 +1087,10 @@ export namespace MyNS {
 
 	export interface ConfirmCodeDto {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: number;
 
 		/** Required */
@@ -913,7 +1098,10 @@ export namespace MyNS {
 	}
 	export interface ConfirmCodeDtoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1082,9 +1270,14 @@ export namespace MyNS {
 
 	export interface CreateWeddingVendorDto {
 		base64Images?: Array<ImageData>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		capacity?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		categoryId: number;
 
 		/**
@@ -1092,7 +1285,11 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		description: string;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lng?: number | null;
 		mainImage?: string | null;
 		phone?: string | null;
@@ -1104,12 +1301,19 @@ export namespace MyNS {
 		 * Min length: 3
 		 */
 		title: string;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 	export interface CreateWeddingVendorDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		capacity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		categoryId: FormControl<number | null | undefined>,
 
 		/**
@@ -1117,7 +1321,11 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		description: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lng: FormControl<number | null | undefined>,
 		mainImage: FormControl<string | null | undefined>,
 		phone: FormControl<string | null | undefined>,
@@ -1128,7 +1336,9 @@ export namespace MyNS {
 		 * Min length: 3
 		 */
 		title: FormControl<string | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateWeddingVendorDtoFormGroup() {
 		return new FormGroup<CreateWeddingVendorDtoFormProperties>({
@@ -1140,7 +1350,7 @@ export namespace MyNS {
 			mainImage: new FormControl<string | null | undefined>(undefined),
 			phone: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(60)]),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1217,12 +1427,16 @@ export namespace MyNS {
 	export interface ExternalAuthenticateResultModel {
 		accessToken?: string | null;
 		encryptedAccessToken?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expireInSeconds?: number | null;
 		waitingForActivation?: boolean | null;
 	}
 	export interface ExternalAuthenticateResultModelFormProperties {
 		accessToken: FormControl<string | null | undefined>,
 		encryptedAccessToken: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expireInSeconds: FormControl<number | null | undefined>,
 		waitingForActivation: FormControl<boolean | null | undefined>,
 	}
@@ -1273,38 +1487,56 @@ export namespace MyNS {
 
 	export interface GeoDetailsCreateDto {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lat: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lng: number;
 
 		/** Required */
 		phone: string;
 
-		/** Required */
-		serviceId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		serviceId: string;
 	}
 	export interface GeoDetailsCreateDtoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lng: FormControl<number | null | undefined>,
 
 		/** Required */
 		phone: FormControl<string | null | undefined>,
 
-		/** Required */
-		serviceId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		serviceId: FormControl<string | null | undefined>,
 	}
 	export function CreateGeoDetailsCreateDtoFormGroup() {
 		return new FormGroup<GeoDetailsCreateDtoFormProperties>({
 			lat: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			lng: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			phone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			serviceId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			serviceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1315,7 +1547,9 @@ export namespace MyNS {
 		city?: string | null;
 		country?: string | null;
 		district?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface GeoDetailsDtoFormProperties {
 		address: FormControl<string | null | undefined>,
@@ -1323,7 +1557,9 @@ export namespace MyNS {
 		city: FormControl<string | null | undefined>,
 		country: FormControl<string | null | undefined>,
 		district: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateGeoDetailsDtoFormGroup() {
 		return new FormGroup<GeoDetailsDtoFormProperties>({
@@ -1332,48 +1568,70 @@ export namespace MyNS {
 			city: new FormControl<string | null | undefined>(undefined),
 			country: new FormControl<string | null | undefined>(undefined),
 			district: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GeoDetailsUpdateDto {
-		id?: number | null;
 
-		/** Required */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lat: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lng: number;
 
 		/** Required */
 		phone: string;
 
-		/** Required */
-		serviceId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		serviceId: string;
 	}
 	export interface GeoDetailsUpdateDtoFormProperties {
-		id: FormControl<number | null | undefined>,
 
-		/** Required */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		lng: FormControl<number | null | undefined>,
 
 		/** Required */
 		phone: FormControl<string | null | undefined>,
 
-		/** Required */
-		serviceId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		serviceId: FormControl<string | null | undefined>,
 	}
 	export function CreateGeoDetailsUpdateDtoFormGroup() {
 		return new FormGroup<GeoDetailsUpdateDtoFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lat: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			lng: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			phone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			serviceId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			serviceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1392,11 +1650,15 @@ export namespace MyNS {
 	}
 
 	export interface TenantLoginInfoDto {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		tenancyName?: string | null;
 	}
 	export interface TenantLoginInfoDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		tenancyName: FormControl<string | null | undefined>,
@@ -1412,14 +1674,18 @@ export namespace MyNS {
 
 	export interface UserLoginInfoDto {
 		emailAddress?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		surname?: string | null;
 		userName?: string | null;
 	}
 	export interface UserLoginInfoDtoFormProperties {
 		emailAddress: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		surname: FormControl<string | null | undefined>,
 		userName: FormControl<string | null | undefined>,
@@ -1427,7 +1693,7 @@ export namespace MyNS {
 	export function CreateUserLoginInfoDtoFormGroup() {
 		return new FormGroup<UserLoginInfoDtoFormProperties>({
 			emailAddress: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			surname: new FormControl<string | null | undefined>(undefined),
 			userName: new FormControl<string | null | undefined>(undefined),
@@ -1462,6 +1728,8 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		displayName: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isStatic?: boolean | null;
 
@@ -1486,6 +1754,8 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		displayName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isStatic: FormControl<boolean | null | undefined>,
 
@@ -1534,10 +1804,14 @@ export namespace MyNS {
 
 	export interface IsTenantAvailableOutput {
 		state?: IsTenantAvailableOutputState;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId?: number | null;
 	}
 	export interface IsTenantAvailableOutputFormProperties {
 		state: FormControl<IsTenantAvailableOutputState | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tenantId: FormControl<number | null | undefined>,
 	}
 	export function CreateIsTenantAvailableOutputFormGroup() {
@@ -1564,20 +1838,24 @@ export namespace MyNS {
 	export interface PermissionDto {
 		description?: string | null;
 		displayName?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 	}
 	export interface PermissionDtoFormProperties {
 		description: FormControl<string | null | undefined>,
 		displayName: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreatePermissionDtoFormGroup() {
 		return new FormGroup<PermissionDtoFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
 			displayName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1609,6 +1887,8 @@ export namespace MyNS {
 		 */
 		displayName: string;
 		grantedPermissions?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/**
@@ -1633,6 +1913,8 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		displayName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -1668,6 +1950,8 @@ export namespace MyNS {
 	export interface RoleListDto {
 		creationTime?: Date | null;
 		displayName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isDefault?: boolean | null;
 		isStatic?: boolean | null;
@@ -1676,6 +1960,8 @@ export namespace MyNS {
 	export interface RoleListDtoFormProperties {
 		creationTime: FormControl<Date | null | undefined>,
 		displayName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isDefault: FormControl<boolean | null | undefined>,
 		isStatic: FormControl<boolean | null | undefined>,
@@ -1723,9 +2009,13 @@ export namespace MyNS {
 
 	export interface PagedResultDto_GeoDetailsDto {
 		items?: Array<GeoDetailsDto>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PagedResultDto_GeoDetailsDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePagedResultDto_GeoDetailsDtoFormGroup() {
@@ -1737,9 +2027,13 @@ export namespace MyNS {
 
 	export interface PagedResultDto_RoleDto {
 		items?: Array<RoleDto>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PagedResultDto_RoleDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePagedResultDto_RoleDtoFormGroup() {
@@ -1751,9 +2045,13 @@ export namespace MyNS {
 
 	export interface PagedResultDto_ServiceCategoryDto {
 		items?: Array<ServiceCategoryDto>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PagedResultDto_ServiceCategoryDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePagedResultDto_ServiceCategoryDtoFormGroup() {
@@ -1766,7 +2064,11 @@ export namespace MyNS {
 	export interface ServiceCategoryDto {
 		children?: Array<ServiceCategoryDto>;
 		icon?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parentId?: number | null;
 
 		/** Required */
@@ -1774,7 +2076,11 @@ export namespace MyNS {
 	}
 	export interface ServiceCategoryDtoFormProperties {
 		icon: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parentId: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1792,9 +2098,13 @@ export namespace MyNS {
 
 	export interface PagedResultDto_ServiceFacilityDto {
 		items?: Array<ServiceFacilityDto>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PagedResultDto_ServiceFacilityDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePagedResultDto_ServiceFacilityDtoFormGroup() {
@@ -1806,11 +2116,15 @@ export namespace MyNS {
 
 	export interface ServiceFacilityDto {
 		icon?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		title?: string | null;
 	}
 	export interface ServiceFacilityDtoFormProperties {
 		icon: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -1825,9 +2139,13 @@ export namespace MyNS {
 
 	export interface PagedResultDto_TenantDto {
 		items?: Array<TenantDto>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PagedResultDto_TenantDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePagedResultDto_TenantDtoFormGroup() {
@@ -1838,6 +2156,8 @@ export namespace MyNS {
 	}
 
 	export interface TenantDto {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isActive?: boolean | null;
 
@@ -1856,6 +2176,8 @@ export namespace MyNS {
 		tenancyName: string;
 	}
 	export interface TenantDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 
@@ -1885,9 +2207,13 @@ export namespace MyNS {
 
 	export interface PagedResultDto_UserDto {
 		items?: Array<UserDto>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PagedResultDto_UserDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePagedResultDto_UserDtoFormGroup() {
@@ -1898,6 +2224,8 @@ export namespace MyNS {
 	}
 
 	export interface UserDto {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		creationTime?: Date | null;
 
@@ -1909,7 +2237,9 @@ export namespace MyNS {
 		emailAddress: string;
 		expireTime?: Date | null;
 		fullName?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		isActive?: boolean | null;
 		isExist?: boolean | null;
 		lastLoginTime?: Date | null;
@@ -1937,6 +2267,8 @@ export namespace MyNS {
 		userName: string;
 	}
 	export interface UserDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
 
@@ -1948,7 +2280,9 @@ export namespace MyNS {
 		emailAddress: FormControl<string | null | undefined>,
 		expireTime: FormControl<Date | null | undefined>,
 		fullName: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 		isExist: FormControl<boolean | null | undefined>,
 		lastLoginTime: FormControl<Date | null | undefined>,
@@ -1981,7 +2315,7 @@ export namespace MyNS {
 			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 			expireTime: new FormControl<Date | null | undefined>(undefined),
 			fullName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isActive: new FormControl<boolean | null | undefined>(undefined),
 			isExist: new FormControl<boolean | null | undefined>(undefined),
 			lastLoginTime: new FormControl<Date | null | undefined>(undefined),
@@ -1994,9 +2328,13 @@ export namespace MyNS {
 
 	export interface PagedResultDto_WeddingVendorDto {
 		items?: Array<WeddingVendorDto>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PagedResultDto_WeddingVendorDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePagedResultDto_WeddingVendorDtoFormGroup() {
@@ -2007,19 +2345,27 @@ export namespace MyNS {
 	}
 
 	export interface WeddingVendorDto {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		categoryId?: number | null;
 		creationTime?: Date | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		mainImage?: string | null;
 		title?: string | null;
 		userDto?: UserDto;
 	}
 	export interface WeddingVendorDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		categoryId: FormControl<number | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		mainImage: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -2028,7 +2374,7 @@ export namespace MyNS {
 			categoryId: new FormControl<number | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			mainImage: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2037,25 +2383,33 @@ export namespace MyNS {
 
 	export interface ProhibitPermissionInput {
 		permissionName?: string | null;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 	export interface ProhibitPermissionInputFormProperties {
 		permissionName: FormControl<string | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateProhibitPermissionInputFormGroup() {
 		return new FormGroup<ProhibitPermissionInputFormProperties>({
 			permissionName: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ProvinceDto {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		title?: string | null;
 	}
 	export interface ProvinceDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -2113,8 +2467,11 @@ export namespace MyNS {
 		/** Required */
 		newPassword: string;
 
-		/** Required */
-		userId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userId: string;
 	}
 	export interface ResetPasswordDtoFormProperties {
 
@@ -2124,14 +2481,17 @@ export namespace MyNS {
 		/** Required */
 		newPassword: FormControl<string | null | undefined>,
 
-		/** Required */
-		userId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateResetPasswordDtoFormGroup() {
 		return new FormGroup<ResetPasswordDtoFormProperties>({
 			adminPassword: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			newPassword: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			userId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2139,8 +2499,12 @@ export namespace MyNS {
 	export interface ServiceCategoryUpdateDto {
 		children?: Array<ServiceCategoryDto>;
 		icon?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		parent?: ServiceCategoryDto;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parentId?: number | null;
 
 		/** Required */
@@ -2148,7 +2512,11 @@ export namespace MyNS {
 	}
 	export interface ServiceCategoryUpdateDtoFormProperties {
 		icon: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parentId: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2166,8 +2534,12 @@ export namespace MyNS {
 
 	export interface ServiceCategroyCreateDto {
 		icon?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		parent?: ServiceCategoryDto;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parentId?: number | null;
 
 		/** Required */
@@ -2175,7 +2547,11 @@ export namespace MyNS {
 	}
 	export interface ServiceCategroyCreateDtoFormProperties {
 		icon: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parentId: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2213,11 +2589,15 @@ export namespace MyNS {
 
 	export interface ServiceFacilityUpdateDto {
 		icon?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		title?: string | null;
 	}
 	export interface ServiceFacilityUpdateDtoFormProperties {
 		icon: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -2232,19 +2612,31 @@ export namespace MyNS {
 
 	export interface ServiceListModel {
 		address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		capacity?: number | null;
 		facilityDtos?: Array<ServiceFacilityDto>;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		images?: Array<string>;
 		priceType?: ServiceListModelPriceType;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rate?: number | null;
 		title?: string | null;
 	}
 	export interface ServiceListModelFormProperties {
 		address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		capacity: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		priceType: FormControl<ServiceListModelPriceType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rate: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -2252,7 +2644,7 @@ export namespace MyNS {
 		return new FormGroup<ServiceListModelFormProperties>({
 			address: new FormControl<string | null | undefined>(undefined),
 			capacity: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			priceType: new FormControl<ServiceListModelPriceType | null | undefined>(undefined),
 			rate: new FormControl<number | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
@@ -2264,9 +2656,14 @@ export namespace MyNS {
 
 	export interface UpdateWeddingVendorDto {
 		base64Images?: Array<ImageData>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		capacity?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		categoryId: number;
 
 		/**
@@ -2275,8 +2672,14 @@ export namespace MyNS {
 		 */
 		description: string;
 		facilityDtos?: Array<ServiceFacilityDto>;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lng?: number | null;
 		mainImage?: string | null;
 		phone?: string | null;
@@ -2287,12 +2690,19 @@ export namespace MyNS {
 		 * Min length: 3
 		 */
 		title: string;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 	export interface UpdateWeddingVendorDtoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		capacity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		categoryId: FormControl<number | null | undefined>,
 
 		/**
@@ -2300,8 +2710,14 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lng: FormControl<number | null | undefined>,
 		mainImage: FormControl<string | null | undefined>,
 		phone: FormControl<string | null | undefined>,
@@ -2312,40 +2728,46 @@ export namespace MyNS {
 		 * Min length: 3
 		 */
 		title: FormControl<string | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateWeddingVendorDtoFormGroup() {
 		return new FormGroup<UpdateWeddingVendorDtoFormProperties>({
 			capacity: new FormControl<number | null | undefined>(undefined),
 			categoryId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20)]),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lat: new FormControl<number | null | undefined>(undefined),
 			lng: new FormControl<number | null | undefined>(undefined),
 			mainImage: new FormControl<string | null | undefined>(undefined),
 			phone: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(60)]),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UserServicesDto {
 		mainImage?: string | null;
-		serviceId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		serviceId?: string | null;
 		status?: boolean | null;
 		title?: string | null;
 	}
 	export interface UserServicesDtoFormProperties {
 		mainImage: FormControl<string | null | undefined>,
-		serviceId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		serviceId: FormControl<string | null | undefined>,
 		status: FormControl<boolean | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
 	export function CreateUserServicesDtoFormGroup() {
 		return new FormGroup<UserServicesDtoFormProperties>({
 			mainImage: new FormControl<string | null | undefined>(undefined),
-			serviceId: new FormControl<number | null | undefined>(undefined),
+			serviceId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<boolean | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2359,6 +2781,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/ServiceQuery/Get
+		 * @param {number} CurrentPage Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} PageSize Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagedResultDto_WeddingVendorDto} Success
 		 */
 		ApiServiceQueryGetGetByCurrentPageAndPageSizeAndSorting_PropertyNameAndSorting_OrderByDescending(CurrentPage: number | null | undefined, PageSize: number | null | undefined, Sorting_PropertyName: string | null | undefined, Sorting_OrderByDescending: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_WeddingVendorDto> {
@@ -2367,6 +2791,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/ServiceQuery/Search
+		 * @param {number} CatgoryId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} PageNumber Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ServiceListModel>} Success
 		 */
 		ApiServiceQuerySearchGetByCityAndCatgoryIdAndPageNumber(City: string | null | undefined, CatgoryId: number | null | undefined, PageNumber: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ServiceListModel>> {
@@ -2375,17 +2801,19 @@ export namespace MyNS {
 
 		/**
 		 * Get api/ServiceQuery/UserService
+		 * @param {string} serviceId Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UpdateWeddingVendorDto} Success
 		 */
-		ApiServiceQueryUserServiceGetByServiceId(serviceId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<UpdateWeddingVendorDto> {
+		ApiServiceQueryUserServiceGetByServiceId(serviceId: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<UpdateWeddingVendorDto> {
 			return this.http.get<UpdateWeddingVendorDto>(this.baseUri + 'api/ServiceQuery/UserService?serviceId=' + serviceId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Get api/ServiceQuery/UserServices
+		 * @param {string} userId Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<UserServicesDto>} Success
 		 */
-		ApiServiceQueryUserServicesGetByUserId(userId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<UserServicesDto>> {
+		ApiServiceQueryUserServicesGetByUserId(userId: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<UserServicesDto>> {
 			return this.http.get<Array<UserServicesDto>>(this.baseUri + 'api/ServiceQuery/UserServices?userId=' + userId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2455,22 +2883,26 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/services/app/AddressServices/Delete
+		 * @param {string} Id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Success
 		 */
-		ApiServicesAppAddressServicesDeleteDeleteById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ApiServicesAppAddressServicesDeleteDeleteById(Id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'api/services/app/AddressServices/Delete?Id=' + Id, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Get api/services/app/AddressServices/Get
+		 * @param {string} Id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {GeoDetailsDto} Success
 		 */
-		ApiServicesAppAddressServicesGetGetById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<GeoDetailsDto> {
+		ApiServicesAppAddressServicesGetGetById(Id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<GeoDetailsDto> {
 			return this.http.get<GeoDetailsDto>(this.baseUri + 'api/services/app/AddressServices/Get?Id=' + Id, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Get api/services/app/AddressServices/GetAll
+		 * @param {number} SkipCount Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} MaxResultCount Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagedResultDto_GeoDetailsDto} Success
 		 */
 		ApiServicesAppAddressServicesGetAllGetBySortingAndSkipCountAndMaxResultCount(Sorting: string | null | undefined, SkipCount: number | null | undefined, MaxResultCount: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_GeoDetailsDto> {
@@ -2479,6 +2911,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/AddressServices/GetCities
+		 * @param {number} provinceId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<CityDto>} Success
 		 */
 		ApiServicesAppAddressServicesGetCitiesGetByProvinceId(provinceId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<CityDto>> {
@@ -2511,6 +2944,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/services/app/CategoryService/Delete
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiServicesAppCategoryServiceDeleteDeleteById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2519,6 +2953,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/CategoryService/Get
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ServiceCategoryDto} Success
 		 */
 		ApiServicesAppCategoryServiceGetGetById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ServiceCategoryDto> {
@@ -2527,6 +2962,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/CategoryService/GetAll
+		 * @param {number} TotalCount Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagedResultDto_ServiceCategoryDto} Success
 		 */
 		ApiServicesAppCategoryServiceGetAllGetByTotalCountAndItems(TotalCount: number | null | undefined, Items: Array<string> | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_ServiceCategoryDto> {
@@ -2535,6 +2971,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/CategoryService/GetById
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ServiceCategory} Success
 		 */
 		ApiServicesAppCategoryServiceGetByIdGetById(id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ServiceCategory> {
@@ -2583,6 +3020,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/services/app/Role/Delete
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiServicesAppRoleDeleteDeleteById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2591,6 +3029,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/Role/Get
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RoleDto} Success
 		 */
 		ApiServicesAppRoleGetGetById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<RoleDto> {
@@ -2599,6 +3038,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/Role/GetAll
+		 * @param {number} SkipCount Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} MaxResultCount Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagedResultDto_RoleDto} Success
 		 */
 		ApiServicesAppRoleGetAllGetByKeywordAndSkipCountAndMaxResultCount(Keyword: string | null | undefined, SkipCount: number | null | undefined, MaxResultCount: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_RoleDto> {
@@ -2615,6 +3056,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/Role/GetRoleForEdit
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetRoleForEditOutput} Success
 		 */
 		ApiServicesAppRoleGetRoleForEditGetById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<GetRoleForEditOutput> {
@@ -2647,6 +3089,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/services/app/ServiceFacilityService/Delete
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiServicesAppServiceFacilityServiceDeleteDeleteById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2655,6 +3098,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/ServiceFacilityService/Get
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ServiceFacilityDto} Success
 		 */
 		ApiServicesAppServiceFacilityServiceGetGetById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ServiceFacilityDto> {
@@ -2711,6 +3155,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/services/app/Tenant/Delete
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiServicesAppTenantDeleteDeleteById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2719,6 +3164,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/Tenant/Get
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TenantDto} Success
 		 */
 		ApiServicesAppTenantGetGetById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<TenantDto> {
@@ -2727,6 +3173,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/Tenant/GetAll
+		 * @param {number} SkipCount Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} MaxResultCount Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagedResultDto_TenantDto} Success
 		 */
 		ApiServicesAppTenantGetAllGetByKeywordAndIsActiveAndSkipCountAndMaxResultCount(Keyword: string | null | undefined, IsActive: boolean | null | undefined, SkipCount: number | null | undefined, MaxResultCount: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_TenantDto> {
@@ -2783,22 +3231,26 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/services/app/User/Delete
+		 * @param {string} Id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Success
 		 */
-		ApiServicesAppUserDeleteDeleteById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ApiServicesAppUserDeleteDeleteById(Id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'api/services/app/User/Delete?Id=' + Id, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Get api/services/app/User/Get
+		 * @param {string} Id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserDto} Success
 		 */
-		ApiServicesAppUserGetGetById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<UserDto> {
+		ApiServicesAppUserGetGetById(Id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<UserDto> {
 			return this.http.get<UserDto>(this.baseUri + 'api/services/app/User/Get?Id=' + Id, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Get api/services/app/User/GetAll
+		 * @param {number} SkipCount Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} MaxResultCount Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagedResultDto_UserDto} Success
 		 */
 		ApiServicesAppUserGetAllGetByKeywordAndIsActiveAndSkipCountAndMaxResultCount(Keyword: string | null | undefined, IsActive: boolean | null | undefined, SkipCount: number | null | undefined, MaxResultCount: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_UserDto> {
@@ -2815,9 +3267,10 @@ export namespace MyNS {
 
 		/**
 		 * Get api/services/app/User/GetToEntity
+		 * @param {string} userId Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {User} Success
 		 */
-		ApiServicesAppUserGetToEntityGetByUserId(userId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<User> {
+		ApiServicesAppUserGetToEntityGetByUserId(userId: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<User> {
 			return this.http.get<User>(this.baseUri + 'api/services/app/User/GetToEntity?userId=' + userId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2855,22 +3308,26 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/services/app/WeddingVendorServices/Delete
+		 * @param {string} Id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Success
 		 */
-		ApiServicesAppWeddingVendorServicesDeleteDeleteById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ApiServicesAppWeddingVendorServicesDeleteDeleteById(Id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'api/services/app/WeddingVendorServices/Delete?Id=' + Id, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Get api/services/app/WeddingVendorServices/Get
+		 * @param {string} Id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {WeddingVendorDto} Success
 		 */
-		ApiServicesAppWeddingVendorServicesGetGetById(Id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<WeddingVendorDto> {
+		ApiServicesAppWeddingVendorServicesGetGetById(Id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<WeddingVendorDto> {
 			return this.http.get<WeddingVendorDto>(this.baseUri + 'api/services/app/WeddingVendorServices/Get?Id=' + Id, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Get api/services/app/WeddingVendorServices/GetAll
+		 * @param {number} SkipCount Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} MaxResultCount Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagedResultDto_WeddingVendorDto} Success
 		 */
 		ApiServicesAppWeddingVendorServicesGetAllGetBySortingAndSkipCountAndMaxResultCount(Sorting: string | null | undefined, SkipCount: number | null | undefined, MaxResultCount: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<PagedResultDto_WeddingVendorDto> {

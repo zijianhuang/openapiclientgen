@@ -60,10 +60,16 @@ export namespace MyNS {
 	/** The properties that represent the Azure Function destination of an event subscription. */
 	export interface AzureFunctionEventSubscriptionDestinationProperties {
 
-		/** Maximum number of events per batch. */
+		/**
+		 * Maximum number of events per batch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxEventsPerBatch?: number | null;
 
-		/** Preferred batch size in Kilobytes. */
+		/**
+		 * Preferred batch size in Kilobytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preferredBatchSizeInKilobytes?: number | null;
 
 		/** The Azure Resource Id that represents the endpoint of the Azure Function destination of an event subscription. */
@@ -73,10 +79,16 @@ export namespace MyNS {
 	/** The properties that represent the Azure Function destination of an event subscription. */
 	export interface AzureFunctionEventSubscriptionDestinationPropertiesFormProperties {
 
-		/** Maximum number of events per batch. */
+		/**
+		 * Maximum number of events per batch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxEventsPerBatch: FormControl<number | null | undefined>,
 
-		/** Preferred batch size in Kilobytes. */
+		/**
+		 * Preferred batch size in Kilobytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preferredBatchSizeInKilobytes: FormControl<number | null | undefined>,
 
 		/** The Azure Resource Id that represents the endpoint of the Azure Function destination of an event subscription. */
@@ -654,20 +666,32 @@ export namespace MyNS {
 	/** Information about the retry policy for an event subscription. */
 	export interface RetryPolicy {
 
-		/** Time To Live (in minutes) for events. */
+		/**
+		 * Time To Live (in minutes) for events.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventTimeToLiveInMinutes?: number | null;
 
-		/** Maximum number of delivery retry attempts for events. */
+		/**
+		 * Maximum number of delivery retry attempts for events.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeliveryAttempts?: number | null;
 	}
 
 	/** Information about the retry policy for an event subscription. */
 	export interface RetryPolicyFormProperties {
 
-		/** Time To Live (in minutes) for events. */
+		/**
+		 * Time To Live (in minutes) for events.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventTimeToLiveInMinutes: FormControl<number | null | undefined>,
 
-		/** Maximum number of delivery retry attempts for events. */
+		/**
+		 * Maximum number of delivery retry attempts for events.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeliveryAttempts: FormControl<number | null | undefined>,
 	}
 	export function CreateRetryPolicyFormGroup() {
@@ -1007,14 +1031,20 @@ export namespace MyNS {
 	/** NumberGreaterThan Advanced Filter. */
 	export interface NumberGreaterThanAdvancedFilter {
 
-		/** The filter value. */
+		/**
+		 * The filter value.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
 	/** NumberGreaterThan Advanced Filter. */
 	export interface NumberGreaterThanAdvancedFilterFormProperties {
 
-		/** The filter value. */
+		/**
+		 * The filter value.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateNumberGreaterThanAdvancedFilterFormGroup() {
@@ -1028,14 +1058,20 @@ export namespace MyNS {
 	/** NumberGreaterThanOrEquals Advanced Filter. */
 	export interface NumberGreaterThanOrEqualsAdvancedFilter {
 
-		/** The filter value. */
+		/**
+		 * The filter value.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
 	/** NumberGreaterThanOrEquals Advanced Filter. */
 	export interface NumberGreaterThanOrEqualsAdvancedFilterFormProperties {
 
-		/** The filter value. */
+		/**
+		 * The filter value.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateNumberGreaterThanOrEqualsAdvancedFilterFormGroup() {
@@ -1066,14 +1102,20 @@ export namespace MyNS {
 	/** NumberLessThan Advanced Filter. */
 	export interface NumberLessThanAdvancedFilter {
 
-		/** The filter value. */
+		/**
+		 * The filter value.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
 	/** NumberLessThan Advanced Filter. */
 	export interface NumberLessThanAdvancedFilterFormProperties {
 
-		/** The filter value. */
+		/**
+		 * The filter value.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateNumberLessThanAdvancedFilterFormGroup() {
@@ -1087,14 +1129,20 @@ export namespace MyNS {
 	/** NumberLessThanOrEquals Advanced Filter. */
 	export interface NumberLessThanOrEqualsAdvancedFilter {
 
-		/** The filter value. */
+		/**
+		 * The filter value.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
 	/** NumberLessThanOrEquals Advanced Filter. */
 	export interface NumberLessThanOrEqualsAdvancedFilterFormProperties {
 
-		/** The filter value. */
+		/**
+		 * The filter value.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateNumberLessThanOrEqualsAdvancedFilterFormGroup() {
@@ -1848,10 +1896,16 @@ export namespace MyNS {
 		/** The URL that represents the endpoint of the destination of an event subscription. */
 		endpointUrl?: string | null;
 
-		/** Maximum number of events per batch. */
+		/**
+		 * Maximum number of events per batch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxEventsPerBatch?: number | null;
 
-		/** Preferred batch size in Kilobytes. */
+		/**
+		 * Preferred batch size in Kilobytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preferredBatchSizeInKilobytes?: number | null;
 	}
 
@@ -1870,10 +1924,16 @@ export namespace MyNS {
 		/** The URL that represents the endpoint of the destination of an event subscription. */
 		endpointUrl: FormControl<string | null | undefined>,
 
-		/** Maximum number of events per batch. */
+		/**
+		 * Maximum number of events per batch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxEventsPerBatch: FormControl<number | null | undefined>,
 
-		/** Preferred batch size in Kilobytes. */
+		/**
+		 * Preferred batch size in Kilobytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preferredBatchSizeInKilobytes: FormControl<number | null | undefined>,
 	}
 	export function CreateWebHookEventSubscriptionDestinationPropertiesFormGroup() {

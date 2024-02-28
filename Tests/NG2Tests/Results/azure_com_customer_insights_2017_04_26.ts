@@ -170,7 +170,10 @@ export namespace MyNS {
 	/** Definition of canonical profile. */
 	export interface CanonicalProfileDefinition {
 
-		/** Canonical profile ID. */
+		/**
+		 * Canonical profile ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		canonicalProfileId?: number | null;
 
 		/** Properties of the canonical profile. */
@@ -180,7 +183,10 @@ export namespace MyNS {
 	/** Definition of canonical profile. */
 	export interface CanonicalProfileDefinitionFormProperties {
 
-		/** Canonical profile ID. */
+		/**
+		 * Canonical profile ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		canonicalProfileId: FormControl<number | null | undefined>,
 	}
 	export function CreateCanonicalProfileDefinitionFormGroup() {
@@ -198,7 +204,10 @@ export namespace MyNS {
 		/** Property name of profile. */
 		profilePropertyName?: string | null;
 
-		/** The rank. */
+		/**
+		 * The rank.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rank?: number | null;
 
 		/** Type of canonical property value. */
@@ -215,7 +224,10 @@ export namespace MyNS {
 		/** Property name of profile. */
 		profilePropertyName: FormControl<string | null | undefined>,
 
-		/** The rank. */
+		/**
+		 * The rank.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rank: FormControl<number | null | undefined>,
 
 		/** Type of canonical property value. */
@@ -241,7 +253,10 @@ export namespace MyNS {
 	/** Properties of connector. */
 	export interface Connector {
 
-		/** ID of the connector. */
+		/**
+		 * ID of the connector.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectorId?: number | null;
 
 		/** Name of the connector. */
@@ -284,7 +299,10 @@ export namespace MyNS {
 	/** Properties of connector. */
 	export interface ConnectorFormProperties {
 
-		/** ID of the connector. */
+		/**
+		 * ID of the connector.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectorId: FormControl<number | null | undefined>,
 
 		/** Name of the connector. */
@@ -532,6 +550,7 @@ export namespace MyNS {
 		/**
 		 * The interval of the given frequency to use.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: number;
 	}
@@ -545,6 +564,7 @@ export namespace MyNS {
 		/**
 		 * The interval of the given frequency to use.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interval: FormControl<number | null | undefined>,
 	}
@@ -592,7 +612,10 @@ export namespace MyNS {
 	/** The error management. */
 	export interface ConnectorMappingErrorManagement {
 
-		/** The error limit allowed while importing data. */
+		/**
+		 * The error limit allowed while importing data.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorLimit?: number | null;
 
 		/**
@@ -605,7 +628,10 @@ export namespace MyNS {
 	/** The error management. */
 	export interface ConnectorMappingErrorManagementFormProperties {
 
-		/** The error limit allowed while importing data. */
+		/**
+		 * The error limit allowed while importing data.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorLimit: FormControl<number | null | undefined>,
 
 		/**
@@ -966,7 +992,10 @@ export namespace MyNS {
 		/** The data source type. */
 		dataSourceType?: DataSourceDataSourceType | null;
 
-		/** The data source ID. */
+		/**
+		 * The data source ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The data source name */
@@ -985,7 +1014,10 @@ export namespace MyNS {
 		/** The data source type. */
 		dataSourceType: FormControl<DataSourceDataSourceType | null | undefined>,
 
-		/** The data source ID. */
+		/**
+		 * The data source ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The data source name */
@@ -1016,14 +1048,20 @@ export namespace MyNS {
 		/** Data Source is a way for us to know the source of instances. A single type can have data coming in from multiple places. In activities we use this to determine precedence rules. */
 		dataSource?: DataSource;
 
-		/** the precedence value. */
+		/**
+		 * the precedence value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precedence?: number | null;
 	}
 
 	/** The data source precedence is a way to know the precedence of each data source. */
 	export interface DataSourcePrecedenceFormProperties {
 
-		/** the precedence value. */
+		/**
+		 * the precedence value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precedence: FormControl<number | null | undefined>,
 	}
 	export function CreateDataSourcePrecedenceFormGroup() {
@@ -1060,7 +1098,10 @@ export namespace MyNS {
 		/** The properties of the Profile. */
 		fields?: Array<PropertyDefinition>;
 
-		/** The instance count. */
+		/**
+		 * The instance count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instancesCount?: number | null;
 
 		/** The last changed time for the type definition. */
@@ -1091,7 +1132,10 @@ export namespace MyNS {
 		/** Type of entity. */
 		entityType: FormControl<ConnectorMappingEntityType | null | undefined>,
 
-		/** The instance count. */
+		/**
+		 * The instance count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instancesCount: FormControl<number | null | undefined>,
 
 		/** The last changed time for the type definition. */
@@ -1183,7 +1227,10 @@ export namespace MyNS {
 		/** Whether property value is required on instances, IsRequired field only for Interaction. Profile Instance will not check for required field. */
 		isRequired?: boolean | null;
 
-		/** Max length of string. Used only if type is string. */
+		/**
+		 * Max length of string. Used only if type is string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength?: number | null;
 
 		/** The ID associated with the property. */
@@ -1235,7 +1282,10 @@ export namespace MyNS {
 		/** Whether property value is required on instances, IsRequired field only for Interaction. Profile Instance will not check for required field. */
 		isRequired: FormControl<boolean | null | undefined>,
 
-		/** Max length of string. Used only if type is string. */
+		/**
+		 * Max length of string. Used only if type is string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLength: FormControl<number | null | undefined>,
 
 		/** The ID associated with the property. */
@@ -1271,7 +1321,10 @@ export namespace MyNS {
 		/** Localized names of the enum member. */
 		localizedValueNames?: {[id: string]: string };
 
-		/** The integer value of the enum member. */
+		/**
+		 * The integer value of the enum member.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 
@@ -1281,7 +1334,10 @@ export namespace MyNS {
 		/** Localized names of the enum member. */
 		localizedValueNames: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** The integer value of the enum member. */
+		/**
+		 * The integer value of the enum member.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateProfileEnumValidValuesFormatFormGroup() {
@@ -1439,7 +1495,10 @@ export namespace MyNS {
 		/** Provisioning state of the hub. */
 		provisioningState?: string | null;
 
-		/** The bit flags for enabled hub features. Bit 0 is set to 1 indicates graph is enabled, or disabled if set to 0. Bit 1 is set to 1 indicates the hub is disabled, or enabled if set to 0. */
+		/**
+		 * The bit flags for enabled hub features. Bit 0 is set to 1 indicates graph is enabled, or disabled if set to 0. Bit 1 is set to 1 indicates the hub is disabled, or enabled if set to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tenantFeatures?: number | null;
 
 		/** Web endpoint URL of the hub. */
@@ -1455,7 +1514,10 @@ export namespace MyNS {
 		/** Provisioning state of the hub. */
 		provisioningState: FormControl<string | null | undefined>,
 
-		/** The bit flags for enabled hub features. Bit 0 is set to 1 indicates graph is enabled, or disabled if set to 0. Bit 1 is set to 1 indicates the hub is disabled, or enabled if set to 0. */
+		/**
+		 * The bit flags for enabled hub features. Bit 0 is set to 1 indicates graph is enabled, or disabled if set to 0. Bit 1 is set to 1 indicates the hub is disabled, or enabled if set to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tenantFeatures: FormControl<number | null | undefined>,
 
 		/** Web endpoint URL of the hub. */
@@ -2069,12 +2131,14 @@ export namespace MyNS {
 		/**
 		 * The lower threshold limit.
 		 * Required
+		 * Type: decimal
 		 */
 		lowerLimit: number;
 
 		/**
 		 * The upper threshold limit.
 		 * Required
+		 * Type: decimal
 		 */
 		upperLimit: number;
 	}
@@ -2091,12 +2155,14 @@ export namespace MyNS {
 		/**
 		 * The lower threshold limit.
 		 * Required
+		 * Type: decimal
 		 */
 		lowerLimit: FormControl<number | null | undefined>,
 
 		/**
 		 * The upper threshold limit.
 		 * Required
+		 * Type: decimal
 		 */
 		upperLimit: FormControl<number | null | undefined>,
 	}
@@ -2640,10 +2706,16 @@ export namespace MyNS {
 		/** Name of the grade. */
 		gradeName?: string | null;
 
-		/** Maximum score threshold. */
+		/**
+		 * Maximum score threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxScoreThreshold?: number | null;
 
-		/** Minimum score threshold. */
+		/**
+		 * Minimum score threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minScoreThreshold?: number | null;
 	}
 	export interface PredictionGradesFormProperties {
@@ -2651,10 +2723,16 @@ export namespace MyNS {
 		/** Name of the grade. */
 		gradeName: FormControl<string | null | undefined>,
 
-		/** Maximum score threshold. */
+		/**
+		 * Maximum score threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxScoreThreshold: FormControl<number | null | undefined>,
 
-		/** Minimum score threshold. */
+		/**
+		 * Minimum score threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minScoreThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreatePredictionGradesFormGroup() {
@@ -2722,70 +2800,112 @@ export namespace MyNS {
 		/** Distributions of the prediction. */
 		PredictionDistributionDefinitionDistributions?: Array<PredictionDistributionDefinitionDistributions>;
 
-		/** Total negatives in the distribution. */
-		totalNegatives?: number | null;
+		/**
+		 * Total negatives in the distribution.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalNegatives?: string | null;
 
-		/** Total positive in the distribution. */
-		totalPositives?: number | null;
+		/**
+		 * Total positive in the distribution.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalPositives?: string | null;
 	}
 
 	/** The definition of the prediction distribution. */
 	export interface PredictionDistributionDefinitionFormProperties {
 
-		/** Total negatives in the distribution. */
-		totalNegatives: FormControl<number | null | undefined>,
+		/**
+		 * Total negatives in the distribution.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalNegatives: FormControl<string | null | undefined>,
 
-		/** Total positive in the distribution. */
-		totalPositives: FormControl<number | null | undefined>,
+		/**
+		 * Total positive in the distribution.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalPositives: FormControl<string | null | undefined>,
 	}
 	export function CreatePredictionDistributionDefinitionFormGroup() {
 		return new FormGroup<PredictionDistributionDefinitionFormProperties>({
-			totalNegatives: new FormControl<number | null | undefined>(undefined),
-			totalPositives: new FormControl<number | null | undefined>(undefined),
+			totalNegatives: new FormControl<string | null | undefined>(undefined),
+			totalPositives: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PredictionDistributionDefinitionDistributions {
 
-		/** Number of negatives. */
-		negatives?: number | null;
+		/**
+		 * Number of negatives.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		negatives?: string | null;
 
-		/** Number of negatives above threshold. */
-		negativesAboveThreshold?: number | null;
+		/**
+		 * Number of negatives above threshold.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		negativesAboveThreshold?: string | null;
 
-		/** Number of positives. */
-		positives?: number | null;
+		/**
+		 * Number of positives.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		positives?: string | null;
 
-		/** Number of positives above threshold. */
-		positivesAboveThreshold?: number | null;
+		/**
+		 * Number of positives above threshold.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		positivesAboveThreshold?: string | null;
 
-		/** Score threshold. */
+		/**
+		 * Score threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scoreThreshold?: number | null;
 	}
 	export interface PredictionDistributionDefinitionDistributionsFormProperties {
 
-		/** Number of negatives. */
-		negatives: FormControl<number | null | undefined>,
+		/**
+		 * Number of negatives.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		negatives: FormControl<string | null | undefined>,
 
-		/** Number of negatives above threshold. */
-		negativesAboveThreshold: FormControl<number | null | undefined>,
+		/**
+		 * Number of negatives above threshold.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		negativesAboveThreshold: FormControl<string | null | undefined>,
 
-		/** Number of positives. */
-		positives: FormControl<number | null | undefined>,
+		/**
+		 * Number of positives.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		positives: FormControl<string | null | undefined>,
 
-		/** Number of positives above threshold. */
-		positivesAboveThreshold: FormControl<number | null | undefined>,
+		/**
+		 * Number of positives above threshold.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		positivesAboveThreshold: FormControl<string | null | undefined>,
 
-		/** Score threshold. */
+		/**
+		 * Score threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scoreThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreatePredictionDistributionDefinitionDistributionsFormGroup() {
 		return new FormGroup<PredictionDistributionDefinitionDistributionsFormProperties>({
-			negatives: new FormControl<number | null | undefined>(undefined),
-			negativesAboveThreshold: new FormControl<number | null | undefined>(undefined),
-			positives: new FormControl<number | null | undefined>(undefined),
-			positivesAboveThreshold: new FormControl<number | null | undefined>(undefined),
+			negatives: new FormControl<string | null | undefined>(undefined),
+			negativesAboveThreshold: new FormControl<string | null | undefined>(undefined),
+			positives: new FormControl<string | null | undefined>(undefined),
+			positivesAboveThreshold: new FormControl<string | null | undefined>(undefined),
 			scoreThreshold: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2851,7 +2971,10 @@ export namespace MyNS {
 		/** The prediction name. */
 		predictionName?: string | null;
 
-		/** The signals used. */
+		/**
+		 * The signals used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signalsUsed?: number | null;
 
 		/**
@@ -2863,16 +2986,25 @@ export namespace MyNS {
 		/** The hub name. */
 		tenantId?: string | null;
 
-		/** Count of the test set. */
+		/**
+		 * Count of the test set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testSetCount?: number | null;
 
 		/** The training accuracy. */
 		trainingAccuracy?: string | null;
 
-		/** Count of the training set. */
+		/**
+		 * Count of the training set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trainingSetCount?: number | null;
 
-		/** Count of the validation set. */
+		/**
+		 * Count of the validation set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validationSetCount?: number | null;
 	}
 
@@ -2891,7 +3023,10 @@ export namespace MyNS {
 		/** The prediction name. */
 		predictionName: FormControl<string | null | undefined>,
 
-		/** The signals used. */
+		/**
+		 * The signals used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		signalsUsed: FormControl<number | null | undefined>,
 
 		/**
@@ -2903,16 +3038,25 @@ export namespace MyNS {
 		/** The hub name. */
 		tenantId: FormControl<string | null | undefined>,
 
-		/** Count of the test set. */
+		/**
+		 * Count of the test set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		testSetCount: FormControl<number | null | undefined>,
 
 		/** The training accuracy. */
 		trainingAccuracy: FormControl<string | null | undefined>,
 
-		/** Count of the training set. */
+		/**
+		 * Count of the training set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		trainingSetCount: FormControl<number | null | undefined>,
 
-		/** Count of the validation set. */
+		/**
+		 * Count of the validation set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validationSetCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePredictionModelStatusFormGroup() {
@@ -2944,8 +3088,11 @@ export namespace MyNS {
 		/** The definition of the prediction distribution. */
 		predictionDistribution?: PredictionDistributionDefinition;
 
-		/** Instance count of the primary profile. */
-		primaryProfileInstanceCount?: number | null;
+		/**
+		 * Instance count of the primary profile.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		primaryProfileInstanceCount?: string | null;
 
 		/** Score name. */
 		scoreName?: string | null;
@@ -2957,8 +3104,11 @@ export namespace MyNS {
 	/** The training results of the prediction. */
 	export interface PredictionTrainingResultsFormProperties {
 
-		/** Instance count of the primary profile. */
-		primaryProfileInstanceCount: FormControl<number | null | undefined>,
+		/**
+		 * Instance count of the primary profile.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		primaryProfileInstanceCount: FormControl<string | null | undefined>,
 
 		/** Score name. */
 		scoreName: FormControl<string | null | undefined>,
@@ -2968,7 +3118,7 @@ export namespace MyNS {
 	}
 	export function CreatePredictionTrainingResultsFormGroup() {
 		return new FormGroup<PredictionTrainingResultsFormProperties>({
-			primaryProfileInstanceCount: new FormControl<number | null | undefined>(undefined),
+			primaryProfileInstanceCount: new FormControl<string | null | undefined>(undefined),
 			scoreName: new FormControl<string | null | undefined>(undefined),
 			tenantId: new FormControl<string | null | undefined>(undefined),
 		});

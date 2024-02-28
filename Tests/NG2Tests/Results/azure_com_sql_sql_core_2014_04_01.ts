@@ -43,13 +43,19 @@ export namespace MyNS {
 		/** The time the operation finished (ISO8601 format). */
 		endTime?: Date | null;
 
-		/** The error code if available. */
+		/**
+		 * The error code if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode?: number | null;
 
 		/** The error message if available. */
 		errorMessage?: string | null;
 
-		/** The error severity if available. */
+		/**
+		 * The error severity if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorSeverity?: number | null;
 
 		/** The operation name. */
@@ -58,34 +64,61 @@ export namespace MyNS {
 		/** The unique operation ID. */
 		operationId?: string | null;
 
-		/** The percentage complete if available. */
+		/**
+		 * The percentage complete if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete?: number | null;
 
-		/** The requested per database DTU cap. */
+		/**
+		 * The requested per database DTU cap.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDatabaseDtuCap?: number | null;
 
-		/** The requested per database DTU guarantee. */
+		/**
+		 * The requested per database DTU guarantee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDatabaseDtuGuarantee?: number | null;
 
-		/** The requested max DTU per database if available. */
+		/**
+		 * The requested max DTU per database if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDatabaseDtuMax?: number | null;
 
-		/** The requested min DTU per database if available. */
+		/**
+		 * The requested min DTU per database if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDatabaseDtuMin?: number | null;
 
-		/** The requested DTU for the pool if available. */
+		/**
+		 * The requested DTU for the pool if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDtu?: number | null;
 
-		/** The requested DTU guarantee. */
+		/**
+		 * The requested DTU guarantee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDtuGuarantee?: number | null;
 
 		/** The requested name for the elastic pool if available. */
 		requestedElasticPoolName?: string | null;
 
-		/** The requested storage limit for the pool in GB if available. */
-		requestedStorageLimitInGB?: number | null;
+		/**
+		 * The requested storage limit for the pool in GB if available.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		requestedStorageLimitInGB?: string | null;
 
-		/** The requested storage limit in MB. */
+		/**
+		 * The requested storage limit in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedStorageLimitInMB?: number | null;
 
 		/** The name of the server the elastic pool is in. */
@@ -107,13 +140,19 @@ export namespace MyNS {
 		/** The time the operation finished (ISO8601 format). */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** The error code if available. */
+		/**
+		 * The error code if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode: FormControl<number | null | undefined>,
 
 		/** The error message if available. */
 		errorMessage: FormControl<string | null | undefined>,
 
-		/** The error severity if available. */
+		/**
+		 * The error severity if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorSeverity: FormControl<number | null | undefined>,
 
 		/** The operation name. */
@@ -122,34 +161,61 @@ export namespace MyNS {
 		/** The unique operation ID. */
 		operationId: FormControl<string | null | undefined>,
 
-		/** The percentage complete if available. */
+		/**
+		 * The percentage complete if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
-		/** The requested per database DTU cap. */
+		/**
+		 * The requested per database DTU cap.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDatabaseDtuCap: FormControl<number | null | undefined>,
 
-		/** The requested per database DTU guarantee. */
+		/**
+		 * The requested per database DTU guarantee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDatabaseDtuGuarantee: FormControl<number | null | undefined>,
 
-		/** The requested max DTU per database if available. */
+		/**
+		 * The requested max DTU per database if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDatabaseDtuMax: FormControl<number | null | undefined>,
 
-		/** The requested min DTU per database if available. */
+		/**
+		 * The requested min DTU per database if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDatabaseDtuMin: FormControl<number | null | undefined>,
 
-		/** The requested DTU for the pool if available. */
+		/**
+		 * The requested DTU for the pool if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDtu: FormControl<number | null | undefined>,
 
-		/** The requested DTU guarantee. */
+		/**
+		 * The requested DTU guarantee.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedDtuGuarantee: FormControl<number | null | undefined>,
 
 		/** The requested name for the elastic pool if available. */
 		requestedElasticPoolName: FormControl<string | null | undefined>,
 
-		/** The requested storage limit for the pool in GB if available. */
-		requestedStorageLimitInGB: FormControl<number | null | undefined>,
+		/**
+		 * The requested storage limit for the pool in GB if available.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		requestedStorageLimitInGB: FormControl<string | null | undefined>,
 
-		/** The requested storage limit in MB. */
+		/**
+		 * The requested storage limit in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedStorageLimitInMB: FormControl<number | null | undefined>,
 
 		/** The name of the server the elastic pool is in. */
@@ -178,7 +244,7 @@ export namespace MyNS {
 			requestedDtu: new FormControl<number | null | undefined>(undefined),
 			requestedDtuGuarantee: new FormControl<number | null | undefined>(undefined),
 			requestedElasticPoolName: new FormControl<string | null | undefined>(undefined),
-			requestedStorageLimitInGB: new FormControl<number | null | undefined>(undefined),
+			requestedStorageLimitInGB: new FormControl<string | null | undefined>(undefined),
 			requestedStorageLimitInMB: new FormControl<number | null | undefined>(undefined),
 			serverName: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined),
@@ -233,13 +299,19 @@ export namespace MyNS {
 		/** The time the operation finished (ISO8601 format). */
 		endTime?: Date | null;
 
-		/** The error code if available. */
+		/**
+		 * The error code if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode?: number | null;
 
 		/** The error message if available. */
 		errorMessage?: string | null;
 
-		/** The error severity if available. */
+		/**
+		 * The error severity if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorSeverity?: number | null;
 
 		/** The operation name. */
@@ -248,7 +320,10 @@ export namespace MyNS {
 		/** The unique operation ID. */
 		operationId?: string | null;
 
-		/** The percentage complete if available. */
+		/**
+		 * The percentage complete if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete?: number | null;
 
 		/** The name for the elastic pool the database is moving into if available. */
@@ -282,13 +357,19 @@ export namespace MyNS {
 		/** The time the operation finished (ISO8601 format). */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** The error code if available. */
+		/**
+		 * The error code if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode: FormControl<number | null | undefined>,
 
 		/** The error message if available. */
 		errorMessage: FormControl<string | null | undefined>,
 
-		/** The error severity if available. */
+		/**
+		 * The error severity if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorSeverity: FormControl<number | null | undefined>,
 
 		/** The operation name. */
@@ -297,7 +378,10 @@ export namespace MyNS {
 		/** The unique operation ID. */
 		operationId: FormControl<string | null | undefined>,
 
-		/** The percentage complete if available. */
+		/**
+		 * The percentage complete if available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** The name for the elastic pool the database is moving into if available. */
@@ -340,10 +424,16 @@ export namespace MyNS {
 	/** The impact of an operation, both in absolute and relative terms. */
 	export interface OperationImpact {
 
-		/** The absolute impact to dimension. */
+		/**
+		 * The absolute impact to dimension.
+		 * Type: double
+		 */
 		changeValueAbsolute?: number | null;
 
-		/** The relative impact to dimension (null if not applicable) */
+		/**
+		 * The relative impact to dimension (null if not applicable)
+		 * Type: double
+		 */
 		changeValueRelative?: number | null;
 
 		/** The name of the impact dimension. */
@@ -356,10 +446,16 @@ export namespace MyNS {
 	/** The impact of an operation, both in absolute and relative terms. */
 	export interface OperationImpactFormProperties {
 
-		/** The absolute impact to dimension. */
+		/**
+		 * The absolute impact to dimension.
+		 * Type: double
+		 */
 		changeValueAbsolute: FormControl<number | null | undefined>,
 
-		/** The relative impact to dimension (null if not applicable) */
+		/**
+		 * The relative impact to dimension (null if not applicable)
+		 * Type: double
+		 */
 		changeValueRelative: FormControl<number | null | undefined>,
 
 		/** The name of the impact dimension. */
@@ -510,13 +606,22 @@ export namespace MyNS {
 	/** Represents the properties of a Service Tier Advisor. */
 	export interface ServiceTierAdvisorProperties {
 
-		/** The activeTimeRatio for service tier advisor. */
+		/**
+		 * The activeTimeRatio for service tier advisor.
+		 * Type: double
+		 */
 		activeTimeRatio?: number | null;
 
-		/** Gets or sets avgDtu for service tier advisor. */
+		/**
+		 * Gets or sets avgDtu for service tier advisor.
+		 * Type: double
+		 */
 		avgDtu?: number | null;
 
-		/** Gets or sets confidence for service tier advisor. */
+		/**
+		 * Gets or sets confidence for service tier advisor.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** Gets or sets currentServiceLevelObjective for service tier advisor. */
@@ -537,13 +642,22 @@ export namespace MyNS {
 		/** Gets or sets disasterPlanBasedRecommendationServiceLevelObjectiveId for service tier advisor. */
 		disasterPlanBasedRecommendationServiceLevelObjectiveId?: string | null;
 
-		/** Gets or sets maxDtu for service tier advisor. */
+		/**
+		 * Gets or sets maxDtu for service tier advisor.
+		 * Type: double
+		 */
 		maxDtu?: number | null;
 
-		/** Gets or sets maxSizeInGB for service tier advisor. */
+		/**
+		 * Gets or sets maxSizeInGB for service tier advisor.
+		 * Type: double
+		 */
 		maxSizeInGB?: number | null;
 
-		/** Gets or sets minDtu for service tier advisor. */
+		/**
+		 * Gets or sets minDtu for service tier advisor.
+		 * Type: double
+		 */
 		minDtu?: number | null;
 
 		/** The observation period start (ISO8601 format). */
@@ -571,13 +685,22 @@ export namespace MyNS {
 	/** Represents the properties of a Service Tier Advisor. */
 	export interface ServiceTierAdvisorPropertiesFormProperties {
 
-		/** The activeTimeRatio for service tier advisor. */
+		/**
+		 * The activeTimeRatio for service tier advisor.
+		 * Type: double
+		 */
 		activeTimeRatio: FormControl<number | null | undefined>,
 
-		/** Gets or sets avgDtu for service tier advisor. */
+		/**
+		 * Gets or sets avgDtu for service tier advisor.
+		 * Type: double
+		 */
 		avgDtu: FormControl<number | null | undefined>,
 
-		/** Gets or sets confidence for service tier advisor. */
+		/**
+		 * Gets or sets confidence for service tier advisor.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Gets or sets currentServiceLevelObjective for service tier advisor. */
@@ -598,13 +721,22 @@ export namespace MyNS {
 		/** Gets or sets disasterPlanBasedRecommendationServiceLevelObjectiveId for service tier advisor. */
 		disasterPlanBasedRecommendationServiceLevelObjectiveId: FormControl<string | null | undefined>,
 
-		/** Gets or sets maxDtu for service tier advisor. */
+		/**
+		 * Gets or sets maxDtu for service tier advisor.
+		 * Type: double
+		 */
 		maxDtu: FormControl<number | null | undefined>,
 
-		/** Gets or sets maxSizeInGB for service tier advisor. */
+		/**
+		 * Gets or sets maxSizeInGB for service tier advisor.
+		 * Type: double
+		 */
 		maxSizeInGB: FormControl<number | null | undefined>,
 
-		/** Gets or sets minDtu for service tier advisor. */
+		/**
+		 * Gets or sets minDtu for service tier advisor.
+		 * Type: double
+		 */
 		minDtu: FormControl<number | null | undefined>,
 
 		/** The observation period start (ISO8601 format). */
@@ -653,7 +785,10 @@ export namespace MyNS {
 	/** A Slo Usage Metric. */
 	export interface SloUsageMetric {
 
-		/** Gets or sets inRangeTimeRatio for SLO usage metric. */
+		/**
+		 * Gets or sets inRangeTimeRatio for SLO usage metric.
+		 * Type: double
+		 */
 		inRangeTimeRatio?: number | null;
 
 		/** The serviceLevelObjective for SLO usage metric. */
@@ -666,7 +801,10 @@ export namespace MyNS {
 	/** A Slo Usage Metric. */
 	export interface SloUsageMetricFormProperties {
 
-		/** Gets or sets inRangeTimeRatio for SLO usage metric. */
+		/**
+		 * Gets or sets inRangeTimeRatio for SLO usage metric.
+		 * Type: double
+		 */
 		inRangeTimeRatio: FormControl<number | null | undefined>,
 
 		/** The serviceLevelObjective for SLO usage metric. */
@@ -730,7 +868,10 @@ export namespace MyNS {
 	/** Represents the properties of a database transparent data encryption Scan. */
 	export interface TransparentDataEncryptionActivityProperties {
 
-		/** The percent complete of the transparent data encryption scan for a database. */
+		/**
+		 * The percent complete of the transparent data encryption scan for a database.
+		 * Type: float
+		 */
 		percentComplete?: number | null;
 
 		/** The status of the database. */
@@ -740,7 +881,10 @@ export namespace MyNS {
 	/** Represents the properties of a database transparent data encryption Scan. */
 	export interface TransparentDataEncryptionActivityPropertiesFormProperties {
 
-		/** The percent complete of the transparent data encryption scan for a database. */
+		/**
+		 * The percent complete of the transparent data encryption scan for a database.
+		 * Type: float
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** The status of the database. */

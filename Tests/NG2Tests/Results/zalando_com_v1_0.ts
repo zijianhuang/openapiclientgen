@@ -397,6 +397,7 @@ export namespace MyNS {
 		/**
 		 * sequence of the article images
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		orderNumber: number;
 
@@ -455,6 +456,7 @@ export namespace MyNS {
 		/**
 		 * sequence of the article images
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		orderNumber: FormControl<number | null | undefined>,
 
@@ -539,6 +541,7 @@ export namespace MyNS {
 		/**
 		 * stock of the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		stock: number;
 	}
@@ -570,6 +573,7 @@ export namespace MyNS {
 		/**
 		 * stock of the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		stock: FormControl<number | null | undefined>,
 	}
@@ -594,7 +598,10 @@ export namespace MyNS {
 		/** Required */
 		formatted: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: number;
 	}
 
@@ -607,7 +614,10 @@ export namespace MyNS {
 		/** Required */
 		formatted: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateArticle_PriceFormGroup() {
@@ -654,6 +664,7 @@ export namespace MyNS {
 		/**
 		 * customer review helpful count of the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		helpfulCount: number;
 
@@ -666,6 +677,7 @@ export namespace MyNS {
 		/**
 		 * customer rating of the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rating: number;
 
@@ -687,6 +699,7 @@ export namespace MyNS {
 		/**
 		 * customer review unhelpful count of the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		unhelpfulCount: number;
 	}
@@ -724,6 +737,7 @@ export namespace MyNS {
 		/**
 		 * customer review helpful count of the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		helpfulCount: FormControl<number | null | undefined>,
 
@@ -736,6 +750,7 @@ export namespace MyNS {
 		/**
 		 * customer rating of the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rating: FormControl<number | null | undefined>,
 
@@ -757,6 +772,7 @@ export namespace MyNS {
 		/**
 		 * customer review unhelpful count of the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		unhelpfulCount: FormControl<number | null | undefined>,
 	}
@@ -781,31 +797,79 @@ export namespace MyNS {
 	}
 
 	export interface Article_ReviewArticleSizeRatings {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BOOTLEG_WIDTH?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CHEST?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CHEST_GIRTH?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		COLLAR_SIZE?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CUP_SIZE?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HIPS_OR_REAR?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		LEG_FIT?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		LENGTH?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OVERALL?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SHOE_WIDTH?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SHOULDERS?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SLEEVES?: number | null;
 	}
 	export interface Article_ReviewArticleSizeRatingsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BOOTLEG_WIDTH: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CHEST: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CHEST_GIRTH: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		COLLAR_SIZE: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CUP_SIZE: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HIPS_OR_REAR: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		LEG_FIT: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		LENGTH: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OVERALL: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SHOE_WIDTH: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SHOULDERS: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SLEEVES: FormControl<number | null | undefined>,
 	}
 	export function CreateArticle_ReviewArticleSizeRatingsFormGroup() {
@@ -867,24 +931,28 @@ export namespace MyNS {
 		/**
 		 * average star rating of the article
 		 * Required
+		 * Type: double
 		 */
 		averageStarRating: number;
 
 		/**
 		 * number of positive recommendations to the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfUserPositiveRecommendations: number;
 
 		/**
 		 * number of users recommended to the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfUserRecommendations: number;
 
 		/**
 		 * number of user reviews of the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfUserReviews: number;
 
@@ -904,24 +972,28 @@ export namespace MyNS {
 		/**
 		 * average star rating of the article
 		 * Required
+		 * Type: double
 		 */
 		averageStarRating: FormControl<number | null | undefined>,
 
 		/**
 		 * number of positive recommendations to the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfUserPositiveRecommendations: FormControl<number | null | undefined>,
 
 		/**
 		 * number of users recommended to the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfUserRecommendations: FormControl<number | null | undefined>,
 
 		/**
 		 * number of user reviews of the article
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfUserReviews: FormControl<number | null | undefined>,
 	}
@@ -937,31 +1009,79 @@ export namespace MyNS {
 	}
 
 	export interface Article_Reviews_SummaryArticleSizeRatings {
+
+		/** Type: double */
 		BOOTLEG_WIDTH?: number | null;
+
+		/** Type: double */
 		CHEST?: number | null;
+
+		/** Type: double */
 		CHEST_GIRTH?: number | null;
+
+		/** Type: double */
 		COLLAR_SIZE?: number | null;
+
+		/** Type: double */
 		CUP_SIZE?: number | null;
+
+		/** Type: double */
 		HIPS_OR_REAR?: number | null;
+
+		/** Type: double */
 		LEG_FIT?: number | null;
+
+		/** Type: double */
 		LENGTH?: number | null;
+
+		/** Type: double */
 		OVERALL?: number | null;
+
+		/** Type: double */
 		SHOE_WIDTH?: number | null;
+
+		/** Type: double */
 		SHOULDERS?: number | null;
+
+		/** Type: double */
 		SLEEVES?: number | null;
 	}
 	export interface Article_Reviews_SummaryArticleSizeRatingsFormProperties {
+
+		/** Type: double */
 		BOOTLEG_WIDTH: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		CHEST: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		CHEST_GIRTH: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		COLLAR_SIZE: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		CUP_SIZE: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		HIPS_OR_REAR: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		LEG_FIT: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		LENGTH: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		OVERALL: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SHOE_WIDTH: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SHOULDERS: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SLEEVES: FormControl<number | null | undefined>,
 	}
 	export function CreateArticle_Reviews_SummaryArticleSizeRatingsFormGroup() {
@@ -984,36 +1104,66 @@ export namespace MyNS {
 
 	export interface Article_Reviews_SummaryStarRatingDistribution {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4': number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'5': number;
 	}
 	export interface Article_Reviews_SummaryStarRatingDistributionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'2': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'3': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'4': FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'5': FormControl<number | null | undefined>,
 	}
 	export function CreateArticle_Reviews_SummaryStarRatingDistributionFormGroup() {
@@ -1080,7 +1230,10 @@ export namespace MyNS {
 		 */
 		childKeys: Array<string>;
 
-		/** The numeric ID for a category. */
+		/**
+		 * The numeric ID for a category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cid?: number | null;
 
 		/** The category is hidden and not shown on the Zalando web shop */
@@ -1124,7 +1277,10 @@ export namespace MyNS {
 	/** Zalando API Category Schema */
 	export interface CategoryFormProperties {
 
-		/** The numeric ID for a category. */
+		/**
+		 * The numeric ID for a category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cid: FormControl<number | null | undefined>,
 
 		/** The category is hidden and not shown on the Zalando web shop */
@@ -1298,7 +1454,10 @@ export namespace MyNS {
 		/** Required */
 		message: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 	}
 	export interface ErrorMessageFormProperties {
@@ -1306,7 +1465,10 @@ export namespace MyNS {
 		/** Required */
 		message: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorMessageFormGroup() {
@@ -1352,6 +1514,7 @@ export namespace MyNS {
 		/**
 		 * number of articles matching this filter value
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -1368,6 +1531,7 @@ export namespace MyNS {
 		/**
 		 * number of articles matching this filter value
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -1502,24 +1666,28 @@ export namespace MyNS {
 		/**
 		 * page number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		page: number;
 
 		/**
 		 * total number of elements in a page
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: number;
 
 		/**
 		 * total elements in the response
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalElements: number;
 
 		/**
 		 * total number of pages in the response
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -1530,24 +1698,28 @@ export namespace MyNS {
 		/**
 		 * page number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * total number of elements in a page
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
 		/**
 		 * total elements in the response
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalElements: FormControl<number | null | undefined>,
 
 		/**
 		 * total number of pages in the response
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}

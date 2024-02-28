@@ -283,10 +283,16 @@ export namespace MyNS {
 		/** All Redis Settings. Few possible keys: rdb-backup-enabled,rdb-storage-connection-string,rdb-backup-frequency,maxmemory-delta,maxmemory-policy,notify-keyspace-events,maxmemory-samples,slowlog-log-slower-than,slowlog-max-len,list-max-ziplist-entries,list-max-ziplist-value,hash-max-ziplist-entries,hash-max-ziplist-value,set-max-intset-entries,zset-max-ziplist-entries,zset-max-ziplist-value etc. */
 		redisConfiguration?: {[id: string]: string };
 
-		/** The number of replicas to be created per master. */
+		/**
+		 * The number of replicas to be created per master.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicasPerMaster?: number | null;
 
-		/** The number of shards to be created on a Premium Cluster Cache. */
+		/**
+		 * The number of shards to be created on a Premium Cluster Cache.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardCount?: number | null;
 
 		/** A dictionary of tenant settings */
@@ -305,10 +311,16 @@ export namespace MyNS {
 		/** All Redis Settings. Few possible keys: rdb-backup-enabled,rdb-storage-connection-string,rdb-backup-frequency,maxmemory-delta,maxmemory-policy,notify-keyspace-events,maxmemory-samples,slowlog-log-slower-than,slowlog-max-len,list-max-ziplist-entries,list-max-ziplist-value,hash-max-ziplist-entries,hash-max-ziplist-value,set-max-intset-entries,zset-max-ziplist-entries,zset-max-ziplist-value etc. */
 		redisConfiguration: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** The number of replicas to be created per master. */
+		/**
+		 * The number of replicas to be created per master.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicasPerMaster: FormControl<number | null | undefined>,
 
-		/** The number of shards to be created on a Premium Cluster Cache. */
+		/**
+		 * The number of shards to be created on a Premium Cluster Cache.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardCount: FormControl<number | null | undefined>,
 
 		/** A dictionary of tenant settings */
@@ -540,13 +552,22 @@ export namespace MyNS {
 	/** Details of single instance of redis. */
 	export interface RedisInstanceDetails {
 
-		/** If enableNonSslPort is true, provides Redis instance Non-SSL port. */
+		/**
+		 * If enableNonSslPort is true, provides Redis instance Non-SSL port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nonSslPort?: number | null;
 
-		/** If clustering is enabled, the Shard ID of Redis Instance */
+		/**
+		 * If clustering is enabled, the Shard ID of Redis Instance
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardId?: number | null;
 
-		/** Redis instance SSL port. */
+		/**
+		 * Redis instance SSL port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sslPort?: number | null;
 
 		/** If the Cache uses availability zones, specifies availability zone where this instance is located. */
@@ -556,13 +577,22 @@ export namespace MyNS {
 	/** Details of single instance of redis. */
 	export interface RedisInstanceDetailsFormProperties {
 
-		/** If enableNonSslPort is true, provides Redis instance Non-SSL port. */
+		/**
+		 * If enableNonSslPort is true, provides Redis instance Non-SSL port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nonSslPort: FormControl<number | null | undefined>,
 
-		/** If clustering is enabled, the Shard ID of Redis Instance */
+		/**
+		 * If clustering is enabled, the Shard ID of Redis Instance
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardId: FormControl<number | null | undefined>,
 
-		/** Redis instance SSL port. */
+		/**
+		 * Redis instance SSL port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sslPort: FormControl<number | null | undefined>,
 
 		/** If the Cache uses availability zones, specifies availability zone where this instance is located. */
@@ -851,7 +881,10 @@ export namespace MyNS {
 		/** List of the linked servers associated with the cache */
 		linkedServers?: Array<RedisLinkedServer>;
 
-		/** Redis non-SSL port. */
+		/**
+		 * Redis non-SSL port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Redis instance provisioning status. */
@@ -860,7 +893,10 @@ export namespace MyNS {
 		/** Redis version. */
 		redisVersion?: string | null;
 
-		/** Redis SSL port. */
+		/**
+		 * Redis SSL port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sslPort?: number | null;
 	}
 
@@ -870,7 +906,10 @@ export namespace MyNS {
 		/** Redis host name. */
 		hostName: FormControl<string | null | undefined>,
 
-		/** Redis non-SSL port. */
+		/**
+		 * Redis non-SSL port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Redis instance provisioning status. */
@@ -879,7 +918,10 @@ export namespace MyNS {
 		/** Redis version. */
 		redisVersion: FormControl<string | null | undefined>,
 
-		/** Redis SSL port. */
+		/**
+		 * Redis SSL port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sslPort: FormControl<number | null | undefined>,
 	}
 	export function CreateRedisPropertiesFormGroup() {
@@ -913,7 +955,10 @@ export namespace MyNS {
 		 */
 		rebootType: RedisRebootParametersRebootType;
 
-		/** If clustering is enabled, the ID of the shard to be rebooted. */
+		/**
+		 * If clustering is enabled, the ID of the shard to be rebooted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardId?: number | null;
 	}
 
@@ -926,7 +971,10 @@ export namespace MyNS {
 		 */
 		rebootType: FormControl<RedisRebootParametersRebootType | null | undefined>,
 
-		/** If clustering is enabled, the ID of the shard to be rebooted. */
+		/**
+		 * If clustering is enabled, the ID of the shard to be rebooted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardId: FormControl<number | null | undefined>,
 	}
 	export function CreateRedisRebootParametersFormGroup() {
@@ -1084,6 +1132,7 @@ export namespace MyNS {
 		/**
 		 * Start hour after which cache patching can start.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startHourUtc: number;
 	}
@@ -1103,6 +1152,7 @@ export namespace MyNS {
 		/**
 		 * Start hour after which cache patching can start.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startHourUtc: FormControl<number | null | undefined>,
 	}
@@ -1124,6 +1174,7 @@ export namespace MyNS {
 		/**
 		 * The size of the Redis cache to deploy. Valid values: for C (Basic/Standard) family (0, 1, 2, 3, 4, 5, 6), for P (Premium) family (1, 2, 3, 4).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		capacity: number;
 
@@ -1146,6 +1197,7 @@ export namespace MyNS {
 		/**
 		 * The size of the Redis cache to deploy. Valid values: for C (Basic/Standard) family (0, 1, 2, 3, 4, 5, 6), for P (Premium) family (1, 2, 3, 4).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		capacity: FormControl<number | null | undefined>,
 
@@ -1243,7 +1295,6 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Cache/Redis
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
-		 * @return {RedisListResult} 
 		 */
 		Redis_List(api_version: string, subscriptionId: string): Observable<RedisListResult> {
 			return this.http.get<RedisListResult>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/providers/Microsoft.Cache/Redis?api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -1255,7 +1306,6 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
-		 * @return {RedisListResult} 
 		 */
 		Redis_ListByResourceGroup(resourceGroupName: string, api_version: string, subscriptionId: string): Observable<RedisListResult> {
 			return this.http.get<RedisListResult>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.Cache/Redis&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});

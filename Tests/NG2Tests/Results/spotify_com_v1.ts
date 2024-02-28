@@ -38,7 +38,10 @@ export namespace MyNS {
 		/** The name of the album. */
 		name?: string | null;
 
-		/** The popularity of the album. The value will be between 0 and 100, with 100 being the most popular. The popularity is calculated from the popularity of the album's individual tracks. */
+		/**
+		 * The popularity of the album. The value will be between 0 and 100, with 100 being the most popular. The popularity is calculated from the popularity of the album's individual tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		popularity?: number | null;
 
 		/** The date the album was first released, for example '1981-12-15'. Depending on the precision, it might be shown as '1981' or '1981-12'. */
@@ -74,7 +77,10 @@ export namespace MyNS {
 		/** The name of the album. */
 		name: FormControl<string | null | undefined>,
 
-		/** The popularity of the album. The value will be between 0 and 100, with 100 being the most popular. The popularity is calculated from the popularity of the album's individual tracks. */
+		/**
+		 * The popularity of the album. The value will be between 0 and 100, with 100 being the most popular. The popularity is calculated from the popularity of the album's individual tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		popularity: FormControl<number | null | undefined>,
 
 		/** The date the album was first released, for example '1981-12-15'. Depending on the precision, it might be shown as '1981' or '1981-12'. */
@@ -129,7 +135,10 @@ export namespace MyNS {
 		/** The name of the artist. */
 		name?: string | null;
 
-		/** The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. The artist's popularity is calculated from the popularity of all the artist's tracks. */
+		/**
+		 * The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. The artist's popularity is calculated from the popularity of all the artist's tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		popularity?: number | null;
 
 		/** The object type: 'artist' */
@@ -152,7 +161,10 @@ export namespace MyNS {
 		/** The name of the artist. */
 		name: FormControl<string | null | undefined>,
 
-		/** The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. The artist's popularity is calculated from the popularity of all the artist's tracks. */
+		/**
+		 * The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. The artist's popularity is calculated from the popularity of all the artist's tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		popularity: FormControl<number | null | undefined>,
 
 		/** The object type: 'artist' */
@@ -181,7 +193,10 @@ export namespace MyNS {
 		/** A link to the Web API endpoint providing full details of the followers; null if not available. */
 		href?: string | null;
 
-		/** The total number of followers. */
+		/**
+		 * The total number of followers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -191,7 +206,10 @@ export namespace MyNS {
 		/** A link to the Web API endpoint providing full details of the followers; null if not available. */
 		href: FormControl<string | null | undefined>,
 
-		/** The total number of followers. */
+		/**
+		 * The total number of followers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateFollowersFormGroup() {
@@ -204,24 +222,36 @@ export namespace MyNS {
 
 	export interface Image {
 
-		/** The image height in pixels. If unknown: null or not returned. */
+		/**
+		 * The image height in pixels. If unknown: null or not returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The source URL of the image. */
 		url?: string | null;
 
-		/** The image width in pixels. If unknown: null or not returned. */
+		/**
+		 * The image width in pixels. If unknown: null or not returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface ImageFormProperties {
 
-		/** The image height in pixels. If unknown: null or not returned. */
+		/**
+		 * The image height in pixels. If unknown: null or not returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The source URL of the image. */
 		url: FormControl<string | null | undefined>,
 
-		/** The image width in pixels. If unknown: null or not returned. */
+		/**
+		 * The image width in pixels. If unknown: null or not returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageFormGroup() {
@@ -265,19 +295,28 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Track_simple>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** URL to the previous page of items. (null if none) */
 		previous?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface Track_simple_pageFormProperties {
@@ -285,19 +324,28 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** URL to the previous page of items. (null if none) */
 		previous: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateTrack_simple_pageFormGroup() {
@@ -320,10 +368,16 @@ export namespace MyNS {
 		/** A list of the countries in which the track can be played, identified by their ISO 3166-1 alpha-2 code. */
 		available_markets?: Array<string>;
 
-		/** The disc number (usually 1 unless the album consists of more than one disc). */
+		/**
+		 * The disc number (usually 1 unless the album consists of more than one disc).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disc_number?: number | null;
 
-		/** The track length in milliseconds. */
+		/**
+		 * The track length in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_ms?: number | null;
 
 		/** Whether or not the track has explicit lyrics (true = yes it does; false = no it does not OR unknown). */
@@ -350,7 +404,10 @@ export namespace MyNS {
 		/** A URL to a 30 second preview (MP3 format) of the track. */
 		preview_url?: string | null;
 
-		/** The number of the track. If an album has several discs, the track number is the number on the specified disc. */
+		/**
+		 * The number of the track. If an album has several discs, the track number is the number on the specified disc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_number?: number | null;
 
 		/** The object type: 'track'. */
@@ -361,10 +418,16 @@ export namespace MyNS {
 	}
 	export interface Track_simpleFormProperties {
 
-		/** The disc number (usually 1 unless the album consists of more than one disc). */
+		/**
+		 * The disc number (usually 1 unless the album consists of more than one disc).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disc_number: FormControl<number | null | undefined>,
 
-		/** The track length in milliseconds. */
+		/**
+		 * The track length in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_ms: FormControl<number | null | undefined>,
 
 		/** Whether or not the track has explicit lyrics (true = yes it does; false = no it does not OR unknown). */
@@ -388,7 +451,10 @@ export namespace MyNS {
 		/** A URL to a 30 second preview (MP3 format) of the track. */
 		preview_url: FormControl<string | null | undefined>,
 
-		/** The number of the track. If an album has several discs, the track number is the number on the specified disc. */
+		/**
+		 * The number of the track. If an album has several discs, the track number is the number on the specified disc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_number: FormControl<number | null | undefined>,
 
 		/** The object type: 'track'. */
@@ -585,19 +651,28 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Album_simple>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** URL to the previous page of items. (null if none) */
 		previous?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface Album_simple_pageFormProperties {
@@ -605,19 +680,28 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** URL to the previous page of items. (null if none) */
 		previous: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbum_simple_pageFormGroup() {
@@ -640,19 +724,28 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Track_simple>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** URL to the previous page of items. (null if none) */
 		previous?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface Album_track_pageFormProperties {
@@ -660,19 +753,28 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** URL to the previous page of items. (null if none) */
 		previous: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbum_track_pageFormGroup() {
@@ -727,19 +829,28 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Category>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** URL to the previous page of items. (null if none) */
 		previous?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface Category_pageFormProperties {
@@ -747,19 +858,28 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** URL to the previous page of items. (null if none) */
 		previous: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCategory_pageFormGroup() {
@@ -883,19 +1003,28 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Playlist_simple>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** URL to the previous page of items. (null if none) */
 		previous?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface Playlist_simple_pageFormProperties {
@@ -903,19 +1032,28 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** URL to the previous page of items. (null if none) */
 		previous: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaylist_simple_pageFormGroup() {
@@ -1068,7 +1206,10 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href?: string | null;
 
-		/** The total number of tracks available to return. */
+		/**
+		 * The total number of tracks available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface Playlist_simpleTracksFormProperties {
@@ -1076,7 +1217,10 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The total number of tracks available to return. */
+		/**
+		 * The total number of tracks available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaylist_simpleTracksFormGroup() {
@@ -1180,7 +1324,10 @@ export namespace MyNS {
 		/** A link to the Web API endpoint providing full details of the followers; null if not available. */
 		href?: string | null;
 
-		/** The total number of followers. */
+		/**
+		 * The total number of followers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface PlaylistFollowersFormProperties {
@@ -1188,7 +1335,10 @@ export namespace MyNS {
 		/** A link to the Web API endpoint providing full details of the followers; null if not available. */
 		href: FormControl<string | null | undefined>,
 
-		/** The total number of followers. */
+		/**
+		 * The total number of followers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaylistFollowersFormGroup() {
@@ -1207,19 +1357,28 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Playlist_track>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** URL to the previous page of items. (null if none) */
 		previous?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface Playlist_track_pageFormProperties {
@@ -1227,19 +1386,28 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** URL to the previous page of items. (null if none) */
 		previous: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaylist_track_pageFormGroup() {
@@ -1289,10 +1457,16 @@ export namespace MyNS {
 		/** A list of the countries in which the track can be played, identified by their ISO 3166-1 alpha-2 code. */
 		available_markets?: Array<string>;
 
-		/** The disc number (usually 1 unless the album consists of more than one disc). */
+		/**
+		 * The disc number (usually 1 unless the album consists of more than one disc).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disc_number?: number | null;
 
-		/** The track length in milliseconds. */
+		/**
+		 * The track length in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_ms?: number | null;
 
 		/** Whether or not the track has explicit lyrics (true = yes it does; false = no it does not OR unknown). */
@@ -1322,7 +1496,10 @@ export namespace MyNS {
 		/** A URL to a 30 second preview (MP3 format) of the track. */
 		preview_url?: string | null;
 
-		/** The number of the track. If an album has several discs, the track number is the number on the specified disc. */
+		/**
+		 * The number of the track. If an album has several discs, the track number is the number on the specified disc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_number?: number | null;
 
 		/** The object type: 'track'. */
@@ -1333,10 +1510,16 @@ export namespace MyNS {
 	}
 	export interface TrackFormProperties {
 
-		/** The disc number (usually 1 unless the album consists of more than one disc). */
+		/**
+		 * The disc number (usually 1 unless the album consists of more than one disc).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disc_number: FormControl<number | null | undefined>,
 
-		/** The track length in milliseconds. */
+		/**
+		 * The track length in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_ms: FormControl<number | null | undefined>,
 
 		/** Whether or not the track has explicit lyrics (true = yes it does; false = no it does not OR unknown). */
@@ -1363,7 +1546,10 @@ export namespace MyNS {
 		/** A URL to a 30 second preview (MP3 format) of the track. */
 		preview_url: FormControl<string | null | undefined>,
 
-		/** The number of the track. If an album has several discs, the track number is the number on the specified disc. */
+		/**
+		 * The number of the track. If an album has several discs, the track number is the number on the specified disc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		track_number: FormControl<number | null | undefined>,
 
 		/** The object type: 'track'. */
@@ -1479,19 +1665,28 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Saved_track>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** URL to the previous page of items. (null if none) */
 		previous?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface Saved_track_pageFormProperties {
@@ -1499,19 +1694,28 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** URL to the previous page of items. (null if none) */
 		previous: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateSaved_track_pageFormGroup() {
@@ -1553,19 +1757,28 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Album_simple>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** URL to the previous page of items. (null if none) */
 		previous?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface SearchAlbumsFormProperties {
@@ -1573,19 +1786,28 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** URL to the previous page of items. (null if none) */
 		previous: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchAlbumsFormGroup() {
@@ -1608,19 +1830,28 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Artist>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** URL to the previous page of items. (null if none) */
 		previous?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface SearchArtistsFormProperties {
@@ -1628,19 +1859,28 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** URL to the previous page of items. (null if none) */
 		previous: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchArtistsFormGroup() {
@@ -1663,19 +1903,28 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Track>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** URL to the previous page of items. (null if none) */
 		previous?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface SearchTracksFormProperties {
@@ -1683,19 +1932,28 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The offset of the items returned (as set in the query or by default). */
+		/**
+		 * The offset of the items returned (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** URL to the previous page of items. (null if none) */
 		previous: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchTracksFormGroup() {
@@ -1734,13 +1992,19 @@ export namespace MyNS {
 		/** The requested data. */
 		items?: Array<Artist>;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. (null if none) */
 		next?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface User_followedArtistsFormProperties {
@@ -1748,13 +2012,19 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. (null if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateUser_followedArtistsFormGroup() {

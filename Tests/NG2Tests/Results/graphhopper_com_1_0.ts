@@ -5,17 +5,29 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Activity {
 
-		/** arrival time at this activity in ms */
-		arr_time?: number | null;
+		/**
+		 * arrival time at this activity in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		arr_time?: string | null;
 
-		/** cumulated distance from start to this activity in m */
-		distance?: number | null;
+		/**
+		 * cumulated distance from start to this activity in m
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		distance?: string | null;
 
-		/** driving time of driver in ms */
-		driving_time?: number | null;
+		/**
+		 * driving time of driver in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		driving_time?: string | null;
 
-		/** end time of and thus departure time at this activity */
-		end_time?: number | null;
+		/**
+		 * end time of and thus departure time at this activity
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		end_time?: string | null;
 
 		/** id referring to the underlying service or shipment, i.e. the shipment or service this activity belongs to */
 		id?: string | null;
@@ -32,22 +44,37 @@ export namespace MyNS {
 		/** type of activity */
 		type?: ActivityType | null;
 
-		/** waiting time at this activity in ms */
-		waiting_time?: number | null;
+		/**
+		 * waiting time at this activity in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		waiting_time?: string | null;
 	}
 	export interface ActivityFormProperties {
 
-		/** arrival time at this activity in ms */
-		arr_time: FormControl<number | null | undefined>,
+		/**
+		 * arrival time at this activity in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		arr_time: FormControl<string | null | undefined>,
 
-		/** cumulated distance from start to this activity in m */
-		distance: FormControl<number | null | undefined>,
+		/**
+		 * cumulated distance from start to this activity in m
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		distance: FormControl<string | null | undefined>,
 
-		/** driving time of driver in ms */
-		driving_time: FormControl<number | null | undefined>,
+		/**
+		 * driving time of driver in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		driving_time: FormControl<string | null | undefined>,
 
-		/** end time of and thus departure time at this activity */
-		end_time: FormControl<number | null | undefined>,
+		/**
+		 * end time of and thus departure time at this activity
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		end_time: FormControl<string | null | undefined>,
 
 		/** id referring to the underlying service or shipment, i.e. the shipment or service this activity belongs to */
 		id: FormControl<string | null | undefined>,
@@ -58,19 +85,22 @@ export namespace MyNS {
 		/** type of activity */
 		type: FormControl<ActivityType | null | undefined>,
 
-		/** waiting time at this activity in ms */
-		waiting_time: FormControl<number | null | undefined>,
+		/**
+		 * waiting time at this activity in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		waiting_time: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityFormGroup() {
 		return new FormGroup<ActivityFormProperties>({
-			arr_time: new FormControl<number | null | undefined>(undefined),
-			distance: new FormControl<number | null | undefined>(undefined),
-			driving_time: new FormControl<number | null | undefined>(undefined),
-			end_time: new FormControl<number | null | undefined>(undefined),
+			arr_time: new FormControl<string | null | undefined>(undefined),
+			distance: new FormControl<string | null | undefined>(undefined),
+			driving_time: new FormControl<string | null | undefined>(undefined),
+			end_time: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			location_id: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<ActivityType | null | undefined>(undefined),
-			waiting_time: new FormControl<number | null | undefined>(undefined),
+			waiting_time: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -79,24 +109,36 @@ export namespace MyNS {
 
 	export interface Address {
 
-		/** latitude */
+		/**
+		 * latitude
+		 * Type: double
+		 */
 		lat?: number | null;
 
 		/** Unique identifier of location */
 		location_id?: string | null;
 
-		/** longitude */
+		/**
+		 * longitude
+		 * Type: double
+		 */
 		lon?: number | null;
 	}
 	export interface AddressFormProperties {
 
-		/** latitude */
+		/**
+		 * latitude
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
 		/** Unique identifier of location */
 		location_id: FormControl<string | null | undefined>,
 
-		/** longitude */
+		/**
+		 * longitude
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 	}
 	export function CreateAddressFormGroup() {
@@ -130,48 +172,78 @@ export namespace MyNS {
 
 	export interface Break {
 
-		/** duration of break */
-		duration?: number | null;
+		/**
+		 * duration of break
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration?: string | null;
 
-		/** earliest start of break */
-		earliest?: number | null;
+		/**
+		 * earliest start of break
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		earliest?: string | null;
 
-		/** initial driving time, i.e. the time your driver has already spent for driving */
-		initial_driving_time?: number | null;
+		/**
+		 * initial driving time, i.e. the time your driver has already spent for driving
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		initial_driving_time?: string | null;
 
-		/** latest start of break */
-		latest?: number | null;
+		/**
+		 * latest start of break
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latest?: string | null;
 
-		/** max driving time without break */
-		max_driving_time?: number | null;
+		/**
+		 * max driving time without break
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		max_driving_time?: string | null;
 
 		/** array of splits */
 		possible_split?: Array<number>;
 	}
 	export interface BreakFormProperties {
 
-		/** duration of break */
-		duration: FormControl<number | null | undefined>,
+		/**
+		 * duration of break
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration: FormControl<string | null | undefined>,
 
-		/** earliest start of break */
-		earliest: FormControl<number | null | undefined>,
+		/**
+		 * earliest start of break
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		earliest: FormControl<string | null | undefined>,
 
-		/** initial driving time, i.e. the time your driver has already spent for driving */
-		initial_driving_time: FormControl<number | null | undefined>,
+		/**
+		 * initial driving time, i.e. the time your driver has already spent for driving
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		initial_driving_time: FormControl<string | null | undefined>,
 
-		/** latest start of break */
-		latest: FormControl<number | null | undefined>,
+		/**
+		 * latest start of break
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latest: FormControl<string | null | undefined>,
 
-		/** max driving time without break */
-		max_driving_time: FormControl<number | null | undefined>,
+		/**
+		 * max driving time without break
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		max_driving_time: FormControl<string | null | undefined>,
 	}
 	export function CreateBreakFormGroup() {
 		return new FormGroup<BreakFormProperties>({
-			duration: new FormControl<number | null | undefined>(undefined),
-			earliest: new FormControl<number | null | undefined>(undefined),
-			initial_driving_time: new FormControl<number | null | undefined>(undefined),
-			latest: new FormControl<number | null | undefined>(undefined),
-			max_driving_time: new FormControl<number | null | undefined>(undefined),
+			duration: new FormControl<string | null | undefined>(undefined),
+			earliest: new FormControl<string | null | undefined>(undefined),
+			initial_driving_time: new FormControl<string | null | undefined>(undefined),
+			latest: new FormControl<string | null | undefined>(undefined),
+			max_driving_time: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -317,8 +389,11 @@ export namespace MyNS {
 		/** array of allowed vehicle ids */
 		allowed_vehicles?: Array<string>;
 
-		/** duration of service, i.e. time in ms the corresponding activity takes */
-		duration?: number | null;
+		/**
+		 * duration of service, i.e. time in ms the corresponding activity takes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration?: string | null;
 
 		/** Unique identifier of service */
 		id?: string | null;
@@ -326,7 +401,10 @@ export namespace MyNS {
 		/** name of service */
 		name?: string | null;
 
-		/** priority of service, i.e. 1 = high, 2 = normal, 3 = low. default is 2. */
+		/**
+		 * priority of service, i.e. 1 = high, 2 = normal, 3 = low. default is 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** array of required skills */
@@ -343,8 +421,11 @@ export namespace MyNS {
 	}
 	export interface ServiceFormProperties {
 
-		/** duration of service, i.e. time in ms the corresponding activity takes */
-		duration: FormControl<number | null | undefined>,
+		/**
+		 * duration of service, i.e. time in ms the corresponding activity takes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration: FormControl<string | null | undefined>,
 
 		/** Unique identifier of service */
 		id: FormControl<string | null | undefined>,
@@ -352,7 +433,10 @@ export namespace MyNS {
 		/** name of service */
 		name: FormControl<string | null | undefined>,
 
-		/** priority of service, i.e. 1 = high, 2 = normal, 3 = low. default is 2. */
+		/**
+		 * priority of service, i.e. 1 = high, 2 = normal, 3 = low. default is 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** type of service */
@@ -360,7 +444,7 @@ export namespace MyNS {
 	}
 	export function CreateServiceFormGroup() {
 		return new FormGroup<ServiceFormProperties>({
-			duration: new FormControl<number | null | undefined>(undefined),
+			duration: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			priority: new FormControl<number | null | undefined>(undefined),
@@ -371,24 +455,36 @@ export namespace MyNS {
 
 	export interface TimeWindow {
 
-		/** earliest start time of corresponding activity */
-		earliest?: number | null;
+		/**
+		 * earliest start time of corresponding activity
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		earliest?: string | null;
 
-		/** latest start time of corresponding activity */
-		latest?: number | null;
+		/**
+		 * latest start time of corresponding activity
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latest?: string | null;
 	}
 	export interface TimeWindowFormProperties {
 
-		/** earliest start time of corresponding activity */
-		earliest: FormControl<number | null | undefined>,
+		/**
+		 * earliest start time of corresponding activity
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		earliest: FormControl<string | null | undefined>,
 
-		/** latest start time of corresponding activity */
-		latest: FormControl<number | null | undefined>,
+		/**
+		 * latest start time of corresponding activity
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latest: FormControl<string | null | undefined>,
 	}
 	export function CreateTimeWindowFormGroup() {
 		return new FormGroup<TimeWindowFormProperties>({
-			earliest: new FormControl<number | null | undefined>(undefined),
-			latest: new FormControl<number | null | undefined>(undefined),
+			earliest: new FormControl<string | null | undefined>(undefined),
+			latest: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -408,7 +504,10 @@ export namespace MyNS {
 		name?: string | null;
 		pickup?: Stop;
 
-		/** priority of service, i.e. 1 = high, 2 = normal, 3 = low. default is 2. */
+		/**
+		 * priority of service, i.e. 1 = high, 2 = normal, 3 = low. default is 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** array of required skills */
@@ -425,7 +524,10 @@ export namespace MyNS {
 		/** name of shipment */
 		name: FormControl<string | null | undefined>,
 
-		/** priority of service, i.e. 1 = high, 2 = normal, 3 = low. default is 2. */
+		/**
+		 * priority of service, i.e. 1 = high, 2 = normal, 3 = low. default is 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateShipmentFormGroup() {
@@ -440,20 +542,26 @@ export namespace MyNS {
 	export interface Stop {
 		address?: Address;
 
-		/** duration of stop, i.e. time in ms the corresponding activity takes */
-		duration?: number | null;
+		/**
+		 * duration of stop, i.e. time in ms the corresponding activity takes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration?: string | null;
 
 		/** array of time windows. currently, only a single time window is allowed */
 		time_windows?: Array<TimeWindow>;
 	}
 	export interface StopFormProperties {
 
-		/** duration of stop, i.e. time in ms the corresponding activity takes */
-		duration: FormControl<number | null | undefined>,
+		/**
+		 * duration of stop, i.e. time in ms the corresponding activity takes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration: FormControl<string | null | undefined>,
 	}
 	export function CreateStopFormGroup() {
 		return new FormGroup<StopFormProperties>({
-			duration: new FormControl<number | null | undefined>(undefined),
+			duration: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -466,10 +574,16 @@ export namespace MyNS {
 		/** Profile of vehicle type */
 		profile?: VehicleTypeProfile | null;
 
-		/** service time factor of vehicle type */
+		/**
+		 * service time factor of vehicle type
+		 * Type: double
+		 */
 		service_time_factor?: number | null;
 
-		/** speed_factor of vehicle type */
+		/**
+		 * speed_factor of vehicle type
+		 * Type: double
+		 */
 		speed_factor?: number | null;
 
 		/** Unique identifier for the vehicle type */
@@ -480,10 +594,16 @@ export namespace MyNS {
 		/** Profile of vehicle type */
 		profile: FormControl<VehicleTypeProfile | null | undefined>,
 
-		/** service time factor of vehicle type */
+		/**
+		 * service time factor of vehicle type
+		 * Type: double
+		 */
 		service_time_factor: FormControl<number | null | undefined>,
 
-		/** speed_factor of vehicle type */
+		/**
+		 * speed_factor of vehicle type
+		 * Type: double
+		 */
 		speed_factor: FormControl<number | null | undefined>,
 
 		/** Unique identifier for the vehicle type */
@@ -504,12 +624,18 @@ export namespace MyNS {
 	export interface Vehicle {
 		break?: Break;
 
-		/** earliest start of vehicle at its start location */
-		earliest_start?: number | null;
+		/**
+		 * earliest start of vehicle at its start location
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		earliest_start?: string | null;
 		end_address?: Address;
 
-		/** latest end of vehicle at its end location */
-		latest_end?: number | null;
+		/**
+		 * latest end of vehicle at its end location
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latest_end?: string | null;
 
 		/** Indicates whether vehicle should return to start address or not. If not, it can end at any service activity. */
 		return_to_depot?: boolean | null;
@@ -526,11 +652,17 @@ export namespace MyNS {
 	}
 	export interface VehicleFormProperties {
 
-		/** earliest start of vehicle at its start location */
-		earliest_start: FormControl<number | null | undefined>,
+		/**
+		 * earliest start of vehicle at its start location
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		earliest_start: FormControl<string | null | undefined>,
 
-		/** latest end of vehicle at its end location */
-		latest_end: FormControl<number | null | undefined>,
+		/**
+		 * latest end of vehicle at its end location
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latest_end: FormControl<string | null | undefined>,
 
 		/** Indicates whether vehicle should return to start address or not. If not, it can end at any service activity. */
 		return_to_depot: FormControl<boolean | null | undefined>,
@@ -543,8 +675,8 @@ export namespace MyNS {
 	}
 	export function CreateVehicleFormGroup() {
 		return new FormGroup<VehicleFormProperties>({
-			earliest_start: new FormControl<number | null | undefined>(undefined),
-			latest_end: new FormControl<number | null | undefined>(undefined),
+			earliest_start: new FormControl<string | null | undefined>(undefined),
+			latest_end: new FormControl<string | null | undefined>(undefined),
 			return_to_depot: new FormControl<boolean | null | undefined>(undefined),
 			type_id: new FormControl<string | null | undefined>(undefined),
 			vehicle_id: new FormControl<string | null | undefined>(undefined),
@@ -558,106 +690,166 @@ export namespace MyNS {
 		/** unique identify of job - which you get when posting your request to the large problem solver */
 		job_id?: string | null;
 
-		/** processing time in ms. if job is still waiting in queue, processing_time is 0 */
-		processing_time?: number | null;
+		/**
+		 * processing time in ms. if job is still waiting in queue, processing_time is 0
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		processing_time?: string | null;
 		solution?: Solution;
 
 		/** indicates the current status of the job */
 		status?: ResponseStatus | null;
 
-		/** waiting time in ms */
-		waiting_in_queue?: number | null;
+		/**
+		 * waiting time in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		waiting_in_queue?: string | null;
 	}
 	export interface ResponseFormProperties {
 
 		/** unique identify of job - which you get when posting your request to the large problem solver */
 		job_id: FormControl<string | null | undefined>,
 
-		/** processing time in ms. if job is still waiting in queue, processing_time is 0 */
-		processing_time: FormControl<number | null | undefined>,
+		/**
+		 * processing time in ms. if job is still waiting in queue, processing_time is 0
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		processing_time: FormControl<string | null | undefined>,
 
 		/** indicates the current status of the job */
 		status: FormControl<ResponseStatus | null | undefined>,
 
-		/** waiting time in ms */
-		waiting_in_queue: FormControl<number | null | undefined>,
+		/**
+		 * waiting time in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		waiting_in_queue: FormControl<string | null | undefined>,
 	}
 	export function CreateResponseFormGroup() {
 		return new FormGroup<ResponseFormProperties>({
 			job_id: new FormControl<string | null | undefined>(undefined),
-			processing_time: new FormControl<number | null | undefined>(undefined),
+			processing_time: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ResponseStatus | null | undefined>(undefined),
-			waiting_in_queue: new FormControl<number | null | undefined>(undefined),
+			waiting_in_queue: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface Solution {
 
-		/** overall costs of solution */
+		/**
+		 * overall costs of solution
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		costs?: number | null;
 
-		/** overall travel distance in meters */
+		/**
+		 * overall travel distance in meters
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distance?: number | null;
 
-		/** operation time of the longest route in ms */
-		max_operation_time?: number | null;
+		/**
+		 * operation time of the longest route in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		max_operation_time?: string | null;
 
-		/** number of jobs that could not be assigned to final solution */
+		/**
+		 * number of jobs that could not be assigned to final solution
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		no_unassigned?: number | null;
 
-		/** number of employed vehicles */
+		/**
+		 * number of employed vehicles
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		no_vehicles?: number | null;
 
 		/** An array of routes */
 		routes?: Array<Route>;
 
-		/** overall transport time in ms */
-		time?: number | null;
+		/**
+		 * overall transport time in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		time?: string | null;
 
-		/** overall transport time in ms */
-		transport_time?: number | null;
+		/**
+		 * overall transport time in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transport_time?: string | null;
 		unassigned?: SolutionUnassigned;
 
-		/** total waiting time in ms */
-		waiting_time?: number | null;
+		/**
+		 * total waiting time in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		waiting_time?: string | null;
 	}
 	export interface SolutionFormProperties {
 
-		/** overall costs of solution */
+		/**
+		 * overall costs of solution
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		costs: FormControl<number | null | undefined>,
 
-		/** overall travel distance in meters */
+		/**
+		 * overall travel distance in meters
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distance: FormControl<number | null | undefined>,
 
-		/** operation time of the longest route in ms */
-		max_operation_time: FormControl<number | null | undefined>,
+		/**
+		 * operation time of the longest route in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		max_operation_time: FormControl<string | null | undefined>,
 
-		/** number of jobs that could not be assigned to final solution */
+		/**
+		 * number of jobs that could not be assigned to final solution
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		no_unassigned: FormControl<number | null | undefined>,
 
-		/** number of employed vehicles */
+		/**
+		 * number of employed vehicles
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		no_vehicles: FormControl<number | null | undefined>,
 
-		/** overall transport time in ms */
-		time: FormControl<number | null | undefined>,
+		/**
+		 * overall transport time in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		time: FormControl<string | null | undefined>,
 
-		/** overall transport time in ms */
-		transport_time: FormControl<number | null | undefined>,
+		/**
+		 * overall transport time in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transport_time: FormControl<string | null | undefined>,
 
-		/** total waiting time in ms */
-		waiting_time: FormControl<number | null | undefined>,
+		/**
+		 * total waiting time in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		waiting_time: FormControl<string | null | undefined>,
 	}
 	export function CreateSolutionFormGroup() {
 		return new FormGroup<SolutionFormProperties>({
 			costs: new FormControl<number | null | undefined>(undefined),
 			distance: new FormControl<number | null | undefined>(undefined),
-			max_operation_time: new FormControl<number | null | undefined>(undefined),
+			max_operation_time: new FormControl<string | null | undefined>(undefined),
 			no_unassigned: new FormControl<number | null | undefined>(undefined),
 			no_vehicles: new FormControl<number | null | undefined>(undefined),
-			time: new FormControl<number | null | undefined>(undefined),
-			transport_time: new FormControl<number | null | undefined>(undefined),
-			waiting_time: new FormControl<number | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
+			transport_time: new FormControl<string | null | undefined>(undefined),
+			waiting_time: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -667,45 +859,69 @@ export namespace MyNS {
 		/** array of activities */
 		activities?: Array<Activity>;
 
-		/** completion time of route in ms */
-		completion_time?: number | null;
+		/**
+		 * completion time of route in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		completion_time?: string | null;
 
-		/** distance of route in meter */
-		distance?: number | null;
+		/**
+		 * distance of route in meter
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		distance?: string | null;
 
-		/** transport time of route in ms */
-		transport_time?: number | null;
+		/**
+		 * transport time of route in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transport_time?: string | null;
 
 		/** id of vehicle that operates route */
 		vehicle_id?: string | null;
 
-		/** waiting time of route in ms */
-		waiting_time?: number | null;
+		/**
+		 * waiting time of route in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		waiting_time?: string | null;
 	}
 	export interface RouteFormProperties {
 
-		/** completion time of route in ms */
-		completion_time: FormControl<number | null | undefined>,
+		/**
+		 * completion time of route in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		completion_time: FormControl<string | null | undefined>,
 
-		/** distance of route in meter */
-		distance: FormControl<number | null | undefined>,
+		/**
+		 * distance of route in meter
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		distance: FormControl<string | null | undefined>,
 
-		/** transport time of route in ms */
-		transport_time: FormControl<number | null | undefined>,
+		/**
+		 * transport time of route in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transport_time: FormControl<string | null | undefined>,
 
 		/** id of vehicle that operates route */
 		vehicle_id: FormControl<string | null | undefined>,
 
-		/** waiting time of route in ms */
-		waiting_time: FormControl<number | null | undefined>,
+		/**
+		 * waiting time of route in ms
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		waiting_time: FormControl<string | null | undefined>,
 	}
 	export function CreateRouteFormGroup() {
 		return new FormGroup<RouteFormProperties>({
-			completion_time: new FormControl<number | null | undefined>(undefined),
-			distance: new FormControl<number | null | undefined>(undefined),
-			transport_time: new FormControl<number | null | undefined>(undefined),
+			completion_time: new FormControl<string | null | undefined>(undefined),
+			distance: new FormControl<string | null | undefined>(undefined),
+			transport_time: new FormControl<string | null | undefined>(undefined),
 			vehicle_id: new FormControl<string | null | undefined>(undefined),
-			waiting_time: new FormControl<number | null | undefined>(undefined),
+			waiting_time: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

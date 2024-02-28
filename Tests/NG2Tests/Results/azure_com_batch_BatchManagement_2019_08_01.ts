@@ -615,12 +615,17 @@ export namespace MyNS {
 
 		/** The account endpoint used to interact with the Batch service. */
 		accountEndpoint?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		activeJobAndJobScheduleQuota?: number | null;
 
 		/** Contains information about the auto-storage account associated with a Batch account. */
 		autoStorage?: AutoStorageProperties;
 
-		/** For accounts with PoolAllocationMode set to UserSubscription, quota is managed on the subscription so this value is not returned. */
+		/**
+		 * For accounts with PoolAllocationMode set to UserSubscription, quota is managed on the subscription so this value is not returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dedicatedCoreQuota?: number | null;
 
 		/** A list of the dedicated core quota per Virtual Machine family for the Batch account. For accounts with PoolAllocationMode set to UserSubscription, quota is managed on the subscription so this value is not returned. */
@@ -632,11 +637,16 @@ export namespace MyNS {
 		/** Identifies the Azure key vault associated with a Batch account. */
 		keyVaultReference?: KeyVaultReference;
 
-		/** For accounts with PoolAllocationMode set to UserSubscription, quota is managed on the subscription so this value is not returned. */
+		/**
+		 * For accounts with PoolAllocationMode set to UserSubscription, quota is managed on the subscription so this value is not returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lowPriorityCoreQuota?: number | null;
 
 		/** The allocation mode for creating pools in the Batch account. */
 		poolAllocationMode?: BatchAccountCreatePropertiesPoolAllocationMode | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		poolQuota?: number | null;
 
 		/** The provisioned state of the resource */
@@ -648,19 +658,29 @@ export namespace MyNS {
 
 		/** The account endpoint used to interact with the Batch service. */
 		accountEndpoint: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		activeJobAndJobScheduleQuota: FormControl<number | null | undefined>,
 
-		/** For accounts with PoolAllocationMode set to UserSubscription, quota is managed on the subscription so this value is not returned. */
+		/**
+		 * For accounts with PoolAllocationMode set to UserSubscription, quota is managed on the subscription so this value is not returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dedicatedCoreQuota: FormControl<number | null | undefined>,
 
 		/** Batch is transitioning its core quota system for dedicated cores to be enforced per Virtual Machine family. During this transitional phase, the dedicated core quota per Virtual Machine family may not yet be enforced. If this flag is false, dedicated core quota is enforced via the old dedicatedCoreQuota property on the account and does not consider Virtual Machine family. If this flag is true, dedicated core quota is enforced via the dedicatedCoreQuotaPerVMFamily property on the account, and the old dedicatedCoreQuota does not apply. */
 		dedicatedCoreQuotaPerVMFamilyEnforced: FormControl<boolean | null | undefined>,
 
-		/** For accounts with PoolAllocationMode set to UserSubscription, quota is managed on the subscription so this value is not returned. */
+		/**
+		 * For accounts with PoolAllocationMode set to UserSubscription, quota is managed on the subscription so this value is not returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lowPriorityCoreQuota: FormControl<number | null | undefined>,
 
 		/** The allocation mode for creating pools in the Batch account. */
 		poolAllocationMode: FormControl<BatchAccountCreatePropertiesPoolAllocationMode | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		poolQuota: FormControl<number | null | undefined>,
 
 		/** The provisioned state of the resource */
@@ -684,7 +704,10 @@ export namespace MyNS {
 	/** A VM Family and its associated core quota for the Batch account. */
 	export interface VirtualMachineFamilyCoreQuota {
 
-		/** The core quota for the VM family for the Batch account. */
+		/**
+		 * The core quota for the VM family for the Batch account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreQuota?: number | null;
 
 		/** The Virtual Machine family name. */
@@ -694,7 +717,10 @@ export namespace MyNS {
 	/** A VM Family and its associated core quota for the Batch account. */
 	export interface VirtualMachineFamilyCoreQuotaFormProperties {
 
-		/** The core quota for the VM family for the Batch account. */
+		/**
+		 * The core quota for the VM family for the Batch account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreQuota: FormControl<number | null | undefined>,
 
 		/** The Virtual Machine family name. */
@@ -784,14 +810,20 @@ export namespace MyNS {
 	/** Quotas associated with a Batch region for a particular subscription. */
 	export interface BatchLocationQuota {
 
-		/** The number of Batch accounts that may be created under the subscription in the specified region. */
+		/**
+		 * The number of Batch accounts that may be created under the subscription in the specified region.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountQuota?: number | null;
 	}
 
 	/** Quotas associated with a Batch region for a particular subscription. */
 	export interface BatchLocationQuotaFormProperties {
 
-		/** The number of Batch accounts that may be created under the subscription in the specified region. */
+		/**
+		 * The number of Batch accounts that may be created under the subscription in the specified region.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountQuota: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchLocationQuotaFormGroup() {
@@ -1272,12 +1304,16 @@ export namespace MyNS {
 	export interface DataDisk {
 		caching?: CachingType | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: number;
 
 		/**
 		 * The lun is used to uniquely identify each data disk. If attaching multiple disks, each should have a distinct lun.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lun: number;
 		storageAccountType?: DataDiskStorageAccountType | null;
@@ -1287,12 +1323,16 @@ export namespace MyNS {
 	export interface DataDiskFormProperties {
 		caching: FormControl<CachingType | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/**
 		 * The lun is used to uniquely identify each data disk. If attaching multiple disks, each should have a distinct lun.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lun: FormControl<number | null | undefined>,
 		storageAccountType: FormControl<DataDiskStorageAccountType | null | undefined>,
@@ -1399,10 +1439,16 @@ export namespace MyNS {
 		/** The default value is 15 minutes. Timeout values use ISO 8601 format. For example, use PT10M for 10 minutes. The minimum value is 5 minutes. If you specify a value less than 5 minutes, the Batch service rejects the request with an error; if you are calling the REST API directly, the HTTP status code is 400 (Bad Request). */
 		resizeTimeout?: string | null;
 
-		/** At least one of targetDedicatedNodes, targetLowPriority nodes must be set. */
+		/**
+		 * At least one of targetDedicatedNodes, targetLowPriority nodes must be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicatedNodes?: number | null;
 
-		/** At least one of targetDedicatedNodes, targetLowPriority nodes must be set. */
+		/**
+		 * At least one of targetDedicatedNodes, targetLowPriority nodes must be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetLowPriorityNodes?: number | null;
 	}
 	export interface FixedScaleSettingsFormProperties {
@@ -1411,10 +1457,16 @@ export namespace MyNS {
 		/** The default value is 15 minutes. Timeout values use ISO 8601 format. For example, use PT10M for 10 minutes. The minimum value is 5 minutes. If you specify a value less than 5 minutes, the Batch service rejects the request with an error; if you are calling the REST API directly, the HTTP status code is 400 (Bad Request). */
 		resizeTimeout: FormControl<string | null | undefined>,
 
-		/** At least one of targetDedicatedNodes, targetLowPriority nodes must be set. */
+		/**
+		 * At least one of targetDedicatedNodes, targetLowPriority nodes must be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicatedNodes: FormControl<number | null | undefined>,
 
-		/** At least one of targetDedicatedNodes, targetLowPriority nodes must be set. */
+		/**
+		 * At least one of targetDedicatedNodes, targetLowPriority nodes must be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetLowPriorityNodes: FormControl<number | null | undefined>,
 	}
 	export function CreateFixedScaleSettingsFormGroup() {
@@ -1477,18 +1529,21 @@ export namespace MyNS {
 		/**
 		 * This must be unique within a Batch pool. Acceptable values are between 1 and 65535 except for 22, 3389, 29876 and 29877 as these are reserved. If any reserved values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		backendPort: number;
 
 		/**
 		 * Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved by the Batch service. All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frontendPortRangeEnd: number;
 
 		/**
 		 * Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved. All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frontendPortRangeStart: number;
 
@@ -1509,18 +1564,21 @@ export namespace MyNS {
 		/**
 		 * This must be unique within a Batch pool. Acceptable values are between 1 and 65535 except for 22, 3389, 29876 and 29877 as these are reserved. If any reserved values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		backendPort: FormControl<number | null | undefined>,
 
 		/**
 		 * Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved by the Batch service. All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frontendPortRangeEnd: FormControl<number | null | undefined>,
 
 		/**
 		 * Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved. All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frontendPortRangeStart: FormControl<number | null | undefined>,
 
@@ -1552,6 +1610,7 @@ export namespace MyNS {
 		/**
 		 * Priorities within a pool must be unique and are evaluated in order of priority. The lower the number the higher the priority. For example, rules could be specified with order numbers of 150, 250, and 350. The rule with the order number of 150 takes precedence over the rule that has an order of 250. Allowed priorities are 150 to 3500. If any reserved or duplicate values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: number;
 
@@ -1572,6 +1631,7 @@ export namespace MyNS {
 		/**
 		 * Priorities within a pool must be unique and are evaluated in order of priority. The lower the number the higher the priority. For example, rules could be specified with order numbers of 150, 250, and 350. The rule with the order number of 150 takes precedence over the rule that has an order of 250. Allowed priorities are 150 to 3500. If any reserved or duplicate values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: FormControl<number | null | undefined>,
 
@@ -1636,24 +1696,36 @@ export namespace MyNS {
 
 	export interface LinuxUserConfiguration {
 
-		/** The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the gid. */
+		/**
+		 * The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the gid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gid?: number | null;
 
 		/** The private key must not be password protected. The private key is used to automatically configure asymmetric-key based authentication for SSH between nodes in a Linux pool when the pool's enableInterNodeCommunication property is true (it is ignored if enableInterNodeCommunication is false). It does this by placing the key pair into the user's .ssh directory. If not specified, password-less SSH is not configured between nodes (no modification of the user's .ssh directory is done). */
 		sshPrivateKey?: string | null;
 
-		/** The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the uid. */
+		/**
+		 * The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the uid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uid?: number | null;
 	}
 	export interface LinuxUserConfigurationFormProperties {
 
-		/** The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the gid. */
+		/**
+		 * The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the gid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gid: FormControl<number | null | undefined>,
 
 		/** The private key must not be password protected. The private key is used to automatically configure asymmetric-key based authentication for SSH between nodes in a Linux pool when the pool's enableInterNodeCommunication property is true (it is ignored if enableInterNodeCommunication is false). It does this by placing the key pair into the user's .ssh directory. If not specified, password-less SSH is not configured between nodes (no modification of the user's .ssh directory is done). */
 		sshPrivateKey: FormControl<string | null | undefined>,
 
-		/** The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the uid. */
+		/**
+		 * The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the uid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uid: FormControl<number | null | undefined>,
 	}
 	export function CreateLinuxUserConfigurationFormGroup() {
@@ -1962,7 +2034,11 @@ export namespace MyNS {
 		/** For Windows compute nodes, the Batch service installs the certificates to the specified certificate store and location. For Linux compute nodes, the certificates are stored in a directory inside the task working directory and an environment variable AZ_BATCH_CERTIFICATES_DIR is supplied to the task to query for this location. For certificates with visibility of 'remoteUser', a 'certs' directory is created in the user's home directory (e.g., /home/{user-name}/certs) and certificates are placed in that directory. */
 		certificates?: Array<CertificateReference>;
 		creationTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentDedicatedNodes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentLowPriorityNodes?: number | null;
 		deploymentConfiguration?: DeploymentConfiguration;
 
@@ -1975,7 +2051,10 @@ export namespace MyNS {
 		/** This is the last time at which the pool level data, such as the targetDedicatedNodes or autoScaleSettings, changed. It does not factor in node-level changes such as a compute node changing state. */
 		lastModified?: Date | null;
 
-		/** The default value is 1. The maximum value is the smaller of 4 times the number of cores of the vmSize of the pool or 256. */
+		/**
+		 * The default value is 1. The maximum value is the smaller of 4 times the number of cores of the vmSize of the pool or 256.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode?: number | null;
 
 		/** The Batch service does not assign any meaning to metadata; it is solely for the use of user code. */
@@ -2009,7 +2088,11 @@ export namespace MyNS {
 		allocationState: FormControl<PoolPropertiesAllocationState | null | undefined>,
 		allocationStateTransitionTime: FormControl<Date | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentDedicatedNodes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentLowPriorityNodes: FormControl<number | null | undefined>,
 
 		/** The display name need not be unique and can contain any Unicode characters up to a maximum length of 1024. */
@@ -2021,7 +2104,10 @@ export namespace MyNS {
 		/** This is the last time at which the pool level data, such as the targetDedicatedNodes or autoScaleSettings, changed. It does not factor in node-level changes such as a compute node changing state. */
 		lastModified: FormControl<Date | null | undefined>,
 
-		/** The default value is 1. The maximum value is the smaller of 4 times the number of cores of the vmSize of the pool or 256. */
+		/**
+		 * The default value is 1. The maximum value is the smaller of 4 times the number of cores of the vmSize of the pool or 256.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode: FormControl<number | null | undefined>,
 		provisioningState: FormControl<PoolPropertiesProvisioningState | null | undefined>,
 		provisioningStateTransitionTime: FormControl<Date | null | undefined>,
@@ -2172,7 +2258,11 @@ export namespace MyNS {
 		/** The default value is 15 minutes. The minimum value is 5 minutes. If you specify a value less than 5 minutes, the Batch service returns an error; if you are calling the REST API directly, the HTTP status code is 400 (Bad Request). */
 		resizeTimeout?: string | null;
 		startTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetDedicatedNodes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetLowPriorityNodes?: number | null;
 	}
 
@@ -2183,7 +2273,11 @@ export namespace MyNS {
 		/** The default value is 15 minutes. The minimum value is 5 minutes. If you specify a value less than 5 minutes, the Batch service returns an error; if you are calling the REST API directly, the HTTP status code is 400 (Bad Request). */
 		resizeTimeout: FormControl<string | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetDedicatedNodes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetLowPriorityNodes: FormControl<number | null | undefined>,
 	}
 	export function CreateResizeOperationStatusFormGroup() {
@@ -2323,7 +2417,10 @@ export namespace MyNS {
 		containerSettings?: TaskContainerSettings;
 		environmentSettings?: Array<EnvironmentSetting>;
 
-		/** The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit. */
+		/**
+		 * The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount?: number | null;
 		resourceFiles?: Array<ResourceFile>;
 
@@ -2340,7 +2437,10 @@ export namespace MyNS {
 		/** The command line does not run under a shell, and therefore cannot take advantage of shell features such as environment variable expansion. If you want to take advantage of such features, you should invoke the shell in the command line, for example using "cmd /c MyCommand" in Windows or "/bin/sh -c MyCommand" in Linux. Required if any other properties of the startTask are specified. */
 		commandLine: FormControl<string | null | undefined>,
 
-		/** The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit. */
+		/**
+		 * The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount: FormControl<number | null | undefined>,
 
 		/** If true and the start task fails on a compute node, the Batch service retries the start task up to its maximum retry count (maxTaskRetryCount). If the task has still not completed successfully after all retries, then the Batch service marks the compute node unusable, and will not schedule tasks to it. This condition can be detected via the node state and scheduling error detail. If false, the Batch service will not wait for the start task to complete. In this case, other tasks can start executing on the compute node while the start task is still running; and even if the start task fails, new tasks will continue to be scheduled on the node. The default is true. */

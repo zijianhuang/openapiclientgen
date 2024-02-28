@@ -117,8 +117,11 @@ export namespace MyNS {
 		/** The relative DNS name provided by this Traffic Manager profile. This value is combined with the DNS domain name used by Azure Traffic Manager to form the fully-qualified domain name (FQDN) of the profile. */
 		relativeName?: string | null;
 
-		/** The DNS Time-To-Live (TTL), in seconds. This informs the local DNS resolvers and DNS clients how long to cache DNS responses provided by this Traffic Manager profile. */
-		ttl?: number | null;
+		/**
+		 * The DNS Time-To-Live (TTL), in seconds. This informs the local DNS resolvers and DNS clients how long to cache DNS responses provided by this Traffic Manager profile.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ttl?: string | null;
 	}
 
 	/** Class containing DNS settings in a Traffic Manager profile. */
@@ -130,14 +133,17 @@ export namespace MyNS {
 		/** The relative DNS name provided by this Traffic Manager profile. This value is combined with the DNS domain name used by Azure Traffic Manager to form the fully-qualified domain name (FQDN) of the profile. */
 		relativeName: FormControl<string | null | undefined>,
 
-		/** The DNS Time-To-Live (TTL), in seconds. This informs the local DNS resolvers and DNS clients how long to cache DNS responses provided by this Traffic Manager profile. */
-		ttl: FormControl<number | null | undefined>,
+		/**
+		 * The DNS Time-To-Live (TTL), in seconds. This informs the local DNS resolvers and DNS clients how long to cache DNS responses provided by this Traffic Manager profile.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ttl: FormControl<string | null | undefined>,
 	}
 	export function CreateDnsConfigFormGroup() {
 		return new FormGroup<DnsConfigFormProperties>({
 			fqdn: new FormControl<string | null | undefined>(undefined),
 			relativeName: new FormControl<string | null | undefined>(undefined),
-			ttl: new FormControl<number | null | undefined>(undefined),
+			ttl: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -178,11 +184,17 @@ export namespace MyNS {
 		/** The list of countries/regions mapped to this endpoint when using the 'Geographic' traffic routing method. Please consult Traffic Manager Geographic documentation for a full list of accepted values. */
 		geoMapping?: Array<string>;
 
-		/** The minimum number of endpoints that must be available in the child profile in order for the parent profile to be considered available. Only applicable to endpoint of type 'NestedEndpoints'. */
-		minChildEndpoints?: number | null;
+		/**
+		 * The minimum number of endpoints that must be available in the child profile in order for the parent profile to be considered available. Only applicable to endpoint of type 'NestedEndpoints'.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minChildEndpoints?: string | null;
 
-		/** The priority of this endpoint when using the 'Priority' traffic routing method. Possible values are from 1 to 1000, lower values represent higher priority. This is an optional parameter.  If specified, it must be specified on all endpoints, and no two endpoints can share the same priority value. */
-		priority?: number | null;
+		/**
+		 * The priority of this endpoint when using the 'Priority' traffic routing method. Possible values are from 1 to 1000, lower values represent higher priority. This is an optional parameter.  If specified, it must be specified on all endpoints, and no two endpoints can share the same priority value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		priority?: string | null;
 
 		/** The list of subnets, IP addresses, and/or address ranges mapped to this endpoint when using the 'Subnet' traffic routing method. An empty list will match all ranges not covered by other endpoints. */
 		EndpointPropertiesSubnets?: Array<EndpointPropertiesSubnets>;
@@ -193,8 +205,11 @@ export namespace MyNS {
 		/** The Azure Resource URI of the of the endpoint. Not applicable to endpoints of type 'ExternalEndpoints'. */
 		targetResourceId?: string | null;
 
-		/** The weight of this endpoint when using the 'Weighted' traffic routing method. Possible values are from 1 to 1000. */
-		weight?: number | null;
+		/**
+		 * The weight of this endpoint when using the 'Weighted' traffic routing method. Possible values are from 1 to 1000.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		weight?: string | null;
 	}
 
 	/** Class representing a Traffic Manager endpoint properties. */
@@ -209,11 +224,17 @@ export namespace MyNS {
 		/** The status of the endpoint. If the endpoint is Enabled, it is probed for endpoint health and is included in the traffic routing method. */
 		endpointStatus: FormControl<EndpointPropertiesEndpointStatus | null | undefined>,
 
-		/** The minimum number of endpoints that must be available in the child profile in order for the parent profile to be considered available. Only applicable to endpoint of type 'NestedEndpoints'. */
-		minChildEndpoints: FormControl<number | null | undefined>,
+		/**
+		 * The minimum number of endpoints that must be available in the child profile in order for the parent profile to be considered available. Only applicable to endpoint of type 'NestedEndpoints'.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minChildEndpoints: FormControl<string | null | undefined>,
 
-		/** The priority of this endpoint when using the 'Priority' traffic routing method. Possible values are from 1 to 1000, lower values represent higher priority. This is an optional parameter.  If specified, it must be specified on all endpoints, and no two endpoints can share the same priority value. */
-		priority: FormControl<number | null | undefined>,
+		/**
+		 * The priority of this endpoint when using the 'Priority' traffic routing method. Possible values are from 1 to 1000, lower values represent higher priority. This is an optional parameter.  If specified, it must be specified on all endpoints, and no two endpoints can share the same priority value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		priority: FormControl<string | null | undefined>,
 
 		/** The fully-qualified DNS name or IP address of the endpoint. Traffic Manager returns this value in DNS responses to direct traffic to this endpoint. */
 		target: FormControl<string | null | undefined>,
@@ -221,19 +242,22 @@ export namespace MyNS {
 		/** The Azure Resource URI of the of the endpoint. Not applicable to endpoints of type 'ExternalEndpoints'. */
 		targetResourceId: FormControl<string | null | undefined>,
 
-		/** The weight of this endpoint when using the 'Weighted' traffic routing method. Possible values are from 1 to 1000. */
-		weight: FormControl<number | null | undefined>,
+		/**
+		 * The weight of this endpoint when using the 'Weighted' traffic routing method. Possible values are from 1 to 1000.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		weight: FormControl<string | null | undefined>,
 	}
 	export function CreateEndpointPropertiesFormGroup() {
 		return new FormGroup<EndpointPropertiesFormProperties>({
 			endpointLocation: new FormControl<string | null | undefined>(undefined),
 			endpointMonitorStatus: new FormControl<EndpointPropertiesEndpointMonitorStatus | null | undefined>(undefined),
 			endpointStatus: new FormControl<EndpointPropertiesEndpointStatus | null | undefined>(undefined),
-			minChildEndpoints: new FormControl<number | null | undefined>(undefined),
-			priority: new FormControl<number | null | undefined>(undefined),
+			minChildEndpoints: new FormControl<string | null | undefined>(undefined),
+			priority: new FormControl<string | null | undefined>(undefined),
 			target: new FormControl<string | null | undefined>(undefined),
 			targetResourceId: new FormControl<string | null | undefined>(undefined),
-			weight: new FormControl<number | null | undefined>(undefined),
+			weight: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -274,7 +298,10 @@ export namespace MyNS {
 		/** Last address in the subnet. */
 		last?: string | null;
 
-		/** Block size (number of leading bits in the subnet mask). */
+		/**
+		 * Block size (number of leading bits in the subnet mask).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scope?: number | null;
 	}
 	export interface EndpointPropertiesSubnetsFormProperties {
@@ -285,7 +312,10 @@ export namespace MyNS {
 		/** Last address in the subnet. */
 		last: FormControl<string | null | undefined>,
 
-		/** Block size (number of leading bits in the subnet mask). */
+		/**
+		 * Block size (number of leading bits in the subnet mask).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scope: FormControl<number | null | undefined>,
 	}
 	export function CreateEndpointPropertiesSubnetsFormGroup() {
@@ -318,7 +348,10 @@ export namespace MyNS {
 	/** Class which is a sparse representation of a Traffic Manager endpoint. */
 	export interface HeatMapEndpoint {
 
-		/** A number uniquely identifying this endpoint in query experiences. */
+		/**
+		 * A number uniquely identifying this endpoint in query experiences.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endpointId?: number | null;
 
 		/** The ARM Resource ID of this Traffic Manager endpoint. */
@@ -328,7 +361,10 @@ export namespace MyNS {
 	/** Class which is a sparse representation of a Traffic Manager endpoint. */
 	export interface HeatMapEndpointFormProperties {
 
-		/** A number uniquely identifying this endpoint in query experiences. */
+		/**
+		 * A number uniquely identifying this endpoint in query experiences.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endpointId: FormControl<number | null | undefined>,
 
 		/** The ARM Resource ID of this Traffic Manager endpoint. */
@@ -397,10 +433,16 @@ export namespace MyNS {
 	/** Class representing a Traffic Manager HeatMap traffic flow properties. */
 	export interface TrafficFlow {
 
-		/** The approximate latitude that these queries originated from. */
+		/**
+		 * The approximate latitude that these queries originated from.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The approximate longitude that these queries originated from. */
+		/**
+		 * The approximate longitude that these queries originated from.
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/** The query experiences produced in this HeatMap calculation. */
@@ -413,10 +455,16 @@ export namespace MyNS {
 	/** Class representing a Traffic Manager HeatMap traffic flow properties. */
 	export interface TrafficFlowFormProperties {
 
-		/** The approximate latitude that these queries originated from. */
+		/**
+		 * The approximate latitude that these queries originated from.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The approximate longitude that these queries originated from. */
+		/**
+		 * The approximate longitude that these queries originated from.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** The IP address that this query experience originated from. */
@@ -438,15 +486,20 @@ export namespace MyNS {
 		/**
 		 * The id of the endpoint from the 'endpoints' array which these queries were routed to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		endpointId: number;
 
-		/** The latency experienced by queries originating from this location. */
+		/**
+		 * The latency experienced by queries originating from this location.
+		 * Type: double
+		 */
 		latency?: number | null;
 
 		/**
 		 * The number of queries originating from this location.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queryCount: number;
 	}
@@ -457,15 +510,20 @@ export namespace MyNS {
 		/**
 		 * The id of the endpoint from the 'endpoints' array which these queries were routed to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		endpointId: FormControl<number | null | undefined>,
 
-		/** The latency experienced by queries originating from this location. */
+		/**
+		 * The latency experienced by queries originating from this location.
+		 * Type: double
+		 */
 		latency: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of queries originating from this location.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queryCount: FormControl<number | null | undefined>,
 	}
@@ -488,14 +546,20 @@ export namespace MyNS {
 		/** List of expected status code ranges. */
 		MonitorConfigExpectedStatusCodeRanges?: Array<MonitorConfigExpectedStatusCodeRanges>;
 
-		/** The monitor interval for endpoints in this profile. This is the interval at which Traffic Manager will check the health of each endpoint in this profile. */
-		intervalInSeconds?: number | null;
+		/**
+		 * The monitor interval for endpoints in this profile. This is the interval at which Traffic Manager will check the health of each endpoint in this profile.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		intervalInSeconds?: string | null;
 
 		/** The path relative to the endpoint domain name used to probe for endpoint health. */
 		path?: string | null;
 
-		/** The TCP port used to probe for endpoint health. */
-		port?: number | null;
+		/**
+		 * The TCP port used to probe for endpoint health.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		port?: string | null;
 
 		/** The profile-level monitoring status of the Traffic Manager profile. */
 		profileMonitorStatus?: MonitorConfigProfileMonitorStatus | null;
@@ -503,24 +567,36 @@ export namespace MyNS {
 		/** The protocol (HTTP, HTTPS or TCP) used to probe for endpoint health. */
 		protocol?: MonitorConfigProtocol | null;
 
-		/** The monitor timeout for endpoints in this profile. This is the time that Traffic Manager allows endpoints in this profile to response to the health check. */
-		timeoutInSeconds?: number | null;
+		/**
+		 * The monitor timeout for endpoints in this profile. This is the time that Traffic Manager allows endpoints in this profile to response to the health check.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timeoutInSeconds?: string | null;
 
-		/** The number of consecutive failed health check that Traffic Manager tolerates before declaring an endpoint in this profile Degraded after the next failed health check. */
-		toleratedNumberOfFailures?: number | null;
+		/**
+		 * The number of consecutive failed health check that Traffic Manager tolerates before declaring an endpoint in this profile Degraded after the next failed health check.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		toleratedNumberOfFailures?: string | null;
 	}
 
 	/** Class containing endpoint monitoring settings in a Traffic Manager profile. */
 	export interface MonitorConfigFormProperties {
 
-		/** The monitor interval for endpoints in this profile. This is the interval at which Traffic Manager will check the health of each endpoint in this profile. */
-		intervalInSeconds: FormControl<number | null | undefined>,
+		/**
+		 * The monitor interval for endpoints in this profile. This is the interval at which Traffic Manager will check the health of each endpoint in this profile.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		intervalInSeconds: FormControl<string | null | undefined>,
 
 		/** The path relative to the endpoint domain name used to probe for endpoint health. */
 		path: FormControl<string | null | undefined>,
 
-		/** The TCP port used to probe for endpoint health. */
-		port: FormControl<number | null | undefined>,
+		/**
+		 * The TCP port used to probe for endpoint health.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		port: FormControl<string | null | undefined>,
 
 		/** The profile-level monitoring status of the Traffic Manager profile. */
 		profileMonitorStatus: FormControl<MonitorConfigProfileMonitorStatus | null | undefined>,
@@ -528,21 +604,27 @@ export namespace MyNS {
 		/** The protocol (HTTP, HTTPS or TCP) used to probe for endpoint health. */
 		protocol: FormControl<MonitorConfigProtocol | null | undefined>,
 
-		/** The monitor timeout for endpoints in this profile. This is the time that Traffic Manager allows endpoints in this profile to response to the health check. */
-		timeoutInSeconds: FormControl<number | null | undefined>,
+		/**
+		 * The monitor timeout for endpoints in this profile. This is the time that Traffic Manager allows endpoints in this profile to response to the health check.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timeoutInSeconds: FormControl<string | null | undefined>,
 
-		/** The number of consecutive failed health check that Traffic Manager tolerates before declaring an endpoint in this profile Degraded after the next failed health check. */
-		toleratedNumberOfFailures: FormControl<number | null | undefined>,
+		/**
+		 * The number of consecutive failed health check that Traffic Manager tolerates before declaring an endpoint in this profile Degraded after the next failed health check.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		toleratedNumberOfFailures: FormControl<string | null | undefined>,
 	}
 	export function CreateMonitorConfigFormGroup() {
 		return new FormGroup<MonitorConfigFormProperties>({
-			intervalInSeconds: new FormControl<number | null | undefined>(undefined),
+			intervalInSeconds: new FormControl<string | null | undefined>(undefined),
 			path: new FormControl<string | null | undefined>(undefined),
-			port: new FormControl<number | null | undefined>(undefined),
+			port: new FormControl<string | null | undefined>(undefined),
 			profileMonitorStatus: new FormControl<MonitorConfigProfileMonitorStatus | null | undefined>(undefined),
 			protocol: new FormControl<MonitorConfigProtocol | null | undefined>(undefined),
-			timeoutInSeconds: new FormControl<number | null | undefined>(undefined),
-			toleratedNumberOfFailures: new FormControl<number | null | undefined>(undefined),
+			timeoutInSeconds: new FormControl<string | null | undefined>(undefined),
+			toleratedNumberOfFailures: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -573,18 +655,30 @@ export namespace MyNS {
 
 	export interface MonitorConfigExpectedStatusCodeRanges {
 
-		/** Max status code. */
+		/**
+		 * Max status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max?: number | null;
 
-		/** Min status code. */
+		/**
+		 * Min status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min?: number | null;
 	}
 	export interface MonitorConfigExpectedStatusCodeRangesFormProperties {
 
-		/** Max status code. */
+		/**
+		 * Max status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** Min status code. */
+		/**
+		 * Min status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min: FormControl<number | null | undefined>,
 	}
 	export function CreateMonitorConfigExpectedStatusCodeRangesFormGroup() {
@@ -648,8 +742,11 @@ export namespace MyNS {
 		/** The list of endpoints in the Traffic Manager profile. */
 		endpoints?: Array<Endpoint>;
 
-		/** Maximum number of endpoints to be returned for MultiValue routing type. */
-		maxReturn?: number | null;
+		/**
+		 * Maximum number of endpoints to be returned for MultiValue routing type.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxReturn?: string | null;
 
 		/** Class containing endpoint monitoring settings in a Traffic Manager profile. */
 		monitorConfig?: MonitorConfig;
@@ -667,8 +764,11 @@ export namespace MyNS {
 	/** Class representing the Traffic Manager profile properties. */
 	export interface ProfilePropertiesFormProperties {
 
-		/** Maximum number of endpoints to be returned for MultiValue routing type. */
-		maxReturn: FormControl<number | null | undefined>,
+		/**
+		 * Maximum number of endpoints to be returned for MultiValue routing type.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxReturn: FormControl<string | null | undefined>,
 
 		/** The status of the Traffic Manager profile. */
 		profileStatus: FormControl<EndpointPropertiesEndpointStatus | null | undefined>,
@@ -681,7 +781,7 @@ export namespace MyNS {
 	}
 	export function CreateProfilePropertiesFormGroup() {
 		return new FormGroup<ProfilePropertiesFormProperties>({
-			maxReturn: new FormControl<number | null | undefined>(undefined),
+			maxReturn: new FormControl<string | null | undefined>(undefined),
 			profileStatus: new FormControl<EndpointPropertiesEndpointStatus | null | undefined>(undefined),
 			trafficRoutingMethod: new FormControl<ProfilePropertiesTrafficRoutingMethod | null | undefined>(undefined),
 			trafficViewEnrollmentStatus: new FormControl<EndpointPropertiesEndpointStatus | null | undefined>(undefined),

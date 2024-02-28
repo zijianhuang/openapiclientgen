@@ -140,6 +140,7 @@ export namespace MyNS {
 		/**
 		 * The length of the predicted entity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		entityLength: number;
 
@@ -152,12 +153,16 @@ export namespace MyNS {
 		/** A user supplied custom resolution to return as the entity's prediction. */
 		resolution?: any;
 
-		/** A user supplied score to return as the entity's prediction score. */
+		/**
+		 * A user supplied score to return as the entity's prediction score.
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/**
 		 * The start character index of the predicted entity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startIndex: number;
 	}
@@ -168,6 +173,7 @@ export namespace MyNS {
 		/**
 		 * The length of the predicted entity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		entityLength: FormControl<number | null | undefined>,
 
@@ -180,12 +186,16 @@ export namespace MyNS {
 		/** A user supplied custom resolution to return as the entity's prediction. */
 		resolution: FormControl<any | null | undefined>,
 
-		/** A user supplied score to return as the entity's prediction score. */
+		/**
+		 * A user supplied score to return as the entity's prediction score.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/**
 		 * The start character index of the predicted entity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startIndex: FormControl<number | null | undefined>,
 	}
@@ -207,14 +217,20 @@ export namespace MyNS {
 		/** Represents the prediction of a query. */
 		childApp?: Prediction;
 
-		/** The score of the fired intent. */
+		/**
+		 * The score of the fired intent.
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
 	/** Represents an intent prediction. */
 	export interface IntentFormProperties {
 
-		/** The score of the fired intent. */
+		/**
+		 * The score of the fired intent.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateIntentFormGroup() {
@@ -297,6 +313,7 @@ export namespace MyNS {
 		/**
 		 * The sentiment score of the query.
 		 * Required
+		 * Type: float
 		 */
 		score: number;
 	}
@@ -310,6 +327,7 @@ export namespace MyNS {
 		/**
 		 * The sentiment score of the query.
 		 * Required
+		 * Type: float
 		 */
 		score: FormControl<number | null | undefined>,
 	}

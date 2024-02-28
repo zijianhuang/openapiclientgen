@@ -107,7 +107,10 @@ export namespace MyNS {
 
 	export interface CommentsCollection {
 
-		/** Nember of comments available, data does not necessary contain all comments */
+		/**
+		 * Nember of comments available, data does not necessary contain all comments
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Collection of comment entries; **warning:** deprecated for Apps [created on or after Nov 17, 2015](http://instagram.com/developer/changelog/) */
@@ -115,7 +118,10 @@ export namespace MyNS {
 	}
 	export interface CommentsCollectionFormProperties {
 
-		/** Nember of comments available, data does not necessary contain all comments */
+		/**
+		 * Nember of comments available, data does not necessary contain all comments
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateCommentsCollectionFormGroup() {
@@ -141,12 +147,18 @@ export namespace MyNS {
 
 	export interface MetaData {
 
-		/** HTTP result code */
+		/**
+		 * HTTP result code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 	}
 	export interface MetaDataFormProperties {
 
-		/** HTTP result code */
+		/**
+		 * HTTP result code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaDataFormGroup() {
@@ -206,24 +218,36 @@ export namespace MyNS {
 
 	export interface ImageInfo {
 
-		/** Image/video height in pixels */
+		/**
+		 * Image/video height in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** URL of the image/video resource */
 		url?: string | null;
 
-		/** Image/video width in pixels */
+		/**
+		 * Image/video width in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface ImageInfoFormProperties {
 
-		/** Image/video height in pixels */
+		/**
+		 * Image/video height in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** URL of the image/video resource */
 		url: FormControl<string | null | undefined>,
 
-		/** Image/video width in pixels */
+		/**
+		 * Image/video width in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageInfoFormGroup() {
@@ -250,7 +274,10 @@ export namespace MyNS {
 
 	export interface LikesCollection {
 
-		/** Nember of likes available, data does not necessary contain all comments */
+		/**
+		 * Nember of likes available, data does not necessary contain all comments
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Collection of users who liked; **warning:** deprecated for Apps [created on or after Nov 17, 2015](http://instagram.com/developer/changelog/) */
@@ -258,7 +285,10 @@ export namespace MyNS {
 	}
 	export interface LikesCollectionFormProperties {
 
-		/** Nember of likes available, data does not necessary contain all comments */
+		/**
+		 * Nember of likes available, data does not necessary contain all comments
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateLikesCollectionFormGroup() {
@@ -273,10 +303,16 @@ export namespace MyNS {
 		/** ID of this location (in some responses it has a type of 'integer') */
 		id?: string | null;
 
-		/** Location latitude */
+		/**
+		 * Location latitude
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Location longitude */
+		/**
+		 * Location longitude
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/** Location name */
@@ -287,10 +323,16 @@ export namespace MyNS {
 		/** ID of this location (in some responses it has a type of 'integer') */
 		id: FormControl<string | null | undefined>,
 
-		/** Location latitude */
+		/**
+		 * Location latitude
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Location longitude */
+		/**
+		 * Location longitude
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** Location name */
@@ -420,18 +462,30 @@ export namespace MyNS {
 
 	export interface Position {
 
-		/** X position (horizontal) */
+		/**
+		 * X position (horizontal)
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y position (vertical) */
+		/**
+		 * Y position (vertical)
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 	export interface PositionFormProperties {
 
-		/** X position (horizontal) */
+		/**
+		 * X position (horizontal)
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y position (vertical) */
+		/**
+		 * Y position (vertical)
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreatePositionFormGroup() {
@@ -591,23 +645,29 @@ export namespace MyNS {
 
 	export interface TagInfo {
 
-		/** Overall number of media entries taged with this name */
-		media_count?: number | null;
+		/**
+		 * Overall number of media entries taged with this name
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		media_count?: string | null;
 
 		/** Tag name */
 		name?: string | null;
 	}
 	export interface TagInfoFormProperties {
 
-		/** Overall number of media entries taged with this name */
-		media_count: FormControl<number | null | undefined>,
+		/**
+		 * Overall number of media entries taged with this name
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		media_count: FormControl<string | null | undefined>,
 
 		/** Tag name */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateTagInfoFormGroup() {
 		return new FormGroup<TagInfoFormProperties>({
-			media_count: new FormControl<number | null | undefined>(undefined),
+			media_count: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -708,24 +768,42 @@ export namespace MyNS {
 
 	export interface UserCounts {
 
-		/** Number of followers of this user */
+		/**
+		 * Number of followers of this user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followed_by?: number | null;
 
-		/** Number of users followed by this user */
+		/**
+		 * Number of users followed by this user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		follows?: number | null;
 
-		/** Number of user media */
+		/**
+		 * Number of user media
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		media?: number | null;
 	}
 	export interface UserCountsFormProperties {
 
-		/** Number of followers of this user */
+		/**
+		 * Number of followers of this user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followed_by: FormControl<number | null | undefined>,
 
-		/** Number of users followed by this user */
+		/**
+		 * Number of users followed by this user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		follows: FormControl<number | null | undefined>,
 
-		/** Number of user media */
+		/**
+		 * Number of user media
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		media: FormControl<number | null | undefined>,
 	}
 	export function CreateUserCountsFormGroup() {
@@ -889,13 +967,13 @@ export namespace MyNS {
 		 * Get a list of recent media objects from a given location.
 		 * Get locations/{location_id}/media/recent
 		 * @param {string} location_id The location ID.
-		 * @param {number} min_timestamp Return media after this UNIX timestamp.
-		 * @param {number} max_timestamp Return media before this UNIX timestamp.
+		 * @param {string} min_timestamp Return media after this UNIX timestamp.
+		 * @param {string} max_timestamp Return media before this UNIX timestamp.
 		 * @param {string} min_id Return media before this `min_id`.
 		 * @param {string} max_id Return media after this `max_id`.
 		 * @return {MediaListResponse} List of media entries from this location.
 		 */
-		Locations_location_idMediaRecentGetByMin_timestampAndMax_timestampAndMin_idAndMax_id(location_id: string, min_timestamp: number | null | undefined, max_timestamp: number | null | undefined, min_id: string | null | undefined, max_id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<MediaListResponse> {
+		Locations_location_idMediaRecentGetByMin_timestampAndMax_timestampAndMin_idAndMax_id(location_id: string, min_timestamp: string | null | undefined, max_timestamp: string | null | undefined, min_id: string | null | undefined, max_id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<MediaListResponse> {
 			return this.http.get<MediaListResponse>(this.baseUri + 'locations/{location_id}/media/recent?min_timestamp=' + min_timestamp + '&max_timestamp=' + max_timestamp + '&min_id=' + (min_id == null ? '' : encodeURIComponent(min_id)) + '&max_id=' + (max_id == null ? '' : encodeURIComponent(max_id)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -917,12 +995,12 @@ export namespace MyNS {
 		 * Get media/search
 		 * @param {number} lat Latitude of the center search coordinate. If used, `lng` is required.
 		 * @param {number} lng Longitude of the center search coordinate. If used, `lat` is required.
-		 * @param {number} min_timestamp A unix timestamp. All media returned will be taken later than this timestamp.
-		 * @param {number} max_timestamp A unix timestamp. All media returned will be taken earlier than this timestamp.
+		 * @param {string} min_timestamp A unix timestamp. All media returned will be taken later than this timestamp.
+		 * @param {string} max_timestamp A unix timestamp. All media returned will be taken earlier than this timestamp.
 		 * @param {number} distance Default is 1km (distance=1000), max distance is 5km.
 		 * @return {MediaSearchResponse} Found media resources (without likes information) in a given area.
 		 */
-		MediaSearchGetByLatAndLngAndMin_timestampAndMax_timestampAndDistance(lat: number, lng: number, min_timestamp: number | null | undefined, max_timestamp: number | null | undefined, distance: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<MediaSearchResponse> {
+		MediaSearchGetByLatAndLngAndMin_timestampAndMax_timestampAndDistance(lat: number, lng: number, min_timestamp: string | null | undefined, max_timestamp: string | null | undefined, distance: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<MediaSearchResponse> {
 			return this.http.get<MediaSearchResponse>(this.baseUri + 'media/search?lat=' + lat + '&lng=' + lng + '&min_timestamp=' + min_timestamp + '&max_timestamp=' + max_timestamp + '&distance=' + distance, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1157,13 +1235,13 @@ export namespace MyNS {
 		 * Get users/{user_id}/media/recent
 		 * @param {string} user_id The ID of a user to get recent media of, or **self** to retrieve media of authenticated user.
 		 * @param {number} count Count of media to return.
-		 * @param {number} max_timestamp Return media before this UNIX timestamp.
-		 * @param {number} min_timestamp Return media after this UNIX timestamp.
+		 * @param {string} max_timestamp Return media before this UNIX timestamp.
+		 * @param {string} min_timestamp Return media after this UNIX timestamp.
 		 * @param {string} min_id Return media later than this `min_id`.
 		 * @param {string} max_id Return media earlier than this `max_id`.
 		 * @return {MediaListResponse} Users media entries.
 		 */
-		Users_user_idMediaRecentGetByCountAndMax_timestampAndMin_timestampAndMin_idAndMax_id(user_id: string, count: number | null | undefined, max_timestamp: number | null | undefined, min_timestamp: number | null | undefined, min_id: string | null | undefined, max_id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<MediaListResponse> {
+		Users_user_idMediaRecentGetByCountAndMax_timestampAndMin_timestampAndMin_idAndMax_id(user_id: string, count: number | null | undefined, max_timestamp: string | null | undefined, min_timestamp: string | null | undefined, min_id: string | null | undefined, max_id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<MediaListResponse> {
 			return this.http.get<MediaListResponse>(this.baseUri + 'users/{user_id}/media/recent?count=' + count + '&max_timestamp=' + max_timestamp + '&min_timestamp=' + min_timestamp + '&min_id=' + (min_id == null ? '' : encodeURIComponent(min_id)) + '&max_id=' + (max_id == null ? '' : encodeURIComponent(max_id)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 

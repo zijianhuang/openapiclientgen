@@ -410,12 +410,18 @@ export namespace MyNS {
 
 	export interface MpiConfiguration {
 
-		/** Number of processes per node. */
+		/**
+		 * Number of processes per node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCountPerNode?: number | null;
 	}
 	export interface MpiConfigurationFormProperties {
 
-		/** Number of processes per node. */
+		/**
+		 * Number of processes per node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCountPerNode: FormControl<number | null | undefined>,
 	}
 	export function CreateMpiConfigurationFormGroup() {
@@ -454,11 +460,15 @@ export namespace MyNS {
 		/**
 		 * Maximum allowed time for the run. The system will attempt to automatically cancel the run if it took longer than this value.
 		 * MaxRunDurationSeconds=null means infinite duration.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		maxRunDurationSeconds?: number | null;
+		maxRunDurationSeconds?: string | null;
 		mpi?: MpiConfiguration;
 
-		/** Number of compute nodes to run the job on. Only applies to AMLCompute. */
+		/**
+		 * Number of compute nodes to run the job on. Only applies to AMLCompute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount?: number | null;
 
 		/** The relative path to the python script file. The file path is relative to the source_directory passed to submit run. */
@@ -492,10 +502,14 @@ export namespace MyNS {
 		/**
 		 * Maximum allowed time for the run. The system will attempt to automatically cancel the run if it took longer than this value.
 		 * MaxRunDurationSeconds=null means infinite duration.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		maxRunDurationSeconds: FormControl<number | null | undefined>,
+		maxRunDurationSeconds: FormControl<string | null | undefined>,
 
-		/** Number of compute nodes to run the job on. Only applies to AMLCompute. */
+		/**
+		 * Number of compute nodes to run the job on. Only applies to AMLCompute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount: FormControl<number | null | undefined>,
 
 		/** The relative path to the python script file. The file path is relative to the source_directory passed to submit run. */
@@ -510,7 +524,7 @@ export namespace MyNS {
 			dataReferences: new FormControl<{[id: string]: DataReferenceConfiguration } | null | undefined>(undefined),
 			framework: new FormControl<RunConfigurationFramework | null | undefined>(undefined),
 			jobName: new FormControl<string | null | undefined>(undefined),
-			maxRunDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			maxRunDurationSeconds: new FormControl<string | null | undefined>(undefined),
 			nodeCount: new FormControl<number | null | undefined>(undefined),
 			script: new FormControl<string | null | undefined>(undefined),
 			target: new FormControl<string | null | undefined>(undefined),
@@ -537,18 +551,30 @@ export namespace MyNS {
 
 	export interface TensorflowConfiguration {
 
-		/** Number of parameter servers. */
+		/**
+		 * Number of parameter servers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parameterServerCount?: number | null;
 
-		/** The number of workers. */
+		/**
+		 * The number of workers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount?: number | null;
 	}
 	export interface TensorflowConfigurationFormProperties {
 
-		/** Number of parameter servers. */
+		/**
+		 * Number of parameter servers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parameterServerCount: FormControl<number | null | undefined>,
 
-		/** The number of workers. */
+		/**
+		 * The number of workers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount: FormControl<number | null | undefined>,
 	}
 	export function CreateTensorflowConfigurationFormGroup() {

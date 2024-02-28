@@ -49,7 +49,10 @@ export namespace MyNS {
 		/** The name of the server hosting the partner database. */
 		partnerServer?: string | null;
 
-		/** The percentage of seeding complete for the replication link. */
+		/**
+		 * The percentage of seeding complete for the replication link.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete?: number | null;
 
 		/** Replication mode of this replication link. */
@@ -83,7 +86,10 @@ export namespace MyNS {
 		/** The name of the server hosting the partner database. */
 		partnerServer: FormControl<string | null | undefined>,
 
-		/** The percentage of seeding complete for the replication link. */
+		/**
+		 * The percentage of seeding complete for the replication link.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** Replication mode of this replication link. */

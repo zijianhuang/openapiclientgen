@@ -63,11 +63,15 @@ export namespace MyNS {
 	}
 
 	export interface Error {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		fields?: string | null;
 		message?: string | null;
 	}
 	export interface ErrorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		fields: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -82,6 +86,8 @@ export namespace MyNS {
 	}
 
 	export interface Location {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Country name */
@@ -95,6 +101,8 @@ export namespace MyNS {
 		zip?: string | null;
 	}
 	export interface LocationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Country name */

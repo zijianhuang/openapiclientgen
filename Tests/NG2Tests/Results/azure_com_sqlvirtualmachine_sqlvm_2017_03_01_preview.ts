@@ -43,19 +43,31 @@ export namespace MyNS {
 		/** Frequency of full backups. In both cases, full backups begin during the next scheduled time window. */
 		fullBackupFrequency?: AutoBackupSettingsFullBackupFrequency | null;
 
-		/** Start time of a given day during which full backups can take place. 0-23 hours. */
+		/**
+		 * Start time of a given day during which full backups can take place. 0-23 hours.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fullBackupStartTime?: number | null;
 
-		/** Duration of the time window of a given day during which full backups can take place. 1-23 hours. */
+		/**
+		 * Duration of the time window of a given day during which full backups can take place. 1-23 hours.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fullBackupWindowHours?: number | null;
 
-		/** Frequency of log backups. 5-60 minutes. */
+		/**
+		 * Frequency of log backups. 5-60 minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logBackupFrequency?: number | null;
 
 		/** Password for encryption on backup. */
 		password?: string | null;
 
-		/** Retention period of backup: 1-30 days. */
+		/**
+		 * Retention period of backup: 1-30 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionPeriod?: number | null;
 
 		/** Storage account key where backup will be taken to. */
@@ -83,19 +95,31 @@ export namespace MyNS {
 		/** Frequency of full backups. In both cases, full backups begin during the next scheduled time window. */
 		fullBackupFrequency: FormControl<AutoBackupSettingsFullBackupFrequency | null | undefined>,
 
-		/** Start time of a given day during which full backups can take place. 0-23 hours. */
+		/**
+		 * Start time of a given day during which full backups can take place. 0-23 hours.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fullBackupStartTime: FormControl<number | null | undefined>,
 
-		/** Duration of the time window of a given day during which full backups can take place. 1-23 hours. */
+		/**
+		 * Duration of the time window of a given day during which full backups can take place. 1-23 hours.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fullBackupWindowHours: FormControl<number | null | undefined>,
 
-		/** Frequency of log backups. 5-60 minutes. */
+		/**
+		 * Frequency of log backups. 5-60 minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logBackupFrequency: FormControl<number | null | undefined>,
 
 		/** Password for encryption on backup. */
 		password: FormControl<string | null | undefined>,
 
-		/** Retention period of backup: 1-30 days. */
+		/**
+		 * Retention period of backup: 1-30 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionPeriod: FormControl<number | null | undefined>,
 
 		/** Storage account key where backup will be taken to. */
@@ -136,10 +160,16 @@ export namespace MyNS {
 		/** Enable or disable autopatching on SQL virtual machine. */
 		enable?: boolean | null;
 
-		/** Duration of patching. */
+		/**
+		 * Duration of patching.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maintenanceWindowDuration?: number | null;
 
-		/** Hour of the day when patching is initiated. Local VM time. */
+		/**
+		 * Hour of the day when patching is initiated. Local VM time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maintenanceWindowStartingHour?: number | null;
 	}
 
@@ -152,10 +182,16 @@ export namespace MyNS {
 		/** Enable or disable autopatching on SQL virtual machine. */
 		enable: FormControl<boolean | null | undefined>,
 
-		/** Duration of patching. */
+		/**
+		 * Duration of patching.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maintenanceWindowDuration: FormControl<number | null | undefined>,
 
-		/** Hour of the day when patching is initiated. Local VM time. */
+		/**
+		 * Hour of the day when patching is initiated. Local VM time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maintenanceWindowStartingHour: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoPatchingSettingsFormGroup() {
@@ -200,7 +236,10 @@ export namespace MyNS {
 		/** List of load balancer configurations for an availability group listener. */
 		loadBalancerConfigurations?: Array<LoadBalancerConfiguration>;
 
-		/** Listener port. */
+		/**
+		 * Listener port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Provisioning state to track the async operation status. */
@@ -216,7 +255,10 @@ export namespace MyNS {
 		/** Create a default availability group if it does not exist. */
 		createDefaultAvailabilityGroupIfNotExist: FormControl<boolean | null | undefined>,
 
-		/** Listener port. */
+		/**
+		 * Listener port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Provisioning state to track the async operation status. */
@@ -242,7 +284,10 @@ export namespace MyNS {
 		/** A private IP address bound to the availability group listener. */
 		privateIpAddress?: PrivateIPAddress;
 
-		/** Probe port. */
+		/**
+		 * Probe port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		probePort?: number | null;
 
 		/** Resource id of the public IP. */
@@ -258,7 +303,10 @@ export namespace MyNS {
 		/** Resource id of the load balancer. */
 		loadBalancerResourceId: FormControl<string | null | undefined>,
 
-		/** Probe port. */
+		/**
+		 * Probe port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		probePort: FormControl<number | null | undefined>,
 
 		/** Resource id of the public IP. */
@@ -623,7 +671,10 @@ export namespace MyNS {
 		/** SQL Server connectivity option. */
 		connectivityType?: SqlConnectivityUpdateSettingsConnectivityType | null;
 
-		/** SQL Server port. */
+		/**
+		 * SQL Server port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** SQL Server sysadmin login password. */
@@ -639,7 +690,10 @@ export namespace MyNS {
 		/** SQL Server connectivity option. */
 		connectivityType: FormControl<SqlConnectivityUpdateSettingsConnectivityType | null | undefined>,
 
-		/** SQL Server port. */
+		/**
+		 * SQL Server port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** SQL Server sysadmin login password. */
@@ -667,10 +721,16 @@ export namespace MyNS {
 		/** Disk configuration to apply to SQL Server. */
 		diskConfigurationType?: SqlStorageUpdateSettingsDiskConfigurationType | null;
 
-		/** Virtual machine disk count. */
+		/**
+		 * Virtual machine disk count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskCount?: number | null;
 
-		/** Device id of the first disk to be updated. */
+		/**
+		 * Device id of the first disk to be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startingDeviceId?: number | null;
 	}
 
@@ -680,10 +740,16 @@ export namespace MyNS {
 		/** Disk configuration to apply to SQL Server. */
 		diskConfigurationType: FormControl<SqlStorageUpdateSettingsDiskConfigurationType | null | undefined>,
 
-		/** Virtual machine disk count. */
+		/**
+		 * Virtual machine disk count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskCount: FormControl<number | null | undefined>,
 
-		/** Device id of the first disk to be updated. */
+		/**
+		 * Device id of the first disk to be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startingDeviceId: FormControl<number | null | undefined>,
 	}
 	export function CreateSqlStorageUpdateSettingsFormGroup() {

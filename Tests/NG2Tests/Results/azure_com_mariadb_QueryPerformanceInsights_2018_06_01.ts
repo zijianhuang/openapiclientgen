@@ -32,14 +32,20 @@ export namespace MyNS {
 		/** Metric name. */
 		metricName?: string | null;
 
-		/** Metric value. */
+		/**
+		 * Metric value.
+		 * Type: double
+		 */
 		metricValue?: number | null;
 
 		/** Metric value unit. */
 		metricValueUnit?: string | null;
 
-		/** Number of query executions in this time interval. */
-		queryExecutionCount?: number | null;
+		/**
+		 * Number of query executions in this time interval.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		queryExecutionCount?: string | null;
 
 		/** Database query identifier. */
 		queryId?: string | null;
@@ -63,14 +69,20 @@ export namespace MyNS {
 		/** Metric name. */
 		metricName: FormControl<string | null | undefined>,
 
-		/** Metric value. */
+		/**
+		 * Metric value.
+		 * Type: double
+		 */
 		metricValue: FormControl<number | null | undefined>,
 
 		/** Metric value unit. */
 		metricValueUnit: FormControl<string | null | undefined>,
 
-		/** Number of query executions in this time interval. */
-		queryExecutionCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of query executions in this time interval.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		queryExecutionCount: FormControl<string | null | undefined>,
 
 		/** Database query identifier. */
 		queryId: FormControl<string | null | undefined>,
@@ -86,7 +98,7 @@ export namespace MyNS {
 			metricName: new FormControl<string | null | undefined>(undefined),
 			metricValue: new FormControl<number | null | undefined>(undefined),
 			metricValueUnit: new FormControl<string | null | undefined>(undefined),
-			queryExecutionCount: new FormControl<number | null | undefined>(undefined),
+			queryExecutionCount: new FormControl<string | null | undefined>(undefined),
 			queryId: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -194,6 +206,7 @@ export namespace MyNS {
 		/**
 		 * Max number of top queries to return.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfTopQueries: number;
 
@@ -234,6 +247,7 @@ export namespace MyNS {
 		/**
 		 * Max number of top queries to return.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfTopQueries: FormControl<number | null | undefined>,
 
@@ -305,8 +319,11 @@ export namespace MyNS {
 	/** The properties of a wait statistic. */
 	export interface WaitStatisticProperties {
 
-		/** Wait event count observed in this time interval. */
-		count?: number | null;
+		/**
+		 * Wait event count observed in this time interval.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count?: string | null;
 
 		/** Database Name. */
 		databaseName?: string | null;
@@ -320,24 +337,36 @@ export namespace MyNS {
 		/** Wait event type name. */
 		eventTypeName?: string | null;
 
-		/** Database query identifier. */
-		queryId?: number | null;
+		/**
+		 * Database query identifier.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		queryId?: string | null;
 
 		/** Observation start time. */
 		startTime?: Date | null;
 
-		/** Total time of wait in milliseconds in this time interval. */
+		/**
+		 * Total time of wait in milliseconds in this time interval.
+		 * Type: double
+		 */
 		totalTimeInMs?: number | null;
 
-		/** Database user identifier. */
-		userId?: number | null;
+		/**
+		 * Database user identifier.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userId?: string | null;
 	}
 
 	/** The properties of a wait statistic. */
 	export interface WaitStatisticPropertiesFormProperties {
 
-		/** Wait event count observed in this time interval. */
-		count: FormControl<number | null | undefined>,
+		/**
+		 * Wait event count observed in this time interval.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: FormControl<string | null | undefined>,
 
 		/** Database Name. */
 		databaseName: FormControl<string | null | undefined>,
@@ -351,29 +380,38 @@ export namespace MyNS {
 		/** Wait event type name. */
 		eventTypeName: FormControl<string | null | undefined>,
 
-		/** Database query identifier. */
-		queryId: FormControl<number | null | undefined>,
+		/**
+		 * Database query identifier.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		queryId: FormControl<string | null | undefined>,
 
 		/** Observation start time. */
 		startTime: FormControl<Date | null | undefined>,
 
-		/** Total time of wait in milliseconds in this time interval. */
+		/**
+		 * Total time of wait in milliseconds in this time interval.
+		 * Type: double
+		 */
 		totalTimeInMs: FormControl<number | null | undefined>,
 
-		/** Database user identifier. */
-		userId: FormControl<number | null | undefined>,
+		/**
+		 * Database user identifier.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateWaitStatisticPropertiesFormGroup() {
 		return new FormGroup<WaitStatisticPropertiesFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<string | null | undefined>(undefined),
 			databaseName: new FormControl<string | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			eventName: new FormControl<string | null | undefined>(undefined),
 			eventTypeName: new FormControl<string | null | undefined>(undefined),
-			queryId: new FormControl<number | null | undefined>(undefined),
+			queryId: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			totalTimeInMs: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

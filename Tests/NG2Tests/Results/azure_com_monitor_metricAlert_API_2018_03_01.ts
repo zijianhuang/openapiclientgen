@@ -67,12 +67,14 @@ export namespace MyNS {
 		/**
 		 * The number of violations to trigger an alert. Should be smaller or equal to numberOfEvaluationPeriods.
 		 * Required
+		 * Type: double
 		 */
 		minFailingPeriodsToAlert: number;
 
 		/**
 		 * The number of aggregated lookback points. The lookback time window is calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
 		 * Required
+		 * Type: double
 		 */
 		numberOfEvaluationPeriods: number;
 	}
@@ -83,12 +85,14 @@ export namespace MyNS {
 		/**
 		 * The number of violations to trigger an alert. Should be smaller or equal to numberOfEvaluationPeriods.
 		 * Required
+		 * Type: double
 		 */
 		minFailingPeriodsToAlert: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of aggregated lookback points. The lookback time window is calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
 		 * Required
+		 * Type: double
 		 */
 		numberOfEvaluationPeriods: FormControl<number | null | undefined>,
 	}
@@ -343,6 +347,7 @@ export namespace MyNS {
 		/**
 		 * Alert severity {0, 1, 2, 3, 4}
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		severity: number;
 
@@ -389,6 +394,7 @@ export namespace MyNS {
 		/**
 		 * Alert severity {0, 1, 2, 3, 4}
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		severity: FormControl<number | null | undefined>,
 
@@ -510,6 +516,7 @@ export namespace MyNS {
 		/**
 		 * the criteria threshold value that activates the alert.
 		 * Required
+		 * Type: double
 		 */
 		threshold: number;
 	}
@@ -526,6 +533,7 @@ export namespace MyNS {
 		/**
 		 * the criteria threshold value that activates the alert.
 		 * Required
+		 * Type: double
 		 */
 		threshold: FormControl<number | null | undefined>,
 	}

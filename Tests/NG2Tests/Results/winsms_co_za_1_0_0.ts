@@ -5,10 +5,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreditBalanceResponse {
 
-		/** The current remaining credit balance for the account. Contains a single decimal place */
+		/**
+		 * The current remaining credit balance for the account. Contains a single decimal place
+		 * Type: double
+		 */
 		creditBalance?: number | null;
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -19,10 +25,16 @@ export namespace MyNS {
 	}
 	export interface CreditBalanceResponseFormProperties {
 
-		/** The current remaining credit balance for the account. Contains a single decimal place */
+		/**
+		 * The current remaining credit balance for the account. Contains a single decimal place
+		 * Type: double
+		 */
 		creditBalance: FormControl<number | null | undefined>,
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -46,18 +58,21 @@ export namespace MyNS {
 		/**
 		 * The WinSMS account number of the account to which credits will be added.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		receivingAccountNumber: number;
 
 		/**
 		 * The WinSMS account number of the account from which credits will be deducted.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sendingAccountNumber: number;
 
 		/**
 		 * The number of credits to transfer from the sending account to the receiving account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transferQuantity: number;
 	}
@@ -66,18 +81,21 @@ export namespace MyNS {
 		/**
 		 * The WinSMS account number of the account to which credits will be added.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		receivingAccountNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * The WinSMS account number of the account from which credits will be deducted.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sendingAccountNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of credits to transfer from the sending account to the receiving account.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transferQuantity: FormControl<number | null | undefined>,
 	}
@@ -92,7 +110,10 @@ export namespace MyNS {
 
 	export interface CreditTransferResponse {
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -106,7 +127,10 @@ export namespace MyNS {
 	}
 	export interface CreditTransferResponseFormProperties {
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -137,7 +161,10 @@ export namespace MyNS {
 		 */
 		deletedMessageStatuses?: Array<DeletedMessageStatus>;
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -148,7 +175,10 @@ export namespace MyNS {
 	}
 	export interface DeleteScheduledResponseFormProperties {
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -170,12 +200,14 @@ export namespace MyNS {
 
 		/**
 		 * The WinSMS API Message Id identifying the SMS message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		apiMessageId?: number | null;
 
 		/**
 		 * The number of credits refunded to your account after deleting the scheduled message.
 		 * If the deletion was unsuccessful, this value will be 0.
+		 * Type: double
 		 */
 		creditCost?: number | null;
 
@@ -198,12 +230,14 @@ export namespace MyNS {
 
 		/**
 		 * The WinSMS API Message Id identifying the SMS message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		apiMessageId: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of credits refunded to your account after deleting the scheduled message.
 		 * If the deletion was unsuccessful, this value will be 0.
+		 * Type: double
 		 */
 		creditCost: FormControl<number | null | undefined>,
 
@@ -242,6 +276,7 @@ export namespace MyNS {
 
 		/**
 		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode?: number | null;
 
@@ -264,6 +299,7 @@ export namespace MyNS {
 
 		/**
 		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode: FormControl<number | null | undefined>,
 
@@ -291,6 +327,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique API message id assigned to this incoming message.
+		 * Type: double
 		 */
 		incomingApiMessageId?: number | null;
 
@@ -306,6 +343,7 @@ export namespace MyNS {
 
 		/**
 		 * The API message id of the most recent message sent to the mobile number that responded.
+		 * Type: double
 		 */
 		outgoingApiMessageId?: number | null;
 
@@ -318,6 +356,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique API message id assigned to this incoming message.
+		 * Type: double
 		 */
 		incomingApiMessageId: FormControl<number | null | undefined>,
 
@@ -333,6 +372,7 @@ export namespace MyNS {
 
 		/**
 		 * The API message id of the most recent message sent to the mobile number that responded.
+		 * Type: double
 		 */
 		outgoingApiMessageId: FormControl<number | null | undefined>,
 
@@ -363,20 +403,26 @@ export namespace MyNS {
 
 		/**
 		 * The number of items returned in the results. This is the value specified in the ***limit*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsLimit?: number | null;
 
 		/**
 		 * The number of items skipped before the results were returned. This is the value specified in the ***offset*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsOffset?: number | null;
 
 		/**
 		 * The total number of results available for retrieval. The ***offset*** and ***limit*** properties specify which of the total available results have been returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsTotalAvailable?: number | null;
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -389,20 +435,26 @@ export namespace MyNS {
 
 		/**
 		 * The number of items returned in the results. This is the value specified in the ***limit*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsLimit: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of items skipped before the results were returned. This is the value specified in the ***offset*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsOffset: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of results available for retrieval. The ***offset*** and ***limit*** properties specify which of the total available results have been returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsTotalAvailable: FormControl<number | null | undefined>,
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -427,6 +479,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique API message id assigned to this incoming opt-out message.
+		 * Type: double
 		 */
 		incomingApiMessageId?: number | null;
 
@@ -449,6 +502,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique API message id assigned to this incoming opt-out message.
+		 * Type: double
 		 */
 		incomingApiMessageId: FormControl<number | null | undefined>,
 
@@ -620,6 +674,7 @@ export namespace MyNS {
 
 		/**
 		 * The WinSMS Message Id assigned to the specific message recipient. This Id can be used to obtain the status of the message, and to delete the message if it was scheduled. If the API did not accept the recipient for delivery, the value will be **null**.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		apiMessageId?: number | null;
 
@@ -633,6 +688,7 @@ export namespace MyNS {
 		 * The credit cost is based on the destination country of the recipient and the length (number of segments) of the message.
 		 * This credit cost will be reimbursed if the message is scheduled and subsequently deleted.
 		 * If the recipient is not accepted for delivery, the ***creditCost*** value will be **null**.
+		 * Type: double
 		 */
 		creditCost?: number | null;
 
@@ -643,6 +699,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of WinSMS credits remaining in your account after processing this recipient.
+		 * Type: double
 		 */
 		newCreditBalance?: number | null;
 
@@ -666,6 +723,7 @@ export namespace MyNS {
 
 		/**
 		 * The WinSMS Message Id assigned to the specific message recipient. This Id can be used to obtain the status of the message, and to delete the message if it was scheduled. If the API did not accept the recipient for delivery, the value will be **null**.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		apiMessageId: FormControl<number | null | undefined>,
 
@@ -679,6 +737,7 @@ export namespace MyNS {
 		 * The credit cost is based on the destination country of the recipient and the length (number of segments) of the message.
 		 * This credit cost will be reimbursed if the message is scheduled and subsequently deleted.
 		 * If the recipient is not accepted for delivery, the ***creditCost*** value will be **null**.
+		 * Type: double
 		 */
 		creditCost: FormControl<number | null | undefined>,
 
@@ -689,6 +748,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of WinSMS credits remaining in your account after processing this recipient.
+		 * Type: double
 		 */
 		newCreditBalance: FormControl<number | null | undefined>,
 
@@ -714,12 +774,16 @@ export namespace MyNS {
 
 	export interface MessageStatus {
 
-		/** The WinSMS API Message Id identifying the SMS message. */
+		/**
+		 * The WinSMS API Message Id identifying the SMS message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apiMessageId?: number | null;
 
 		/**
 		 * The number of credits deducted from your account for the SMS to this recipient.
 		 * If delivery to the recipient is unsuccessful, under certain conditions, this may be 0.
+		 * Type: double
 		 */
 		creditCost?: number | null;
 
@@ -750,12 +814,16 @@ export namespace MyNS {
 	}
 	export interface MessageStatusFormProperties {
 
-		/** The WinSMS API Message Id identifying the SMS message. */
+		/**
+		 * The WinSMS API Message Id identifying the SMS message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apiMessageId: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of credits deducted from your account for the SMS to this recipient.
 		 * If delivery to the recipient is unsuccessful, under certain conditions, this may be 0.
+		 * Type: double
 		 */
 		creditCost: FormControl<number | null | undefined>,
 
@@ -805,7 +873,10 @@ export namespace MyNS {
 		 */
 		messageStatuses?: Array<MessageStatus>;
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -816,7 +887,10 @@ export namespace MyNS {
 	}
 	export interface MessageStatusResponseFormProperties {
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -850,7 +924,10 @@ export namespace MyNS {
 		/** An array of messageDetailsResponse objects */
 		messages?: Array<MessageDetailsResponse>;
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -861,7 +938,10 @@ export namespace MyNS {
 	}
 	export interface MultiMessageResponseFormProperties {
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -953,7 +1033,10 @@ export namespace MyNS {
 		 */
 		recipients?: Array<MessageRecipientResponse>;
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -964,7 +1047,10 @@ export namespace MyNS {
 	}
 	export interface NewMessageResponseFormProperties {
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -989,7 +1075,10 @@ export namespace MyNS {
 		 */
 		incomingOptoutMessages?: Array<IncomingOptoutMessage>;
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -1000,7 +1089,10 @@ export namespace MyNS {
 	}
 	export interface OptoutMessageResponseFormProperties {
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -1020,12 +1112,16 @@ export namespace MyNS {
 
 	export interface ScheduledMessage {
 
-		/** The WinSMS API Message Id identifying the SMS message. */
+		/**
+		 * The WinSMS API Message Id identifying the SMS message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apiMessageId?: number | null;
 
 		/**
 		 * The number of credits deducted from your account for the SMS to this recipient.
 		 * This is the number of credits that will be refunded if you delete this scheduled message.
+		 * Type: double
 		 */
 		creditCost?: number | null;
 
@@ -1040,12 +1136,16 @@ export namespace MyNS {
 	}
 	export interface ScheduledMessageFormProperties {
 
-		/** The WinSMS API Message Id identifying the SMS message. */
+		/**
+		 * The WinSMS API Message Id identifying the SMS message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apiMessageId: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of credits deducted from your account for the SMS to this recipient.
 		 * This is the number of credits that will be refunded if you delete this scheduled message.
+		 * Type: double
 		 */
 		creditCost: FormControl<number | null | undefined>,
 
@@ -1073,16 +1173,19 @@ export namespace MyNS {
 
 		/**
 		 * The number of items returned in the results. This is the value specified in the ***limit*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsLimit?: number | null;
 
 		/**
 		 * The number of items skipped before the results were returned. This is the value specified in the ***offset*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsOffset?: number | null;
 
 		/**
 		 * The total number of results available for retrieval. The ***offset*** and ***limit*** properties specify which of the total available results have been returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsTotalAvailable?: number | null;
 
@@ -1093,7 +1196,10 @@ export namespace MyNS {
 		 */
 		scheduledMessages?: Array<ScheduledMessage>;
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -1106,20 +1212,26 @@ export namespace MyNS {
 
 		/**
 		 * The number of items returned in the results. This is the value specified in the ***limit*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsLimit: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of items skipped before the results were returned. This is the value specified in the ***offset*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsOffset: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of results available for retrieval. The ***offset*** and ***limit*** properties specify which of the total available results have been returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsTotalAvailable: FormControl<number | null | undefined>,
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -1142,7 +1254,10 @@ export namespace MyNS {
 
 	export interface ShortcodeMessage {
 
-		/** The unique API message id assigned to this incoming message. */
+		/**
+		 * The unique API message id assigned to this incoming message.
+		 * Type: double
+		 */
 		incomingApiMessageId?: number | null;
 
 		/** The text of the incoming SMS message. */
@@ -1156,7 +1271,10 @@ export namespace MyNS {
 	}
 	export interface ShortcodeMessageFormProperties {
 
-		/** The unique API message id assigned to this incoming message. */
+		/**
+		 * The unique API message id assigned to this incoming message.
+		 * Type: double
+		 */
 		incomingApiMessageId: FormControl<number | null | undefined>,
 
 		/** The text of the incoming SMS message. */
@@ -1182,16 +1300,19 @@ export namespace MyNS {
 
 		/**
 		 * The number of items returned in the results. This is the value specified in the ***limit*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsLimit?: number | null;
 
 		/**
 		 * The number of items skipped before the results were returned. This is the value specified in the ***offset*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsOffset?: number | null;
 
 		/**
 		 * The total number of results available for retrieval. The ***offset*** and ***limit*** properties specify which of the total available results have been returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsTotalAvailable?: number | null;
 
@@ -1202,7 +1323,10 @@ export namespace MyNS {
 		 */
 		shortcodeMessages?: Array<ShortcodeMessage>;
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -1215,20 +1339,26 @@ export namespace MyNS {
 
 		/**
 		 * The number of items returned in the results. This is the value specified in the ***limit*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsLimit: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of items skipped before the results were returned. This is the value specified in the ***offset*** parameter sent to the endpoint. If the parameter was not specified, this defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsOffset: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of results available for retrieval. The ***offset*** and ***limit*** properties specify which of the total available results have been returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resultsTotalAvailable: FormControl<number | null | undefined>,
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */
@@ -1253,11 +1383,13 @@ export namespace MyNS {
 
 		/**
 		 * The WinSMS account number of the Sub Account. This is supplied as an integer, without the leading 'W' displayed in the WinSMS Client Zone.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountNumber?: number | null;
 
 		/**
 		 * The remaining credit balance for the Sub Account.
+		 * Type: double
 		 */
 		creditBalance?: number | null;
 
@@ -1280,11 +1412,13 @@ export namespace MyNS {
 
 		/**
 		 * The WinSMS account number of the Sub Account. This is supplied as an integer, without the leading 'W' displayed in the WinSMS Client Zone.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		accountNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * The remaining credit balance for the Sub Account.
+		 * Type: double
 		 */
 		creditBalance: FormControl<number | null | undefined>,
 
@@ -1316,7 +1450,10 @@ export namespace MyNS {
 
 	export interface SubAccountsResponse {
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/**
@@ -1332,7 +1469,10 @@ export namespace MyNS {
 	}
 	export interface SubAccountsResponseFormProperties {
 
-		/** The http status code returned - reflected in the body for convenience */
+		/**
+		 * The http status code returned - reflected in the body for convenience
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 
 		/** The date/time the request was processed, in the format YYYYMMDDhhmmssSSS */

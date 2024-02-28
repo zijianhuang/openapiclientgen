@@ -24,16 +24,25 @@ export namespace MyNS {
 	/** An Application Insights component daily data volume cap */
 	export interface PricingPlanProperties {
 
-		/** Daily data volume cap in GB. */
+		/**
+		 * Daily data volume cap in GB.
+		 * Type: double
+		 */
 		cap?: number | null;
 
-		/** Maximum daily data volume cap that the user can set for this component. */
+		/**
+		 * Maximum daily data volume cap that the user can set for this component.
+		 * Type: double
+		 */
 		maxHistoryCap?: number | null;
 
 		/** Pricing Plan Type Name. */
 		planType?: string | null;
 
-		/** Daily data volume cap UTC reset hour. */
+		/**
+		 * Daily data volume cap UTC reset hour.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resetHour?: number | null;
 
 		/** Do not send a notification email when the daily data volume cap is met. */
@@ -42,23 +51,35 @@ export namespace MyNS {
 		/** Reserved, not used for now. */
 		stopSendNotificationWhenHitThreshold?: boolean | null;
 
-		/** Reserved, not used for now. */
+		/**
+		 * Reserved, not used for now.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		warningThreshold?: number | null;
 	}
 
 	/** An Application Insights component daily data volume cap */
 	export interface PricingPlanPropertiesFormProperties {
 
-		/** Daily data volume cap in GB. */
+		/**
+		 * Daily data volume cap in GB.
+		 * Type: double
+		 */
 		cap: FormControl<number | null | undefined>,
 
-		/** Maximum daily data volume cap that the user can set for this component. */
+		/**
+		 * Maximum daily data volume cap that the user can set for this component.
+		 * Type: double
+		 */
 		maxHistoryCap: FormControl<number | null | undefined>,
 
 		/** Pricing Plan Type Name. */
 		planType: FormControl<string | null | undefined>,
 
-		/** Daily data volume cap UTC reset hour. */
+		/**
+		 * Daily data volume cap UTC reset hour.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resetHour: FormControl<number | null | undefined>,
 
 		/** Do not send a notification email when the daily data volume cap is met. */
@@ -67,7 +88,10 @@ export namespace MyNS {
 		/** Reserved, not used for now. */
 		stopSendNotificationWhenHitThreshold: FormControl<boolean | null | undefined>,
 
-		/** Reserved, not used for now. */
+		/**
+		 * Reserved, not used for now.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		warningThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreatePricingPlanPropertiesFormGroup() {

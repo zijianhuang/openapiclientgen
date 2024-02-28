@@ -4,69 +4,149 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Game {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Attendance?: number | null;
 		AwayTeam?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamMoneyLine?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamScore?: number | null;
 		Channel?: string | null;
 		DateTime?: string | null;
 		Day?: string | null;
 		GameEndDateTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalAwayTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalHomeTeamID?: number | null;
 		HomeTeam?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamMoneyLine?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamScore?: number | null;
 		IsClosed?: boolean | null;
 		LastPlay?: string | null;
+
+		/** Type: double */
 		OverUnder?: number | null;
+
+		/** Type: double */
 		PointSpread?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PointSpreadAwayTeamMoneyLine?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PointSpreadHomeTeamMoneyLine?: number | null;
 		Quarter?: string | null;
 		Quarters?: Array<Quarter>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StadiumID?: number | null;
 		Status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TimeRemainingMinutes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TimeRemainingSeconds?: number | null;
 		Updated?: string | null;
 	}
 	export interface GameFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Attendance: FormControl<number | null | undefined>,
 		AwayTeam: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamMoneyLine: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamScore: FormControl<number | null | undefined>,
 		Channel: FormControl<string | null | undefined>,
 		DateTime: FormControl<string | null | undefined>,
 		Day: FormControl<string | null | undefined>,
 		GameEndDateTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalAwayTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalHomeTeamID: FormControl<number | null | undefined>,
 		HomeTeam: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamMoneyLine: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamScore: FormControl<number | null | undefined>,
 		IsClosed: FormControl<boolean | null | undefined>,
 		LastPlay: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		OverUnder: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PointSpread: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PointSpreadAwayTeamMoneyLine: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PointSpreadHomeTeamMoneyLine: FormControl<number | null | undefined>,
 		Quarter: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StadiumID: FormControl<number | null | undefined>,
 		Status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TimeRemainingMinutes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TimeRemainingSeconds: FormControl<number | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
 	}
@@ -108,19 +188,39 @@ export namespace MyNS {
 	}
 
 	export interface Quarter {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayScore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeScore?: number | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		QuarterID?: number | null;
 	}
 	export interface QuarterFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayScore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeScore: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		QuarterID: FormControl<number | null | undefined>,
 	}
 	export function CreateQuarterFormGroup() {
@@ -136,63 +236,131 @@ export namespace MyNS {
 	}
 
 	export interface Play {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AssistedByPlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamScore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BlockedByPlayerID?: number | null;
 		Category?: string | null;
 		Created?: string | null;
 		Description?: string | null;
 		FastBreak?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamScore?: number | null;
 		Opponent?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Points?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PotentialPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		QuarterID?: number | null;
 		QuarterName?: string | null;
 		ReceivingTeam?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReceivingTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Sequence?: number | null;
 		ShotMade?: boolean | null;
 		SideOfBasket?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SubstituteInPlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SubstituteOutPlayerID?: number | null;
 		Team?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TimeRemainingMinutes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TimeRemainingSeconds?: number | null;
 		Type?: string | null;
 		Updated?: string | null;
 	}
 	export interface PlayFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AssistedByPlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamScore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BlockedByPlayerID: FormControl<number | null | undefined>,
 		Category: FormControl<string | null | undefined>,
 		Created: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 		FastBreak: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamScore: FormControl<number | null | undefined>,
 		Opponent: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Points: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PotentialPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		QuarterID: FormControl<number | null | undefined>,
 		QuarterName: FormControl<string | null | undefined>,
 		ReceivingTeam: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ReceivingTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Sequence: FormControl<number | null | undefined>,
 		ShotMade: FormControl<boolean | null | undefined>,
 		SideOfBasket: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SubstituteInPlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SubstituteOutPlayerID: FormControl<number | null | undefined>,
 		Team: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TimeRemainingMinutes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TimeRemainingSeconds: FormControl<number | null | undefined>,
 		Type: FormControl<string | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
@@ -255,7 +423,6 @@ export namespace MyNS {
 		 * Get {format}/PlayByPlay/{gameid}
 		 * @param {PlayByPlayFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} gameid The GameID of an NBA game.  GameIDs can be found in the Games API.  Valid entries are <code>14620</code>, <code>16905</code>, etc.
-		 * @return {PlayByPlay} 
 		 */
 		PlayByPlay(format: PlayByPlayFormat, gameid: string): Observable<PlayByPlay> {
 			return this.http.get<PlayByPlay>(this.baseUri + format + '/PlayByPlay/' + (gameid == null ? '' : encodeURIComponent(gameid)) + '', {});
@@ -269,7 +436,6 @@ export namespace MyNS {
 		 * <br>Examples: <code>2016-OCT-31</code>, <code>2017-JAN-15</code>.
 		 * @param {string} minutes Only returns plays that have changed in the last X minutes.  You specify how many minutes in time to go back.  Valid entries are:
 		 * <code>1</code>, <code>2</code> ... <code>all</code>.
-		 * @return {Array<PlayByPlay>} 
 		 */
 		PlayByPlayDelta(format: PlayByPlayFormat, date: string, minutes: string): Observable<Array<PlayByPlay>> {
 			return this.http.get<Array<PlayByPlay>>(this.baseUri + format + '/PlayByPlayDelta/' + (date == null ? '' : encodeURIComponent(date)) + '/' + (minutes == null ? '' : encodeURIComponent(minutes)) + '', {});

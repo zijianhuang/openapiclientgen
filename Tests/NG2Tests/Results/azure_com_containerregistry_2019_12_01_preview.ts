@@ -298,8 +298,11 @@ export namespace MyNS {
 		/** The digest of the content, as defined by the Registry V2 HTTP API Specification. */
 		digest?: string | null;
 
-		/** The number of bytes of the content. Same as Size field. */
-		length?: number | null;
+		/**
+		 * The number of bytes of the content. Same as Size field.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		length?: string | null;
 
 		/** The MIME type of the referenced object. */
 		mediaType?: string | null;
@@ -310,8 +313,11 @@ export namespace MyNS {
 		/** The repository name. */
 		repository?: string | null;
 
-		/** The number of bytes of the content. Same as Length field. */
-		size?: number | null;
+		/**
+		 * The number of bytes of the content. Same as Length field.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/** The tag name. */
 		tag?: string | null;
@@ -329,8 +335,11 @@ export namespace MyNS {
 		/** The digest of the content, as defined by the Registry V2 HTTP API Specification. */
 		digest: FormControl<string | null | undefined>,
 
-		/** The number of bytes of the content. Same as Size field. */
-		length: FormControl<number | null | undefined>,
+		/**
+		 * The number of bytes of the content. Same as Size field.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		length: FormControl<string | null | undefined>,
 
 		/** The MIME type of the referenced object. */
 		mediaType: FormControl<string | null | undefined>,
@@ -341,8 +350,11 @@ export namespace MyNS {
 		/** The repository name. */
 		repository: FormControl<string | null | undefined>,
 
-		/** The number of bytes of the content. Same as Length field. */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * The number of bytes of the content. Same as Length field.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/** The tag name. */
 		tag: FormControl<string | null | undefined>,
@@ -356,11 +368,11 @@ export namespace MyNS {
 	export function CreateTargetFormGroup() {
 		return new FormGroup<TargetFormProperties>({
 			digest: new FormControl<string | null | undefined>(undefined),
-			length: new FormControl<number | null | undefined>(undefined),
+			length: new FormControl<string | null | undefined>(undefined),
 			mediaType: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			repository: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			tag: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<string | null | undefined>(undefined),
@@ -985,7 +997,10 @@ export namespace MyNS {
 	/** The retention policy for a container registry. */
 	export interface RetentionPolicy {
 
-		/** The number of days to retain an untagged manifest after which it gets purged. */
+		/**
+		 * The number of days to retain an untagged manifest after which it gets purged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days?: number | null;
 
 		/** The timestamp when the policy was last updated. */
@@ -998,7 +1013,10 @@ export namespace MyNS {
 	/** The retention policy for a container registry. */
 	export interface RetentionPolicyFormProperties {
 
-		/** The number of days to retain an untagged manifest after which it gets purged. */
+		/**
+		 * The number of days to retain an untagged manifest after which it gets purged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days: FormControl<number | null | undefined>,
 
 		/** The timestamp when the policy was last updated. */
@@ -1475,11 +1493,17 @@ export namespace MyNS {
 	/** The quota usage for a container registry. */
 	export interface RegistryUsage {
 
-		/** The current value of the usage. */
-		currentValue?: number | null;
+		/**
+		 * The current value of the usage.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue?: string | null;
 
-		/** The limit of the usage. */
-		limit?: number | null;
+		/**
+		 * The limit of the usage.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit?: string | null;
 
 		/** The name of the usage. */
 		name?: string | null;
@@ -1491,11 +1515,17 @@ export namespace MyNS {
 	/** The quota usage for a container registry. */
 	export interface RegistryUsageFormProperties {
 
-		/** The current value of the usage. */
-		currentValue: FormControl<number | null | undefined>,
+		/**
+		 * The current value of the usage.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue: FormControl<string | null | undefined>,
 
-		/** The limit of the usage. */
-		limit: FormControl<number | null | undefined>,
+		/**
+		 * The limit of the usage.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit: FormControl<string | null | undefined>,
 
 		/** The name of the usage. */
 		name: FormControl<string | null | undefined>,
@@ -1505,8 +1535,8 @@ export namespace MyNS {
 	}
 	export function CreateRegistryUsageFormGroup() {
 		return new FormGroup<RegistryUsageFormProperties>({
-			currentValue: new FormControl<number | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			currentValue: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			unit: new FormControl<RegistryUsageUnit | null | undefined>(undefined),
 		});

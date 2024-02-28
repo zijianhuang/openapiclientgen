@@ -293,7 +293,10 @@ export namespace MyNS {
 		/** Operators allowed in the rule condition. */
 		operator?: ConditionOperator | null;
 
-		/** The threshold value that activates the alert. */
+		/**
+		 * The threshold value that activates the alert.
+		 * Type: double
+		 */
 		threshold?: number | null;
 
 		/** the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day. */
@@ -306,7 +309,10 @@ export namespace MyNS {
 		/** Operators allowed in the rule condition. */
 		operator: FormControl<ConditionOperator | null | undefined>,
 
-		/** The threshold value that activates the alert. */
+		/**
+		 * The threshold value that activates the alert.
+		 * Type: double
+		 */
 		threshold: FormControl<number | null | undefined>,
 
 		/** the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day. */
@@ -573,6 +579,7 @@ export namespace MyNS {
 		/**
 		 * the threshold value that activates the alert.
 		 * Required
+		 * Type: double
 		 */
 		threshold: number;
 
@@ -595,6 +602,7 @@ export namespace MyNS {
 		/**
 		 * the threshold value that activates the alert.
 		 * Required
+		 * Type: double
 		 */
 		threshold: FormControl<number | null | undefined>,
 

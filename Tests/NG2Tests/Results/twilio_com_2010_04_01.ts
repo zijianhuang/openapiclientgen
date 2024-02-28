@@ -66,28 +66,52 @@ export namespace MyNS {
 
 	export interface Accounts {
 		AccountsAccounts?: Array<AccountsAccounts>;
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface AccountsFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -229,28 +253,52 @@ export namespace MyNS {
 
 	export interface AppResources {
 		AppResourcesApplications?: Array<AppResourcesApplications>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface AppResourcesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -407,28 +455,52 @@ export namespace MyNS {
 
 	export interface Applications {
 		ApplicationsApplications?: Array<ApplicationsApplications>;
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface ApplicationsFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -547,28 +619,52 @@ export namespace MyNS {
 
 	export interface AuthApps {
 		AuthAppsAuthorized_connect_apps?: Array<AuthAppsAuthorized_connect_apps>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface AuthAppsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -990,28 +1086,52 @@ export namespace MyNS {
 
 	export interface Calls {
 		CallsCalls?: Array<CallsCalls>;
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface CallsFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -1174,28 +1294,52 @@ export namespace MyNS {
 
 	export interface Conferences {
 		ConferencesConferences?: Array<ConferencesConferences>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface ConferencesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -1304,28 +1448,52 @@ export namespace MyNS {
 
 	export interface ConnectApps {
 		ConnectAppsConnect_apps?: Array<ConnectAppsConnect_apps>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface ConnectAppsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -1492,28 +1660,52 @@ export namespace MyNS {
 
 	export interface CredentialListMappings {
 		credential_list_mappings?: Array<string>;
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface CredentialListMappingsFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -1536,28 +1728,52 @@ export namespace MyNS {
 
 	export interface CredentialLists {
 		CredentialListsCredential_lists?: Array<CredentialListsCredential_lists>;
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface CredentialListsFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -1619,28 +1835,52 @@ export namespace MyNS {
 
 	export interface Credentials {
 		CredentialsCredentials?: Array<CredentialsCredentials>;
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface CredentialsFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -1765,29 +2005,53 @@ export namespace MyNS {
 	}
 
 	export interface Domains {
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
 		DomainsSip_domains?: Array<DomainsSip_domains>;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface DomainsFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -1971,29 +2235,53 @@ export namespace MyNS {
 	}
 
 	export interface IncomingCalls {
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		IncomingCallsIncoming_phone_numbers?: Array<IncomingCallsIncoming_phone_numbers>;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface IncomingCallsFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -2250,29 +2538,53 @@ export namespace MyNS {
 	}
 
 	export interface IpAddresses {
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		IpAddressesIp_addresses?: Array<IpAddressesIp_addresses>;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface IpAddressesFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -2353,29 +2665,53 @@ export namespace MyNS {
 	}
 
 	export interface MediaList {
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		MediaListMedia_list?: Array<MediaListMedia_list>;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface MediaListFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -2430,15 +2766,23 @@ export namespace MyNS {
 	export interface Member {
 		call_sid?: string | null;
 		date_enqueued?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 		uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wait_time?: number | null;
 	}
 	export interface MemberFormProperties {
 		call_sid: FormControl<string | null | undefined>,
 		date_enqueued: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wait_time: FormControl<number | null | undefined>,
 	}
 	export function CreateMemberFormGroup() {
@@ -2453,29 +2797,53 @@ export namespace MyNS {
 	}
 
 	export interface Members {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
 		MembersQueue_members?: Array<MembersQueue_members>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface MembersFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -2499,15 +2867,23 @@ export namespace MyNS {
 	export interface MembersQueue_members {
 		call_sid?: string | null;
 		date_enqueued?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 		uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wait_time?: number | null;
 	}
 	export interface MembersQueue_membersFormProperties {
 		call_sid: FormControl<string | null | undefined>,
 		date_enqueued: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wait_time: FormControl<number | null | undefined>,
 	}
 	export function CreateMembersQueue_membersFormGroup() {
@@ -2577,29 +2953,53 @@ export namespace MyNS {
 	}
 
 	export interface Messages {
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		MessagesMessages?: Array<MessagesMessages>;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface MessagesFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -2808,29 +3208,53 @@ export namespace MyNS {
 	}
 
 	export interface Notifications {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
 		NotificationsNotifications?: Array<NotificationsNotifications>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface NotificationsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -2917,6 +3341,8 @@ export namespace MyNS {
 		call_sid?: string | null;
 		friendly_name?: string | null;
 		phone_number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validation_code?: number | null;
 	}
 	export interface OutCallerFormProperties {
@@ -2924,6 +3350,8 @@ export namespace MyNS {
 		call_sid: FormControl<string | null | undefined>,
 		friendly_name: FormControl<string | null | undefined>,
 		phone_number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validation_code: FormControl<number | null | undefined>,
 	}
 	export function CreateOutCallerFormGroup() {
@@ -2942,6 +3370,8 @@ export namespace MyNS {
 		call_sid?: string | null;
 		friendly_name?: string | null;
 		phone_number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validation_code?: number | null;
 	}
 	export interface OutCallerIdFormProperties {
@@ -2949,6 +3379,8 @@ export namespace MyNS {
 		call_sid: FormControl<string | null | undefined>,
 		friendly_name: FormControl<string | null | undefined>,
 		phone_number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		validation_code: FormControl<number | null | undefined>,
 	}
 	export function CreateOutCallerIdFormGroup() {
@@ -2963,29 +3395,53 @@ export namespace MyNS {
 	}
 
 	export interface OutCallerIds {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
 		outgoing_caller_ids?: OutCallerIdsOutgoing_caller_ids;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface OutCallerIdsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -3106,29 +3562,53 @@ export namespace MyNS {
 	}
 
 	export interface Participants {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		ParticipantsParticipants?: Array<ParticipantsParticipants>;
 		previous_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface ParticipantsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -3477,7 +3957,11 @@ export namespace MyNS {
 	}
 
 	export interface Queue {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average_wait_time?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_size?: number | null;
 		date_created?: string | null;
 		date_updated?: string | null;
@@ -3494,7 +3978,11 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 	export interface QueueFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average_wait_time: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_size: FormControl<number | null | undefined>,
 		date_created: FormControl<string | null | undefined>,
 		date_updated: FormControl<string | null | undefined>,
@@ -3525,29 +4013,53 @@ export namespace MyNS {
 	}
 
 	export interface Queues {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
 		QueuesQueues?: Array<QueuesQueues>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface QueuesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -3569,7 +4081,11 @@ export namespace MyNS {
 	}
 
 	export interface QueuesQueues {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average_wait_time?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_size?: number | null;
 		date_created?: string | null;
 		date_updated?: string | null;
@@ -3586,7 +4102,11 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 	export interface QueuesQueuesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		average_wait_time: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		current_size: FormControl<number | null | undefined>,
 		date_created: FormControl<string | null | undefined>,
 		date_updated: FormControl<string | null | undefined>,
@@ -3617,29 +4137,53 @@ export namespace MyNS {
 	}
 
 	export interface Recordings {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
 		RecordingsRecordings?: Array<RecordingsRecordings>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface RecordingsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -3738,29 +4282,53 @@ export namespace MyNS {
 	}
 
 	export interface ShortCodes {
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
 		ShortCodesShort_codes?: Array<ShortCodesShort_codes>;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface ShortCodesFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -3871,29 +4439,53 @@ export namespace MyNS {
 	}
 
 	export interface Transcriptions {
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		TranscriptionsTranscriptions?: Array<TranscriptionsTranscriptions>;
 		uri?: string | null;
 	}
 	export interface TranscriptionsFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -3961,29 +4553,53 @@ export namespace MyNS {
 	}
 
 	export interface UsageRecords {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 		usage_records?: UsageRecordsUsage_records;
 	}
 	export interface UsageRecordsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -4173,29 +4789,53 @@ export namespace MyNS {
 	export enum UsageTriggerTrigger_by { count = 0, usage = 1, price = 2 }
 
 	export interface UsageTriggers {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		uri?: string | null;
 		UsageTriggersUsage_triggers?: Array<UsageTriggersUsage_triggers>;
 	}
 	export interface UsageTriggersFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -4277,28 +4917,52 @@ export namespace MyNS {
 
 	export interface UserLists {
 		UserListsCredential_list_mappings?: Array<UserListsCredential_list_mappings>;
+
+		/** Type: double */
 		end?: number | null;
 		first_page_uri?: string | null;
 		last_page_uri?: string | null;
 		next_page_uri?: string | null;
+
+		/** Type: double */
 		num_pages?: number | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		page_size?: number | null;
 		previous_page_uri?: string | null;
+
+		/** Type: double */
 		start?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 		uri?: string | null;
 	}
 	export interface UserListsFormProperties {
+
+		/** Type: double */
 		end: FormControl<number | null | undefined>,
 		first_page_uri: FormControl<string | null | undefined>,
 		last_page_uri: FormControl<string | null | undefined>,
 		next_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		num_pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_uri: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}

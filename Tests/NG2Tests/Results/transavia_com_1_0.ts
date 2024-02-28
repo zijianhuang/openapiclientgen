@@ -55,11 +55,19 @@ export namespace MyNS {
 	}
 
 	export interface GeoCoordinates {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface GeoCoordinatesFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGeoCoordinatesFormGroup() {
@@ -150,7 +158,10 @@ export namespace MyNS {
 		city?: string | null;
 		country?: Country;
 
-		/** Distance in kilometers. */
+		/**
+		 * Distance in kilometers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distanceInKm?: number | null;
 		geoCoordinates?: GeoCoordinates;
 
@@ -166,7 +177,10 @@ export namespace MyNS {
 		/** City where the airport is located. */
 		city: FormControl<string | null | undefined>,
 
-		/** Distance in kilometers. */
+		/**
+		 * Distance in kilometers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		distanceInKm: FormControl<number | null | undefined>,
 
 		/** Unique identifier. */

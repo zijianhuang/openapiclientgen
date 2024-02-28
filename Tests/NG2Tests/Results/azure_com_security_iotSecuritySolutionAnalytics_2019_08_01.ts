@@ -27,7 +27,10 @@ export namespace MyNS {
 		/** IoT Security solution alert response. */
 		actionTaken?: string | null;
 
-		/** Date of detection. */
+		/**
+		 * Date of detection.
+		 * Type: DateOnly
+		 */
 		aggregatedDateUtc?: Date | null;
 
 		/** Display name of the alert type. */
@@ -36,7 +39,10 @@ export namespace MyNS {
 		/** Name of the alert type. */
 		alertType?: string | null;
 
-		/** Number of alerts occurrences within the aggregated time window. */
+		/**
+		 * Number of alerts occurrences within the aggregated time window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Description of the suspected vulnerability and meaning. */
@@ -70,7 +76,10 @@ export namespace MyNS {
 		/** IoT Security solution alert response. */
 		actionTaken: FormControl<string | null | undefined>,
 
-		/** Date of detection. */
+		/**
+		 * Date of detection.
+		 * Type: DateOnly
+		 */
 		aggregatedDateUtc: FormControl<Date | null | undefined>,
 
 		/** Display name of the alert type. */
@@ -79,7 +88,10 @@ export namespace MyNS {
 		/** Name of the alert type. */
 		alertType: FormControl<string | null | undefined>,
 
-		/** Number of alerts occurrences within the aggregated time window. */
+		/**
+		 * Number of alerts occurrences within the aggregated time window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Description of the suspected vulnerability and meaning. */
@@ -125,7 +137,10 @@ export namespace MyNS {
 
 	export interface IoTSecurityAggregatedAlertPropertiesTopDevicesList {
 
-		/** Number of alerts raised for this device. */
+		/**
+		 * Number of alerts raised for this device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alertsCount?: number | null;
 
 		/** Name of the device. */
@@ -136,7 +151,10 @@ export namespace MyNS {
 	}
 	export interface IoTSecurityAggregatedAlertPropertiesTopDevicesListFormProperties {
 
-		/** Number of alerts raised for this device. */
+		/**
+		 * Number of alerts raised for this device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alertsCount: FormControl<number | null | undefined>,
 
 		/** Name of the device. */
@@ -208,7 +226,10 @@ export namespace MyNS {
 		/** Name of the organization that made the recommendation. */
 		detectedBy?: string | null;
 
-		/** Number of healthy devices within the IoT Security solution. */
+		/**
+		 * Number of healthy devices within the IoT Security solution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		healthyDevices?: number | null;
 
 		/** Log analytics query for getting the list of affected devices/alerts. */
@@ -229,7 +250,10 @@ export namespace MyNS {
 		/** Assessed recommendation severity. */
 		reportedSeverity?: IoTSecurityAggregatedAlertPropertiesReportedSeverity | null;
 
-		/** Number of unhealthy devices within the IoT Security solution. */
+		/**
+		 * Number of unhealthy devices within the IoT Security solution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unhealthyDeviceCount?: number | null;
 	}
 
@@ -242,7 +266,10 @@ export namespace MyNS {
 		/** Name of the organization that made the recommendation. */
 		detectedBy: FormControl<string | null | undefined>,
 
-		/** Number of healthy devices within the IoT Security solution. */
+		/**
+		 * Number of healthy devices within the IoT Security solution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		healthyDevices: FormControl<number | null | undefined>,
 
 		/** Log analytics query for getting the list of affected devices/alerts. */
@@ -263,7 +290,10 @@ export namespace MyNS {
 		/** Assessed recommendation severity. */
 		reportedSeverity: FormControl<IoTSecurityAggregatedAlertPropertiesReportedSeverity | null | undefined>,
 
-		/** Number of unhealthy devices within the IoT Security solution. */
+		/**
+		 * Number of unhealthy devices within the IoT Security solution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unhealthyDeviceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateIoTSecurityAggregatedRecommendationPropertiesFormGroup() {
@@ -313,7 +343,10 @@ export namespace MyNS {
 	/** Statistical information about the number of alerts per device during last set number of days. */
 	export interface IoTSecurityAlertedDevice {
 
-		/** Number of alerts raised for this device. */
+		/**
+		 * Number of alerts raised for this device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alertsCount?: number | null;
 
 		/** Device identifier. */
@@ -323,7 +356,10 @@ export namespace MyNS {
 	/** Statistical information about the number of alerts per device during last set number of days. */
 	export interface IoTSecurityAlertedDeviceFormProperties {
 
-		/** Number of alerts raised for this device. */
+		/**
+		 * Number of alerts raised for this device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alertsCount: FormControl<number | null | undefined>,
 
 		/** Device identifier. */
@@ -344,7 +380,10 @@ export namespace MyNS {
 		/** Display name of the alert */
 		alertDisplayName?: string | null;
 
-		/** Number of alerts raised for this alert type. */
+		/**
+		 * Number of alerts raised for this alert type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alertsCount?: number | null;
 
 		/** Assessed Alert severity. */
@@ -357,7 +396,10 @@ export namespace MyNS {
 		/** Display name of the alert */
 		alertDisplayName: FormControl<string | null | undefined>,
 
-		/** Number of alerts raised for this alert type. */
+		/**
+		 * Number of alerts raised for this alert type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alertsCount: FormControl<number | null | undefined>,
 
 		/** Assessed Alert severity. */
@@ -376,7 +418,10 @@ export namespace MyNS {
 	/** Statistical information about the number of recommendations per device, per recommendation type. */
 	export interface IoTSecurityDeviceRecommendation {
 
-		/** Number of devices with this recommendation. */
+		/**
+		 * Number of devices with this recommendation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		devicesCount?: number | null;
 
 		/** Display name of the recommendation. */
@@ -389,7 +434,10 @@ export namespace MyNS {
 	/** Statistical information about the number of recommendations per device, per recommendation type. */
 	export interface IoTSecurityDeviceRecommendationFormProperties {
 
-		/** Number of devices with this recommendation. */
+		/**
+		 * Number of devices with this recommendation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		devicesCount: FormControl<number | null | undefined>,
 
 		/** Display name of the recommendation. */
@@ -470,14 +518,20 @@ export namespace MyNS {
 		/** List of devices with open alerts including the count of alerts per device. */
 		topAlertedDevices?: Array<IoTSecurityAlertedDevice>;
 
-		/** Number of unhealthy devices within your IoT Security solution. */
+		/**
+		 * Number of unhealthy devices within your IoT Security solution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unhealthyDeviceCount?: number | null;
 	}
 
 	/** Security analytics properties of your IoT Security solution */
 	export interface IoTSecuritySolutionAnalyticsModelPropertiesFormProperties {
 
-		/** Number of unhealthy devices within your IoT Security solution. */
+		/**
+		 * Number of unhealthy devices within your IoT Security solution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unhealthyDeviceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateIoTSecuritySolutionAnalyticsModelPropertiesFormGroup() {
@@ -511,26 +565,44 @@ export namespace MyNS {
 	/** IoT Security solution analytics severity metrics. */
 	export interface IoTSeverityMetrics {
 
-		/** Count of high severity alerts/recommendations. */
+		/**
+		 * Count of high severity alerts/recommendations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		high?: number | null;
 
-		/** Count of low severity alerts/recommendations. */
+		/**
+		 * Count of low severity alerts/recommendations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		low?: number | null;
 
-		/** Count of medium severity alerts/recommendations. */
+		/**
+		 * Count of medium severity alerts/recommendations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		medium?: number | null;
 	}
 
 	/** IoT Security solution analytics severity metrics. */
 	export interface IoTSeverityMetricsFormProperties {
 
-		/** Count of high severity alerts/recommendations. */
+		/**
+		 * Count of high severity alerts/recommendations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		high: FormControl<number | null | undefined>,
 
-		/** Count of low severity alerts/recommendations. */
+		/**
+		 * Count of low severity alerts/recommendations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		low: FormControl<number | null | undefined>,
 
-		/** Count of medium severity alerts/recommendations. */
+		/**
+		 * Count of medium severity alerts/recommendations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		medium: FormControl<number | null | undefined>,
 	}
 	export function CreateIoTSeverityMetricsFormGroup() {

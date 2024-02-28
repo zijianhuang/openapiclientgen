@@ -181,6 +181,7 @@ export namespace MyNS {
 		/**
 		 * Average amount of honey produced per day in ounces
 		 * Required
+		 * Type: double
 		 */
 		honeyPerDay: number;
 	}
@@ -191,6 +192,7 @@ export namespace MyNS {
 		/**
 		 * Average amount of honey produced per day in ounces
 		 * Required
+		 * Type: double
 		 */
 		honeyPerDay: FormControl<number | null | undefined>,
 	}
@@ -395,7 +397,10 @@ export namespace MyNS {
 		/** User phone number in international format */
 		phone?: string | null;
 
-		/** User status */
+		/**
+		 * User status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userStatus?: number | null;
 	}
 	export interface UserFormProperties {
@@ -433,7 +438,10 @@ export namespace MyNS {
 		/** User phone number in international format */
 		phone: FormControl<string | null | undefined>,
 
-		/** User status */
+		/**
+		 * User status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userStatus: FormControl<number | null | undefined>,
 	}
 	export function CreateUserFormGroup() {

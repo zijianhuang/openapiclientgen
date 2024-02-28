@@ -278,11 +278,17 @@ export namespace MyNS {
 	/** The regional quota capability. */
 	export interface QuotaCapability {
 
-		/** The number of cores used in the subscription. */
-		cores_used?: number | null;
+		/**
+		 * The number of cores used in the subscription.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cores_used?: string | null;
 
-		/** The number of cores that the subscription allowed. */
-		max_cores_allowed?: number | null;
+		/**
+		 * The number of cores that the subscription allowed.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		max_cores_allowed?: string | null;
 
 		/** The list of region quota capabilities. */
 		regionalQuotas?: Array<RegionalQuotaCapability>;
@@ -291,16 +297,22 @@ export namespace MyNS {
 	/** The regional quota capability. */
 	export interface QuotaCapabilityFormProperties {
 
-		/** The number of cores used in the subscription. */
-		cores_used: FormControl<number | null | undefined>,
+		/**
+		 * The number of cores used in the subscription.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cores_used: FormControl<string | null | undefined>,
 
-		/** The number of cores that the subscription allowed. */
-		max_cores_allowed: FormControl<number | null | undefined>,
+		/**
+		 * The number of cores that the subscription allowed.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		max_cores_allowed: FormControl<string | null | undefined>,
 	}
 	export function CreateQuotaCapabilityFormGroup() {
 		return new FormGroup<QuotaCapabilityFormProperties>({
-			cores_used: new FormControl<number | null | undefined>(undefined),
-			max_cores_allowed: new FormControl<number | null | undefined>(undefined),
+			cores_used: new FormControl<string | null | undefined>(undefined),
+			max_cores_allowed: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -309,11 +321,17 @@ export namespace MyNS {
 	/** The regional quota capacity. */
 	export interface RegionalQuotaCapability {
 
-		/** The number of cores available in the region. */
-		cores_available?: number | null;
+		/**
+		 * The number of cores available in the region.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cores_available?: string | null;
 
-		/** The number of cores used in the region. */
-		cores_used?: number | null;
+		/**
+		 * The number of cores used in the region.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cores_used?: string | null;
 
 		/** The region name. */
 		region_name?: string | null;
@@ -322,19 +340,25 @@ export namespace MyNS {
 	/** The regional quota capacity. */
 	export interface RegionalQuotaCapabilityFormProperties {
 
-		/** The number of cores available in the region. */
-		cores_available: FormControl<number | null | undefined>,
+		/**
+		 * The number of cores available in the region.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cores_available: FormControl<string | null | undefined>,
 
-		/** The number of cores used in the region. */
-		cores_used: FormControl<number | null | undefined>,
+		/**
+		 * The number of cores used in the region.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cores_used: FormControl<string | null | undefined>,
 
 		/** The region name. */
 		region_name: FormControl<string | null | undefined>,
 	}
 	export function CreateRegionalQuotaCapabilityFormGroup() {
 		return new FormGroup<RegionalQuotaCapabilityFormProperties>({
-			cores_available: new FormControl<number | null | undefined>(undefined),
-			cores_used: new FormControl<number | null | undefined>(undefined),
+			cores_available: new FormControl<string | null | undefined>(undefined),
+			cores_used: new FormControl<string | null | undefined>(undefined),
 			region_name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -361,10 +385,16 @@ export namespace MyNS {
 	/** The details about the usage of a particular limited resource. */
 	export interface Usage {
 
-		/** The current usage. */
+		/**
+		 * The current usage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue?: number | null;
 
-		/** The maximum allowed usage. */
+		/**
+		 * The maximum allowed usage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The details about the localizable name of a type of usage. */
@@ -377,10 +407,16 @@ export namespace MyNS {
 	/** The details about the usage of a particular limited resource. */
 	export interface UsageFormProperties {
 
-		/** The current usage. */
+		/**
+		 * The current usage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue: FormControl<number | null | undefined>,
 
-		/** The maximum allowed usage. */
+		/**
+		 * The maximum allowed usage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The type of measurement for usage. */

@@ -161,12 +161,14 @@ export namespace MyNS {
 		/**
 		 * The horizontal component, in pixels.
 		 * Required
+		 * Type: double
 		 */
 		x: number;
 
 		/**
 		 * The vertical component, in pixels.
 		 * Required
+		 * Type: double
 		 */
 		y: number;
 	}
@@ -177,12 +179,14 @@ export namespace MyNS {
 		/**
 		 * The horizontal component, in pixels.
 		 * Required
+		 * Type: double
 		 */
 		x: FormControl<number | null | undefined>,
 
 		/**
 		 * The vertical component, in pixels.
 		 * Required
+		 * Type: double
 		 */
 		y: FormControl<number | null | undefined>,
 	}
@@ -237,7 +241,10 @@ export namespace MyNS {
 		/** Properties describing any accessories on a given face. */
 		accessories?: Array<Accessory>;
 
-		/** Age in years */
+		/**
+		 * Age in years
+		 * Type: double
+		 */
 		age?: number | null;
 
 		/** Properties describing any presence of blur within the image. */
@@ -284,7 +291,10 @@ export namespace MyNS {
 	/** Face Attributes */
 	export interface FaceAttributesFormProperties {
 
-		/** Age in years */
+		/**
+		 * Age in years
+		 * Type: double
+		 */
 		age: FormControl<number | null | undefined>,
 
 		/** Possible gender of the face. */
@@ -623,15 +633,27 @@ export namespace MyNS {
 
 	/** Properties indicating head pose of the face. */
 	export interface HeadPose {
+
+		/** Type: double */
 		pitch?: number | null;
+
+		/** Type: double */
 		roll?: number | null;
+
+		/** Type: double */
 		yaw?: number | null;
 	}
 
 	/** Properties indicating head pose of the face. */
 	export interface HeadPoseFormProperties {
+
+		/** Type: double */
 		pitch: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		roll: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		yaw: FormControl<number | null | undefined>,
 	}
 	export function CreateHeadPoseFormGroup() {
@@ -844,24 +866,28 @@ export namespace MyNS {
 		/**
 		 * The height of the rectangle, in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: number;
 
 		/**
 		 * The distance from the left edge if the image to the left edge of the rectangle, in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		left: number;
 
 		/**
 		 * The distance from the top edge if the image to the top edge of the rectangle, in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		top: number;
 
 		/**
 		 * The width of the rectangle, in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: number;
 	}
@@ -872,24 +898,28 @@ export namespace MyNS {
 		/**
 		 * The height of the rectangle, in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
 		 * The distance from the left edge if the image to the left edge of the rectangle, in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		left: FormControl<number | null | undefined>,
 
 		/**
 		 * The distance from the top edge if the image to the top edge of the rectangle, in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		top: FormControl<number | null | undefined>,
 
 		/**
 		 * The width of the rectangle, in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: FormControl<number | null | undefined>,
 	}

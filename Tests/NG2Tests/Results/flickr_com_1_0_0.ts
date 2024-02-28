@@ -5,34 +5,58 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Album {
 		can_comment?: boolean | null;
+
+		/** Type: double */
 		count_comments?: number | null;
+
+		/** Type: double */
 		count_views?: number | null;
+
+		/** Type: double */
 		date_create?: number | null;
+
+		/** Type: double */
 		date_update?: number | null;
 		description?: string | null;
 		farm?: string | null;
 		id?: string | null;
+
+		/** Type: double */
 		photos?: number | null;
 		primary?: string | null;
 		secret?: string | null;
 		server?: string | null;
 		title?: string | null;
+
+		/** Type: double */
 		videos?: number | null;
 	}
 	export interface AlbumFormProperties {
 		can_comment: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		count_comments: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		count_views: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		date_create: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		date_update: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		farm: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		photos: FormControl<number | null | undefined>,
 		primary: FormControl<string | null | undefined>,
 		secret: FormControl<string | null | undefined>,
 		server: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		videos: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumFormGroup() {
@@ -59,6 +83,8 @@ export namespace MyNS {
 		farm?: string | null;
 		id?: string | null;
 		is_faved?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		license?: number | null;
 		media?: string | null;
 		owner?: string | null;
@@ -73,6 +99,8 @@ export namespace MyNS {
 		farm: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		is_faved: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		license: FormControl<number | null | undefined>,
 		media: FormControl<string | null | undefined>,
 		owner: FormControl<string | null | undefined>,
@@ -171,6 +199,8 @@ export namespace MyNS {
 		name?: GroupName;
 		path_alias?: string | null;
 		pool_count?: GroupPool_count;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pool_rows?: number | null;
 		privacy?: GroupPrivacy;
 		restrictions?: GroupRestrictions;
@@ -191,6 +221,8 @@ export namespace MyNS {
 		ispoolmoderated: FormControl<boolean | null | undefined>,
 		lang: FormControl<string | null | undefined>,
 		path_alias: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pool_rows: FormControl<number | null | undefined>,
 	}
 	export function CreateGroupFormGroup() {
@@ -387,11 +419,15 @@ export namespace MyNS {
 	}
 
 	export interface GroupThrottle {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		mode?: string | null;
 		remaining?: string | null;
 	}
 	export interface GroupThrottleFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		mode: FormControl<string | null | undefined>,
 		remaining: FormControl<string | null | undefined>,
@@ -1059,19 +1095,27 @@ export namespace MyNS {
 	}
 
 	export interface Size {
+
+		/** Type: double */
 		height?: number | null;
 		label?: string | null;
 		media?: string | null;
 		source?: string | null;
 		url?: string | null;
+
+		/** Type: double */
 		width?: number | null;
 	}
 	export interface SizeFormProperties {
+
+		/** Type: double */
 		height: FormControl<number | null | undefined>,
 		label: FormControl<string | null | undefined>,
 		media: FormControl<string | null | undefined>,
 		source: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateSizeFormGroup() {
@@ -1094,6 +1138,8 @@ export namespace MyNS {
 		can_delete?: boolean | null;
 		can_edit?: boolean | null;
 		can_reply?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count_replies?: number | null;
 		datecreate?: string | null;
 		datelastpost?: string | null;
@@ -1117,6 +1163,8 @@ export namespace MyNS {
 		can_delete: FormControl<boolean | null | undefined>,
 		can_edit: FormControl<boolean | null | undefined>,
 		can_reply: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count_replies: FormControl<number | null | undefined>,
 		datecreate: FormControl<string | null | undefined>,
 		datelastpost: FormControl<string | null | undefined>,
@@ -1265,6 +1313,10 @@ export namespace MyNS {
 		/**
 		 * Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned.
 		 * Get rest?method=flickr.favorites.getList
+		 * @param {number} min_fave_date Type: double
+		 * @param {number} max_fave_date Type: double
+		 * @param {number} page Type: double
+		 * @param {number} per_page Type: double
 		 * @return {GetFavoritesByPersonIDReturn} OK
 		 */
 		GetFavoritesByPersonID(api_key: string, user_id: string, min_fave_date: number | null | undefined, max_fave_date: number | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<GetFavoritesByPersonIDReturn> {
@@ -1301,6 +1353,8 @@ export namespace MyNS {
 		/**
 		 * Get a list of discussion topics in a group.
 		 * Get rest?method=flickr.groups.discuss.topics.getList
+		 * @param {number} page Type: double
+		 * @param {number} per_page Type: double
 		 * @return {GetGroupDiscussionsByIDReturn} OK
 		 */
 		GetGroupDiscussionsByID(api_key: string, group_id: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<GetGroupDiscussionsByIDReturn> {
@@ -1346,6 +1400,15 @@ export namespace MyNS {
 		/**
 		 * Return photos from the given user's photostream
 		 * Get rest?method=flickr.people.getPhotos
+		 * @param {number} safe_search Type: double
+		 * @param {number} min_upload_date Type: double
+		 * @param {number} max_upload_date Type: double
+		 * @param {number} min_taken_date Type: double
+		 * @param {number} max_taken_date Type: double
+		 * @param {number} content_type Type: double
+		 * @param {number} privacy_filter Type: double
+		 * @param {number} page Type: double
+		 * @param {number} per_page Type: double
 		 * @return {GetMediaByPersonIDReturn} OK
 		 */
 		GetMediaByPersonID(api_key: string, user_id: string, safe_search: number | null | undefined, min_upload_date: number | null | undefined, max_upload_date: number | null | undefined, min_taken_date: number | null | undefined, max_taken_date: number | null | undefined, content_type: number | null | undefined, privacy_filter: number | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<GetMediaByPersonIDReturn> {
@@ -1486,6 +1549,8 @@ export namespace MyNS {
 		/**
 		 * Returns the albums belonging to the specified user
 		 * Get rest?method=flickr.photosets.getList
+		 * @param {number} page Type: double
+		 * @param {number} per_page Type: double
 		 * @return {GetAlbumsByPersonIDReturn} OK
 		 */
 		GetAlbumsByPersonID(api_key: string, user_id: string, page: number | null | undefined, per_page: number | null | undefined): Observable<GetAlbumsByPersonIDReturn> {
@@ -1541,16 +1606,32 @@ export namespace MyNS {
 	}
 
 	export interface GetFavoritesByPersonIDReturn {
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pages?: number | null;
+
+		/** Type: double */
 		perpage?: number | null;
 		photos?: Array<Photo>;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetFavoritesByPersonIDReturnFormProperties {
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		perpage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFavoritesByPersonIDReturnFormGroup() {
@@ -1603,30 +1684,62 @@ export namespace MyNS {
 	}
 
 	export interface GetGroupDiscussionsByIDReturn {
+
+		/** Type: double */
 		iconfarm?: number | null;
+
+		/** Type: double */
 		iconserver?: number | null;
 		ispoolmoderated?: boolean | null;
 		lang?: string | null;
+
+		/** Type: double */
 		members?: number | null;
 		name?: string | null;
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pages?: number | null;
+
+		/** Type: double */
 		per_page?: number | null;
+
+		/** Type: double */
 		privacy?: number | null;
 		topics?: Array<Topic>;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetGroupDiscussionsByIDReturnFormProperties {
+
+		/** Type: double */
 		iconfarm: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		iconserver: FormControl<number | null | undefined>,
 		ispoolmoderated: FormControl<boolean | null | undefined>,
 		lang: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		members: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		per_page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		privacy: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetGroupDiscussionsByIDReturnFormGroup() {
@@ -1715,16 +1828,32 @@ export namespace MyNS {
 	}
 
 	export interface GetMediaByPersonIDReturn {
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pages?: number | null;
+
+		/** Type: double */
 		perpage?: number | null;
 		photos?: Array<Photo>;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetMediaByPersonIDReturnFormProperties {
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		perpage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetMediaByPersonIDReturnFormGroup() {
@@ -1900,14 +2029,26 @@ export namespace MyNS {
 	}
 
 	export interface GetPhotoSizesByIDReturnSizes {
+
+		/** Type: double */
 		canblog?: number | null;
+
+		/** Type: double */
 		candownload?: number | null;
+
+		/** Type: double */
 		canprint?: number | null;
 		sizes?: Array<Size>;
 	}
 	export interface GetPhotoSizesByIDReturnSizesFormProperties {
+
+		/** Type: double */
 		canblog: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		candownload: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		canprint: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPhotoSizesByIDReturnSizesFormGroup() {
@@ -1945,11 +2086,15 @@ export namespace MyNS {
 	}
 
 	export interface GetLicenseByIDReturnLicensesLicense {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		url?: string | null;
 	}
 	export interface GetLicenseByIDReturnLicensesLicenseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1964,16 +2109,32 @@ export namespace MyNS {
 	}
 
 	export interface GetMediaBySearchReturn {
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pages?: number | null;
+
+		/** Type: double */
 		perpage?: number | null;
 		photos?: Array<Photo>;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetMediaBySearchReturnFormProperties {
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		perpage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetMediaBySearchReturnFormGroup() {
@@ -2016,16 +2177,32 @@ export namespace MyNS {
 	}
 
 	export interface GetAlbumsByPersonIDReturn {
+
+		/** Type: double */
 		page?: number | null;
+
+		/** Type: double */
 		pages?: number | null;
+
+		/** Type: double */
 		perpage?: number | null;
 		photosets?: Array<Album>;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface GetAlbumsByPersonIDReturnFormProperties {
+
+		/** Type: double */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		perpage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAlbumsByPersonIDReturnFormGroup() {

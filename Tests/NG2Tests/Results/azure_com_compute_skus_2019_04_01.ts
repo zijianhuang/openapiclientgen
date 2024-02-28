@@ -118,8 +118,11 @@ export namespace MyNS {
 		/** Used for querying price from commerce. */
 		meterID?: string | null;
 
-		/** The multiplier is needed to extend the base metered cost. */
-		quantity?: number | null;
+		/**
+		 * The multiplier is needed to extend the base metered cost.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quantity?: string | null;
 	}
 
 	/** Describes metadata for retrieving price info. */
@@ -131,14 +134,17 @@ export namespace MyNS {
 		/** Used for querying price from commerce. */
 		meterID: FormControl<string | null | undefined>,
 
-		/** The multiplier is needed to extend the base metered cost. */
-		quantity: FormControl<number | null | undefined>,
+		/**
+		 * The multiplier is needed to extend the base metered cost.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quantity: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceSkuCostsFormGroup() {
 		return new FormGroup<ResourceSkuCostsFormProperties>({
 			extendedUnit: new FormControl<string | null | undefined>(undefined),
 			meterID: new FormControl<string | null | undefined>(undefined),
-			quantity: new FormControl<number | null | undefined>(undefined),
+			quantity: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -226,14 +232,23 @@ export namespace MyNS {
 	/** Describes scaling information of a SKU. */
 	export interface ResourceSkuCapacity {
 
-		/** The default capacity. */
-		default?: number | null;
+		/**
+		 * The default capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		default?: string | null;
 
-		/** The maximum capacity that can be set. */
-		maximum?: number | null;
+		/**
+		 * The maximum capacity that can be set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximum?: string | null;
 
-		/** The minimum capacity. */
-		minimum?: number | null;
+		/**
+		 * The minimum capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minimum?: string | null;
 
 		/** The scale type applicable to the sku. */
 		scaleType?: ResourceSkuCapacityScaleType | null;
@@ -242,23 +257,32 @@ export namespace MyNS {
 	/** Describes scaling information of a SKU. */
 	export interface ResourceSkuCapacityFormProperties {
 
-		/** The default capacity. */
-		default: FormControl<number | null | undefined>,
+		/**
+		 * The default capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		default: FormControl<string | null | undefined>,
 
-		/** The maximum capacity that can be set. */
-		maximum: FormControl<number | null | undefined>,
+		/**
+		 * The maximum capacity that can be set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximum: FormControl<string | null | undefined>,
 
-		/** The minimum capacity. */
-		minimum: FormControl<number | null | undefined>,
+		/**
+		 * The minimum capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minimum: FormControl<string | null | undefined>,
 
 		/** The scale type applicable to the sku. */
 		scaleType: FormControl<ResourceSkuCapacityScaleType | null | undefined>,
 	}
 	export function CreateResourceSkuCapacityFormGroup() {
 		return new FormGroup<ResourceSkuCapacityFormProperties>({
-			default: new FormControl<number | null | undefined>(undefined),
-			maximum: new FormControl<number | null | undefined>(undefined),
-			minimum: new FormControl<number | null | undefined>(undefined),
+			default: new FormControl<string | null | undefined>(undefined),
+			maximum: new FormControl<string | null | undefined>(undefined),
+			minimum: new FormControl<string | null | undefined>(undefined),
 			scaleType: new FormControl<ResourceSkuCapacityScaleType | null | undefined>(undefined),
 		});
 

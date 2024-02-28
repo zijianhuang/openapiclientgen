@@ -667,7 +667,10 @@ export namespace MyNS {
 		/** Time in UTC (ISO 8601 format) when service level agreement expires. */
 		expirationTime?: Date | null;
 
-		/** Service Level Agreement in minutes */
+		/**
+		 * Service Level Agreement in minutes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		slaMinutes?: number | null;
 
 		/** Time in UTC (ISO 8601 format) when service level agreement starts. */
@@ -680,7 +683,10 @@ export namespace MyNS {
 		/** Time in UTC (ISO 8601 format) when service level agreement expires. */
 		expirationTime: FormControl<Date | null | undefined>,
 
-		/** Service Level Agreement in minutes */
+		/**
+		 * Service Level Agreement in minutes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		slaMinutes: FormControl<number | null | undefined>,
 
 		/** Time in UTC (ISO 8601 format) when service level agreement starts. */

@@ -1736,7 +1736,10 @@ export namespace MyNS {
 	/** Properties of consumer invitation */
 	export interface ConsumerInvitationProperties {
 
-		/** Number of data sets in a share */
+		/**
+		 * Number of data sets in a share
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataSetCount?: number | null;
 
 		/** Description shared when the invitation was created */
@@ -1785,7 +1788,10 @@ export namespace MyNS {
 	/** Properties of consumer invitation */
 	export interface ConsumerInvitationPropertiesFormProperties {
 
-		/** Number of data sets in a share */
+		/**
+		 * Number of data sets in a share
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dataSetCount: FormControl<number | null | undefined>,
 
 		/** Description shared when the invitation was created */
@@ -3627,7 +3633,10 @@ export namespace MyNS {
 	/** A ShareSubscriptionSynchronization data transfer object. */
 	export interface ShareSubscriptionSynchronization {
 
-		/** Synchronization duration */
+		/**
+		 * Synchronization duration
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationMs?: number | null;
 
 		/** End time of synchronization */
@@ -3655,7 +3664,10 @@ export namespace MyNS {
 	/** A ShareSubscriptionSynchronization data transfer object. */
 	export interface ShareSubscriptionSynchronizationFormProperties {
 
-		/** Synchronization duration */
+		/**
+		 * Synchronization duration
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationMs: FormControl<number | null | undefined>,
 
 		/** End time of synchronization */
@@ -3732,7 +3744,10 @@ export namespace MyNS {
 		/** Tenant name of the consumer who created the synchronization */
 		consumerTenantName?: string | null;
 
-		/** synchronization duration */
+		/**
+		 * synchronization duration
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationMs?: number | null;
 
 		/** End time of synchronization */
@@ -3766,7 +3781,10 @@ export namespace MyNS {
 		/** Tenant name of the consumer who created the synchronization */
 		consumerTenantName: FormControl<string | null | undefined>,
 
-		/** synchronization duration */
+		/**
+		 * synchronization duration
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationMs: FormControl<number | null | undefined>,
 
 		/** End time of synchronization */
@@ -4302,17 +4320,26 @@ export namespace MyNS {
 		/** Type of the data set */
 		dataSetType?: ConsumerSourceDataSetPropertiesDataSetType | null;
 
-		/** Duration of data set level copy */
+		/**
+		 * Duration of data set level copy
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationMs?: number | null;
 
 		/** End time of data set level copy */
 		endTime?: Date | null;
 
-		/** The number of files read from the source data set */
-		filesRead?: number | null;
+		/**
+		 * The number of files read from the source data set
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		filesRead?: string | null;
 
-		/** The number of files written into the sink data set */
-		filesWritten?: number | null;
+		/**
+		 * The number of files written into the sink data set
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		filesWritten?: string | null;
 
 		/** Error message if any */
 		message?: string | null;
@@ -4320,17 +4347,29 @@ export namespace MyNS {
 		/** Name of the data set */
 		name?: string | null;
 
-		/** The number of files copied into the sink data set */
-		rowsCopied?: number | null;
+		/**
+		 * The number of files copied into the sink data set
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rowsCopied?: string | null;
 
-		/** The number of rows read from the source data set. */
-		rowsRead?: number | null;
+		/**
+		 * The number of rows read from the source data set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rowsRead?: string | null;
 
-		/** The size of the data read from the source data set in bytes */
-		sizeRead?: number | null;
+		/**
+		 * The size of the data read from the source data set in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sizeRead?: string | null;
 
-		/** The size of the data written into the sink data set in bytes */
-		sizeWritten?: number | null;
+		/**
+		 * The size of the data written into the sink data set in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sizeWritten?: string | null;
 
 		/** Start time of data set level copy */
 		startTime?: Date | null;
@@ -4338,8 +4377,11 @@ export namespace MyNS {
 		/** Raw Status */
 		status?: string | null;
 
-		/** The vCore units consumed for the data set synchronization */
-		vCore?: number | null;
+		/**
+		 * The vCore units consumed for the data set synchronization
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		vCore?: string | null;
 	}
 
 	/** Synchronization details at data set level */
@@ -4351,17 +4393,26 @@ export namespace MyNS {
 		/** Type of the data set */
 		dataSetType: FormControl<ConsumerSourceDataSetPropertiesDataSetType | null | undefined>,
 
-		/** Duration of data set level copy */
+		/**
+		 * Duration of data set level copy
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationMs: FormControl<number | null | undefined>,
 
 		/** End time of data set level copy */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** The number of files read from the source data set */
-		filesRead: FormControl<number | null | undefined>,
+		/**
+		 * The number of files read from the source data set
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		filesRead: FormControl<string | null | undefined>,
 
-		/** The number of files written into the sink data set */
-		filesWritten: FormControl<number | null | undefined>,
+		/**
+		 * The number of files written into the sink data set
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		filesWritten: FormControl<string | null | undefined>,
 
 		/** Error message if any */
 		message: FormControl<string | null | undefined>,
@@ -4369,17 +4420,29 @@ export namespace MyNS {
 		/** Name of the data set */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of files copied into the sink data set */
-		rowsCopied: FormControl<number | null | undefined>,
+		/**
+		 * The number of files copied into the sink data set
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rowsCopied: FormControl<string | null | undefined>,
 
-		/** The number of rows read from the source data set. */
-		rowsRead: FormControl<number | null | undefined>,
+		/**
+		 * The number of rows read from the source data set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rowsRead: FormControl<string | null | undefined>,
 
-		/** The size of the data read from the source data set in bytes */
-		sizeRead: FormControl<number | null | undefined>,
+		/**
+		 * The size of the data read from the source data set in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sizeRead: FormControl<string | null | undefined>,
 
-		/** The size of the data written into the sink data set in bytes */
-		sizeWritten: FormControl<number | null | undefined>,
+		/**
+		 * The size of the data written into the sink data set in bytes
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sizeWritten: FormControl<string | null | undefined>,
 
 		/** Start time of data set level copy */
 		startTime: FormControl<Date | null | undefined>,
@@ -4387,8 +4450,11 @@ export namespace MyNS {
 		/** Raw Status */
 		status: FormControl<string | null | undefined>,
 
-		/** The vCore units consumed for the data set synchronization */
-		vCore: FormControl<number | null | undefined>,
+		/**
+		 * The vCore units consumed for the data set synchronization
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		vCore: FormControl<string | null | undefined>,
 	}
 	export function CreateSynchronizationDetailsFormGroup() {
 		return new FormGroup<SynchronizationDetailsFormProperties>({
@@ -4396,17 +4462,17 @@ export namespace MyNS {
 			dataSetType: new FormControl<ConsumerSourceDataSetPropertiesDataSetType | null | undefined>(undefined),
 			durationMs: new FormControl<number | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
-			filesRead: new FormControl<number | null | undefined>(undefined),
-			filesWritten: new FormControl<number | null | undefined>(undefined),
+			filesRead: new FormControl<string | null | undefined>(undefined),
+			filesWritten: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			rowsCopied: new FormControl<number | null | undefined>(undefined),
-			rowsRead: new FormControl<number | null | undefined>(undefined),
-			sizeRead: new FormControl<number | null | undefined>(undefined),
-			sizeWritten: new FormControl<number | null | undefined>(undefined),
+			rowsCopied: new FormControl<string | null | undefined>(undefined),
+			rowsRead: new FormControl<string | null | undefined>(undefined),
+			sizeRead: new FormControl<string | null | undefined>(undefined),
+			sizeWritten: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
-			vCore: new FormControl<number | null | undefined>(undefined),
+			vCore: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

@@ -89,7 +89,10 @@ export namespace MyNS {
 		/** Required in the TimeDuration container. A time-measurement unit used to specify a period of time. Time-measurement units can be years, months, days, hours, minutes, and other time units (see TimeDurationUnitEnum for a complete list of possible units). The unit is applied to the number in the value field to define a span of time. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/TimeDurationUnitEnum.html'>eBay API documentation</a> */
 		unit?: string | null;
 
-		/** Required in the TimeDuration container. An amount of time, as measured by the time-measurement units specified in the unit field. Supported values for this field vary according to the object using the time duration. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring. */
+		/**
+		 * Required in the TimeDuration container. An amount of time, as measured by the time-measurement units specified in the unit field. Supported values for this field vary according to the object using the time duration. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 
@@ -99,7 +102,10 @@ export namespace MyNS {
 		/** Required in the TimeDuration container. A time-measurement unit used to specify a period of time. Time-measurement units can be years, months, days, hours, minutes, and other time units (see TimeDurationUnitEnum for a complete list of possible units). The unit is applied to the number in the value field to define a span of time. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/TimeDurationUnitEnum.html'>eBay API documentation</a> */
 		unit: FormControl<string | null | undefined>,
 
-		/** Required in the TimeDuration container. An amount of time, as measured by the time-measurement units specified in the unit field. Supported values for this field vary according to the object using the time duration. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring. */
+		/**
+		 * Required in the TimeDuration container. An amount of time, as measured by the time-measurement units specified in the unit field. Supported values for this field vary according to the object using the time duration. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeDurationFormGroup() {
@@ -329,7 +335,10 @@ export namespace MyNS {
 		/** This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
 		shipToLocations?: RegionSet;
 
-		/** This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options. Sellers can specify up to four domestic shipping services (in four separate shippingService containers), so valid values are 1, 2, 3, and 4. A shipping service option with a sortOrder value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a sortOrder value of '4' appears at the bottom of the list. Sellers can specify up to five international shipping services (in five separate shippingService containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the sortOrder value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two shippingOptions containers, where you set shippingOptions.optionType to either DOMESTIC or INTERNATIONAL to indicate the area supported by the listed shipping services. If the sortOrder field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. Min: 1. Max: 4 (for domestic shipping service) or 5 (for international shipping service). */
+		/**
+		 * This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options. Sellers can specify up to four domestic shipping services (in four separate shippingService containers), so valid values are 1, 2, 3, and 4. A shipping service option with a sortOrder value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a sortOrder value of '4' appears at the bottom of the list. Sellers can specify up to five international shipping services (in five separate shippingService containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the sortOrder value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two shippingOptions containers, where you set shippingOptions.optionType to either DOMESTIC or INTERNATIONAL to indicate the area supported by the listed shipping services. If the sortOrder field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. Min: 1. Max: 4 (for domestic shipping service) or 5 (for international shipping service).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
@@ -354,7 +363,10 @@ export namespace MyNS {
 		/** The shipping service that the shipping carrier uses to ship an item. For example, an overnight, two-day delivery, or other type of service. For details on configuring shipping services, see Setting the shipping carrier and shipping service values. */
 		shippingServiceCode: FormControl<string | null | undefined>,
 
-		/** This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options. Sellers can specify up to four domestic shipping services (in four separate shippingService containers), so valid values are 1, 2, 3, and 4. A shipping service option with a sortOrder value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a sortOrder value of '4' appears at the bottom of the list. Sellers can specify up to five international shipping services (in five separate shippingService containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the sortOrder value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two shippingOptions containers, where you set shippingOptions.optionType to either DOMESTIC or INTERNATIONAL to indicate the area supported by the listed shipping services. If the sortOrder field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. Min: 1. Max: 4 (for domestic shipping service) or 5 (for international shipping service). */
+		/**
+		 * This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options. Sellers can specify up to four domestic shipping services (in four separate shippingService containers), so valid values are 1, 2, 3, and 4. A shipping service option with a sortOrder value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a sortOrder value of '4' appears at the bottom of the list. Sellers can specify up to five international shipping services (in five separate shippingService containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the sortOrder value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two shippingOptions containers, where you set shippingOptions.optionType to either DOMESTIC or INTERNATIONAL to indicate the area supported by the listed shipping services. If the sortOrder field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. Min: 1. Max: 4 (for domestic shipping service) or 5 (for international shipping service).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateShippingServiceFormGroup() {
@@ -502,19 +514,28 @@ export namespace MyNS {
 		/** Returns a URL link to the result set. */
 		href?: string | null;
 
-		/** Returns the maximum number of results that can be returned in result set. */
+		/**
+		 * Returns the maximum number of results that can be returned in result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** Returns a URL link to the next set of results. */
 		next?: string | null;
 
-		/** Returns how many result sets were skipped before the currently returned result set. */
+		/**
+		 * Returns how many result sets were skipped before the currently returned result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** Returns a URL link to the previous set of results. */
 		prev?: string | null;
 
-		/** Returns the total number of result sets in the paginated collection. */
+		/**
+		 * Returns the total number of result sets in the paginated collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -524,19 +545,28 @@ export namespace MyNS {
 		/** Returns a URL link to the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** Returns the maximum number of results that can be returned in result set. */
+		/**
+		 * Returns the maximum number of results that can be returned in result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Returns a URL link to the next set of results. */
 		next: FormControl<string | null | undefined>,
 
-		/** Returns how many result sets were skipped before the currently returned result set. */
+		/**
+		 * Returns how many result sets were skipped before the currently returned result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Returns a URL link to the previous set of results. */
 		prev: FormControl<string | null | undefined>,
 
-		/** Returns the total number of result sets in the paginated collection. */
+		/**
+		 * Returns the total number of result sets in the paginated collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateFulfillmentPolicyResponseFormGroup() {
@@ -725,13 +755,19 @@ export namespace MyNS {
 		/** Returns a URL link to the current result set. */
 		href?: string | null;
 
-		/** Returns the maximum number of results that can be returned in result set. */
+		/**
+		 * Returns the maximum number of results that can be returned in result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** Returns a URL link to the next set of results. */
 		next?: string | null;
 
-		/** Returns how many result sets were skipped before the currently returned result set. */
+		/**
+		 * Returns how many result sets were skipped before the currently returned result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** A list of the seller's payment policies. */
@@ -740,7 +776,10 @@ export namespace MyNS {
 		/** Returns a URL link to the previous set of results. */
 		prev?: string | null;
 
-		/** Returns the total number of result sets in the paginated collection. */
+		/**
+		 * Returns the total number of result sets in the paginated collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -750,19 +789,28 @@ export namespace MyNS {
 		/** Returns a URL link to the current result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** Returns the maximum number of results that can be returned in result set. */
+		/**
+		 * Returns the maximum number of results that can be returned in result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Returns a URL link to the next set of results. */
 		next: FormControl<string | null | undefined>,
 
-		/** Returns how many result sets were skipped before the currently returned result set. */
+		/**
+		 * Returns how many result sets were skipped before the currently returned result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Returns a URL link to the previous set of results. */
 		prev: FormControl<string | null | undefined>,
 
-		/** Returns the total number of result sets in the paginated collection. */
+		/**
+		 * Returns the total number of result sets in the paginated collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePaymentPolicyResponseFormGroup() {
@@ -1116,13 +1164,19 @@ export namespace MyNS {
 		/** Returns a URL link to the current result set. */
 		href?: string | null;
 
-		/** Returns the maximum number of results that can be returned in result set. */
+		/**
+		 * Returns the maximum number of results that can be returned in result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** Returns a URL link to the next set of results. */
 		next?: string | null;
 
-		/** Returns how many result sets were skipped before the currently returned result set. */
+		/**
+		 * Returns how many result sets were skipped before the currently returned result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** Returns a URL link to the previous set of results. */
@@ -1131,7 +1185,10 @@ export namespace MyNS {
 		/** A list of the seller's return policies. */
 		returnPolicies?: Array<ReturnPolicy>;
 
-		/** Returns the total number of result sets in the paginated collection. */
+		/**
+		 * Returns the total number of result sets in the paginated collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -1141,19 +1198,28 @@ export namespace MyNS {
 		/** Returns a URL link to the current result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** Returns the maximum number of results that can be returned in result set. */
+		/**
+		 * Returns the maximum number of results that can be returned in result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Returns a URL link to the next set of results. */
 		next: FormControl<string | null | undefined>,
 
-		/** Returns how many result sets were skipped before the currently returned result set. */
+		/**
+		 * Returns how many result sets were skipped before the currently returned result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Returns a URL link to the previous set of results. */
 		prev: FormControl<string | null | undefined>,
 
-		/** Returns the total number of result sets in the paginated collection. */
+		/**
+		 * Returns the total number of result sets in the paginated collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateReturnPolicyResponseFormGroup() {
@@ -1262,14 +1328,20 @@ export namespace MyNS {
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
 		amount?: Amount;
 
-		/** The maximum quantity of items that can be listed by the seller per calendar month. Note that for a listing with variations, all of the items listed in the variation count as individual items. */
+		/**
+		 * The maximum quantity of items that can be listed by the seller per calendar month. Note that for a listing with variations, all of the items listed in the variation count as individual items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 	}
 
 	/** Defines the selling limit applied to an eBay seller's account. */
 	export interface SellingLimitFormProperties {
 
-		/** The maximum quantity of items that can be listed by the seller per calendar month. Note that for a listing with variations, all of the items listed in the variation count as individual items. */
+		/**
+		 * The maximum quantity of items that can be listed by the seller per calendar month. Note that for a listing with variations, all of the items listed in the variation count as individual items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateSellingLimitFormGroup() {
@@ -1398,7 +1470,10 @@ export namespace MyNS {
 		/** Name of the domain containing the service or application. */
 		domain?: string | null;
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation. */
@@ -1429,7 +1504,10 @@ export namespace MyNS {
 		/** Name of the domain containing the service or application. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** An expanded version of message that should be around 100-200 characters long, but is not required to be such. */

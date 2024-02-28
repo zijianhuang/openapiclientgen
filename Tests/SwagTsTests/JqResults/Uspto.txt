@@ -1,8 +1,6 @@
 ///<reference path="HttpClient.ts" />
 export namespace MyNS {
 	export interface DataSetList {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		DataSetListApis?: Array<DataSetListApis>;
 	}

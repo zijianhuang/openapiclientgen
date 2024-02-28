@@ -187,7 +187,10 @@ export namespace MyNS {
 		/** Date of the physical port allocation to be used in Letter of Authorization. */
 		allocationDate?: string | null;
 
-		/** Bandwidth of procured ports in Gbps. */
+		/**
+		 * Bandwidth of procured ports in Gbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bandwidthInGbps?: number | null;
 
 		/** Reference the ExpressRoute circuit(s) that are provisioned on this ExpressRoutePort resource. */
@@ -208,7 +211,10 @@ export namespace MyNS {
 		/** The name of the peering location that the ExpressRoutePort is mapped to physically. */
 		peeringLocation?: string | null;
 
-		/** Aggregate Gbps of associated circuit bandwidths. */
+		/**
+		 * Aggregate Gbps of associated circuit bandwidths.
+		 * Type: double
+		 */
 		provisionedBandwidthInGbps?: number | null;
 
 		/** The current provisioning state. */
@@ -224,7 +230,10 @@ export namespace MyNS {
 		/** Date of the physical port allocation to be used in Letter of Authorization. */
 		allocationDate: FormControl<string | null | undefined>,
 
-		/** Bandwidth of procured ports in Gbps. */
+		/**
+		 * Bandwidth of procured ports in Gbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bandwidthInGbps: FormControl<number | null | undefined>,
 
 		/** Encapsulation method on physical ports. */
@@ -239,7 +248,10 @@ export namespace MyNS {
 		/** The name of the peering location that the ExpressRoutePort is mapped to physically. */
 		peeringLocation: FormControl<string | null | undefined>,
 
-		/** Aggregate Gbps of associated circuit bandwidths. */
+		/**
+		 * Aggregate Gbps of associated circuit bandwidths.
+		 * Type: double
+		 */
 		provisionedBandwidthInGbps: FormControl<number | null | undefined>,
 
 		/** The current provisioning state. */
@@ -299,7 +311,10 @@ export namespace MyNS {
 		/** Bandwidth descriptive name. */
 		offerName?: string | null;
 
-		/** Bandwidth value in Gbps. */
+		/**
+		 * Bandwidth value in Gbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valueInGbps?: number | null;
 	}
 
@@ -309,7 +324,10 @@ export namespace MyNS {
 		/** Bandwidth descriptive name. */
 		offerName: FormControl<string | null | undefined>,
 
-		/** Bandwidth value in Gbps. */
+		/**
+		 * Bandwidth value in Gbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valueInGbps: FormControl<number | null | undefined>,
 	}
 	export function CreateExpressRoutePortsLocationBandwidthsFormGroup() {

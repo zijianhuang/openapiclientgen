@@ -174,7 +174,10 @@ export namespace MyNS {
 		/** The creation time of the request. */
 		createdDateTime?: Date | null;
 
-		/** The duration of the request in hours. */
+		/**
+		 * The duration of the request in hours.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The expiration time of the request. */
@@ -211,7 +214,10 @@ export namespace MyNS {
 		/** The creation time of the request. */
 		createdDateTime: FormControl<Date | null | undefined>,
 
-		/** The duration of the request in hours. */
+		/**
+		 * The duration of the request in hours.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** The expiration time of the request. */

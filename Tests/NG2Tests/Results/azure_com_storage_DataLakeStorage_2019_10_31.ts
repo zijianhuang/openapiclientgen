@@ -51,7 +51,9 @@ export namespace MyNS {
 	}
 
 	export interface Path {
-		contentLength?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		contentLength?: string | null;
 		eTag?: string | null;
 		group?: string | null;
 		isDirectory?: boolean | null;
@@ -61,7 +63,9 @@ export namespace MyNS {
 		permissions?: string | null;
 	}
 	export interface PathFormProperties {
-		contentLength: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		contentLength: FormControl<string | null | undefined>,
 		eTag: FormControl<string | null | undefined>,
 		group: FormControl<string | null | undefined>,
 		isDirectory: FormControl<boolean | null | undefined>,
@@ -72,7 +76,7 @@ export namespace MyNS {
 	}
 	export function CreatePathFormGroup() {
 		return new FormGroup<PathFormProperties>({
-			contentLength: new FormControl<number | null | undefined>(undefined),
+			contentLength: new FormControl<string | null | undefined>(undefined),
 			eTag: new FormControl<string | null | undefined>(undefined),
 			group: new FormControl<string | null | undefined>(undefined),
 			isDirectory: new FormControl<boolean | null | undefined>(undefined),

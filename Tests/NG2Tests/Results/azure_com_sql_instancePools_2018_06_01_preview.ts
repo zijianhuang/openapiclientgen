@@ -42,6 +42,7 @@ export namespace MyNS {
 		/**
 		 * Count of vCores belonging to this instance pool.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vCores: number;
 	}
@@ -64,6 +65,7 @@ export namespace MyNS {
 		/**
 		 * Count of vCores belonging to this instance pool.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vCores: FormControl<number | null | undefined>,
 	}
@@ -80,7 +82,10 @@ export namespace MyNS {
 
 	export interface InstancePoolSku {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -100,7 +105,10 @@ export namespace MyNS {
 	}
 	export interface InstancePoolSkuFormProperties {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */

@@ -273,7 +273,10 @@ export namespace MyNS {
 		/** Async operation name. */
 		name?: string | null;
 
-		/** Async operation progress. */
+		/**
+		 * Async operation progress.
+		 * Type: double
+		 */
 		percentComplete?: number | null;
 
 		/** Read Only: The provisioning state of the web service. Valid values are Unknown, Provisioning, Succeeded, and Failed. */
@@ -295,7 +298,10 @@ export namespace MyNS {
 		/** Async operation name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Async operation progress. */
+		/**
+		 * Async operation progress.
+		 * Type: double
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** Read Only: The provisioning state of the web service. Valid values are Unknown, Provisioning, Succeeded, and Failed. */

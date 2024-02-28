@@ -140,7 +140,10 @@ export namespace MyNS {
 		/** Last name of employee */
 		lastName?: string | null;
 
-		/** Date of birth of the employee (YYYY-MM-DD) */
+		/**
+		 * Date of birth of the employee (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		dateOfBirth?: Date | null;
 		address?: Address;
 
@@ -153,10 +156,16 @@ export namespace MyNS {
 		/** Employee phone number */
 		phoneNumber?: string | null;
 
-		/** Employment start date of the employee at the time it was requested */
+		/**
+		 * Employment start date of the employee at the time it was requested
+		 * Type: DateOnly
+		 */
 		startDate?: Date | null;
 
-		/** Employment end date of the employee at the time it was requested */
+		/**
+		 * Employment end date of the employee at the time it was requested
+		 * Type: DateOnly
+		 */
 		endDate?: Date | null;
 
 		/** Xero unique identifier for the payroll calendar of the employee */
@@ -185,7 +194,10 @@ export namespace MyNS {
 		/** Last name of employee */
 		lastName: FormControl<string | null | undefined>,
 
-		/** Date of birth of the employee (YYYY-MM-DD) */
+		/**
+		 * Date of birth of the employee (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		dateOfBirth: FormControl<Date | null | undefined>,
 
 		/** The email address for the employee */
@@ -197,10 +209,16 @@ export namespace MyNS {
 		/** Employee phone number */
 		phoneNumber: FormControl<string | null | undefined>,
 
-		/** Employment start date of the employee at the time it was requested */
+		/**
+		 * Employment start date of the employee at the time it was requested
+		 * Type: DateOnly
+		 */
 		startDate: FormControl<Date | null | undefined>,
 
-		/** Employment end date of the employee at the time it was requested */
+		/**
+		 * Employment end date of the employee at the time it was requested
+		 * Type: DateOnly
+		 */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** Xero unique identifier for the payroll calendar of the employee */
@@ -335,7 +353,10 @@ export namespace MyNS {
 		/** Xero unique identifier for the payroll calendar of the employee */
 		payrollCalendarID?: string | null;
 
-		/** Start date of the employment (YYYY-MM-DD) */
+		/**
+		 * Start date of the employment (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		startDate?: Date | null;
 
 		/** The employment number of the employee */
@@ -349,7 +370,10 @@ export namespace MyNS {
 		/** Xero unique identifier for the payroll calendar of the employee */
 		payrollCalendarID: FormControl<string | null | undefined>,
 
-		/** Start date of the employment (YYYY-MM-DD) */
+		/**
+		 * Start date of the employment (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		startDate: FormControl<Date | null | undefined>,
 
 		/** The employment number of the employee */
@@ -399,10 +423,16 @@ export namespace MyNS {
 		/** Describes whether the tax settings is W1M1 */
 		w1M1?: boolean | null;
 
-		/** The previous taxable pay */
+		/**
+		 * The previous taxable pay
+		 * Type: double
+		 */
 		previousTaxablePay?: number | null;
 
-		/** The tax amount previously paid */
+		/**
+		 * The tax amount previously paid
+		 * Type: double
+		 */
 		previousTaxPaid?: number | null;
 
 		/** The employee's student loan deduction type */
@@ -414,7 +444,10 @@ export namespace MyNS {
 		/** Describes whether the employee is director */
 		isDirector?: boolean | null;
 
-		/** The directorship start date */
+		/**
+		 * The directorship start date
+		 * Type: DateOnly
+		 */
 		directorshipStartDate?: Date | null;
 
 		/** NICs calculation method */
@@ -434,10 +467,16 @@ export namespace MyNS {
 		/** Describes whether the tax settings is W1M1 */
 		w1M1: FormControl<boolean | null | undefined>,
 
-		/** The previous taxable pay */
+		/**
+		 * The previous taxable pay
+		 * Type: double
+		 */
 		previousTaxablePay: FormControl<number | null | undefined>,
 
-		/** The tax amount previously paid */
+		/**
+		 * The tax amount previously paid
+		 * Type: double
+		 */
 		previousTaxPaid: FormControl<number | null | undefined>,
 
 		/** The employee's student loan deduction type */
@@ -449,7 +488,10 @@ export namespace MyNS {
 		/** Describes whether the employee is director */
 		isDirector: FormControl<boolean | null | undefined>,
 
-		/** The directorship start date */
+		/**
+		 * The directorship start date
+		 * Type: DateOnly
+		 */
 		directorshipStartDate: FormControl<Date | null | undefined>,
 
 		/** NICs calculation method */
@@ -489,42 +531,78 @@ export namespace MyNS {
 
 	export interface EmployeeOpeningBalances {
 
-		/** The total accumulated statutory adoption pay amount received by the employee for current fiscal year to date */
+		/**
+		 * The total accumulated statutory adoption pay amount received by the employee for current fiscal year to date
+		 * Type: double
+		 */
 		statutoryAdoptionPay?: number | null;
 
-		/** The total accumulated statutory maternity pay amount received by the employee for current fiscal year to date */
+		/**
+		 * The total accumulated statutory maternity pay amount received by the employee for current fiscal year to date
+		 * Type: double
+		 */
 		statutoryMaternityPay?: number | null;
 
-		/** The total accumulated statutory paternity pay amount received by the employee for current fiscal year to date */
+		/**
+		 * The total accumulated statutory paternity pay amount received by the employee for current fiscal year to date
+		 * Type: double
+		 */
 		statutoryPaternityPay?: number | null;
 
-		/** The total accumulated statutory shared parental pay amount received by the employee for current fiscal year to date */
+		/**
+		 * The total accumulated statutory shared parental pay amount received by the employee for current fiscal year to date
+		 * Type: double
+		 */
 		statutorySharedParentalPay?: number | null;
 
-		/** The total accumulated statutory sick pay amount received by the employee for current fiscal year to date */
+		/**
+		 * The total accumulated statutory sick pay amount received by the employee for current fiscal year to date
+		 * Type: double
+		 */
 		statutorySickPay?: number | null;
 
-		/** The unique employee number issued by the employee's former employer */
+		/**
+		 * The unique employee number issued by the employee's former employer
+		 * Type: double
+		 */
 		priorEmployeeNumber?: number | null;
 	}
 	export interface EmployeeOpeningBalancesFormProperties {
 
-		/** The total accumulated statutory adoption pay amount received by the employee for current fiscal year to date */
+		/**
+		 * The total accumulated statutory adoption pay amount received by the employee for current fiscal year to date
+		 * Type: double
+		 */
 		statutoryAdoptionPay: FormControl<number | null | undefined>,
 
-		/** The total accumulated statutory maternity pay amount received by the employee for current fiscal year to date */
+		/**
+		 * The total accumulated statutory maternity pay amount received by the employee for current fiscal year to date
+		 * Type: double
+		 */
 		statutoryMaternityPay: FormControl<number | null | undefined>,
 
-		/** The total accumulated statutory paternity pay amount received by the employee for current fiscal year to date */
+		/**
+		 * The total accumulated statutory paternity pay amount received by the employee for current fiscal year to date
+		 * Type: double
+		 */
 		statutoryPaternityPay: FormControl<number | null | undefined>,
 
-		/** The total accumulated statutory shared parental pay amount received by the employee for current fiscal year to date */
+		/**
+		 * The total accumulated statutory shared parental pay amount received by the employee for current fiscal year to date
+		 * Type: double
+		 */
 		statutorySharedParentalPay: FormControl<number | null | undefined>,
 
-		/** The total accumulated statutory sick pay amount received by the employee for current fiscal year to date */
+		/**
+		 * The total accumulated statutory sick pay amount received by the employee for current fiscal year to date
+		 * Type: double
+		 */
 		statutorySickPay: FormControl<number | null | undefined>,
 
-		/** The unique employee number issued by the employee's former employer */
+		/**
+		 * The unique employee number issued by the employee's former employer
+		 * Type: double
+		 */
 		priorEmployeeNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateEmployeeOpeningBalancesFormGroup() {
@@ -574,12 +652,14 @@ export namespace MyNS {
 		/**
 		 * Start date of the leave (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		startDate: Date;
 
 		/**
 		 * End date of the leave (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		endDate: Date;
 
@@ -609,12 +689,14 @@ export namespace MyNS {
 		/**
 		 * Start date of the leave (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		startDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * End date of the leave (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		endDate: FormControl<Date | null | undefined>,
 
@@ -635,13 +717,22 @@ export namespace MyNS {
 
 	export interface LeavePeriod {
 
-		/** The Pay Period Start Date (YYYY-MM-DD) */
+		/**
+		 * The Pay Period Start Date (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		periodStartDate?: Date | null;
 
-		/** The Pay Period End Date (YYYY-MM-DD) */
+		/**
+		 * The Pay Period End Date (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		periodEndDate?: Date | null;
 
-		/** The Number of Units for the leave */
+		/**
+		 * The Number of Units for the leave
+		 * Type: double
+		 */
 		numberOfUnits?: number | null;
 
 		/** Period Status */
@@ -649,13 +740,22 @@ export namespace MyNS {
 	}
 	export interface LeavePeriodFormProperties {
 
-		/** The Pay Period Start Date (YYYY-MM-DD) */
+		/**
+		 * The Pay Period Start Date (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		periodStartDate: FormControl<Date | null | undefined>,
 
-		/** The Pay Period End Date (YYYY-MM-DD) */
+		/**
+		 * The Pay Period End Date (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		periodEndDate: FormControl<Date | null | undefined>,
 
-		/** The Number of Units for the leave */
+		/**
+		 * The Number of Units for the leave
+		 * Type: double
+		 */
 		numberOfUnits: FormControl<number | null | undefined>,
 
 		/** Period Status */
@@ -726,7 +826,10 @@ export namespace MyNS {
 		/** The Xero identifier for leave type */
 		leaveTypeID?: string | null;
 
-		/** The employees current balance for the corresponding leave type. */
+		/**
+		 * The employees current balance for the corresponding leave type.
+		 * Type: double
+		 */
 		balance?: number | null;
 
 		/** The type of the units of the leave. */
@@ -740,7 +843,10 @@ export namespace MyNS {
 		/** The Xero identifier for leave type */
 		leaveTypeID: FormControl<string | null | undefined>,
 
-		/** The employees current balance for the corresponding leave type. */
+		/**
+		 * The employees current balance for the corresponding leave type.
+		 * Type: double
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** The type of the units of the leave. */
@@ -776,7 +882,10 @@ export namespace MyNS {
 		/** The type of statutory leave */
 		leaveType?: EmployeeStatutoryLeaveBalanceLeaveType | null;
 
-		/** The balance remaining for the corresponding leave type as of specified date. */
+		/**
+		 * The balance remaining for the corresponding leave type as of specified date.
+		 * Type: double
+		 */
 		balanceRemaining?: number | null;
 
 		/** The units will be "Hours" */
@@ -787,7 +896,10 @@ export namespace MyNS {
 		/** The type of statutory leave */
 		leaveType: FormControl<EmployeeStatutoryLeaveBalanceLeaveType | null | undefined>,
 
-		/** The balance remaining for the corresponding leave type as of specified date. */
+		/**
+		 * The balance remaining for the corresponding leave type as of specified date.
+		 * Type: double
+		 */
 		balanceRemaining: FormControl<number | null | undefined>,
 
 		/** The units will be "Hours" */
@@ -832,10 +944,16 @@ export namespace MyNS {
 		/** The category of statutory leave */
 		type?: EmployeeStatutoryLeaveBalanceLeaveType | null;
 
-		/** The date when the leave starts */
+		/**
+		 * The date when the leave starts
+		 * Type: DateOnly
+		 */
 		startDate?: Date | null;
 
-		/** The date when the leave ends */
+		/**
+		 * The date when the leave ends
+		 * Type: DateOnly
+		 */
 		endDate?: Date | null;
 
 		/** Whether the leave was entitled to receive payment */
@@ -855,10 +973,16 @@ export namespace MyNS {
 		/** The category of statutory leave */
 		type: FormControl<EmployeeStatutoryLeaveBalanceLeaveType | null | undefined>,
 
-		/** The date when the leave starts */
+		/**
+		 * The date when the leave starts
+		 * Type: DateOnly
+		 */
 		startDate: FormControl<Date | null | undefined>,
 
-		/** The date when the leave ends */
+		/**
+		 * The date when the leave ends
+		 * Type: DateOnly
+		 */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** Whether the leave was entitled to receive payment */
@@ -917,12 +1041,14 @@ export namespace MyNS {
 		/**
 		 * The date when the leave starts
 		 * Required
+		 * Type: DateOnly
 		 */
 		startDate: Date;
 
 		/**
 		 * The date when the leave ends
 		 * Required
+		 * Type: DateOnly
 		 */
 		endDate: Date;
 
@@ -953,13 +1079,22 @@ export namespace MyNS {
 		/** Whether the leave was entitled to receive payment */
 		isEntitled?: boolean | null;
 
-		/** The amount of requested time (in weeks) */
+		/**
+		 * The amount of requested time (in weeks)
+		 * Type: double
+		 */
 		entitlementWeeksRequested?: number | null;
 
-		/** The amount of statutory sick leave time off (in weeks) that is available to take at the time the leave was requested */
+		/**
+		 * The amount of statutory sick leave time off (in weeks) that is available to take at the time the leave was requested
+		 * Type: double
+		 */
 		entitlementWeeksQualified?: number | null;
 
-		/** A calculated amount of time (in weeks) that remains for the statutory sick leave period */
+		/**
+		 * A calculated amount of time (in weeks) that remains for the statutory sick leave period
+		 * Type: double
+		 */
 		entitlementWeeksRemaining?: number | null;
 
 		/** Whether another leave (Paternity, Shared Parental specifically) occurs during the requested leave's period. While this is allowed it could affect payment amounts */
@@ -988,12 +1123,14 @@ export namespace MyNS {
 		/**
 		 * The date when the leave starts
 		 * Required
+		 * Type: DateOnly
 		 */
 		startDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date when the leave ends
 		 * Required
+		 * Type: DateOnly
 		 */
 		endDate: FormControl<Date | null | undefined>,
 
@@ -1018,13 +1155,22 @@ export namespace MyNS {
 		/** Whether the leave was entitled to receive payment */
 		isEntitled: FormControl<boolean | null | undefined>,
 
-		/** The amount of requested time (in weeks) */
+		/**
+		 * The amount of requested time (in weeks)
+		 * Type: double
+		 */
 		entitlementWeeksRequested: FormControl<number | null | undefined>,
 
-		/** The amount of statutory sick leave time off (in weeks) that is available to take at the time the leave was requested */
+		/**
+		 * The amount of statutory sick leave time off (in weeks) that is available to take at the time the leave was requested
+		 * Type: double
+		 */
 		entitlementWeeksQualified: FormControl<number | null | undefined>,
 
-		/** A calculated amount of time (in weeks) that remains for the statutory sick leave period */
+		/**
+		 * A calculated amount of time (in weeks) that remains for the statutory sick leave period
+		 * Type: double
+		 */
 		entitlementWeeksRemaining: FormControl<number | null | undefined>,
 
 		/** Whether another leave (Paternity, Shared Parental specifically) occurs during the requested leave's period. While this is allowed it could affect payment amounts */
@@ -1094,16 +1240,28 @@ export namespace MyNS {
 		 */
 		scheduleOfAccrual: EmployeeLeaveTypeScheduleOfAccrual;
 
-		/** The number of hours accrued for the leave annually. This is 0 when the scheduleOfAccrual chosen is "OnHourWorked" */
+		/**
+		 * The number of hours accrued for the leave annually. This is 0 when the scheduleOfAccrual chosen is "OnHourWorked"
+		 * Type: double
+		 */
 		hoursAccruedAnnually?: number | null;
 
-		/** The maximum number of hours that can be accrued for the leave */
+		/**
+		 * The maximum number of hours that can be accrued for the leave
+		 * Type: double
+		 */
 		maximumToAccrue?: number | null;
 
-		/** The initial number of hours assigned when the leave was added to the employee */
+		/**
+		 * The initial number of hours assigned when the leave was added to the employee
+		 * Type: double
+		 */
 		openingBalance?: number | null;
 
-		/** The number of hours added to the leave balance for every hour worked by the employee. This is normally 0, unless the scheduleOfAccrual chosen is "OnHourWorked" */
+		/**
+		 * The number of hours added to the leave balance for every hour worked by the employee. This is normally 0, unless the scheduleOfAccrual chosen is "OnHourWorked"
+		 * Type: double
+		 */
 		rateAccruedHourly?: number | null;
 	}
 	export interface EmployeeLeaveTypeFormProperties {
@@ -1120,16 +1278,28 @@ export namespace MyNS {
 		 */
 		scheduleOfAccrual: FormControl<EmployeeLeaveTypeScheduleOfAccrual | null | undefined>,
 
-		/** The number of hours accrued for the leave annually. This is 0 when the scheduleOfAccrual chosen is "OnHourWorked" */
+		/**
+		 * The number of hours accrued for the leave annually. This is 0 when the scheduleOfAccrual chosen is "OnHourWorked"
+		 * Type: double
+		 */
 		hoursAccruedAnnually: FormControl<number | null | undefined>,
 
-		/** The maximum number of hours that can be accrued for the leave */
+		/**
+		 * The maximum number of hours that can be accrued for the leave
+		 * Type: double
+		 */
 		maximumToAccrue: FormControl<number | null | undefined>,
 
-		/** The initial number of hours assigned when the leave was added to the employee */
+		/**
+		 * The initial number of hours assigned when the leave was added to the employee
+		 * Type: double
+		 */
 		openingBalance: FormControl<number | null | undefined>,
 
-		/** The number of hours added to the leave balance for every hour worked by the employee. This is normally 0, unless the scheduleOfAccrual chosen is "OnHourWorked" */
+		/**
+		 * The number of hours added to the leave balance for every hour worked by the employee. This is normally 0, unless the scheduleOfAccrual chosen is "OnHourWorked"
+		 * Type: double
+		 */
 		rateAccruedHourly: FormControl<number | null | undefined>,
 	}
 	export function CreateEmployeeLeaveTypeFormGroup() {
@@ -1199,13 +1369,22 @@ export namespace MyNS {
 		/** The Xero identifier for the earnings template */
 		payTemplateEarningID?: string | null;
 
-		/** The rate per unit */
+		/**
+		 * The rate per unit
+		 * Type: double
+		 */
 		ratePerUnit?: number | null;
 
-		/** The rate per unit */
+		/**
+		 * The rate per unit
+		 * Type: double
+		 */
 		numberOfUnits?: number | null;
 
-		/** The fixed amount per period */
+		/**
+		 * The fixed amount per period
+		 * Type: double
+		 */
 		fixedAmount?: number | null;
 
 		/** The corresponding earnings rate identifier */
@@ -1219,13 +1398,22 @@ export namespace MyNS {
 		/** The Xero identifier for the earnings template */
 		payTemplateEarningID: FormControl<string | null | undefined>,
 
-		/** The rate per unit */
+		/**
+		 * The rate per unit
+		 * Type: double
+		 */
 		ratePerUnit: FormControl<number | null | undefined>,
 
-		/** The rate per unit */
+		/**
+		 * The rate per unit
+		 * Type: double
+		 */
 		numberOfUnits: FormControl<number | null | undefined>,
 
-		/** The fixed amount per period */
+		/**
+		 * The fixed amount per period
+		 * Type: double
+		 */
 		fixedAmount: FormControl<number | null | undefined>,
 
 		/** The corresponding earnings rate identifier */
@@ -1323,12 +1511,14 @@ export namespace MyNS {
 		/**
 		 * Standard amount of the employer pension
 		 * Required
+		 * Type: double
 		 */
 		standardAmount: number;
 
 		/**
 		 * Percentage of gross of the employer pension
 		 * Required
+		 * Type: double
 		 */
 		percentage: number;
 
@@ -1388,12 +1578,14 @@ export namespace MyNS {
 		/**
 		 * Standard amount of the employer pension
 		 * Required
+		 * Type: double
 		 */
 		standardAmount: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of gross of the employer pension
 		 * Required
+		 * Type: double
 		 */
 		percentage: FormControl<number | null | undefined>,
 
@@ -1501,7 +1693,10 @@ export namespace MyNS {
 		/** Identifier of a record is active or not. */
 		currentRecord?: boolean | null;
 
-		/** Standard amount of the deduction */
+		/**
+		 * Standard amount of the deduction
+		 * Type: double
+		 */
 		standardAmount?: number | null;
 
 		/** Identifier of reduces super liability */
@@ -1516,7 +1711,10 @@ export namespace MyNS {
 		 */
 		calculationType: BenefitCalculationType;
 
-		/** Percentage of gross */
+		/**
+		 * Percentage of gross
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** Identifier of subject To NIC */
@@ -1563,7 +1761,10 @@ export namespace MyNS {
 		/** Identifier of a record is active or not. */
 		currentRecord: FormControl<boolean | null | undefined>,
 
-		/** Standard amount of the deduction */
+		/**
+		 * Standard amount of the deduction
+		 * Type: double
+		 */
 		standardAmount: FormControl<number | null | undefined>,
 
 		/** Identifier of reduces super liability */
@@ -1578,7 +1779,10 @@ export namespace MyNS {
 		 */
 		calculationType: FormControl<BenefitCalculationType | null | undefined>,
 
-		/** Percentage of gross */
+		/**
+		 * Percentage of gross
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Identifier of subject To NIC */
@@ -1823,13 +2027,22 @@ export namespace MyNS {
 		 */
 		expenseAccountID: string;
 
-		/** Default rate per unit (optional). Only applicable if RateType is RatePerUnit */
+		/**
+		 * Default rate per unit (optional). Only applicable if RateType is RatePerUnit
+		 * Type: double
+		 */
 		ratePerUnit?: number | null;
 
-		/** This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MultipleOfOrdinaryEarningsRate */
+		/**
+		 * This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MultipleOfOrdinaryEarningsRate
+		 * Type: double
+		 */
 		multipleOfOrdinaryEarningsRate?: number | null;
 
-		/** Optional Fixed Rate Amount. Applicable for FixedAmount Rate */
+		/**
+		 * Optional Fixed Rate Amount. Applicable for FixedAmount Rate
+		 * Type: double
+		 */
 		fixedAmount?: number | null;
 	}
 	export interface EarningsRateFormProperties {
@@ -1870,13 +2083,22 @@ export namespace MyNS {
 		 */
 		expenseAccountID: FormControl<string | null | undefined>,
 
-		/** Default rate per unit (optional). Only applicable if RateType is RatePerUnit */
+		/**
+		 * Default rate per unit (optional). Only applicable if RateType is RatePerUnit
+		 * Type: double
+		 */
 		ratePerUnit: FormControl<number | null | undefined>,
 
-		/** This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MultipleOfOrdinaryEarningsRate */
+		/**
+		 * This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MultipleOfOrdinaryEarningsRate
+		 * Type: double
+		 */
 		multipleOfOrdinaryEarningsRate: FormControl<number | null | undefined>,
 
-		/** Optional Fixed Rate Amount. Applicable for FixedAmount Rate */
+		/**
+		 * Optional Fixed Rate Amount. Applicable for FixedAmount Rate
+		 * Type: double
+		 */
 		fixedAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateEarningsRateFormGroup() {
@@ -2143,19 +2365,24 @@ export namespace MyNS {
 		/**
 		 * The Start Date of the Timesheet period (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		startDate: Date;
 
 		/**
 		 * The End Date of the Timesheet period (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		endDate: Date;
 
 		/** Status of the timesheet */
 		status?: TimesheetStatus | null;
 
-		/** The Total Hours of the Timesheet */
+		/**
+		 * The Total Hours of the Timesheet
+		 * Type: double
+		 */
 		totalHours?: number | null;
 
 		/** The UTC date time that the Timesheet was last updated */
@@ -2182,19 +2409,24 @@ export namespace MyNS {
 		/**
 		 * The Start Date of the Timesheet period (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		startDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * The End Date of the Timesheet period (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** Status of the timesheet */
 		status: FormControl<TimesheetStatus | null | undefined>,
 
-		/** The Total Hours of the Timesheet */
+		/**
+		 * The Total Hours of the Timesheet
+		 * Type: double
+		 */
 		totalHours: FormControl<number | null | undefined>,
 
 		/** The UTC date time that the Timesheet was last updated */
@@ -2224,6 +2456,7 @@ export namespace MyNS {
 		/**
 		 * The Date that this Timesheet Line is for (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: Date;
 
@@ -2239,6 +2472,7 @@ export namespace MyNS {
 		/**
 		 * The Number of Units of the Timesheet Line
 		 * Required
+		 * Type: double
 		 */
 		numberOfUnits: number;
 	}
@@ -2250,6 +2484,7 @@ export namespace MyNS {
 		/**
 		 * The Date that this Timesheet Line is for (YYYY-MM-DD)
 		 * Required
+		 * Type: DateOnly
 		 */
 		date: FormControl<Date | null | undefined>,
 
@@ -2265,6 +2500,7 @@ export namespace MyNS {
 		/**
 		 * The Number of Units of the Timesheet Line
 		 * Required
+		 * Type: double
 		 */
 		numberOfUnits: FormControl<number | null | undefined>,
 	}
@@ -2344,15 +2580,20 @@ export namespace MyNS {
 		/**
 		 * Period start date of the calendar
 		 * Required
+		 * Type: DateOnly
 		 */
 		periodStartDate: Date;
 
-		/** Period end date of the calendar */
+		/**
+		 * Period end date of the calendar
+		 * Type: DateOnly
+		 */
 		periodEndDate?: Date | null;
 
 		/**
 		 * Payment date of the calendar
 		 * Required
+		 * Type: DateOnly
 		 */
 		paymentDate: Date;
 
@@ -2379,15 +2620,20 @@ export namespace MyNS {
 		/**
 		 * Period start date of the calendar
 		 * Required
+		 * Type: DateOnly
 		 */
 		periodStartDate: FormControl<Date | null | undefined>,
 
-		/** Period end date of the calendar */
+		/**
+		 * Period end date of the calendar
+		 * Type: DateOnly
+		 */
 		periodEndDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Payment date of the calendar
 		 * Required
+		 * Type: DateOnly
 		 */
 		paymentDate: FormControl<Date | null | undefined>,
 
@@ -2543,30 +2789,35 @@ export namespace MyNS {
 		/**
 		 * The Number of Units per week for the corresponding salary and wages
 		 * Required
+		 * Type: double
 		 */
 		numberOfUnitsPerWeek: number;
 
 		/**
 		 * The rate of each unit for the corresponding salary and wages
 		 * Required
+		 * Type: double
 		 */
 		ratePerUnit: number;
 
 		/**
 		 * The Number of Units per day for the corresponding salary and wages
 		 * Required
+		 * Type: double
 		 */
 		numberOfUnitsPerDay: number;
 
 		/**
 		 * The effective date of the corresponding salary and wages
 		 * Required
+		 * Type: DateOnly
 		 */
 		effectiveFrom: Date;
 
 		/**
 		 * The annual salary
 		 * Required
+		 * Type: double
 		 */
 		annualSalary: number;
 
@@ -2596,30 +2847,35 @@ export namespace MyNS {
 		/**
 		 * The Number of Units per week for the corresponding salary and wages
 		 * Required
+		 * Type: double
 		 */
 		numberOfUnitsPerWeek: FormControl<number | null | undefined>,
 
 		/**
 		 * The rate of each unit for the corresponding salary and wages
 		 * Required
+		 * Type: double
 		 */
 		ratePerUnit: FormControl<number | null | undefined>,
 
 		/**
 		 * The Number of Units per day for the corresponding salary and wages
 		 * Required
+		 * Type: double
 		 */
 		numberOfUnitsPerDay: FormControl<number | null | undefined>,
 
 		/**
 		 * The effective date of the corresponding salary and wages
 		 * Required
+		 * Type: DateOnly
 		 */
 		effectiveFrom: FormControl<Date | null | undefined>,
 
 		/**
 		 * The annual salary
 		 * Required
+		 * Type: double
 		 */
 		annualSalary: FormControl<number | null | undefined>,
 
@@ -2692,19 +2948,34 @@ export namespace MyNS {
 		/** Xero unique identifier for the payroll calendar */
 		payrollCalendarID?: string | null;
 
-		/** Period start date of the payroll calendar */
+		/**
+		 * Period start date of the payroll calendar
+		 * Type: DateOnly
+		 */
 		periodStartDate?: Date | null;
 
-		/** Period end date of the payroll calendar */
+		/**
+		 * Period end date of the payroll calendar
+		 * Type: DateOnly
+		 */
 		periodEndDate?: Date | null;
 
-		/** Payment date of the pay run */
+		/**
+		 * Payment date of the pay run
+		 * Type: DateOnly
+		 */
 		paymentDate?: Date | null;
 
-		/** Total cost of the pay run */
+		/**
+		 * Total cost of the pay run
+		 * Type: double
+		 */
 		totalCost?: number | null;
 
-		/** Total pay of the pay run */
+		/**
+		 * Total pay of the pay run
+		 * Type: double
+		 */
 		totalPay?: number | null;
 
 		/** Pay run status */
@@ -2716,7 +2987,10 @@ export namespace MyNS {
 		/** Calendar type of the pay run */
 		calendarType?: PayRunCalendarCalendarType | null;
 
-		/** Posted date time of the pay run */
+		/**
+		 * Posted date time of the pay run
+		 * Type: DateOnly
+		 */
 		postedDateTime?: Date | null;
 		paySlips?: Array<Payslip>;
 	}
@@ -2728,19 +3002,34 @@ export namespace MyNS {
 		/** Xero unique identifier for the payroll calendar */
 		payrollCalendarID: FormControl<string | null | undefined>,
 
-		/** Period start date of the payroll calendar */
+		/**
+		 * Period start date of the payroll calendar
+		 * Type: DateOnly
+		 */
 		periodStartDate: FormControl<Date | null | undefined>,
 
-		/** Period end date of the payroll calendar */
+		/**
+		 * Period end date of the payroll calendar
+		 * Type: DateOnly
+		 */
 		periodEndDate: FormControl<Date | null | undefined>,
 
-		/** Payment date of the pay run */
+		/**
+		 * Payment date of the pay run
+		 * Type: DateOnly
+		 */
 		paymentDate: FormControl<Date | null | undefined>,
 
-		/** Total cost of the pay run */
+		/**
+		 * Total cost of the pay run
+		 * Type: double
+		 */
 		totalCost: FormControl<number | null | undefined>,
 
-		/** Total pay of the pay run */
+		/**
+		 * Total pay of the pay run
+		 * Type: double
+		 */
 		totalPay: FormControl<number | null | undefined>,
 
 		/** Pay run status */
@@ -2752,7 +3041,10 @@ export namespace MyNS {
 		/** Calendar type of the pay run */
 		calendarType: FormControl<PayRunCalendarCalendarType | null | undefined>,
 
-		/** Posted date time of the pay run */
+		/**
+		 * Posted date time of the pay run
+		 * Type: DateOnly
+		 */
 		postedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreatePayRunFormGroup() {
@@ -2787,7 +3079,10 @@ export namespace MyNS {
 		/** The Xero identifier for the associated payrun */
 		payRunID?: string | null;
 
-		/** The date payslip was last updated */
+		/**
+		 * The date payslip was last updated
+		 * Type: DateOnly
+		 */
 		lastEdited?: Date | null;
 
 		/** Employee first name */
@@ -2796,31 +3091,58 @@ export namespace MyNS {
 		/** Employee last name */
 		lastName?: string | null;
 
-		/** Total earnings before any deductions. Same as gross earnings for UK. */
+		/**
+		 * Total earnings before any deductions. Same as gross earnings for UK.
+		 * Type: double
+		 */
 		totalEarnings?: number | null;
 
-		/** Total earnings before any deductions. Same as total earnings for UK. */
+		/**
+		 * Total earnings before any deductions. Same as total earnings for UK.
+		 * Type: double
+		 */
 		grossEarnings?: number | null;
 
-		/** The employee net pay */
+		/**
+		 * The employee net pay
+		 * Type: double
+		 */
 		totalPay?: number | null;
 
-		/** The employer's tax obligation */
+		/**
+		 * The employer's tax obligation
+		 * Type: double
+		 */
 		totalEmployerTaxes?: number | null;
 
-		/** The part of an employee's earnings that is deducted for tax purposes */
+		/**
+		 * The part of an employee's earnings that is deducted for tax purposes
+		 * Type: double
+		 */
 		totalEmployeeTaxes?: number | null;
 
-		/** Total amount subtracted from an employee's earnings to reach total pay */
+		/**
+		 * Total amount subtracted from an employee's earnings to reach total pay
+		 * Type: double
+		 */
 		totalDeductions?: number | null;
 
-		/** Total reimbursements are nontaxable payments to an employee used to repay out-of-pocket expenses when the person incurs those expenses through employment */
+		/**
+		 * Total reimbursements are nontaxable payments to an employee used to repay out-of-pocket expenses when the person incurs those expenses through employment
+		 * Type: double
+		 */
 		totalReimbursements?: number | null;
 
-		/** Total amounts required by law to subtract from the employee's earnings */
+		/**
+		 * Total amounts required by law to subtract from the employee's earnings
+		 * Type: double
+		 */
 		totalCourtOrders?: number | null;
 
-		/** Benefits (also called fringe benefits, perquisites or perks) are various non-earnings compensations provided to employees in addition to their normal earnings or salaries */
+		/**
+		 * Benefits (also called fringe benefits, perquisites or perks) are various non-earnings compensations provided to employees in addition to their normal earnings or salaries
+		 * Type: double
+		 */
 		totalBenefits?: number | null;
 
 		/** BACS Service User Number */
@@ -2850,7 +3172,10 @@ export namespace MyNS {
 		/** The Xero identifier for the associated payrun */
 		payRunID: FormControl<string | null | undefined>,
 
-		/** The date payslip was last updated */
+		/**
+		 * The date payslip was last updated
+		 * Type: DateOnly
+		 */
 		lastEdited: FormControl<Date | null | undefined>,
 
 		/** Employee first name */
@@ -2859,31 +3184,58 @@ export namespace MyNS {
 		/** Employee last name */
 		lastName: FormControl<string | null | undefined>,
 
-		/** Total earnings before any deductions. Same as gross earnings for UK. */
+		/**
+		 * Total earnings before any deductions. Same as gross earnings for UK.
+		 * Type: double
+		 */
 		totalEarnings: FormControl<number | null | undefined>,
 
-		/** Total earnings before any deductions. Same as total earnings for UK. */
+		/**
+		 * Total earnings before any deductions. Same as total earnings for UK.
+		 * Type: double
+		 */
 		grossEarnings: FormControl<number | null | undefined>,
 
-		/** The employee net pay */
+		/**
+		 * The employee net pay
+		 * Type: double
+		 */
 		totalPay: FormControl<number | null | undefined>,
 
-		/** The employer's tax obligation */
+		/**
+		 * The employer's tax obligation
+		 * Type: double
+		 */
 		totalEmployerTaxes: FormControl<number | null | undefined>,
 
-		/** The part of an employee's earnings that is deducted for tax purposes */
+		/**
+		 * The part of an employee's earnings that is deducted for tax purposes
+		 * Type: double
+		 */
 		totalEmployeeTaxes: FormControl<number | null | undefined>,
 
-		/** Total amount subtracted from an employee's earnings to reach total pay */
+		/**
+		 * Total amount subtracted from an employee's earnings to reach total pay
+		 * Type: double
+		 */
 		totalDeductions: FormControl<number | null | undefined>,
 
-		/** Total reimbursements are nontaxable payments to an employee used to repay out-of-pocket expenses when the person incurs those expenses through employment */
+		/**
+		 * Total reimbursements are nontaxable payments to an employee used to repay out-of-pocket expenses when the person incurs those expenses through employment
+		 * Type: double
+		 */
 		totalReimbursements: FormControl<number | null | undefined>,
 
-		/** Total amounts required by law to subtract from the employee's earnings */
+		/**
+		 * Total amounts required by law to subtract from the employee's earnings
+		 * Type: double
+		 */
 		totalCourtOrders: FormControl<number | null | undefined>,
 
-		/** Benefits (also called fringe benefits, perquisites or perks) are various non-earnings compensations provided to employees in addition to their normal earnings or salaries */
+		/**
+		 * Benefits (also called fringe benefits, perquisites or perks) are various non-earnings compensations provided to employees in addition to their normal earnings or salaries
+		 * Type: double
+		 */
 		totalBenefits: FormControl<number | null | undefined>,
 
 		/** BACS Service User Number */
@@ -2926,16 +3278,28 @@ export namespace MyNS {
 		/** name of earnings rate for display in UI */
 		displayName?: string | null;
 
-		/** Rate per unit for earnings line */
+		/**
+		 * Rate per unit for earnings line
+		 * Type: double
+		 */
 		ratePerUnit?: number | null;
 
-		/** Earnings number of units */
+		/**
+		 * Earnings number of units
+		 * Type: double
+		 */
 		numberOfUnits?: number | null;
 
-		/** Earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed */
+		/**
+		 * Earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed
+		 * Type: double
+		 */
 		fixedAmount?: number | null;
 
-		/** The amount of the earnings line. */
+		/**
+		 * The amount of the earnings line.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Identifies if the earnings is taken from the timesheet. False for earnings line */
@@ -2955,16 +3319,28 @@ export namespace MyNS {
 		/** name of earnings rate for display in UI */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Rate per unit for earnings line */
+		/**
+		 * Rate per unit for earnings line
+		 * Type: double
+		 */
 		ratePerUnit: FormControl<number | null | undefined>,
 
-		/** Earnings number of units */
+		/**
+		 * Earnings number of units
+		 * Type: double
+		 */
 		numberOfUnits: FormControl<number | null | undefined>,
 
-		/** Earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed */
+		/**
+		 * Earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed
+		 * Type: double
+		 */
 		fixedAmount: FormControl<number | null | undefined>,
 
-		/** The amount of the earnings line. */
+		/**
+		 * The amount of the earnings line.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Identifies if the earnings is taken from the timesheet. False for earnings line */
@@ -2993,16 +3369,28 @@ export namespace MyNS {
 		/** Xero identifier for payroll leave earnings rate */
 		earningsRateID?: string | null;
 
-		/** Rate per unit for leave earnings line */
+		/**
+		 * Rate per unit for leave earnings line
+		 * Type: double
+		 */
 		ratePerUnit?: number | null;
 
-		/** Leave earnings number of units */
+		/**
+		 * Leave earnings number of units
+		 * Type: double
+		 */
 		numberOfUnits?: number | null;
 
-		/** Leave earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed */
+		/**
+		 * Leave earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed
+		 * Type: double
+		 */
 		fixedAmount?: number | null;
 
-		/** The amount of the earnings line. */
+		/**
+		 * The amount of the earnings line.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Identifies if the leave earnings is taken from the timesheet. False for leave earnings line */
@@ -3013,16 +3401,28 @@ export namespace MyNS {
 		/** Xero identifier for payroll leave earnings rate */
 		earningsRateID: FormControl<string | null | undefined>,
 
-		/** Rate per unit for leave earnings line */
+		/**
+		 * Rate per unit for leave earnings line
+		 * Type: double
+		 */
 		ratePerUnit: FormControl<number | null | undefined>,
 
-		/** Leave earnings number of units */
+		/**
+		 * Leave earnings number of units
+		 * Type: double
+		 */
 		numberOfUnits: FormControl<number | null | undefined>,
 
-		/** Leave earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed */
+		/**
+		 * Leave earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed
+		 * Type: double
+		 */
 		fixedAmount: FormControl<number | null | undefined>,
 
-		/** The amount of the earnings line. */
+		/**
+		 * The amount of the earnings line.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Identifies if the leave earnings is taken from the timesheet. False for leave earnings line */
@@ -3045,16 +3445,28 @@ export namespace MyNS {
 		/** Xero identifier for payroll timesheet earnings rate */
 		earningsRateID?: string | null;
 
-		/** Rate per unit for timesheet earnings line */
+		/**
+		 * Rate per unit for timesheet earnings line
+		 * Type: double
+		 */
 		ratePerUnit?: number | null;
 
-		/** Timesheet earnings number of units */
+		/**
+		 * Timesheet earnings number of units
+		 * Type: double
+		 */
 		numberOfUnits?: number | null;
 
-		/** Timesheet earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed */
+		/**
+		 * Timesheet earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed
+		 * Type: double
+		 */
 		fixedAmount?: number | null;
 
-		/** The amount of the timesheet earnings line. */
+		/**
+		 * The amount of the timesheet earnings line.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Identifies if the timesheet earnings is taken from the timesheet. False for leave earnings line */
@@ -3065,16 +3477,28 @@ export namespace MyNS {
 		/** Xero identifier for payroll timesheet earnings rate */
 		earningsRateID: FormControl<string | null | undefined>,
 
-		/** Rate per unit for timesheet earnings line */
+		/**
+		 * Rate per unit for timesheet earnings line
+		 * Type: double
+		 */
 		ratePerUnit: FormControl<number | null | undefined>,
 
-		/** Timesheet earnings number of units */
+		/**
+		 * Timesheet earnings number of units
+		 * Type: double
+		 */
 		numberOfUnits: FormControl<number | null | undefined>,
 
-		/** Timesheet earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed */
+		/**
+		 * Timesheet earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed
+		 * Type: double
+		 */
 		fixedAmount: FormControl<number | null | undefined>,
 
-		/** The amount of the timesheet earnings line. */
+		/**
+		 * The amount of the timesheet earnings line.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Identifies if the timesheet earnings is taken from the timesheet. False for leave earnings line */
@@ -3097,13 +3521,19 @@ export namespace MyNS {
 		/** Xero identifier for payroll deduction */
 		deductionTypeID?: string | null;
 
-		/** The amount of the deduction line */
+		/**
+		 * The amount of the deduction line
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Identifies if the deduction is subject to tax */
 		subjectToTax?: boolean | null;
 
-		/** Deduction rate percentage */
+		/**
+		 * Deduction rate percentage
+		 * Type: double
+		 */
 		percentage?: number | null;
 	}
 	export interface DeductionLineFormProperties {
@@ -3111,13 +3541,19 @@ export namespace MyNS {
 		/** Xero identifier for payroll deduction */
 		deductionTypeID: FormControl<string | null | undefined>,
 
-		/** The amount of the deduction line */
+		/**
+		 * The amount of the deduction line
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Identifies if the deduction is subject to tax */
 		subjectToTax: FormControl<boolean | null | undefined>,
 
-		/** Deduction rate percentage */
+		/**
+		 * Deduction rate percentage
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateDeductionLineFormGroup() {
@@ -3138,7 +3574,10 @@ export namespace MyNS {
 		/** Reimbursement line description */
 		description?: string | null;
 
-		/** Reimbursement amount */
+		/**
+		 * Reimbursement amount
+		 * Type: double
+		 */
 		amount?: number | null;
 	}
 	export interface ReimbursementLineFormProperties {
@@ -3149,7 +3588,10 @@ export namespace MyNS {
 		/** Reimbursement line description */
 		description: FormControl<string | null | undefined>,
 
-		/** Reimbursement amount */
+		/**
+		 * Reimbursement amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 	}
 	export function CreateReimbursementLineFormGroup() {
@@ -3166,7 +3608,10 @@ export namespace MyNS {
 		/** Xero identifier for the Leave type */
 		leaveTypeID?: string | null;
 
-		/** Leave accrual number of units */
+		/**
+		 * Leave accrual number of units
+		 * Type: double
+		 */
 		numberOfUnits?: number | null;
 	}
 	export interface LeaveAccrualLineFormProperties {
@@ -3174,7 +3619,10 @@ export namespace MyNS {
 		/** Xero identifier for the Leave type */
 		leaveTypeID: FormControl<string | null | undefined>,
 
-		/** Leave accrual number of units */
+		/**
+		 * Leave accrual number of units
+		 * Type: double
+		 */
 		numberOfUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateLeaveAccrualLineFormGroup() {
@@ -3193,13 +3641,22 @@ export namespace MyNS {
 		/** Benefit display name */
 		displayName?: string | null;
 
-		/** The amount of the benefit line. */
+		/**
+		 * The amount of the benefit line.
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Benefit fixed amount */
+		/**
+		 * Benefit fixed amount
+		 * Type: double
+		 */
 		fixedAmount?: number | null;
 
-		/** Benefit rate percentage */
+		/**
+		 * Benefit rate percentage
+		 * Type: double
+		 */
 		percentage?: number | null;
 	}
 	export interface BenefitLineFormProperties {
@@ -3210,13 +3667,22 @@ export namespace MyNS {
 		/** Benefit display name */
 		displayName: FormControl<string | null | undefined>,
 
-		/** The amount of the benefit line. */
+		/**
+		 * The amount of the benefit line.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Benefit fixed amount */
+		/**
+		 * Benefit fixed amount
+		 * Type: double
+		 */
 		fixedAmount: FormControl<number | null | undefined>,
 
-		/** Benefit rate percentage */
+		/**
+		 * Benefit rate percentage
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateBenefitLineFormGroup() {
@@ -3235,7 +3701,10 @@ export namespace MyNS {
 		/** Xero identifier for payroll payment line */
 		paymentLineID?: string | null;
 
-		/** The amount of the payment line */
+		/**
+		 * The amount of the payment line
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The account number */
@@ -3252,7 +3721,10 @@ export namespace MyNS {
 		/** Xero identifier for payroll payment line */
 		paymentLineID: FormControl<string | null | undefined>,
 
-		/** The amount of the payment line */
+		/**
+		 * The amount of the payment line
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The account number */
@@ -3286,7 +3758,10 @@ export namespace MyNS {
 		/** Identifies if the amount is paid for by the employee or employer. True if employer pays the tax */
 		isEmployerTax?: boolean | null;
 
-		/** The amount of the tax line */
+		/**
+		 * The amount of the tax line
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Tax type ID */
@@ -3306,7 +3781,10 @@ export namespace MyNS {
 		/** Identifies if the amount is paid for by the employee or employer. True if employer pays the tax */
 		isEmployerTax: FormControl<boolean | null | undefined>,
 
-		/** The amount of the tax line */
+		/**
+		 * The amount of the tax line
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Tax type ID */
@@ -3332,7 +3810,10 @@ export namespace MyNS {
 		/** Xero identifier for payroll court order type */
 		courtOrderTypeID?: string | null;
 
-		/** Amount */
+		/**
+		 * Amount
+		 * Type: double
+		 */
 		amount?: number | null;
 	}
 	export interface CourtOrderLineFormProperties {
@@ -3340,7 +3821,10 @@ export namespace MyNS {
 		/** Xero identifier for payroll court order type */
 		courtOrderTypeID: FormControl<string | null | undefined>,
 
-		/** Amount */
+		/**
+		 * Amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 	}
 	export function CreateCourtOrderLineFormGroup() {

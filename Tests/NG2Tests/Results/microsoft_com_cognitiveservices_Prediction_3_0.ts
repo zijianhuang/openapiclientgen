@@ -10,24 +10,28 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: number;
 
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: number;
 
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: number;
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: number;
 	}
@@ -38,24 +42,28 @@ export namespace MyNS {
 		/**
 		 * Height.
 		 * Required
+		 * Type: float
 		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
 		 * Coordinate of the left boundary.
 		 * Required
+		 * Type: float
 		 */
 		left: FormControl<number | null | undefined>,
 
 		/**
 		 * Coordinate of the top boundary.
 		 * Required
+		 * Type: float
 		 */
 		top: FormControl<number | null | undefined>,
 
 		/**
 		 * Width.
 		 * Required
+		 * Type: float
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -159,7 +167,10 @@ export namespace MyNS {
 		/** Bounding box that defines a region of an image. */
 		boundingBox?: BoundingBox;
 
-		/** Probability of the tag. */
+		/**
+		 * Probability of the tag.
+		 * Type: float
+		 */
 		probability?: number | null;
 
 		/** Id of the predicted tag. */
@@ -172,7 +183,10 @@ export namespace MyNS {
 	/** Prediction result. */
 	export interface PredictionFormProperties {
 
-		/** Probability of the tag. */
+		/**
+		 * Probability of the tag.
+		 * Type: float
+		 */
 		probability: FormControl<number | null | undefined>,
 
 		/** Id of the predicted tag. */

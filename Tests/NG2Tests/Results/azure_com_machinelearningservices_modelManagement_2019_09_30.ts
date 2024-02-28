@@ -43,27 +43,45 @@ export namespace MyNS {
 
 	export interface AKSReplicaStatus {
 
-		/** The number of available replicas. */
+		/**
+		 * The number of available replicas.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableReplicas?: number | null;
 
-		/** The desired number of replicas. */
+		/**
+		 * The desired number of replicas.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		desiredReplicas?: number | null;
 
 		/** The Model Management Service Error object. */
 		error?: ModelErrorResponse;
 
-		/** The number of updated replicas. */
+		/**
+		 * The number of updated replicas.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedReplicas?: number | null;
 	}
 	export interface AKSReplicaStatusFormProperties {
 
-		/** The number of available replicas. */
+		/**
+		 * The number of available replicas.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableReplicas: FormControl<number | null | undefined>,
 
-		/** The desired number of replicas. */
+		/**
+		 * The desired number of replicas.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		desiredReplicas: FormControl<number | null | undefined>,
 
-		/** The number of updated replicas. */
+		/**
+		 * The number of updated replicas.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedReplicas: FormControl<number | null | undefined>,
 	}
 	export function CreateAKSReplicaStatusFormGroup() {
@@ -88,7 +106,10 @@ export namespace MyNS {
 		/** The error message. */
 		message?: string | null;
 
-		/** The HTTP status code. */
+		/**
+		 * The HTTP status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -101,7 +122,10 @@ export namespace MyNS {
 		/** The error message. */
 		message: FormControl<string | null | undefined>,
 
-		/** The HTTP status code. */
+		/**
+		 * The HTTP status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateModelErrorResponseFormGroup() {
@@ -422,11 +446,17 @@ export namespace MyNS {
 		/** Access token. */
 		accessToken?: string | null;
 
-		/** Access token expiry time (UTC). */
-		expiryOn?: number | null;
+		/**
+		 * Access token expiry time (UTC).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expiryOn?: string | null;
 
-		/** Refresh access token after time (UTC). */
-		refreshAfter?: number | null;
+		/**
+		 * Refresh access token after time (UTC).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refreshAfter?: string | null;
 
 		/** Access token type. */
 		tokenType?: string | null;
@@ -438,11 +468,17 @@ export namespace MyNS {
 		/** Access token. */
 		accessToken: FormControl<string | null | undefined>,
 
-		/** Access token expiry time (UTC). */
-		expiryOn: FormControl<number | null | undefined>,
+		/**
+		 * Access token expiry time (UTC).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expiryOn: FormControl<string | null | undefined>,
 
-		/** Refresh access token after time (UTC). */
-		refreshAfter: FormControl<number | null | undefined>,
+		/**
+		 * Refresh access token after time (UTC).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refreshAfter: FormControl<string | null | undefined>,
 
 		/** Access token type. */
 		tokenType: FormControl<string | null | undefined>,
@@ -450,8 +486,8 @@ export namespace MyNS {
 	export function CreateAuthTokenFormGroup() {
 		return new FormGroup<AuthTokenFormProperties>({
 			accessToken: new FormControl<string | null | undefined>(undefined),
-			expiryOn: new FormControl<number | null | undefined>(undefined),
-			refreshAfter: new FormControl<number | null | undefined>(undefined),
+			expiryOn: new FormControl<string | null | undefined>(undefined),
+			refreshAfter: new FormControl<string | null | undefined>(undefined),
 			tokenType: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -464,16 +500,28 @@ export namespace MyNS {
 		/** Option to enable/disable auto scaling. */
 		autoscaleEnabled?: boolean | null;
 
-		/** The maximum number of replicas in the cluster. */
+		/**
+		 * The maximum number of replicas in the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxReplicas?: number | null;
 
-		/** The minimum number of replicas to scale down to. */
+		/**
+		 * The minimum number of replicas to scale down to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minReplicas?: number | null;
 
-		/** The amount of seconds to wait between auto scale updates. */
+		/**
+		 * The amount of seconds to wait between auto scale updates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshPeriodInSeconds?: number | null;
 
-		/** The target utilization percentage to use for determining whether to scale the cluster. */
+		/**
+		 * The target utilization percentage to use for determining whether to scale the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetUtilization?: number | null;
 	}
 
@@ -483,16 +531,28 @@ export namespace MyNS {
 		/** Option to enable/disable auto scaling. */
 		autoscaleEnabled: FormControl<boolean | null | undefined>,
 
-		/** The maximum number of replicas in the cluster. */
+		/**
+		 * The maximum number of replicas in the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxReplicas: FormControl<number | null | undefined>,
 
-		/** The minimum number of replicas to scale down to. */
+		/**
+		 * The minimum number of replicas to scale down to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minReplicas: FormControl<number | null | undefined>,
 
-		/** The amount of seconds to wait between auto scale updates. */
+		/**
+		 * The amount of seconds to wait between auto scale updates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refreshPeriodInSeconds: FormControl<number | null | undefined>,
 
-		/** The target utilization percentage to use for determining whether to scale the cluster. */
+		/**
+		 * The target utilization percentage to use for determining whether to scale the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetUtilization: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoScalerFormGroup() {
@@ -539,32 +599,56 @@ export namespace MyNS {
 	/** The resource requirements for the container (cpu and memory). */
 	export interface ContainerResourceRequirements {
 
-		/** The number of CPU cores on the container. */
+		/**
+		 * The number of CPU cores on the container.
+		 * Type: double
+		 */
 		cpu?: number | null;
 
-		/** The number of FPGA PCIE devices exposed to the container. Must be multiple of 2. */
+		/**
+		 * The number of FPGA PCIE devices exposed to the container. Must be multiple of 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fpga?: number | null;
 
-		/** The number of GPU cores in the container. */
+		/**
+		 * The number of GPU cores in the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gpu?: number | null;
 
-		/** The amount of memory on the container in GB. */
+		/**
+		 * The amount of memory on the container in GB.
+		 * Type: double
+		 */
 		memoryInGB?: number | null;
 	}
 
 	/** The resource requirements for the container (cpu and memory). */
 	export interface ContainerResourceRequirementsFormProperties {
 
-		/** The number of CPU cores on the container. */
+		/**
+		 * The number of CPU cores on the container.
+		 * Type: double
+		 */
 		cpu: FormControl<number | null | undefined>,
 
-		/** The number of FPGA PCIE devices exposed to the container. Must be multiple of 2. */
+		/**
+		 * The number of FPGA PCIE devices exposed to the container. Must be multiple of 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fpga: FormControl<number | null | undefined>,
 
-		/** The number of GPU cores in the container. */
+		/**
+		 * The number of GPU cores in the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gpu: FormControl<number | null | undefined>,
 
-		/** The amount of memory on the container in GB. */
+		/**
+		 * The amount of memory on the container in GB.
+		 * Type: double
+		 */
 		memoryInGB: FormControl<number | null | undefined>,
 	}
 	export function CreateContainerResourceRequirementsFormGroup() {
@@ -976,20 +1060,32 @@ export namespace MyNS {
 	/** The deployment summary. */
 	export interface DeploymentSummary {
 
-		/** The number of successful deployments. */
+		/**
+		 * The number of successful deployments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulDeployments?: number | null;
 
-		/** The number of unsuccessful deployments. */
+		/**
+		 * The number of unsuccessful deployments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unsuccessfulDeployments?: number | null;
 	}
 
 	/** The deployment summary. */
 	export interface DeploymentSummaryFormProperties {
 
-		/** The number of successful deployments. */
+		/**
+		 * The number of successful deployments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulDeployments: FormControl<number | null | undefined>,
 
-		/** The number of unsuccessful deployments. */
+		/**
+		 * The number of unsuccessful deployments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unsuccessfulDeployments: FormControl<number | null | undefined>,
 	}
 	export function CreateDeploymentSummaryFormGroup() {
@@ -1080,8 +1176,11 @@ export namespace MyNS {
 		/** The image properties dictionary. Properties are immutable. */
 		properties?: {[id: string]: string };
 
-		/** The image version. */
-		version?: number | null;
+		/**
+		 * The image version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version?: string | null;
 	}
 	export interface ImageResponseBaseFormProperties {
 
@@ -1130,8 +1229,11 @@ export namespace MyNS {
 		/** The image properties dictionary. Properties are immutable. */
 		properties: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** The image version. */
-		version: FormControl<number | null | undefined>,
+		/**
+		 * The image version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateImageResponseBaseFormGroup() {
 		return new FormGroup<ImageResponseBaseFormProperties>({
@@ -1149,7 +1251,7 @@ export namespace MyNS {
 			name: new FormControl<string | null | undefined>(undefined),
 			operationId: new FormControl<string | null | undefined>(undefined),
 			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1219,8 +1321,11 @@ export namespace MyNS {
 		 */
 		url: string;
 
-		/** The Model version assigned by Model Management Service. */
-		version?: number | null;
+		/**
+		 * The Model version assigned by Model Management Service.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version?: string | null;
 	}
 
 	/** An Azure Machine Learning Model. */
@@ -1280,8 +1385,11 @@ export namespace MyNS {
 		 */
 		url: FormControl<string | null | undefined>,
 
-		/** The Model version assigned by Model Management Service. */
-		version: FormControl<number | null | undefined>,
+		/**
+		 * The Model version assigned by Model Management Service.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateModelFormGroup() {
 		return new FormGroup<ModelFormProperties>({
@@ -1300,7 +1408,7 @@ export namespace MyNS {
 			runId: new FormControl<string | null | undefined>(undefined),
 			unpack: new FormControl<boolean | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			version: new FormControl<number | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1408,38 +1516,68 @@ export namespace MyNS {
 	/** The liveness probe requirements. */
 	export interface LivenessProbeRequirements {
 
-		/** The number of failures to allow before returning an unhealthy status. */
+		/**
+		 * The number of failures to allow before returning an unhealthy status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureThreshold?: number | null;
 
-		/** The delay before the first probe in seconds. */
+		/**
+		 * The delay before the first probe in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialDelaySeconds?: number | null;
 
-		/** The length of time between probes in seconds. */
+		/**
+		 * The length of time between probes in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSeconds?: number | null;
 
-		/** The number of successful probes before returning a healthy status. */
+		/**
+		 * The number of successful probes before returning a healthy status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successThreshold?: number | null;
 
-		/** The probe timeout in seconds. */
+		/**
+		 * The probe timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds?: number | null;
 	}
 
 	/** The liveness probe requirements. */
 	export interface LivenessProbeRequirementsFormProperties {
 
-		/** The number of failures to allow before returning an unhealthy status. */
+		/**
+		 * The number of failures to allow before returning an unhealthy status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureThreshold: FormControl<number | null | undefined>,
 
-		/** The delay before the first probe in seconds. */
+		/**
+		 * The delay before the first probe in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialDelaySeconds: FormControl<number | null | undefined>,
 
-		/** The length of time between probes in seconds. */
+		/**
+		 * The length of time between probes in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSeconds: FormControl<number | null | undefined>,
 
-		/** The number of successful probes before returning a healthy status. */
+		/**
+		 * The number of successful probes before returning a healthy status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successThreshold: FormControl<number | null | undefined>,
 
-		/** The probe timeout in seconds. */
+		/**
+		 * The probe timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateLivenessProbeRequirementsFormGroup() {
@@ -1618,13 +1756,22 @@ export namespace MyNS {
 		/** The profile properties dictionary. Properties are immutable. */
 		properties?: {[id: string]: string };
 
-		/** Latency associated with the recommended memory/cpu config */
+		/**
+		 * Latency associated with the recommended memory/cpu config
+		 * Type: double
+		 */
 		recommendationLatencyInMs?: number | null;
 
-		/** The recommended CPU allocation. */
+		/**
+		 * The recommended CPU allocation.
+		 * Type: double
+		 */
 		recommendedCpu?: number | null;
 
-		/** The recommended amount of memory to allocate in GB. */
+		/**
+		 * The recommended amount of memory to allocate in GB.
+		 * Type: double
+		 */
 		recommendedMemoryInGB?: number | null;
 
 		/** The state of the profile. */
@@ -1661,13 +1808,22 @@ export namespace MyNS {
 		/** The profile properties dictionary. Properties are immutable. */
 		properties: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Latency associated with the recommended memory/cpu config */
+		/**
+		 * Latency associated with the recommended memory/cpu config
+		 * Type: double
+		 */
 		recommendationLatencyInMs: FormControl<number | null | undefined>,
 
-		/** The recommended CPU allocation. */
+		/**
+		 * The recommended CPU allocation.
+		 * Type: double
+		 */
 		recommendedCpu: FormControl<number | null | undefined>,
 
-		/** The recommended amount of memory to allocate in GB. */
+		/**
+		 * The recommended amount of memory to allocate in GB.
+		 * Type: double
+		 */
 		recommendedMemoryInGB: FormControl<number | null | undefined>,
 
 		/** The state of the profile. */

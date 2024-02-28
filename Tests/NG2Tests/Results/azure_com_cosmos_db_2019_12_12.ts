@@ -404,7 +404,10 @@ export namespace MyNS {
 	/** Cosmos DB Cassandra table resource object */
 	export interface CassandraTableResource {
 
-		/** Time to live of the Cosmos DB Cassandra table */
+		/**
+		 * Time to live of the Cosmos DB Cassandra table
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultTtl?: number | null;
 
 		/**
@@ -420,7 +423,10 @@ export namespace MyNS {
 	/** Cosmos DB Cassandra table resource object */
 	export interface CassandraTableResourceFormProperties {
 
-		/** Time to live of the Cosmos DB Cassandra table */
+		/**
+		 * Time to live of the Cosmos DB Cassandra table
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultTtl: FormControl<number | null | undefined>,
 
 		/**
@@ -575,7 +581,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 2147483647
 		 */
-		maxStalenessPrefix?: number | null;
+		maxStalenessPrefix?: string | null;
 	}
 
 	/** The consistency policy for the Cosmos DB database account. */
@@ -599,13 +605,13 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 2147483647
 		 */
-		maxStalenessPrefix: FormControl<number | null | undefined>,
+		maxStalenessPrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateConsistencyPolicyFormGroup() {
 		return new FormGroup<ConsistencyPolicyFormProperties>({
 			defaultConsistencyLevel: new FormControl<ConsistencyPolicyDefaultConsistencyLevel | null | undefined>(undefined, [Validators.required]),
 			maxIntervalInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(86400)]),
-			maxStalenessPrefix: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
+			maxStalenessPrefix: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
 		});
 
 	}
@@ -1586,7 +1592,10 @@ export namespace MyNS {
 		/** The conflict resolution policy for the container. */
 		conflictResolutionPolicy?: ConflictResolutionPolicy;
 
-		/** Default time to live */
+		/**
+		 * Default time to live
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultTtl?: number | null;
 
 		/**
@@ -1608,7 +1617,10 @@ export namespace MyNS {
 	/** Cosmos DB Gremlin graph resource object */
 	export interface GremlinGraphResourceFormProperties {
 
-		/** Default time to live */
+		/**
+		 * Default time to live
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultTtl: FormControl<number | null | undefined>,
 
 		/**
@@ -1699,7 +1711,10 @@ export namespace MyNS {
 		/** Indicates the type of index. */
 		kind?: IndexesKind | null;
 
-		/** The precision of the index. -1 is maximum precision. */
+		/**
+		 * The precision of the index. -1 is maximum precision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precision?: number | null;
 	}
 
@@ -1712,7 +1727,10 @@ export namespace MyNS {
 		/** Indicates the type of index. */
 		kind: FormControl<IndexesKind | null | undefined>,
 
-		/** The precision of the index. -1 is maximum precision. */
+		/**
+		 * The precision of the index. -1 is maximum precision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precision: FormControl<number | null | undefined>,
 	}
 	export function CreateIndexesFormGroup() {
@@ -1892,19 +1910,31 @@ export namespace MyNS {
 		/** The number of values for the metric. */
 		_count?: string | null;
 
-		/** The average value of the metric. */
+		/**
+		 * The average value of the metric.
+		 * Type: double
+		 */
 		average?: number | null;
 
-		/** The max value of the metric. */
+		/**
+		 * The max value of the metric.
+		 * Type: double
+		 */
 		maximum?: number | null;
 
-		/** The min value of the metric. */
+		/**
+		 * The min value of the metric.
+		 * Type: double
+		 */
 		minimum?: number | null;
 
 		/** The metric timestamp (ISO-8601 format). */
 		timestamp?: Date | null;
 
-		/** The total value of the metric. */
+		/**
+		 * The total value of the metric.
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 
@@ -1914,19 +1944,31 @@ export namespace MyNS {
 		/** The number of values for the metric. */
 		_count: FormControl<string | null | undefined>,
 
-		/** The average value of the metric. */
+		/**
+		 * The average value of the metric.
+		 * Type: double
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** The max value of the metric. */
+		/**
+		 * The max value of the metric.
+		 * Type: double
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** The min value of the metric. */
+		/**
+		 * The min value of the metric.
+		 * Type: double
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** The metric timestamp (ISO-8601 format). */
 		timestamp: FormControl<Date | null | undefined>,
 
-		/** The total value of the metric. */
+		/**
+		 * The total value of the metric.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricValueFormGroup() {
@@ -2196,7 +2238,10 @@ export namespace MyNS {
 	/** Cosmos DB MongoDB collection index options */
 	export interface MongoIndexOptions {
 
-		/** Expire after seconds */
+		/**
+		 * Expire after seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expireAfterSeconds?: number | null;
 
 		/** Is unique or not */
@@ -2206,7 +2251,10 @@ export namespace MyNS {
 	/** Cosmos DB MongoDB collection index options */
 	export interface MongoIndexOptionsFormProperties {
 
-		/** Expire after seconds */
+		/**
+		 * Expire after seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expireAfterSeconds: FormControl<number | null | undefined>,
 
 		/** Is unique or not */
@@ -2528,8 +2576,8 @@ export namespace MyNS {
 	}
 	export function CreatePartitionUsageFormGroup() {
 		return new FormGroup<PartitionUsageFormProperties>({
-			currentValue: new FormControl<number | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			currentValue: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			quotaPeriod: new FormControl<string | null | undefined>(undefined),
 			unit: new FormControl<MetricUnit | null | undefined>(undefined),
 			partitionId: new FormControl<string | null | undefined>(undefined),
@@ -2607,50 +2655,92 @@ export namespace MyNS {
 	/** Represents percentile metrics values. */
 	export interface PercentileMetricValue extends MetricValue {
 
-		/** The 10th percentile value for the metric. */
+		/**
+		 * The 10th percentile value for the metric.
+		 * Type: double
+		 */
 		P10?: number | null;
 
-		/** The 25th percentile value for the metric. */
+		/**
+		 * The 25th percentile value for the metric.
+		 * Type: double
+		 */
 		P25?: number | null;
 
-		/** The 50th percentile value for the metric. */
+		/**
+		 * The 50th percentile value for the metric.
+		 * Type: double
+		 */
 		P50?: number | null;
 
-		/** The 75th percentile value for the metric. */
+		/**
+		 * The 75th percentile value for the metric.
+		 * Type: double
+		 */
 		P75?: number | null;
 
-		/** The 90th percentile value for the metric. */
+		/**
+		 * The 90th percentile value for the metric.
+		 * Type: double
+		 */
 		P90?: number | null;
 
-		/** The 95th percentile value for the metric. */
+		/**
+		 * The 95th percentile value for the metric.
+		 * Type: double
+		 */
 		P95?: number | null;
 
-		/** The 99th percentile value for the metric. */
+		/**
+		 * The 99th percentile value for the metric.
+		 * Type: double
+		 */
 		P99?: number | null;
 	}
 
 	/** Represents percentile metrics values. */
 	export interface PercentileMetricValueFormProperties extends MetricValueFormProperties {
 
-		/** The 10th percentile value for the metric. */
+		/**
+		 * The 10th percentile value for the metric.
+		 * Type: double
+		 */
 		P10: FormControl<number | null | undefined>,
 
-		/** The 25th percentile value for the metric. */
+		/**
+		 * The 25th percentile value for the metric.
+		 * Type: double
+		 */
 		P25: FormControl<number | null | undefined>,
 
-		/** The 50th percentile value for the metric. */
+		/**
+		 * The 50th percentile value for the metric.
+		 * Type: double
+		 */
 		P50: FormControl<number | null | undefined>,
 
-		/** The 75th percentile value for the metric. */
+		/**
+		 * The 75th percentile value for the metric.
+		 * Type: double
+		 */
 		P75: FormControl<number | null | undefined>,
 
-		/** The 90th percentile value for the metric. */
+		/**
+		 * The 90th percentile value for the metric.
+		 * Type: double
+		 */
 		P90: FormControl<number | null | undefined>,
 
-		/** The 95th percentile value for the metric. */
+		/**
+		 * The 95th percentile value for the metric.
+		 * Type: double
+		 */
 		P95: FormControl<number | null | undefined>,
 
-		/** The 99th percentile value for the metric. */
+		/**
+		 * The 99th percentile value for the metric.
+		 * Type: double
+		 */
 		P99: FormControl<number | null | undefined>,
 	}
 	export function CreatePercentileMetricValueFormGroup() {
@@ -2769,7 +2859,10 @@ export namespace MyNS {
 		/** The conflict resolution policy for the container. */
 		conflictResolutionPolicy?: ConflictResolutionPolicy;
 
-		/** Default time to live */
+		/**
+		 * Default time to live
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultTtl?: number | null;
 
 		/**
@@ -2791,7 +2884,10 @@ export namespace MyNS {
 	/** Cosmos DB SQL container resource object */
 	export interface SqlContainerResourceFormProperties {
 
-		/** Default time to live */
+		/**
+		 * Default time to live
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultTtl: FormControl<number | null | undefined>,
 
 		/**
@@ -3534,6 +3630,7 @@ export namespace MyNS {
 		/**
 		 * Value of the Cosmos DB resource throughput
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		throughput: number;
 	}
@@ -3550,6 +3647,7 @@ export namespace MyNS {
 		/**
 		 * Value of the Cosmos DB resource throughput
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		throughput: FormControl<number | null | undefined>,
 	}
@@ -3627,11 +3725,17 @@ export namespace MyNS {
 	/** The usage data for a usage request. */
 	export interface Usage {
 
-		/** Current value for this metric */
-		currentValue?: number | null;
+		/**
+		 * Current value for this metric
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue?: string | null;
 
-		/** Maximum value for this metric */
-		limit?: number | null;
+		/**
+		 * Maximum value for this metric
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit?: string | null;
 
 		/** A metric name. */
 		name?: MetricName;
@@ -3646,11 +3750,17 @@ export namespace MyNS {
 	/** The usage data for a usage request. */
 	export interface UsageFormProperties {
 
-		/** Current value for this metric */
-		currentValue: FormControl<number | null | undefined>,
+		/**
+		 * Current value for this metric
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue: FormControl<string | null | undefined>,
 
-		/** Maximum value for this metric */
-		limit: FormControl<number | null | undefined>,
+		/**
+		 * Maximum value for this metric
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit: FormControl<string | null | undefined>,
 
 		/** The quota period used to summarize the usage values. */
 		quotaPeriod: FormControl<string | null | undefined>,
@@ -3660,8 +3770,8 @@ export namespace MyNS {
 	}
 	export function CreateUsageFormGroup() {
 		return new FormGroup<UsageFormProperties>({
-			currentValue: new FormControl<number | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			currentValue: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			quotaPeriod: new FormControl<string | null | undefined>(undefined),
 			unit: new FormControl<MetricUnit | null | undefined>(undefined),
 		});

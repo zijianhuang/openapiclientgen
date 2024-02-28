@@ -750,29 +750,47 @@ export namespace MyNS {
 	/** A Data Lake Analytics catalog U-SQL distribution information object. */
 	export interface USqlDistributionInfo {
 
-		/** the count of indices using this distribution. */
+		/**
+		 * the count of indices using this distribution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** the dynamic count of indices using this distribution. */
+		/**
+		 * the dynamic count of indices using this distribution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dynamicCount?: number | null;
 
 		/** the list of directed columns in the distribution */
 		keys?: Array<USqlDirectedColumn>;
 
-		/** the type of this distribution. */
+		/**
+		 * the type of this distribution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		type?: number | null;
 	}
 
 	/** A Data Lake Analytics catalog U-SQL distribution information object. */
 	export interface USqlDistributionInfoFormProperties {
 
-		/** the count of indices using this distribution. */
+		/**
+		 * the count of indices using this distribution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** the dynamic count of indices using this distribution. */
+		/**
+		 * the dynamic count of indices using this distribution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dynamicCount: FormControl<number | null | undefined>,
 
-		/** the type of this distribution. */
+		/**
+		 * the type of this distribution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		type: FormControl<number | null | undefined>,
 	}
 	export function CreateUSqlDistributionInfoFormGroup() {
@@ -859,7 +877,10 @@ export namespace MyNS {
 		/** A Data Lake Analytics catalog U-SQL distribution information object. */
 		distributionInfo?: USqlDistributionInfo;
 
-		/** the ID of this index within the table. */
+		/**
+		 * the ID of this index within the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indexId?: number | null;
 
 		/** the list of directed columns in the index */
@@ -887,7 +908,10 @@ export namespace MyNS {
 	/** A Data Lake Analytics catalog U-SQL table index item. */
 	export interface USqlIndexFormProperties {
 
-		/** the ID of this index within the table. */
+		/**
+		 * the ID of this index within the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indexId: FormControl<number | null | undefined>,
 
 		/** the switch indicating if this index is a columnstore index. */
@@ -1226,17 +1250,26 @@ export namespace MyNS {
 		/** the version of the catalog item. */
 		fragmentId?: string | null;
 
-		/** the ordinal of the index which contains the table fragment. */
+		/**
+		 * the ordinal of the index which contains the table fragment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indexId?: number | null;
 
 		/** the parent object Id of the table fragment. The parent could be a table or table partition. */
 		parentId?: string | null;
 
-		/** the number of rows in the table fragment. */
-		rowCount?: number | null;
+		/**
+		 * the number of rows in the table fragment.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rowCount?: string | null;
 
-		/** the data size of the table fragment in bytes. */
-		size?: number | null;
+		/**
+		 * the data size of the table fragment in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/** the relative path for the table fragment location. */
 		streamPath?: string | null;
@@ -1251,17 +1284,26 @@ export namespace MyNS {
 		/** the version of the catalog item. */
 		fragmentId: FormControl<string | null | undefined>,
 
-		/** the ordinal of the index which contains the table fragment. */
+		/**
+		 * the ordinal of the index which contains the table fragment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indexId: FormControl<number | null | undefined>,
 
 		/** the parent object Id of the table fragment. The parent could be a table or table partition. */
 		parentId: FormControl<string | null | undefined>,
 
-		/** the number of rows in the table fragment. */
-		rowCount: FormControl<number | null | undefined>,
+		/**
+		 * the number of rows in the table fragment.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rowCount: FormControl<string | null | undefined>,
 
-		/** the data size of the table fragment in bytes. */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * the data size of the table fragment in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/** the relative path for the table fragment location. */
 		streamPath: FormControl<string | null | undefined>,
@@ -1272,8 +1314,8 @@ export namespace MyNS {
 			fragmentId: new FormControl<string | null | undefined>(undefined),
 			indexId: new FormControl<number | null | undefined>(undefined),
 			parentId: new FormControl<string | null | undefined>(undefined),
-			rowCount: new FormControl<number | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			rowCount: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			streamPath: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1325,7 +1367,10 @@ export namespace MyNS {
 		/** the name of the database. */
 		databaseName?: string | null;
 
-		/** the index ID for this partition. */
+		/**
+		 * the index ID for this partition.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indexId?: number | null;
 
 		/** the list of labels associated with this partition. */
@@ -1350,7 +1395,10 @@ export namespace MyNS {
 		/** the name of the database. */
 		databaseName: FormControl<string | null | undefined>,
 
-		/** the index ID for this partition. */
+		/**
+		 * the index ID for this partition.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		indexId: FormControl<number | null | undefined>,
 
 		/** the name of the table partition. */
@@ -1400,11 +1448,17 @@ export namespace MyNS {
 		/** the schema of the table or partition. */
 		schema?: Array<USqlTableColumn>;
 
-		/** the total number of columns in the table or partition. */
-		totalColumnCount?: number | null;
+		/**
+		 * the total number of columns in the table or partition.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalColumnCount?: string | null;
 
-		/** the total number of rows in the table or partition. */
-		totalRowCount?: number | null;
+		/**
+		 * the total number of rows in the table or partition.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalRowCount?: string | null;
 
 		/** true if the amount of data in the response is less than expected due to the preview operation's size limitations. This can occur if the requested rows or row counts are too large. */
 		truncated?: boolean | null;
@@ -1413,19 +1467,25 @@ export namespace MyNS {
 	/** A Data Lake Analytics catalog table or partition preview rows item. */
 	export interface USqlTablePreviewFormProperties {
 
-		/** the total number of columns in the table or partition. */
-		totalColumnCount: FormControl<number | null | undefined>,
+		/**
+		 * the total number of columns in the table or partition.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalColumnCount: FormControl<string | null | undefined>,
 
-		/** the total number of rows in the table or partition. */
-		totalRowCount: FormControl<number | null | undefined>,
+		/**
+		 * the total number of rows in the table or partition.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalRowCount: FormControl<string | null | undefined>,
 
 		/** true if the amount of data in the response is less than expected due to the preview operation's size limitations. This can occur if the requested rows or row counts are too large. */
 		truncated: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUSqlTablePreviewFormGroup() {
 		return new FormGroup<USqlTablePreviewFormProperties>({
-			totalColumnCount: new FormControl<number | null | undefined>(undefined),
-			totalRowCount: new FormControl<number | null | undefined>(undefined),
+			totalColumnCount: new FormControl<string | null | undefined>(undefined),
+			totalRowCount: new FormControl<string | null | undefined>(undefined),
 			truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1694,16 +1754,25 @@ export namespace MyNS {
 		/** The switch indicating if this type is user defined. */
 		isUserDefined?: boolean | null;
 
-		/** the principal ID for this type. */
+		/**
+		 * the principal ID for this type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		principalId?: number | null;
 
-		/** the schema ID for this type. */
+		/**
+		 * the schema ID for this type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schemaId?: number | null;
 
 		/** the name of the schema associated with this table and database. */
 		schemaName?: string | null;
 
-		/** the system type ID for this type. */
+		/**
+		 * the system type ID for this type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		systemTypeId?: number | null;
 
 		/** the type family for this type. */
@@ -1712,7 +1781,10 @@ export namespace MyNS {
 		/** the name of type for this type. */
 		typeName?: string | null;
 
-		/** the user type ID for this type. */
+		/**
+		 * the user type ID for this type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userTypeId?: number | null;
 	}
 
@@ -1743,16 +1815,25 @@ export namespace MyNS {
 		/** The switch indicating if this type is user defined. */
 		isUserDefined: FormControl<boolean | null | undefined>,
 
-		/** the principal ID for this type. */
+		/**
+		 * the principal ID for this type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		principalId: FormControl<number | null | undefined>,
 
-		/** the schema ID for this type. */
+		/**
+		 * the schema ID for this type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schemaId: FormControl<number | null | undefined>,
 
 		/** the name of the schema associated with this table and database. */
 		schemaName: FormControl<string | null | undefined>,
 
-		/** the system type ID for this type. */
+		/**
+		 * the system type ID for this type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		systemTypeId: FormControl<number | null | undefined>,
 
 		/** the type family for this type. */
@@ -1761,7 +1842,10 @@ export namespace MyNS {
 		/** the name of type for this type. */
 		typeName: FormControl<string | null | undefined>,
 
-		/** the user type ID for this type. */
+		/**
+		 * the user type ID for this type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userTypeId: FormControl<number | null | undefined>,
 	}
 	export function CreateUSqlTypeFormGroup() {
@@ -2240,12 +2324,12 @@ export namespace MyNS {
 		 * @param {string} schemaName The name of the schema containing the partition.
 		 * @param {string} tableName The name of the table containing the partition.
 		 * @param {string} partitionName The name of the table partition.
-		 * @param {number} maxRows The maximum number of preview rows to be retrieved.Rows returned may be less than or equal to this number depending on row sizes and number of rows in the partition.
-		 * @param {number} maxColumns The maximum number of columns to be retrieved.
+		 * @param {string} maxRows The maximum number of preview rows to be retrieved.Rows returned may be less than or equal to this number depending on row sizes and number of rows in the partition.
+		 * @param {string} maxColumns The maximum number of columns to be retrieved.
 		 * @param {string} api_version Client Api Version.
 		 * @return {USqlTablePreview} Successfully retrieved preview rows for the specified partition.
 		 */
-		Catalog_PreviewTablePartition(databaseName: string, schemaName: string, tableName: string, partitionName: string, maxRows: number | null | undefined, maxColumns: number | null | undefined, api_version: string): Observable<USqlTablePreview> {
+		Catalog_PreviewTablePartition(databaseName: string, schemaName: string, tableName: string, partitionName: string, maxRows: string | null | undefined, maxColumns: string | null | undefined, api_version: string): Observable<USqlTablePreview> {
 			return this.http.get<USqlTablePreview>(this.baseUri + 'catalog/usql/databases/' + (databaseName == null ? '' : encodeURIComponent(databaseName)) + '/schemas/' + (schemaName == null ? '' : encodeURIComponent(schemaName)) + '/tables/' + (tableName == null ? '' : encodeURIComponent(tableName)) + '/partitions/' + (partitionName == null ? '' : encodeURIComponent(partitionName)) + '/previewrows&maxRows=' + maxRows + '&maxColumns=' + maxColumns + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
 		}
 
@@ -2255,12 +2339,12 @@ export namespace MyNS {
 		 * @param {string} databaseName The name of the database containing the table.
 		 * @param {string} schemaName The name of the schema containing the table.
 		 * @param {string} tableName The name of the table.
-		 * @param {number} maxRows The maximum number of preview rows to be retrieved. Rows returned may be less than or equal to this number depending on row sizes and number of rows in the table.
-		 * @param {number} maxColumns The maximum number of columns to be retrieved.
+		 * @param {string} maxRows The maximum number of preview rows to be retrieved. Rows returned may be less than or equal to this number depending on row sizes and number of rows in the table.
+		 * @param {string} maxColumns The maximum number of columns to be retrieved.
 		 * @param {string} api_version Client Api Version.
 		 * @return {USqlTablePreview} Successfully retrieved preview rows for the specified table.
 		 */
-		Catalog_PreviewTable(databaseName: string, schemaName: string, tableName: string, maxRows: number | null | undefined, maxColumns: number | null | undefined, api_version: string): Observable<USqlTablePreview> {
+		Catalog_PreviewTable(databaseName: string, schemaName: string, tableName: string, maxRows: string | null | undefined, maxColumns: string | null | undefined, api_version: string): Observable<USqlTablePreview> {
 			return this.http.get<USqlTablePreview>(this.baseUri + 'catalog/usql/databases/' + (databaseName == null ? '' : encodeURIComponent(databaseName)) + '/schemas/' + (schemaName == null ? '' : encodeURIComponent(schemaName)) + '/tables/' + (tableName == null ? '' : encodeURIComponent(tableName)) + '/previewrows&maxRows=' + maxRows + '&maxColumns=' + maxColumns + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
 		}
 

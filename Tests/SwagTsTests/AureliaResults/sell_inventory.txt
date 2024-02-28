@@ -62,7 +62,10 @@ export namespace MyNS {
 		/** The unique identifier of a merchant's store where the In-Store Pickup inventory item is currently located, or where inventory will be sent to. If the merchant's store is currently awaiting for inventory, the availabilityType value should be SHIP_TO_STORE. This field is required if the pickupAtLocationAvailability container is used, and is always returned with the pickupAtLocationAvailability container. Max length: 36 */
 		merchantLocationKey?: string | null;
 
-		/** This integer value indicates the quantity of the inventory item that is available for In-Store Pickup at the store identified by the merchantLocationKey value. The value of quantity should be an integer value greater than 0, unless the inventory item is out of stock. This field is required if the pickupAtLocationAvailability container is used, and is always returned with the pickupAtLocationAvailability container. */
+		/**
+		 * This integer value indicates the quantity of the inventory item that is available for In-Store Pickup at the store identified by the merchantLocationKey value. The value of quantity should be an integer value greater than 0, unless the inventory item is out of stock. This field is required if the pickupAtLocationAvailability container is used, and is always returned with the pickupAtLocationAvailability container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 	}
 
@@ -73,7 +76,10 @@ export namespace MyNS {
 		/** This enumeration value indicates the time unit used to specify the fulfillment time, such as HOUR. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/TimeDurationUnitEnum.html'>eBay API documentation</a> */
 		unit?: string | null;
 
-		/** The integer value in this field, along with the time unit in the unit field, will indicate how soon after an In-Store Pickup purchase can the buyer pick up the item at the designated store location. If the value of this field is 4, and the value of the unit field is HOUR, then the fulfillment time for the In-Store Pickup order is four hours, which means that the buyer will be able to pick up the item at the store four hours after the transaction took place. */
+		/**
+		 * The integer value in this field, along with the time unit in the unit field, will indicate how soon after an In-Store Pickup purchase can the buyer pick up the item at the designated store location. If the value of this field is 4, and the value of the unit field is HOUR, then the fulfillment time for the In-Store Pickup order is four hours, which means that the buyer will be able to pick up the item at the store four hours after the transaction took place.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 
@@ -81,7 +87,10 @@ export namespace MyNS {
 	/** This type is used to specify the total 'ship-to-home' quantity of the inventory item that will be available for purchase through one or more published offers. */
 	export interface ShipToLocationAvailability {
 
-		/** This container is used to set the total 'ship-to-home' quantity of the inventory item that will be available for purchase through one or more published offers. This container is not immediately required, but 'ship-to-home' quantity must be set before an offer of the inventory item can be published. If an existing inventory item is being updated, and the 'ship-to-home' quantity already exists for the inventory item record, this container should be included again, even if the value is not changing, or the available quantity data will be lost. */
+		/**
+		 * This container is used to set the total 'ship-to-home' quantity of the inventory item that will be available for purchase through one or more published offers. This container is not immediately required, but 'ship-to-home' quantity must be set before an offer of the inventory item can be published. If an existing inventory item is being updated, and the 'ship-to-home' quantity already exists for the inventory item record, this container should be included again, even if the value is not changing, or the available quantity data will be lost.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 	}
 
@@ -103,7 +112,10 @@ export namespace MyNS {
 		/** The name of the domain in which the error or warning occurred. */
 		domain?: string | null;
 
-		/** A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** An array of one or more reference IDs which identify the specific request element(s) most closely associated to the error or warning, if any. */
@@ -162,7 +174,10 @@ export namespace MyNS {
 	/** This type provides details of an offer, and is used by the base request payload of the createOffer and bulkCreateOffer methods. */
 	export interface EbayOfferDetailsWithKeys {
 
-		/** This integer value sets the quantity of the inventory item (specified by the sku value) that will be available for purchase by buyers shopping on the eBay site specified in the marketplaceId field. Quantity must be set to 1 or more in order for the inventory item to be purchasable, but this field is not necessarily required, even for published offers, if the general quantity of the inventory item has already been set in the inventory item record. */
+		/**
+		 * This integer value sets the quantity of the inventory item (specified by the sku value) that will be available for purchase by buyers shopping on the eBay site specified in the marketplaceId field. Quantity must be set to 1 or more in order for the inventory item to be purchasable, but this field is not necessarily required, even for published offers, if the general quantity of the inventory item has already been set in the inventory item record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity?: number | null;
 
 		/** The unique identifier of the eBay category that the inventory item will be listed under. This field is not immediately required upon creating an offer, but will be required before publishing the offer. Sellers can use the getCategorySuggestions method of the Taxonomy API or the GetSuggestedCategories call of the Trading API to retrieve suggested category ID values. The seller passes in a query string like &quot;iPhone 6&quot;, and category ID values for suggested categories are returned in the response. */
@@ -183,7 +198,10 @@ export namespace MyNS {
 		/** This type is used to identify the payment, return, and fulfillment listing policies that will be, or are associated with the listing. Every published offer must have a payment, return, and fulfillment listing policy associated with it. This type is also used to override the shipping costs of one or more shipping service options that are associated with the fulfillment policy, to enable eBay Plus eligibility for a listing, or to enable the Best Offer feature on the listing. */
 		listingPolicies?: ListingPolicies;
 
-		/** This field is only applicable if the listing is a lot listing. A lot listing is a listing that has multiple quantity of the same product. An example would be a set of four identical car tires. The integer value passed into this field is the number of identical items being sold through the lot listing. */
+		/**
+		 * This field is only applicable if the listing is a lot listing. A lot listing is a listing that has multiple quantity of the same product. An example would be a set of four identical car tires. The integer value passed into this field is the number of identical items being sold through the lot listing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lotSize?: number | null;
 
 		/** This enumeration value is the unique identifier of the eBay site for which the offer will be made available. See MarketplaceEnum for the list of supported enumeration values. This field is required. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/MarketplaceEnum.html'>eBay API documentation</a> */
@@ -195,7 +213,10 @@ export namespace MyNS {
 		/** This type is used to specify the listing price for the product and settings for the Minimum Advertised Price and Strikethrough Pricing features. The price field must be supplied before an offer is published, but a seller may create an offer without supplying a price initially. The Minimum Advertised Price feature is only available on the US site. Strikethrough Pricing is available on the US, eBay Motors, UK, Germany, Canada (English and French), France, Italy, and Spain sites. */
 		pricingSummary?: PricingSummary;
 
-		/** This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceed the quantity specified for this field. So, if this field's value is 5, each buyer may purchase between one to five of these products, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase. */
+		/**
+		 * This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceed the quantity specified for this field. So, if this field's value is 5, each buyer may purchase between one to five of these products, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantityLimitPerBuyer?: number | null;
 
 		/** This container is used if the seller would like to place the inventory item into one or two eBay store categories that the seller has set up for their eBay store. The string value(s) passed in to this container will be the full path(s) to the eBay store categories, as shown below: &quot;storeCategoryNames&quot;: [  &quot;/Fashion/Men/Shirts&quot;,  &quot;/Fashion/Men/Accessories&quot; ], */
@@ -249,7 +270,10 @@ export namespace MyNS {
 		/** This type is used to express a dollar value and the applicable currency. */
 		additionalShippingCost?: Amount;
 
-		/** The integer value input into this field, along with the shippingServiceType value, sets which domestic or international shipping service option in the fulfillment policy will be modified with updated shipping costs. Specifically, the shippingCostOverrides.shippingServiceType value in a createOffer or updateOffer call must match the shippingOptions.optionType value in a fulfillment listing policy, and the shippingCostOverrides.priority value in a createOffer or updateOffer call must match the shippingOptions.shippingServices.sortOrderId value in a fulfillment listing policy. This field is always required when overriding the shipping costs of a shipping service option, and will be always be returned for each shipping service option whose costs are being overridden. */
+		/**
+		 * The integer value input into this field, along with the shippingServiceType value, sets which domestic or international shipping service option in the fulfillment policy will be modified with updated shipping costs. Specifically, the shippingCostOverrides.shippingServiceType value in a createOffer or updateOffer call must match the shippingOptions.optionType value in a fulfillment listing policy, and the shippingCostOverrides.priority value in a createOffer or updateOffer call must match the shippingOptions.shippingServices.sortOrderId value in a fulfillment listing policy. This field is always required when overriding the shipping costs of a shipping service option, and will be always be returned for each shipping service option whose costs are being overridden.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** This type is used to express a dollar value and the applicable currency. */
@@ -292,7 +316,10 @@ export namespace MyNS {
 		/** The tax exception category code. If this field is used, sales tax will also apply to a service/fee, and not just the item price. This is to be used only by sellers who have opted into sales tax being calculated by a sales tax calculation vendor. If you are interested in becoming a tax calculation vendor partner with eBay, contact developer-relations@ebay.com. One supported value for this field is WASTE_RECYCLING_FEE. If this field is used, the applyTax field must also be used and set to true This field will be returned if set for the offer. */
 		thirdPartyTaxCategory?: string | null;
 
-		/** This value is the Value Add Tax (VAT) rate for the item, if any. When a VAT percentage is specified, the item's VAT information appears on the listing's View Item page. In addition, the seller can choose to print an invoice that includes the item's net price, VAT percent, VAT amount, and total price. Since VAT rates vary depending on the item and on the user's country of residence, a seller is responsible for entering the correct VAT rate; it is not calculated by eBay. To use VAT, a seller must be a business seller with a VAT-ID registered with eBay, and must be listing the item on a VAT-enabled site. Max applicable length is 6 characters, including the decimal (e.g., 12.345). The scale is 3 decimal places. (If you pass in 12.3456, eBay may round up the value to 12.346). This field will be returned if set for the offer. */
+		/**
+		 * This value is the Value Add Tax (VAT) rate for the item, if any. When a VAT percentage is specified, the item's VAT information appears on the listing's View Item page. In addition, the seller can choose to print an invoice that includes the item's net price, VAT percent, VAT amount, and total price. Since VAT rates vary depending on the item and on the user's country of residence, a seller is responsible for entering the correct VAT rate; it is not calculated by eBay. To use VAT, a seller must be a business seller with a VAT-ID registered with eBay, and must be listing the item on a VAT-enabled site. Max applicable length is 6 characters, including the decimal (e.g., 12.345). The scale is 3 decimal places. (If you pass in 12.3456, eBay may round up the value to 12.346). This field will be returned if set for the offer.
+		 * Type: double
+		 */
 		vatPercentage?: number | null;
 	}
 
@@ -333,7 +360,10 @@ export namespace MyNS {
 		/** The seller-defined Stock-Keeping Unit (SKU) of the inventory item. The seller should have a unique SKU value for every product that they sell. */
 		sku?: string | null;
 
-		/** The HTTP status code returned in this field indicates the success or failure of retrieving the inventory item record for the inventory item specified in the sku field. See the HTTP status codes table to see which each status code indicates. */
+		/**
+		 * The HTTP status code returned in this field indicates the success or failure of retrieving the inventory item record for the inventory item specified in the sku field. See the HTTP status codes table to see which each status code indicates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** This container will be returned if there were one or more warnings associated with retrieving the inventory item record. */
@@ -387,16 +417,25 @@ export namespace MyNS {
 	/** This type is used to specify the dimensions (and the unit used to measure those dimensions) of a shipping package. The dimensions container is conditionally required if the seller will be offering calculated shipping rates to determine shipping cost. See the Calculated shipping help page for more information on calculated shipping. */
 	export interface Dimension {
 
-		/** The actual height (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  } */
+		/**
+		 * The actual height (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
+		 * Type: double
+		 */
 		height?: number | null;
 
-		/** The actual length (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  } */
+		/**
+		 * The actual length (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
+		 * Type: double
+		 */
 		length?: number | null;
 
 		/** The unit of measurement used to specify the dimensions of a shipping package. All fields of the dimensions container are required if package dimensions are specified. If the English system of measurement is being used, the applicable values for dimension units are FEET and INCH. If the metric system of measurement is being used, the applicable values for weight units are METER and CENTIMETER. The metric system is used by most countries outside of the US. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/LengthUnitOfMeasureEnum.html'>eBay API documentation</a> */
 		unit?: string | null;
 
-		/** The actual width (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  } */
+		/**
+		 * The actual width (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 
@@ -407,7 +446,10 @@ export namespace MyNS {
 		/** The unit of measurement used to specify the weight of a shipping package. Both the unit and value fields are required if the weight container is used. If the English system of measurement is being used, the applicable values for weight units are POUND and OUNCE. If the metric system of measurement is being used, the applicable values for weight units are KILOGRAM and GRAM. The metric system is used by most countries outside of the US. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/WeightUnitOfMeasureEnum.html'>eBay API documentation</a> */
 		unit?: string | null;
 
-		/** The actual weight (in the measurement unit specified in the unit field) of the shipping package. Both the unit and value fields are required if the weight container is used. If a shipping package weighed 20.5 ounces, the container would look as follows: &quot;weight&quot;: {  &quot;value&quot;: 20.5,  &quot;unit&quot;: &quot;OUNCE&quot;  } */
+		/**
+		 * The actual weight (in the measurement unit specified in the unit field) of the shipping package. Both the unit and value fields are required if the weight container is used. If a shipping package weighed 20.5 ounces, the container would look as follows: &quot;weight&quot;: {  &quot;value&quot;: 20.5,  &quot;unit&quot;: &quot;OUNCE&quot;  }
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -504,7 +546,10 @@ export namespace MyNS {
 		/** The seller-defined Stock-Keeping Unit (SKU) of the inventory item. The seller should have a unique SKU value for every product that they sell. */
 		sku?: string | null;
 
-		/** The HTTP status code returned in this field indicates the success or failure of creating or updating the inventory item record for the inventory item indicated in the sku field. See the HTTP status codes table to see which each status code indicates. */
+		/**
+		 * The HTTP status code returned in this field indicates the success or failure of creating or updating the inventory item record for the inventory item indicated in the sku field. See the HTTP status codes table to see which each status code indicates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** This container will be returned if there were one or more warnings associated with the creation or update to the inventory item record. */
@@ -554,7 +599,10 @@ export namespace MyNS {
 		/** This is the unique identifier of the eBay Marketplace where the listing resides. The value fo the eBay US site will be EBAY_US. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/MarketplaceEnum.html'>eBay API documentation</a> */
 		marketplaceId?: string | null;
 
-		/** This field is returned for each listing that the seller attempted to migrate. See the HTTP status codes table to see which each status code indicates. */
+		/**
+		 * This field is returned for each listing that the seller attempted to migrate. See the HTTP status codes table to see which each status code indicates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** If one or more warnings occur with the attempt to migrate the listing, this container will be returned with detailed information on each warning. It is possible that a listing can be successfully migrated even if a warning occurs. */
@@ -615,7 +663,10 @@ export namespace MyNS {
 		/** The seller-defined Stock-Keeping Unit (SKU) of the inventory item. The sku value is required for each product offer that the seller is trying to create, and it is always returned to identified the product that is associated with the offer. */
 		sku?: string | null;
 
-		/** The integer value returned in this field is the http status code. If an offer is created successfully, the value returned in this field should be 200. A user can view the HTTP status codes section for information on other status codes that may be returned with the bulkCreateOffer method. */
+		/**
+		 * The integer value returned in this field is the http status code. If an offer is created successfully, the value returned in this field should be 200. A user can view the HTTP status codes section for information on other status codes that may be returned with the bulkCreateOffer method.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** This container will be returned at the offer level, and will contain one or more warnings if any occurred with the attempted creation of the corresponding offer. Note that it is possible that an offer can be created successfully even if one or more warnings are triggered. */
@@ -648,7 +699,10 @@ export namespace MyNS {
 	/** This type is used by the offers container in a Bulk Update Price and Quantity call to update the current price and/or quantity of one or more offers associated with a specific inventory item. */
 	export interface OfferPriceQuantity {
 
-		/** This field is used if the seller wants to modify the current quantity of the inventory item that will be available for purchase in the offer (identified by the corresponding offerId value). Either the availableQuantity field or the price container is required, but not necessarily both. */
+		/**
+		 * This field is used if the seller wants to modify the current quantity of the inventory item that will be available for purchase in the offer (identified by the corresponding offerId value). Either the availableQuantity field or the price container is required, but not necessarily both.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity?: number | null;
 
 		/** This field is the unique identifier of the offer. If an offers container is used to update one or more offers associated to a specific inventory item, the offerId value is required in order to identify the offer to update with a modified price and/or quantity. The seller can run a getOffers call (passing in the correct SKU value as a query parameter) to retrieve offerId values for offers associated with the SKU. */
@@ -679,7 +733,10 @@ export namespace MyNS {
 		/** This is the seller-defined SKU value of the product. This field is returned whether the seller attempted to update an offer with the SKU value or just attempted to update the total 'ship-to-home' quantity of an inventory item record. Max Length: 50 */
 		sku?: string | null;
 
-		/** The value returned in this container will indicate the status of the attempt to update the price and/or quantity of the offer (specified in the corresponding offerId field) or the attempt to update the total 'ship-to-home' quantity of an inventory item (specified in the corresponding sku field). For a completely successful update of an offer or inventory item record, a value of 200 will appear in this field. A user can view the HTTP status codes section for information on other status codes that may be returned with the bulkUpdatePriceQuantity method. */
+		/**
+		 * The value returned in this container will indicate the status of the attempt to update the price and/or quantity of the offer (specified in the corresponding offerId field) or the attempt to update the total 'ship-to-home' quantity of an inventory item (specified in the corresponding sku field). For a completely successful update of an offer or inventory item record, a value of 200 will appear in this field. A user can view the HTTP status codes section for information on other status codes that may be returned with the bulkUpdatePriceQuantity method.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** This array will be returned if there were one or more warnings associated with the update to the offer or inventory item record. */
@@ -707,7 +764,10 @@ export namespace MyNS {
 		/** The unique identifier of the offer that the seller published (or attempted to publish). */
 		offerId?: string | null;
 
-		/** The HTTP status code returned in this field indicates the success or failure of publishing the offer specified in the offerId field. See the HTTP status codes table to see which each status code indicates. */
+		/**
+		 * The HTTP status code returned in this field indicates the success or failure of publishing the offer specified in the offerId field. See the HTTP status codes table to see which each status code indicates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 
 		/** This container will be returned if there were one or more warnings associated with publishing the offer. */
@@ -791,7 +851,10 @@ export namespace MyNS {
 	/** This type provides details of an offer, and is used by the response payloads of the getOffer and the getOffers calls. */
 	export interface EbayOfferDetailsWithAll {
 
-		/** This integer value indicates the quantity of the inventory item (specified by the sku value) that will be available for purchase by buyers shopping on the eBay site specified in the marketplaceId field. For unpublished offers where the available quantity has yet to be set, the availableQuantity value is set to 0. */
+		/**
+		 * This integer value indicates the quantity of the inventory item (specified by the sku value) that will be available for purchase by buyers shopping on the eBay site specified in the marketplaceId field. For unpublished offers where the available quantity has yet to be set, the availableQuantity value is set to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity?: number | null;
 
 		/** The unique identifier of the primary eBay category that the inventory item is listed under. This field is always returned for published offers, but is only returned if set for unpublished offers. */
@@ -815,7 +878,10 @@ export namespace MyNS {
 		/** This type is used to identify the payment, return, and fulfillment listing policies that will be, or are associated with the listing. Every published offer must have a payment, return, and fulfillment listing policy associated with it. This type is also used to override the shipping costs of one or more shipping service options that are associated with the fulfillment policy, to enable eBay Plus eligibility for a listing, or to enable the Best Offer feature on the listing. */
 		listingPolicies?: ListingPolicies;
 
-		/** This field is only applicable and returned if the listing is a lot listing. A lot listing is a listing that has multiple quantity of the same product. An example would be a set of four identical car tires. The integer value in this field is the number of identical items being sold through the lot listing. */
+		/**
+		 * This field is only applicable and returned if the listing is a lot listing. A lot listing is a listing that has multiple quantity of the same product. An example would be a set of four identical car tires. The integer value in this field is the number of identical items being sold through the lot listing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lotSize?: number | null;
 
 		/** This enumeration value is the unique identifier of the eBay site on which the offer is available, or will be made available. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/MarketplaceEnum.html'>eBay API documentation</a> */
@@ -830,7 +896,10 @@ export namespace MyNS {
 		/** This type is used to specify the listing price for the product and settings for the Minimum Advertised Price and Strikethrough Pricing features. The price field must be supplied before an offer is published, but a seller may create an offer without supplying a price initially. The Minimum Advertised Price feature is only available on the US site. Strikethrough Pricing is available on the US, eBay Motors, UK, Germany, Canada (English and French), France, Italy, and Spain sites. */
 		pricingSummary?: PricingSummary;
 
-		/** This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity of an inventory item per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceed the quantity in this field. So, if this field's value is 5, each buyer may purchase a quantity of the inventory item between one and five, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase. */
+		/**
+		 * This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity of an inventory item per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceed the quantity in this field. So, if this field's value is 5, each buyer may purchase a quantity of the inventory item between one and five, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantityLimitPerBuyer?: number | null;
 
 		/** This is the seller-defined SKU value of the product in the offer. Max Length: 50 */
@@ -856,7 +925,10 @@ export namespace MyNS {
 		/** The enumeration value returned in this field indicates the status of the listing that is associated with the published offer. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/ListingStatusEnum.html'>eBay API documentation</a> */
 		listingStatus?: string | null;
 
-		/** This integer value indicates the quantity of the product that has been sold for the published offer. */
+		/**
+		 * This integer value indicates the quantity of the product that has been sold for the published offer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		soldQuantity?: number | null;
 	}
 
@@ -864,7 +936,10 @@ export namespace MyNS {
 	/** This type provides details of an offer, and is used by the base request payload of the updateOffer call. Every field that is currently set with the unpublished/published offer must also be passed into the updateOffer call, even those fields whose values are not changing. Note that for published offers, a successful updateOffer call will actually update the active eBay listing with whatever changes were made. */
 	export interface EbayOfferDetailsWithId {
 
-		/** This integer value sets the quantity of the inventory item that will be available through the offer. Quantity must be set to 1 or more in order for the inventory item to be purchasable. This value should not be more than the quantity that is specified for the inventory item record. If this field exists for the current unpublished or published offer, it should be provided again in the updateOffer call, even if the value is not changing. If this particular field is omitted in an updateOffer call, the general available quantity set for the inventory item record may be used instead, and this may not be accurate if the inventory item is being sold across multiple marketplaces. */
+		/**
+		 * This integer value sets the quantity of the inventory item that will be available through the offer. Quantity must be set to 1 or more in order for the inventory item to be purchasable. This value should not be more than the quantity that is specified for the inventory item record. If this field exists for the current unpublished or published offer, it should be provided again in the updateOffer call, even if the value is not changing. If this particular field is omitted in an updateOffer call, the general available quantity set for the inventory item record may be used instead, and this may not be accurate if the inventory item is being sold across multiple marketplaces.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity?: number | null;
 
 		/** The unique identifier of the eBay category that the inventory item is/will be listed under. This field is not immediately required for an unpublished offer, but will be required before publishing the offer. Sellers can use the getCategorySuggestions method of the Taxonomy API or the GetSuggestedCategories call of the Trading API to retrieve suggested category ID values. The seller passes in a query string like &quot;iPhone 6&quot;, and category ID values for suggested categories are returned in the response. If this field exists for the current unpublished offer, it should be provided again in the updateOffer call, even if the eBay category is not changing. For a published offer (aka active eBay listing), this field must be provided or an error may occur. The eBay category of an active eBay listing cannot be changed once the listing has one or more sales, or if the listing is scheduled to end in less than 12 hours. */
@@ -882,7 +957,10 @@ export namespace MyNS {
 		/** This type is used to identify the payment, return, and fulfillment listing policies that will be, or are associated with the listing. Every published offer must have a payment, return, and fulfillment listing policy associated with it. This type is also used to override the shipping costs of one or more shipping service options that are associated with the fulfillment policy, to enable eBay Plus eligibility for a listing, or to enable the Best Offer feature on the listing. */
 		listingPolicies?: ListingPolicies;
 
-		/** This field is only applicable if the listing is a lot listing. A lot listing is a listing that has multiple quantity of the same product. An example would be a set of four identical car tires. The integer value passed into this field is the number of identical items being sold through the lot listing. */
+		/**
+		 * This field is only applicable if the listing is a lot listing. A lot listing is a listing that has multiple quantity of the same product. An example would be a set of four identical car tires. The integer value passed into this field is the number of identical items being sold through the lot listing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lotSize?: number | null;
 
 		/** The unique identifier of a merchant's inventory location (where the inventory item in the offer is located). A merchantLocationKey value is established when the merchant creates an inventory location using the createInventoryLocation call. To get more information about inventory locations, the getInventoryLocation call can be used. This field is not initially required upon first creating an offer, but will become required before an offer can be published. Max length: 36 */
@@ -891,7 +969,10 @@ export namespace MyNS {
 		/** This type is used to specify the listing price for the product and settings for the Minimum Advertised Price and Strikethrough Pricing features. The price field must be supplied before an offer is published, but a seller may create an offer without supplying a price initially. The Minimum Advertised Price feature is only available on the US site. Strikethrough Pricing is available on the US, eBay Motors, UK, Germany, Canada (English and French), France, Italy, and Spain sites. */
 		pricingSummary?: PricingSummary;
 
-		/** This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceeding the quantity specified for this field. So, if this field's value is 5, each buyer may purchase between one to five of these products, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase. If this field currently exists for an unpublished or published offer, it should be provided again in an updateOffer call, even if the value is not changing. */
+		/**
+		 * This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceeding the quantity specified for this field. So, if this field's value is 5, each buyer may purchase between one to five of these products, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase. If this field currently exists for an unpublished or published offer, it should be provided again in an updateOffer call, even if the value is not changing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantityLimitPerBuyer?: number | null;
 
 		/** This container is used if the seller would like to place the inventory item into one or two store categories that the seller has set up for their eBay store. The string value(s) passed in to this container will be the full path(s) to the store categories, as shown below: &quot;storeCategoryNames&quot;: [  &quot;/Fashion/Men/Shirts&quot;,  &quot;/Fashion/Men/Accessories&quot; ], If this field currently exists for an unpublished or published offer, it should be provided again in an updateOffer call, even if the eBay categories are not changing. */
@@ -941,10 +1022,16 @@ export namespace MyNS {
 	/** This type is used to express the Global Positioning System (GPS) latitude and longitude coordinates of an inventory location. */
 	export interface GeoCoordinates {
 
-		/** The latitude (North-South) component of the geographic coordinate. This field is required if a geoCoordinates container is used. This field is returned if geographical coordinates are set for the inventory location. */
+		/**
+		 * The latitude (North-South) component of the geographic coordinate. This field is required if a geoCoordinates container is used. This field is returned if geographical coordinates are set for the inventory location.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude (East-West) component of the geographic coordinate. This field is required if a geoCoordinates container is used. This field is returned if geographical coordinates are set for the inventory location. */
+		/**
+		 * The longitude (East-West) component of the geographic coordinate. This field is required if a geoCoordinates container is used. This field is returned if geographical coordinates are set for the inventory location.
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
@@ -1070,7 +1157,10 @@ export namespace MyNS {
 		/** This container is an array of one or more inventory items, with detailed information on each inventory item. */
 		inventoryItems?: Array<InventoryItemWithSkuLocaleGroupid>;
 
-		/** This integer value is the number of inventory items that will be displayed on each results page. */
+		/**
+		 * This integer value is the number of inventory items that will be displayed on each results page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** This is the URL to the next page of inventory items. This field will only be returned if there are additional inventory items to view. */
@@ -1079,10 +1169,16 @@ export namespace MyNS {
 		/** This is the URL to the previous page of inventory items. This field will only be returned if there are previous inventory items to view. */
 		prev?: string | null;
 
-		/** This integer value indicates the total number of pages of results that are available. This number will depend on the total number of inventory items available for viewing, and on the limit value. */
+		/**
+		 * This integer value indicates the total number of pages of results that are available. This number will depend on the total number of inventory items available for viewing, and on the limit value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 
-		/** This integer value is the total number of inventory items that exist for the seller's account. Based on this number and on the limit value, the seller may have to toggle through multiple pages to view all inventory items. */
+		/**
+		 * This integer value is the total number of inventory items that exist for the seller's account. Based on this number and on the limit value, the seller may have to toggle through multiple pages to view all inventory items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -1239,7 +1335,10 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. */
+		/**
+		 * The number of items returned on a single page from the result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** An array of one or more of the merchant's inventory locations. */
@@ -1248,13 +1347,19 @@ export namespace MyNS {
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. Max length: 2048 */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value is set in the request with the offset query parameter. Note: The items in a paginated result set use a zero-based list where the first item in the list has an offset of 0. */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value is set in the request with the offset query parameter. Note: The items in a paginated result set use a zero-based list where the first item in the list has an offset of 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. Max length: 2048 */
 		prev?: string | null;
 
-		/** The total number of items retrieved in the result set. If no items are found, this field is returned with a value of 0. */
+		/**
+		 * The total number of items retrieved in the result set. If no items are found, this field is returned with a value of 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -1284,7 +1389,10 @@ export namespace MyNS {
 		/** This is the URL to the current page of offers. */
 		href?: string | null;
 
-		/** This integer value is the number of offers that will be displayed on each results page. */
+		/**
+		 * This integer value is the number of offers that will be displayed on each results page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** This is the URL to the next page of offers. This field will only be returned if there are additional offers to view. */
@@ -1296,10 +1404,16 @@ export namespace MyNS {
 		/** This is the URL to the previous page of offers. This field will only be returned if there are previous offers to view. */
 		prev?: string | null;
 
-		/** This integer value indicates the number of offers being displayed on the current page of results. This number will generally be the same as the limit value if there are additional pages of results to view. Note: Currently, the Inventory API does not support the same SKU across multiple eBay marketplaces, so the Get Offers call will only return one offer, so this value should always be 1. */
+		/**
+		 * This integer value indicates the number of offers being displayed on the current page of results. This number will generally be the same as the limit value if there are additional pages of results to view. Note: Currently, the Inventory API does not support the same SKU across multiple eBay marketplaces, so the Get Offers call will only return one offer, so this value should always be 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 
-		/** This integer value is the total number of offers that exist for the specified SKU value. Based on this number and on the limit value, the seller may have to toggle through multiple pages to view all offers. Note: Currently, the Inventory API does not support the same SKU across multiple eBay marketplaces, so the Get Offers call will only return one offer, so this value should always be 1. */
+		/**
+		 * This integer value is the total number of offers that exist for the specified SKU value. Based on this number and on the limit value, the seller may have to toggle through multiple pages to view all offers. Note: Currently, the Inventory API does not support the same SKU across multiple eBay marketplaces, so the Get Offers call will only return one offer, so this value should always be 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 

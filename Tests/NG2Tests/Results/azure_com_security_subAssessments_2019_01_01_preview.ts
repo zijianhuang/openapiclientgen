@@ -64,14 +64,20 @@ export namespace MyNS {
 	/** CVSS details */
 	export interface CVSS {
 
-		/** CVSS base */
+		/**
+		 * CVSS base
+		 * Type: double
+		 */
 		base?: number | null;
 	}
 
 	/** CVSS details */
 	export interface CVSSFormProperties {
 
-		/** CVSS base */
+		/**
+		 * CVSS base
+		 * Type: double
+		 */
 		base: FormControl<number | null | undefined>,
 	}
 	export function CreateCVSSFormGroup() {

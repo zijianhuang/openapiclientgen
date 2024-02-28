@@ -9,19 +9,27 @@ export namespace MyNS {
 		Chassis?: string | null;
 		Created?: string | null;
 		CrewChief?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DriverID?: number | null;
 		Engine?: string | null;
 		FirstName?: string | null;
 		Gender?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Height?: number | null;
 		LastName?: string | null;
 		Manufacturer?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number?: number | null;
 		NumberDisplay?: string | null;
 		PhotoUrl?: string | null;
 		Sponsors?: string | null;
 		Team?: string | null;
 		Updated?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Weight?: number | null;
 	}
 	export interface DriverFormProperties {
@@ -30,19 +38,27 @@ export namespace MyNS {
 		Chassis: FormControl<string | null | undefined>,
 		Created: FormControl<string | null | undefined>,
 		CrewChief: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DriverID: FormControl<number | null | undefined>,
 		Engine: FormControl<string | null | undefined>,
 		FirstName: FormControl<string | null | undefined>,
 		Gender: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Height: FormControl<number | null | undefined>,
 		LastName: FormControl<string | null | undefined>,
 		Manufacturer: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number: FormControl<number | null | undefined>,
 		NumberDisplay: FormControl<string | null | undefined>,
 		PhotoUrl: FormControl<string | null | undefined>,
 		Sponsors: FormControl<string | null | undefined>,
 		Team: FormControl<string | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Weight: FormControl<number | null | undefined>,
 	}
 	export function CreateDriverFormGroup() {
@@ -71,63 +87,147 @@ export namespace MyNS {
 	}
 
 	export interface DriverRace {
+
+		/** Type: double */
 		Bonus?: number | null;
 		Created?: string | null;
 		DateTime?: string | null;
 		Day?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DriverID?: number | null;
+
+		/** Type: double */
 		FantasyPoints?: number | null;
+
+		/** Type: double */
 		FantasyPointsDraftKings?: number | null;
+
+		/** Type: double */
 		FastestLaps?: number | null;
+
+		/** Type: double */
 		FinalPosition?: number | null;
+
+		/** Type: double */
 		Laps?: number | null;
+
+		/** Type: double */
 		LapsLed?: number | null;
 		Manufacturer?: string | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number?: number | null;
 		NumberDisplay?: string | null;
+
+		/** Type: double */
 		Penalty?: number | null;
+
+		/** Type: double */
 		Points?: number | null;
+
+		/** Type: double */
 		PoleFinalPosition?: number | null;
+
+		/** Type: double */
 		Poles?: number | null;
+
+		/** Type: double */
 		PositionDifferential?: number | null;
+
+		/** Type: double */
 		QualifyingSpeed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RaceID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: double */
 		StartPosition?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatID?: number | null;
 		Updated?: string | null;
+
+		/** Type: double */
 		Wins?: number | null;
 	}
 	export interface DriverRaceFormProperties {
+
+		/** Type: double */
 		Bonus: FormControl<number | null | undefined>,
 		Created: FormControl<string | null | undefined>,
 		DateTime: FormControl<string | null | undefined>,
 		Day: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DriverID: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPoints: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsDraftKings: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FastestLaps: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FinalPosition: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Laps: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		LapsLed: FormControl<number | null | undefined>,
 		Manufacturer: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number: FormControl<number | null | undefined>,
 		NumberDisplay: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Penalty: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Points: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PoleFinalPosition: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Poles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PositionDifferential: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		QualifyingSpeed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RaceID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StartPosition: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatID: FormControl<number | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Wins: FormControl<number | null | undefined>,
 	}
 	export function CreateDriverRaceFormGroup() {
@@ -165,63 +265,147 @@ export namespace MyNS {
 	}
 
 	export interface DriverRaceProjection {
+
+		/** Type: double */
 		Bonus?: number | null;
 		Created?: string | null;
 		DateTime?: string | null;
 		Day?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DriverID?: number | null;
+
+		/** Type: double */
 		FantasyPoints?: number | null;
+
+		/** Type: double */
 		FantasyPointsDraftKings?: number | null;
+
+		/** Type: double */
 		FastestLaps?: number | null;
+
+		/** Type: double */
 		FinalPosition?: number | null;
+
+		/** Type: double */
 		Laps?: number | null;
+
+		/** Type: double */
 		LapsLed?: number | null;
 		Manufacturer?: string | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number?: number | null;
 		NumberDisplay?: string | null;
+
+		/** Type: double */
 		Penalty?: number | null;
+
+		/** Type: double */
 		Points?: number | null;
+
+		/** Type: double */
 		PoleFinalPosition?: number | null;
+
+		/** Type: double */
 		Poles?: number | null;
+
+		/** Type: double */
 		PositionDifferential?: number | null;
+
+		/** Type: double */
 		QualifyingSpeed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RaceID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: double */
 		StartPosition?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatID?: number | null;
 		Updated?: string | null;
+
+		/** Type: double */
 		Wins?: number | null;
 	}
 	export interface DriverRaceProjectionFormProperties {
+
+		/** Type: double */
 		Bonus: FormControl<number | null | undefined>,
 		Created: FormControl<string | null | undefined>,
 		DateTime: FormControl<string | null | undefined>,
 		Day: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DriverID: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPoints: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsDraftKings: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FastestLaps: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FinalPosition: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Laps: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		LapsLed: FormControl<number | null | undefined>,
 		Manufacturer: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number: FormControl<number | null | undefined>,
 		NumberDisplay: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Penalty: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Points: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PoleFinalPosition: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Poles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PositionDifferential: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		QualifyingSpeed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RaceID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StartPosition: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StatID: FormControl<number | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Wins: FormControl<number | null | undefined>,
 	}
 	export function CreateDriverRaceProjectionFormGroup() {
@@ -266,15 +450,25 @@ export namespace MyNS {
 		IsInProgress?: boolean | null;
 		IsOver?: boolean | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PoleWinnerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RaceID?: number | null;
 		RescheduledDateTime?: string | null;
 		RescheduledDay?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeriesID?: number | null;
 		SeriesName?: string | null;
 		Track?: string | null;
 		Updated?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WinnerID?: number | null;
 	}
 	export interface RaceFormProperties {
@@ -285,15 +479,25 @@ export namespace MyNS {
 		IsInProgress: FormControl<boolean | null | undefined>,
 		IsOver: FormControl<boolean | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PoleWinnerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RaceID: FormControl<number | null | undefined>,
 		RescheduledDateTime: FormControl<string | null | undefined>,
 		RescheduledDay: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeriesID: FormControl<number | null | undefined>,
 		SeriesName: FormControl<string | null | undefined>,
 		Track: FormControl<string | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WinnerID: FormControl<number | null | undefined>,
 	}
 	export function CreateRaceFormGroup() {
@@ -333,10 +537,14 @@ export namespace MyNS {
 
 	export interface Series {
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeriesID?: number | null;
 	}
 	export interface SeriesFormProperties {
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeriesID: FormControl<number | null | undefined>,
 	}
 	export function CreateSeriesFormGroup() {
@@ -358,7 +566,6 @@ export namespace MyNS {
 		 * @param {DriverRaceProjectionsEntryListFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} raceid Unique FantasyData Race ID.
 		 * Example:<code>1</code>, <code>2</code>, etc.
-		 * @return {Array<DriverRaceProjection>} 
 		 */
 		DriverRaceProjectionsEntryList(format: DriverRaceProjectionsEntryListFormat, raceid: string): Observable<Array<DriverRaceProjection>> {
 			return this.http.get<Array<DriverRaceProjection>>(this.baseUri + format + '/DriverRaceProjections/' + (raceid == null ? '' : encodeURIComponent(raceid)) + '', {});
@@ -370,7 +577,6 @@ export namespace MyNS {
 		 * @param {DriverRaceProjectionsEntryListFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} driverid Unique FantasyData Driver ID.
 		 * Example:<code>80000268</code>.
-		 * @return {Driver} 
 		 */
 		DriverDetails(format: DriverRaceProjectionsEntryListFormat, driverid: string): Observable<Driver> {
 			return this.http.get<Driver>(this.baseUri + format + '/driver/' + (driverid == null ? '' : encodeURIComponent(driverid)) + '', {});
@@ -380,7 +586,6 @@ export namespace MyNS {
 		 * Drivers
 		 * Get {format}/drivers
 		 * @param {DriverRaceProjectionsEntryListFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Driver>} 
 		 */
 		Drivers(format: DriverRaceProjectionsEntryListFormat): Observable<Array<Driver>> {
 			return this.http.get<Array<Driver>>(this.baseUri + format + '/drivers', {});
@@ -392,7 +597,6 @@ export namespace MyNS {
 		 * @param {DriverRaceProjectionsEntryListFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} raceid Unique FantasyData Race ID.
 		 * Example:<code>1</code>, <code>2</code>, etc.
-		 * @return {RaceResult} 
 		 */
 		RaceResults(format: DriverRaceProjectionsEntryListFormat, raceid: string): Observable<RaceResult> {
 			return this.http.get<RaceResult>(this.baseUri + format + '/raceresult/' + (raceid == null ? '' : encodeURIComponent(raceid)) + '', {});
@@ -404,7 +608,6 @@ export namespace MyNS {
 		 * @param {DriverRaceProjectionsEntryListFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} season Year of the season.
 		 * <br>Examples: <code>2015</code>, <code>2016</code>.
-		 * @return {Array<Race>} 
 		 */
 		RacesSchedule(format: DriverRaceProjectionsEntryListFormat, season: string): Observable<Array<Race>> {
 			return this.http.get<Array<Race>>(this.baseUri + format + '/races/' + (season == null ? '' : encodeURIComponent(season)) + '', {});
@@ -414,7 +617,6 @@ export namespace MyNS {
 		 * Series
 		 * Get {format}/series
 		 * @param {DriverRaceProjectionsEntryListFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Series>} 
 		 */
 		Series(format: DriverRaceProjectionsEntryListFormat): Observable<Array<Series>> {
 			return this.http.get<Array<Series>>(this.baseUri + format + '/series', {});

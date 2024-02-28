@@ -24,13 +24,21 @@ export namespace MyNS {
 
 	export interface ArchivedObjectVersionForApiContract {
 		changedFields?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		notes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface ArchivedObjectVersionForApiContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		notes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateArchivedObjectVersionForApiContractFormGroup() {
@@ -45,6 +53,8 @@ export namespace MyNS {
 	export interface UserForApiContract {
 		active?: boolean | null;
 		groupId?: UserForApiContractGroupId | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		knownLanguages?: Array<UserKnownLanguageContract>;
 		mainPicture?: EntryThumbForApiContract;
@@ -56,6 +66,8 @@ export namespace MyNS {
 	export interface UserForApiContractFormProperties {
 		active: FormControl<boolean | null | undefined>,
 		groupId: FormControl<UserForApiContractGroupId | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		memberSince: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -145,6 +157,8 @@ export namespace MyNS {
 		discType?: EntryForApiContractDiscType | null;
 		entryType?: EntryForApiContractEntryType | null;
 		eventCategory?: EntryForApiContractEventCategory | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
 		name?: string | null;
@@ -157,6 +171,8 @@ export namespace MyNS {
 		tagCategoryName?: string | null;
 		tags?: Array<TagUsageForApiContract>;
 		urlSlug?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<ArchivedWebLinkContract>;
 	}
@@ -172,6 +188,8 @@ export namespace MyNS {
 		discType: FormControl<EntryForApiContractDiscType | null | undefined>,
 		entryType: FormControl<EntryForApiContractEntryType | null | undefined>,
 		eventCategory: FormControl<EntryForApiContractEventCategory | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		releaseEventSeriesName: FormControl<string | null | undefined>,
@@ -180,6 +198,8 @@ export namespace MyNS {
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
 		tagCategoryName: FormControl<string | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateEntryForApiContractFormGroup() {
@@ -236,10 +256,16 @@ export namespace MyNS {
 
 	export interface PVContract {
 		author?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdBy?: number | null;
 		disabled?: boolean | null;
 		extendedMetadata?: PVExtendedMetadata;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length?: number | null;
 		name?: string | null;
 		publishDate?: Date | null;
@@ -251,9 +277,15 @@ export namespace MyNS {
 	}
 	export interface PVContractFormProperties {
 		author: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdBy: FormControl<number | null | undefined>,
 		disabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		publishDate: FormControl<Date | null | undefined>,
@@ -305,10 +337,14 @@ export namespace MyNS {
 	export enum EntryForApiContractStatus { Draft = 0, Finished = 1, Approved = 2, Locked = 3 }
 
 	export interface TagUsageForApiContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		tag?: TagBaseContract;
 	}
 	export interface TagUsageForApiContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateTagUsageForApiContractFormGroup() {
@@ -321,6 +357,8 @@ export namespace MyNS {
 	export interface TagBaseContract {
 		additionalNames?: string | null;
 		categoryName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		urlSlug?: string | null;
@@ -328,6 +366,8 @@ export namespace MyNS {
 	export interface TagBaseContractFormProperties {
 		additionalNames: FormControl<string | null | undefined>,
 		categoryName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
@@ -392,13 +432,21 @@ export namespace MyNS {
 		createDate?: Date | null;
 		deleted?: boolean | null;
 		discType?: EntryForApiContractDiscType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
+
+		/** Type: double */
 		ratingAverage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingCount?: number | null;
 		releaseDate?: OptionalDateTimeContract;
 		releaseEvent?: ReleaseEventForApiContract;
 		status?: EntryForApiContractStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface AlbumContractFormProperties {
@@ -408,11 +456,19 @@ export namespace MyNS {
 		createDate: FormControl<Date | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
 		discType: FormControl<EntryForApiContractDiscType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ratingAverage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingCount: FormControl<number | null | undefined>,
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumContractFormGroup() {
@@ -434,17 +490,29 @@ export namespace MyNS {
 	}
 
 	export interface OptionalDateTimeContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		day?: number | null;
 		formatted?: string | null;
 		isEmpty?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year?: number | null;
 	}
 	export interface OptionalDateTimeContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		day: FormControl<number | null | undefined>,
 		formatted: FormControl<string | null | undefined>,
 		isEmpty: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateOptionalDateTimeContractFormGroup() {
@@ -465,18 +533,26 @@ export namespace MyNS {
 		date?: Date | null;
 		description?: string | null;
 		endDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
 		name?: string | null;
 		names?: Array<LocalizedStringContract>;
 		series?: ReleaseEventSeriesContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seriesId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seriesNumber?: number | null;
 		seriesSuffix?: string | null;
 		songList?: SongListBaseContract;
 		status?: EntryForApiContractStatus | null;
 		urlSlug?: string | null;
 		venueName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -486,14 +562,22 @@ export namespace MyNS {
 		date: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		endDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seriesId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seriesNumber: FormControl<number | null | undefined>,
 		seriesSuffix: FormControl<string | null | undefined>,
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
 		venueName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateReleaseEventForApiContractFormGroup() {
@@ -519,12 +603,16 @@ export namespace MyNS {
 	export interface ArtistForEventContract {
 		artist?: ArtistContract;
 		effectiveRoles?: ArtistForEventContractEffectiveRoles | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		roles?: ArtistForEventContractEffectiveRoles | null;
 	}
 	export interface ArtistForEventContractFormProperties {
 		effectiveRoles: FormControl<ArtistForEventContractEffectiveRoles | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		roles: FormControl<ArtistForEventContractEffectiveRoles | null | undefined>,
@@ -543,22 +631,30 @@ export namespace MyNS {
 		additionalNames?: string | null;
 		artistType?: EntryForApiContractArtistType | null;
 		deleted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		pictureMime?: string | null;
 		releaseDate?: Date | null;
 		status?: EntryForApiContractStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface ArtistContractFormProperties {
 		additionalNames: FormControl<string | null | undefined>,
 		artistType: FormControl<EntryForApiContractArtistType | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		pictureMime: FormControl<string | null | undefined>,
 		releaseDate: FormControl<Date | null | undefined>,
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateArtistContractFormGroup() {
@@ -583,11 +679,15 @@ export namespace MyNS {
 		category?: EntryForApiContractEventCategory | null;
 		deleted?: boolean | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		pictureMime?: string | null;
 		status?: EntryForApiContractStatus | null;
 		urlSlug?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkContract>;
 	}
@@ -596,11 +696,15 @@ export namespace MyNS {
 		category: FormControl<EntryForApiContractEventCategory | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		pictureMime: FormControl<string | null | undefined>,
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateReleaseEventSeriesContractFormGroup() {
@@ -623,6 +727,8 @@ export namespace MyNS {
 		category?: ArchivedWebLinkContractCategory | null;
 		description?: string | null;
 		descriptionOrUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		url?: string | null;
 	}
@@ -630,6 +736,8 @@ export namespace MyNS {
 		category: FormControl<ArchivedWebLinkContractCategory | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		descriptionOrUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -646,11 +754,15 @@ export namespace MyNS {
 
 	export interface SongListBaseContract {
 		featuredCategory?: EntryForApiContractSongListFeaturedCategory | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface SongListBaseContractFormProperties {
 		featuredCategory: FormControl<EntryForApiContractSongListFeaturedCategory | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -666,12 +778,16 @@ export namespace MyNS {
 	export interface WebLinkForApiContract {
 		category?: ArchivedWebLinkContractCategory | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		url?: string | null;
 	}
 	export interface WebLinkForApiContractFormProperties {
 		category: FormControl<ArchivedWebLinkContractCategory | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -686,13 +802,21 @@ export namespace MyNS {
 	}
 
 	export interface AlbumDiscPropertiesContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		discNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mediaType?: AlbumDiscPropertiesContractMediaType | null;
 		name?: string | null;
 	}
 	export interface AlbumDiscPropertiesContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		discNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		mediaType: FormControl<AlbumDiscPropertiesContractMediaType | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -722,20 +846,30 @@ export namespace MyNS {
 		description?: string | null;
 		discType?: EntryForApiContractDiscType | null;
 		discs?: Array<AlbumDiscPropertiesContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		identifiers?: Array<AlbumIdentifierContract>;
 		mainPicture?: EntryThumbForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo?: number | null;
 		name?: string | null;
 		names?: Array<LocalizedStringContract>;
 		pvs?: Array<PVContract>;
+
+		/** Type: double */
 		ratingAverage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingCount?: number | null;
 		releaseDate?: OptionalDateTimeContract;
 		releaseEvent?: ReleaseEventForApiContract;
 		status?: EntryForApiContractStatus | null;
 		tags?: Array<TagUsageForApiContract>;
 		tracks?: Array<SongInAlbumForApiContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -750,12 +884,22 @@ export namespace MyNS {
 		deleted: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		discType: FormControl<EntryForApiContractDiscType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ratingAverage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingCount: FormControl<number | null | undefined>,
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumForApiContractFormGroup() {
@@ -825,16 +969,28 @@ export namespace MyNS {
 	}
 
 	export interface SongInAlbumForApiContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		discNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		song?: SongForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		trackNumber?: number | null;
 	}
 	export interface SongInAlbumForApiContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		discNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		trackNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateSongInAlbumForApiContractFormGroup() {
@@ -856,24 +1012,38 @@ export namespace MyNS {
 		defaultName?: string | null;
 		defaultNameLanguage?: EntryForApiContractDefaultNameLanguage | null;
 		deleted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favoritedTimes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lengthSeconds?: number | null;
 		lyrics?: Array<LyricsForSongContract>;
 		mainPicture?: EntryThumbForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo?: number | null;
 		name?: string | null;
 		names?: Array<LocalizedStringContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		originalVersionId?: number | null;
 		publishDate?: Date | null;
 		pvServices?: SongForApiContractPvServices | null;
 		pvs?: Array<PVContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingScore?: number | null;
 		releaseEvent?: ReleaseEventForApiContract;
 		songType?: EntryForApiContractSongType | null;
 		status?: EntryForApiContractStatus | null;
 		tags?: Array<TagUsageForApiContract>;
 		thumbUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -884,18 +1054,32 @@ export namespace MyNS {
 		defaultName: FormControl<string | null | undefined>,
 		defaultNameLanguage: FormControl<EntryForApiContractDefaultNameLanguage | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favoritedTimes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lengthSeconds: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		originalVersionId: FormControl<number | null | undefined>,
 		publishDate: FormControl<Date | null | undefined>,
 		pvServices: FormControl<SongForApiContractPvServices | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingScore: FormControl<number | null | undefined>,
 		songType: FormControl<EntryForApiContractSongType | null | undefined>,
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
 		thumbUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateSongForApiContractFormGroup() {
@@ -927,6 +1111,8 @@ export namespace MyNS {
 		artist?: ArtistContract;
 		categories?: ArtistForAlbumForApiContractCategories | null;
 		effectiveRoles?: ArtistForAlbumForApiContractEffectiveRoles | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isCustomName?: boolean | null;
 		isSupport?: boolean | null;
@@ -936,6 +1122,8 @@ export namespace MyNS {
 	export interface ArtistForSongContractFormProperties {
 		categories: FormControl<ArtistForAlbumForApiContractCategories | null | undefined>,
 		effectiveRoles: FormControl<ArtistForAlbumForApiContractEffectiveRoles | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isCustomName: FormControl<boolean | null | undefined>,
 		isSupport: FormControl<boolean | null | undefined>,
@@ -957,6 +1145,8 @@ export namespace MyNS {
 
 	export interface LyricsForSongContract {
 		cultureCode?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		source?: string | null;
 		translationType?: LyricsForSongContractTranslationType | null;
@@ -965,6 +1155,8 @@ export namespace MyNS {
 	}
 	export interface LyricsForSongContractFormProperties {
 		cultureCode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		source: FormControl<string | null | undefined>,
 		translationType: FormControl<LyricsForSongContractTranslationType | null | undefined>,
@@ -991,12 +1183,16 @@ export namespace MyNS {
 		album?: AlbumForApiContract;
 		mediaType?: AlbumForUserForApiContractMediaType | null;
 		purchaseStatus?: AlbumForUserForApiContractPurchaseStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating?: number | null;
 		user?: UserForApiContract;
 	}
 	export interface AlbumForUserForApiContractFormProperties {
 		mediaType: FormControl<AlbumForUserForApiContractMediaType | null | undefined>,
 		purchaseStatus: FormControl<AlbumForUserForApiContractPurchaseStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumForUserForApiContractFormGroup() {
@@ -1013,8 +1209,12 @@ export namespace MyNS {
 	export enum AlbumForUserForApiContractPurchaseStatus { Nothing = 0, Wishlisted = 1, Ordered = 2, Owned = 3 }
 
 	export interface AlbumReviewContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		albumId?: number | null;
 		date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		languageCode?: string | null;
 		text?: string | null;
@@ -1022,8 +1222,12 @@ export namespace MyNS {
 		user?: UserForApiContract;
 	}
 	export interface AlbumReviewContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		albumId: FormControl<number | null | undefined>,
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		languageCode: FormControl<string | null | undefined>,
 		text: FormControl<string | null | undefined>,
@@ -1052,8 +1256,12 @@ export namespace MyNS {
 		defaultNameLanguage?: EntryForApiContractDefaultNameLanguage | null;
 		deleted?: boolean | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo?: number | null;
 		name?: string | null;
 		names?: Array<LocalizedStringContract>;
@@ -1062,6 +1270,8 @@ export namespace MyNS {
 		releaseDate?: Date | null;
 		status?: EntryForApiContractStatus | null;
 		tags?: Array<TagUsageForApiContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -1073,12 +1283,18 @@ export namespace MyNS {
 		defaultNameLanguage: FormControl<EntryForApiContractDefaultNameLanguage | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		pictureMime: FormControl<string | null | undefined>,
 		releaseDate: FormControl<Date | null | undefined>,
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateArtistForApiContractFormGroup() {
@@ -1148,12 +1364,16 @@ export namespace MyNS {
 		authorName?: string | null;
 		created?: Date | null;
 		entry?: EntryRefContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		message?: string | null;
 	}
 	export interface CommentForApiContractFormProperties {
 		authorName: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1169,10 +1389,14 @@ export namespace MyNS {
 
 	export interface EntryRefContract {
 		entryType?: EntryForApiContractEntryType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface EntryRefContractFormProperties {
 		entryType: FormControl<EntryForApiContractEntryType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateEntryRefContractFormGroup() {
@@ -1203,17 +1427,25 @@ export namespace MyNS {
 
 	export interface DiscussionFolderContract {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		lastTopicAuthor?: UserForApiContract;
 		lastTopicDate?: Date | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topicCount?: number | null;
 	}
 	export interface DiscussionFolderContractFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		lastTopicDate: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topicCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDiscussionFolderContractFormGroup() {
@@ -1229,21 +1461,33 @@ export namespace MyNS {
 
 	export interface DiscussionTopicContract {
 		author?: UserForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		commentCount?: number | null;
 		comments?: Array<CommentForApiContract>;
 		content?: string | null;
 		created?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		folderId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		lastComment?: CommentForApiContract;
 		locked?: boolean | null;
 		name?: string | null;
 	}
 	export interface DiscussionTopicContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		commentCount: FormControl<number | null | undefined>,
 		content: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		folderId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		locked: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -1279,14 +1523,22 @@ export namespace MyNS {
 
 	export interface EntryThumbContract {
 		entryType?: EntryForApiContractEntryType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface EntryThumbContractFormProperties {
 		entryType: FormControl<EntryForApiContractEntryType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		mime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateEntryThumbContractFormGroup() {
@@ -1300,11 +1552,15 @@ export namespace MyNS {
 	}
 
 	export interface LocalizedStringWithIdContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		language?: EntryForApiContractDefaultNameLanguage | null;
 		value?: string | null;
 	}
 	export interface LocalizedStringWithIdContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		language: FormControl<EntryForApiContractDefaultNameLanguage | null | undefined>,
 		value: FormControl<string | null | undefined>,
@@ -1320,10 +1576,16 @@ export namespace MyNS {
 
 	export interface PVForSongContract {
 		author?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdBy?: number | null;
 		disabled?: boolean | null;
 		extendedMetadata?: PVExtendedMetadata;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length?: number | null;
 		name?: string | null;
 		publishDate?: Date | null;
@@ -1336,9 +1598,15 @@ export namespace MyNS {
 	}
 	export interface PVForSongContractFormProperties {
 		author: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdBy: FormControl<number | null | undefined>,
 		disabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		publishDate: FormControl<Date | null | undefined>,
@@ -1371,17 +1639,27 @@ export namespace MyNS {
 		artistString?: string | null;
 		createDate?: Date | null;
 		deleted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favoritedTimes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lengthSeconds?: number | null;
 		name?: string | null;
 		nicoId?: string | null;
 		publishDate?: Date | null;
 		pvServices?: SongForApiContractPvServices | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingScore?: number | null;
 		songType?: EntryForApiContractSongType | null;
 		status?: EntryForApiContractStatus | null;
 		thumbUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface SongContractFormProperties {
@@ -1389,17 +1667,27 @@ export namespace MyNS {
 		artistString: FormControl<string | null | undefined>,
 		createDate: FormControl<Date | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favoritedTimes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lengthSeconds: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		nicoId: FormControl<string | null | undefined>,
 		publishDate: FormControl<Date | null | undefined>,
 		pvServices: FormControl<SongForApiContractPvServices | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingScore: FormControl<number | null | undefined>,
 		songType: FormControl<EntryForApiContractSongType | null | undefined>,
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
 		thumbUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateSongContractFormGroup() {
@@ -1427,10 +1715,14 @@ export namespace MyNS {
 	export interface PartialFindResult_ActivityEntryForApiContract {
 		items?: Array<ActivityEntryForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_ActivityEntryForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_ActivityEntryForApiContractFormGroup() {
@@ -1444,10 +1736,14 @@ export namespace MyNS {
 	export interface PartialFindResult_AlbumForApiContract {
 		items?: Array<AlbumForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_AlbumForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_AlbumForApiContractFormGroup() {
@@ -1461,10 +1757,14 @@ export namespace MyNS {
 	export interface PartialFindResult_AlbumForUserForApiContract {
 		items?: Array<AlbumForUserForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_AlbumForUserForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_AlbumForUserForApiContractFormGroup() {
@@ -1478,10 +1778,14 @@ export namespace MyNS {
 	export interface PartialFindResult_ArtistForApiContract {
 		items?: Array<ArtistForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_ArtistForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_ArtistForApiContractFormGroup() {
@@ -1495,10 +1799,14 @@ export namespace MyNS {
 	export interface PartialFindResult_ArtistForUserForApiContract {
 		items?: Array<ArtistForUserForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_ArtistForUserForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_ArtistForUserForApiContractFormGroup() {
@@ -1512,10 +1820,14 @@ export namespace MyNS {
 	export interface PartialFindResult_CommentForApiContract {
 		items?: Array<CommentForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_CommentForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_CommentForApiContractFormGroup() {
@@ -1529,10 +1841,14 @@ export namespace MyNS {
 	export interface PartialFindResult_DiscussionTopicContract {
 		items?: Array<DiscussionTopicContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_DiscussionTopicContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_DiscussionTopicContractFormGroup() {
@@ -1546,10 +1862,14 @@ export namespace MyNS {
 	export interface PartialFindResult_EntryForApiContract {
 		items?: Array<EntryForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_EntryForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_EntryForApiContractFormGroup() {
@@ -1563,10 +1883,14 @@ export namespace MyNS {
 	export interface PartialFindResult_PVForSongContract {
 		items?: Array<PVForSongContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_PVForSongContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_PVForSongContractFormGroup() {
@@ -1580,10 +1904,14 @@ export namespace MyNS {
 	export interface PartialFindResult_RatedSongForUserForApiContract {
 		items?: Array<RatedSongForUserForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_RatedSongForUserForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_RatedSongForUserForApiContractFormGroup() {
@@ -1617,10 +1945,14 @@ export namespace MyNS {
 	export interface PartialFindResult_ReleaseEventForApiContract {
 		items?: Array<ReleaseEventForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_ReleaseEventForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_ReleaseEventForApiContractFormGroup() {
@@ -1634,10 +1966,14 @@ export namespace MyNS {
 	export interface PartialFindResult_ReleaseEventSeriesContract {
 		items?: Array<ReleaseEventSeriesContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_ReleaseEventSeriesContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_ReleaseEventSeriesContractFormGroup() {
@@ -1651,10 +1987,14 @@ export namespace MyNS {
 	export interface PartialFindResult_SongForApiContract {
 		items?: Array<SongForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_SongForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_SongForApiContractFormGroup() {
@@ -1668,10 +2008,14 @@ export namespace MyNS {
 	export interface PartialFindResult_SongInListForApiContract {
 		items?: Array<SongInListForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_SongInListForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_SongInListForApiContractFormGroup() {
@@ -1684,11 +2028,15 @@ export namespace MyNS {
 
 	export interface SongInListForApiContract {
 		notes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		song?: SongForApiContract;
 	}
 	export interface SongInListForApiContractFormProperties {
 		notes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateSongInListForApiContractFormGroup() {
@@ -1702,10 +2050,14 @@ export namespace MyNS {
 	export interface PartialFindResult_SongListForApiContract {
 		items?: Array<SongListForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_SongListForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_SongListForApiContractFormGroup() {
@@ -1720,6 +2072,8 @@ export namespace MyNS {
 		author?: UserForApiContract;
 		eventDate?: Date | null;
 		featuredCategory?: EntryForApiContractSongListFeaturedCategory | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
 		name?: string | null;
@@ -1727,6 +2081,8 @@ export namespace MyNS {
 	export interface SongListForApiContractFormProperties {
 		eventDate: FormControl<Date | null | undefined>,
 		featuredCategory: FormControl<EntryForApiContractSongListFeaturedCategory | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -1743,10 +2099,14 @@ export namespace MyNS {
 	export interface PartialFindResult_TagForApiContract {
 		items?: Array<TagForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_TagForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_TagForApiContractFormGroup() {
@@ -1764,6 +2124,8 @@ export namespace MyNS {
 		createDate?: Date | null;
 		defaultNameLanguage?: EntryForApiContractDefaultNameLanguage | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
 		name?: string | null;
@@ -1771,10 +2133,16 @@ export namespace MyNS {
 		parent?: TagBaseContract;
 		relatedTags?: Array<TagBaseContract>;
 		status?: EntryForApiContractStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targets?: number | null;
 		translatedDescription?: EnglishTranslatedStringContract;
 		urlSlug?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usageCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -1784,12 +2152,20 @@ export namespace MyNS {
 		createDate: FormControl<Date | null | undefined>,
 		defaultNameLanguage: FormControl<EntryForApiContractDefaultNameLanguage | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targets: FormControl<number | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usageCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateTagForApiContractFormGroup() {
@@ -1813,10 +2189,14 @@ export namespace MyNS {
 	export interface PartialFindResult_UserForApiContract {
 		items?: Array<UserForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_UserForApiContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_UserForApiContractFormGroup() {
@@ -1830,10 +2210,14 @@ export namespace MyNS {
 	export interface PartialFindResult_UserMessageContract {
 		items?: Array<UserMessageContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PartialFindResult_UserMessageContractFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePartialFindResult_UserMessageContractFormGroup() {
@@ -1848,6 +2232,8 @@ export namespace MyNS {
 		body?: string | null;
 		createdFormatted?: string | null;
 		highPriority?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		inbox?: UserMessageContractInbox | null;
 		read?: boolean | null;
@@ -1859,6 +2245,8 @@ export namespace MyNS {
 		body: FormControl<string | null | undefined>,
 		createdFormatted: FormControl<string | null | undefined>,
 		highPriority: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		inbox: FormControl<UserMessageContractInbox | null | undefined>,
 		read: FormControl<boolean | null | undefined>,
@@ -1894,13 +2282,21 @@ export namespace MyNS {
 
 	export interface SongInListEditContract {
 		notes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		song?: SongForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		songInListId?: number | null;
 	}
 	export interface SongInListEditContractFormProperties {
 		notes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		songInListId: FormControl<number | null | undefined>,
 	}
 	export function CreateSongInListEditContractFormGroup() {
@@ -1919,12 +2315,16 @@ export namespace MyNS {
 		description?: string | null;
 		eventDate?: Date | null;
 		featuredCategory?: EntryForApiContractSongListFeaturedCategory | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		songLinks?: Array<SongInListEditContract>;
 		status?: EntryForApiContractStatus | null;
 		thumb?: EntryThumbContract;
 		updateNotes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface SongListForEditContractFormProperties {
@@ -1933,10 +2333,14 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		eventDate: FormControl<Date | null | undefined>,
 		featuredCategory: FormControl<EntryForApiContractSongListFeaturedCategory | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<EntryForApiContractStatus | null | undefined>,
 		updateNotes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateSongListForEditContractFormGroup() {
@@ -1957,11 +2361,15 @@ export namespace MyNS {
 
 	export interface UserWithEmailContract {
 		email?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface UserWithEmailContractFormProperties {
 		email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -2158,6 +2566,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums/{id}/reviews
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<AlbumReviewContract>} OK
 		 */
 		ApiAlbums_idReviewsGetByLanguageCode(id: number, languageCode: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<AlbumReviewContract>> {
@@ -2166,6 +2575,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/albums/{id}/reviews
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AlbumReviewContract} OK
 		 */
 		ApiAlbums_idReviewsPost(id: number, requestBody: AlbumReviewContract, headersHandler?: () => HttpHeaders): Observable<AlbumReviewContract> {
@@ -2174,6 +2584,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/albums/{id}/reviews/{reviewId}
+		 * @param {number} reviewId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiAlbums_idReviews_reviewIdDelete(reviewId: number, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2194,6 +2605,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums/{id}/tracks/fields
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discNumber Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} OK
 		 */
 		ApiAlbums_idTracksFieldsGetByFieldAndDiscNumberAndLang(id: number, field: Array<string> | null | undefined, discNumber: number | null | undefined, lang: ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2202,6 +2615,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums/{id}/user-collections
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<AlbumForUserForApiContract>} OK
 		 */
 		ApiAlbums_idUser_collectionsGetByLanguagePreference(id: number, languagePreference: ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<AlbumForUserForApiContract>> {
@@ -2371,6 +2785,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/discussions/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiDiscussionsComments_commentIdPost(commentId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2379,6 +2794,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/discussions/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiDiscussionsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2403,6 +2819,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/discussions/folders/{folderId}/topics
+		 * @param {number} folderId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<DiscussionTopicContract>} OK
 		 */
 		ApiDiscussionsFolders_folderIdTopicsGetByFields(folderId: number, fields: ApiDiscussionsFolders_folderIdTopicsGetByFieldsFields | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<DiscussionTopicContract>> {
@@ -2411,6 +2828,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/discussions/folders/{folderId}/topics
+		 * @param {number} folderId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DiscussionTopicContract} OK
 		 */
 		ApiDiscussionsFolders_folderIdTopicsPost(folderId: number, requestBody: DiscussionTopicContract, headersHandler?: () => HttpHeaders): Observable<DiscussionTopicContract> {
@@ -2419,6 +2837,9 @@ export namespace MyNS {
 
 		/**
 		 * Get api/discussions/topics
+		 * @param {number} folderId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PartialFindResult_DiscussionTopicContract} OK
 		 */
 		ApiDiscussionsTopicsGetByFolderIdAndStartAndMaxResultsAndGetTotalCountAndSortAndFields(folderId: number | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: ApiDiscussionsTopicsGetByFolderIdAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsSort | null | undefined, fields: ApiDiscussionsFolders_folderIdTopicsGetByFieldsFields | null | undefined, headersHandler?: () => HttpHeaders): Observable<PartialFindResult_DiscussionTopicContract> {
@@ -2427,6 +2848,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/discussions/topics/{topicId}
+		 * @param {number} topicId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DiscussionTopicContract} OK
 		 */
 		ApiDiscussionsTopics_topicIdGetByFields(topicId: number, fields: ApiDiscussionsFolders_folderIdTopicsGetByFieldsFields | null | undefined, headersHandler?: () => HttpHeaders): Observable<DiscussionTopicContract> {
@@ -2435,6 +2857,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/discussions/topics/{topicId}
+		 * @param {number} topicId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiDiscussionsTopics_topicIdPost(topicId: number, requestBody: DiscussionTopicContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2443,6 +2866,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/discussions/topics/{topicId}
+		 * @param {number} topicId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiDiscussionsTopics_topicIdDelete(topicId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2451,6 +2875,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/discussions/topics/{topicId}/comments
+		 * @param {number} topicId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContract} OK
 		 */
 		ApiDiscussionsTopics_topicIdCommentsPost(topicId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<CommentForApiContract> {
@@ -2612,6 +3037,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/releaseEvents/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReleaseEventForApiContract} OK
 		 */
 		ApiReleaseEvents_idGetByFieldsAndLang(id: number, fields: ApiReleaseEventsGetByQueryAndNameMatchModeAndSeriesIdAndAfterDateAndBeforeDateAndCategoryAndUserCollectionIdAndTagIdAndChildTagsAndArtistIdAndChildVoicebanksAndIncludeMembersAndStatusAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsAndLangFields | null | undefined, lang: ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang | null | undefined, headersHandler?: () => HttpHeaders): Observable<ReleaseEventForApiContract> {
@@ -3226,6 +3652,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/current/followedTags/{tagId}
+		 * @param {number} tagId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiUsersCurrentFollowedTags_tagIdPost(tagId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3234,6 +3661,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/users/current/followedTags/{tagId}
+		 * @param {number} tagId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiUsersCurrentFollowedTags_tagIdDelete(tagId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3498,6 +3926,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/{id}/reports
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {boolean} OK
 		 */
 		ApiUsers_idReportsPost(id: number, requestBody: CreateReportModel, headersHandler?: () => HttpHeaders): Observable<boolean> {
@@ -3518,6 +3947,9 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/songLists
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PartialFindResult_SongListForApiContract} OK
 		 */
 		ApiUsers_idSongListsGetByQueryAndTagIdAndChildTagsAndNameMatchModeAndStartAndMaxResultsAndGetTotalCountAndSortAndFields(id: number, query: string | null | undefined, tagId: Array<number> | null | undefined, childTags: boolean | null | undefined, nameMatchMode: ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: ApiSongListsFeaturedGetByQueryAndTagIdAndChildTagsAndNameMatchModeAndFeaturedCategoryAndStartAndMaxResultsAndGetTotalCountAndSortSort | null | undefined, fields: ApiUsers_idSongListsGetByQueryAndTagIdAndChildTagsAndNameMatchModeAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsFields | null | undefined, headersHandler?: () => HttpHeaders): Observable<PartialFindResult_SongListForApiContract> {

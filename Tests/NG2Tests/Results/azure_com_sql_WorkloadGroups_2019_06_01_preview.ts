@@ -79,25 +79,34 @@ export namespace MyNS {
 		/**
 		 * The workload group cap percentage resource.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxResourcePercent: number;
 
-		/** The workload group request maximum grant percentage. */
+		/**
+		 * The workload group request maximum grant percentage.
+		 * Type: double
+		 */
 		maxResourcePercentPerRequest?: number | null;
 
 		/**
 		 * The workload group minimum percentage resource.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minResourcePercent: number;
 
 		/**
 		 * The workload group request minimum grant percentage.
 		 * Required
+		 * Type: double
 		 */
 		minResourcePercentPerRequest: number;
 
-		/** The workload group query execution timeout. */
+		/**
+		 * The workload group query execution timeout.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queryExecutionTimeout?: number | null;
 	}
 
@@ -110,25 +119,34 @@ export namespace MyNS {
 		/**
 		 * The workload group cap percentage resource.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxResourcePercent: FormControl<number | null | undefined>,
 
-		/** The workload group request maximum grant percentage. */
+		/**
+		 * The workload group request maximum grant percentage.
+		 * Type: double
+		 */
 		maxResourcePercentPerRequest: FormControl<number | null | undefined>,
 
 		/**
 		 * The workload group minimum percentage resource.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minResourcePercent: FormControl<number | null | undefined>,
 
 		/**
 		 * The workload group request minimum grant percentage.
 		 * Required
+		 * Type: double
 		 */
 		minResourcePercentPerRequest: FormControl<number | null | undefined>,
 
-		/** The workload group query execution timeout. */
+		/**
+		 * The workload group query execution timeout.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queryExecutionTimeout: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkloadGroupPropertiesFormGroup() {

@@ -182,24 +182,42 @@ export namespace MyNS {
 
 	export interface CapabilitiesCapabilities {
 
-		/** The maximum allowed CPU request in cores. */
+		/**
+		 * The maximum allowed CPU request in cores.
+		 * Type: double
+		 */
 		maxCpu?: number | null;
 
-		/** The maximum allowed GPU count. */
+		/**
+		 * The maximum allowed GPU count.
+		 * Type: double
+		 */
 		maxGpuCount?: number | null;
 
-		/** The maximum allowed memory request in GB. */
+		/**
+		 * The maximum allowed memory request in GB.
+		 * Type: double
+		 */
 		maxMemoryInGB?: number | null;
 	}
 	export interface CapabilitiesCapabilitiesFormProperties {
 
-		/** The maximum allowed CPU request in cores. */
+		/**
+		 * The maximum allowed CPU request in cores.
+		 * Type: double
+		 */
 		maxCpu: FormControl<number | null | undefined>,
 
-		/** The maximum allowed GPU count. */
+		/**
+		 * The maximum allowed GPU count.
+		 * Type: double
+		 */
 		maxGpuCount: FormControl<number | null | undefined>,
 
-		/** The maximum allowed memory request in GB. */
+		/**
+		 * The maximum allowed memory request in GB.
+		 * Type: double
+		 */
 		maxMemoryInGB: FormControl<number | null | undefined>,
 	}
 	export function CreateCapabilitiesCapabilitiesFormGroup() {
@@ -429,12 +447,18 @@ export namespace MyNS {
 		/** The container instance state. */
 		previousState?: ContainerState;
 
-		/** The number of times that the container instance has been restarted. */
+		/**
+		 * The number of times that the container instance has been restarted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		restartCount?: number | null;
 	}
 	export interface ContainerPropertiesInstanceViewFormProperties {
 
-		/** The number of times that the container instance has been restarted. */
+		/**
+		 * The number of times that the container instance has been restarted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		restartCount: FormControl<number | null | undefined>,
 	}
 	export function CreateContainerPropertiesInstanceViewFormGroup() {
@@ -451,7 +475,10 @@ export namespace MyNS {
 		/** The human-readable status of the container instance state. */
 		detailStatus?: string | null;
 
-		/** The container instance exit codes correspond to those from the `docker run` command. */
+		/**
+		 * The container instance exit codes correspond to those from the `docker run` command.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** The date-time when the container instance state finished. */
@@ -470,7 +497,10 @@ export namespace MyNS {
 		/** The human-readable status of the container instance state. */
 		detailStatus: FormControl<string | null | undefined>,
 
-		/** The container instance exit codes correspond to those from the `docker run` command. */
+		/**
+		 * The container instance exit codes correspond to those from the `docker run` command.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** The date-time when the container instance state finished. */
@@ -497,7 +527,10 @@ export namespace MyNS {
 	/** A container group or container instance event. */
 	export interface Event {
 
-		/** The count of the event. */
+		/**
+		 * The count of the event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** The date-time of the earliest logged event. */
@@ -519,7 +552,10 @@ export namespace MyNS {
 	/** A container group or container instance event. */
 	export interface EventFormProperties {
 
-		/** The count of the event. */
+		/**
+		 * The count of the event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The date-time of the earliest logged event. */
@@ -556,41 +592,71 @@ export namespace MyNS {
 		/** The container execution command, for liveness or readiness probe */
 		exec?: ContainerExec;
 
-		/** The failure threshold. */
+		/**
+		 * The failure threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureThreshold?: number | null;
 
 		/** The container Http Get settings, for liveness or readiness probe */
 		httpGet?: ContainerHttpGet;
 
-		/** The initial delay seconds. */
+		/**
+		 * The initial delay seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialDelaySeconds?: number | null;
 
-		/** The period seconds. */
+		/**
+		 * The period seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSeconds?: number | null;
 
-		/** The success threshold. */
+		/**
+		 * The success threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successThreshold?: number | null;
 
-		/** The timeout seconds. */
+		/**
+		 * The timeout seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds?: number | null;
 	}
 
 	/** The container probe, for liveness or readiness */
 	export interface ContainerProbeFormProperties {
 
-		/** The failure threshold. */
+		/**
+		 * The failure threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureThreshold: FormControl<number | null | undefined>,
 
-		/** The initial delay seconds. */
+		/**
+		 * The initial delay seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialDelaySeconds: FormControl<number | null | undefined>,
 
-		/** The period seconds. */
+		/**
+		 * The period seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSeconds: FormControl<number | null | undefined>,
 
-		/** The success threshold. */
+		/**
+		 * The success threshold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successThreshold: FormControl<number | null | undefined>,
 
-		/** The timeout seconds. */
+		/**
+		 * The timeout seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateContainerProbeFormGroup() {
@@ -631,6 +697,7 @@ export namespace MyNS {
 		/**
 		 * The port number to probe.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -647,6 +714,7 @@ export namespace MyNS {
 		/**
 		 * The port number to probe.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -671,6 +739,7 @@ export namespace MyNS {
 		/**
 		 * The port number exposed within the container group.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -684,6 +753,7 @@ export namespace MyNS {
 		/**
 		 * The port number exposed within the container group.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -727,23 +797,35 @@ export namespace MyNS {
 	/** The resource limits. */
 	export interface ResourceLimits {
 
-		/** The CPU limit of this container instance. */
+		/**
+		 * The CPU limit of this container instance.
+		 * Type: double
+		 */
 		cpu?: number | null;
 
 		/** The GPU resource. */
 		gpu?: GpuResource;
 
-		/** The memory limit in GB of this container instance. */
+		/**
+		 * The memory limit in GB of this container instance.
+		 * Type: double
+		 */
 		memoryInGB?: number | null;
 	}
 
 	/** The resource limits. */
 	export interface ResourceLimitsFormProperties {
 
-		/** The CPU limit of this container instance. */
+		/**
+		 * The CPU limit of this container instance.
+		 * Type: double
+		 */
 		cpu: FormControl<number | null | undefined>,
 
-		/** The memory limit in GB of this container instance. */
+		/**
+		 * The memory limit in GB of this container instance.
+		 * Type: double
+		 */
 		memoryInGB: FormControl<number | null | undefined>,
 	}
 	export function CreateResourceLimitsFormGroup() {
@@ -761,6 +843,7 @@ export namespace MyNS {
 		/**
 		 * The count of the GPU resource.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -777,6 +860,7 @@ export namespace MyNS {
 		/**
 		 * The count of the GPU resource.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -803,6 +887,7 @@ export namespace MyNS {
 		/**
 		 * The CPU request of this container instance.
 		 * Required
+		 * Type: double
 		 */
 		cpu: number;
 
@@ -812,6 +897,7 @@ export namespace MyNS {
 		/**
 		 * The memory request in GB of this container instance.
 		 * Required
+		 * Type: double
 		 */
 		memoryInGB: number;
 	}
@@ -822,12 +908,14 @@ export namespace MyNS {
 		/**
 		 * The CPU request of this container instance.
 		 * Required
+		 * Type: double
 		 */
 		cpu: FormControl<number | null | undefined>,
 
 		/**
 		 * The memory request in GB of this container instance.
 		 * Required
+		 * Type: double
 		 */
 		memoryInGB: FormControl<number | null | undefined>,
 	}
@@ -912,18 +1000,30 @@ export namespace MyNS {
 
 	export interface ContainerExecRequestTerminalSize {
 
-		/** The column size of the terminal */
+		/**
+		 * The column size of the terminal
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cols?: number | null;
 
-		/** The row size of the terminal */
+		/**
+		 * The row size of the terminal
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows?: number | null;
 	}
 	export interface ContainerExecRequestTerminalSizeFormProperties {
 
-		/** The column size of the terminal */
+		/**
+		 * The column size of the terminal
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cols: FormControl<number | null | undefined>,
 
-		/** The row size of the terminal */
+		/**
+		 * The row size of the terminal
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows: FormControl<number | null | undefined>,
 	}
 	export function CreateContainerExecRequestTerminalSizeFormGroup() {
@@ -1296,6 +1396,7 @@ export namespace MyNS {
 		/**
 		 * The port number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: number;
 
@@ -1309,6 +1410,7 @@ export namespace MyNS {
 		/**
 		 * The port number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -1741,10 +1843,16 @@ export namespace MyNS {
 	/** A single usage result */
 	export interface Usage {
 
-		/** The current usage of the resource */
+		/**
+		 * The current usage of the resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue?: number | null;
 
-		/** The maximum permitted usage of the resource. */
+		/**
+		 * The maximum permitted usage of the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The name object of the resource */
@@ -1757,10 +1865,16 @@ export namespace MyNS {
 	/** A single usage result */
 	export interface UsageFormProperties {
 
-		/** The current usage of the resource */
+		/**
+		 * The current usage of the resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue: FormControl<number | null | undefined>,
 
-		/** The maximum permitted usage of the resource. */
+		/**
+		 * The maximum permitted usage of the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Unit of the usage result */

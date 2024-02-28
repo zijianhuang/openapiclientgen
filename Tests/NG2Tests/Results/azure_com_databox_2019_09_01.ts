@@ -789,35 +789,59 @@ export namespace MyNS {
 		/** Id of the account where the data needs to be uploaded. */
 		accountId?: string | null;
 
-		/** Amount of data uploaded by the job as of now. */
-		bytesSentToCloud?: number | null;
+		/**
+		 * Amount of data uploaded by the job as of now.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bytesSentToCloud?: string | null;
 
 		/** Data Destination Type. */
 		dataDestinationType?: AccountCredentialDetailsDataDestinationType | null;
 
-		/** Number of files which could not be copied */
-		filesErroredOut?: number | null;
+		/**
+		 * Number of files which could not be copied
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		filesErroredOut?: string | null;
 
-		/** Number of files processed by the job as of now. */
-		filesProcessed?: number | null;
+		/**
+		 * Number of files processed by the job as of now.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		filesProcessed?: string | null;
 
-		/** Total amount of data not adhering to azure naming conventions which were processed by automatic renaming */
-		invalidFileBytesUploaded?: number | null;
+		/**
+		 * Total amount of data not adhering to azure naming conventions which were processed by automatic renaming
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		invalidFileBytesUploaded?: string | null;
 
-		/** Number of files not adhering to azure naming conventions which were processed by automatic renaming */
-		invalidFilesProcessed?: number | null;
+		/**
+		 * Number of files not adhering to azure naming conventions which were processed by automatic renaming
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		invalidFilesProcessed?: string | null;
 
-		/** Number of folders not adhering to azure naming conventions which were processed by automatic renaming */
-		renamedContainerCount?: number | null;
+		/**
+		 * Number of folders not adhering to azure naming conventions which were processed by automatic renaming
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		renamedContainerCount?: string | null;
 
 		/** Name of the storage account where the data needs to be uploaded. */
 		storageAccountName?: string | null;
 
-		/** Total amount of data to be processed by the job. */
-		totalBytesToProcess?: number | null;
+		/**
+		 * Total amount of data to be processed by the job.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalBytesToProcess?: string | null;
 
-		/** Total number of files to be processed by the job. */
-		totalFilesToProcess?: number | null;
+		/**
+		 * Total number of files to be processed by the job.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalFilesToProcess?: string | null;
 	}
 
 	/** Copy progress. */
@@ -826,49 +850,73 @@ export namespace MyNS {
 		/** Id of the account where the data needs to be uploaded. */
 		accountId: FormControl<string | null | undefined>,
 
-		/** Amount of data uploaded by the job as of now. */
-		bytesSentToCloud: FormControl<number | null | undefined>,
+		/**
+		 * Amount of data uploaded by the job as of now.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bytesSentToCloud: FormControl<string | null | undefined>,
 
 		/** Data Destination Type. */
 		dataDestinationType: FormControl<AccountCredentialDetailsDataDestinationType | null | undefined>,
 
-		/** Number of files which could not be copied */
-		filesErroredOut: FormControl<number | null | undefined>,
+		/**
+		 * Number of files which could not be copied
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		filesErroredOut: FormControl<string | null | undefined>,
 
-		/** Number of files processed by the job as of now. */
-		filesProcessed: FormControl<number | null | undefined>,
+		/**
+		 * Number of files processed by the job as of now.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		filesProcessed: FormControl<string | null | undefined>,
 
-		/** Total amount of data not adhering to azure naming conventions which were processed by automatic renaming */
-		invalidFileBytesUploaded: FormControl<number | null | undefined>,
+		/**
+		 * Total amount of data not adhering to azure naming conventions which were processed by automatic renaming
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		invalidFileBytesUploaded: FormControl<string | null | undefined>,
 
-		/** Number of files not adhering to azure naming conventions which were processed by automatic renaming */
-		invalidFilesProcessed: FormControl<number | null | undefined>,
+		/**
+		 * Number of files not adhering to azure naming conventions which were processed by automatic renaming
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		invalidFilesProcessed: FormControl<string | null | undefined>,
 
-		/** Number of folders not adhering to azure naming conventions which were processed by automatic renaming */
-		renamedContainerCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of folders not adhering to azure naming conventions which were processed by automatic renaming
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		renamedContainerCount: FormControl<string | null | undefined>,
 
 		/** Name of the storage account where the data needs to be uploaded. */
 		storageAccountName: FormControl<string | null | undefined>,
 
-		/** Total amount of data to be processed by the job. */
-		totalBytesToProcess: FormControl<number | null | undefined>,
+		/**
+		 * Total amount of data to be processed by the job.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalBytesToProcess: FormControl<string | null | undefined>,
 
-		/** Total number of files to be processed by the job. */
-		totalFilesToProcess: FormControl<number | null | undefined>,
+		/**
+		 * Total number of files to be processed by the job.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalFilesToProcess: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyProgressFormGroup() {
 		return new FormGroup<CopyProgressFormProperties>({
 			accountId: new FormControl<string | null | undefined>(undefined),
-			bytesSentToCloud: new FormControl<number | null | undefined>(undefined),
+			bytesSentToCloud: new FormControl<string | null | undefined>(undefined),
 			dataDestinationType: new FormControl<AccountCredentialDetailsDataDestinationType | null | undefined>(undefined),
-			filesErroredOut: new FormControl<number | null | undefined>(undefined),
-			filesProcessed: new FormControl<number | null | undefined>(undefined),
-			invalidFileBytesUploaded: new FormControl<number | null | undefined>(undefined),
-			invalidFilesProcessed: new FormControl<number | null | undefined>(undefined),
-			renamedContainerCount: new FormControl<number | null | undefined>(undefined),
+			filesErroredOut: new FormControl<string | null | undefined>(undefined),
+			filesProcessed: new FormControl<string | null | undefined>(undefined),
+			invalidFileBytesUploaded: new FormControl<string | null | undefined>(undefined),
+			invalidFilesProcessed: new FormControl<string | null | undefined>(undefined),
+			renamedContainerCount: new FormControl<string | null | undefined>(undefined),
 			storageAccountName: new FormControl<string | null | undefined>(undefined),
-			totalBytesToProcess: new FormControl<number | null | undefined>(undefined),
-			totalFilesToProcess: new FormControl<number | null | undefined>(undefined),
+			totalBytesToProcess: new FormControl<string | null | undefined>(undefined),
+			totalFilesToProcess: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1004,10 +1052,16 @@ export namespace MyNS {
 	/** DataBox Disk Copy Progress */
 	export interface DataBoxDiskCopyProgress {
 
-		/** Bytes copied during the copy of disk. */
-		bytesCopied?: number | null;
+		/**
+		 * Bytes copied during the copy of disk.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bytesCopied?: string | null;
 
-		/** Indicates the percentage completed for the copy of the disk. */
+		/**
+		 * Indicates the percentage completed for the copy of the disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete?: number | null;
 
 		/** The serial number of the disk */
@@ -1020,10 +1074,16 @@ export namespace MyNS {
 	/** DataBox Disk Copy Progress */
 	export interface DataBoxDiskCopyProgressFormProperties {
 
-		/** Bytes copied during the copy of disk. */
-		bytesCopied: FormControl<number | null | undefined>,
+		/**
+		 * Bytes copied during the copy of disk.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bytesCopied: FormControl<string | null | undefined>,
 
-		/** Indicates the percentage completed for the copy of the disk. */
+		/**
+		 * Indicates the percentage completed for the copy of the disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** The serial number of the disk */
@@ -1034,7 +1094,7 @@ export namespace MyNS {
 	}
 	export function CreateDataBoxDiskCopyProgressFormGroup() {
 		return new FormGroup<DataBoxDiskCopyProgressFormProperties>({
-			bytesCopied: new FormControl<number | null | undefined>(undefined),
+			bytesCopied: new FormControl<string | null | undefined>(undefined),
 			percentComplete: new FormControl<number | null | undefined>(undefined),
 			serialNumber: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<DataBoxDiskCopyProgressStatus | null | undefined>(undefined),
@@ -1540,6 +1600,7 @@ export namespace MyNS {
 		/**
 		 * The expected size of the data, which needs to be transferred in this job, in terabytes.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expectedDataSizeInTerabytes: number;
 	}
@@ -1550,6 +1611,7 @@ export namespace MyNS {
 		/**
 		 * The expected size of the data, which needs to be transferred in this job, in terabytes.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expectedDataSizeInTerabytes: FormControl<number | null | undefined>,
 	}
@@ -1651,7 +1713,10 @@ export namespace MyNS {
 		/** Error details for failure. This is optional. */
 		errorDetails?: Array<JobErrorDetails>;
 
-		/** The expected size of the data, which needs to be transferred in this job, in terabytes. */
+		/**
+		 * The expected size of the data, which needs to be transferred in this job, in terabytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedDataSizeInTerabytes?: number | null;
 
 		/**
@@ -1685,7 +1750,10 @@ export namespace MyNS {
 		/** Shared access key to download the chain of custody logs */
 		chainOfCustodySasKey: FormControl<string | null | undefined>,
 
-		/** The expected size of the data, which needs to be transferred in this job, in terabytes. */
+		/**
+		 * The expected size of the data, which needs to be transferred in this job, in terabytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedDataSizeInTerabytes: FormControl<number | null | undefined>,
 
 		/**
@@ -1746,7 +1814,10 @@ export namespace MyNS {
 	/** Job Error Details for providing the information and recommended action. */
 	export interface JobErrorDetails {
 
-		/** Code for the error. */
+		/**
+		 * Code for the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode?: number | null;
 
 		/** Message for the error. */
@@ -1762,7 +1833,10 @@ export namespace MyNS {
 	/** Job Error Details for providing the information and recommended action. */
 	export interface JobErrorDetailsFormProperties {
 
-		/** Code for the error. */
+		/**
+		 * Code for the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode: FormControl<number | null | undefined>,
 
 		/** Message for the error. */

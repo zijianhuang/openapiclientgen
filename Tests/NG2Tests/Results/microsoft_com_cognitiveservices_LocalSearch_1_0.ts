@@ -160,24 +160,40 @@ export namespace MyNS {
 
 		/** Required */
 		_type: string;
+
+		/** Type: double */
 		elevation?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: number;
 	}
 	export interface GeoCoordinatesFormProperties {
 
 		/** Required */
 		_type: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		elevation: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGeoCoordinatesFormGroup() {
@@ -291,10 +307,14 @@ export namespace MyNS {
 
 		/** For internal use only. */
 		about?: Array<Thing>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		commentCount?: number | null;
 
 		/** Defines a thing. */
 		copyrightHolder?: Thing;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		copyrightYear?: number | null;
 
 		/** Defines a thing. */
@@ -324,7 +344,11 @@ export namespace MyNS {
 
 	/** The most generic kind of creative work, including books, movies, photographs, software programs, etc. */
 	export interface CreativeWorkFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		commentCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		copyrightYear: FormControl<number | null | undefined>,
 		disclaimer: FormControl<string | null | undefined>,
 		discussionUrl: FormControl<string | null | undefined>,
@@ -668,11 +692,15 @@ export namespace MyNS {
 
 		/** Defines the query context that Bing used for the request. */
 		queryContext?: QueryContext;
+
+		/** Type: float */
 		searchResultsConfidenceScore?: number | null;
 	}
 
 	/** Defines the top-level object that the response includes when the request succeeds. */
 	export interface SearchResponseFormProperties {
+
+		/** Type: float */
 		searchResultsConfidenceScore: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchResponseFormGroup() {
@@ -690,21 +718,27 @@ export namespace MyNS {
 		/** Defines the query context that Bing used for the request. */
 		queryContext?: QueryContext;
 
-		/** The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results. */
-		totalEstimatedMatches?: number | null;
+		/**
+		 * The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalEstimatedMatches?: string | null;
 	}
 
 	/** Defines a search result answer. */
 	export interface SearchResultsAnswerFormProperties {
 		isFamilyFriendly: FormControl<boolean | null | undefined>,
 
-		/** The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results. */
-		totalEstimatedMatches: FormControl<number | null | undefined>,
+		/**
+		 * The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalEstimatedMatches: FormControl<string | null | undefined>,
 	}
 	export function CreateSearchResultsAnswerFormGroup() {
 		return new FormGroup<SearchResultsAnswerFormProperties>({
 			isFamilyFriendly: new FormControl<boolean | null | undefined>(undefined),
-			totalEstimatedMatches: new FormControl<number | null | undefined>(undefined),
+			totalEstimatedMatches: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

@@ -393,10 +393,14 @@ export namespace MyNS {
 	}
 
 	export interface FlaggedUserProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		errorCount?: number | null;
 		friendlyName?: string | null;
 	}
 	export interface FlaggedUserPropertiesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		errorCount: FormControl<number | null | undefined>,
 		friendlyName: FormControl<string | null | undefined>,
 	}
@@ -619,9 +623,13 @@ export namespace MyNS {
 		groupStatus?: MAMPolicyPropertiesGroupStatus | null;
 		lastModifiedTime?: Date | null;
 		managedBrowser?: AndroidMAMPolicyPropertiesFileEncryption | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numOfApps?: number | null;
 		offlineWipeTimeout?: string | null;
 		pin?: AndroidMAMPolicyPropertiesFileEncryption | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pinNumRetry?: number | null;
 	}
 	export interface MAMPolicyPropertiesFormProperties {
@@ -641,9 +649,13 @@ export namespace MyNS {
 		groupStatus: FormControl<MAMPolicyPropertiesGroupStatus | null | undefined>,
 		lastModifiedTime: FormControl<Date | null | undefined>,
 		managedBrowser: FormControl<AndroidMAMPolicyPropertiesFileEncryption | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numOfApps: FormControl<number | null | undefined>,
 		offlineWipeTimeout: FormControl<string | null | undefined>,
 		pin: FormControl<AndroidMAMPolicyPropertiesFileEncryption | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pinNumRetry: FormControl<number | null | undefined>,
 	}
 	export function CreateMAMPolicyPropertiesFormGroup() {
@@ -844,25 +856,53 @@ export namespace MyNS {
 	}
 
 	export interface StatusesProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deployedPolicies?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		enrolledUsers?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flaggedUsers?: number | null;
 		lastModifiedTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		policyAppliedUsers?: number | null;
 		status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wipeFailedApps?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wipePendingApps?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wipeSucceededApps?: number | null;
 	}
 	export interface StatusesPropertiesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deployedPolicies: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		enrolledUsers: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flaggedUsers: FormControl<number | null | undefined>,
 		lastModifiedTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		policyAppliedUsers: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wipeFailedApps: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wipePendingApps: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wipeSucceededApps: FormControl<number | null | undefined>,
 	}
 	export function CreateStatusesPropertiesFormGroup() {
@@ -989,6 +1029,7 @@ export namespace MyNS {
 		 * @param {string} policyName Unique name for the policy
 		 * @param {string} api_version Service Api Version.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select select specific fields in entity.
 		 * @return {ApplicationCollection} applications as collection response
 		 */
@@ -1002,6 +1043,7 @@ export namespace MyNS {
 		 * @param {string} hostName Location hostName for the tenant
 		 * @param {string} api_version Service Api Version.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select select specific fields in entity.
 		 * @return {AndroidMAMPolicyCollection} android Policies response
 		 */
@@ -1132,6 +1174,7 @@ export namespace MyNS {
 		 * @param {string} hostName Location hostName for the tenant
 		 * @param {string} api_version Service Api Version.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select select specific fields in entity.
 		 * @return {ApplicationCollection} applications as collection response
 		 */
@@ -1145,6 +1188,7 @@ export namespace MyNS {
 		 * @param {string} hostName Location hostName for the tenant
 		 * @param {string} api_version Service Api Version.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select select specific fields in entity.
 		 * @return {FlaggedUserCollection} Flagged users as collection response
 		 */
@@ -1172,6 +1216,7 @@ export namespace MyNS {
 		 * @param {string} userName User name for the tenant
 		 * @param {string} api_version Service Api Version.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select select specific fields in entity.
 		 * @return {FlaggedEnrolledAppCollection} Flagged enrolled Apps as collection response
 		 */
@@ -1185,6 +1230,7 @@ export namespace MyNS {
 		 * @param {string} hostName Location hostName for the tenant
 		 * @param {string} api_version Service Api Version.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select select specific fields in entity.
 		 * @return {IOSMAMPolicyCollection} applications as collection response
 		 */
@@ -1250,6 +1296,7 @@ export namespace MyNS {
 		 * @param {string} policyName Unique name for the policy
 		 * @param {string} api_version Service Api Version.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select select specific fields in entity.
 		 * @return {ApplicationCollection} applications as collection response
 		 */
@@ -1329,6 +1376,7 @@ export namespace MyNS {
 		 * @param {string} hostName Location hostName for the tenant
 		 * @param {string} api_version Service Api Version.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select select specific fields in entity.
 		 * @return {OperationResultCollection} applications as collection response
 		 */
@@ -1354,6 +1402,7 @@ export namespace MyNS {
 		 * @param {string} userName user unique Name
 		 * @param {string} api_version Service Api Version.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select select specific fields in entity.
 		 * @return {DeviceCollection} devices as collection response
 		 */

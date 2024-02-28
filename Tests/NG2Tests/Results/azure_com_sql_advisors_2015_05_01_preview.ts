@@ -190,7 +190,10 @@ export namespace MyNS {
 		/** Gets the time when system started reverting changes of this recommended action on user resource. e.g., time when index drop is executed. */
 		revertActionStartTime?: Date | null;
 
-		/** Gets the impact of this recommended action. Possible values are 1 - Low impact, 2 - Medium Impact and 3 - High Impact */
+		/**
+		 * Gets the impact of this recommended action. Possible values are 1 - Low impact, 2 - Medium Impact and 3 - High Impact
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score?: number | null;
 
 		/**
@@ -251,7 +254,10 @@ export namespace MyNS {
 		/** Gets the time when system started reverting changes of this recommended action on user resource. e.g., time when index drop is executed. */
 		revertActionStartTime: FormControl<Date | null | undefined>,
 
-		/** Gets the impact of this recommended action. Possible values are 1 - Low impact, 2 - Medium Impact and 3 - High Impact */
+		/**
+		 * Gets the impact of this recommended action. Possible values are 1 - Low impact, 2 - Medium Impact and 3 - High Impact
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Gets the time since when this recommended action is valid. */
@@ -313,13 +319,22 @@ export namespace MyNS {
 	/** Contains information of estimated or observed impact on various metrics for an Azure SQL Database, Server or Elastic Pool Recommended Action. */
 	export interface RecommendedActionImpactRecord {
 
-		/** Gets the absolute value of this dimension if applicable. e.g., Number of Queries affected */
+		/**
+		 * Gets the absolute value of this dimension if applicable. e.g., Number of Queries affected
+		 * Type: double
+		 */
 		absoluteValue?: number | null;
 
-		/** Gets the absolute change in the value of this dimension. e.g., Absolute Disk space change in Megabytes */
+		/**
+		 * Gets the absolute change in the value of this dimension. e.g., Absolute Disk space change in Megabytes
+		 * Type: double
+		 */
 		changeValueAbsolute?: number | null;
 
-		/** Gets the relative change in the value of this dimension. e.g., Relative Disk space change in Percentage */
+		/**
+		 * Gets the relative change in the value of this dimension. e.g., Relative Disk space change in Percentage
+		 * Type: double
+		 */
 		changeValueRelative?: number | null;
 
 		/** Gets the name of the impact dimension. e.g., CPUChange, DiskSpaceChange, NumberOfQueriesAffected. */
@@ -332,13 +347,22 @@ export namespace MyNS {
 	/** Contains information of estimated or observed impact on various metrics for an Azure SQL Database, Server or Elastic Pool Recommended Action. */
 	export interface RecommendedActionImpactRecordFormProperties {
 
-		/** Gets the absolute value of this dimension if applicable. e.g., Number of Queries affected */
+		/**
+		 * Gets the absolute value of this dimension if applicable. e.g., Number of Queries affected
+		 * Type: double
+		 */
 		absoluteValue: FormControl<number | null | undefined>,
 
-		/** Gets the absolute change in the value of this dimension. e.g., Absolute Disk space change in Megabytes */
+		/**
+		 * Gets the absolute change in the value of this dimension. e.g., Absolute Disk space change in Megabytes
+		 * Type: double
+		 */
 		changeValueAbsolute: FormControl<number | null | undefined>,
 
-		/** Gets the relative change in the value of this dimension. e.g., Relative Disk space change in Percentage */
+		/**
+		 * Gets the relative change in the value of this dimension. e.g., Relative Disk space change in Percentage
+		 * Type: double
+		 */
 		changeValueRelative: FormControl<number | null | undefined>,
 
 		/** Gets the name of the impact dimension. e.g., CPUChange, DiskSpaceChange, NumberOfQueriesAffected. */
@@ -449,7 +473,10 @@ export namespace MyNS {
 		/** Gets the unit in which metric is measured. e.g., DTU, Frequency */
 		unit?: string | null;
 
-		/** Gets the value of the metric in the time interval given by this MetricInfo. */
+		/**
+		 * Gets the value of the metric in the time interval given by this MetricInfo.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -468,7 +495,10 @@ export namespace MyNS {
 		/** Gets the unit in which metric is measured. e.g., DTU, Frequency */
 		unit: FormControl<string | null | undefined>,
 
-		/** Gets the value of the metric in the time interval given by this MetricInfo. */
+		/**
+		 * Gets the value of the metric in the time interval given by this MetricInfo.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateRecommendedActionMetricInfoFormGroup() {

@@ -212,7 +212,10 @@ export namespace MyNS {
 		/** The days of the week. */
 		day?: DayOfWeek | null;
 
-		/** The occurrence. */
+		/**
+		 * The occurrence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrence?: number | null;
 	}
 
@@ -222,7 +225,10 @@ export namespace MyNS {
 		/** The days of the week. */
 		day: FormControl<DayOfWeek | null | undefined>,
 
-		/** The occurrence. */
+		/**
+		 * The occurrence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrence: FormControl<number | null | undefined>,
 	}
 	export function CreateRecurrenceScheduleOccurrenceFormGroup() {
@@ -333,7 +339,10 @@ export namespace MyNS {
 		/** Enumerates possible frequency option for the schedule trigger. */
 		frequency?: RecurrenceFrequency | null;
 
-		/** The interval. */
+		/**
+		 * The interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval?: number | null;
 
 		/** The recurrence schedule. */
@@ -355,7 +364,10 @@ export namespace MyNS {
 		/** Enumerates possible frequency option for the schedule trigger. */
 		frequency: FormControl<RecurrenceFrequency | null | undefined>,
 
-		/** The interval. */
+		/**
+		 * The interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: FormControl<number | null | undefined>,
 
 		/** The start time. */

@@ -152,10 +152,16 @@ export namespace MyNS {
 	/** An object representing a recognized text region */
 	export interface TextRecognitionResult {
 
-		/** The orientation of the image in degrees in the clockwise direction. Range between [0, 360). */
+		/**
+		 * The orientation of the image in degrees in the clockwise direction. Range between [0, 360).
+		 * Type: double
+		 */
 		clockwiseOrientation?: number | null;
 
-		/** The height of the image in pixels or the PDF in inches. */
+		/**
+		 * The height of the image in pixels or the PDF in inches.
+		 * Type: double
+		 */
 		height?: number | null;
 
 		/**
@@ -164,32 +170,50 @@ export namespace MyNS {
 		 */
 		lines: Array<Line>;
 
-		/** The 1-based page number of the recognition result. */
+		/**
+		 * The 1-based page number of the recognition result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
 		/** The unit used in the Width, Height and BoundingBox. For images, the unit is 'pixel'. For PDF, the unit is 'inch'. */
 		unit?: TextRecognitionResultUnit | null;
 
-		/** The width of the image in pixels or the PDF in inches. */
+		/**
+		 * The width of the image in pixels or the PDF in inches.
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 
 	/** An object representing a recognized text region */
 	export interface TextRecognitionResultFormProperties {
 
-		/** The orientation of the image in degrees in the clockwise direction. Range between [0, 360). */
+		/**
+		 * The orientation of the image in degrees in the clockwise direction. Range between [0, 360).
+		 * Type: double
+		 */
 		clockwiseOrientation: FormControl<number | null | undefined>,
 
-		/** The height of the image in pixels or the PDF in inches. */
+		/**
+		 * The height of the image in pixels or the PDF in inches.
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The 1-based page number of the recognition result. */
+		/**
+		 * The 1-based page number of the recognition result.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
 		/** The unit used in the Width, Height and BoundingBox. For images, the unit is 'pixel'. For PDF, the unit is 'inch'. */
 		unit: FormControl<TextRecognitionResultUnit | null | undefined>,
 
-		/** The width of the image in pixels or the PDF in inches. */
+		/**
+		 * The width of the image in pixels or the PDF in inches.
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateTextRecognitionResultFormGroup() {

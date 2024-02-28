@@ -233,10 +233,16 @@ export namespace MyNS {
 		/** The current entity tag for the streaming job. This is an opaque string. You can use it to detect whether the resource has changed between requests. You can also use it in the If-Match or If-None-Match headers for write operations for optimistic concurrency. */
 		etag?: string | null;
 
-		/** The maximum tolerable delay in seconds where events arriving late could be included.  Supported range is -1 to 1814399 (20.23:59:59 days) and -1 is used to specify wait indefinitely. If the property is absent, it is interpreted to have a value of -1. */
+		/**
+		 * The maximum tolerable delay in seconds where events arriving late could be included.  Supported range is -1 to 1814399 (20.23:59:59 days) and -1 is used to specify wait indefinitely. If the property is absent, it is interpreted to have a value of -1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventsLateArrivalMaxDelayInSeconds?: number | null;
 
-		/** The maximum tolerable delay in seconds where out-of-order events can be adjusted to be back in order. */
+		/**
+		 * The maximum tolerable delay in seconds where out-of-order events can be adjusted to be back in order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventsOutOfOrderMaxDelayInSeconds?: number | null;
 
 		/** Indicates the policy to apply to events that arrive out of order in the input event stream. */
@@ -294,10 +300,16 @@ export namespace MyNS {
 		/** The current entity tag for the streaming job. This is an opaque string. You can use it to detect whether the resource has changed between requests. You can also use it in the If-Match or If-None-Match headers for write operations for optimistic concurrency. */
 		etag: FormControl<string | null | undefined>,
 
-		/** The maximum tolerable delay in seconds where events arriving late could be included.  Supported range is -1 to 1814399 (20.23:59:59 days) and -1 is used to specify wait indefinitely. If the property is absent, it is interpreted to have a value of -1. */
+		/**
+		 * The maximum tolerable delay in seconds where events arriving late could be included.  Supported range is -1 to 1814399 (20.23:59:59 days) and -1 is used to specify wait indefinitely. If the property is absent, it is interpreted to have a value of -1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventsLateArrivalMaxDelayInSeconds: FormControl<number | null | undefined>,
 
-		/** The maximum tolerable delay in seconds where out-of-order events can be adjusted to be back in order. */
+		/**
+		 * The maximum tolerable delay in seconds where out-of-order events can be adjusted to be back in order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eventsOutOfOrderMaxDelayInSeconds: FormControl<number | null | undefined>,
 
 		/** Indicates the policy to apply to events that arrive out of order in the input event stream. */

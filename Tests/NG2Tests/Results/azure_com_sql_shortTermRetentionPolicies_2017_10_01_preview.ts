@@ -24,14 +24,20 @@ export namespace MyNS {
 	/** Properties of a short term retention policy */
 	export interface BackupShortTermRetentionPolicyProperties {
 
-		/** The backup retention period in days. This is how many days Point-in-Time Restore will be supported. */
+		/**
+		 * The backup retention period in days. This is how many days Point-in-Time Restore will be supported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays?: number | null;
 	}
 
 	/** Properties of a short term retention policy */
 	export interface BackupShortTermRetentionPolicyPropertiesFormProperties {
 
-		/** The backup retention period in days. This is how many days Point-in-Time Restore will be supported. */
+		/**
+		 * The backup retention period in days. This is how many days Point-in-Time Restore will be supported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays: FormControl<number | null | undefined>,
 	}
 	export function CreateBackupShortTermRetentionPolicyPropertiesFormGroup() {

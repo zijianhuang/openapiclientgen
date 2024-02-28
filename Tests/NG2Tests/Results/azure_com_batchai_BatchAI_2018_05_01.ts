@@ -37,18 +37,23 @@ export namespace MyNS {
 	/** Auto-scale settings for the cluster. The system automatically scales the cluster up and down (within minimumNodeCount and maximumNodeCount) based on the number of queued and running jobs assigned to the cluster. */
 	export interface AutoScaleSettings {
 
-		/** The number of compute nodes to allocate on cluster creation. Note that this value is used only during cluster creation. Default: 0. */
+		/**
+		 * The number of compute nodes to allocate on cluster creation. Note that this value is used only during cluster creation. Default: 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialNodeCount?: number | null;
 
 		/**
 		 * The maximum number of compute nodes the cluster can have.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maximumNodeCount: number;
 
 		/**
 		 * The minimum number of compute nodes the Batch AI service will try to allocate for the cluster. Note, the actual number of nodes can be less than the specified value if the subscription has not enough quota to fulfill the request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minimumNodeCount: number;
 	}
@@ -56,18 +61,23 @@ export namespace MyNS {
 	/** Auto-scale settings for the cluster. The system automatically scales the cluster up and down (within minimumNodeCount and maximumNodeCount) based on the number of queued and running jobs assigned to the cluster. */
 	export interface AutoScaleSettingsFormProperties {
 
-		/** The number of compute nodes to allocate on cluster creation. Note that this value is used only during cluster creation. Default: 0. */
+		/**
+		 * The number of compute nodes to allocate on cluster creation. Note that this value is used only during cluster creation. Default: 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialNodeCount: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of compute nodes the cluster can have.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maximumNodeCount: FormControl<number | null | undefined>,
 
 		/**
 		 * The minimum number of compute nodes the Batch AI service will try to allocate for the cluster. Note, the actual number of nodes can be less than the specified value if the subscription has not enough quota to fulfill the request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minimumNodeCount: FormControl<number | null | undefined>,
 	}
@@ -315,7 +325,10 @@ export namespace MyNS {
 		/** The language to use for launching CNTK (aka Microsoft Cognitive Toolkit) job. Valid values are 'BrainScript' or 'Python'. */
 		languageType?: string | null;
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount?: number | null;
 
 		/** The path to the Python interpreter. This property can be specified only if the languageType is 'Python'. */
@@ -337,7 +350,10 @@ export namespace MyNS {
 		/** The language to use for launching CNTK (aka Microsoft Cognitive Toolkit) job. Valid values are 'BrainScript' or 'Python'. */
 		languageType: FormControl<string | null | undefined>,
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount: FormControl<number | null | undefined>,
 
 		/** The path to the Python interpreter. This property can be specified only if the languageType is 'Python'. */
@@ -409,7 +425,10 @@ export namespace MyNS {
 		/** Path of the config file for the job. This property cannot be specified if pythonScriptFilePath is specified. */
 		configFilePath?: string | null;
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount?: number | null;
 
 		/** The path to the Python interpreter. The property can be specified only if the pythonScriptFilePath is specified. */
@@ -428,7 +447,10 @@ export namespace MyNS {
 		/** Path of the config file for the job. This property cannot be specified if pythonScriptFilePath is specified. */
 		configFilePath: FormControl<string | null | undefined>,
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount: FormControl<number | null | undefined>,
 
 		/** The path to the Python interpreter. The property can be specified only if the pythonScriptFilePath is specified. */
@@ -455,7 +477,10 @@ export namespace MyNS {
 		/** Command line arguments that need to be passed to the python script. */
 		commandLineArgs?: string | null;
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount?: number | null;
 
 		/** The path to the Python interpreter. */
@@ -474,7 +499,10 @@ export namespace MyNS {
 		/** Command line arguments that need to be passed to the python script. */
 		commandLineArgs: FormControl<string | null | undefined>,
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount: FormControl<number | null | undefined>,
 
 		/** The path to the Python interpreter. */
@@ -679,7 +707,10 @@ export namespace MyNS {
 		/** The time when the cluster was created. */
 		creationTime?: Date | null;
 
-		/** The number of compute nodes currently assigned to the cluster. */
+		/**
+		 * The number of compute nodes currently assigned to the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentNodeCount?: number | null;
 
 		/** Collection of errors encountered by various compute nodes during node setup. */
@@ -728,7 +759,10 @@ export namespace MyNS {
 		/** The time when the cluster was created. */
 		creationTime: FormControl<Date | null | undefined>,
 
-		/** The number of compute nodes currently assigned to the cluster. */
+		/**
+		 * The number of compute nodes currently assigned to the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentNodeCount: FormControl<number | null | undefined>,
 
 		/** Provisioning state of the cluster. Possible value are: creating - Specifies that the cluster is being created. succeeded - Specifies that the cluster has been created successfully. failed - Specifies that the cluster creation has failed. deleting - Specifies that the cluster is being deleted. */
@@ -832,7 +866,10 @@ export namespace MyNS {
 		 */
 		commandLine: string;
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount?: number | null;
 	}
 
@@ -845,7 +882,10 @@ export namespace MyNS {
 		 */
 		commandLine: FormControl<string | null | undefined>,
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomMpiSettingsFormGroup() {
@@ -887,12 +927,14 @@ export namespace MyNS {
 		/**
 		 * Number of data disks attached to the File Server. If multiple disks attached, they will be configured in RAID level 0.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		diskCount: number;
 
 		/**
 		 * Disk size in GB for the blank data disks.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		diskSizeInGB: number;
 
@@ -912,12 +954,14 @@ export namespace MyNS {
 		/**
 		 * Number of data disks attached to the File Server. If multiple disks attached, they will be configured in RAID level 0.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		diskCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Disk size in GB for the blank data disks.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		diskSizeInGB: FormControl<number | null | undefined>,
 
@@ -1171,8 +1215,11 @@ export namespace MyNS {
 	/** File properties. */
 	export interface FileProperties {
 
-		/** The file of the size. */
-		contentLength?: number | null;
+		/**
+		 * The file of the size.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentLength?: string | null;
 
 		/** The time at which the file was last modified. */
 		lastModified?: Date | null;
@@ -1181,15 +1228,18 @@ export namespace MyNS {
 	/** File properties. */
 	export interface FilePropertiesFormProperties {
 
-		/** The file of the size. */
-		contentLength: FormControl<number | null | undefined>,
+		/**
+		 * The file of the size.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentLength: FormControl<string | null | undefined>,
 
 		/** The time at which the file was last modified. */
 		lastModified: FormControl<Date | null | undefined>,
 	}
 	export function CreateFilePropertiesFormGroup() {
 		return new FormGroup<FilePropertiesFormProperties>({
-			contentLength: new FormControl<number | null | undefined>(undefined),
+			contentLength: new FormControl<string | null | undefined>(undefined),
 			lastModified: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1408,7 +1458,10 @@ export namespace MyNS {
 		/** Command line arguments that need to be passed to the python script. */
 		commandLineArgs?: string | null;
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount?: number | null;
 
 		/** The path to the Python interpreter. */
@@ -1427,7 +1480,10 @@ export namespace MyNS {
 		/** Command line arguments that need to be passed to the python script. */
 		commandLineArgs: FormControl<string | null | undefined>,
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount: FormControl<number | null | undefined>,
 
 		/** The path to the Python interpreter. */
@@ -1665,6 +1721,7 @@ export namespace MyNS {
 		/**
 		 * Number of compute nodes to run the job on. The job will be gang scheduled on that many compute nodes.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodeCount: number;
 
@@ -1699,6 +1756,7 @@ export namespace MyNS {
 		/**
 		 * Number of compute nodes to run the job on. The job will be gang scheduled on that many compute nodes.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodeCount: FormControl<number | null | undefined>,
 
@@ -1899,7 +1957,10 @@ export namespace MyNS {
 		/** Details of volumes to mount on the cluster. */
 		mountVolumes?: MountVolumes;
 
-		/** The job will be gang scheduled on that many compute nodes */
+		/**
+		 * The job will be gang scheduled on that many compute nodes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount?: number | null;
 
 		/** A list of output directories for the job. */
@@ -1951,7 +2012,10 @@ export namespace MyNS {
 		/** A segment of job's output directories path created by Batch AI. Batch AI creates job's output directories under an unique path to avoid conflicts between jobs. This value contains a path segment generated by Batch AI to make the path unique and can be used to find the output directory on the node or mounted filesystem. */
 		jobOutputDirectoryPathSegment: FormControl<string | null | undefined>,
 
-		/** The job will be gang scheduled on that many compute nodes */
+		/**
+		 * The job will be gang scheduled on that many compute nodes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount: FormControl<number | null | undefined>,
 
 		/** The provisioned state of the Batch AI job */
@@ -2052,11 +2116,17 @@ export namespace MyNS {
 	/** Describes Batch AI Resource Usage. */
 	export interface Usage {
 
-		/** The current usage of the resource. */
+		/**
+		 * The current usage of the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue?: number | null;
 
-		/** The maximum permitted usage of the resource. */
-		limit?: number | null;
+		/**
+		 * The maximum permitted usage of the resource.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit?: string | null;
 
 		/** The Usage Names. */
 		name?: UsageName;
@@ -2068,11 +2138,17 @@ export namespace MyNS {
 	/** Describes Batch AI Resource Usage. */
 	export interface UsageFormProperties {
 
-		/** The current usage of the resource. */
+		/**
+		 * The current usage of the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue: FormControl<number | null | undefined>,
 
-		/** The maximum permitted usage of the resource. */
-		limit: FormControl<number | null | undefined>,
+		/**
+		 * The maximum permitted usage of the resource.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit: FormControl<string | null | undefined>,
 
 		/** An enum describing the unit of usage measurement. */
 		unit: FormControl<UsageUnit | null | undefined>,
@@ -2080,7 +2156,7 @@ export namespace MyNS {
 	export function CreateUsageFormGroup() {
 		return new FormGroup<UsageFormProperties>({
 			currentValue: new FormControl<number | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			unit: new FormControl<UsageUnit | null | undefined>(undefined),
 		});
 
@@ -2098,6 +2174,7 @@ export namespace MyNS {
 		/**
 		 * The desired number of compute nodes in the Cluster. Default is 0.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		targetNodeCount: number;
 	}
@@ -2111,6 +2188,7 @@ export namespace MyNS {
 		/**
 		 * The desired number of compute nodes in the Cluster. Default is 0.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		targetNodeCount: FormControl<number | null | undefined>,
 	}
@@ -2250,38 +2328,68 @@ export namespace MyNS {
 	/** Counts of various compute node states on the cluster. */
 	export interface NodeStateCounts {
 
-		/** Number of compute nodes in idle state. */
+		/**
+		 * Number of compute nodes in idle state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleNodeCount?: number | null;
 
-		/** Number of compute nodes which are leaving the cluster. */
+		/**
+		 * Number of compute nodes which are leaving the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leavingNodeCount?: number | null;
 
-		/** Number of compute nodes which are being prepared. */
+		/**
+		 * Number of compute nodes which are being prepared.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preparingNodeCount?: number | null;
 
-		/** Number of compute nodes which are running jobs. */
+		/**
+		 * Number of compute nodes which are running jobs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runningNodeCount?: number | null;
 
-		/** Number of compute nodes which are in unusable state. */
+		/**
+		 * Number of compute nodes which are in unusable state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unusableNodeCount?: number | null;
 	}
 
 	/** Counts of various compute node states on the cluster. */
 	export interface NodeStateCountsFormProperties {
 
-		/** Number of compute nodes in idle state. */
+		/**
+		 * Number of compute nodes in idle state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleNodeCount: FormControl<number | null | undefined>,
 
-		/** Number of compute nodes which are leaving the cluster. */
+		/**
+		 * Number of compute nodes which are leaving the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leavingNodeCount: FormControl<number | null | undefined>,
 
-		/** Number of compute nodes which are being prepared. */
+		/**
+		 * Number of compute nodes which are being prepared.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preparingNodeCount: FormControl<number | null | undefined>,
 
-		/** Number of compute nodes which are running jobs. */
+		/**
+		 * Number of compute nodes which are running jobs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runningNodeCount: FormControl<number | null | undefined>,
 
-		/** Number of compute nodes which are in unusable state. */
+		/**
+		 * Number of compute nodes which are in unusable state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unusableNodeCount: FormControl<number | null | undefined>,
 	}
 	export function CreateNodeStateCountsFormGroup() {
@@ -2449,7 +2557,10 @@ export namespace MyNS {
 		/** Type of the communication backend for distributed jobs. Valid values are 'TCP', 'Gloo' or 'MPI'. Not required for non-distributed jobs. */
 		communicationBackend?: string | null;
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount?: number | null;
 
 		/** The path to the Python interpreter. */
@@ -2471,7 +2582,10 @@ export namespace MyNS {
 		/** Type of the communication backend for distributed jobs. Valid values are 'TCP', 'Gloo' or 'MPI'. Not required for non-distributed jobs. */
 		communicationBackend: FormControl<string | null | undefined>,
 
-		/** Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property */
+		/**
+		 * Number of processes to launch for the job execution. The default value for this property is equal to nodeCount property
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		processCount: FormControl<number | null | undefined>,
 
 		/** The path to the Python interpreter. */
@@ -2735,7 +2849,10 @@ export namespace MyNS {
 		/** Command line arguments that need to be passed to the python script for the parameter server. Optional for single process jobs. */
 		parameterServerCommandLineArgs?: string | null;
 
-		/** The number of parameter server tasks. If specified, the value must be less than or equal to nodeCount. If not specified, the default value is equal to 1 for distributed TensorFlow training. This property can be specified only for distributed TensorFlow training. */
+		/**
+		 * The number of parameter server tasks. If specified, the value must be less than or equal to nodeCount. If not specified, the default value is equal to 1 for distributed TensorFlow training. This property can be specified only for distributed TensorFlow training.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parameterServerCount?: number | null;
 
 		/** The path to the Python interpreter. */
@@ -2750,7 +2867,10 @@ export namespace MyNS {
 		/** Command line arguments that need to be passed to the python script for the worker task. Optional for single process jobs. */
 		workerCommandLineArgs?: string | null;
 
-		/** The number of worker tasks. If specified, the value must be less than or equal to (nodeCount * numberOfGPUs per VM). If not specified, the default value is equal to nodeCount. This property can be specified only for distributed TensorFlow training. */
+		/**
+		 * The number of worker tasks. If specified, the value must be less than or equal to (nodeCount * numberOfGPUs per VM). If not specified, the default value is equal to nodeCount. This property can be specified only for distributed TensorFlow training.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount?: number | null;
 	}
 
@@ -2763,7 +2883,10 @@ export namespace MyNS {
 		/** Command line arguments that need to be passed to the python script for the parameter server. Optional for single process jobs. */
 		parameterServerCommandLineArgs: FormControl<string | null | undefined>,
 
-		/** The number of parameter server tasks. If specified, the value must be less than or equal to nodeCount. If not specified, the default value is equal to 1 for distributed TensorFlow training. This property can be specified only for distributed TensorFlow training. */
+		/**
+		 * The number of parameter server tasks. If specified, the value must be less than or equal to nodeCount. If not specified, the default value is equal to 1 for distributed TensorFlow training. This property can be specified only for distributed TensorFlow training.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parameterServerCount: FormControl<number | null | undefined>,
 
 		/** The path to the Python interpreter. */
@@ -2778,7 +2901,10 @@ export namespace MyNS {
 		/** Command line arguments that need to be passed to the python script for the worker task. Optional for single process jobs. */
 		workerCommandLineArgs: FormControl<string | null | undefined>,
 
-		/** The number of worker tasks. If specified, the value must be less than or equal to (nodeCount * numberOfGPUs per VM). If not specified, the default value is equal to nodeCount. This property can be specified only for distributed TensorFlow training. */
+		/**
+		 * The number of worker tasks. If specified, the value must be less than or equal to (nodeCount * numberOfGPUs per VM). If not specified, the default value is equal to nodeCount. This property can be specified only for distributed TensorFlow training.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount: FormControl<number | null | undefined>,
 	}
 	export function CreateTensorFlowSettingsFormGroup() {

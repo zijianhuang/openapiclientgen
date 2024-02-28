@@ -62,7 +62,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain?: string | null;
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
@@ -93,7 +96,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** A more detailed explanation of the error. */
@@ -163,7 +169,10 @@ export namespace MyNS {
 		/** This field provides more details about the current status of payout. The description returned here will correspond with enumeration value returned in the payoutStatus field. The following shows what description text might appear based on the different payoutStatus values: INITIATED: Preparing to send SUCCEEDED: Funds sent REVERSED: Waiting to retry : Money rejected by seller's bank RETRYABLE_FAILED: Waiting to retry TERMINAL_FAILED: Payout failed */
 		payoutStatusDescription?: string | null;
 
-		/** This integer value indicates the number of monetary transactions (all orders, refunds, and credits, etc.) that have occurred with the corresponding payout. Its value should always be at least 1, since there is at least one order per seller payout. */
+		/**
+		 * This integer value indicates the number of monetary transactions (all orders, refunds, and credits, etc.) that have occurred with the corresponding payout. Its value should always be at least 1, since there is at least one order per seller payout.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transactionCount?: number | null;
 	}
 
@@ -182,7 +191,10 @@ export namespace MyNS {
 		/** This field provides more details about the current status of payout. The description returned here will correspond with enumeration value returned in the payoutStatus field. The following shows what description text might appear based on the different payoutStatus values: INITIATED: Preparing to send SUCCEEDED: Funds sent REVERSED: Waiting to retry : Money rejected by seller's bank RETRYABLE_FAILED: Waiting to retry TERMINAL_FAILED: Payout failed */
 		payoutStatusDescription: FormControl<string | null | undefined>,
 
-		/** This integer value indicates the number of monetary transactions (all orders, refunds, and credits, etc.) that have occurred with the corresponding payout. Its value should always be at least 1, since there is at least one order per seller payout. */
+		/**
+		 * This integer value indicates the number of monetary transactions (all orders, refunds, and credits, etc.) that have occurred with the corresponding payout. Its value should always be at least 1, since there is at least one order per seller payout.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transactionCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePayoutFormGroup() {
@@ -238,20 +250,32 @@ export namespace MyNS {
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
 		amount?: Amount;
 
-		/** This integer value indicates the total count of payouts to the seller that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). */
+		/**
+		 * This integer value indicates the total count of payouts to the seller that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		payoutCount?: number | null;
 
-		/** This integer value indicates the total count of monetary transactions (order payments, buyer refunds, and seller credits) associated with the payouts that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). If there is at least one payout that matches the input criteria, the value in this field will be at least 1. */
+		/**
+		 * This integer value indicates the total count of monetary transactions (order payments, buyer refunds, and seller credits) associated with the payouts that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). If there is at least one payout that matches the input criteria, the value in this field will be at least 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transactionCount?: number | null;
 	}
 
 	/** This type is the base response type of the getPayoutSummary method, and contains the total count of seller payouts (that match the input criteria), the total count of monetary transactions (order payment, buyer refunds, or seller credits) associated with those payouts, and the total value of those seller payouts. */
 	export interface PayoutSummaryResponseFormProperties {
 
-		/** This integer value indicates the total count of payouts to the seller that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). */
+		/**
+		 * This integer value indicates the total count of payouts to the seller that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		payoutCount: FormControl<number | null | undefined>,
 
-		/** This integer value indicates the total count of monetary transactions (order payments, buyer refunds, and seller credits) associated with the payouts that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). If there is at least one payout that matches the input criteria, the value in this field will be at least 1. */
+		/**
+		 * This integer value indicates the total count of monetary transactions (order payments, buyer refunds, and seller credits) associated with the payouts that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). If there is at least one payout that matches the input criteria, the value in this field will be at least 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transactionCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePayoutSummaryResponseFormGroup() {
@@ -269,13 +293,19 @@ export namespace MyNS {
 		/** The URI of the getPayouts call request that produced the current page of the result set. */
 		href?: string | null;
 
-		/** The maximum number of payouts that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer payouts than the limit value. To determine the number of pages in a result set, divide the total value (total number of payouts matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total payouts) and the limit value was 50 (show 50 payouts per page), the total number of pages in the result set is three, so the seller would have to make three separate getPayouts calls to view all payouts matching the input criteria. Maximum: 200 Default: 20 */
+		/**
+		 * The maximum number of payouts that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer payouts than the limit value. To determine the number of pages in a result set, divide the total value (total number of payouts matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total payouts) and the limit value was 50 (show 50 payouts per page), the total number of pages in the result set is three, so the seller would have to make three separate getPayouts calls to view all payouts matching the input criteria. Maximum: 200 Default: 20
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The getPayouts call URI to use if you wish to view the next page of the result set. This field is only returned if there is a next page of results to view based on the current input criteria. */
 		next?: string | null;
 
-		/** This integer value indicates the actual position that the first payout returned on the current page has in the results set. So, if you wanted to view the 11th payout of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the call retrieves payouts 31 thru 40 from the resulting collection of payouts. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero) */
+		/**
+		 * This integer value indicates the actual position that the first payout returned on the current page has in the results set. So, if you wanted to view the 11th payout of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the call retrieves payouts 31 thru 40 from the resulting collection of payouts. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** An array of one or more payouts that match the input criteria. Details for each payout include the unique identifier of the payout, the status of the payout, the amount of the payout, and the number of monetary transactions associated with the payout. */
@@ -284,7 +314,10 @@ export namespace MyNS {
 		/** The getPayouts call URI to use if you wish to view the previous page of the result set. This field is only returned if there is a previous page of results to view based on the current input criteria. */
 		prev?: string | null;
 
-		/** This integer value is the total number of payouts in the results set based on the current input criteria. Based on the total number of payouts that match the criteria, and on the limit and offset values, there may be additional pages in the results set. */
+		/**
+		 * This integer value is the total number of payouts in the results set based on the current input criteria. Based on the total number of payouts that match the criteria, and on the limit and offset values, there may be additional pages in the results set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -294,19 +327,28 @@ export namespace MyNS {
 		/** The URI of the getPayouts call request that produced the current page of the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of payouts that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer payouts than the limit value. To determine the number of pages in a result set, divide the total value (total number of payouts matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total payouts) and the limit value was 50 (show 50 payouts per page), the total number of pages in the result set is three, so the seller would have to make three separate getPayouts calls to view all payouts matching the input criteria. Maximum: 200 Default: 20 */
+		/**
+		 * The maximum number of payouts that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer payouts than the limit value. To determine the number of pages in a result set, divide the total value (total number of payouts matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total payouts) and the limit value was 50 (show 50 payouts per page), the total number of pages in the result set is three, so the seller would have to make three separate getPayouts calls to view all payouts matching the input criteria. Maximum: 200 Default: 20
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The getPayouts call URI to use if you wish to view the next page of the result set. This field is only returned if there is a next page of results to view based on the current input criteria. */
 		next: FormControl<string | null | undefined>,
 
-		/** This integer value indicates the actual position that the first payout returned on the current page has in the results set. So, if you wanted to view the 11th payout of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the call retrieves payouts 31 thru 40 from the resulting collection of payouts. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero) */
+		/**
+		 * This integer value indicates the actual position that the first payout returned on the current page has in the results set. So, if you wanted to view the 11th payout of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the call retrieves payouts 31 thru 40 from the resulting collection of payouts. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The getPayouts call URI to use if you wish to view the previous page of the result set. This field is only returned if there is a previous page of results to view based on the current input criteria. */
 		prev: FormControl<string | null | undefined>,
 
-		/** This integer value is the total number of payouts in the results set based on the current input criteria. Based on the total number of payouts that match the criteria, and on the limit and offset values, there may be additional pages in the results set. */
+		/**
+		 * This integer value is the total number of payouts in the results set based on the current input criteria. Based on the total number of payouts that match the criteria, and on the limit and offset values, there may be additional pages in the results set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePayoutsFormGroup() {
@@ -440,7 +482,10 @@ export namespace MyNS {
 		/** The enumeration value indicates whether the dollar amount in the creditAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be CREDIT. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		creditBookingEntry?: string | null;
 
-		/** This integer value indicates the total number of the seller's sales and/or credits that match the input criteria. Note: Unless the transactionType filter is used in the request to retrieve a specific type of monetary transaction (sale, buyer refund, or seller credit), the creditCount and creditAmount fields account for both order sales and seller credits (the count and value is not distinguished between the two monetary transaction types). This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to either REFUND, DISPUTE, or SHIPPING_LABEL. */
+		/**
+		 * This integer value indicates the total number of the seller's sales and/or credits that match the input criteria. Note: Unless the transactionType filter is used in the request to retrieve a specific type of monetary transaction (sale, buyer refund, or seller credit), the creditCount and creditAmount fields account for both order sales and seller credits (the count and value is not distinguished between the two monetary transaction types). This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to either REFUND, DISPUTE, or SHIPPING_LABEL.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creditCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
@@ -449,7 +494,10 @@ export namespace MyNS {
 		/** The enumeration value indicates whether the dollar amount in the disputeAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT, but its possible that CREDIT could be returned if the seller contested one or more payment disputes and won the dispute. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		disputeBookingEntry?: string | null;
 
-		/** This integer value indicates the total number of payment disputes that have been initiated by one or more buyers. Only the orders that match the input criteria are considered. The Payment Disputes methods in the Fulfillment API can be used by the seller to retrieve more information about any payment disputes. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than DISPUTE. */
+		/**
+		 * This integer value indicates the total number of payment disputes that have been initiated by one or more buyers. Only the orders that match the input criteria are considered. The Payment Disputes methods in the Fulfillment API can be used by the seller to retrieve more information about any payment disputes. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than DISPUTE.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disputeCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
@@ -458,7 +506,10 @@ export namespace MyNS {
 		/** The enumeration value indicates whether the dollar amount in the onHoldAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be CREDIT, since on-hold funds should eventually be released as part of a payout to the seller once the hold is cleared. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		onHoldBookingEntry?: string | null;
 
-		/** This integer value indicates the total number of order sales where the associated funds are on hold. Only the orders that match the input criteria are considered. This field is generally returned, even if 0, but it will not be returned if a transactionStatus filter is used, and its value is set to any value other than FUNDS_ON_HOLD. */
+		/**
+		 * This integer value indicates the total number of order sales where the associated funds are on hold. Only the orders that match the input criteria are considered. This field is generally returned, even if 0, but it will not be returned if a transactionStatus filter is used, and its value is set to any value other than FUNDS_ON_HOLD.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHoldCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
@@ -467,7 +518,10 @@ export namespace MyNS {
 		/** The enumeration value indicates whether the dollar amount in the refundAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT since this a refund from the seller to the buyer. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		refundBookingEntry?: string | null;
 
-		/** This integer value indicates the total number of buyer refunds that match the input criteria. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than REFUND. */
+		/**
+		 * This integer value indicates the total number of buyer refunds that match the input criteria. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than REFUND.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refundCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
@@ -476,7 +530,10 @@ export namespace MyNS {
 		/** The enumeration value indicates whether the dollar amount in the shippingLabelAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT, as eBay will charge the seller when eBay shipping labels are purchased, but it can be CREDIT if the seller was refunded for a shipping label or was possibly overcharged for a shipping label. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		shippingLabelBookingEntry?: string | null;
 
-		/** This is the total number of eBay shipping labels purchased by the seller. The count returned here may depend on the specified input criteria. */
+		/**
+		 * This is the total number of eBay shipping labels purchased by the seller. The count returned here may depend on the specified input criteria.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shippingLabelCount?: number | null;
 	}
 
@@ -486,31 +543,46 @@ export namespace MyNS {
 		/** The enumeration value indicates whether the dollar amount in the creditAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be CREDIT. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		creditBookingEntry: FormControl<string | null | undefined>,
 
-		/** This integer value indicates the total number of the seller's sales and/or credits that match the input criteria. Note: Unless the transactionType filter is used in the request to retrieve a specific type of monetary transaction (sale, buyer refund, or seller credit), the creditCount and creditAmount fields account for both order sales and seller credits (the count and value is not distinguished between the two monetary transaction types). This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to either REFUND, DISPUTE, or SHIPPING_LABEL. */
+		/**
+		 * This integer value indicates the total number of the seller's sales and/or credits that match the input criteria. Note: Unless the transactionType filter is used in the request to retrieve a specific type of monetary transaction (sale, buyer refund, or seller credit), the creditCount and creditAmount fields account for both order sales and seller credits (the count and value is not distinguished between the two monetary transaction types). This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to either REFUND, DISPUTE, or SHIPPING_LABEL.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creditCount: FormControl<number | null | undefined>,
 
 		/** The enumeration value indicates whether the dollar amount in the disputeAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT, but its possible that CREDIT could be returned if the seller contested one or more payment disputes and won the dispute. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		disputeBookingEntry: FormControl<string | null | undefined>,
 
-		/** This integer value indicates the total number of payment disputes that have been initiated by one or more buyers. Only the orders that match the input criteria are considered. The Payment Disputes methods in the Fulfillment API can be used by the seller to retrieve more information about any payment disputes. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than DISPUTE. */
+		/**
+		 * This integer value indicates the total number of payment disputes that have been initiated by one or more buyers. Only the orders that match the input criteria are considered. The Payment Disputes methods in the Fulfillment API can be used by the seller to retrieve more information about any payment disputes. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than DISPUTE.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disputeCount: FormControl<number | null | undefined>,
 
 		/** The enumeration value indicates whether the dollar amount in the onHoldAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be CREDIT, since on-hold funds should eventually be released as part of a payout to the seller once the hold is cleared. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		onHoldBookingEntry: FormControl<string | null | undefined>,
 
-		/** This integer value indicates the total number of order sales where the associated funds are on hold. Only the orders that match the input criteria are considered. This field is generally returned, even if 0, but it will not be returned if a transactionStatus filter is used, and its value is set to any value other than FUNDS_ON_HOLD. */
+		/**
+		 * This integer value indicates the total number of order sales where the associated funds are on hold. Only the orders that match the input criteria are considered. This field is generally returned, even if 0, but it will not be returned if a transactionStatus filter is used, and its value is set to any value other than FUNDS_ON_HOLD.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onHoldCount: FormControl<number | null | undefined>,
 
 		/** The enumeration value indicates whether the dollar amount in the refundAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT since this a refund from the seller to the buyer. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		refundBookingEntry: FormControl<string | null | undefined>,
 
-		/** This integer value indicates the total number of buyer refunds that match the input criteria. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than REFUND. */
+		/**
+		 * This integer value indicates the total number of buyer refunds that match the input criteria. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than REFUND.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refundCount: FormControl<number | null | undefined>,
 
 		/** The enumeration value indicates whether the dollar amount in the shippingLabelAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT, as eBay will charge the seller when eBay shipping labels are purchased, but it can be CREDIT if the seller was refunded for a shipping label or was possibly overcharged for a shipping label. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		shippingLabelBookingEntry: FormControl<string | null | undefined>,
 
-		/** This is the total number of eBay shipping labels purchased by the seller. The count returned here may depend on the specified input criteria. */
+		/**
+		 * This is the total number of eBay shipping labels purchased by the seller. The count returned here may depend on the specified input criteria.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shippingLabelCount: FormControl<number | null | undefined>,
 	}
 	export function CreateTransactionSummaryResponseFormGroup() {
@@ -536,19 +608,28 @@ export namespace MyNS {
 		/** The URI of the getTransactions method request that produced the current page of the result set. */
 		href?: string | null;
 
-		/** The maximum number of monetary transactions that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer monetary transactions than the limit value. To determine the number of pages in a result set, divide the total value (total number of monetary transactions matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total monetary transactions) and the limit value was 50 (show 50 monetary transactions per page), the total number of pages in the result set is three, so the seller would have to make three separate getTransactions calls to view all monetary transactions matching the input criteria. Maximum: 200 Default: 20 */
+		/**
+		 * The maximum number of monetary transactions that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer monetary transactions than the limit value. To determine the number of pages in a result set, divide the total value (total number of monetary transactions matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total monetary transactions) and the limit value was 50 (show 50 monetary transactions per page), the total number of pages in the result set is three, so the seller would have to make three separate getTransactions calls to view all monetary transactions matching the input criteria. Maximum: 200 Default: 20
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The getTransactions method URI to use if you wish to view the next page of the result set. This field is only returned if there is a next page of results to view based on the current input criteria. */
 		next?: string | null;
 
-		/** This integer value indicates the actual position that the first monetary transaction returned on the current page has in the results set. So, if you wanted to view the 11th monetary transaction of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the method retrieves monetary transactions 31 thru 40 from the resulting collection of monetary transactions. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero) */
+		/**
+		 * This integer value indicates the actual position that the first monetary transaction returned on the current page has in the results set. So, if you wanted to view the 11th monetary transaction of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the method retrieves monetary transactions 31 thru 40 from the resulting collection of monetary transactions. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The getTransactions method URI to use if you wish to view the previous page of the result set. This field is only returned if there is a previous page of results to view based on the current input criteria. */
 		prev?: string | null;
 
-		/** This integer value is the total amount of monetary transactions in the result set based on the current input criteria. Based on the total number of monetary transactions that match the criteria, and on the limit and offset values, there may be additional pages in the results set. */
+		/**
+		 * This integer value is the total amount of monetary transactions in the result set based on the current input criteria. Based on the total number of monetary transactions that match the criteria, and on the limit and offset values, there may be additional pages in the results set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 
 		/** An array of one or more monetary transactions that match the input criteria. Details for each monetary transaction may include the unique identifier of the order associated with the monetary transaction, the status of the transaction, the amount of the order, the order's buyer, and the unique identifier of the payout (if a payout has been initiated/issued for the order). */
@@ -561,19 +642,28 @@ export namespace MyNS {
 		/** The URI of the getTransactions method request that produced the current page of the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of monetary transactions that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer monetary transactions than the limit value. To determine the number of pages in a result set, divide the total value (total number of monetary transactions matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total monetary transactions) and the limit value was 50 (show 50 monetary transactions per page), the total number of pages in the result set is three, so the seller would have to make three separate getTransactions calls to view all monetary transactions matching the input criteria. Maximum: 200 Default: 20 */
+		/**
+		 * The maximum number of monetary transactions that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer monetary transactions than the limit value. To determine the number of pages in a result set, divide the total value (total number of monetary transactions matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total monetary transactions) and the limit value was 50 (show 50 monetary transactions per page), the total number of pages in the result set is three, so the seller would have to make three separate getTransactions calls to view all monetary transactions matching the input criteria. Maximum: 200 Default: 20
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The getTransactions method URI to use if you wish to view the next page of the result set. This field is only returned if there is a next page of results to view based on the current input criteria. */
 		next: FormControl<string | null | undefined>,
 
-		/** This integer value indicates the actual position that the first monetary transaction returned on the current page has in the results set. So, if you wanted to view the 11th monetary transaction of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the method retrieves monetary transactions 31 thru 40 from the resulting collection of monetary transactions. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero) */
+		/**
+		 * This integer value indicates the actual position that the first monetary transaction returned on the current page has in the results set. So, if you wanted to view the 11th monetary transaction of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the method retrieves monetary transactions 31 thru 40 from the resulting collection of monetary transactions. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The getTransactions method URI to use if you wish to view the previous page of the result set. This field is only returned if there is a previous page of results to view based on the current input criteria. */
 		prev: FormControl<string | null | undefined>,
 
-		/** This integer value is the total amount of monetary transactions in the result set based on the current input criteria. Based on the total number of monetary transactions that match the criteria, and on the limit and offset values, there may be additional pages in the results set. */
+		/**
+		 * This integer value is the total amount of monetary transactions in the result set based on the current input criteria. Based on the total number of monetary transactions that match the criteria, and on the limit and offset values, there may be additional pages in the results set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateTransactionsFormGroup() {

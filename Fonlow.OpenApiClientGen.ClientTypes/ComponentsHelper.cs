@@ -67,6 +67,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return ss;
 		}
 
+		public static bool FieldSchemaContainsValueConstraints(OpenApiSchema fieldSchema){
+			return fieldSchema.MaxLength.HasValue || fieldSchema.MinLength.HasValue || fieldSchema.Minimum.HasValue || fieldSchema.Maximum.HasValue || fieldSchema.MinItems.HasValue || fieldSchema.MaxItems.HasValue;
+		}
+
 		/// <summary>
 		/// Find if a type had been declared in specific namespace
 		/// </summary>

@@ -27,12 +27,18 @@ export namespace MyNS {
 
 	export interface NodeCountProperties {
 
-		/** Gets the count for the name */
+		/**
+		 * Gets the count for the name
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 	}
 	export interface NodeCountPropertiesFormProperties {
 
-		/** Gets the count for the name */
+		/**
+		 * Gets the count for the name
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateNodeCountPropertiesFormGroup() {
@@ -46,7 +52,10 @@ export namespace MyNS {
 	/** Gets the count of nodes by count type */
 	export interface NodeCounts {
 
-		/** Gets the total number of records matching countType criteria. */
+		/**
+		 * Gets the total number of records matching countType criteria.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 
 		/** Gets an array of counts */
@@ -56,7 +65,10 @@ export namespace MyNS {
 	/** Gets the count of nodes by count type */
 	export interface NodeCountsFormProperties {
 
-		/** Gets the total number of records matching countType criteria. */
+		/**
+		 * Gets the total number of records matching countType criteria.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateNodeCountsFormGroup() {

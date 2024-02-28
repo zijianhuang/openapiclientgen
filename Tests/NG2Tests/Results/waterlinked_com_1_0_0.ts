@@ -10,6 +10,7 @@ export namespace MyNS {
 		/**
 		 * Depth of POI
 		 * Required
+		 * Type: double
 		 */
 		depth: number;
 
@@ -19,18 +20,23 @@ export namespace MyNS {
 		 */
 		icon: string;
 
-		/** Unique POI id */
-		id?: number | null;
+		/**
+		 * Unique POI id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/**
 		 * Latitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lat: number;
 
 		/**
 		 * Longitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lng: number;
 
@@ -53,6 +59,7 @@ export namespace MyNS {
 		/**
 		 * Depth of POI
 		 * Required
+		 * Type: double
 		 */
 		depth: FormControl<number | null | undefined>,
 
@@ -62,18 +69,23 @@ export namespace MyNS {
 		 */
 		icon: FormControl<string | null | undefined>,
 
-		/** Unique POI id */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique POI id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Latitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lat: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lng: FormControl<number | null | undefined>,
 
@@ -93,7 +105,7 @@ export namespace MyNS {
 		return new FormGroup<CreatePoiPayloadFormProperties>({
 			depth: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			icon: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lat: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			lng: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -419,24 +431,28 @@ export namespace MyNS {
 		/**
 		 * Unique receiver identifier
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Configured X position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		x: number;
 
 		/**
 		 * Configured Y position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		y: number;
 
 		/**
 		 * Configured Z position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		z: number;
 	}
@@ -447,30 +463,34 @@ export namespace MyNS {
 		/**
 		 * Unique receiver identifier
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Configured X position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		x: FormControl<number | null | undefined>,
 
 		/**
 		 * Configured Y position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		y: FormControl<number | null | undefined>,
 
 		/**
 		 * Configured Z position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreateModifyReceiverConfigPayloadFormGroup() {
 		return new FormGroup<ModifyReceiverConfigPayloadFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			x: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			y: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			z: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -812,6 +832,7 @@ export namespace MyNS {
 		/**
 		 * Depth of POI
 		 * Required
+		 * Type: double
 		 */
 		depth: number;
 
@@ -821,18 +842,23 @@ export namespace MyNS {
 		 */
 		icon: string;
 
-		/** Unique POI id */
-		id?: number | null;
+		/**
+		 * Unique POI id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/**
 		 * Latitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lat: number;
 
 		/**
 		 * Longitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lng: number;
 
@@ -855,6 +881,7 @@ export namespace MyNS {
 		/**
 		 * Depth of POI
 		 * Required
+		 * Type: double
 		 */
 		depth: FormControl<number | null | undefined>,
 
@@ -864,18 +891,23 @@ export namespace MyNS {
 		 */
 		icon: FormControl<string | null | undefined>,
 
-		/** Unique POI id */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique POI id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Latitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lat: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lng: FormControl<number | null | undefined>,
 
@@ -895,7 +927,7 @@ export namespace MyNS {
 		return new FormGroup<UpdatePoiPayloadFormProperties>({
 			depth: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			icon: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lat: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			lng: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -971,18 +1003,21 @@ export namespace MyNS {
 		/**
 		 * Current acoustic temperature (C)
 		 * Required
+		 * Type: double
 		 */
 		temp: number;
 
 		/**
 		 * Current acoustic x position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		x: number;
 
 		/**
 		 * Current acoustic y position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		y: number;
 
@@ -1007,18 +1042,21 @@ export namespace MyNS {
 		/**
 		 * Current acoustic temperature (C)
 		 * Required
+		 * Type: double
 		 */
 		temp: FormControl<number | null | undefined>,
 
 		/**
 		 * Current acoustic x position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		x: FormControl<number | null | undefined>,
 
 		/**
 		 * Current acoustic y position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		y: FormControl<number | null | undefined>,
 
@@ -1385,6 +1423,7 @@ export namespace MyNS {
 		/**
 		 * Depth of POI
 		 * Required
+		 * Type: double
 		 */
 		depth: number;
 
@@ -1394,18 +1433,23 @@ export namespace MyNS {
 		 */
 		icon: string;
 
-		/** Unique POI id */
-		id?: number | null;
+		/**
+		 * Unique POI id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/**
 		 * Latitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lat: number;
 
 		/**
 		 * Longitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lng: number;
 
@@ -1428,6 +1472,7 @@ export namespace MyNS {
 		/**
 		 * Depth of POI
 		 * Required
+		 * Type: double
 		 */
 		depth: FormControl<number | null | undefined>,
 
@@ -1437,18 +1482,23 @@ export namespace MyNS {
 		 */
 		icon: FormControl<string | null | undefined>,
 
-		/** Unique POI id */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique POI id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Latitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lat: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude of POI
 		 * Required
+		 * Type: double
 		 */
 		lng: FormControl<number | null | undefined>,
 
@@ -1468,7 +1518,7 @@ export namespace MyNS {
 		return new FormGroup<WaterlinkedPoiFormProperties>({
 			depth: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			icon: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lat: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			lng: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -1484,24 +1534,28 @@ export namespace MyNS {
 		/**
 		 * Unique receiver identifier
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Configured X position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		x: number;
 
 		/**
 		 * Configured Y position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		y: number;
 
 		/**
 		 * Configured Z position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		z: number;
 	}
@@ -1512,30 +1566,34 @@ export namespace MyNS {
 		/**
 		 * Unique receiver identifier
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Configured X position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		x: FormControl<number | null | undefined>,
 
 		/**
 		 * Configured Y position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		y: FormControl<number | null | undefined>,
 
 		/**
 		 * Configured Z position relative to master electronics (meter)
 		 * Required
+		 * Type: double
 		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreateWaterlinkedReceiverFormGroup() {
 		return new FormGroup<WaterlinkedReceiverFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			x: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			y: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			z: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -1615,12 +1673,14 @@ export namespace MyNS {
 		/**
 		 * Board temperature (C)
 		 * Required
+		 * Type: double
 		 */
 		board: number;
 
 		/**
 		 * Water temperature (C)
 		 * Required
+		 * Type: double
 		 */
 		water: number;
 	}
@@ -1631,12 +1691,14 @@ export namespace MyNS {
 		/**
 		 * Board temperature (C)
 		 * Required
+		 * Type: double
 		 */
 		board: FormControl<number | null | undefined>,
 
 		/**
 		 * Water temperature (C)
 		 * Required
+		 * Type: double
 		 */
 		water: FormControl<number | null | undefined>,
 	}
@@ -2267,6 +2329,7 @@ export namespace MyNS {
 		 * Show poi
 		 * Get a POI
 		 * Get api/v1/poi/{ID}
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		ApiV1Poi_IDGet(ID: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2276,6 +2339,7 @@ export namespace MyNS {
 		/**
 		 * Delete poi
 		 * Delete api/v1/poi/{ID}
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiV1Poi_IDDelete(ID: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2285,6 +2349,7 @@ export namespace MyNS {
 		/**
 		 * Update poi
 		 * Patch api/v1/poi/{ID}
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {UpdatePoiPayload} requestBody A list of all POI
 		 * @return {void} 
 		 */

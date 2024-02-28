@@ -135,16 +135,28 @@ export namespace MyNS {
 	/** Metric value. */
 	export interface MetricValue {
 
-		/** Average value of metric. */
+		/**
+		 * Average value of metric.
+		 * Type: float
+		 */
 		average?: number | null;
 
-		/** Count of metric values. */
+		/**
+		 * Count of metric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Maximum value of metric. */
+		/**
+		 * Maximum value of metric.
+		 * Type: float
+		 */
 		maximum?: number | null;
 
-		/** Minimum value of metric. */
+		/**
+		 * Minimum value of metric.
+		 * Type: float
+		 */
 		minimum?: number | null;
 
 		/** Metric value properties. */
@@ -153,23 +165,38 @@ export namespace MyNS {
 		/** Timestamp of metric value. */
 		timeStamp?: Date | null;
 
-		/** Total value of metric. */
+		/**
+		 * Total value of metric.
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 
 	/** Metric value. */
 	export interface MetricValueFormProperties {
 
-		/** Average value of metric. */
+		/**
+		 * Average value of metric.
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Count of metric values. */
+		/**
+		 * Count of metric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Maximum value of metric. */
+		/**
+		 * Maximum value of metric.
+		 * Type: float
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum value of metric. */
+		/**
+		 * Minimum value of metric.
+		 * Type: float
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Metric value properties. */
@@ -178,7 +205,10 @@ export namespace MyNS {
 		/** Timestamp of metric value. */
 		timeStamp: FormControl<Date | null | undefined>,
 
-		/** Total value of metric. */
+		/**
+		 * Total value of metric.
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricValueFormGroup() {
@@ -437,20 +467,32 @@ export namespace MyNS {
 	/** Settings of storage services. */
 	export interface WritableServiceSettings {
 
-		/** The HTTP port of the storage service front end. */
+		/**
+		 * The HTTP port of the storage service front end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndHttpListenPort?: number | null;
 
-		/** The HTTPs port of the storage service front end. */
+		/**
+		 * The HTTPs port of the storage service front end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndHttpsListenPort?: number | null;
 	}
 
 	/** Settings of storage services. */
 	export interface WritableServiceSettingsFormProperties {
 
-		/** The HTTP port of the storage service front end. */
+		/**
+		 * The HTTP port of the storage service front end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndHttpListenPort: FormControl<number | null | undefined>,
 
-		/** The HTTPs port of the storage service front end. */
+		/**
+		 * The HTTPs port of the storage service front end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndHttpsListenPort: FormControl<number | null | undefined>,
 	}
 	export function CreateWritableServiceSettingsFormGroup() {
@@ -465,22 +507,37 @@ export namespace MyNS {
 	/** Storage service settings. */
 	export interface WritableSettings {
 
-		/** Front end callback threads count. */
+		/**
+		 * Front end callback threads count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndCallbackThreadsCount?: number | null;
 
-		/** Interval (in second) of CPU monitor for front end CPU based keep-alive throttling. */
+		/**
+		 * Interval (in second) of CPU monitor for front end CPU based keep-alive throttling.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds?: number | null;
 
 		/** Switch of front end CPU based keep-alive throttling. */
 		frontEndCpuBasedKeepAliveThrottlingEnabled?: boolean | null;
 
-		/** Threshold (% percentage) of front end CPU based keep-alive throttling. */
+		/**
+		 * Threshold (% percentage) of front end CPU based keep-alive throttling.
+		 * Type: float
+		 */
 		frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold?: number | null;
 
-		/** Threshold (% percentage) of requests to throttle in front end CPU based keep-alive throttling. */
+		/**
+		 * Threshold (% percentage) of requests to throttle in front end CPU based keep-alive throttling.
+		 * Type: float
+		 */
 		frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle?: number | null;
 
-		/** Maximum interval (in millisecond) between memory samples of front end. */
+		/**
+		 * Maximum interval (in millisecond) between memory samples of front end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndMaxMillisecondsBetweenMemorySamples?: number | null;
 
 		/** Front end memory throttle threshold settings. */
@@ -489,19 +546,34 @@ export namespace MyNS {
 		/** Switch of front end memory throttling. */
 		frontEndMemoryThrottlingEnabled?: boolean | null;
 
-		/** Front end minimum number of threads in thread pool. */
+		/**
+		 * Front end minimum number of threads in thread pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndMinThreadPoolThreads?: number | null;
 
-		/** Threshold of front end thread pool based keep-alive IO completion. */
+		/**
+		 * Threshold of front end thread pool based keep-alive IO completion.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndThreadPoolBasedKeepAliveIOCompletionThreshold?: number | null;
 
-		/** Monitor interval (in seconds) of front end thread pool based keep-alive monitor. */
+		/**
+		 * Monitor interval (in seconds) of front end thread pool based keep-alive monitor.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds?: number | null;
 
-		/** Percentage (%) of front end thread pool based keep-alive. */
+		/**
+		 * Percentage (%) of front end thread pool based keep-alive.
+		 * Type: float
+		 */
 		frontEndThreadPoolBasedKeepAlivePercentage?: number | null;
 
-		/** Threshold of front end thread pool based keep-alive worker thread. */
+		/**
+		 * Threshold of front end thread pool based keep-alive worker thread.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold?: number | null;
 
 		/** Switch of whether front end uses SLA time in availability. */
@@ -511,22 +583,37 @@ export namespace MyNS {
 	/** Storage service settings. */
 	export interface WritableSettingsFormProperties {
 
-		/** Front end callback threads count. */
+		/**
+		 * Front end callback threads count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndCallbackThreadsCount: FormControl<number | null | undefined>,
 
-		/** Interval (in second) of CPU monitor for front end CPU based keep-alive throttling. */
+		/**
+		 * Interval (in second) of CPU monitor for front end CPU based keep-alive throttling.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds: FormControl<number | null | undefined>,
 
 		/** Switch of front end CPU based keep-alive throttling. */
 		frontEndCpuBasedKeepAliveThrottlingEnabled: FormControl<boolean | null | undefined>,
 
-		/** Threshold (% percentage) of front end CPU based keep-alive throttling. */
+		/**
+		 * Threshold (% percentage) of front end CPU based keep-alive throttling.
+		 * Type: float
+		 */
 		frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold: FormControl<number | null | undefined>,
 
-		/** Threshold (% percentage) of requests to throttle in front end CPU based keep-alive throttling. */
+		/**
+		 * Threshold (% percentage) of requests to throttle in front end CPU based keep-alive throttling.
+		 * Type: float
+		 */
 		frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle: FormControl<number | null | undefined>,
 
-		/** Maximum interval (in millisecond) between memory samples of front end. */
+		/**
+		 * Maximum interval (in millisecond) between memory samples of front end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndMaxMillisecondsBetweenMemorySamples: FormControl<number | null | undefined>,
 
 		/** Front end memory throttle threshold settings. */
@@ -535,19 +622,34 @@ export namespace MyNS {
 		/** Switch of front end memory throttling. */
 		frontEndMemoryThrottlingEnabled: FormControl<boolean | null | undefined>,
 
-		/** Front end minimum number of threads in thread pool. */
+		/**
+		 * Front end minimum number of threads in thread pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndMinThreadPoolThreads: FormControl<number | null | undefined>,
 
-		/** Threshold of front end thread pool based keep-alive IO completion. */
+		/**
+		 * Threshold of front end thread pool based keep-alive IO completion.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndThreadPoolBasedKeepAliveIOCompletionThreshold: FormControl<number | null | undefined>,
 
-		/** Monitor interval (in seconds) of front end thread pool based keep-alive monitor. */
+		/**
+		 * Monitor interval (in seconds) of front end thread pool based keep-alive monitor.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds: FormControl<number | null | undefined>,
 
-		/** Percentage (%) of front end thread pool based keep-alive. */
+		/**
+		 * Percentage (%) of front end thread pool based keep-alive.
+		 * Type: float
+		 */
 		frontEndThreadPoolBasedKeepAlivePercentage: FormControl<number | null | undefined>,
 
-		/** Threshold of front end thread pool based keep-alive worker thread. */
+		/**
+		 * Threshold of front end thread pool based keep-alive worker thread.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold: FormControl<number | null | undefined>,
 
 		/** Switch of whether front end uses SLA time in availability. */

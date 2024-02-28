@@ -423,7 +423,10 @@ export namespace MyNS {
 		/** The timestamp for when the gallery Image Version is published. */
 		publishedDate?: Date | null;
 
-		/** The number of replicas of the Image Version to be created per region. This property would take effect for a region when regionalReplicaCount is not specified. This property is updatable. */
+		/**
+		 * The number of replicas of the Image Version to be created per region. This property would take effect for a region when regionalReplicaCount is not specified. This property is updatable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount?: number | null;
 
 		/** Specifies the storage account type to be used to store the image. This property is not updatable. */
@@ -445,7 +448,10 @@ export namespace MyNS {
 		/** The timestamp for when the gallery Image Version is published. */
 		publishedDate: FormControl<Date | null | undefined>,
 
-		/** The number of replicas of the Image Version to be created per region. This property would take effect for a region when regionalReplicaCount is not specified. This property is updatable. */
+		/**
+		 * The number of replicas of the Image Version to be created per region. This property would take effect for a region when regionalReplicaCount is not specified. This property is updatable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount: FormControl<number | null | undefined>,
 
 		/** Specifies the storage account type to be used to store the image. This property is not updatable. */
@@ -474,7 +480,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** The number of replicas of the Image Version to be created per region. This property is updatable. */
+		/**
+		 * The number of replicas of the Image Version to be created per region. This property is updatable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		regionalReplicaCount?: number | null;
 
 		/** Specifies the storage account type to be used to store the image. This property is not updatable. */
@@ -490,7 +499,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of replicas of the Image Version to be created per region. This property is updatable. */
+		/**
+		 * The number of replicas of the Image Version to be created per region. This property is updatable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		regionalReplicaCount: FormControl<number | null | undefined>,
 
 		/** Specifies the storage account type to be used to store the image. This property is not updatable. */
@@ -559,6 +571,7 @@ export namespace MyNS {
 		/**
 		 * This property specifies the logical unit number of the data disk. This value is used to identify data disks within the Virtual Machine and therefore must be unique for each data disk attached to the Virtual Machine.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lun: number;
 	}
@@ -569,6 +582,7 @@ export namespace MyNS {
 		/**
 		 * This property specifies the logical unit number of the data disk. This value is used to identify data disks within the Virtual Machine and therefore must be unique for each data disk attached to the Virtual Machine.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lun: FormControl<number | null | undefined>,
 	}
@@ -588,7 +602,10 @@ export namespace MyNS {
 		/** The host caching of the disk. Valid values are 'None', 'ReadOnly', and 'ReadWrite' */
 		hostCaching?: GalleryDiskImageHostCaching | null;
 
-		/** This property indicates the size of the VHD to be created. */
+		/**
+		 * This property indicates the size of the VHD to be created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeInGB?: number | null;
 
 		/** The gallery artifact version source. */
@@ -601,7 +618,10 @@ export namespace MyNS {
 		/** The host caching of the disk. Valid values are 'None', 'ReadOnly', and 'ReadWrite' */
 		hostCaching: FormControl<GalleryDiskImageHostCaching | null | undefined>,
 
-		/** This property indicates the size of the VHD to be created. */
+		/**
+		 * This property indicates the size of the VHD to be created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeInGB: FormControl<number | null | undefined>,
 	}
 	export function CreateGalleryDiskImageFormGroup() {
@@ -1216,7 +1236,10 @@ export namespace MyNS {
 		/** The details of the replication status. */
 		details?: string | null;
 
-		/** It indicates progress of the replication job. */
+		/**
+		 * It indicates progress of the replication job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress?: number | null;
 
 		/** The region to which the gallery Image Version is being replicated to. */
@@ -1232,7 +1255,10 @@ export namespace MyNS {
 		/** The details of the replication status. */
 		details: FormControl<string | null | undefined>,
 
-		/** It indicates progress of the replication job. */
+		/**
+		 * It indicates progress of the replication job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress: FormControl<number | null | undefined>,
 
 		/** The region to which the gallery Image Version is being replicated to. */
@@ -1338,20 +1364,32 @@ export namespace MyNS {
 	/** Describes the resource range. */
 	export interface ResourceRange {
 
-		/** The maximum number of the resource. */
+		/**
+		 * The maximum number of the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max?: number | null;
 
-		/** The minimum number of the resource. */
+		/**
+		 * The minimum number of the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min?: number | null;
 	}
 
 	/** Describes the resource range. */
 	export interface ResourceRangeFormProperties {
 
-		/** The maximum number of the resource. */
+		/**
+		 * The maximum number of the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** The minimum number of the resource. */
+		/**
+		 * The minimum number of the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min: FormControl<number | null | undefined>,
 	}
 	export function CreateResourceRangeFormGroup() {

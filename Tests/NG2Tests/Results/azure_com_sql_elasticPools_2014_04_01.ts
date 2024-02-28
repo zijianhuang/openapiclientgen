@@ -40,13 +40,22 @@ export namespace MyNS {
 		/** The creation date of the elastic pool (ISO8601 format). */
 		creationDate?: Date | null;
 
-		/** The maximum DTU any one database can consume. */
+		/**
+		 * The maximum DTU any one database can consume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		databaseDtuMax?: number | null;
 
-		/** The minimum DTU all databases are guaranteed. */
+		/**
+		 * The minimum DTU all databases are guaranteed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		databaseDtuMin?: number | null;
 
-		/** The total shared DTU for the database elastic pool. */
+		/**
+		 * The total shared DTU for the database elastic pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dtu?: number | null;
 
 		/** The edition of the elastic pool. */
@@ -55,7 +64,10 @@ export namespace MyNS {
 		/** The state of the elastic pool. */
 		state?: ElasticPoolPropertiesState | null;
 
-		/** Gets storage limit for the database elastic pool in MB. */
+		/**
+		 * Gets storage limit for the database elastic pool in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		storageMB?: number | null;
 
 		/** Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple availability zones. */
@@ -68,13 +80,22 @@ export namespace MyNS {
 		/** The creation date of the elastic pool (ISO8601 format). */
 		creationDate: FormControl<Date | null | undefined>,
 
-		/** The maximum DTU any one database can consume. */
+		/**
+		 * The maximum DTU any one database can consume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		databaseDtuMax: FormControl<number | null | undefined>,
 
-		/** The minimum DTU all databases are guaranteed. */
+		/**
+		 * The minimum DTU all databases are guaranteed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		databaseDtuMin: FormControl<number | null | undefined>,
 
-		/** The total shared DTU for the database elastic pool. */
+		/**
+		 * The total shared DTU for the database elastic pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dtu: FormControl<number | null | undefined>,
 
 		/** The edition of the elastic pool. */
@@ -83,7 +104,10 @@ export namespace MyNS {
 		/** The state of the elastic pool. */
 		state: FormControl<ElasticPoolPropertiesState | null | undefined>,
 
-		/** Gets storage limit for the database elastic pool in MB. */
+		/**
+		 * Gets storage limit for the database elastic pool in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		storageMB: FormControl<number | null | undefined>,
 
 		/** Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple availability zones. */

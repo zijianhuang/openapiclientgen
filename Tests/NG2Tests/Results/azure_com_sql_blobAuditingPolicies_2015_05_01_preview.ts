@@ -37,7 +37,10 @@ export namespace MyNS {
 		/** Specifies whether storageAccountAccessKey value is the storage’s secondary key. */
 		isStorageSecondaryKeyInUse?: boolean | null;
 
-		/** Specifies the number of days to keep in the audit logs. */
+		/**
+		 * Specifies the number of days to keep in the audit logs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays?: number | null;
 
 		/**
@@ -62,7 +65,10 @@ export namespace MyNS {
 		/** Specifies whether storageAccountAccessKey value is the storage’s secondary key. */
 		isStorageSecondaryKeyInUse: FormControl<boolean | null | undefined>,
 
-		/** Specifies the number of days to keep in the audit logs. */
+		/**
+		 * Specifies the number of days to keep in the audit logs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays: FormControl<number | null | undefined>,
 
 		/**

@@ -140,7 +140,10 @@ export namespace MyNS {
 		/** If this account is the Remaining bank account */
 		Remainder?: boolean | null;
 
-		/** Fixed amounts (for example, if an employee wants to have $100 of their salary transferred to one account, and the remaining amount to another) */
+		/**
+		 * Fixed amounts (for example, if an employee wants to have $100 of their salary transferred to one account, and the remaining amount to another)
+		 * Type: double
+		 */
 		Amount?: number | null;
 	}
 
@@ -163,25 +166,46 @@ export namespace MyNS {
 		/** Required */
 		CalculationType: EarningsLineCalculationType;
 
-		/** Annual salary for earnings line */
+		/**
+		 * Annual salary for earnings line
+		 * Type: double
+		 */
 		AnnualSalary?: number | null;
 
-		/** number of units for earning line */
+		/**
+		 * number of units for earning line
+		 * Type: double
+		 */
 		NumberOfUnitsPerWeek?: number | null;
 
-		/** Rate per unit of the EarningsLine. */
+		/**
+		 * Rate per unit of the EarningsLine.
+		 * Type: double
+		 */
 		RatePerUnit?: number | null;
 
-		/** Normal number of units for EarningsLine. Applicable when RateType is "MULTIPLE" */
+		/**
+		 * Normal number of units for EarningsLine. Applicable when RateType is "MULTIPLE"
+		 * Type: double
+		 */
 		NormalNumberOfUnits?: number | null;
 
-		/** Earnings rate amount */
+		/**
+		 * Earnings rate amount
+		 * Type: double
+		 */
 		Amount?: number | null;
 
-		/** Earnings rate number of units. */
+		/**
+		 * Earnings rate number of units.
+		 * Type: double
+		 */
 		NumberOfUnits?: number | null;
 
-		/** Earnings rate amount. Only applicable if the EarningsRate RateType is Fixed */
+		/**
+		 * Earnings rate amount. Only applicable if the EarningsRate RateType is Fixed
+		 * Type: double
+		 */
 		FixedAmount?: number | null;
 	}
 
@@ -198,13 +222,22 @@ export namespace MyNS {
 		/** Required */
 		CalculationType: DeductionLineCalculationType;
 
-		/** Deduction type amount */
+		/**
+		 * Deduction type amount
+		 * Type: double
+		 */
 		Amount?: number | null;
 
-		/** The Percentage of the Deduction */
+		/**
+		 * The Percentage of the Deduction
+		 * Type: double
+		 */
 		Percentage?: number | null;
 
-		/** Deduction number of units */
+		/**
+		 * Deduction number of units
+		 * Type: double
+		 */
 		NumberOfUnits?: number | null;
 	}
 
@@ -217,7 +250,10 @@ export namespace MyNS {
 		ContributionType?: SuperLineContributionType | null;
 		CalculationType?: SuperLineCalculationType | null;
 
-		/** amount of mimimum earnings */
+		/**
+		 * amount of mimimum earnings
+		 * Type: double
+		 */
 		MinimumMonthlyEarnings?: number | null;
 
 		/** expense account code */
@@ -226,10 +262,16 @@ export namespace MyNS {
 		/** liabilty account code */
 		LiabilityAccountCode?: string | null;
 
-		/** percentage for super line */
+		/**
+		 * percentage for super line
+		 * Type: double
+		 */
 		Percentage?: number | null;
 
-		/** Super membership amount */
+		/**
+		 * Super membership amount
+		 * Type: double
+		 */
 		Amount?: number | null;
 	}
 
@@ -242,7 +284,10 @@ export namespace MyNS {
 		/** Xero reimbursement type identifier */
 		ReimbursementTypeID?: string | null;
 
-		/** Reimbursement type amount */
+		/**
+		 * Reimbursement type amount
+		 * Type: double
+		 */
 		Amount?: number | null;
 
 		/**
@@ -268,7 +313,10 @@ export namespace MyNS {
 		/** amount of leave line */
 		IncludeSuperannuationGuaranteeContribution?: boolean | null;
 
-		/** Leave number of units */
+		/**
+		 * Leave number of units
+		 * Type: double
+		 */
 		NumberOfUnits?: number | null;
 	}
 
@@ -356,7 +404,10 @@ export namespace MyNS {
 		/** Identifier of the leave type (see PayItems) */
 		LeaveTypeID?: string | null;
 
-		/** The balance of the leave available */
+		/**
+		 * The balance of the leave available
+		 * Type: double
+		 */
 		NumberOfUnits?: number | null;
 
 		/** The type of units as specified by the LeaveType (see PayItems) */
@@ -377,6 +428,7 @@ export namespace MyNS {
 		/**
 		 * The memberhsip number assigned to the employee by the super fund.
 		 * Required
+		 * Type: double
 		 */
 		EmployeeNumber: number;
 	}
@@ -426,7 +478,10 @@ export namespace MyNS {
 
 	export interface LeavePeriod {
 
-		/** The Number of Units for the leave */
+		/**
+		 * The Number of Units for the leave
+		 * Type: double
+		 */
 		NumberOfUnits?: number | null;
 
 		/** The Pay Period End Date (YYYY-MM-DD) */
@@ -486,13 +541,19 @@ export namespace MyNS {
 		/** Default rate per unit (optional). Only applicable if RateType is RATEPERUNIT. */
 		RatePerUnit?: string | null;
 
-		/** This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MULTIPLE */
+		/**
+		 * This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MULTIPLE
+		 * Type: double
+		 */
 		Multiplier?: number | null;
 
 		/** Indicates that this earnings rate should accrue leave. Only applicable if RateType is MULTIPLE */
 		AccrueLeave?: boolean | null;
 
-		/** Optional Amount for FIXEDAMOUNT RateType EarningsRate */
+		/**
+		 * Optional Amount for FIXEDAMOUNT RateType EarningsRate
+		 * Type: double
+		 */
 		Amount?: number | null;
 		EmploymentTerminationPaymentType?: LeaveLineEmploymentTerminationPaymentType | null;
 
@@ -557,10 +618,16 @@ export namespace MyNS {
 		/** Xero identifier */
 		LeaveTypeID?: string | null;
 
-		/** The number of units the employee is entitled to each year */
+		/**
+		 * The number of units the employee is entitled to each year
+		 * Type: double
+		 */
 		NormalEntitlement?: number | null;
 
-		/** Enter an amount here if your organisation pays an additional percentage on top of ordinary earnings when your employees take leave (typically 17.5%) */
+		/**
+		 * Enter an amount here if your organisation pays an additional percentage on top of ordinary earnings when your employees take leave (typically 17.5%)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LeaveLoadingRate?: number | null;
 
 		/** Last modified timestamp */
@@ -650,7 +717,10 @@ export namespace MyNS {
 		EndDate: string;
 		Status?: TimesheetStatus | null;
 
-		/** Timesheet total hours */
+		/**
+		 * Timesheet total hours
+		 * Type: double
+		 */
 		Hours?: number | null;
 
 		/** The Xero identifier for a Payroll Timesheet */
@@ -719,22 +789,40 @@ export namespace MyNS {
 		/** The payslips in the payrun */
 		Payslips?: Array<PayslipSummary>;
 
-		/** The total Wages for the Payrun */
+		/**
+		 * The total Wages for the Payrun
+		 * Type: double
+		 */
 		Wages?: number | null;
 
-		/** The total Deductions for the Payrun */
+		/**
+		 * The total Deductions for the Payrun
+		 * Type: double
+		 */
 		Deductions?: number | null;
 
-		/** The total Tax for the Payrun */
+		/**
+		 * The total Tax for the Payrun
+		 * Type: double
+		 */
 		Tax?: number | null;
 
-		/** The total Super for the Payrun */
+		/**
+		 * The total Super for the Payrun
+		 * Type: double
+		 */
 		Super?: number | null;
 
-		/** The total Reimbursements for the Payrun */
+		/**
+		 * The total Reimbursements for the Payrun
+		 * Type: double
+		 */
 		Reimbursement?: number | null;
 
-		/** The total NetPay for the Payrun */
+		/**
+		 * The total NetPay for the Payrun
+		 * Type: double
+		 */
 		NetPay?: number | null;
 
 		/** Displays array of validation error messages from the API */
@@ -760,22 +848,40 @@ export namespace MyNS {
 		/** Employee group name */
 		EmployeeGroup?: string | null;
 
-		/** The Wages for the Payslip */
+		/**
+		 * The Wages for the Payslip
+		 * Type: double
+		 */
 		Wages?: number | null;
 
-		/** The Deductions for the Payslip */
+		/**
+		 * The Deductions for the Payslip
+		 * Type: double
+		 */
 		Deductions?: number | null;
 
-		/** The Tax for the Payslip */
+		/**
+		 * The Tax for the Payslip
+		 * Type: double
+		 */
 		Tax?: number | null;
 
-		/** The Super for the Payslip */
+		/**
+		 * The Super for the Payslip
+		 * Type: double
+		 */
 		Super?: number | null;
 
-		/** The Reimbursements for the Payslip */
+		/**
+		 * The Reimbursements for the Payslip
+		 * Type: double
+		 */
 		Reimbursements?: number | null;
 
-		/** The NetPay for the Payslip */
+		/**
+		 * The NetPay for the Payslip
+		 * Type: double
+		 */
 		NetPay?: number | null;
 
 		/** Last modified timestamp */
@@ -798,10 +904,16 @@ export namespace MyNS {
 		/** Xero identifier */
 		EarningsRateID?: string | null;
 
-		/** Rate per unit of the EarningsLine. */
+		/**
+		 * Rate per unit of the EarningsLine.
+		 * Type: double
+		 */
 		RatePerUnit?: number | null;
 
-		/** Earnings rate number of units. */
+		/**
+		 * Earnings rate number of units.
+		 * Type: double
+		 */
 		NumberOfUnits?: number | null;
 	}
 
@@ -810,7 +922,10 @@ export namespace MyNS {
 		/** Xero identifier for the Leave type. */
 		LeaveTypeID?: string | null;
 
-		/** Leave Accrual number of units */
+		/**
+		 * Leave Accrual number of units
+		 * Type: double
+		 */
 		NumberOfUnits?: number | null;
 
 		/** If you want to auto calculate leave. */
@@ -824,7 +939,10 @@ export namespace MyNS {
 		ContributionType?: SuperLineContributionType | null;
 		CalculationType?: SuperLineCalculationType | null;
 
-		/** Superannuation minimum monthly earnings. */
+		/**
+		 * Superannuation minimum monthly earnings.
+		 * Type: double
+		 */
 		MinimumMonthlyEarnings?: number | null;
 
 		/** Superannuation expense account code. */
@@ -836,10 +954,16 @@ export namespace MyNS {
 		/** Superannuation payment date for the current period (YYYY-MM-DD) */
 		PaymentDateForThisPeriod?: string | null;
 
-		/** Superannuation percentage */
+		/**
+		 * Superannuation percentage
+		 * Type: double
+		 */
 		Percentage?: number | null;
 
-		/** Superannuation amount */
+		/**
+		 * Superannuation amount
+		 * Type: double
+		 */
 		Amount?: number | null;
 	}
 
@@ -848,7 +972,10 @@ export namespace MyNS {
 		/** Xero identifier for payslip tax line ID. */
 		PayslipTaxLineID?: string | null;
 
-		/** The tax line amount */
+		/**
+		 * The tax line amount
+		 * Type: double
+		 */
 		Amount?: number | null;
 
 		/** Name of the tax type. */
@@ -882,22 +1009,40 @@ export namespace MyNS {
 		/** Last name of employee */
 		LastName?: string | null;
 
-		/** The Wages for the Payslip */
+		/**
+		 * The Wages for the Payslip
+		 * Type: double
+		 */
 		Wages?: number | null;
 
-		/** The Deductions for the Payslip */
+		/**
+		 * The Deductions for the Payslip
+		 * Type: double
+		 */
 		Deductions?: number | null;
 
-		/** The Tax for the Payslip */
+		/**
+		 * The Tax for the Payslip
+		 * Type: double
+		 */
 		Tax?: number | null;
 
-		/** The Super for the Payslip */
+		/**
+		 * The Super for the Payslip
+		 * Type: double
+		 */
 		Super?: number | null;
 
-		/** The Reimbursements for the Payslip */
+		/**
+		 * The Reimbursements for the Payslip
+		 * Type: double
+		 */
 		Reimbursements?: number | null;
 
-		/** The NetPay for the Payslip */
+		/**
+		 * The NetPay for the Payslip
+		 * Type: double
+		 */
 		NetPay?: number | null;
 		EarningsLines?: Array<EarningsLine>;
 		LeaveEarningsLines?: Array<LeaveEarningsLine>;
@@ -928,7 +1073,10 @@ export namespace MyNS {
 		/** Tracking categories for Employees and Timesheets */
 		TrackingCategories?: SettingsTrackingCategories;
 
-		/** Number of days in the Payroll year */
+		/**
+		 * Number of days in the Payroll year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DaysInPayrollYear?: number | null;
 	}
 

@@ -39,18 +39,30 @@ export namespace MyNS {
 
 	export interface QueueServicePropertiesSettings {
 
-		/** The HTTP port of the storage service front end. */
+		/**
+		 * The HTTP port of the storage service front end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndHttpListenPort?: number | null;
 
-		/** The HTTPs port of the storage service front end. */
+		/**
+		 * The HTTPs port of the storage service front end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndHttpsListenPort?: number | null;
 	}
 	export interface QueueServicePropertiesSettingsFormProperties {
 
-		/** The HTTP port of the storage service front end. */
+		/**
+		 * The HTTP port of the storage service front end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndHttpListenPort: FormControl<number | null | undefined>,
 
-		/** The HTTPs port of the storage service front end. */
+		/**
+		 * The HTTPs port of the storage service front end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndHttpsListenPort: FormControl<number | null | undefined>,
 	}
 	export function CreateQueueServicePropertiesSettingsFormGroup() {
@@ -279,16 +291,28 @@ export namespace MyNS {
 
 	export interface QueueServices_ListMetricsReturnValueMetricValues {
 
-		/** Average value of metric. */
+		/**
+		 * Average value of metric.
+		 * Type: float
+		 */
 		average?: number | null;
 
-		/** Count of metric values. */
+		/**
+		 * Count of metric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Maximum value of metric. */
+		/**
+		 * Maximum value of metric.
+		 * Type: float
+		 */
 		maximum?: number | null;
 
-		/** Minimum value of metric. */
+		/**
+		 * Minimum value of metric.
+		 * Type: float
+		 */
 		minimum?: number | null;
 
 		/** Metric value properties. */
@@ -297,21 +321,36 @@ export namespace MyNS {
 		/** Timestamp of metric value. */
 		timeStamp?: Date | null;
 
-		/** Total value of metric. */
+		/**
+		 * Total value of metric.
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface QueueServices_ListMetricsReturnValueMetricValuesFormProperties {
 
-		/** Average value of metric. */
+		/**
+		 * Average value of metric.
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Count of metric values. */
+		/**
+		 * Count of metric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Maximum value of metric. */
+		/**
+		 * Maximum value of metric.
+		 * Type: float
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum value of metric. */
+		/**
+		 * Minimum value of metric.
+		 * Type: float
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Metric value properties. */
@@ -320,7 +359,10 @@ export namespace MyNS {
 		/** Timestamp of metric value. */
 		timeStamp: FormControl<Date | null | undefined>,
 
-		/** Total value of metric. */
+		/**
+		 * Total value of metric.
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateQueueServices_ListMetricsReturnValueMetricValuesFormGroup() {

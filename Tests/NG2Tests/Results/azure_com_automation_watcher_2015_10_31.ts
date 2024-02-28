@@ -47,8 +47,11 @@ export namespace MyNS {
 		/** Gets or sets the description. */
 		description?: string | null;
 
-		/** Gets or sets the frequency at which the watcher is invoked. */
-		executionFrequencyInSeconds?: number | null;
+		/**
+		 * Gets or sets the frequency at which the watcher is invoked.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		executionFrequencyInSeconds?: string | null;
 
 		/** Details of the user who last modified the watcher. */
 		lastModifiedBy?: string | null;
@@ -78,8 +81,11 @@ export namespace MyNS {
 		/** Gets or sets the description. */
 		description: FormControl<string | null | undefined>,
 
-		/** Gets or sets the frequency at which the watcher is invoked. */
-		executionFrequencyInSeconds: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the frequency at which the watcher is invoked.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		executionFrequencyInSeconds: FormControl<string | null | undefined>,
 
 		/** Details of the user who last modified the watcher. */
 		lastModifiedBy: FormControl<string | null | undefined>,
@@ -103,7 +109,7 @@ export namespace MyNS {
 		return new FormGroup<WatcherPropertiesFormProperties>({
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			executionFrequencyInSeconds: new FormControl<number | null | undefined>(undefined),
+			executionFrequencyInSeconds: new FormControl<string | null | undefined>(undefined),
 			lastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			lastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			scriptName: new FormControl<string | null | undefined>(undefined),
@@ -138,19 +144,25 @@ export namespace MyNS {
 	/** The properties of the update watcher operation. */
 	export interface WatcherUpdateProperties {
 
-		/** Gets or sets the frequency at which the watcher is invoked. */
-		executionFrequencyInSeconds?: number | null;
+		/**
+		 * Gets or sets the frequency at which the watcher is invoked.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		executionFrequencyInSeconds?: string | null;
 	}
 
 	/** The properties of the update watcher operation. */
 	export interface WatcherUpdatePropertiesFormProperties {
 
-		/** Gets or sets the frequency at which the watcher is invoked. */
-		executionFrequencyInSeconds: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the frequency at which the watcher is invoked.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		executionFrequencyInSeconds: FormControl<string | null | undefined>,
 	}
 	export function CreateWatcherUpdatePropertiesFormGroup() {
 		return new FormGroup<WatcherUpdatePropertiesFormProperties>({
-			executionFrequencyInSeconds: new FormControl<number | null | undefined>(undefined),
+			executionFrequencyInSeconds: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

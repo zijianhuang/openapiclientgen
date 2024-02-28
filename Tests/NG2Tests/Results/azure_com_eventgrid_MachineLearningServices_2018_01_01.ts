@@ -16,7 +16,10 @@ export namespace MyNS {
 		/** The name of the data drift monitor that triggered the event. */
 		dataDriftName?: string | null;
 
-		/** The coefficient result that triggered the event. */
+		/**
+		 * The coefficient result that triggered the event.
+		 * Type: double
+		 */
 		driftCoefficient?: number | null;
 
 		/** The end time of the target dataset time series that resulted in drift detection. */
@@ -44,7 +47,10 @@ export namespace MyNS {
 		/** The name of the data drift monitor that triggered the event. */
 		dataDriftName: FormControl<string | null | undefined>,
 
-		/** The coefficient result that triggered the event. */
+		/**
+		 * The coefficient result that triggered the event.
+		 * Type: double
+		 */
 		driftCoefficient: FormControl<number | null | undefined>,
 
 		/** The end time of the target dataset time series that resulted in drift detection. */
@@ -135,7 +141,10 @@ export namespace MyNS {
 		/** The tags of the model that was registered. */
 		modelTags?: string | null;
 
-		/** The version of the model that was registered. */
+		/**
+		 * The version of the model that was registered.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		modelVersion?: number | null;
 	}
 
@@ -151,7 +160,10 @@ export namespace MyNS {
 		/** The tags of the model that was registered. */
 		modelTags: FormControl<string | null | undefined>,
 
-		/** The version of the model that was registered. */
+		/**
+		 * The version of the model that was registered.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		modelVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateMachineLearningServicesModelRegisteredEventDataFormGroup() {

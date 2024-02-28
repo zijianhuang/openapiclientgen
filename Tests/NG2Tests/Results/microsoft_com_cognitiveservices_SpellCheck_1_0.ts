@@ -172,7 +172,10 @@ export namespace MyNS {
 
 	export interface SpellingFlaggedToken {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 		pingUrlSuffix?: string | null;
 		suggestions?: Array<SpellingTokenSuggestion>;
@@ -185,7 +188,10 @@ export namespace MyNS {
 	}
 	export interface SpellingFlaggedTokenFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 		pingUrlSuffix: FormControl<string | null | undefined>,
 
@@ -207,6 +213,8 @@ export namespace MyNS {
 
 	export interface SpellingTokenSuggestion {
 		pingUrlSuffix?: string | null;
+
+		/** Type: double */
 		score?: number | null;
 
 		/** Required */
@@ -214,6 +222,8 @@ export namespace MyNS {
 	}
 	export interface SpellingTokenSuggestionFormProperties {
 		pingUrlSuffix: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */

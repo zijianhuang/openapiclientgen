@@ -24,14 +24,20 @@ export namespace MyNS {
 	/** All properties of a storage system. */
 	export interface StorageSystemModel {
 
-		/** Total capacity of the system. */
+		/**
+		 * Total capacity of the system.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCapacityGB?: number | null;
 	}
 
 	/** All properties of a storage system. */
 	export interface StorageSystemModelFormProperties {
 
-		/** Total capacity of the system. */
+		/**
+		 * Total capacity of the system.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCapacityGB: FormControl<number | null | undefined>,
 	}
 	export function CreateStorageSystemModelFormGroup() {

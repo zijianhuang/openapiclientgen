@@ -34,7 +34,10 @@ export namespace MyNS {
 		/** An identifying label for the message, which you can use to filter and report on messages you've sent later. Ideal for campaigns. A maximum of 280 characters. */
 		tag?: string | null;
 
-		/** The number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. Integer. */
+		/**
+		 * The number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. Integer.
+		 * Type: double
+		 */
 		ttl?: number | null;
 	}
 
@@ -62,7 +65,10 @@ export namespace MyNS {
 		/** An identifying label for the message, which you can use to filter and report on messages you've sent later. Ideal for campaigns. A maximum of 280 characters. */
 		tag: FormControl<string | null | undefined>,
 
-		/** The number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. Integer. */
+		/**
+		 * The number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. Integer.
+		 * Type: double
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchMessageFormGroup() {
@@ -129,6 +135,7 @@ export namespace MyNS {
 		/**
 		 * The number of remaining credits on your SMS Works account. Floating point number.
 		 * Required
+		 * Type: double
 		 */
 		credits: number;
 	}
@@ -137,6 +144,7 @@ export namespace MyNS {
 		/**
 		 * The number of remaining credits on your SMS Works account. Floating point number.
 		 * Required
+		 * Type: double
 		 */
 		credits: FormControl<number | null | undefined>,
 	}
@@ -169,6 +177,7 @@ export namespace MyNS {
 		/**
 		 * Numeric code used to identify the error. Integer.
 		 * Required
+		 * Type: double
 		 */
 		errorCode: number;
 		permanent?: boolean | null;
@@ -181,6 +190,7 @@ export namespace MyNS {
 		/**
 		 * Numeric code used to identify the error. Integer.
 		 * Required
+		 * Type: double
 		 */
 		errorCode: FormControl<number | null | undefined>,
 		permanent: FormControl<boolean | null | undefined>,
@@ -265,7 +275,10 @@ export namespace MyNS {
 		/** An identifying label for the message, which you can use to filter and report on messages you've sent later. Ideal for campaigns. A maximum of 280 characters. */
 		tag?: string | null;
 
-		/** The optional number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. Integer. */
+		/**
+		 * The optional number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. Integer.
+		 * Type: double
+		 */
 		ttl?: number | null;
 	}
 
@@ -296,7 +309,10 @@ export namespace MyNS {
 		/** An identifying label for the message, which you can use to filter and report on messages you've sent later. Ideal for campaigns. A maximum of 280 characters. */
 		tag: FormControl<string | null | undefined>,
 
-		/** The optional number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. Integer. */
+		/**
+		 * The optional number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. Integer.
+		 * Type: double
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateMessageFormGroup() {
@@ -325,7 +341,10 @@ export namespace MyNS {
 		/** Required */
 		customerid: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		destination: number;
 		failurereason?: MessageResponseFailurereason;
 		id?: string | null;
@@ -365,7 +384,10 @@ export namespace MyNS {
 		/** Required */
 		customerid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		destination: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 
@@ -411,14 +433,20 @@ export namespace MyNS {
 
 	export interface MessageResponseFailurereason {
 
-		/** Numeric code that defines the error. Integer. */
+		/**
+		 * Numeric code that defines the error. Integer.
+		 * Type: double
+		 */
 		code?: number | null;
 		details?: string | null;
 		permanent?: boolean | null;
 	}
 	export interface MessageResponseFailurereasonFormProperties {
 
-		/** Numeric code that defines the error. Integer. */
+		/**
+		 * Numeric code that defines the error. Integer.
+		 * Type: double
+		 */
 		code: FormControl<number | null | undefined>,
 		details: FormControl<string | null | undefined>,
 		permanent: FormControl<boolean | null | undefined>,
@@ -477,7 +505,10 @@ export namespace MyNS {
 	/** search parameters for querying the message database */
 	export interface Query {
 
-		/** The number of credits used on the message. Floating point number. */
+		/**
+		 * The number of credits used on the message. Floating point number.
+		 * Type: double
+		 */
 		credits?: number | null;
 
 		/** The phone number of the recipient. Start UK numbers with 44 and drop the leading 0. */
@@ -508,7 +539,10 @@ export namespace MyNS {
 	/** search parameters for querying the message database */
 	export interface QueryFormProperties {
 
-		/** The number of credits used on the message. Floating point number. */
+		/**
+		 * The number of credits used on the message. Floating point number.
+		 * Type: double
+		 */
 		credits: FormControl<number | null | undefined>,
 
 		/** The phone number of the recipient. Start UK numbers with 44 and drop the leading 0. */
@@ -599,12 +633,14 @@ export namespace MyNS {
 		/**
 		 * The number of remaining credits on your SMS Works account. Floating point number.
 		 * Required
+		 * Type: double
 		 */
 		credits: number;
 
 		/**
 		 * The number of credits used to send the message. Floating point number.
 		 * Required
+		 * Type: double
 		 */
 		creditsUsed: number;
 
@@ -619,12 +655,14 @@ export namespace MyNS {
 		/**
 		 * The number of remaining credits on your SMS Works account. Floating point number.
 		 * Required
+		 * Type: double
 		 */
 		credits: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of credits used to send the message. Floating point number.
 		 * Required
+		 * Type: double
 		 */
 		creditsUsed: FormControl<number | null | undefined>,
 

@@ -33,19 +33,31 @@ export namespace MyNS {
 		/** The description of the regulatory compliance assessment */
 		description?: string | null;
 
-		/** The given assessment's related resources count with failed state. */
+		/**
+		 * The given assessment's related resources count with failed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedResources?: number | null;
 
-		/** The given assessment's related resources count with passed state. */
+		/**
+		 * The given assessment's related resources count with passed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passedResources?: number | null;
 
-		/** The given assessment's related resources count with skipped state. */
+		/**
+		 * The given assessment's related resources count with skipped state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedResources?: number | null;
 
 		/** Aggregative state based on the assessment's scanned resources states */
 		state?: RegulatoryComplianceAssessmentPropertiesState | null;
 
-		/** The given assessment's related resources count with unsupported state. */
+		/**
+		 * The given assessment's related resources count with unsupported state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unsupportedResources?: number | null;
 	}
 
@@ -61,19 +73,31 @@ export namespace MyNS {
 		/** The description of the regulatory compliance assessment */
 		description: FormControl<string | null | undefined>,
 
-		/** The given assessment's related resources count with failed state. */
+		/**
+		 * The given assessment's related resources count with failed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedResources: FormControl<number | null | undefined>,
 
-		/** The given assessment's related resources count with passed state. */
+		/**
+		 * The given assessment's related resources count with passed state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passedResources: FormControl<number | null | undefined>,
 
-		/** The given assessment's related resources count with skipped state. */
+		/**
+		 * The given assessment's related resources count with skipped state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedResources: FormControl<number | null | undefined>,
 
 		/** Aggregative state based on the assessment's scanned resources states */
 		state: FormControl<RegulatoryComplianceAssessmentPropertiesState | null | undefined>,
 
-		/** The given assessment's related resources count with unsupported state. */
+		/**
+		 * The given assessment's related resources count with unsupported state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unsupportedResources: FormControl<number | null | undefined>,
 	}
 	export function CreateRegulatoryComplianceAssessmentPropertiesFormGroup() {
@@ -140,13 +164,22 @@ export namespace MyNS {
 		/** The description of the regulatory compliance control */
 		description?: string | null;
 
-		/** The number of supported regulatory compliance assessments of the given control with a failed state */
+		/**
+		 * The number of supported regulatory compliance assessments of the given control with a failed state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAssessments?: number | null;
 
-		/** The number of supported regulatory compliance assessments of the given control with a passed state */
+		/**
+		 * The number of supported regulatory compliance assessments of the given control with a passed state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passedAssessments?: number | null;
 
-		/** The number of supported regulatory compliance assessments of the given control with a skipped state */
+		/**
+		 * The number of supported regulatory compliance assessments of the given control with a skipped state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedAssessments?: number | null;
 
 		/** Aggregative state based on the control's supported assessments states */
@@ -159,13 +192,22 @@ export namespace MyNS {
 		/** The description of the regulatory compliance control */
 		description: FormControl<string | null | undefined>,
 
-		/** The number of supported regulatory compliance assessments of the given control with a failed state */
+		/**
+		 * The number of supported regulatory compliance assessments of the given control with a failed state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedAssessments: FormControl<number | null | undefined>,
 
-		/** The number of supported regulatory compliance assessments of the given control with a passed state */
+		/**
+		 * The number of supported regulatory compliance assessments of the given control with a passed state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passedAssessments: FormControl<number | null | undefined>,
 
-		/** The number of supported regulatory compliance assessments of the given control with a skipped state */
+		/**
+		 * The number of supported regulatory compliance assessments of the given control with a skipped state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedAssessments: FormControl<number | null | undefined>,
 
 		/** Aggregative state based on the control's supported assessments states */
@@ -230,38 +272,62 @@ export namespace MyNS {
 	/** Regulatory compliance standard data */
 	export interface RegulatoryComplianceStandardProperties {
 
-		/** The number of supported regulatory compliance controls of the given standard with a failed state */
+		/**
+		 * The number of supported regulatory compliance controls of the given standard with a failed state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedControls?: number | null;
 
-		/** The number of supported regulatory compliance controls of the given standard with a passed state */
+		/**
+		 * The number of supported regulatory compliance controls of the given standard with a passed state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passedControls?: number | null;
 
-		/** The number of supported regulatory compliance controls of the given standard with a skipped state */
+		/**
+		 * The number of supported regulatory compliance controls of the given standard with a skipped state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedControls?: number | null;
 
 		/** Aggregative state based on the standard's supported controls states */
 		state?: RegulatoryComplianceAssessmentPropertiesState | null;
 
-		/** The number of regulatory compliance controls of the given standard which are unsupported by automated assessments */
+		/**
+		 * The number of regulatory compliance controls of the given standard which are unsupported by automated assessments
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unsupportedControls?: number | null;
 	}
 
 	/** Regulatory compliance standard data */
 	export interface RegulatoryComplianceStandardPropertiesFormProperties {
 
-		/** The number of supported regulatory compliance controls of the given standard with a failed state */
+		/**
+		 * The number of supported regulatory compliance controls of the given standard with a failed state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedControls: FormControl<number | null | undefined>,
 
-		/** The number of supported regulatory compliance controls of the given standard with a passed state */
+		/**
+		 * The number of supported regulatory compliance controls of the given standard with a passed state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passedControls: FormControl<number | null | undefined>,
 
-		/** The number of supported regulatory compliance controls of the given standard with a skipped state */
+		/**
+		 * The number of supported regulatory compliance controls of the given standard with a skipped state
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedControls: FormControl<number | null | undefined>,
 
 		/** Aggregative state based on the standard's supported controls states */
 		state: FormControl<RegulatoryComplianceAssessmentPropertiesState | null | undefined>,
 
-		/** The number of regulatory compliance controls of the given standard which are unsupported by automated assessments */
+		/**
+		 * The number of regulatory compliance controls of the given standard which are unsupported by automated assessments
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unsupportedControls: FormControl<number | null | undefined>,
 	}
 	export function CreateRegulatoryComplianceStandardPropertiesFormGroup() {

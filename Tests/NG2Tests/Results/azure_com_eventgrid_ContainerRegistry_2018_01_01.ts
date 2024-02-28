@@ -57,8 +57,11 @@ export namespace MyNS {
 		/** The repository name of the artifact. */
 		repository?: string | null;
 
-		/** The size in bytes of the artifact. */
-		size?: number | null;
+		/**
+		 * The size in bytes of the artifact.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/** The tag of the artifact. */
 		tag?: string | null;
@@ -82,8 +85,11 @@ export namespace MyNS {
 		/** The repository name of the artifact. */
 		repository: FormControl<string | null | undefined>,
 
-		/** The size in bytes of the artifact. */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * The size in bytes of the artifact.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/** The tag of the artifact. */
 		tag: FormControl<string | null | undefined>,
@@ -97,7 +103,7 @@ export namespace MyNS {
 			mediaType: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			repository: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			tag: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<string | null | undefined>(undefined),
 		});
@@ -284,8 +290,11 @@ export namespace MyNS {
 		/** The digest of the content, as defined by the Registry V2 HTTP API Specification. */
 		digest?: string | null;
 
-		/** The number of bytes of the content. Same as Size field. */
-		length?: number | null;
+		/**
+		 * The number of bytes of the content. Same as Size field.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		length?: string | null;
 
 		/** The MIME type of the referenced object. */
 		mediaType?: string | null;
@@ -293,8 +302,11 @@ export namespace MyNS {
 		/** The repository name. */
 		repository?: string | null;
 
-		/** The number of bytes of the content. Same as Length field. */
-		size?: number | null;
+		/**
+		 * The number of bytes of the content. Same as Length field.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size?: string | null;
 
 		/** The tag name. */
 		tag?: string | null;
@@ -309,8 +321,11 @@ export namespace MyNS {
 		/** The digest of the content, as defined by the Registry V2 HTTP API Specification. */
 		digest: FormControl<string | null | undefined>,
 
-		/** The number of bytes of the content. Same as Size field. */
-		length: FormControl<number | null | undefined>,
+		/**
+		 * The number of bytes of the content. Same as Size field.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		length: FormControl<string | null | undefined>,
 
 		/** The MIME type of the referenced object. */
 		mediaType: FormControl<string | null | undefined>,
@@ -318,8 +333,11 @@ export namespace MyNS {
 		/** The repository name. */
 		repository: FormControl<string | null | undefined>,
 
-		/** The number of bytes of the content. Same as Length field. */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * The number of bytes of the content. Same as Length field.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/** The tag name. */
 		tag: FormControl<string | null | undefined>,
@@ -330,10 +348,10 @@ export namespace MyNS {
 	export function CreateContainerRegistryEventTargetFormGroup() {
 		return new FormGroup<ContainerRegistryEventTargetFormProperties>({
 			digest: new FormControl<string | null | undefined>(undefined),
-			length: new FormControl<number | null | undefined>(undefined),
+			length: new FormControl<string | null | undefined>(undefined),
 			mediaType: new FormControl<string | null | undefined>(undefined),
 			repository: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			tag: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});

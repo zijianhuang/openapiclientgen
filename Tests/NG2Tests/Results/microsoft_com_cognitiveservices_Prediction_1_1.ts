@@ -31,11 +31,15 @@ export namespace MyNS {
 	}
 
 	export interface ImageTagPredictionModel {
+
+		/** Type: float */
 		Probability?: number | null;
 		Tag?: string | null;
 		TagId?: string | null;
 	}
 	export interface ImageTagPredictionModelFormProperties {
+
+		/** Type: float */
 		Probability: FormControl<number | null | undefined>,
 		Tag: FormControl<string | null | undefined>,
 		TagId: FormControl<string | null | undefined>,

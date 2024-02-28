@@ -25,6 +25,8 @@ export namespace MyNS {
 
 	/** RestErrorDTO */
 	export interface RestErrorDTO {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		developerMessage?: string | null;
 		message?: string | null;
@@ -34,6 +36,8 @@ export namespace MyNS {
 
 	/** RestErrorDTO */
 	export interface RestErrorDTOFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		developerMessage: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -64,12 +68,16 @@ export namespace MyNS {
 
 	/** WebServiceAccount */
 	export interface WebServiceAccount {
+
+		/** Type: double */
 		creditBalance?: number | null;
 		links?: Array<Link>;
 	}
 
 	/** WebServiceAccount */
 	export interface WebServiceAccountFormProperties {
+
+		/** Type: double */
 		creditBalance: FormControl<number | null | undefined>,
 	}
 	export function CreateWebServiceAccountFormGroup() {
@@ -191,19 +199,31 @@ export namespace MyNS {
 	/** WebServiceAnalyseMessageResponse */
 	export interface WebServiceAnalyseMessageResponse {
 		characterAnalysis?: Array<string>;
+
+		/** Type: double */
 		messageCreditCost?: number | null;
 		messageEncoding?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messageLength?: number | null;
 		messageLengthWithinMaximumAllowed?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfMessages?: number | null;
 	}
 
 	/** WebServiceAnalyseMessageResponse */
 	export interface WebServiceAnalyseMessageResponseFormProperties {
+
+		/** Type: double */
 		messageCreditCost: FormControl<number | null | undefined>,
 		messageEncoding: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messageLength: FormControl<number | null | undefined>,
 		messageLengthWithinMaximumAllowed: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfMessages: FormControl<number | null | undefined>,
 	}
 	export function CreateWebServiceAnalyseMessageResponseFormGroup() {
@@ -325,6 +345,8 @@ export namespace MyNS {
 
 		/** WebServiceContactLink */
 		contact?: WebServiceContactLink;
+
+		/** Type: double */
 		creditCost?: number | null;
 		dateTimeReceived?: Date | null;
 		dateTimeScheduled?: Date | null;
@@ -336,6 +358,8 @@ export namespace MyNS {
 		messageId?: string | null;
 		messageStatus?: string | null;
 		messageType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfMessages?: number | null;
 		read?: boolean | null;
 
@@ -348,6 +372,8 @@ export namespace MyNS {
 	/** WebServiceMessage */
 	export interface WebServiceMessageFormProperties {
 		campaign: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		creditCost: FormControl<number | null | undefined>,
 		dateTimeReceived: FormControl<Date | null | undefined>,
 		dateTimeScheduled: FormControl<Date | null | undefined>,
@@ -358,6 +384,8 @@ export namespace MyNS {
 		messageId: FormControl<string | null | undefined>,
 		messageStatus: FormControl<string | null | undefined>,
 		messageType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfMessages: FormControl<number | null | undefined>,
 		read: FormControl<boolean | null | undefined>,
 		toNumber: FormControl<string | null | undefined>,
@@ -405,21 +433,41 @@ export namespace MyNS {
 
 	/** WebServiceMessages */
 	export interface WebServiceMessages {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		elements?: number | null;
 		links?: Array<Link>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize?: number | null;
-		totalElements?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalElements?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages?: number | null;
 		webServiceMessages?: Array<WebServiceMessage>;
 	}
 
 	/** WebServiceMessages */
 	export interface WebServiceMessagesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		elements: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize: FormControl<number | null | undefined>,
-		totalElements: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalElements: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateWebServiceMessagesFormGroup() {
@@ -427,7 +475,7 @@ export namespace MyNS {
 			elements: new FormControl<number | null | undefined>(undefined),
 			page: new FormControl<number | null | undefined>(undefined),
 			pageSize: new FormControl<number | null | undefined>(undefined),
-			totalElements: new FormControl<number | null | undefined>(undefined),
+			totalElements: new FormControl<string | null | undefined>(undefined),
 			totalPages: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -466,6 +514,8 @@ export namespace MyNS {
 	/** WebServiceSendSmsRequests */
 	export interface WebServiceSendSmsRequests {
 		defaultDateToSend?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messagesPerMinute?: number | null;
 		sendSmsRequests?: Array<WebServiceSendSmsRequest>;
 	}
@@ -473,6 +523,8 @@ export namespace MyNS {
 	/** WebServiceSendSmsRequests */
 	export interface WebServiceSendSmsRequestsFormProperties {
 		defaultDateToSend: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		messagesPerMinute: FormControl<number | null | undefined>,
 	}
 	export function CreateWebServiceSendSmsRequestsFormGroup() {
@@ -541,21 +593,45 @@ export namespace MyNS {
 
 	/** WebServiceStatistics */
 	export interface WebServiceStatistics {
+
+		/** Type: double */
 		delivered?: number | null;
+
+		/** Type: double */
 		failed?: number | null;
+
+		/** Type: double */
 		failedOptout?: number | null;
+
+		/** Type: double */
 		failedRefunded?: number | null;
+
+		/** Type: double */
 		sent?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 
 	/** WebServiceStatistics */
 	export interface WebServiceStatisticsFormProperties {
+
+		/** Type: double */
 		delivered: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		failed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		failedOptout: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		failedRefunded: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		sent: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateWebServiceStatisticsFormGroup() {
@@ -576,20 +652,24 @@ export namespace MyNS {
 		data?: string | null;
 		links?: Array<Link>;
 		name?: string | null;
-		templateId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		templateId?: string | null;
 	}
 
 	/** WebServiceTemplate */
 	export interface WebServiceTemplateFormProperties {
 		data: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		templateId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		templateId: FormControl<string | null | undefined>,
 	}
 	export function CreateWebServiceTemplateFormGroup() {
 		return new FormGroup<WebServiceTemplateFormProperties>({
 			data: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			templateId: new FormControl<number | null | undefined>(undefined),
+			templateId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -613,6 +693,8 @@ export namespace MyNS {
 
 	/** WebServiceTransferCreditsRequest */
 	export interface WebServiceTransferCreditsRequest {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfCreditsToTransfer?: number | null;
 		transferFromEmailAddress?: string | null;
 		transferToEmailAddress?: string | null;
@@ -620,6 +702,8 @@ export namespace MyNS {
 
 	/** WebServiceTransferCreditsRequest */
 	export interface WebServiceTransferCreditsRequestFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfCreditsToTransfer: FormControl<number | null | undefined>,
 		transferFromEmailAddress: FormControl<string | null | undefined>,
 		transferToEmailAddress: FormControl<string | null | undefined>,
@@ -638,24 +722,32 @@ export namespace MyNS {
 	export interface WebServiceUser {
 		company?: string | null;
 		contactNumber?: string | null;
+
+		/** Type: double */
 		creditBalance?: number | null;
 		emailAddress?: string | null;
 		firstName?: string | null;
 		lastName?: string | null;
 		password?: string | null;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 
 	/** WebServiceUser */
 	export interface WebServiceUserFormProperties {
 		company: FormControl<string | null | undefined>,
 		contactNumber: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		creditBalance: FormControl<number | null | undefined>,
 		emailAddress: FormControl<string | null | undefined>,
 		firstName: FormControl<string | null | undefined>,
 		lastName: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateWebServiceUserFormGroup() {
 		return new FormGroup<WebServiceUserFormProperties>({
@@ -666,7 +758,7 @@ export namespace MyNS {
 			firstName: new FormControl<string | null | undefined>(undefined),
 			lastName: new FormControl<string | null | undefined>(undefined),
 			password: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -739,8 +831,14 @@ export namespace MyNS {
 		language?: string | null;
 		message?: string | null;
 		recipientNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retryCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retryMaximumInterval?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retryMinimumInterval?: number | null;
 	}
 
@@ -751,8 +849,14 @@ export namespace MyNS {
 		language: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		recipientNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retryCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retryMaximumInterval: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retryMinimumInterval: FormControl<number | null | undefined>,
 	}
 	export function CreateWebServiceVoiceMessageSendSingleTextRequestFormGroup() {
@@ -772,21 +876,41 @@ export namespace MyNS {
 
 	/** WebServiceVoiceMessages */
 	export interface WebServiceVoiceMessages {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		elements?: number | null;
 		links?: Array<Link>;
 		messages?: Array<WebServiceVoiceMessage>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize?: number | null;
-		totalElements?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalElements?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages?: number | null;
 	}
 
 	/** WebServiceVoiceMessages */
 	export interface WebServiceVoiceMessagesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		elements: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize: FormControl<number | null | undefined>,
-		totalElements: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalElements: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateWebServiceVoiceMessagesFormGroup() {
@@ -794,7 +918,7 @@ export namespace MyNS {
 			elements: new FormControl<number | null | undefined>(undefined),
 			page: new FormControl<number | null | undefined>(undefined),
 			pageSize: new FormControl<number | null | undefined>(undefined),
-			totalElements: new FormControl<number | null | undefined>(undefined),
+			totalElements: new FormControl<string | null | undefined>(undefined),
 			totalPages: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -868,10 +992,10 @@ export namespace MyNS {
 		 * getUser
 		 * Gets a user from a given user id
 		 * Get api/rest/v1/account/user/{userId}
-		 * @param {number} userId userId
+		 * @param {string} userId userId
 		 * @return {WebServiceUser} OK
 		 */
-		ApiRestV1AccountUser_userIdGet(userId: number, headersHandler?: () => HttpHeaders): Observable<WebServiceUser> {
+		ApiRestV1AccountUser_userIdGet(userId: string, headersHandler?: () => HttpHeaders): Observable<WebServiceUser> {
 			return this.http.get<WebServiceUser>(this.baseUri + 'api/rest/v1/account/user/' + userId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -879,11 +1003,11 @@ export namespace MyNS {
 		 * update
 		 * Updates a sub-account in your team. The following fields can be updated <i>firstname, lastname, contact number</i> and <i>password.</i>
 		 * Post api/rest/v1/account/user/{userId}
-		 * @param {number} userId userId
+		 * @param {string} userId userId
 		 * @param {WebServiceUser} requestBody request
 		 * @return {WebServiceUser} Description was not specified
 		 */
-		ApiRestV1AccountUser_userIdPost(userId: number, requestBody: WebServiceUser, headersHandler?: () => HttpHeaders): Observable<WebServiceUser> {
+		ApiRestV1AccountUser_userIdPost(userId: string, requestBody: WebServiceUser, headersHandler?: () => HttpHeaders): Observable<WebServiceUser> {
 			return this.http.post<WebServiceUser>(this.baseUri + 'api/rest/v1/account/user/' + userId, JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
@@ -1369,10 +1493,10 @@ export namespace MyNS {
 		 * get
 		 * Returns details for a single template
 		 * Get api/rest/v1/templates/{templateId}
-		 * @param {number} templateId templateId
+		 * @param {string} templateId templateId
 		 * @return {WebServiceTemplate} OK
 		 */
-		ApiRestV1Templates_templateIdGet(templateId: number, headersHandler?: () => HttpHeaders): Observable<WebServiceTemplate> {
+		ApiRestV1Templates_templateIdGet(templateId: string, headersHandler?: () => HttpHeaders): Observable<WebServiceTemplate> {
 			return this.http.get<WebServiceTemplate>(this.baseUri + 'api/rest/v1/templates/' + templateId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1380,10 +1504,10 @@ export namespace MyNS {
 		 * delete
 		 * Deletes a  template
 		 * Delete api/rest/v1/templates/{templateId}
-		 * @param {number} templateId templateId
+		 * @param {string} templateId templateId
 		 * @return {void} Description was not specified
 		 */
-		ApiRestV1Templates_templateIdDelete(templateId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ApiRestV1Templates_templateIdDelete(templateId: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'api/rest/v1/templates/' + templateId, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 

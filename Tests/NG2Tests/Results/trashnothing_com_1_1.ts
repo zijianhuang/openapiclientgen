@@ -14,7 +14,10 @@ export namespace MyNS {
 		/** The search phrase that the alert triggers on. */
 		search?: string | null;
 
-		/** The number of time the alert has triggered and been send out. */
+		/**
+		 * The number of time the alert has triggered and been send out.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		send_count?: number | null;
 
 		/**
@@ -34,7 +37,10 @@ export namespace MyNS {
 		/** The search phrase that the alert triggers on. */
 		search: FormControl<string | null | undefined>,
 
-		/** The number of time the alert has triggered and been send out. */
+		/**
+		 * The number of time the alert has triggered and been send out.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		send_count: FormControl<number | null | undefined>,
 		user_id: FormControl<string | null | undefined>,
 	}
@@ -70,11 +76,19 @@ export namespace MyNS {
 	}
 
 	export interface BoundingBoxNortheast {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface BoundingBoxNortheastFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateBoundingBoxNortheastFormGroup() {
@@ -86,11 +100,19 @@ export namespace MyNS {
 	}
 
 	export interface BoundingBoxSouthwest {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface BoundingBoxSouthwestFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateBoundingBoxSouthwestFormGroup() {
@@ -118,7 +140,10 @@ export namespace MyNS {
 		/** The latest messages in this conversation. */
 		messages?: Array<Message>;
 
-		/** The count of how many unread messages this conversation has. */
+		/**
+		 * The count of how many unread messages this conversation has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_unread_messages?: number | null;
 		user?: User;
 	}
@@ -136,7 +161,10 @@ export namespace MyNS {
 		/** The UTC date and time of the last message in this conversation. */
 		last_message_date: FormControl<Date | null | undefined>,
 
-		/** The count of how many unread messages this conversation has. */
+		/**
+		 * The count of how many unread messages this conversation has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_unread_messages: FormControl<number | null | undefined>,
 	}
 	export function CreateConversationFormGroup() {
@@ -245,13 +273,21 @@ export namespace MyNS {
 	}
 
 	export interface MessagePhotosImages {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface MessagePhotosImagesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMessagePhotosImagesFormGroup() {
@@ -502,7 +538,11 @@ export namespace MyNS {
 	}
 
 	export interface CurrentUserLocation {
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 
 		/** A text description of the location specified by latitude and longitude. */
@@ -516,7 +556,11 @@ export namespace MyNS {
 		radius?: number | null;
 	}
 	export interface CurrentUserLocationFormProperties {
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 
 		/** A text description of the location specified by latitude and longitude. */
@@ -541,10 +585,16 @@ export namespace MyNS {
 
 	export interface CurrentUserPost_location {
 
-		/** May be null. */
+		/**
+		 * May be null.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** May be null. */
+		/**
+		 * May be null.
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/** A text description of the location specified by latitude and longitude. */
@@ -552,10 +602,16 @@ export namespace MyNS {
 	}
 	export interface CurrentUserPost_locationFormProperties {
 
-		/** May be null. */
+		/**
+		 * May be null.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** May be null. */
+		/**
+		 * May be null.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** A text description of the location specified by latitude and longitude. */
@@ -612,10 +668,17 @@ export namespace MyNS {
 
 		/** A unique identifier for the group that is used in URLs. */
 		identifier?: string | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 
-		/** The number of members who belong to the group. */
+		/**
+		 * The number of members who belong to the group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		member_count?: number | null;
 
 		/**
@@ -638,7 +701,10 @@ export namespace MyNS {
 		/** The timezone that the group is in (eg. America/New_York). */
 		timezone?: string | null;
 
-		/** The group offset (in hours) from UTC time.  This does not take into account daylight savings time (DST) in places that observe DST so it may be incorrect during DST. */
+		/**
+		 * The group offset (in hours) from UTC time.  This does not take into account daylight savings time (DST) in places that observe DST so it may be incorrect during DST.
+		 * Type: double
+		 */
 		utc_offset?: number | null;
 	}
 
@@ -656,10 +722,17 @@ export namespace MyNS {
 
 		/** A unique identifier for the group that is used in URLs. */
 		identifier: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 
-		/** The number of members who belong to the group. */
+		/**
+		 * The number of members who belong to the group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		member_count: FormControl<number | null | undefined>,
 
 		/** The name of the group (not guaranteed to be unique). */
@@ -674,7 +747,10 @@ export namespace MyNS {
 		/** The timezone that the group is in (eg. America/New_York). */
 		timezone: FormControl<string | null | undefined>,
 
-		/** The group offset (in hours) from UTC time.  This does not take into account daylight savings time (DST) in places that observe DST so it may be incorrect during DST. */
+		/**
+		 * The group offset (in hours) from UTC time.  This does not take into account daylight savings time (DST) in places that observe DST so it may be incorrect during DST.
+		 * Type: double
+		 */
 		utc_offset: FormControl<number | null | undefined>,
 	}
 	export function CreateGroupFormGroup() {
@@ -866,13 +942,21 @@ export namespace MyNS {
 	}
 
 	export interface PhotoImages {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface PhotoImagesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePhotoImagesFormGroup() {
@@ -905,13 +989,21 @@ export namespace MyNS {
 	}
 
 	export interface PhotoResultThumbnail {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface PhotoResultThumbnailFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePhotoResultThumbnailFormGroup() {
@@ -939,10 +1031,16 @@ export namespace MyNS {
 		 */
 		group_id?: string | null;
 
-		/** May be null if a post hasn't been mapped. */
+		/**
+		 * May be null if a post hasn't been mapped.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** May be null if a post hasn't been mapped. */
+		/**
+		 * May be null if a post hasn't been mapped.
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/**
@@ -986,10 +1084,16 @@ export namespace MyNS {
 		 */
 		group_id: FormControl<string | null | undefined>,
 
-		/** May be null if a post hasn't been mapped. */
+		/**
+		 * May be null if a post hasn't been mapped.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** May be null if a post hasn't been mapped. */
+		/**
+		 * May be null if a post hasn't been mapped.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/**
@@ -1681,18 +1785,28 @@ export namespace MyNS {
 
 		/**
 		 * If the include_num_unread parameter is set to 1, this will be set to the total number of conversations that have unread messages matching the query parameters of the request.  If the include_num_unread parameter is set to 0, this will be null.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		num_unread?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page?: number | null;
 	}
 	export interface Get_conversationsReturnFormProperties {
 
 		/**
 		 * If the include_num_unread parameter is set to 1, this will be set to the total number of conversations that have unread messages matching the query parameters of the request.  If the include_num_unread parameter is set to 0, this will be null.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		num_unread: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_conversationsReturnFormGroup() {
@@ -1706,12 +1820,20 @@ export namespace MyNS {
 
 	export interface Search_conversationsReturn {
 		conversations?: Array<Conversation>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page?: number | null;
 		search?: string | null;
 	}
 	export interface Search_conversationsReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page: FormControl<number | null | undefined>,
 		search: FormControl<string | null | undefined>,
 	}
@@ -1729,11 +1851,19 @@ export namespace MyNS {
 		/** A conversation between the current user and another user. */
 		conversation?: Conversation;
 		messages?: Array<Message>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page?: number | null;
 	}
 	export interface Get_conversation_messagesReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_conversation_messagesReturnFormGroup() {
@@ -1746,43 +1876,79 @@ export namespace MyNS {
 
 	export interface Search_groupsReturn {
 
-		/** The index of the last group being returned (an integer between start_index and num_groups). */
+		/**
+		 * The index of the last group being returned (an integer between start_index and num_groups).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 		groups?: Array<Group>;
 
-		/** The total number of groups available. */
+		/**
+		 * The total number of groups available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_groups?: number | null;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The page number of the groups being returned. */
+		/**
+		 * The page number of the groups being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of groups being returned per page. */
+		/**
+		 * The number of groups being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** The index of the first group being returned (an integer between 1 and num_groups). */
+		/**
+		 * The index of the first group being returned (an integer between 1 and num_groups).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Search_groupsReturnFormProperties {
 
-		/** The index of the last group being returned (an integer between start_index and num_groups). */
+		/**
+		 * The index of the last group being returned (an integer between start_index and num_groups).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
-		/** The total number of groups available. */
+		/**
+		 * The total number of groups available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_groups: FormControl<number | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The page number of the groups being returned. */
+		/**
+		 * The page number of the groups being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of groups being returned per page. */
+		/**
+		 * The number of groups being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first group being returned (an integer between 1 and num_groups). */
+		/**
+		 * The index of the first group being returned (an integer between 1 and num_groups).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_groupsReturnFormGroup() {
@@ -1799,7 +1965,10 @@ export namespace MyNS {
 
 	export interface Get_postsReturn {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 
 		/**
@@ -1812,25 +1981,43 @@ export namespace MyNS {
 		 */
 		last_listings_view?: Date | null;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts?: number | null;
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 		posts?: Array<Post>;
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Get_postsReturnFormProperties {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
 		/**
@@ -1838,19 +2025,34 @@ export namespace MyNS {
 		 */
 		last_listings_view: FormControl<Date | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts: FormControl<number | null | undefined>,
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_postsReturnFormGroup() {
@@ -1879,7 +2081,10 @@ export namespace MyNS {
 
 	export interface Search_postsReturn {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 
 		/**
@@ -1887,40 +2092,73 @@ export namespace MyNS {
 		 */
 		group_ids?: Array<string>;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts?: number | null;
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 		posts?: Array<PostSearchResult>;
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Search_postsReturnFormProperties {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts: FormControl<number | null | undefined>,
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_postsReturnFormGroup() {
@@ -1938,7 +2176,10 @@ export namespace MyNS {
 	export interface Get_post_and_related_dataReturn {
 		author?: User;
 
-		/** Count of offer posts made by the post author in the last 90 days. */
+		/**
+		 * Count of offer posts made by the post author in the last 90 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		author_offer_count?: number | null;
 
 		/**
@@ -1946,7 +2187,10 @@ export namespace MyNS {
 		 */
 		author_posts?: Array<Post>;
 
-		/** Count of wanted posts made by the post author in the last 90 days. */
+		/**
+		 * Count of wanted posts made by the post author in the last 90 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		author_wanted_count?: number | null;
 
 		/**
@@ -1967,10 +2211,16 @@ export namespace MyNS {
 	}
 	export interface Get_post_and_related_dataReturnFormProperties {
 
-		/** Count of offer posts made by the post author in the last 90 days. */
+		/**
+		 * Count of offer posts made by the post author in the last 90 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		author_offer_count: FormControl<number | null | undefined>,
 
-		/** Count of wanted posts made by the post author in the last 90 days. */
+		/**
+		 * Count of wanted posts made by the post author in the last 90 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		author_wanted_count: FormControl<number | null | undefined>,
 
 		/**
@@ -2020,7 +2270,10 @@ export namespace MyNS {
 
 	export interface Get_current_user_postsReturn {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 
 		/**
@@ -2033,25 +2286,43 @@ export namespace MyNS {
 		 */
 		last_listings_view?: Date | null;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts?: number | null;
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 		posts?: Array<Post>;
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Get_current_user_postsReturnFormProperties {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
 		/**
@@ -2059,19 +2330,34 @@ export namespace MyNS {
 		 */
 		last_listings_view: FormControl<Date | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts: FormControl<number | null | undefined>,
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_current_user_postsReturnFormGroup() {
@@ -2089,7 +2375,10 @@ export namespace MyNS {
 
 	export interface Search_current_user_postsReturn {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 
 		/**
@@ -2097,40 +2386,73 @@ export namespace MyNS {
 		 */
 		group_ids?: Array<string>;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts?: number | null;
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 		posts?: Array<PostSearchResult>;
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Search_current_user_postsReturnFormProperties {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts: FormControl<number | null | undefined>,
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_current_user_postsReturnFormGroup() {
@@ -2175,7 +2497,10 @@ export namespace MyNS {
 
 	export interface Get_user_postsReturn {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 
 		/**
@@ -2188,25 +2513,43 @@ export namespace MyNS {
 		 */
 		last_listings_view?: Date | null;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts?: number | null;
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 		posts?: Array<Post>;
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Get_user_postsReturnFormProperties {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
 		/**
@@ -2214,19 +2557,34 @@ export namespace MyNS {
 		 */
 		last_listings_view: FormControl<Date | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts: FormControl<number | null | undefined>,
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_user_postsReturnFormGroup() {
@@ -2244,7 +2602,10 @@ export namespace MyNS {
 
 	export interface Search_user_postsReturn {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 
 		/**
@@ -2252,40 +2613,73 @@ export namespace MyNS {
 		 */
 		group_ids?: Array<string>;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts?: number | null;
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 		posts?: Array<PostSearchResult>;
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Search_user_postsReturnFormProperties {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts: FormControl<number | null | undefined>,
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_user_postsReturnFormGroup() {

@@ -30,7 +30,10 @@ export namespace MyNS {
 		/** The timestamp when the Compliance calculation was conducted. */
 		assessmentTimestampUtcDate?: Date | null;
 
-		/** The resource count of the given subscription for which the Compliance calculation was conducted (needed for Management Group Compliance calculation). */
+		/**
+		 * The resource count of the given subscription for which the Compliance calculation was conducted (needed for Management Group Compliance calculation).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourceCount?: number | null;
 	}
 
@@ -40,7 +43,10 @@ export namespace MyNS {
 		/** The timestamp when the Compliance calculation was conducted. */
 		assessmentTimestampUtcDate: FormControl<Date | null | undefined>,
 
-		/** The resource count of the given subscription for which the Compliance calculation was conducted (needed for Management Group Compliance calculation). */
+		/**
+		 * The resource count of the given subscription for which the Compliance calculation was conducted (needed for Management Group Compliance calculation).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCompliancePropertiesFormGroup() {
@@ -55,7 +61,10 @@ export namespace MyNS {
 	/** A segment of a compliance assessment. */
 	export interface ComplianceSegment {
 
-		/** The size (%) of the segment. */
+		/**
+		 * The size (%) of the segment.
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** The segment type, e.g. compliant, non-compliance, insufficient coverage, N/A, etc. */
@@ -65,7 +74,10 @@ export namespace MyNS {
 	/** A segment of a compliance assessment. */
 	export interface ComplianceSegmentFormProperties {
 
-		/** The size (%) of the segment. */
+		/**
+		 * The size (%) of the segment.
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** The segment type, e.g. compliant, non-compliance, insufficient coverage, N/A, etc. */

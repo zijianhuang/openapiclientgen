@@ -73,11 +73,15 @@ export namespace MyNS {
 	}
 
 	export interface Error {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		fields?: string | null;
 		message?: string | null;
 	}
 	export interface ErrorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		fields: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -102,7 +106,10 @@ export namespace MyNS {
 		/** The Subversion path, starting from the repository root */
 		path?: string | null;
 
-		/** The Subversion commit revision */
+		/**
+		 * The Subversion commit revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rev?: number | null;
 
 		/** Unique identifier representing a specific document */
@@ -119,7 +126,10 @@ export namespace MyNS {
 		/** The Subversion path, starting from the repository root */
 		path: FormControl<string | null | undefined>,
 
-		/** The Subversion commit revision */
+		/**
+		 * The Subversion commit revision
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rev: FormControl<number | null | undefined>,
 
 		/** Unique identifier representing a specific document */
@@ -275,7 +285,10 @@ export namespace MyNS {
 		/** Status (healthy|unhealthy) of the currently running WeGA-WebApp */
 		status?: ApplicationGetReturnStatus | null;
 
-		/** The Subversion revision of the currently installed WeGA-data */
+		/**
+		 * The Subversion revision of the currently installed WeGA-data
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		svnRevision?: number | null;
 		version?: string | null;
 	}
@@ -287,7 +300,10 @@ export namespace MyNS {
 		/** Status (healthy|unhealthy) of the currently running WeGA-WebApp */
 		status: FormControl<ApplicationGetReturnStatus | null | undefined>,
 
-		/** The Subversion revision of the currently installed WeGA-data */
+		/**
+		 * The Subversion revision of the currently installed WeGA-data
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		svnRevision: FormControl<number | null | undefined>,
 		version: FormControl<string | null | undefined>,
 	}

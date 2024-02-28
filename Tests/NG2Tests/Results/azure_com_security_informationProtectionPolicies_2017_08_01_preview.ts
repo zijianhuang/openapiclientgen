@@ -113,7 +113,10 @@ export namespace MyNS {
 		/** The information type keywords. */
 		keywords?: Array<InformationProtectionKeyword>;
 
-		/** The order of the information type. */
+		/**
+		 * The order of the information type.
+		 * Type: double
+		 */
 		order?: number | null;
 
 		/** The recommended label id to be associated with this information type. */
@@ -132,7 +135,10 @@ export namespace MyNS {
 		/** Indicates whether the information type is enabled or not. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The order of the information type. */
+		/**
+		 * The order of the information type.
+		 * Type: double
+		 */
 		order: FormControl<number | null | undefined>,
 
 		/** The recommended label id to be associated with this information type. */
@@ -159,7 +165,10 @@ export namespace MyNS {
 		/** Indicates whether the label is enabled or not. */
 		enabled?: boolean | null;
 
-		/** The order of the sensitivity label. */
+		/**
+		 * The order of the sensitivity label.
+		 * Type: double
+		 */
 		order?: number | null;
 	}
 
@@ -172,7 +181,10 @@ export namespace MyNS {
 		/** Indicates whether the label is enabled or not. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The order of the sensitivity label. */
+		/**
+		 * The order of the sensitivity label.
+		 * Type: double
+		 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateSensitivityLabelFormGroup() {

@@ -283,7 +283,10 @@ export namespace MyNS {
 		/** The primary system where the error occurred. This is relevant for application errors. For Analytics errors, it always has the value API_ANALYTICS. */
 		domain?: string | null;
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. Traffic report error IDs range from 50001 to 50500. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. Traffic report error IDs range from 50001 to 50500.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation. */
@@ -314,7 +317,10 @@ export namespace MyNS {
 		/** The primary system where the error occurred. This is relevant for application errors. For Analytics errors, it always has the value API_ANALYTICS. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. Traffic report error IDs range from 50001 to 50500. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. Traffic report error IDs range from 50001 to 50500.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** A more detailed explanation of the error than given in the message error field. */

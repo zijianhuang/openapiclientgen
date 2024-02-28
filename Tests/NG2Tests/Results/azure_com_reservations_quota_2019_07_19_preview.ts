@@ -225,10 +225,16 @@ export namespace MyNS {
 	/** Quota limits. */
 	export interface CurrentQuotaLimitBase {
 
-		/** The current resource usages information. */
+		/**
+		 * The current resource usages information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue?: number | null;
 
-		/** The quota limit. */
+		/**
+		 * The quota limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** Name of the resource provide by the resource Provider. Please use this name property for quotaRequests. */
@@ -250,10 +256,16 @@ export namespace MyNS {
 	/** Quota limits. */
 	export interface CurrentQuotaLimitBaseFormProperties {
 
-		/** The current resource usages information. */
+		/**
+		 * The current resource usages information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue: FormControl<number | null | undefined>,
 
-		/** The quota limit. */
+		/**
+		 * The quota limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Name of the resource provide by the resource Provider. Please use this name property for quotaRequests. */
@@ -658,7 +670,10 @@ export namespace MyNS {
 	/** The sub-request submitted with the quota request. */
 	export interface SubRequest {
 
-		/** The Resource limit. */
+		/**
+		 * The Resource limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** User friendly status message. */
@@ -683,7 +698,10 @@ export namespace MyNS {
 	/** The sub-request submitted with the quota request. */
 	export interface SubRequestFormProperties {
 
-		/** The Resource limit. */
+		/**
+		 * The Resource limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** User friendly status message. */

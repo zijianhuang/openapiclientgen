@@ -4,11 +4,15 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Area {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AreaId?: number | null;
 		CountryCode?: string | null;
 		Name?: string | null;
 	}
 	export interface AreaFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AreaId: FormControl<number | null | undefined>,
 		CountryCode: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
@@ -23,8 +27,12 @@ export namespace MyNS {
 	}
 
 	export interface Competition {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AreaId?: number | null;
 		AreaName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CompetitionId?: number | null;
 		Format?: string | null;
 		Gender?: string | null;
@@ -33,8 +41,12 @@ export namespace MyNS {
 		Type?: string | null;
 	}
 	export interface CompetitionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AreaId: FormControl<number | null | undefined>,
 		AreaName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CompetitionId: FormControl<number | null | undefined>,
 		Format: FormControl<string | null | undefined>,
 		Gender: FormControl<string | null | undefined>,
@@ -55,23 +67,35 @@ export namespace MyNS {
 	}
 
 	export interface Season {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CompetitionId?: number | null;
 		CompetitionName?: string | null;
 		CurrentSeason?: boolean | null;
 		EndDate?: string | null;
 		Name?: string | null;
 		Rounds?: Array<Round>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season1?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonId?: number | null;
 		StartDate?: string | null;
 	}
 	export interface SeasonFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CompetitionId: FormControl<number | null | undefined>,
 		CompetitionName: FormControl<string | null | undefined>,
 		CurrentSeason: FormControl<boolean | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season1: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonId: FormControl<number | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 	}
@@ -91,24 +115,44 @@ export namespace MyNS {
 
 	export interface Round {
 		CurrentRound?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrentWeek?: number | null;
 		EndDate?: string | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RoundId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
 		StartDate?: string | null;
 		Type?: string | null;
 	}
 	export interface RoundFormProperties {
 		CurrentRound: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrentWeek: FormControl<number | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RoundId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 		Type: FormControl<string | null | undefined>,
@@ -130,8 +174,12 @@ export namespace MyNS {
 	}
 
 	export interface CompetitionDetail {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AreaId?: number | null;
 		AreaName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CompetitionId?: number | null;
 		CurrentSeason?: Season;
 		Format?: string | null;
@@ -143,8 +191,12 @@ export namespace MyNS {
 		Type?: string | null;
 	}
 	export interface CompetitionDetailFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AreaId: FormControl<number | null | undefined>,
 		AreaName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CompetitionId: FormControl<number | null | undefined>,
 		Format: FormControl<string | null | undefined>,
 		Gender: FormControl<string | null | undefined>,
@@ -168,30 +220,62 @@ export namespace MyNS {
 		BestOf?: string | null;
 		DateTime?: string | null;
 		Day?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DrawMoneyLine?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameId?: number | null;
 		Group?: string | null;
+
+		/** Type: double */
 		PointSpread?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RoundId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
 		Status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAId?: number | null;
 		TeamAKey?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAMoneyLine?: number | null;
 		TeamAName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAPointSpreadPayout?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAScore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBId?: number | null;
 		TeamBKey?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBMoneyLine?: number | null;
 		TeamBName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBPointSpreadPayout?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBScore?: number | null;
 		Updated?: string | null;
 		UpdatedUtc?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VenueId?: number | null;
 		VenueType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week?: number | null;
 		Winner?: string | null;
 	}
@@ -199,30 +283,62 @@ export namespace MyNS {
 		BestOf: FormControl<string | null | undefined>,
 		DateTime: FormControl<string | null | undefined>,
 		Day: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DrawMoneyLine: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameId: FormControl<number | null | undefined>,
 		Group: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		PointSpread: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RoundId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
 		Status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAId: FormControl<number | null | undefined>,
 		TeamAKey: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAMoneyLine: FormControl<number | null | undefined>,
 		TeamAName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAPointSpreadPayout: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAScore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBId: FormControl<number | null | undefined>,
 		TeamBKey: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBMoneyLine: FormControl<number | null | undefined>,
 		TeamBName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBPointSpreadPayout: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBScore: FormControl<number | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
 		UpdatedUtc: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VenueId: FormControl<number | null | undefined>,
 		VenueType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week: FormControl<number | null | undefined>,
 		Winner: FormControl<string | null | undefined>,
 	}
@@ -263,10 +379,14 @@ export namespace MyNS {
 
 	export interface TeamDetail {
 		Active?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AreaId?: number | null;
 		AreaName?: string | null;
 		Email?: string | null;
 		Facebook?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Founded?: number | null;
 		Gender?: string | null;
 		Instagram?: string | null;
@@ -276,6 +396,8 @@ export namespace MyNS {
 		QuaternaryColor?: string | null;
 		SecondaryColor?: string | null;
 		ShortName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId?: number | null;
 		TertiaryColor?: string | null;
 		Twitter?: string | null;
@@ -286,10 +408,14 @@ export namespace MyNS {
 	}
 	export interface TeamDetailFormProperties {
 		Active: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AreaId: FormControl<number | null | undefined>,
 		AreaName: FormControl<string | null | undefined>,
 		Email: FormControl<string | null | undefined>,
 		Facebook: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Founded: FormControl<number | null | undefined>,
 		Gender: FormControl<string | null | undefined>,
 		Instagram: FormControl<string | null | undefined>,
@@ -298,6 +424,8 @@ export namespace MyNS {
 		QuaternaryColor: FormControl<string | null | undefined>,
 		SecondaryColor: FormControl<string | null | undefined>,
 		ShortName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId: FormControl<number | null | undefined>,
 		TertiaryColor: FormControl<string | null | undefined>,
 		Twitter: FormControl<string | null | undefined>,
@@ -342,6 +470,8 @@ export namespace MyNS {
 		LastName?: string | null;
 		MatchName?: string | null;
 		Nationality?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerId?: number | null;
 		Position?: string | null;
 		Updated?: string | null;
@@ -356,6 +486,8 @@ export namespace MyNS {
 		LastName: FormControl<string | null | undefined>,
 		MatchName: FormControl<string | null | undefined>,
 		Nationality: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerId: FormControl<number | null | undefined>,
 		Position: FormControl<string | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
@@ -381,11 +513,17 @@ export namespace MyNS {
 	export interface Membership {
 		Active?: boolean | null;
 		EndDate?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MembershipId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerId?: number | null;
 		PlayerName?: string | null;
 		StartDate?: string | null;
 		TeamArea?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId?: number | null;
 		TeamName?: string | null;
 		Updated?: string | null;
@@ -393,11 +531,17 @@ export namespace MyNS {
 	export interface MembershipFormProperties {
 		Active: FormControl<boolean | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MembershipId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerId: FormControl<number | null | undefined>,
 		PlayerName: FormControl<string | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 		TeamArea: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId: FormControl<number | null | undefined>,
 		TeamName: FormControl<string | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
@@ -421,9 +565,15 @@ export namespace MyNS {
 	export interface SeasonTeam {
 		Active?: boolean | null;
 		Gender?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonTeamId?: number | null;
 		Team?: Team;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId?: number | null;
 		TeamName?: string | null;
 		Type?: string | null;
@@ -431,8 +581,14 @@ export namespace MyNS {
 	export interface SeasonTeamFormProperties {
 		Active: FormControl<boolean | null | undefined>,
 		Gender: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonTeamId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId: FormControl<number | null | undefined>,
 		TeamName: FormControl<string | null | undefined>,
 		Type: FormControl<string | null | undefined>,
@@ -451,33 +607,77 @@ export namespace MyNS {
 	}
 
 	export interface Standing {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Games?: number | null;
 		Group?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Losses?: number | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Points?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RoundId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreAgainst?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreDifference?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreFor?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StandingId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Wins?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		'[Order]'?: number | null;
 	}
 	export interface StandingFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Games: FormControl<number | null | undefined>,
 		Group: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Losses: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Points: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RoundId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreAgainst: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreDifference: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreFor: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StandingId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Wins: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		'[Order]': FormControl<number | null | undefined>,
 	}
 	export function CreateStandingFormGroup() {
@@ -501,10 +701,14 @@ export namespace MyNS {
 
 	export interface Team {
 		Active?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AreaId?: number | null;
 		AreaName?: string | null;
 		Email?: string | null;
 		Facebook?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Founded?: number | null;
 		Gender?: string | null;
 		Instagram?: string | null;
@@ -513,6 +717,8 @@ export namespace MyNS {
 		QuaternaryColor?: string | null;
 		SecondaryColor?: string | null;
 		ShortName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId?: number | null;
 		TertiaryColor?: string | null;
 		Twitter?: string | null;
@@ -523,10 +729,14 @@ export namespace MyNS {
 	}
 	export interface TeamFormProperties {
 		Active: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AreaId: FormControl<number | null | undefined>,
 		AreaName: FormControl<string | null | undefined>,
 		Email: FormControl<string | null | undefined>,
 		Facebook: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Founded: FormControl<number | null | undefined>,
 		Gender: FormControl<string | null | undefined>,
 		Instagram: FormControl<string | null | undefined>,
@@ -535,6 +745,8 @@ export namespace MyNS {
 		QuaternaryColor: FormControl<string | null | undefined>,
 		SecondaryColor: FormControl<string | null | undefined>,
 		ShortName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId: FormControl<number | null | undefined>,
 		TertiaryColor: FormControl<string | null | undefined>,
 		Twitter: FormControl<string | null | undefined>,
@@ -571,30 +783,50 @@ export namespace MyNS {
 
 	export interface Venue {
 		Address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Capacity?: number | null;
 		City?: string | null;
 		Country?: string | null;
+
+		/** Type: double */
 		GeoLat?: number | null;
+
+		/** Type: double */
 		GeoLong?: number | null;
 		Name?: string | null;
 		Nickname1?: string | null;
 		Nickname2?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Opened?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VenueId?: number | null;
 		Zip?: string | null;
 		'[Open]'?: boolean | null;
 	}
 	export interface VenueFormProperties {
 		Address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Capacity: FormControl<number | null | undefined>,
 		City: FormControl<string | null | undefined>,
 		Country: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		GeoLat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		GeoLong: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		Nickname1: FormControl<string | null | undefined>,
 		Nickname2: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Opened: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VenueId: FormControl<number | null | undefined>,
 		Zip: FormControl<string | null | undefined>,
 		'[Open]': FormControl<boolean | null | undefined>,
@@ -628,7 +860,6 @@ export namespace MyNS {
 		 * Memberships (Active)
 		 * Get {format}/ActiveMemberships
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Membership>} 
 		 */
 		MembershipsActive(format: MembershipsActiveFormat): Observable<Array<Membership>> {
 			return this.http.get<Array<Membership>>(this.baseUri + format + '/ActiveMemberships', {});
@@ -639,7 +870,6 @@ export namespace MyNS {
 		 * Areas (Countries)
 		 * Get {format}/Areas
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Area>} 
 		 */
 		AreasCountries(format: MembershipsActiveFormat): Observable<Array<Area>> {
 			return this.http.get<Array<Area>>(this.baseUri + format + '/Areas', {});
@@ -651,7 +881,6 @@ export namespace MyNS {
 		 * Get {format}/CompetitionDetails/{competitionid}
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} competitionid A CS:GO competition/league unique CompetitionId. Possible values include: <code>100000009</code>, etc.
-		 * @return {CompetitionDetail} 
 		 */
 		CompetitionFixturesLeagueDetails(format: MembershipsActiveFormat, competitionid: string): Observable<CompetitionDetail> {
 			return this.http.get<CompetitionDetail>(this.baseUri + format + '/CompetitionDetails/' + (competitionid == null ? '' : encodeURIComponent(competitionid)) + '', {});
@@ -662,7 +891,6 @@ export namespace MyNS {
 		 * Competitions (Leagues)
 		 * Get {format}/Competitions
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Competition>} 
 		 */
 		CompetitionsLeagues(format: MembershipsActiveFormat): Observable<Array<Competition>> {
 			return this.http.get<Array<Competition>>(this.baseUri + format + '/Competitions', {});
@@ -675,7 +903,6 @@ export namespace MyNS {
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} date The date of the game(s).
 		 * <br>Examples: <code>2018-01-13</code>, <code>2018-06-13</code>.
-		 * @return {Array<Game>} 
 		 */
 		GamesByDate(format: MembershipsActiveFormat, date: string): Observable<Array<Game>> {
 			return this.http.get<Array<Game>>(this.baseUri + format + '/GamesByDate/' + (date == null ? '' : encodeURIComponent(date)) + '', {});
@@ -686,7 +913,6 @@ export namespace MyNS {
 		 * Memberships (Historical)
 		 * Get {format}/HistoricalMemberships
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Membership>} 
 		 */
 		MembershipsHistorical(format: MembershipsActiveFormat): Observable<Array<Membership>> {
 			return this.http.get<Array<Membership>>(this.baseUri + format + '/HistoricalMemberships', {});
@@ -699,7 +925,6 @@ export namespace MyNS {
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} teamid Unique FantasyData Team ID. 
 		 * Example:<code>100000001</code>.
-		 * @return {Array<Membership>} 
 		 */
 		MembershipsByTeamHistorical(format: MembershipsActiveFormat, teamid: string): Observable<Array<Membership>> {
 			return this.http.get<Array<Membership>>(this.baseUri + format + '/HistoricalMembershipsByTeam/' + (teamid == null ? '' : encodeURIComponent(teamid)) + '', {});
@@ -712,7 +937,6 @@ export namespace MyNS {
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} teamid Unique FantasyData Team ID. 
 		 * Example:<code>100000001</code>.
-		 * @return {Array<Membership>} 
 		 */
 		MembershipsByTeamActive(format: MembershipsActiveFormat, teamid: string): Observable<Array<Membership>> {
 			return this.http.get<Array<Membership>>(this.baseUri + format + '/MembershipsByTeam/' + (teamid == null ? '' : encodeURIComponent(teamid)) + '', {});
@@ -725,7 +949,6 @@ export namespace MyNS {
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} playerid Unique FantasyData Player ID.
 		 * Example:<code>100000576</code>.
-		 * @return {Player} 
 		 */
 		Player(format: MembershipsActiveFormat, playerid: string): Observable<Player> {
 			return this.http.get<Player>(this.baseUri + format + '/Player/' + (playerid == null ? '' : encodeURIComponent(playerid)) + '', {});
@@ -736,7 +959,6 @@ export namespace MyNS {
 		 * Players
 		 * Get {format}/Players
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Player>} 
 		 */
 		Players(format: MembershipsActiveFormat): Observable<Array<Player>> {
 			return this.http.get<Array<Player>>(this.baseUri + format + '/Players', {});
@@ -749,7 +971,6 @@ export namespace MyNS {
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} teamid Unique FantasyData Team ID. 
 		 * Example:<code>100000001</code>.
-		 * @return {Array<Player>} 
 		 */
 		PlayersByTeam(format: MembershipsActiveFormat, teamid: string): Observable<Array<Player>> {
 			return this.http.get<Array<Player>>(this.baseUri + format + '/PlayersByTeam/' + (teamid == null ? '' : encodeURIComponent(teamid)) + '', {});
@@ -762,7 +983,6 @@ export namespace MyNS {
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} roundid Unique FantasyData Round ID. RoundIDs can be found in the Competitions and Competition Details endpoints. 
 		 * Examples: <code>100000138</code>, <code>1000001412</code>, etc
-		 * @return {Array<Game>} 
 		 */
 		Schedule(format: MembershipsActiveFormat, roundid: string): Observable<Array<Game>> {
 			return this.http.get<Array<Game>>(this.baseUri + format + '/Schedule/' + (roundid == null ? '' : encodeURIComponent(roundid)) + '', {});
@@ -775,7 +995,6 @@ export namespace MyNS {
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} seasonid Unique FantasyData Season ID. SeasonIDs can be found in the Competitions and Competition Details endpoints. 
 		 * Examples: <code>100000023</code>, <code>100000024</code>, etc
-		 * @return {Array<SeasonTeam>} 
 		 */
 		SeasonTeams(format: MembershipsActiveFormat, seasonid: string): Observable<Array<SeasonTeam>> {
 			return this.http.get<Array<SeasonTeam>>(this.baseUri + format + '/SeasonTeams/' + (seasonid == null ? '' : encodeURIComponent(seasonid)) + '', {});
@@ -788,7 +1007,6 @@ export namespace MyNS {
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} roundid Unique FantasyData Round ID. RoundIDs can be found in the Competitions and Competition Details endpoints. 
 		 * Example: <code>100000138</code>, etc
-		 * @return {Array<Standing>} 
 		 */
 		Standings(format: MembershipsActiveFormat, roundid: string): Observable<Array<Standing>> {
 			return this.http.get<Array<Standing>>(this.baseUri + format + '/Standings/' + (roundid == null ? '' : encodeURIComponent(roundid)) + '', {});
@@ -799,7 +1017,6 @@ export namespace MyNS {
 		 * Teams
 		 * Get {format}/Teams
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Team>} 
 		 */
 		Teams(format: MembershipsActiveFormat): Observable<Array<Team>> {
 			return this.http.get<Array<Team>>(this.baseUri + format + '/Teams', {});
@@ -810,7 +1027,6 @@ export namespace MyNS {
 		 * Venues
 		 * Get {format}/Venues
 		 * @param {MembershipsActiveFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Venue>} 
 		 */
 		Venues(format: MembershipsActiveFormat): Observable<Array<Venue>> {
 			return this.http.get<Array<Venue>>(this.baseUri + format + '/Venues', {});

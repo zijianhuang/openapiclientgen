@@ -75,7 +75,10 @@ export namespace MyNS {
 		/** The security severity of the resource */
 		severity?: string | null;
 
-		/** Score of the resource based on its security severity */
+		/**
+		 * Score of the resource based on its security severity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topologyScore?: number | null;
 	}
 	export interface TopologySingleResourceFormProperties {
@@ -95,7 +98,10 @@ export namespace MyNS {
 		/** The security severity of the resource */
 		severity: FormControl<string | null | undefined>,
 
-		/** Score of the resource based on its security severity */
+		/**
+		 * Score of the resource based on its security severity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topologyScore: FormControl<number | null | undefined>,
 	}
 	export function CreateTopologySingleResourceFormGroup() {

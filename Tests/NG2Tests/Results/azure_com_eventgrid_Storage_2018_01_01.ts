@@ -16,11 +16,17 @@ export namespace MyNS {
 		/** A request id provided by the client of the storage API operation that triggered this event. */
 		clientRequestId?: string | null;
 
-		/** The size of the blob in bytes. This is the same as what would be returned in the Content-Length header from the blob. */
-		contentLength?: number | null;
+		/**
+		 * The size of the blob in bytes. This is the same as what would be returned in the Content-Length header from the blob.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentLength?: string | null;
 
-		/** The offset of the blob in bytes. */
-		contentOffset?: number | null;
+		/**
+		 * The offset of the blob in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentOffset?: string | null;
 
 		/** The content type of the blob. This is the same as what would be returned in the Content-Type header from the blob. */
 		contentType?: string | null;
@@ -56,11 +62,17 @@ export namespace MyNS {
 		/** A request id provided by the client of the storage API operation that triggered this event. */
 		clientRequestId: FormControl<string | null | undefined>,
 
-		/** The size of the blob in bytes. This is the same as what would be returned in the Content-Length header from the blob. */
-		contentLength: FormControl<number | null | undefined>,
+		/**
+		 * The size of the blob in bytes. This is the same as what would be returned in the Content-Length header from the blob.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentLength: FormControl<string | null | undefined>,
 
-		/** The offset of the blob in bytes. */
-		contentOffset: FormControl<number | null | undefined>,
+		/**
+		 * The offset of the blob in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentOffset: FormControl<string | null | undefined>,
 
 		/** The content type of the blob. This is the same as what would be returned in the Content-Type header from the blob. */
 		contentType: FormControl<string | null | undefined>,
@@ -88,8 +100,8 @@ export namespace MyNS {
 			api: new FormControl<string | null | undefined>(undefined),
 			blobType: new FormControl<string | null | undefined>(undefined),
 			clientRequestId: new FormControl<string | null | undefined>(undefined),
-			contentLength: new FormControl<number | null | undefined>(undefined),
-			contentOffset: new FormControl<number | null | undefined>(undefined),
+			contentLength: new FormControl<string | null | undefined>(undefined),
+			contentOffset: new FormControl<string | null | undefined>(undefined),
 			contentType: new FormControl<string | null | undefined>(undefined),
 			eTag: new FormControl<string | null | undefined>(undefined),
 			identity: new FormControl<string | null | undefined>(undefined),

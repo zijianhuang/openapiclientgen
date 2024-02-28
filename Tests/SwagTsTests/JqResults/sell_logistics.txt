@@ -357,7 +357,10 @@ export namespace MyNS {
 		/** Name of the domain containing the service or application. */
 		domain?: string | null;
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation. */

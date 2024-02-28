@@ -1568,7 +1568,10 @@ export namespace MyNS {
 	/** SKU for the resource. */
 	export interface Sku {
 
-		/** The SKU capacity. */
+		/**
+		 * The SKU capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** The SKU family. */
@@ -1590,7 +1593,10 @@ export namespace MyNS {
 	/** SKU for the resource. */
 	export interface SkuFormProperties {
 
-		/** The SKU capacity. */
+		/**
+		 * The SKU capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** The SKU family. */
@@ -1648,7 +1654,10 @@ export namespace MyNS {
 		/** Type of count. */
 		type?: string | null;
 
-		/** Value of count. */
+		/**
+		 * Value of count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 
@@ -1658,7 +1667,10 @@ export namespace MyNS {
 		/** Type of count. */
 		type: FormControl<string | null | undefined>,
 
-		/** Value of count. */
+		/**
+		 * Value of count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateTagCountFormGroup() {

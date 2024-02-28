@@ -422,8 +422,6 @@ export namespace MyNS {
 	}
 
 	export interface EpisodeResponseType {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: number;
 		vaccineCode: string;
 		vaccineDose?: string | null;
@@ -434,8 +432,6 @@ export namespace MyNS {
 		information?: InformationType;
 	}
 	export interface EpisodeResponseTypeFormProperties {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		vaccineCode: FormControl<string | null | undefined>,
 		vaccineDose: FormControl<string | null | undefined>,
@@ -981,8 +977,6 @@ export namespace MyNS {
 	}
 
 	export interface EpisodeType {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: number;
 		vaccineCode: string;
 		vaccineDose?: string | null;
@@ -990,8 +984,6 @@ export namespace MyNS {
 		vaccineSerialNumber?: string | null;
 	}
 	export interface EpisodeTypeFormProperties {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		vaccineCode: FormControl<string | null | undefined>,
 		vaccineDose: FormControl<string | null | undefined>,
@@ -1010,8 +1002,6 @@ export namespace MyNS {
 	}
 
 	export interface EncounterType {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: number;
 		claimSequenceNumber?: string | null;
 		episodes: Array<EpisodeType>;
@@ -1024,8 +1014,6 @@ export namespace MyNS {
 		dateOfService: string;
 	}
 	export interface EncounterTypeFormProperties {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		claimSequenceNumber: FormControl<string | null | undefined>,
 		schoolId: FormControl<string | null | undefined>,
@@ -1048,8 +1036,6 @@ export namespace MyNS {
 	}
 
 	export interface EncounterResponseType {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: number;
 		claimSequenceNumber: string;
 		episodes: Array<EpisodeResponseType>;
@@ -1069,8 +1055,6 @@ export namespace MyNS {
 		dateOfService: string;
 	}
 	export interface EncounterResponseTypeFormProperties {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		claimSequenceNumber: FormControl<string | null | undefined>,
 

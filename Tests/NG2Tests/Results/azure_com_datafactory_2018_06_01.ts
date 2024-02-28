@@ -53,7 +53,10 @@ export namespace MyNS {
 		/** The type of the activity. */
 		activityType?: string | null;
 
-		/** The duration of the activity run. */
+		/**
+		 * The duration of the activity run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMs?: number | null;
 
 		/** The error if any from the activity run. */
@@ -96,7 +99,10 @@ export namespace MyNS {
 		/** The type of the activity. */
 		activityType: FormControl<string | null | undefined>,
 
-		/** The duration of the activity run. */
+		/**
+		 * The duration of the activity run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMs: FormControl<number | null | undefined>,
 
 		/** The error if any from the activity run. */
@@ -304,13 +310,19 @@ export namespace MyNS {
 		/** Compute type of the cluster. The value will be overwritten by the same setting in integration runtime if provided. */
 		computeType?: string | null;
 
-		/** Core count of the cluster. The value will be overwritten by the same setting in integration runtime if provided. */
+		/**
+		 * Core count of the cluster. The value will be overwritten by the same setting in integration runtime if provided.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreCount?: number | null;
 
 		/** Integration runtime debug resource. */
 		integrationRuntime?: IntegrationRuntimeDebugResource;
 
-		/** Time to live setting of the cluster in minutes. */
+		/**
+		 * Time to live setting of the cluster in minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeToLive?: number | null;
 	}
 
@@ -320,10 +332,16 @@ export namespace MyNS {
 		/** Compute type of the cluster. The value will be overwritten by the same setting in integration runtime if provided. */
 		computeType: FormControl<string | null | undefined>,
 
-		/** Core count of the cluster. The value will be overwritten by the same setting in integration runtime if provided. */
+		/**
+		 * Core count of the cluster. The value will be overwritten by the same setting in integration runtime if provided.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreCount: FormControl<number | null | undefined>,
 
-		/** Time to live setting of the cluster in minutes. */
+		/**
+		 * Time to live setting of the cluster in minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeToLive: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateDataFlowDebugSessionRequestFormGroup() {
@@ -442,7 +460,10 @@ export namespace MyNS {
 		/** The expression which is used for preview. */
 		expression?: string | null;
 
-		/** Row limits for preview response. */
+		/**
+		 * Row limits for preview response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowLimits?: number | null;
 
 		/**
@@ -458,7 +479,10 @@ export namespace MyNS {
 		/** The expression which is used for preview. */
 		expression: FormControl<string | null | undefined>,
 
-		/** Row limits for preview response. */
+		/**
+		 * Row limits for preview response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowLimits: FormControl<number | null | undefined>,
 
 		/**
@@ -754,7 +778,10 @@ export namespace MyNS {
 	/** Definition of data flow source setting for debug. */
 	export interface DataFlowSourceSetting {
 
-		/** Defines the row limit of data flow source in debug. */
+		/**
+		 * Defines the row limit of data flow source in debug.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowLimit?: number | null;
 
 		/** The data flow source name. */
@@ -764,7 +791,10 @@ export namespace MyNS {
 	/** Definition of data flow source setting for debug. */
 	export interface DataFlowSourceSettingFormProperties {
 
-		/** Defines the row limit of data flow source in debug. */
+		/**
+		 * Defines the row limit of data flow source in debug.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowLimit: FormControl<number | null | undefined>,
 
 		/** The data flow source name. */
@@ -951,7 +981,10 @@ export namespace MyNS {
 		/** Compute type of the cluster. */
 		computeType?: string | null;
 
-		/** Core count of the cluster. */
+		/**
+		 * Core count of the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreCount?: number | null;
 
 		/** The name of the data flow. */
@@ -963,7 +996,10 @@ export namespace MyNS {
 		/** Last activity time of data flow debug session. */
 		lastActivityTime?: string | null;
 
-		/** Node count of the cluster. (deprecated property) */
+		/**
+		 * Node count of the cluster. (deprecated property)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount?: number | null;
 
 		/** The ID of data flow debug session. */
@@ -972,7 +1008,10 @@ export namespace MyNS {
 		/** Start time of data flow debug session. */
 		startTime?: string | null;
 
-		/** Compute type of the cluster. */
+		/**
+		 * Compute type of the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeToLiveInMinutes?: number | null;
 	}
 
@@ -982,7 +1021,10 @@ export namespace MyNS {
 		/** Compute type of the cluster. */
 		computeType: FormControl<string | null | undefined>,
 
-		/** Core count of the cluster. */
+		/**
+		 * Core count of the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreCount: FormControl<number | null | undefined>,
 
 		/** The name of the data flow. */
@@ -994,7 +1036,10 @@ export namespace MyNS {
 		/** Last activity time of data flow debug session. */
 		lastActivityTime: FormControl<string | null | undefined>,
 
-		/** Node count of the cluster. (deprecated property) */
+		/**
+		 * Node count of the cluster. (deprecated property)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount: FormControl<number | null | undefined>,
 
 		/** The ID of data flow debug session. */
@@ -1003,7 +1048,10 @@ export namespace MyNS {
 		/** Start time of data flow debug session. */
 		startTime: FormControl<string | null | undefined>,
 
-		/** Compute type of the cluster. */
+		/**
+		 * Compute type of the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeToLiveInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateDataFlowDebugSessionInfoFormGroup() {
@@ -3105,7 +3153,10 @@ export namespace MyNS {
 	/** Information about a pipeline run. */
 	export interface PipelineRun {
 
-		/** The duration of a pipeline run. */
+		/**
+		 * The duration of a pipeline run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMs?: number | null;
 
 		/** Provides entity name and id that started the pipeline run. */
@@ -3148,7 +3199,10 @@ export namespace MyNS {
 	/** Information about a pipeline run. */
 	export interface PipelineRunFormProperties {
 
-		/** The duration of a pipeline run. */
+		/**
+		 * The duration of a pipeline run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInMs: FormControl<number | null | undefined>,
 
 		/** Indicates if the recovered pipeline run is the latest in its group. */
@@ -5346,8 +5400,11 @@ export namespace MyNS {
 		/** Metadata description. */
 		description?: string | null;
 
-		/** Metadata id. */
-		id?: number | null;
+		/**
+		 * Metadata id.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Metadata name. */
 		name?: string | null;
@@ -5363,8 +5420,11 @@ export namespace MyNS {
 		/** Metadata description. */
 		description: FormControl<string | null | undefined>,
 
-		/** Metadata id. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Metadata id.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Metadata name. */
 		name: FormControl<string | null | undefined>,
@@ -5378,7 +5438,7 @@ export namespace MyNS {
 	export function CreateIntegrationRuntimeObjectMetadata_GetReturnValueFormGroup() {
 		return new FormGroup<IntegrationRuntimeObjectMetadata_GetReturnValueFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<IntegrationRuntimeObjectMetadata_GetReturnValueType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -5433,54 +5493,96 @@ export namespace MyNS {
 
 	export interface IntegrationRuntimes_GetMonitoringDataReturnNodes {
 
-		/** Available memory (MB) on the integration runtime node. */
+		/**
+		 * Available memory (MB) on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableMemoryInMB?: number | null;
 
-		/** Maximum concurrent jobs on the integration runtime node. */
+		/**
+		 * Maximum concurrent jobs on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentJobsLimit?: number | null;
 
-		/** The number of jobs currently running on the integration runtime node. */
+		/**
+		 * The number of jobs currently running on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentJobsRunning?: number | null;
 
-		/** CPU percentage on the integration runtime node. */
+		/**
+		 * CPU percentage on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuUtilization?: number | null;
 
-		/** The maximum concurrent jobs in this integration runtime. */
+		/**
+		 * The maximum concurrent jobs in this integration runtime.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentJobs?: number | null;
 
 		/** Name of the integration runtime node. */
 		nodeName?: string | null;
 
-		/** Received bytes on the integration runtime node. */
+		/**
+		 * Received bytes on the integration runtime node.
+		 * Type: double
+		 */
 		receivedBytes?: number | null;
 
-		/** Sent bytes on the integration runtime node. */
+		/**
+		 * Sent bytes on the integration runtime node.
+		 * Type: double
+		 */
 		sentBytes?: number | null;
 	}
 	export interface IntegrationRuntimes_GetMonitoringDataReturnNodesFormProperties {
 
-		/** Available memory (MB) on the integration runtime node. */
+		/**
+		 * Available memory (MB) on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableMemoryInMB: FormControl<number | null | undefined>,
 
-		/** Maximum concurrent jobs on the integration runtime node. */
+		/**
+		 * Maximum concurrent jobs on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentJobsLimit: FormControl<number | null | undefined>,
 
-		/** The number of jobs currently running on the integration runtime node. */
+		/**
+		 * The number of jobs currently running on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentJobsRunning: FormControl<number | null | undefined>,
 
-		/** CPU percentage on the integration runtime node. */
+		/**
+		 * CPU percentage on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuUtilization: FormControl<number | null | undefined>,
 
-		/** The maximum concurrent jobs in this integration runtime. */
+		/**
+		 * The maximum concurrent jobs in this integration runtime.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentJobs: FormControl<number | null | undefined>,
 
 		/** Name of the integration runtime node. */
 		nodeName: FormControl<string | null | undefined>,
 
-		/** Received bytes on the integration runtime node. */
+		/**
+		 * Received bytes on the integration runtime node.
+		 * Type: double
+		 */
 		receivedBytes: FormControl<number | null | undefined>,
 
-		/** Sent bytes on the integration runtime node. */
+		/**
+		 * Sent bytes on the integration runtime node.
+		 * Type: double
+		 */
 		sentBytes: FormControl<number | null | undefined>,
 	}
 	export function CreateIntegrationRuntimes_GetMonitoringDataReturnNodesFormGroup() {

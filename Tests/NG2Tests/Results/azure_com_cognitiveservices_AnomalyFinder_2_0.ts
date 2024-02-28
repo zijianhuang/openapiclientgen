@@ -68,6 +68,7 @@ export namespace MyNS {
 		/**
 		 * Frequency extracted from the series, zero means no recurrent pattern has been found.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: number;
 
@@ -82,6 +83,7 @@ export namespace MyNS {
 		/**
 		 * Frequency extracted from the series, zero means no recurrent pattern has been found.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: FormControl<number | null | undefined>,
 	}
@@ -94,7 +96,10 @@ export namespace MyNS {
 
 	export interface LastDetectResponse {
 
-		/** Expected value of the latest point. */
+		/**
+		 * Expected value of the latest point.
+		 * Type: float
+		 */
 		expectedValue?: number | null;
 
 		/** Anomaly status of the latest point, true means the latest point is an anomaly either in negative direction or positive direction. */
@@ -106,21 +111,36 @@ export namespace MyNS {
 		/** Anomaly status in positive direction of the latest point. True means the latest point is an anomaly and its real value is larger than the expected one. */
 		isPositiveAnomaly?: boolean | null;
 
-		/** Lower margin of the latest point. LowerMargin is used to calculate lowerBoundary, which equals to expectedValue - (100 - sensitivity)*lowerMargin. */
+		/**
+		 * Lower margin of the latest point. LowerMargin is used to calculate lowerBoundary, which equals to expectedValue - (100 - sensitivity)*lowerMargin.
+		 * Type: float
+		 */
 		lowerMargin?: number | null;
 
-		/** Frequency extracted from the series, zero means no recurrent pattern has been found. */
+		/**
+		 * Frequency extracted from the series, zero means no recurrent pattern has been found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period?: number | null;
 
-		/** Suggested input series points needed for detecting the latest point. */
+		/**
+		 * Suggested input series points needed for detecting the latest point.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suggestedWindow?: number | null;
 
-		/** Upper margin of the latest point. UpperMargin is used to calculate upperBoundary, which equals to expectedValue + (100 - sensitivity)*upperMargin. If the value of latest point is between upperBoundary and lowerBoundary, it should be treated as normal value. By adjusting sensitivity value, anomaly status of latest point can be changed. */
+		/**
+		 * Upper margin of the latest point. UpperMargin is used to calculate upperBoundary, which equals to expectedValue + (100 - sensitivity)*upperMargin. If the value of latest point is between upperBoundary and lowerBoundary, it should be treated as normal value. By adjusting sensitivity value, anomaly status of latest point can be changed.
+		 * Type: float
+		 */
 		upperMargin?: number | null;
 	}
 	export interface LastDetectResponseFormProperties {
 
-		/** Expected value of the latest point. */
+		/**
+		 * Expected value of the latest point.
+		 * Type: float
+		 */
 		expectedValue: FormControl<number | null | undefined>,
 
 		/** Anomaly status of the latest point, true means the latest point is an anomaly either in negative direction or positive direction. */
@@ -132,16 +152,28 @@ export namespace MyNS {
 		/** Anomaly status in positive direction of the latest point. True means the latest point is an anomaly and its real value is larger than the expected one. */
 		isPositiveAnomaly: FormControl<boolean | null | undefined>,
 
-		/** Lower margin of the latest point. LowerMargin is used to calculate lowerBoundary, which equals to expectedValue - (100 - sensitivity)*lowerMargin. */
+		/**
+		 * Lower margin of the latest point. LowerMargin is used to calculate lowerBoundary, which equals to expectedValue - (100 - sensitivity)*lowerMargin.
+		 * Type: float
+		 */
 		lowerMargin: FormControl<number | null | undefined>,
 
-		/** Frequency extracted from the series, zero means no recurrent pattern has been found. */
+		/**
+		 * Frequency extracted from the series, zero means no recurrent pattern has been found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period: FormControl<number | null | undefined>,
 
-		/** Suggested input series points needed for detecting the latest point. */
+		/**
+		 * Suggested input series points needed for detecting the latest point.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suggestedWindow: FormControl<number | null | undefined>,
 
-		/** Upper margin of the latest point. UpperMargin is used to calculate upperBoundary, which equals to expectedValue + (100 - sensitivity)*upperMargin. If the value of latest point is between upperBoundary and lowerBoundary, it should be treated as normal value. By adjusting sensitivity value, anomaly status of latest point can be changed. */
+		/**
+		 * Upper margin of the latest point. UpperMargin is used to calculate upperBoundary, which equals to expectedValue + (100 - sensitivity)*upperMargin. If the value of latest point is between upperBoundary and lowerBoundary, it should be treated as normal value. By adjusting sensitivity value, anomaly status of latest point can be changed.
+		 * Type: float
+		 */
 		upperMargin: FormControl<number | null | undefined>,
 	}
 	export function CreateLastDetectResponseFormGroup() {
@@ -169,6 +201,7 @@ export namespace MyNS {
 		/**
 		 * The measurement of that point, should be float.
 		 * Required
+		 * Type: float
 		 */
 		value: number;
 	}
@@ -183,6 +216,7 @@ export namespace MyNS {
 		/**
 		 * The measurement of that point, should be float.
 		 * Required
+		 * Type: float
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -196,7 +230,10 @@ export namespace MyNS {
 
 	export interface Request {
 
-		/** Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}. */
+		/**
+		 * Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customInterval?: number | null;
 
 		/**
@@ -205,13 +242,22 @@ export namespace MyNS {
 		 */
 		granularity: RequestGranularity;
 
-		/** Optional argument, advanced model parameter, max anomaly ratio in a time series. */
+		/**
+		 * Optional argument, advanced model parameter, max anomaly ratio in a time series.
+		 * Type: float
+		 */
 		maxAnomalyRatio?: number | null;
 
-		/** Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically. */
+		/**
+		 * Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period?: number | null;
 
-		/** Optional argument, advanced model parameter, between 0-99, the lower the value is, the larger the margin value will be which means less anomalies will be accepted. */
+		/**
+		 * Optional argument, advanced model parameter, between 0-99, the lower the value is, the larger the margin value will be which means less anomalies will be accepted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sensitivity?: number | null;
 
 		/**
@@ -222,7 +268,10 @@ export namespace MyNS {
 	}
 	export interface RequestFormProperties {
 
-		/** Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}. */
+		/**
+		 * Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customInterval: FormControl<number | null | undefined>,
 
 		/**
@@ -231,13 +280,22 @@ export namespace MyNS {
 		 */
 		granularity: FormControl<RequestGranularity | null | undefined>,
 
-		/** Optional argument, advanced model parameter, max anomaly ratio in a time series. */
+		/**
+		 * Optional argument, advanced model parameter, max anomaly ratio in a time series.
+		 * Type: float
+		 */
 		maxAnomalyRatio: FormControl<number | null | undefined>,
 
-		/** Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically. */
+		/**
+		 * Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period: FormControl<number | null | undefined>,
 
-		/** Optional argument, advanced model parameter, between 0-99, the lower the value is, the larger the margin value will be which means less anomalies will be accepted. */
+		/**
+		 * Optional argument, advanced model parameter, between 0-99, the lower the value is, the larger the margin value will be which means less anomalies will be accepted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sensitivity: FormControl<number | null | undefined>,
 	}
 	export function CreateRequestFormGroup() {

@@ -102,8 +102,11 @@ export namespace MyNS {
 		/** Gets or sets the name of the activity parameter. */
 		name?: string | null;
 
-		/** Gets or sets the position of the activity parameter. */
-		position?: number | null;
+		/**
+		 * Gets or sets the position of the activity parameter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		position?: string | null;
 
 		/** Gets or sets the type of the activity parameter. */
 		type?: string | null;
@@ -136,8 +139,11 @@ export namespace MyNS {
 		/** Gets or sets the name of the activity parameter. */
 		name: FormControl<string | null | undefined>,
 
-		/** Gets or sets the position of the activity parameter. */
-		position: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the position of the activity parameter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		position: FormControl<string | null | undefined>,
 
 		/** Gets or sets the type of the activity parameter. */
 		type: FormControl<string | null | undefined>,
@@ -157,7 +163,7 @@ export namespace MyNS {
 			isDynamic: new FormControl<boolean | null | undefined>(undefined),
 			isMandatory: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			position: new FormControl<number | null | undefined>(undefined),
+			position: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			valueFromPipeline: new FormControl<boolean | null | undefined>(undefined),
 			valueFromPipelineByPropertyName: new FormControl<boolean | null | undefined>(undefined),
@@ -457,7 +463,10 @@ export namespace MyNS {
 	/** Definition of the module property type. */
 	export interface ModuleProperties {
 
-		/** Gets or sets the activity count of the module. */
+		/**
+		 * Gets or sets the activity count of the module.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activityCount?: number | null;
 
 		/** Definition of the content link. */
@@ -484,8 +493,11 @@ export namespace MyNS {
 		/** Gets or sets the provisioning state of the module. */
 		provisioningState?: ModulePropertiesProvisioningState | null;
 
-		/** Gets or sets the size in bytes of the module. */
-		sizeInBytes?: number | null;
+		/**
+		 * Gets or sets the size in bytes of the module.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sizeInBytes?: string | null;
 
 		/** Gets or sets the version of the module. */
 		version?: string | null;
@@ -494,7 +506,10 @@ export namespace MyNS {
 	/** Definition of the module property type. */
 	export interface ModulePropertiesFormProperties {
 
-		/** Gets or sets the activity count of the module. */
+		/**
+		 * Gets or sets the activity count of the module.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activityCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the creation time. */
@@ -515,8 +530,11 @@ export namespace MyNS {
 		/** Gets or sets the provisioning state of the module. */
 		provisioningState: FormControl<ModulePropertiesProvisioningState | null | undefined>,
 
-		/** Gets or sets the size in bytes of the module. */
-		sizeInBytes: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the size in bytes of the module.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sizeInBytes: FormControl<string | null | undefined>,
 
 		/** Gets or sets the version of the module. */
 		version: FormControl<string | null | undefined>,
@@ -530,7 +548,7 @@ export namespace MyNS {
 			isGlobal: new FormControl<boolean | null | undefined>(undefined),
 			lastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			provisioningState: new FormControl<ModulePropertiesProvisioningState | null | undefined>(undefined),
-			sizeInBytes: new FormControl<number | null | undefined>(undefined),
+			sizeInBytes: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<string | null | undefined>(undefined),
 		});
 

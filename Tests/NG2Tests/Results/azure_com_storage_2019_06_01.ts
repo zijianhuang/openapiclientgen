@@ -2448,10 +2448,16 @@ export namespace MyNS {
 	/** Describes Storage Resource Usage. */
 	export interface Usage {
 
-		/** Gets the current count of the allocated resources in the subscription. */
+		/**
+		 * Gets the current count of the allocated resources in the subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue?: number | null;
 
-		/** Gets the maximum count of the resources that can be allocated in the subscription. */
+		/**
+		 * Gets the maximum count of the resources that can be allocated in the subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The usage names that can be used; currently limited to StorageAccount. */
@@ -2464,10 +2470,16 @@ export namespace MyNS {
 	/** Describes Storage Resource Usage. */
 	export interface UsageFormProperties {
 
-		/** Gets the current count of the allocated resources in the subscription. */
+		/**
+		 * Gets the current count of the allocated resources in the subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue: FormControl<number | null | undefined>,
 
-		/** Gets the maximum count of the resources that can be allocated in the subscription. */
+		/**
+		 * Gets the maximum count of the resources that can be allocated in the subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Gets the unit of measurement. */

@@ -9,16 +9,28 @@ export namespace MyNS {
 
 	export interface Pagination {
 
-		/** Page number which specifies the set of records to retrieve. Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?page=2 to get the second set of the records. When page value is not a number or a negative number, by default, the first set of records is returned. */
+		/**
+		 * Page number which specifies the set of records to retrieve. Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?page=2 to get the second set of the records. When page value is not a number or a negative number, by default, the first set of records is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Page size which specifies how many records per page will be returned (default 50). Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?pageSize=100 to specify page size of 100. */
+		/**
+		 * Page size which specifies how many records per page will be returned (default 50). Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?pageSize=100 to specify page size of 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
-		/** Number of pages available */
+		/**
+		 * Number of pages available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageCount?: number | null;
 
-		/** Number of items returned */
+		/**
+		 * Number of items returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemCount?: number | null;
 	}
 
@@ -82,7 +94,10 @@ export namespace MyNS {
 		 */
 		title?: string | null;
 
-		/** The numeric HTTP Status Code, e.g. 404 */
+		/**
+		 * The numeric HTTP Status Code, e.g. 404
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/**
@@ -113,10 +128,16 @@ export namespace MyNS {
 		/** Current status of statements */
 		status?: StatementStatus | null;
 
-		/** Opening balance date (can be no older than one year from the current date) ISO-8601 YYYY-MM-DD */
+		/**
+		 * Opening balance date (can be no older than one year from the current date) ISO-8601 YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		startDate?: Date | null;
 
-		/** Closing balance date ISO-8601 YYYY-MM-DD */
+		/**
+		 * Closing balance date ISO-8601 YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		endDate?: Date | null;
 
 		/** The starting balance of the statement */
@@ -137,7 +158,10 @@ export namespace MyNS {
 	/** The starting balance of the statement */
 	export interface StartBalance {
 
-		/** decimal(19,4) unsigned Opening/closing balance amount. */
+		/**
+		 * decimal(19,4) unsigned Opening/closing balance amount.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** If the statement balances are credit or debit, the CreditDebitIndicator should be specified from the perspective of the Customer. */
@@ -161,7 +185,10 @@ export namespace MyNS {
 	/** the lines details for a statement */
 	export interface StatementLine {
 
-		/** The date that the transaction was processed or cleared as seen in internet banking ISO-8601 YYYY-MM-DD */
+		/**
+		 * The date that the transaction was processed or cleared as seen in internet banking ISO-8601 YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		postedDate?: Date | null;
 
 		/**
@@ -170,7 +197,10 @@ export namespace MyNS {
 		 */
 		description?: string | null;
 
-		/** Transaction amount */
+		/**
+		 * Transaction amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** If the statement balances are credit or debit, the CreditDebitIndicator should be specified from the perspective of the Customer. */

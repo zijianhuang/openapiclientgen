@@ -14,7 +14,10 @@ export namespace MyNS {
 		/** Transaction status (C or N). */
 		status?: string | null;
 
-		/** Transaction count. */
+		/**
+		 * Transaction count.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface CFormProperties {
@@ -28,7 +31,10 @@ export namespace MyNS {
 		/** Transaction status (C or N). */
 		status: FormControl<string | null | undefined>,
 
-		/** Transaction count. */
+		/**
+		 * Transaction count.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateCFormGroup() {
@@ -52,7 +58,10 @@ export namespace MyNS {
 		/** Transaction status (C or N). */
 		status?: string | null;
 
-		/** Transaction count. */
+		/**
+		 * Transaction count.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface NFormProperties {
@@ -66,7 +75,10 @@ export namespace MyNS {
 		/** Transaction status (C or N). */
 		status: FormControl<string | null | undefined>,
 
-		/** Transaction count. */
+		/**
+		 * Transaction count.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateNFormGroup() {
@@ -92,36 +104,60 @@ export namespace MyNS {
 
 	export interface Additional_currency {
 
-		/** Amount (w/o TAX) in designated currency. */
+		/**
+		 * Amount (w/o TAX) in designated currency.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** 3-letter ISO currency code. */
 		currency_code?: string | null;
 
-		/** Foreign exchange rate used in calculation */
+		/**
+		 * Foreign exchange rate used in calculation
+		 * Type: double
+		 */
 		fx_rate?: number | null;
 
-		/** Tax amount in designated currency. */
+		/**
+		 * Tax amount in designated currency.
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 
-		/** Total amount in designated currency. */
+		/**
+		 * Total amount in designated currency.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 	}
 	export interface Additional_currencyFormProperties {
 
-		/** Amount (w/o TAX) in designated currency. */
+		/**
+		 * Amount (w/o TAX) in designated currency.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** 3-letter ISO currency code. */
 		currency_code: FormControl<string | null | undefined>,
 
-		/** Foreign exchange rate used in calculation */
+		/**
+		 * Foreign exchange rate used in calculation
+		 * Type: double
+		 */
 		fx_rate: FormControl<number | null | undefined>,
 
-		/** Tax amount in designated currency. */
+		/**
+		 * Tax amount in designated currency.
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
-		/** Total amount in designated currency. */
+		/**
+		 * Total amount in designated currency.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateAdditional_currencyFormGroup() {
@@ -146,7 +182,10 @@ export namespace MyNS {
 		/** Country name */
 		tax_country_name?: string | null;
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface By_countryFormProperties {
@@ -160,7 +199,10 @@ export namespace MyNS {
 		/** Country name */
 		tax_country_name: FormControl<string | null | undefined>,
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateBy_countryFormGroup() {
@@ -191,36 +233,66 @@ export namespace MyNS {
 
 	export interface By_taxation_type {
 
-		/** Number of tax deducted transactions. */
+		/**
+		 * Number of tax deducted transactions.
+		 * Type: double
+		 */
 		deducted_count?: number | null;
 
-		/** Total EU B2B transaction count. */
+		/**
+		 * Total EU B2B transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eu_b2b?: number | null;
 
-		/** Total EU Taxed transaction count. */
+		/**
+		 * Total EU Taxed transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eu_taxed?: number | null;
 
-		/** Number of taxed transactions. */
+		/**
+		 * Number of taxed transactions.
+		 * Type: double
+		 */
 		taxed_count?: number | null;
 
-		/** Total number of transactions */
+		/**
+		 * Total number of transactions
+		 * Type: double
+		 */
 		transactions_count?: number | null;
 	}
 	export interface By_taxation_typeFormProperties {
 
-		/** Number of tax deducted transactions. */
+		/**
+		 * Number of tax deducted transactions.
+		 * Type: double
+		 */
 		deducted_count: FormControl<number | null | undefined>,
 
-		/** Total EU B2B transaction count. */
+		/**
+		 * Total EU B2B transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eu_b2b: FormControl<number | null | undefined>,
 
-		/** Total EU Taxed transaction count. */
+		/**
+		 * Total EU Taxed transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eu_taxed: FormControl<number | null | undefined>,
 
-		/** Number of taxed transactions. */
+		/**
+		 * Number of taxed transactions.
+		 * Type: double
+		 */
 		taxed_count: FormControl<number | null | undefined>,
 
-		/** Total number of transactions */
+		/**
+		 * Total number of transactions
+		 * Type: double
+		 */
 		transactions_count: FormControl<number | null | undefined>,
 	}
 	export function CreateBy_taxation_typeFormGroup() {
@@ -236,7 +308,10 @@ export namespace MyNS {
 
 	export interface CalculateSimpleTaxIn {
 
-		/** Amount. Required if total amount or both unit price and quantity are not provided. */
+		/**
+		 * Amount. Required if total amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Billing two letter ISO country code. */
@@ -272,21 +347,33 @@ export namespace MyNS {
 		/** Product type, according to dictionary /dictionaries/product_types. */
 		product_type?: string | null;
 
-		/** Quantity Defaults to 1. */
+		/**
+		 * Quantity Defaults to 1.
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** If the transaction is in a country supported by Taxamo, but the tax is not calculated due to merchant settings or EU B2B transaction for example. */
 		tax_deducted?: boolean | null;
 
-		/** Total amount. Required if amount or both unit price and quantity are not provided. */
+		/**
+		 * Total amount. Required if amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 
-		/** Unit price. */
+		/**
+		 * Unit price.
+		 * Type: double
+		 */
 		unit_price?: number | null;
 	}
 	export interface CalculateSimpleTaxInFormProperties {
 
-		/** Amount. Required if total amount or both unit price and quantity are not provided. */
+		/**
+		 * Amount. Required if total amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Billing two letter ISO country code. */
@@ -322,16 +409,25 @@ export namespace MyNS {
 		/** Product type, according to dictionary /dictionaries/product_types. */
 		product_type: FormControl<string | null | undefined>,
 
-		/** Quantity Defaults to 1. */
+		/**
+		 * Quantity Defaults to 1.
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** If the transaction is in a country supported by Taxamo, but the tax is not calculated due to merchant settings or EU B2B transaction for example. */
 		tax_deducted: FormControl<boolean | null | undefined>,
 
-		/** Total amount. Required if amount or both unit price and quantity are not provided. */
+		/**
+		 * Total amount. Required if amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 
-		/** Unit price. */
+		/**
+		 * Unit price.
+		 * Type: double
+		 */
 		unit_price: FormControl<number | null | undefined>,
 	}
 	export function CreateCalculateSimpleTaxInFormGroup() {
@@ -409,7 +505,10 @@ export namespace MyNS {
 	export interface Transaction {
 		additional_currencies?: Additional_currencies;
 
-		/** Amount of transaction without tax. */
+		/**
+		 * Amount of transaction without tax.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Billing two letter ISO country code. */
@@ -461,7 +560,10 @@ export namespace MyNS {
 		/** Free-form field for storing customer id. */
 		customer_id?: string | null;
 
-		/** How much tax has been deducted. */
+		/**
+		 * How much tax has been deducted.
+		 * Type: double
+		 */
 		deducted_tax_amount?: number | null;
 
 		/** Transaction description. */
@@ -508,10 +610,16 @@ export namespace MyNS {
 		/** Use data and evidence from original transaction. Tax will be re-calculated, but evidence won't be re-checked. This parameter is taken into account only when 'manual' flag is raised. */
 		original_transaction_key?: string | null;
 
-		/** Refunded tax amount. */
+		/**
+		 * Refunded tax amount.
+		 * Type: double
+		 */
 		refunded_tax_amount?: number | null;
 
-		/** Total amount refunde (including tax). */
+		/**
+		 * Total amount refunde (including tax).
+		 * Type: double
+		 */
 		refunded_total_amount?: number | null;
 
 		/** Transaction source software - e.g. plugin */
@@ -526,7 +634,10 @@ export namespace MyNS {
 		/** Supply date in yyyy-MM-dd format. */
 		supply_date?: string | null;
 
-		/** Tax amount of transaction. */
+		/**
+		 * Tax amount of transaction.
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 
 		/** Two-letter ISO country code, e.g. FR. This code applies to detected/set country for transaction, but can be set using manual mode. */
@@ -551,7 +662,10 @@ export namespace MyNS {
 		/** Was this transaction created in test mode? */
 		test?: boolean | null;
 
-		/** Total amount of transaction. */
+		/**
+		 * Total amount of transaction.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 
 		/**
@@ -565,7 +679,10 @@ export namespace MyNS {
 	}
 	export interface TransactionFormProperties {
 
-		/** Amount of transaction without tax. */
+		/**
+		 * Amount of transaction without tax.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Billing two letter ISO country code. */
@@ -613,7 +730,10 @@ export namespace MyNS {
 		/** Free-form field for storing customer id. */
 		customer_id: FormControl<string | null | undefined>,
 
-		/** How much tax has been deducted. */
+		/**
+		 * How much tax has been deducted.
+		 * Type: double
+		 */
 		deducted_tax_amount: FormControl<number | null | undefined>,
 
 		/** Transaction description. */
@@ -658,10 +778,16 @@ export namespace MyNS {
 		/** Use data and evidence from original transaction. Tax will be re-calculated, but evidence won't be re-checked. This parameter is taken into account only when 'manual' flag is raised. */
 		original_transaction_key: FormControl<string | null | undefined>,
 
-		/** Refunded tax amount. */
+		/**
+		 * Refunded tax amount.
+		 * Type: double
+		 */
 		refunded_tax_amount: FormControl<number | null | undefined>,
 
-		/** Total amount refunde (including tax). */
+		/**
+		 * Total amount refunde (including tax).
+		 * Type: double
+		 */
 		refunded_total_amount: FormControl<number | null | undefined>,
 
 		/** Transaction source software - e.g. plugin */
@@ -676,7 +802,10 @@ export namespace MyNS {
 		/** Supply date in yyyy-MM-dd format. */
 		supply_date: FormControl<string | null | undefined>,
 
-		/** Tax amount of transaction. */
+		/**
+		 * Tax amount of transaction.
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
 		/** Two-letter ISO country code, e.g. FR. This code applies to detected/set country for transaction, but can be set using manual mode. */
@@ -700,7 +829,10 @@ export namespace MyNS {
 		/** Was this transaction created in test mode? */
 		test: FormControl<boolean | null | undefined>,
 
-		/** Total amount of transaction. */
+		/**
+		 * Total amount of transaction.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 
 		/** Verification token */
@@ -1291,7 +1423,10 @@ export namespace MyNS {
 	export interface Transaction_lines {
 		additional_currencies?: Additional_currencies;
 
-		/** Amount. Required if total amount or both unit price and quantity are not provided. */
+		/**
+		 * Amount. Required if total amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Custom fields, stored as key-value pairs. This property is not processed and used mostly with Taxamo-built helpers. */
@@ -1303,16 +1438,25 @@ export namespace MyNS {
 		 */
 		custom_id: string;
 
-		/** Deducted tax amount, calculated by taxmo. */
+		/**
+		 * Deducted tax amount, calculated by taxmo.
+		 * Type: double
+		 */
 		deducted_tax_amount?: number | null;
 
-		/** Deducted tax rate, calculated by taxamo. */
+		/**
+		 * Deducted tax rate, calculated by taxamo.
+		 * Type: double
+		 */
 		deducted_tax_rate?: number | null;
 
 		/** Line contents description. */
 		description?: string | null;
 
-		/** Generated id. */
+		/**
+		 * Generated id.
+		 * Type: double
+		 */
 		id?: number | null;
 
 		/** If the line is provided for informative purposes. Such line must have :tax-rate and optionally :tax-name - if not, API validation will fail for this line. */
@@ -1330,39 +1474,63 @@ export namespace MyNS {
 		/** Product type, according to dictionary /dictionaries/product_types. */
 		product_type?: string | null;
 
-		/** Quantity Defaults to 1. */
+		/**
+		 * Quantity Defaults to 1.
+		 * Type: double
+		 */
 		quantity?: number | null;
 
-		/** Refunded tax amount, calculated by taxmo. */
+		/**
+		 * Refunded tax amount, calculated by taxmo.
+		 * Type: double
+		 */
 		refunded_tax_amount?: number | null;
 
-		/** Refunded total amount, calculated by taxmo. */
+		/**
+		 * Refunded total amount, calculated by taxmo.
+		 * Type: double
+		 */
 		refunded_total_amount?: number | null;
 
 		/** Date of supply in yyyy-MM-dd format. */
 		supply_date?: string | null;
 
-		/** Tax amount, calculated by taxamo. */
+		/**
+		 * Tax amount, calculated by taxamo.
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 
 		/** Tax name, calculated by taxamo.  Can be overwritten when informative field is true. */
 		tax_name?: string | null;
 
-		/** Tax rate, calculated by taxamo. Must be provided when informative field is true. */
+		/**
+		 * Tax rate, calculated by taxamo. Must be provided when informative field is true.
+		 * Type: double
+		 */
 		tax_rate?: number | null;
 
-		/** Total amount. Required if amount or both unit price and quantity are not provided. */
+		/**
+		 * Total amount. Required if amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 
 		/** Unit of measure. */
 		unit_of_measure?: string | null;
 
-		/** Unit price. */
+		/**
+		 * Unit price.
+		 * Type: double
+		 */
 		unit_price?: number | null;
 	}
 	export interface Transaction_linesFormProperties {
 
-		/** Amount. Required if total amount or both unit price and quantity are not provided. */
+		/**
+		 * Amount. Required if total amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
@@ -1371,16 +1539,25 @@ export namespace MyNS {
 		 */
 		custom_id: FormControl<string | null | undefined>,
 
-		/** Deducted tax amount, calculated by taxmo. */
+		/**
+		 * Deducted tax amount, calculated by taxmo.
+		 * Type: double
+		 */
 		deducted_tax_amount: FormControl<number | null | undefined>,
 
-		/** Deducted tax rate, calculated by taxamo. */
+		/**
+		 * Deducted tax rate, calculated by taxamo.
+		 * Type: double
+		 */
 		deducted_tax_rate: FormControl<number | null | undefined>,
 
 		/** Line contents description. */
 		description: FormControl<string | null | undefined>,
 
-		/** Generated id. */
+		/**
+		 * Generated id.
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** If the line is provided for informative purposes. Such line must have :tax-rate and optionally :tax-name - if not, API validation will fail for this line. */
@@ -1398,34 +1575,55 @@ export namespace MyNS {
 		/** Product type, according to dictionary /dictionaries/product_types. */
 		product_type: FormControl<string | null | undefined>,
 
-		/** Quantity Defaults to 1. */
+		/**
+		 * Quantity Defaults to 1.
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Refunded tax amount, calculated by taxmo. */
+		/**
+		 * Refunded tax amount, calculated by taxmo.
+		 * Type: double
+		 */
 		refunded_tax_amount: FormControl<number | null | undefined>,
 
-		/** Refunded total amount, calculated by taxmo. */
+		/**
+		 * Refunded total amount, calculated by taxmo.
+		 * Type: double
+		 */
 		refunded_total_amount: FormControl<number | null | undefined>,
 
 		/** Date of supply in yyyy-MM-dd format. */
 		supply_date: FormControl<string | null | undefined>,
 
-		/** Tax amount, calculated by taxamo. */
+		/**
+		 * Tax amount, calculated by taxamo.
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
 		/** Tax name, calculated by taxamo.  Can be overwritten when informative field is true. */
 		tax_name: FormControl<string | null | undefined>,
 
-		/** Tax rate, calculated by taxamo. Must be provided when informative field is true. */
+		/**
+		 * Tax rate, calculated by taxamo. Must be provided when informative field is true.
+		 * Type: double
+		 */
 		tax_rate: FormControl<number | null | undefined>,
 
-		/** Total amount. Required if amount or both unit price and quantity are not provided. */
+		/**
+		 * Total amount. Required if amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 
 		/** Unit of measure. */
 		unit_of_measure: FormControl<string | null | undefined>,
 
-		/** Unit price. */
+		/**
+		 * Unit price.
+		 * Type: double
+		 */
 		unit_price: FormControl<number | null | undefined>,
 	}
 	export function CreateTransaction_linesFormGroup() {
@@ -1674,7 +1872,10 @@ export namespace MyNS {
 
 	export interface Input_transaction_line {
 
-		/** Amount. Required if total amount or both unit price and quantity are not provided. */
+		/**
+		 * Amount. Required if total amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Custom fields, stored as key-value pairs. This property is not processed and used mostly with Taxamo-built helpers. */
@@ -1686,7 +1887,10 @@ export namespace MyNS {
 		 */
 		custom_id: string;
 
-		/** Deducted tax rate, calculated by taxamo. */
+		/**
+		 * Deducted tax rate, calculated by taxamo.
+		 * Type: double
+		 */
 		deducted_tax_rate?: number | null;
 
 		/** Line contents description. */
@@ -1707,7 +1911,10 @@ export namespace MyNS {
 		/** Product type, according to dictionary /dictionaries/product_types. */
 		product_type?: string | null;
 
-		/** Quantity Defaults to 1. */
+		/**
+		 * Quantity Defaults to 1.
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** Date of supply in yyyy-MM-dd format. */
@@ -1716,21 +1923,33 @@ export namespace MyNS {
 		/** Tax name, calculated by taxamo.  Can be overwritten when informative field is true. */
 		tax_name?: string | null;
 
-		/** Tax rate, calculated by taxamo. Must be provided when informative field is true. */
+		/**
+		 * Tax rate, calculated by taxamo. Must be provided when informative field is true.
+		 * Type: double
+		 */
 		tax_rate?: number | null;
 
-		/** Total amount. Required if amount or both unit price and quantity are not provided. */
+		/**
+		 * Total amount. Required if amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 
 		/** Unit of measure. */
 		unit_of_measure?: string | null;
 
-		/** Unit price. */
+		/**
+		 * Unit price.
+		 * Type: double
+		 */
 		unit_price?: number | null;
 	}
 	export interface Input_transaction_lineFormProperties {
 
-		/** Amount. Required if total amount or both unit price and quantity are not provided. */
+		/**
+		 * Amount. Required if total amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
@@ -1739,7 +1958,10 @@ export namespace MyNS {
 		 */
 		custom_id: FormControl<string | null | undefined>,
 
-		/** Deducted tax rate, calculated by taxamo. */
+		/**
+		 * Deducted tax rate, calculated by taxamo.
+		 * Type: double
+		 */
 		deducted_tax_rate: FormControl<number | null | undefined>,
 
 		/** Line contents description. */
@@ -1760,7 +1982,10 @@ export namespace MyNS {
 		/** Product type, according to dictionary /dictionaries/product_types. */
 		product_type: FormControl<string | null | undefined>,
 
-		/** Quantity Defaults to 1. */
+		/**
+		 * Quantity Defaults to 1.
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Date of supply in yyyy-MM-dd format. */
@@ -1769,16 +1994,25 @@ export namespace MyNS {
 		/** Tax name, calculated by taxamo.  Can be overwritten when informative field is true. */
 		tax_name: FormControl<string | null | undefined>,
 
-		/** Tax rate, calculated by taxamo. Must be provided when informative field is true. */
+		/**
+		 * Tax rate, calculated by taxamo. Must be provided when informative field is true.
+		 * Type: double
+		 */
 		tax_rate: FormControl<number | null | undefined>,
 
-		/** Total amount. Required if amount or both unit price and quantity are not provided. */
+		/**
+		 * Total amount. Required if amount or both unit price and quantity are not provided.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 
 		/** Unit of measure. */
 		unit_of_measure: FormControl<string | null | undefined>,
 
-		/** Unit price. */
+		/**
+		 * Unit price.
+		 * Type: double
+		 */
 		unit_price: FormControl<number | null | undefined>,
 	}
 	export function CreateInput_transaction_lineFormGroup() {
@@ -2246,6 +2480,7 @@ export namespace MyNS {
 		/**
 		 * Amount that has been paid. Use negative value to register refunds.
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
@@ -2260,6 +2495,7 @@ export namespace MyNS {
 		/**
 		 * Amount that has been paid. Use negative value to register refunds.
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2297,7 +2533,10 @@ export namespace MyNS {
 
 	export interface CreateRefundIn {
 
-		/** Amount (without tax) to be refunded. Either amount or total amount is required. In case of line key and custom id missing, only total_amount can be used. */
+		/**
+		 * Amount (without tax) to be refunded. Either amount or total amount is required. In case of line key and custom id missing, only total_amount can be used.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Line custom identifier. If neither line key or custom id is provided, the refund amount will be assigned to lines in order. */
@@ -2309,12 +2548,18 @@ export namespace MyNS {
 		/** Refund reason, displayed on the credit note. */
 		refund_reason?: string | null;
 
-		/** Total amount, including tax, to be refunded. Either amount or total amount is required. In case of line key and custom id missing, only total_amount can be used. */
+		/**
+		 * Total amount, including tax, to be refunded. Either amount or total amount is required. In case of line key and custom id missing, only total_amount can be used.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 	}
 	export interface CreateRefundInFormProperties {
 
-		/** Amount (without tax) to be refunded. Either amount or total amount is required. In case of line key and custom id missing, only total_amount can be used. */
+		/**
+		 * Amount (without tax) to be refunded. Either amount or total amount is required. In case of line key and custom id missing, only total_amount can be used.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Line custom identifier. If neither line key or custom id is provided, the refund amount will be assigned to lines in order. */
@@ -2326,7 +2571,10 @@ export namespace MyNS {
 		/** Refund reason, displayed on the credit note. */
 		refund_reason: FormControl<string | null | undefined>,
 
-		/** Total amount, including tax, to be refunded. Either amount or total amount is required. In case of line key and custom id missing, only total_amount can be used. */
+		/**
+		 * Total amount, including tax, to be refunded. Either amount or total amount is required. In case of line key and custom id missing, only total_amount can be used.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateRefundInFormGroup() {
@@ -2342,30 +2590,54 @@ export namespace MyNS {
 
 	export interface CreateRefundOut {
 
-		/** Total tax amount, that was refunded for this line. */
+		/**
+		 * Total tax amount, that was refunded for this line.
+		 * Type: double
+		 */
 		refunded_tax_amount?: number | null;
 
-		/** Total amount, including tax, that was refunded for this line. */
+		/**
+		 * Total amount, including tax, that was refunded for this line.
+		 * Type: double
+		 */
 		refunded_total_amount?: number | null;
 
-		/** Calculated tax amount, that was refunded in this call. */
+		/**
+		 * Calculated tax amount, that was refunded in this call.
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 
-		/** Total amount, including tax, that was refunded in this call. */
+		/**
+		 * Total amount, including tax, that was refunded in this call.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 	}
 	export interface CreateRefundOutFormProperties {
 
-		/** Total tax amount, that was refunded for this line. */
+		/**
+		 * Total tax amount, that was refunded for this line.
+		 * Type: double
+		 */
 		refunded_tax_amount: FormControl<number | null | undefined>,
 
-		/** Total amount, including tax, that was refunded for this line. */
+		/**
+		 * Total amount, including tax, that was refunded for this line.
+		 * Type: double
+		 */
 		refunded_total_amount: FormControl<number | null | undefined>,
 
-		/** Calculated tax amount, that was refunded in this call. */
+		/**
+		 * Calculated tax amount, that was refunded in this call.
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
-		/** Total amount, including tax, that was refunded in this call. */
+		/**
+		 * Total amount, including tax, that was refunded in this call.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateRefundOutFormGroup() {
@@ -2479,10 +2751,16 @@ export namespace MyNS {
 		/** Currency 3-letter ISO code. */
 		isocode?: string | null;
 
-		/** Currency iso numeric code. */
+		/**
+		 * Currency iso numeric code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		isonum?: number | null;
 
-		/** Number of minor units for currency. */
+		/**
+		 * Number of minor units for currency.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minorunits?: number | null;
 	}
 	export interface Currency_schemaFormProperties {
@@ -2496,10 +2774,16 @@ export namespace MyNS {
 		/** Currency 3-letter ISO code. */
 		isocode: FormControl<string | null | undefined>,
 
-		/** Currency iso numeric code. */
+		/**
+		 * Currency iso numeric code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		isonum: FormControl<number | null | undefined>,
 
-		/** Number of minor units for currency. */
+		/**
+		 * Number of minor units for currency.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minorunits: FormControl<number | null | undefined>,
 	}
 	export function CreateCurrency_schemaFormGroup() {
@@ -2688,13 +2972,22 @@ export namespace MyNS {
 
 	export interface Settlement_daily_stats_schema {
 
-		/** B2B transaction count. */
+		/**
+		 * B2B transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		b2b?: number | null;
 
-		/** B2C transaction count. */
+		/**
+		 * B2C transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		b2c?: number | null;
 
-		/** Total transaction count. */
+		/**
+		 * Total transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Date for stats in yyyy-MM-dd format. */
@@ -2703,27 +2996,48 @@ export namespace MyNS {
 		/** Date for stats in yyyy-MM-dd'T'hh:mm:ss'Z' format. */
 		day_raw?: string | null;
 
-		/** Total EU B2B transaction count. */
+		/**
+		 * Total EU B2B transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eu_b2b?: number | null;
 
-		/** Total EU Taxed transaction count. */
+		/**
+		 * Total EU Taxed transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eu_taxed?: number | null;
 
-		/** Total EU transaction count. */
+		/**
+		 * Total EU transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eu_total?: number | null;
 
-		/** Untaxed transaction count. */
+		/**
+		 * Untaxed transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		untaxed?: number | null;
 	}
 	export interface Settlement_daily_stats_schemaFormProperties {
 
-		/** B2B transaction count. */
+		/**
+		 * B2B transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		b2b: FormControl<number | null | undefined>,
 
-		/** B2C transaction count. */
+		/**
+		 * B2C transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		b2c: FormControl<number | null | undefined>,
 
-		/** Total transaction count. */
+		/**
+		 * Total transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Date for stats in yyyy-MM-dd format. */
@@ -2732,16 +3046,28 @@ export namespace MyNS {
 		/** Date for stats in yyyy-MM-dd'T'hh:mm:ss'Z' format. */
 		day_raw: FormControl<string | null | undefined>,
 
-		/** Total EU B2B transaction count. */
+		/**
+		 * Total EU B2B transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eu_b2b: FormControl<number | null | undefined>,
 
-		/** Total EU Taxed transaction count. */
+		/**
+		 * Total EU Taxed transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eu_taxed: FormControl<number | null | undefined>,
 
-		/** Total EU transaction count. */
+		/**
+		 * Total EU transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eu_total: FormControl<number | null | undefined>,
 
-		/** Untaxed transaction count. */
+		/**
+		 * Untaxed transaction count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		untaxed: FormControl<number | null | undefined>,
 	}
 	export function CreateSettlement_daily_stats_schemaFormGroup() {
@@ -2773,10 +3099,16 @@ export namespace MyNS {
 		/** Output format. 'json' or 'csv'. Default value is 'json' */
 		format?: string | null;
 
-		/** Limit (no more than 1000, defaults to 100). */
+		/**
+		 * Limit (no more than 1000, defaults to 100).
+		 * Type: double
+		 */
 		limit?: number | null;
 
-		/** Offset. Defaults to 0 */
+		/**
+		 * Offset. Defaults to 0
+		 * Type: double
+		 */
 		offset?: number | null;
 	}
 	export interface GetDetailedRefundsInFormProperties {
@@ -2793,10 +3125,16 @@ export namespace MyNS {
 		/** Output format. 'json' or 'csv'. Default value is 'json' */
 		format: FormControl<string | null | undefined>,
 
-		/** Limit (no more than 1000, defaults to 100). */
+		/**
+		 * Limit (no more than 1000, defaults to 100).
+		 * Type: double
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Offset. Defaults to 0 */
+		/**
+		 * Offset. Defaults to 0
+		 * Type: double
+		 */
 		offset: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDetailedRefundsInFormGroup() {
@@ -2826,7 +3164,10 @@ export namespace MyNS {
 
 	export interface Report {
 
-		/** Amount w/o tax */
+		/**
+		 * Amount w/o tax
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Two letter ISO country code. */
@@ -2844,10 +3185,16 @@ export namespace MyNS {
 		/** If true, this line should not be entered into MOSS and is provided for informative purposes only. For example because the country is the same as MOSS registration country and merchant country. */
 		skip_moss?: boolean | null;
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 
-		/** Tax rate */
+		/**
+		 * Tax rate
+		 * Type: double
+		 */
 		tax_rate?: number | null;
 
 		/** Tax region key */
@@ -2855,7 +3202,10 @@ export namespace MyNS {
 	}
 	export interface ReportFormProperties {
 
-		/** Amount w/o tax */
+		/**
+		 * Amount w/o tax
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Two letter ISO country code. */
@@ -2873,10 +3223,16 @@ export namespace MyNS {
 		/** If true, this line should not be entered into MOSS and is provided for informative purposes only. For example because the country is the same as MOSS registration country and merchant country. */
 		skip_moss: FormControl<boolean | null | undefined>,
 
-		/** Tax amount */
+		/**
+		 * Tax amount
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
-		/** Tax rate */
+		/**
+		 * Tax rate
+		 * Type: double
+		 */
 		tax_rate: FormControl<number | null | undefined>,
 
 		/** Tax region key */
@@ -2972,37 +3328,67 @@ export namespace MyNS {
 		/** Three-letter ISO currency code. */
 		currency_code?: string | null;
 
-		/** Domestic sales refunds amount. */
+		/**
+		 * Domestic sales refunds amount.
+		 * Type: double
+		 */
 		domestic_refunds_amount?: number | null;
 
-		/** Domestic sales refunds tax amout. */
+		/**
+		 * Domestic sales refunds tax amout.
+		 * Type: double
+		 */
 		domestic_refunds_tax_amount?: number | null;
 
-		/** Domestic sales amount. */
+		/**
+		 * Domestic sales amount.
+		 * Type: double
+		 */
 		domestic_sales_amount?: number | null;
 
-		/** Domestic sales tax amout. */
+		/**
+		 * Domestic sales tax amout.
+		 * Type: double
+		 */
 		domestic_tax_amount?: number | null;
 
 		/** Period end date in yyyy-MM-dd'T'hh:mm:ss'Z' format. */
 		end_date?: string | null;
 
-		/** EU deducted tax sales. */
+		/**
+		 * EU deducted tax sales.
+		 * Type: double
+		 */
 		eu_tax_deducted_refunds?: number | null;
 
-		/** EU deducted tax sales. */
+		/**
+		 * EU deducted tax sales.
+		 * Type: double
+		 */
 		eu_tax_deducted_sales?: number | null;
 
-		/** Global sales refunds amount. This includes refunds from domestic country too. */
+		/**
+		 * Global sales refunds amount. This includes refunds from domestic country too.
+		 * Type: double
+		 */
 		global_refunds_amount?: number | null;
 
-		/** Global sales refunds amount. This includes refunds from domestic country too. */
+		/**
+		 * Global sales refunds amount. This includes refunds from domestic country too.
+		 * Type: double
+		 */
 		global_refunds_tax_amount?: number | null;
 
-		/** Global sales amount. This includes sales from domestic country too. */
+		/**
+		 * Global sales amount. This includes sales from domestic country too.
+		 * Type: double
+		 */
 		global_sales_amount?: number | null;
 
-		/** Global sales amount. This includes sales from domestic country too. */
+		/**
+		 * Global sales amount. This includes sales from domestic country too.
+		 * Type: double
+		 */
 		global_sales_tax_amount?: number | null;
 
 		/** Period start date in yyyy-MM-dd'T'hh:mm:ss'Z' format. */
@@ -3013,37 +3399,67 @@ export namespace MyNS {
 		/** Three-letter ISO currency code. */
 		currency_code: FormControl<string | null | undefined>,
 
-		/** Domestic sales refunds amount. */
+		/**
+		 * Domestic sales refunds amount.
+		 * Type: double
+		 */
 		domestic_refunds_amount: FormControl<number | null | undefined>,
 
-		/** Domestic sales refunds tax amout. */
+		/**
+		 * Domestic sales refunds tax amout.
+		 * Type: double
+		 */
 		domestic_refunds_tax_amount: FormControl<number | null | undefined>,
 
-		/** Domestic sales amount. */
+		/**
+		 * Domestic sales amount.
+		 * Type: double
+		 */
 		domestic_sales_amount: FormControl<number | null | undefined>,
 
-		/** Domestic sales tax amout. */
+		/**
+		 * Domestic sales tax amout.
+		 * Type: double
+		 */
 		domestic_tax_amount: FormControl<number | null | undefined>,
 
 		/** Period end date in yyyy-MM-dd'T'hh:mm:ss'Z' format. */
 		end_date: FormControl<string | null | undefined>,
 
-		/** EU deducted tax sales. */
+		/**
+		 * EU deducted tax sales.
+		 * Type: double
+		 */
 		eu_tax_deducted_refunds: FormControl<number | null | undefined>,
 
-		/** EU deducted tax sales. */
+		/**
+		 * EU deducted tax sales.
+		 * Type: double
+		 */
 		eu_tax_deducted_sales: FormControl<number | null | undefined>,
 
-		/** Global sales refunds amount. This includes refunds from domestic country too. */
+		/**
+		 * Global sales refunds amount. This includes refunds from domestic country too.
+		 * Type: double
+		 */
 		global_refunds_amount: FormControl<number | null | undefined>,
 
-		/** Global sales refunds amount. This includes refunds from domestic country too. */
+		/**
+		 * Global sales refunds amount. This includes refunds from domestic country too.
+		 * Type: double
+		 */
 		global_refunds_tax_amount: FormControl<number | null | undefined>,
 
-		/** Global sales amount. This includes sales from domestic country too. */
+		/**
+		 * Global sales amount. This includes sales from domestic country too.
+		 * Type: double
+		 */
 		global_sales_amount: FormControl<number | null | undefined>,
 
-		/** Global sales amount. This includes sales from domestic country too. */
+		/**
+		 * Global sales amount. This includes sales from domestic country too.
+		 * Type: double
+		 */
 		global_sales_tax_amount: FormControl<number | null | undefined>,
 
 		/** Period start date in yyyy-MM-dd'T'hh:mm:ss'Z' format. */
@@ -3566,7 +3982,10 @@ export namespace MyNS {
 		/** Period start date in yyyy-MM-dd'T'hh:mm:ss'Z' format. */
 		start_date?: string | null;
 
-		/** Tax amount due in this quarter. */
+		/**
+		 * Tax amount due in this quarter.
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 
 		/** Tax entity that the tax is due. */
@@ -3592,7 +4011,10 @@ export namespace MyNS {
 		/** Period start date in yyyy-MM-dd'T'hh:mm:ss'Z' format. */
 		start_date: FormControl<string | null | undefined>,
 
-		/** Tax amount due in this quarter. */
+		/**
+		 * Tax amount due in this quarter.
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
 		/** Tax entity that the tax is due. */
@@ -3778,7 +4200,10 @@ export namespace MyNS {
 
 	export interface Payments {
 
-		/** Amount that has been paid. Use negative value to register refunds. */
+		/**
+		 * Amount that has been paid. Use negative value to register refunds.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Additional payment information. */
@@ -3789,7 +4214,10 @@ export namespace MyNS {
 	}
 	export interface PaymentsFormProperties {
 
-		/** Amount that has been paid. Use negative value to register refunds. */
+		/**
+		 * Amount that has been paid. Use negative value to register refunds.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Additional payment information. */
@@ -3822,7 +4250,10 @@ export namespace MyNS {
 
 	export interface Refunds {
 
-		/** Amount, excluding tax, that was refunded. */
+		/**
+		 * Amount, excluding tax, that was refunded.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Was this refund applied to an informative line? */
@@ -3843,18 +4274,30 @@ export namespace MyNS {
 		/** Refund timestamp in UTC timezone. */
 		refund_timestamp?: string | null;
 
-		/** Calculated tax amount, that was refunded. */
+		/**
+		 * Calculated tax amount, that was refunded.
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 
-		/** Tax rate for the line that was used for the refund calculation. */
+		/**
+		 * Tax rate for the line that was used for the refund calculation.
+		 * Type: double
+		 */
 		tax_rate?: number | null;
 
-		/** Total amount, including tax, that was refunded. */
+		/**
+		 * Total amount, including tax, that was refunded.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 	}
 	export interface RefundsFormProperties {
 
-		/** Amount, excluding tax, that was refunded. */
+		/**
+		 * Amount, excluding tax, that was refunded.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Was this refund applied to an informative line? */
@@ -3875,13 +4318,22 @@ export namespace MyNS {
 		/** Refund timestamp in UTC timezone. */
 		refund_timestamp: FormControl<string | null | undefined>,
 
-		/** Calculated tax amount, that was refunded. */
+		/**
+		 * Calculated tax amount, that was refunded.
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
-		/** Tax rate for the line that was used for the refund calculation. */
+		/**
+		 * Tax rate for the line that was used for the refund calculation.
+		 * Type: double
+		 */
 		tax_rate: FormControl<number | null | undefined>,
 
-		/** Total amount, including tax, that was refunded. */
+		/**
+		 * Total amount, including tax, that was refunded.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateRefundsFormGroup() {
@@ -3920,10 +4372,16 @@ export namespace MyNS {
 		/** Taxamo provided transaction key or custom id */
 		key_or_custom_id?: string | null;
 
-		/** Limit (no more than 1000, defaults to 100). */
+		/**
+		 * Limit (no more than 1000, defaults to 100).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
-		/** Offset */
+		/**
+		 * Offset
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** Order date from in yyyy-MM-dd format. */
@@ -3973,10 +4431,16 @@ export namespace MyNS {
 		/** Taxamo provided transaction key or custom id */
 		key_or_custom_id: FormControl<string | null | undefined>,
 
-		/** Limit (no more than 1000, defaults to 100). */
+		/**
+		 * Limit (no more than 1000, defaults to 100).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Offset */
+		/**
+		 * Offset
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Order date from in yyyy-MM-dd format. */
@@ -4045,7 +4509,10 @@ export namespace MyNS {
 	export interface Transactions {
 		additional_currencies?: Additional_currencies;
 
-		/** Amount of transaction without tax. */
+		/**
+		 * Amount of transaction without tax.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Billing two letter ISO country code. */
@@ -4097,7 +4564,10 @@ export namespace MyNS {
 		/** Free-form field for storing customer id. */
 		customer_id?: string | null;
 
-		/** How much tax has been deducted. */
+		/**
+		 * How much tax has been deducted.
+		 * Type: double
+		 */
 		deducted_tax_amount?: number | null;
 
 		/** Transaction description. */
@@ -4144,10 +4614,16 @@ export namespace MyNS {
 		/** Use data and evidence from original transaction. Tax will be re-calculated, but evidence won't be re-checked. This parameter is taken into account only when 'manual' flag is raised. */
 		original_transaction_key?: string | null;
 
-		/** Refunded tax amount. */
+		/**
+		 * Refunded tax amount.
+		 * Type: double
+		 */
 		refunded_tax_amount?: number | null;
 
-		/** Total amount refunde (including tax). */
+		/**
+		 * Total amount refunde (including tax).
+		 * Type: double
+		 */
 		refunded_total_amount?: number | null;
 
 		/** Transaction source software - e.g. plugin */
@@ -4162,7 +4638,10 @@ export namespace MyNS {
 		/** Supply date in yyyy-MM-dd format. */
 		supply_date?: string | null;
 
-		/** Tax amount of transaction. */
+		/**
+		 * Tax amount of transaction.
+		 * Type: double
+		 */
 		tax_amount?: number | null;
 
 		/** Two-letter ISO country code, e.g. FR. This code applies to detected/set country for transaction, but can be set using manual mode. */
@@ -4187,7 +4666,10 @@ export namespace MyNS {
 		/** Was this transaction created in test mode? */
 		test?: boolean | null;
 
-		/** Total amount of transaction. */
+		/**
+		 * Total amount of transaction.
+		 * Type: double
+		 */
 		total_amount?: number | null;
 
 		/**
@@ -4201,7 +4683,10 @@ export namespace MyNS {
 	}
 	export interface TransactionsFormProperties {
 
-		/** Amount of transaction without tax. */
+		/**
+		 * Amount of transaction without tax.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Billing two letter ISO country code. */
@@ -4249,7 +4734,10 @@ export namespace MyNS {
 		/** Free-form field for storing customer id. */
 		customer_id: FormControl<string | null | undefined>,
 
-		/** How much tax has been deducted. */
+		/**
+		 * How much tax has been deducted.
+		 * Type: double
+		 */
 		deducted_tax_amount: FormControl<number | null | undefined>,
 
 		/** Transaction description. */
@@ -4294,10 +4782,16 @@ export namespace MyNS {
 		/** Use data and evidence from original transaction. Tax will be re-calculated, but evidence won't be re-checked. This parameter is taken into account only when 'manual' flag is raised. */
 		original_transaction_key: FormControl<string | null | undefined>,
 
-		/** Refunded tax amount. */
+		/**
+		 * Refunded tax amount.
+		 * Type: double
+		 */
 		refunded_tax_amount: FormControl<number | null | undefined>,
 
-		/** Total amount refunde (including tax). */
+		/**
+		 * Total amount refunde (including tax).
+		 * Type: double
+		 */
 		refunded_total_amount: FormControl<number | null | undefined>,
 
 		/** Transaction source software - e.g. plugin */
@@ -4312,7 +4806,10 @@ export namespace MyNS {
 		/** Supply date in yyyy-MM-dd format. */
 		supply_date: FormControl<string | null | undefined>,
 
-		/** Tax amount of transaction. */
+		/**
+		 * Tax amount of transaction.
+		 * Type: double
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
 		/** Two-letter ISO country code, e.g. FR. This code applies to detected/set country for transaction, but can be set using manual mode. */
@@ -4336,7 +4833,10 @@ export namespace MyNS {
 		/** Was this transaction created in test mode? */
 		test: FormControl<boolean | null | undefined>,
 
-		/** Total amount of transaction. */
+		/**
+		 * Total amount of transaction.
+		 * Type: double
+		 */
 		total_amount: FormControl<number | null | undefined>,
 
 		/** Verification token */

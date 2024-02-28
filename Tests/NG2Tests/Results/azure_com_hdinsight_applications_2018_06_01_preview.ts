@@ -136,7 +136,10 @@ export namespace MyNS {
 		/** The list of access modes for the application. */
 		accessModes?: Array<string>;
 
-		/** The destination port to connect to. */
+		/**
+		 * The destination port to connect to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort?: number | null;
 
 		/** The value indicates whether to disable GatewayAuth. */
@@ -145,7 +148,10 @@ export namespace MyNS {
 		/** The location of the endpoint. */
 		location?: string | null;
 
-		/** The public port to connect to. */
+		/**
+		 * The public port to connect to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		publicPort?: number | null;
 
 		/** The subdomain suffix of the application. */
@@ -155,7 +161,10 @@ export namespace MyNS {
 	/** Gets the application HTTP endpoints. */
 	export interface ApplicationGetHttpsEndpointFormProperties {
 
-		/** The destination port to connect to. */
+		/**
+		 * The destination port to connect to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort: FormControl<number | null | undefined>,
 
 		/** The value indicates whether to disable GatewayAuth. */
@@ -164,7 +173,10 @@ export namespace MyNS {
 		/** The location of the endpoint. */
 		location: FormControl<string | null | undefined>,
 
-		/** The public port to connect to. */
+		/**
+		 * The public port to connect to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		publicPort: FormControl<number | null | undefined>,
 
 		/** The subdomain suffix of the application. */
@@ -241,26 +253,38 @@ export namespace MyNS {
 	/** Gets the application SSH endpoint */
 	export interface ApplicationGetEndpoint {
 
-		/** The destination port to connect to. */
+		/**
+		 * The destination port to connect to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort?: number | null;
 
 		/** The location of the endpoint. */
 		location?: string | null;
 
-		/** The public port to connect to. */
+		/**
+		 * The public port to connect to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		publicPort?: number | null;
 	}
 
 	/** Gets the application SSH endpoint */
 	export interface ApplicationGetEndpointFormProperties {
 
-		/** The destination port to connect to. */
+		/**
+		 * The destination port to connect to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationPort: FormControl<number | null | undefined>,
 
 		/** The location of the endpoint. */
 		location: FormControl<string | null | undefined>,
 
-		/** The public port to connect to. */
+		/**
+		 * The public port to connect to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		publicPort: FormControl<number | null | undefined>,
 	}
 	export function CreateApplicationGetEndpointFormGroup() {

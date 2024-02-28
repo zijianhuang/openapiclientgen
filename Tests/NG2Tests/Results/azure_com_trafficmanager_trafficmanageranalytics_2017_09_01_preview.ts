@@ -83,7 +83,10 @@ export namespace MyNS {
 	/** Class which is a sparse representation of a Traffic Manager endpoint. */
 	export interface HeatMapEndpoint {
 
-		/** A number uniquely identifying this endpoint in query experiences. */
+		/**
+		 * A number uniquely identifying this endpoint in query experiences.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endpointId?: number | null;
 
 		/** The ARM Resource ID of this Traffic Manager endpoint. */
@@ -93,7 +96,10 @@ export namespace MyNS {
 	/** Class which is a sparse representation of a Traffic Manager endpoint. */
 	export interface HeatMapEndpointFormProperties {
 
-		/** A number uniquely identifying this endpoint in query experiences. */
+		/**
+		 * A number uniquely identifying this endpoint in query experiences.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endpointId: FormControl<number | null | undefined>,
 
 		/** The ARM Resource ID of this Traffic Manager endpoint. */
@@ -162,10 +168,16 @@ export namespace MyNS {
 	/** Class representing a Traffic Manager HeatMap traffic flow properties. */
 	export interface TrafficFlow {
 
-		/** The approximate latitude that these queries originated from. */
+		/**
+		 * The approximate latitude that these queries originated from.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The approximate longitude that these queries originated from. */
+		/**
+		 * The approximate longitude that these queries originated from.
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/** The query experiences produced in this HeatMap calculation. */
@@ -178,10 +190,16 @@ export namespace MyNS {
 	/** Class representing a Traffic Manager HeatMap traffic flow properties. */
 	export interface TrafficFlowFormProperties {
 
-		/** The approximate latitude that these queries originated from. */
+		/**
+		 * The approximate latitude that these queries originated from.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The approximate longitude that these queries originated from. */
+		/**
+		 * The approximate longitude that these queries originated from.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** The IP address that this query experience originated from. */
@@ -203,15 +221,20 @@ export namespace MyNS {
 		/**
 		 * The id of the endpoint from the 'endpoints' array which these queries were routed to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		endpointId: number;
 
-		/** The latency experienced by queries originating from this location. */
+		/**
+		 * The latency experienced by queries originating from this location.
+		 * Type: double
+		 */
 		latency?: number | null;
 
 		/**
 		 * The number of queries originating from this location.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queryCount: number;
 	}
@@ -222,15 +245,20 @@ export namespace MyNS {
 		/**
 		 * The id of the endpoint from the 'endpoints' array which these queries were routed to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		endpointId: FormControl<number | null | undefined>,
 
-		/** The latency experienced by queries originating from this location. */
+		/**
+		 * The latency experienced by queries originating from this location.
+		 * Type: double
+		 */
 		latency: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of queries originating from this location.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queryCount: FormControl<number | null | undefined>,
 	}

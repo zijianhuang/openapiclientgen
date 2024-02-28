@@ -7,19 +7,34 @@ export namespace MyNS {
 	/** Supported auto pause delay time range */
 	export interface AutoPauseDelayTimeRange {
 
-		/** Default value is no value is provided */
+		/**
+		 * Default value is no value is provided
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Value that is used to not pause (infinite delay before pause) */
+		/**
+		 * Value that is used to not pause (infinite delay before pause)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		doNotPauseValue?: number | null;
 
-		/** Maximum value */
+		/**
+		 * Maximum value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxValue?: number | null;
 
-		/** Minimum value */
+		/**
+		 * Minimum value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minValue?: number | null;
 
-		/** Step value for discrete values between the minimum value and the maximum value. */
+		/**
+		 * Step value for discrete values between the minimum value and the maximum value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepSize?: number | null;
 
 		/** Unit of time that delay is expressed in */
@@ -29,19 +44,34 @@ export namespace MyNS {
 	/** Supported auto pause delay time range */
 	export interface AutoPauseDelayTimeRangeFormProperties {
 
-		/** Default value is no value is provided */
+		/**
+		 * Default value is no value is provided
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Value that is used to not pause (infinite delay before pause) */
+		/**
+		 * Value that is used to not pause (infinite delay before pause)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		doNotPauseValue: FormControl<number | null | undefined>,
 
-		/** Maximum value */
+		/**
+		 * Maximum value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxValue: FormControl<number | null | undefined>,
 
-		/** Minimum value */
+		/**
+		 * Minimum value
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minValue: FormControl<number | null | undefined>,
 
-		/** Step value for discrete values between the minimum value and the maximum value. */
+		/**
+		 * Step value for discrete values between the minimum value and the maximum value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepSize: FormControl<number | null | undefined>,
 
 		/** Unit of time that delay is expressed in */
@@ -116,7 +146,10 @@ export namespace MyNS {
 	/** The read scale capability. */
 	export interface ReadScaleCapability {
 
-		/** The maximum number of read scale replicas. */
+		/**
+		 * The maximum number of read scale replicas.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfReplicas?: number | null;
 
 		/** The reason for the capability not being available. */
@@ -129,7 +162,10 @@ export namespace MyNS {
 	/** The read scale capability. */
 	export interface ReadScaleCapabilityFormProperties {
 
-		/** The maximum number of read scale replicas. */
+		/**
+		 * The maximum number of read scale replicas.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberOfReplicas: FormControl<number | null | undefined>,
 
 		/** The reason for the capability not being available. */
@@ -230,7 +266,10 @@ export namespace MyNS {
 	/** The maximum size capability. */
 	export interface MaxSizeCapability {
 
-		/** The maximum size limit (see 'unit' for the units). */
+		/**
+		 * The maximum size limit (see 'unit' for the units).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The units that the limit is expressed in. */
@@ -240,7 +279,10 @@ export namespace MyNS {
 	/** The maximum size capability. */
 	export interface MaxSizeCapabilityFormProperties {
 
-		/** The maximum size limit (see 'unit' for the units). */
+		/**
+		 * The maximum size limit (see 'unit' for the units).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The units that the limit is expressed in. */
@@ -263,7 +305,10 @@ export namespace MyNS {
 		/** Unit type used to measure performance level. */
 		unit?: PerformanceLevelCapabilityUnit | null;
 
-		/** Performance level value. */
+		/**
+		 * Performance level value.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -273,7 +318,10 @@ export namespace MyNS {
 		/** Unit type used to measure performance level. */
 		unit: FormControl<PerformanceLevelCapabilityUnit | null | undefined>,
 
-		/** Performance level value. */
+		/**
+		 * Performance level value.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePerformanceLevelCapabilityFormGroup() {
@@ -288,7 +336,10 @@ export namespace MyNS {
 
 	export interface ServiceObjectiveCapabilitySku {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -308,7 +359,10 @@ export namespace MyNS {
 	}
 	export interface ServiceObjectiveCapabilitySkuFormProperties {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -416,7 +470,10 @@ export namespace MyNS {
 	/** The log size capability. */
 	export interface LogSizeCapability {
 
-		/** The log size limit (see 'unit' for the units). */
+		/**
+		 * The log size limit (see 'unit' for the units).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The units that the limit is expressed in. */
@@ -426,7 +483,10 @@ export namespace MyNS {
 	/** The log size capability. */
 	export interface LogSizeCapabilityFormProperties {
 
-		/** The log size limit (see 'unit' for the units). */
+		/**
+		 * The log size limit (see 'unit' for the units).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The units that the limit is expressed in. */
@@ -452,7 +512,10 @@ export namespace MyNS {
 		/** The status of the capability. */
 		status?: ReadScaleCapabilityStatus | null;
 
-		/** Min capacity value */
+		/**
+		 * Min capacity value
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -465,7 +528,10 @@ export namespace MyNS {
 		/** The status of the capability. */
 		status: FormControl<ReadScaleCapabilityStatus | null | undefined>,
 
-		/** Min capacity value */
+		/**
+		 * Min capacity value
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateMinCapacityCapabilityFormGroup() {
@@ -566,7 +632,10 @@ export namespace MyNS {
 		/** The maximum size capability. */
 		includedMaxSize?: MaxSizeCapability;
 
-		/** The maximum number of databases supported. */
+		/**
+		 * The maximum number of databases supported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDatabaseCount?: number | null;
 
 		/** The performance level capability. */
@@ -600,7 +669,10 @@ export namespace MyNS {
 	/** The Elastic Pool performance level capability. */
 	export interface ElasticPoolPerformanceLevelCapabilityFormProperties {
 
-		/** The maximum number of databases supported. */
+		/**
+		 * The maximum number of databases supported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDatabaseCount: FormControl<number | null | undefined>,
 
 		/** The reason for the capability not being available. */
@@ -624,7 +696,10 @@ export namespace MyNS {
 
 	export interface ElasticPoolPerformanceLevelCapabilitySku {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -644,7 +719,10 @@ export namespace MyNS {
 	}
 	export interface ElasticPoolPerformanceLevelCapabilitySkuFormProperties {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -677,7 +755,10 @@ export namespace MyNS {
 	/** The max per-database performance level capability. */
 	export interface ElasticPoolPerDatabaseMaxPerformanceLevelCapability {
 
-		/** The maximum performance level per database. */
+		/**
+		 * The maximum performance level per database.
+		 * Type: double
+		 */
 		limit?: number | null;
 
 		/** The reason for the capability not being available. */
@@ -696,7 +777,10 @@ export namespace MyNS {
 	/** The max per-database performance level capability. */
 	export interface ElasticPoolPerDatabaseMaxPerformanceLevelCapabilityFormProperties {
 
-		/** The maximum performance level per database. */
+		/**
+		 * The maximum performance level per database.
+		 * Type: double
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The reason for the capability not being available. */
@@ -722,7 +806,10 @@ export namespace MyNS {
 	/** The minimum per-database performance level capability. */
 	export interface ElasticPoolPerDatabaseMinPerformanceLevelCapability {
 
-		/** The minimum performance level per database. */
+		/**
+		 * The minimum performance level per database.
+		 * Type: double
+		 */
 		limit?: number | null;
 
 		/** The reason for the capability not being available. */
@@ -738,7 +825,10 @@ export namespace MyNS {
 	/** The minimum per-database performance level capability. */
 	export interface ElasticPoolPerDatabaseMinPerformanceLevelCapabilityFormProperties {
 
-		/** The minimum performance level per database. */
+		/**
+		 * The minimum performance level per database.
+		 * Type: double
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The reason for the capability not being available. */
@@ -855,7 +945,10 @@ export namespace MyNS {
 		/** The maximum size capability. */
 		storageLimit?: MaxSizeCapability;
 
-		/** The virtual cores value. */
+		/**
+		 * The virtual cores value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 
@@ -871,7 +964,10 @@ export namespace MyNS {
 		/** The status of the capability. */
 		status: FormControl<ReadScaleCapabilityStatus | null | undefined>,
 
-		/** The virtual cores value. */
+		/**
+		 * The virtual cores value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateInstancePoolVcoresCapabilityFormGroup() {
@@ -1077,7 +1173,10 @@ export namespace MyNS {
 		/** Storage size ranges. */
 		supportedStorageSizes?: Array<MaxSizeRangeCapability>;
 
-		/** The virtual cores value. */
+		/**
+		 * The virtual cores value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 
@@ -1099,7 +1198,10 @@ export namespace MyNS {
 		/** The status of the capability. */
 		status: FormControl<ReadScaleCapabilityStatus | null | undefined>,
 
-		/** The virtual cores value. */
+		/**
+		 * The virtual cores value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateManagedInstanceVcoresCapabilityFormGroup() {

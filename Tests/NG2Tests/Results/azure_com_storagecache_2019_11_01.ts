@@ -112,7 +112,10 @@ export namespace MyNS {
 
 	export interface CacheProperties {
 
-		/** The size of this Cache, in GB. */
+		/**
+		 * The size of this Cache, in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cacheSizeGB?: number | null;
 
 		/** An indication of Cache health. Gives more information about health than just that related to provisioning. */
@@ -132,7 +135,10 @@ export namespace MyNS {
 	}
 	export interface CachePropertiesFormProperties {
 
-		/** The size of this Cache, in GB. */
+		/**
+		 * The size of this Cache, in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cacheSizeGB: FormControl<number | null | undefined>,
 
 		/** ARM provisioning state, see https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/Addendum.md#provisioningstate-property */

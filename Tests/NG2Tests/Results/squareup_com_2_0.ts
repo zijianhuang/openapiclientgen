@@ -428,8 +428,9 @@ export namespace MyNS {
 		/**
 		 * The version of the object. When updating an object, the version supplied by the
 		 * must match the version in the database, otherwise the write will be rejected as conflicting.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version?: number | null;
+		version?: string | null;
 	}
 
 	/**
@@ -490,8 +491,9 @@ export namespace MyNS {
 		/**
 		 * The version of the object. When updating an object, the version supplied by the
 		 * must match the version in the database, otherwise the write will be rejected as conflicting.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		version: FormControl<number | null | undefined>,
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateCatalogObjectFormGroup() {
 		return new FormGroup<CatalogObjectFormProperties>({
@@ -500,7 +502,7 @@ export namespace MyNS {
 			present_at_all_locations: new FormControl<boolean | null | undefined>(undefined),
 			type: new FormControl<CatalogObjectType | null | undefined>(undefined, [Validators.required]),
 			updated_at: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -664,8 +666,9 @@ export namespace MyNS {
 		 * The amount of money, in the smallest denomination of the
 		 * currency indicated by `currency`. For example, when `currency` is `USD`,
 		 * `amount` is in cents.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount?: number | null;
+		amount?: string | null;
 
 		/**
 		 * The type of currency, in __ISO 4217 format__. For example, the currency
@@ -688,8 +691,9 @@ export namespace MyNS {
 		 * The amount of money, in the smallest denomination of the
 		 * currency indicated by `currency`. For example, when `currency` is `USD`,
 		 * `amount` is in cents.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		amount: FormControl<number | null | undefined>,
+		amount: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of currency, in __ISO 4217 format__. For example, the currency
@@ -700,7 +704,7 @@ export namespace MyNS {
 	}
 	export function CreateMoneyFormGroup() {
 		return new FormGroup<MoneyFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
 			currency: new FormControl<MoneyCurrency | null | undefined>(undefined),
 		});
 
@@ -856,10 +860,16 @@ export namespace MyNS {
 		/** If `true`, enable this [CatalogModifierList](#type-catalogmodifierlist). */
 		enabled?: boolean | null;
 
-		/** If zero or larger, the largest number of [CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList](#type-catalogmodifierlist). */
+		/**
+		 * If zero or larger, the largest number of [CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList](#type-catalogmodifierlist).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_selected_modifiers?: number | null;
 
-		/** If zero or larger, the smallest number of [CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList](#type-catalogmodifierlist). */
+		/**
+		 * If zero or larger, the smallest number of [CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList](#type-catalogmodifierlist).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min_selected_modifiers?: number | null;
 
 		/**
@@ -879,10 +889,16 @@ export namespace MyNS {
 		/** If `true`, enable this [CatalogModifierList](#type-catalogmodifierlist). */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** If zero or larger, the largest number of [CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList](#type-catalogmodifierlist). */
+		/**
+		 * If zero or larger, the largest number of [CatalogModifier](#type-catalogmodifier)s that can be selected from this [CatalogModifierList](#type-catalogmodifierlist).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_selected_modifiers: FormControl<number | null | undefined>,
 
-		/** If zero or larger, the smallest number of [CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList](#type-catalogmodifierlist). */
+		/**
+		 * If zero or larger, the smallest number of [CatalogModifier](#type-catalogmodifier)s that must be selected from this [CatalogModifierList](#type-catalogmodifierlist).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min_selected_modifiers: FormControl<number | null | undefined>,
 
 		/**
@@ -944,8 +960,9 @@ export namespace MyNS {
 		 * If the inventory quantity for the variation is less than or equal to this value and `inventory_alert_type`
 		 * is `LOW_QUANTITY`, the variation displays an alert in the merchant dashboard.
 		 * This value is always an integer.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		inventory_alert_threshold?: number | null;
+		inventory_alert_threshold?: string | null;
 
 		/**
 		 * Indicates whether the item variation displays an alert when its inventory quantity is less than or equal
@@ -982,8 +999,9 @@ export namespace MyNS {
 		 * `APPOINTMENTS_SERVICE`, then this is the duration of the service in milliseconds. For
 		 * example, a 30 minute appointment would have the value `1800000`, which is equal to
 		 * 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		service_duration?: number | null;
+		service_duration?: string | null;
 
 		/** The item variation's SKU, if any. Searchable. */
 		sku?: string | null;
@@ -1005,8 +1023,9 @@ export namespace MyNS {
 		 * If the inventory quantity for the variation is less than or equal to this value and `inventory_alert_type`
 		 * is `LOW_QUANTITY`, the variation displays an alert in the merchant dashboard.
 		 * This value is always an integer.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		inventory_alert_threshold: FormControl<number | null | undefined>,
+		inventory_alert_threshold: FormControl<string | null | undefined>,
 
 		/**
 		 * Indicates whether the item variation displays an alert when its inventory quantity is less than or equal
@@ -1031,8 +1050,9 @@ export namespace MyNS {
 		 * `APPOINTMENTS_SERVICE`, then this is the duration of the service in milliseconds. For
 		 * example, a 30 minute appointment would have the value `1800000`, which is equal to
 		 * 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		service_duration: FormControl<number | null | undefined>,
+		service_duration: FormControl<string | null | undefined>,
 
 		/** The item variation's SKU, if any. Searchable. */
 		sku: FormControl<string | null | undefined>,
@@ -1048,12 +1068,12 @@ export namespace MyNS {
 	}
 	export function CreateCatalogItemVariationFormGroup() {
 		return new FormGroup<CatalogItemVariationFormProperties>({
-			inventory_alert_threshold: new FormControl<number | null | undefined>(undefined),
+			inventory_alert_threshold: new FormControl<string | null | undefined>(undefined),
 			inventory_alert_type: new FormControl<CatalogItemVariationInventory_alert_type | null | undefined>(undefined),
 			item_id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			pricing_type: new FormControl<ItemVariationLocationOverridesPricing_type | null | undefined>(undefined),
-			service_duration: new FormControl<number | null | undefined>(undefined),
+			service_duration: new FormControl<string | null | undefined>(undefined),
 			sku: new FormControl<string | null | undefined>(undefined),
 			track_inventory: new FormControl<boolean | null | undefined>(undefined),
 			upc: new FormControl<string | null | undefined>(undefined),
@@ -1072,8 +1092,9 @@ export namespace MyNS {
 		 * If the inventory quantity for the variation is less than or equal to this value and `inventory_alert_type`
 		 * is `LOW_QUANTITY`, the variation displays an alert in the merchant dashboard.
 		 * This value is always an integer.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		inventory_alert_threshold?: number | null;
+		inventory_alert_threshold?: string | null;
 
 		/**
 		 * Indicates whether the [CatalogItemVariation](#type-catalogitemvariation) displays an alert when its inventory
@@ -1111,8 +1132,9 @@ export namespace MyNS {
 		 * If the inventory quantity for the variation is less than or equal to this value and `inventory_alert_type`
 		 * is `LOW_QUANTITY`, the variation displays an alert in the merchant dashboard.
 		 * This value is always an integer.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		inventory_alert_threshold: FormControl<number | null | undefined>,
+		inventory_alert_threshold: FormControl<string | null | undefined>,
 
 		/**
 		 * Indicates whether the [CatalogItemVariation](#type-catalogitemvariation) displays an alert when its inventory
@@ -1135,7 +1157,7 @@ export namespace MyNS {
 	}
 	export function CreateItemVariationLocationOverridesFormGroup() {
 		return new FormGroup<ItemVariationLocationOverridesFormProperties>({
-			inventory_alert_threshold: new FormControl<number | null | undefined>(undefined),
+			inventory_alert_threshold: new FormControl<string | null | undefined>(undefined),
 			inventory_alert_type: new FormControl<CatalogItemVariationInventory_alert_type | null | undefined>(undefined),
 			location_id: new FormControl<string | null | undefined>(undefined),
 			pricing_type: new FormControl<ItemVariationLocationOverridesPricing_type | null | undefined>(undefined),
@@ -1519,11 +1541,15 @@ export namespace MyNS {
 		/**
 		 * The month of the card's expiration date. This value is always between
 		 * `1` and `12`, inclusive.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		exp_month?: number | null;
+		exp_month?: string | null;
 
-		/** The four-digit year of the card's expiration date. */
-		exp_year?: number | null;
+		/**
+		 * The four-digit year of the card's expiration date.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		exp_year?: string | null;
 
 		/**
 		 * The unique string fingerprint for the card.
@@ -1558,11 +1584,15 @@ export namespace MyNS {
 		/**
 		 * The month of the card's expiration date. This value is always between
 		 * `1` and `12`, inclusive.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		exp_month: FormControl<number | null | undefined>,
+		exp_month: FormControl<string | null | undefined>,
 
-		/** The four-digit year of the card's expiration date. */
-		exp_year: FormControl<number | null | undefined>,
+		/**
+		 * The four-digit year of the card's expiration date.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		exp_year: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string fingerprint for the card.
@@ -1582,8 +1612,8 @@ export namespace MyNS {
 		return new FormGroup<CardFormProperties>({
 			card_brand: new FormControl<CardCard_brand | null | undefined>(undefined),
 			cardholder_name: new FormControl<string | null | undefined>(undefined),
-			exp_month: new FormControl<number | null | undefined>(undefined),
-			exp_year: new FormControl<number | null | undefined>(undefined),
+			exp_month: new FormControl<string | null | undefined>(undefined),
+			exp_year: new FormControl<string | null | undefined>(undefined),
 			fingerprint: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			last_4: new FormControl<string | null | undefined>(undefined),
@@ -1630,66 +1660,77 @@ export namespace MyNS {
 		/**
 		 * The maximum number of object IDs that may be included in a single
 		 * `/v2/catalog/batch-delete` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		batch_delete_max_object_ids?: number | null;
 
 		/**
 		 * The maximum number of object IDs that may appear in a `/v2/catalog/batch-retrieve`
 		 * request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		batch_retrieve_max_object_ids?: number | null;
 
 		/**
 		 * The maximum number of objects that may appear within a single batch in a
 		 * `/v2/catalog/batch-upsert` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		batch_upsert_max_objects_per_batch?: number | null;
 
 		/**
 		 * The maximum number of objects that may appear across all batches in a
 		 * `/v2/catalog/batch-upsert` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		batch_upsert_max_total_objects?: number | null;
 
 		/**
 		 * The maximum number of results that may be returned in a page of a
 		 * `/v2/catalog/search` response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		search_max_page_limit?: number | null;
 
 		/**
 		 * The maximum number of item IDs that may be included in a single
 		 * `/v2/catalog/update-item-modifier-lists` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_modifier_lists_max_item_ids?: number | null;
 
 		/**
 		 * The maximum number of modifier list IDs to be disabled that may be included in
 		 * a single `/v2/catalog/update-item-modifier-lists` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_modifier_lists_max_modifier_lists_to_disable?: number | null;
 
 		/**
 		 * The maximum number of modifier list IDs to be enabled that may be included in
 		 * a single `/v2/catalog/update-item-modifier-lists` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_modifier_lists_max_modifier_lists_to_enable?: number | null;
 
 		/**
 		 * The maximum number of item IDs that may be included in a single
 		 * `/v2/catalog/update-item-taxes` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_taxes_max_item_ids?: number | null;
 
 		/**
 		 * The maximum number of tax IDs to be disabled that may be included in a single
 		 * `/v2/catalog/update-item-taxes` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_taxes_max_taxes_to_disable?: number | null;
 
 		/**
 		 * The maximum number of tax IDs to be enabled that may be included in a single
 		 * `/v2/catalog/update-item-taxes` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_taxes_max_taxes_to_enable?: number | null;
 	}
@@ -1698,66 +1739,77 @@ export namespace MyNS {
 		/**
 		 * The maximum number of object IDs that may be included in a single
 		 * `/v2/catalog/batch-delete` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		batch_delete_max_object_ids: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of object IDs that may appear in a `/v2/catalog/batch-retrieve`
 		 * request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		batch_retrieve_max_object_ids: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of objects that may appear within a single batch in a
 		 * `/v2/catalog/batch-upsert` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		batch_upsert_max_objects_per_batch: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of objects that may appear across all batches in a
 		 * `/v2/catalog/batch-upsert` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		batch_upsert_max_total_objects: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of results that may be returned in a page of a
 		 * `/v2/catalog/search` response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		search_max_page_limit: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of item IDs that may be included in a single
 		 * `/v2/catalog/update-item-modifier-lists` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_modifier_lists_max_item_ids: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of modifier list IDs to be disabled that may be included in
 		 * a single `/v2/catalog/update-item-modifier-lists` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_modifier_lists_max_modifier_lists_to_disable: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of modifier list IDs to be enabled that may be included in
 		 * a single `/v2/catalog/update-item-modifier-lists` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_modifier_lists_max_modifier_lists_to_enable: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of item IDs that may be included in a single
 		 * `/v2/catalog/update-item-taxes` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_taxes_max_item_ids: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of tax IDs to be disabled that may be included in a single
 		 * `/v2/catalog/update-item-taxes` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_taxes_max_taxes_to_disable: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of tax IDs to be enabled that may be included in a single
 		 * `/v2/catalog/update-item-taxes` request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		update_item_taxes_max_taxes_to_enable: FormControl<number | null | undefined>,
 	}
@@ -1947,11 +1999,17 @@ export namespace MyNS {
 
 	export interface CatalogQueryRange {
 
-		/** The desired maximum value for the search attribute (inclusive). */
-		attribute_max_value?: number | null;
+		/**
+		 * The desired maximum value for the search attribute (inclusive).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		attribute_max_value?: string | null;
 
-		/** The desired minimum value for the search attribute (inclusive). */
-		attribute_min_value?: number | null;
+		/**
+		 * The desired minimum value for the search attribute (inclusive).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		attribute_min_value?: string | null;
 
 		/**
 		 * The name of the attribute to be searched.
@@ -1962,11 +2020,17 @@ export namespace MyNS {
 	}
 	export interface CatalogQueryRangeFormProperties {
 
-		/** The desired maximum value for the search attribute (inclusive). */
-		attribute_max_value: FormControl<number | null | undefined>,
+		/**
+		 * The desired maximum value for the search attribute (inclusive).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		attribute_max_value: FormControl<string | null | undefined>,
 
-		/** The desired minimum value for the search attribute (inclusive). */
-		attribute_min_value: FormControl<number | null | undefined>,
+		/**
+		 * The desired minimum value for the search attribute (inclusive).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		attribute_min_value: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the attribute to be searched.
@@ -1977,8 +2041,8 @@ export namespace MyNS {
 	}
 	export function CreateCatalogQueryRangeFormGroup() {
 		return new FormGroup<CatalogQueryRangeFormProperties>({
-			attribute_max_value: new FormControl<number | null | undefined>(undefined),
-			attribute_min_value: new FormControl<number | null | undefined>(undefined),
+			attribute_max_value: new FormControl<string | null | undefined>(undefined),
+			attribute_min_value: new FormControl<string | null | undefined>(undefined),
 			attribute_name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
@@ -4856,6 +4920,7 @@ export namespace MyNS {
 		 * A limit on the number of results to be returned in a single page. The limit is advisory -
 		 * the implementation may return more or fewer results. If the supplied limit is negative, zero, or
 		 * is higher than the maximum limit of 1,000, it will be ignored.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit?: number | null;
 
@@ -4919,6 +4984,7 @@ export namespace MyNS {
 		 * A limit on the number of results to be returned in a single page. The limit is advisory -
 		 * the implementation may return more or fewer results. If the supplied limit is negative, zero, or
 		 * is higher than the maximum limit of 1,000, it will be ignored.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: FormControl<number | null | undefined>,
 	}
@@ -5310,7 +5376,10 @@ export namespace MyNS {
 		/** A note about the inventory adjustment. */
 		memo?: string | null;
 
-		/** The number to adjust the variation's quantity by. */
+		/**
+		 * The number to adjust the variation's quantity by.
+		 * Type: double
+		 */
 		quantity_delta?: number | null;
 	}
 	export interface V1AdjustInventoryRequestFormProperties {
@@ -5321,7 +5390,10 @@ export namespace MyNS {
 		/** A note about the inventory adjustment. */
 		memo: FormControl<string | null | undefined>,
 
-		/** The number to adjust the variation's quantity by. */
+		/**
+		 * The number to adjust the variation's quantity by.
+		 * Type: double
+		 */
 		quantity_delta: FormControl<number | null | undefined>,
 	}
 	export function CreateV1AdjustInventoryRequestFormGroup() {
@@ -5454,6 +5526,7 @@ export namespace MyNS {
 		/**
 		 * Amount in the lowest denominated value of this Currency. E.g. in USD
 		 * these are cents, in JPY they are Yen (which do not have a 'cent' concept).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount?: number | null;
 		currency_code?: MoneyCurrency | null;
@@ -5463,6 +5536,7 @@ export namespace MyNS {
 		/**
 		 * Amount in the lowest denominated value of this Currency. E.g. in USD
 		 * these are cents, in JPY they are Yen (which do not have a 'cent' concept).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 		currency_code: FormControl<MoneyCurrency | null | undefined>,
@@ -5934,7 +6008,10 @@ export namespace MyNS {
 
 	export interface V1InventoryEntry {
 
-		/** The current available quantity of the item variation. */
+		/**
+		 * The current available quantity of the item variation.
+		 * Type: double
+		 */
 		quantity_on_hand?: number | null;
 
 		/** The variation that the entry corresponds to. */
@@ -5942,7 +6019,10 @@ export namespace MyNS {
 	}
 	export interface V1InventoryEntryFormProperties {
 
-		/** The current available quantity of the item variation. */
+		/**
+		 * The current available quantity of the item variation.
+		 * Type: double
+		 */
 		quantity_on_hand: FormControl<number | null | undefined>,
 
 		/** The variation that the entry corresponds to. */
@@ -6069,7 +6149,10 @@ export namespace MyNS {
 		/** The item variation's unique ID. */
 		id?: string | null;
 
-		/** If the inventory quantity for the variation is less than or equal to this value and inventory_alert_type is LOW_QUANTITY, the variation displays an alert in the merchant dashboard. */
+		/**
+		 * If the inventory quantity for the variation is less than or equal to this value and inventory_alert_type is LOW_QUANTITY, the variation displays an alert in the merchant dashboard.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inventory_alert_threshold?: number | null;
 
 		/** Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. */
@@ -6081,7 +6164,10 @@ export namespace MyNS {
 		/** The item variation's name. */
 		name?: string | null;
 
-		/** Indicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order */
+		/**
+		 * Indicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinal?: number | null;
 		price_money?: V1Money;
 
@@ -6102,7 +6188,10 @@ export namespace MyNS {
 		/** The item variation's unique ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** If the inventory quantity for the variation is less than or equal to this value and inventory_alert_type is LOW_QUANTITY, the variation displays an alert in the merchant dashboard. */
+		/**
+		 * If the inventory quantity for the variation is less than or equal to this value and inventory_alert_type is LOW_QUANTITY, the variation displays an alert in the merchant dashboard.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inventory_alert_threshold: FormControl<number | null | undefined>,
 
 		/** Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. */
@@ -6114,7 +6203,10 @@ export namespace MyNS {
 		/** The item variation's name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Indicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order */
+		/**
+		 * Indicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinal: FormControl<number | null | undefined>,
 
 		/** Indicates whether the item variation's price is fixed or determined at the time of sale. */
@@ -6365,7 +6457,10 @@ export namespace MyNS {
 		/** If true, the modifier option is the default option in a modifier list for which selection_type is SINGLE. */
 		on_by_default?: boolean | null;
 
-		/** Indicates the modifier option's list position when displayed in Square Register and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order. */
+		/**
+		 * Indicates the modifier option's list position when displayed in Square Register and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinal?: number | null;
 		price_money?: V1Money;
 	}
@@ -6383,7 +6478,10 @@ export namespace MyNS {
 		/** If true, the modifier option is the default option in a modifier list for which selection_type is SINGLE. */
 		on_by_default: FormControl<boolean | null | undefined>,
 
-		/** Indicates the modifier option's list position when displayed in Square Register and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order. */
+		/**
+		 * Indicates the modifier option's list position when displayed in Square Register and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ordinal: FormControl<number | null | undefined>,
 	}
 	export function CreateV1ModifierOptionFormGroup() {
@@ -6399,7 +6497,10 @@ export namespace MyNS {
 
 	export interface V1Order {
 
-		/** For Bitcoin transactions, the price of the buyer's order in satoshi (100 million satoshi equals 1 BTC). */
+		/**
+		 * For Bitcoin transactions, the price of the buyer's order in satoshi (100 million satoshi equals 1 BTC).
+		 * Type: double
+		 */
 		btc_price_satoshi?: number | null;
 
 		/** For Bitcoin transactions, the address that the buyer sent Bitcoin to. */
@@ -6464,7 +6565,10 @@ export namespace MyNS {
 	}
 	export interface V1OrderFormProperties {
 
-		/** For Bitcoin transactions, the price of the buyer's order in satoshi (100 million satoshi equals 1 BTC). */
+		/**
+		 * For Bitcoin transactions, the price of the buyer's order in satoshi (100 million satoshi equals 1 BTC).
+		 * Type: double
+		 */
 		btc_price_satoshi: FormControl<number | null | undefined>,
 
 		/** For Bitcoin transactions, the address that the buyer sent Bitcoin to. */
@@ -6656,7 +6760,10 @@ export namespace MyNS {
 		/** The page's name, if any. */
 		name?: string | null;
 
-		/** The page's position in the merchant's list of pages. Always an integer between 0 and 4, inclusive. */
+		/**
+		 * The page's position in the merchant's list of pages. Always an integer between 0 and 4, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_index?: number | null;
 	}
 	export interface V1PageFormProperties {
@@ -6667,7 +6774,10 @@ export namespace MyNS {
 		/** The page's name, if any. */
 		name: FormControl<string | null | undefined>,
 
-		/** The page's position in the merchant's list of pages. Always an integer between 0 and 4, inclusive. */
+		/**
+		 * The page's position in the merchant's list of pages. Always an integer between 0 and 4, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_index: FormControl<number | null | undefined>,
 	}
 	export function CreateV1PageFormGroup() {
@@ -6681,7 +6791,10 @@ export namespace MyNS {
 
 	export interface V1PageCell {
 
-		/** The column of the cell. Always an integer between 0 and 4, inclusive. */
+		/**
+		 * The column of the cell. Always an integer between 0 and 4, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		column?: number | null;
 
 		/** The unique identifier of the entity represented in the cell. Not present for cells with an object_type of PLACEHOLDER. */
@@ -6696,12 +6809,18 @@ export namespace MyNS {
 		/** For a cell with an object_type of PLACEHOLDER, this value indicates the cell's special behavior. */
 		placeholder_type?: Array<string>;
 
-		/** The row of the cell. Always an integer between 0 and 4, inclusive. */
+		/**
+		 * The row of the cell. Always an integer between 0 and 4, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		row?: number | null;
 	}
 	export interface V1PageCellFormProperties {
 
-		/** The column of the cell. Always an integer between 0 and 4, inclusive. */
+		/**
+		 * The column of the cell. Always an integer between 0 and 4, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		column: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the entity represented in the cell. Not present for cells with an object_type of PLACEHOLDER. */
@@ -6710,7 +6829,10 @@ export namespace MyNS {
 		/** The unique identifier of the page the cell is included on. */
 		page_id: FormControl<string | null | undefined>,
 
-		/** The row of the cell. Always an integer between 0 and 4, inclusive. */
+		/**
+		 * The row of the cell. Always an integer between 0 and 4, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		row: FormControl<number | null | undefined>,
 	}
 	export function CreateV1PageCellFormGroup() {
@@ -6869,7 +6991,10 @@ export namespace MyNS {
 		/** Notes entered by the merchant about the item at the time of payment, if any. */
 		notes?: string | null;
 
-		/** The quantity of the item purchased. This can be a decimal value. */
+		/**
+		 * The quantity of the item purchased. This can be a decimal value.
+		 * Type: double
+		 */
 		quantity?: number | null;
 		single_quantity_money?: V1Money;
 
@@ -6891,7 +7016,10 @@ export namespace MyNS {
 		/** Notes entered by the merchant about the item at the time of payment, if any. */
 		notes: FormControl<string | null | undefined>,
 
-		/** The quantity of the item purchased. This can be a decimal value. */
+		/**
+		 * The quantity of the item purchased. This can be a decimal value.
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateV1PaymentItemizationFormGroup() {

@@ -126,10 +126,14 @@ export namespace MyNS {
 
 	export interface ForecastHoursWaveDirection {
 		source?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface ForecastHoursWaveDirectionFormProperties {
 		source: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateForecastHoursWaveDirectionFormGroup() {
@@ -206,30 +210,54 @@ export namespace MyNS {
 
 	export interface ForecastMeta {
 
-		/** The number of successful requests you can do on one day */
+		/**
+		 * The number of successful requests you can do on one day
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dailyQuota?: number | null;
 
-		/** The latitude the response is showing forecast data for */
+		/**
+		 * The latitude the response is showing forecast data for
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** The longitude the response is showing forecast data for */
+		/**
+		 * The longitude the response is showing forecast data for
+		 * Type: double
+		 */
 		lng?: number | null;
 
-		/** The number of successful requests made this day. */
+		/**
+		 * The number of successful requests made this day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestCount?: number | null;
 	}
 	export interface ForecastMetaFormProperties {
 
-		/** The number of successful requests you can do on one day */
+		/**
+		 * The number of successful requests you can do on one day
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dailyQuota: FormControl<number | null | undefined>,
 
-		/** The latitude the response is showing forecast data for */
+		/**
+		 * The latitude the response is showing forecast data for
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** The longitude the response is showing forecast data for */
+		/**
+		 * The longitude the response is showing forecast data for
+		 * Type: double
+		 */
 		lng: FormControl<number | null | undefined>,
 
-		/** The number of successful requests made this day. */
+		/**
+		 * The number of successful requests made this day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestCount: FormControl<number | null | undefined>,
 	}
 	export function CreateForecastMetaFormGroup() {

@@ -176,7 +176,10 @@ export namespace MyNS {
 		/** Azure Active Directory Tenant Id */
 		tenantId?: string | null;
 
-		/** Data Model Version */
+		/**
+		 * Data Model Version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -201,7 +204,10 @@ export namespace MyNS {
 		/** Azure Active Directory Tenant Id */
 		tenantId: FormControl<string | null | undefined>,
 
-		/** Data Model Version */
+		/**
+		 * Data Model Version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateDomainServicePropertiesFormGroup() {

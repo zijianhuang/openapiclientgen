@@ -86,6 +86,7 @@ export namespace MyNS {
 		 * Retention in days.
 		 * Remove blobs older than X days.
 		 * 0 or lower means no retention.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionInDays?: number | null;
 
@@ -103,6 +104,7 @@ export namespace MyNS {
 		 * Retention in days.
 		 * Remove blobs older than X days.
 		 * 0 or lower means no retention.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionInDays: FormControl<number | null | undefined>,
 
@@ -186,6 +188,7 @@ export namespace MyNS {
 		 * Retention in days.
 		 * Remove blobs older than X days.
 		 * 0 or lower means no retention.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionInDays?: number | null;
 
@@ -203,6 +206,7 @@ export namespace MyNS {
 		 * Retention in days.
 		 * Remove blobs older than X days.
 		 * 0 or lower means no retention.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionInDays: FormControl<number | null | undefined>,
 
@@ -375,6 +379,7 @@ export namespace MyNS {
 		/**
 		 * How often the backup should be executed (e.g. for weekly backup, this should be set to 7 and FrequencyUnit should be set to Day)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frequencyInterval: number;
 
@@ -396,6 +401,7 @@ export namespace MyNS {
 		/**
 		 * After how many days backups should be deleted.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionPeriodInDays: number;
 
@@ -409,6 +415,7 @@ export namespace MyNS {
 		/**
 		 * How often the backup should be executed (e.g. for weekly backup, this should be set to 7 and FrequencyUnit should be set to Day)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frequencyInterval: FormControl<number | null | undefined>,
 
@@ -430,6 +437,7 @@ export namespace MyNS {
 		/**
 		 * After how many days backups should be deleted.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionPeriodInDays: FormControl<number | null | undefined>,
 
@@ -515,50 +523,82 @@ export namespace MyNS {
 
 	export interface ContainerCpuStatistics {
 		cpuUsage?: ContainerCpuUsage;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		onlineCpuCount?: number | null;
-		systemCpuUsage?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		systemCpuUsage?: string | null;
 		throttlingData?: ContainerThrottlingData;
 	}
 	export interface ContainerCpuStatisticsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		onlineCpuCount: FormControl<number | null | undefined>,
-		systemCpuUsage: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		systemCpuUsage: FormControl<string | null | undefined>,
 	}
 	export function CreateContainerCpuStatisticsFormGroup() {
 		return new FormGroup<ContainerCpuStatisticsFormProperties>({
 			onlineCpuCount: new FormControl<number | null | undefined>(undefined),
-			systemCpuUsage: new FormControl<number | null | undefined>(undefined),
+			systemCpuUsage: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ContainerCpuUsage {
-		kernelModeUsage?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		kernelModeUsage?: string | null;
 		perCpuUsage?: Array<number>;
-		totalUsage?: number | null;
-		userModeUsage?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalUsage?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userModeUsage?: string | null;
 	}
 	export interface ContainerCpuUsageFormProperties {
-		kernelModeUsage: FormControl<number | null | undefined>,
-		totalUsage: FormControl<number | null | undefined>,
-		userModeUsage: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		kernelModeUsage: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalUsage: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userModeUsage: FormControl<string | null | undefined>,
 	}
 	export function CreateContainerCpuUsageFormGroup() {
 		return new FormGroup<ContainerCpuUsageFormProperties>({
-			kernelModeUsage: new FormControl<number | null | undefined>(undefined),
-			totalUsage: new FormControl<number | null | undefined>(undefined),
-			userModeUsage: new FormControl<number | null | undefined>(undefined),
+			kernelModeUsage: new FormControl<string | null | undefined>(undefined),
+			totalUsage: new FormControl<string | null | undefined>(undefined),
+			userModeUsage: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ContainerThrottlingData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		periods?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		throttledPeriods?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		throttledTime?: number | null;
 	}
 	export interface ContainerThrottlingDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		periods: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		throttledPeriods: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		throttledTime: FormControl<number | null | undefined>,
 	}
 	export function CreateContainerThrottlingDataFormGroup() {
@@ -597,54 +637,98 @@ export namespace MyNS {
 	}
 
 	export interface ContainerNetworkInterfaceStatistics {
-		rxBytes?: number | null;
-		rxDropped?: number | null;
-		rxErrors?: number | null;
-		rxPackets?: number | null;
-		txBytes?: number | null;
-		txDropped?: number | null;
-		txErrors?: number | null;
-		txPackets?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		rxBytes?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		rxDropped?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		rxErrors?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		rxPackets?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		txBytes?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		txDropped?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		txErrors?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		txPackets?: string | null;
 	}
 	export interface ContainerNetworkInterfaceStatisticsFormProperties {
-		rxBytes: FormControl<number | null | undefined>,
-		rxDropped: FormControl<number | null | undefined>,
-		rxErrors: FormControl<number | null | undefined>,
-		rxPackets: FormControl<number | null | undefined>,
-		txBytes: FormControl<number | null | undefined>,
-		txDropped: FormControl<number | null | undefined>,
-		txErrors: FormControl<number | null | undefined>,
-		txPackets: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		rxBytes: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		rxDropped: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		rxErrors: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		rxPackets: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		txBytes: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		txDropped: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		txErrors: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		txPackets: FormControl<string | null | undefined>,
 	}
 	export function CreateContainerNetworkInterfaceStatisticsFormGroup() {
 		return new FormGroup<ContainerNetworkInterfaceStatisticsFormProperties>({
-			rxBytes: new FormControl<number | null | undefined>(undefined),
-			rxDropped: new FormControl<number | null | undefined>(undefined),
-			rxErrors: new FormControl<number | null | undefined>(undefined),
-			rxPackets: new FormControl<number | null | undefined>(undefined),
-			txBytes: new FormControl<number | null | undefined>(undefined),
-			txDropped: new FormControl<number | null | undefined>(undefined),
-			txErrors: new FormControl<number | null | undefined>(undefined),
-			txPackets: new FormControl<number | null | undefined>(undefined),
+			rxBytes: new FormControl<string | null | undefined>(undefined),
+			rxDropped: new FormControl<string | null | undefined>(undefined),
+			rxErrors: new FormControl<string | null | undefined>(undefined),
+			rxPackets: new FormControl<string | null | undefined>(undefined),
+			txBytes: new FormControl<string | null | undefined>(undefined),
+			txDropped: new FormControl<string | null | undefined>(undefined),
+			txErrors: new FormControl<string | null | undefined>(undefined),
+			txPackets: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ContainerMemoryStatistics {
-		limit?: number | null;
-		maxUsage?: number | null;
-		usage?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		limit?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxUsage?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usage?: string | null;
 	}
 	export interface ContainerMemoryStatisticsFormProperties {
-		limit: FormControl<number | null | undefined>,
-		maxUsage: FormControl<number | null | undefined>,
-		usage: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		limit: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		maxUsage: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		usage: FormControl<string | null | undefined>,
 	}
 	export function CreateContainerMemoryStatisticsFormGroup() {
 		return new FormGroup<ContainerMemoryStatisticsFormProperties>({
-			limit: new FormControl<number | null | undefined>(undefined),
-			maxUsage: new FormControl<number | null | undefined>(undefined),
-			usage: new FormControl<number | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
+			maxUsage: new FormControl<string | null | undefined>(undefined),
+			usage: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -813,7 +897,10 @@ export namespace MyNS {
 		/** <code>true</code> to enable local MySQL; otherwise, <code>false</code>. */
 		localMySqlEnabled?: boolean | null;
 
-		/** HTTP logs directory size limit. */
+		/**
+		 * HTTP logs directory size limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logsDirectorySizeLimit?: number | null;
 
 		/** MachineKey of an app. */
@@ -822,7 +909,10 @@ export namespace MyNS {
 		/** Managed pipeline mode. */
 		managedPipelineMode?: CsmCopySlotEntitySiteConfigManagedPipelineMode | null;
 
-		/** Managed Service Identity Id */
+		/**
+		 * Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedServiceIdentityId?: number | null;
 
 		/** MinTlsVersion: configures the minimum version of TLS required for SSL requests */
@@ -834,7 +924,10 @@ export namespace MyNS {
 		/** Version of Node.js. */
 		nodeVersion?: string | null;
 
-		/** Number of workers. */
+		/**
+		 * Number of workers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfWorkers?: number | null;
 
 		/** Version of PHP. */
@@ -896,7 +989,10 @@ export namespace MyNS {
 		/** Xenon App Framework and version */
 		windowsFxVersion?: string | null;
 
-		/** Explicit Managed Service Identity Id */
+		/**
+		 * Explicit Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		xManagedServiceIdentityId?: number | null;
 	}
 	export interface CsmCopySlotEntitySiteConfigFormProperties {
@@ -949,13 +1045,19 @@ export namespace MyNS {
 		/** <code>true</code> to enable local MySQL; otherwise, <code>false</code>. */
 		localMySqlEnabled: FormControl<boolean | null | undefined>,
 
-		/** HTTP logs directory size limit. */
+		/**
+		 * HTTP logs directory size limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logsDirectorySizeLimit: FormControl<number | null | undefined>,
 
 		/** Managed pipeline mode. */
 		managedPipelineMode: FormControl<CsmCopySlotEntitySiteConfigManagedPipelineMode | null | undefined>,
 
-		/** Managed Service Identity Id */
+		/**
+		 * Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedServiceIdentityId: FormControl<number | null | undefined>,
 
 		/** MinTlsVersion: configures the minimum version of TLS required for SSL requests */
@@ -967,7 +1069,10 @@ export namespace MyNS {
 		/** Version of Node.js. */
 		nodeVersion: FormControl<string | null | undefined>,
 
-		/** Number of workers. */
+		/**
+		 * Number of workers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfWorkers: FormControl<number | null | undefined>,
 
 		/** Version of PHP. */
@@ -1020,7 +1125,10 @@ export namespace MyNS {
 		/** Xenon App Framework and version */
 		windowsFxVersion: FormControl<string | null | undefined>,
 
-		/** Explicit Managed Service Identity Id */
+		/**
+		 * Explicit Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		xManagedServiceIdentityId: FormControl<number | null | undefined>,
 	}
 	export function CreateCsmCopySlotEntitySiteConfigFormGroup() {
@@ -1206,7 +1314,10 @@ export namespace MyNS {
 
 	export interface CsmCopySlotEntitySiteConfigAutoHealRulesTriggers {
 
-		/** A rule based on private bytes. */
+		/**
+		 * A rule based on private bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		privateBytesInKB?: number | null;
 
 		/** Trigger based on total requests. */
@@ -1220,7 +1331,10 @@ export namespace MyNS {
 	}
 	export interface CsmCopySlotEntitySiteConfigAutoHealRulesTriggersFormProperties {
 
-		/** A rule based on private bytes. */
+		/**
+		 * A rule based on private bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		privateBytesInKB: FormControl<number | null | undefined>,
 	}
 	export function CreateCsmCopySlotEntitySiteConfigAutoHealRulesTriggersFormGroup() {
@@ -1232,7 +1346,10 @@ export namespace MyNS {
 
 	export interface CsmCopySlotEntitySiteConfigAutoHealRulesTriggersRequests {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Time interval. */
@@ -1240,7 +1357,10 @@ export namespace MyNS {
 	}
 	export interface CsmCopySlotEntitySiteConfigAutoHealRulesTriggersRequestsFormProperties {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Time interval. */
@@ -1256,7 +1376,10 @@ export namespace MyNS {
 
 	export interface CsmCopySlotEntitySiteConfigAutoHealRulesTriggersSlowRequests {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Time interval. */
@@ -1267,7 +1390,10 @@ export namespace MyNS {
 	}
 	export interface CsmCopySlotEntitySiteConfigAutoHealRulesTriggersSlowRequestsFormProperties {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Time interval. */
@@ -1287,36 +1413,60 @@ export namespace MyNS {
 
 	export interface CsmCopySlotEntitySiteConfigAutoHealRulesTriggersStatusCodes {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** HTTP status code. */
+		/**
+		 * HTTP status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
-		/** Request Sub Status. */
+		/**
+		 * Request Sub Status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subStatus?: number | null;
 
 		/** Time interval. */
 		timeInterval?: string | null;
 
-		/** Win32 error code. */
+		/**
+		 * Win32 error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		win32Status?: number | null;
 	}
 	export interface CsmCopySlotEntitySiteConfigAutoHealRulesTriggersStatusCodesFormProperties {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** HTTP status code. */
+		/**
+		 * HTTP status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
-		/** Request Sub Status. */
+		/**
+		 * Request Sub Status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subStatus: FormControl<number | null | undefined>,
 
 		/** Time interval. */
 		timeInterval: FormControl<string | null | undefined>,
 
-		/** Win32 error code. */
+		/**
+		 * Win32 error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		win32Status: FormControl<number | null | undefined>,
 	}
 	export function CreateCsmCopySlotEntitySiteConfigAutoHealRulesTriggersStatusCodesFormGroup() {
@@ -1416,26 +1566,39 @@ export namespace MyNS {
 		 */
 		changeDecisionCallbackUrl?: string | null;
 
-		/** Specifies interval in minutes to reevaluate ReroutePercentage. */
+		/**
+		 * Specifies interval in minutes to reevaluate ReroutePercentage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		changeIntervalInMinutes?: number | null;
 
 		/**
 		 * In auto ramp up scenario this is the step to add/remove from <code>ReroutePercentage</code> until it reaches \n<code>MinReroutePercentage</code> or
 		 * <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specified in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm
 		 * can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDecisionCallbackUrl</code>.
+		 * Type: double
 		 */
 		changeStep?: number | null;
 
-		/** Specifies upper boundary below which ReroutePercentage will stay. */
+		/**
+		 * Specifies upper boundary below which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		maxReroutePercentage?: number | null;
 
-		/** Specifies lower boundary above which ReroutePercentage will stay. */
+		/**
+		 * Specifies lower boundary above which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		minReroutePercentage?: number | null;
 
 		/** Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment. */
 		name?: string | null;
 
-		/** Percentage of the traffic which will be redirected to <code>ActionHostName</code>. */
+		/**
+		 * Percentage of the traffic which will be redirected to <code>ActionHostName</code>.
+		 * Type: double
+		 */
 		reroutePercentage?: number | null;
 	}
 	export interface CsmCopySlotEntitySiteConfigExperimentsRampUpRulesFormProperties {
@@ -1449,26 +1612,39 @@ export namespace MyNS {
 		 */
 		changeDecisionCallbackUrl: FormControl<string | null | undefined>,
 
-		/** Specifies interval in minutes to reevaluate ReroutePercentage. */
+		/**
+		 * Specifies interval in minutes to reevaluate ReroutePercentage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		changeIntervalInMinutes: FormControl<number | null | undefined>,
 
 		/**
 		 * In auto ramp up scenario this is the step to add/remove from <code>ReroutePercentage</code> until it reaches \n<code>MinReroutePercentage</code> or
 		 * <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specified in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm
 		 * can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDecisionCallbackUrl</code>.
+		 * Type: double
 		 */
 		changeStep: FormControl<number | null | undefined>,
 
-		/** Specifies upper boundary below which ReroutePercentage will stay. */
+		/**
+		 * Specifies upper boundary below which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		maxReroutePercentage: FormControl<number | null | undefined>,
 
-		/** Specifies lower boundary above which ReroutePercentage will stay. */
+		/**
+		 * Specifies lower boundary above which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		minReroutePercentage: FormControl<number | null | undefined>,
 
 		/** Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment. */
 		name: FormControl<string | null | undefined>,
 
-		/** Percentage of the traffic which will be redirected to <code>ActionHostName</code>. */
+		/**
+		 * Percentage of the traffic which will be redirected to <code>ActionHostName</code>.
+		 * Type: double
+		 */
 		reroutePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateCsmCopySlotEntitySiteConfigExperimentsRampUpRulesFormGroup() {
@@ -1537,13 +1713,19 @@ export namespace MyNS {
 		/** IP restriction rule name. */
 		name?: string | null;
 
-		/** Priority of IP restriction rule. */
+		/**
+		 * Priority of IP restriction rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Subnet mask for the range of IP addresses the restriction is valid for. */
 		subnetMask?: string | null;
 
-		/** (internal) Subnet traffic tag */
+		/**
+		 * (internal) Subnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnetTrafficTag?: number | null;
 
 		/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
@@ -1552,7 +1734,10 @@ export namespace MyNS {
 		/** Virtual network resource id */
 		vnetSubnetResourceId?: string | null;
 
-		/** (internal) Vnet traffic tag */
+		/**
+		 * (internal) Vnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vnetTrafficTag?: number | null;
 	}
 	export interface CsmCopySlotEntitySiteConfigIpSecurityRestrictionsFormProperties {
@@ -1574,13 +1759,19 @@ export namespace MyNS {
 		/** IP restriction rule name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Priority of IP restriction rule. */
+		/**
+		 * Priority of IP restriction rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Subnet mask for the range of IP addresses the restriction is valid for. */
 		subnetMask: FormControl<string | null | undefined>,
 
-		/** (internal) Subnet traffic tag */
+		/**
+		 * (internal) Subnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnetTrafficTag: FormControl<number | null | undefined>,
 
 		/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
@@ -1589,7 +1780,10 @@ export namespace MyNS {
 		/** Virtual network resource id */
 		vnetSubnetResourceId: FormControl<string | null | undefined>,
 
-		/** (internal) Vnet traffic tag */
+		/**
+		 * (internal) Vnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vnetTrafficTag: FormControl<number | null | undefined>,
 	}
 	export function CreateCsmCopySlotEntitySiteConfigIpSecurityRestrictionsFormGroup() {
@@ -1612,30 +1806,48 @@ export namespace MyNS {
 
 	export interface CsmCopySlotEntitySiteConfigLimits {
 
-		/** Maximum allowed disk size usage in MB. */
-		maxDiskSizeInMb?: number | null;
+		/**
+		 * Maximum allowed disk size usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxDiskSizeInMb?: string | null;
 
-		/** Maximum allowed memory usage in MB. */
-		maxMemoryInMb?: number | null;
+		/**
+		 * Maximum allowed memory usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxMemoryInMb?: string | null;
 
-		/** Maximum allowed CPU usage percentage. */
+		/**
+		 * Maximum allowed CPU usage percentage.
+		 * Type: double
+		 */
 		maxPercentageCpu?: number | null;
 	}
 	export interface CsmCopySlotEntitySiteConfigLimitsFormProperties {
 
-		/** Maximum allowed disk size usage in MB. */
-		maxDiskSizeInMb: FormControl<number | null | undefined>,
+		/**
+		 * Maximum allowed disk size usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxDiskSizeInMb: FormControl<string | null | undefined>,
 
-		/** Maximum allowed memory usage in MB. */
-		maxMemoryInMb: FormControl<number | null | undefined>,
+		/**
+		 * Maximum allowed memory usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxMemoryInMb: FormControl<string | null | undefined>,
 
-		/** Maximum allowed CPU usage percentage. */
+		/**
+		 * Maximum allowed CPU usage percentage.
+		 * Type: double
+		 */
 		maxPercentageCpu: FormControl<number | null | undefined>,
 	}
 	export function CreateCsmCopySlotEntitySiteConfigLimitsFormGroup() {
 		return new FormGroup<CsmCopySlotEntitySiteConfigLimitsFormProperties>({
-			maxDiskSizeInMb: new FormControl<number | null | undefined>(undefined),
-			maxMemoryInMb: new FormControl<number | null | undefined>(undefined),
+			maxDiskSizeInMb: new FormControl<string | null | undefined>(undefined),
+			maxMemoryInMb: new FormControl<string | null | undefined>(undefined),
 			maxPercentageCpu: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1721,13 +1933,19 @@ export namespace MyNS {
 		/** IP restriction rule name. */
 		name?: string | null;
 
-		/** Priority of IP restriction rule. */
+		/**
+		 * Priority of IP restriction rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Subnet mask for the range of IP addresses the restriction is valid for. */
 		subnetMask?: string | null;
 
-		/** (internal) Subnet traffic tag */
+		/**
+		 * (internal) Subnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnetTrafficTag?: number | null;
 
 		/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
@@ -1736,7 +1954,10 @@ export namespace MyNS {
 		/** Virtual network resource id */
 		vnetSubnetResourceId?: string | null;
 
-		/** (internal) Vnet traffic tag */
+		/**
+		 * (internal) Vnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vnetTrafficTag?: number | null;
 	}
 	export interface CsmCopySlotEntitySiteConfigScmIpSecurityRestrictionsFormProperties {
@@ -1758,13 +1979,19 @@ export namespace MyNS {
 		/** IP restriction rule name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Priority of IP restriction rule. */
+		/**
+		 * Priority of IP restriction rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Subnet mask for the range of IP addresses the restriction is valid for. */
 		subnetMask: FormControl<string | null | undefined>,
 
-		/** (internal) Subnet traffic tag */
+		/**
+		 * (internal) Subnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnetTrafficTag: FormControl<number | null | undefined>,
 
 		/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
@@ -1773,7 +2000,10 @@ export namespace MyNS {
 		/** Virtual network resource id */
 		vnetSubnetResourceId: FormControl<string | null | undefined>,
 
-		/** (internal) Vnet traffic tag */
+		/**
+		 * (internal) Vnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vnetTrafficTag: FormControl<number | null | undefined>,
 	}
 	export function CreateCsmCopySlotEntitySiteConfigScmIpSecurityRestrictionsFormGroup() {
@@ -2116,6 +2346,7 @@ export namespace MyNS {
 		 * Retention in days.
 		 * Remove files older than X days.
 		 * 0 or lower means no retention.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionInDays?: number | null;
 
@@ -2139,6 +2370,7 @@ export namespace MyNS {
 		 * Retention in days.
 		 * Remove files older than X days.
 		 * 0 or lower means no retention.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retentionInDays: FormControl<number | null | undefined>,
 
@@ -2784,7 +3016,10 @@ export namespace MyNS {
 		/** Point in time for which counter was measured. */
 		time?: Date | null;
 
-		/** Value of counter at a certain time. */
+		/**
+		 * Value of counter at a certain time.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -2797,7 +3032,10 @@ export namespace MyNS {
 		/** Point in time for which counter was measured. */
 		time: FormControl<Date | null | undefined>,
 
-		/** Value of counter at a certain time. */
+		/**
+		 * Value of counter at a certain time.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePerfMonSampleFormGroup() {
@@ -2876,7 +3114,10 @@ export namespace MyNS {
 	/** Description of a Virtual Network subnet that is useable for private site access. */
 	export interface PrivateAccessSubnet {
 
-		/** The key (ID) of the subnet. */
+		/**
+		 * The key (ID) of the subnet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		key?: number | null;
 
 		/** The name of the subnet. */
@@ -2886,7 +3127,10 @@ export namespace MyNS {
 	/** Description of a Virtual Network subnet that is useable for private site access. */
 	export interface PrivateAccessSubnetFormProperties {
 
-		/** The key (ID) of the subnet. */
+		/**
+		 * The key (ID) of the subnet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		key: FormControl<number | null | undefined>,
 
 		/** The name of the subnet. */
@@ -2904,7 +3148,10 @@ export namespace MyNS {
 	/** Description of a Virtual Network that is useable for private site access. */
 	export interface PrivateAccessVirtualNetwork {
 
-		/** The key (ID) of the Virtual Network. */
+		/**
+		 * The key (ID) of the Virtual Network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		key?: number | null;
 
 		/** The name of the Virtual Network. */
@@ -2920,7 +3167,10 @@ export namespace MyNS {
 	/** Description of a Virtual Network that is useable for private site access. */
 	export interface PrivateAccessVirtualNetworkFormProperties {
 
-		/** The key (ID) of the Virtual Network. */
+		/**
+		 * The key (ID) of the Virtual Network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		key: FormControl<number | null | undefined>,
 
 		/** The name of the Virtual Network. */
@@ -3356,7 +3606,10 @@ export namespace MyNS {
 		/** <code>true</code> to enable local MySQL; otherwise, <code>false</code>. */
 		localMySqlEnabled?: boolean | null;
 
-		/** HTTP logs directory size limit. */
+		/**
+		 * HTTP logs directory size limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logsDirectorySizeLimit?: number | null;
 
 		/** MachineKey of an app. */
@@ -3365,7 +3618,10 @@ export namespace MyNS {
 		/** Managed pipeline mode. */
 		managedPipelineMode?: CsmCopySlotEntitySiteConfigManagedPipelineMode | null;
 
-		/** Managed Service Identity Id */
+		/**
+		 * Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedServiceIdentityId?: number | null;
 
 		/** MinTlsVersion: configures the minimum version of TLS required for SSL requests */
@@ -3377,7 +3633,10 @@ export namespace MyNS {
 		/** Version of Node.js. */
 		nodeVersion?: string | null;
 
-		/** Number of workers. */
+		/**
+		 * Number of workers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfWorkers?: number | null;
 
 		/** Version of PHP. */
@@ -3439,7 +3698,10 @@ export namespace MyNS {
 		/** Xenon App Framework and version */
 		windowsFxVersion?: string | null;
 
-		/** Explicit Managed Service Identity Id */
+		/**
+		 * Explicit Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		xManagedServiceIdentityId?: number | null;
 	}
 	export interface SiteConfigResourcePropertiesFormProperties {
@@ -3492,13 +3754,19 @@ export namespace MyNS {
 		/** <code>true</code> to enable local MySQL; otherwise, <code>false</code>. */
 		localMySqlEnabled: FormControl<boolean | null | undefined>,
 
-		/** HTTP logs directory size limit. */
+		/**
+		 * HTTP logs directory size limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logsDirectorySizeLimit: FormControl<number | null | undefined>,
 
 		/** Managed pipeline mode. */
 		managedPipelineMode: FormControl<CsmCopySlotEntitySiteConfigManagedPipelineMode | null | undefined>,
 
-		/** Managed Service Identity Id */
+		/**
+		 * Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedServiceIdentityId: FormControl<number | null | undefined>,
 
 		/** MinTlsVersion: configures the minimum version of TLS required for SSL requests */
@@ -3510,7 +3778,10 @@ export namespace MyNS {
 		/** Version of Node.js. */
 		nodeVersion: FormControl<string | null | undefined>,
 
-		/** Number of workers. */
+		/**
+		 * Number of workers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfWorkers: FormControl<number | null | undefined>,
 
 		/** Version of PHP. */
@@ -3563,7 +3834,10 @@ export namespace MyNS {
 		/** Xenon App Framework and version */
 		windowsFxVersion: FormControl<string | null | undefined>,
 
-		/** Explicit Managed Service Identity Id */
+		/**
+		 * Explicit Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		xManagedServiceIdentityId: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteConfigResourcePropertiesFormGroup() {
@@ -3747,7 +4021,10 @@ export namespace MyNS {
 
 	export interface SiteConfigResourcePropertiesAutoHealRulesTriggers {
 
-		/** A rule based on private bytes. */
+		/**
+		 * A rule based on private bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		privateBytesInKB?: number | null;
 
 		/** Trigger based on total requests. */
@@ -3761,7 +4038,10 @@ export namespace MyNS {
 	}
 	export interface SiteConfigResourcePropertiesAutoHealRulesTriggersFormProperties {
 
-		/** A rule based on private bytes. */
+		/**
+		 * A rule based on private bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		privateBytesInKB: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteConfigResourcePropertiesAutoHealRulesTriggersFormGroup() {
@@ -3773,7 +4053,10 @@ export namespace MyNS {
 
 	export interface SiteConfigResourcePropertiesAutoHealRulesTriggersRequests {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Time interval. */
@@ -3781,7 +4064,10 @@ export namespace MyNS {
 	}
 	export interface SiteConfigResourcePropertiesAutoHealRulesTriggersRequestsFormProperties {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Time interval. */
@@ -3797,7 +4083,10 @@ export namespace MyNS {
 
 	export interface SiteConfigResourcePropertiesAutoHealRulesTriggersSlowRequests {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Time interval. */
@@ -3808,7 +4097,10 @@ export namespace MyNS {
 	}
 	export interface SiteConfigResourcePropertiesAutoHealRulesTriggersSlowRequestsFormProperties {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Time interval. */
@@ -3828,36 +4120,60 @@ export namespace MyNS {
 
 	export interface SiteConfigResourcePropertiesAutoHealRulesTriggersStatusCodes {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** HTTP status code. */
+		/**
+		 * HTTP status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
-		/** Request Sub Status. */
+		/**
+		 * Request Sub Status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subStatus?: number | null;
 
 		/** Time interval. */
 		timeInterval?: string | null;
 
-		/** Win32 error code. */
+		/**
+		 * Win32 error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		win32Status?: number | null;
 	}
 	export interface SiteConfigResourcePropertiesAutoHealRulesTriggersStatusCodesFormProperties {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** HTTP status code. */
+		/**
+		 * HTTP status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
-		/** Request Sub Status. */
+		/**
+		 * Request Sub Status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subStatus: FormControl<number | null | undefined>,
 
 		/** Time interval. */
 		timeInterval: FormControl<string | null | undefined>,
 
-		/** Win32 error code. */
+		/**
+		 * Win32 error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		win32Status: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteConfigResourcePropertiesAutoHealRulesTriggersStatusCodesFormGroup() {
@@ -3957,26 +4273,39 @@ export namespace MyNS {
 		 */
 		changeDecisionCallbackUrl?: string | null;
 
-		/** Specifies interval in minutes to reevaluate ReroutePercentage. */
+		/**
+		 * Specifies interval in minutes to reevaluate ReroutePercentage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		changeIntervalInMinutes?: number | null;
 
 		/**
 		 * In auto ramp up scenario this is the step to add/remove from <code>ReroutePercentage</code> until it reaches \n<code>MinReroutePercentage</code> or
 		 * <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specified in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm
 		 * can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDecisionCallbackUrl</code>.
+		 * Type: double
 		 */
 		changeStep?: number | null;
 
-		/** Specifies upper boundary below which ReroutePercentage will stay. */
+		/**
+		 * Specifies upper boundary below which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		maxReroutePercentage?: number | null;
 
-		/** Specifies lower boundary above which ReroutePercentage will stay. */
+		/**
+		 * Specifies lower boundary above which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		minReroutePercentage?: number | null;
 
 		/** Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment. */
 		name?: string | null;
 
-		/** Percentage of the traffic which will be redirected to <code>ActionHostName</code>. */
+		/**
+		 * Percentage of the traffic which will be redirected to <code>ActionHostName</code>.
+		 * Type: double
+		 */
 		reroutePercentage?: number | null;
 	}
 	export interface SiteConfigResourcePropertiesExperimentsRampUpRulesFormProperties {
@@ -3990,26 +4319,39 @@ export namespace MyNS {
 		 */
 		changeDecisionCallbackUrl: FormControl<string | null | undefined>,
 
-		/** Specifies interval in minutes to reevaluate ReroutePercentage. */
+		/**
+		 * Specifies interval in minutes to reevaluate ReroutePercentage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		changeIntervalInMinutes: FormControl<number | null | undefined>,
 
 		/**
 		 * In auto ramp up scenario this is the step to add/remove from <code>ReroutePercentage</code> until it reaches \n<code>MinReroutePercentage</code> or
 		 * <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specified in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm
 		 * can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDecisionCallbackUrl</code>.
+		 * Type: double
 		 */
 		changeStep: FormControl<number | null | undefined>,
 
-		/** Specifies upper boundary below which ReroutePercentage will stay. */
+		/**
+		 * Specifies upper boundary below which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		maxReroutePercentage: FormControl<number | null | undefined>,
 
-		/** Specifies lower boundary above which ReroutePercentage will stay. */
+		/**
+		 * Specifies lower boundary above which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		minReroutePercentage: FormControl<number | null | undefined>,
 
 		/** Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment. */
 		name: FormControl<string | null | undefined>,
 
-		/** Percentage of the traffic which will be redirected to <code>ActionHostName</code>. */
+		/**
+		 * Percentage of the traffic which will be redirected to <code>ActionHostName</code>.
+		 * Type: double
+		 */
 		reroutePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteConfigResourcePropertiesExperimentsRampUpRulesFormGroup() {
@@ -4076,13 +4418,19 @@ export namespace MyNS {
 		/** IP restriction rule name. */
 		name?: string | null;
 
-		/** Priority of IP restriction rule. */
+		/**
+		 * Priority of IP restriction rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Subnet mask for the range of IP addresses the restriction is valid for. */
 		subnetMask?: string | null;
 
-		/** (internal) Subnet traffic tag */
+		/**
+		 * (internal) Subnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnetTrafficTag?: number | null;
 
 		/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
@@ -4091,7 +4439,10 @@ export namespace MyNS {
 		/** Virtual network resource id */
 		vnetSubnetResourceId?: string | null;
 
-		/** (internal) Vnet traffic tag */
+		/**
+		 * (internal) Vnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vnetTrafficTag?: number | null;
 	}
 	export interface SiteConfigResourcePropertiesIpSecurityRestrictionsFormProperties {
@@ -4113,13 +4464,19 @@ export namespace MyNS {
 		/** IP restriction rule name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Priority of IP restriction rule. */
+		/**
+		 * Priority of IP restriction rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Subnet mask for the range of IP addresses the restriction is valid for. */
 		subnetMask: FormControl<string | null | undefined>,
 
-		/** (internal) Subnet traffic tag */
+		/**
+		 * (internal) Subnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnetTrafficTag: FormControl<number | null | undefined>,
 
 		/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
@@ -4128,7 +4485,10 @@ export namespace MyNS {
 		/** Virtual network resource id */
 		vnetSubnetResourceId: FormControl<string | null | undefined>,
 
-		/** (internal) Vnet traffic tag */
+		/**
+		 * (internal) Vnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vnetTrafficTag: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteConfigResourcePropertiesIpSecurityRestrictionsFormGroup() {
@@ -4149,30 +4509,48 @@ export namespace MyNS {
 
 	export interface SiteConfigResourcePropertiesLimits {
 
-		/** Maximum allowed disk size usage in MB. */
-		maxDiskSizeInMb?: number | null;
+		/**
+		 * Maximum allowed disk size usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxDiskSizeInMb?: string | null;
 
-		/** Maximum allowed memory usage in MB. */
-		maxMemoryInMb?: number | null;
+		/**
+		 * Maximum allowed memory usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxMemoryInMb?: string | null;
 
-		/** Maximum allowed CPU usage percentage. */
+		/**
+		 * Maximum allowed CPU usage percentage.
+		 * Type: double
+		 */
 		maxPercentageCpu?: number | null;
 	}
 	export interface SiteConfigResourcePropertiesLimitsFormProperties {
 
-		/** Maximum allowed disk size usage in MB. */
-		maxDiskSizeInMb: FormControl<number | null | undefined>,
+		/**
+		 * Maximum allowed disk size usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxDiskSizeInMb: FormControl<string | null | undefined>,
 
-		/** Maximum allowed memory usage in MB. */
-		maxMemoryInMb: FormControl<number | null | undefined>,
+		/**
+		 * Maximum allowed memory usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxMemoryInMb: FormControl<string | null | undefined>,
 
-		/** Maximum allowed CPU usage percentage. */
+		/**
+		 * Maximum allowed CPU usage percentage.
+		 * Type: double
+		 */
 		maxPercentageCpu: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteConfigResourcePropertiesLimitsFormGroup() {
 		return new FormGroup<SiteConfigResourcePropertiesLimitsFormProperties>({
-			maxDiskSizeInMb: new FormControl<number | null | undefined>(undefined),
-			maxMemoryInMb: new FormControl<number | null | undefined>(undefined),
+			maxDiskSizeInMb: new FormControl<string | null | undefined>(undefined),
+			maxMemoryInMb: new FormControl<string | null | undefined>(undefined),
 			maxPercentageCpu: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -4252,13 +4630,19 @@ export namespace MyNS {
 		/** IP restriction rule name. */
 		name?: string | null;
 
-		/** Priority of IP restriction rule. */
+		/**
+		 * Priority of IP restriction rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Subnet mask for the range of IP addresses the restriction is valid for. */
 		subnetMask?: string | null;
 
-		/** (internal) Subnet traffic tag */
+		/**
+		 * (internal) Subnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnetTrafficTag?: number | null;
 
 		/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
@@ -4267,7 +4651,10 @@ export namespace MyNS {
 		/** Virtual network resource id */
 		vnetSubnetResourceId?: string | null;
 
-		/** (internal) Vnet traffic tag */
+		/**
+		 * (internal) Vnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vnetTrafficTag?: number | null;
 	}
 	export interface SiteConfigResourcePropertiesScmIpSecurityRestrictionsFormProperties {
@@ -4289,13 +4676,19 @@ export namespace MyNS {
 		/** IP restriction rule name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Priority of IP restriction rule. */
+		/**
+		 * Priority of IP restriction rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Subnet mask for the range of IP addresses the restriction is valid for. */
 		subnetMask: FormControl<string | null | undefined>,
 
-		/** (internal) Subnet traffic tag */
+		/**
+		 * (internal) Subnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnetTrafficTag: FormControl<number | null | undefined>,
 
 		/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
@@ -4304,7 +4697,10 @@ export namespace MyNS {
 		/** Virtual network resource id */
 		vnetSubnetResourceId: FormControl<string | null | undefined>,
 
-		/** (internal) Vnet traffic tag */
+		/**
+		 * (internal) Vnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vnetTrafficTag: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteConfigResourcePropertiesScmIpSecurityRestrictionsFormGroup() {
@@ -12472,11 +12868,17 @@ export namespace MyNS {
 
 	export interface WebApps_ListUsagesSlotReturnValue {
 
-		/** The current value of the resource counter. */
-		currentValue?: number | null;
+		/**
+		 * The current value of the resource counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue?: string | null;
 
-		/** The resource limit. */
-		limit?: number | null;
+		/**
+		 * The resource limit.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit?: string | null;
 
 		/** Localizable string object containing the name and a localized value. */
 		name?: WebApps_ListUsagesSlotReturnValueName;
@@ -12489,11 +12891,17 @@ export namespace MyNS {
 	}
 	export interface WebApps_ListUsagesSlotReturnValueFormProperties {
 
-		/** The current value of the resource counter. */
-		currentValue: FormControl<number | null | undefined>,
+		/**
+		 * The current value of the resource counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue: FormControl<string | null | undefined>,
 
-		/** The resource limit. */
-		limit: FormControl<number | null | undefined>,
+		/**
+		 * The resource limit.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit: FormControl<string | null | undefined>,
 
 		/** Next reset time for the resource counter. */
 		nextResetTime: FormControl<Date | null | undefined>,
@@ -12503,8 +12911,8 @@ export namespace MyNS {
 	}
 	export function CreateWebApps_ListUsagesSlotReturnValueFormGroup() {
 		return new FormGroup<WebApps_ListUsagesSlotReturnValueFormProperties>({
-			currentValue: new FormControl<number | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			currentValue: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			nextResetTime: new FormControl<Date | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 		});
@@ -12747,11 +13155,17 @@ export namespace MyNS {
 
 	export interface WebApps_ListUsagesReturnValue {
 
-		/** The current value of the resource counter. */
-		currentValue?: number | null;
+		/**
+		 * The current value of the resource counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue?: string | null;
 
-		/** The resource limit. */
-		limit?: number | null;
+		/**
+		 * The resource limit.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit?: string | null;
 
 		/** Localizable string object containing the name and a localized value. */
 		name?: WebApps_ListUsagesReturnValueName;
@@ -12764,11 +13178,17 @@ export namespace MyNS {
 	}
 	export interface WebApps_ListUsagesReturnValueFormProperties {
 
-		/** The current value of the resource counter. */
-		currentValue: FormControl<number | null | undefined>,
+		/**
+		 * The current value of the resource counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue: FormControl<string | null | undefined>,
 
-		/** The resource limit. */
-		limit: FormControl<number | null | undefined>,
+		/**
+		 * The resource limit.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit: FormControl<string | null | undefined>,
 
 		/** Next reset time for the resource counter. */
 		nextResetTime: FormControl<Date | null | undefined>,
@@ -12778,8 +13198,8 @@ export namespace MyNS {
 	}
 	export function CreateWebApps_ListUsagesReturnValueFormGroup() {
 		return new FormGroup<WebApps_ListUsagesReturnValueFormProperties>({
-			currentValue: new FormControl<number | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			currentValue: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			nextResetTime: new FormControl<Date | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 		});

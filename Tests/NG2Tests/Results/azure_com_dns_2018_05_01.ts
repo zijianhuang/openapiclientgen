@@ -49,7 +49,10 @@ export namespace MyNS {
 	/** A CAA record. */
 	export interface CaaRecord {
 
-		/** The flags for this CAA record as an integer between 0 and 255. */
+		/**
+		 * The flags for this CAA record as an integer between 0 and 255.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flags?: number | null;
 
 		/** The tag for this CAA record. */
@@ -62,7 +65,10 @@ export namespace MyNS {
 	/** A CAA record. */
 	export interface CaaRecordFormProperties {
 
-		/** The flags for this CAA record as an integer between 0 and 255. */
+		/**
+		 * The flags for this CAA record as an integer between 0 and 255.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flags: FormControl<number | null | undefined>,
 
 		/** The tag for this CAA record. */
@@ -272,7 +278,10 @@ export namespace MyNS {
 		/** The domain name of the mail host for this MX record. */
 		exchange?: string | null;
 
-		/** The preference value for this MX record. */
+		/**
+		 * The preference value for this MX record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preference?: number | null;
 	}
 
@@ -282,7 +291,10 @@ export namespace MyNS {
 		/** The domain name of the mail host for this MX record. */
 		exchange: FormControl<string | null | undefined>,
 
-		/** The preference value for this MX record. */
+		/**
+		 * The preference value for this MX record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		preference: FormControl<number | null | undefined>,
 	}
 	export function CreateMxRecordFormGroup() {
@@ -432,8 +444,11 @@ export namespace MyNS {
 		/** The list of SRV records in the record set. */
 		SRVRecords?: Array<SrvRecord>;
 
-		/** The TTL (time-to-live) of the records in the record set. */
-		TTL?: number | null;
+		/**
+		 * The TTL (time-to-live) of the records in the record set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		TTL?: string | null;
 
 		/** The list of TXT records in the record set. */
 		TXTRecords?: Array<TxtRecord>;
@@ -457,8 +472,11 @@ export namespace MyNS {
 	/** Represents the properties of the records in the record set. */
 	export interface RecordSetPropertiesFormProperties {
 
-		/** The TTL (time-to-live) of the records in the record set. */
-		TTL: FormControl<number | null | undefined>,
+		/**
+		 * The TTL (time-to-live) of the records in the record set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		TTL: FormControl<string | null | undefined>,
 
 		/** Fully qualified domain name of the record set. */
 		fqdn: FormControl<string | null | undefined>,
@@ -471,7 +489,7 @@ export namespace MyNS {
 	}
 	export function CreateRecordSetPropertiesFormGroup() {
 		return new FormGroup<RecordSetPropertiesFormProperties>({
-			TTL: new FormControl<number | null | undefined>(undefined),
+			TTL: new FormControl<string | null | undefined>(undefined),
 			fqdn: new FormControl<string | null | undefined>(undefined),
 			metadata: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			provisioningState: new FormControl<string | null | undefined>(undefined),
@@ -483,32 +501,50 @@ export namespace MyNS {
 	/** An SRV record. */
 	export interface SrvRecord {
 
-		/** The port value for this SRV record. */
+		/**
+		 * The port value for this SRV record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
-		/** The priority value for this SRV record. */
+		/**
+		 * The priority value for this SRV record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** The target domain name for this SRV record. */
 		target?: string | null;
 
-		/** The weight value for this SRV record. */
+		/**
+		 * The weight value for this SRV record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
 	/** An SRV record. */
 	export interface SrvRecordFormProperties {
 
-		/** The port value for this SRV record. */
+		/**
+		 * The port value for this SRV record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
-		/** The priority value for this SRV record. */
+		/**
+		 * The priority value for this SRV record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** The target domain name for this SRV record. */
 		target: FormControl<string | null | undefined>,
 
-		/** The weight value for this SRV record. */
+		/**
+		 * The weight value for this SRV record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateSrvRecordFormGroup() {
@@ -617,23 +653,38 @@ export namespace MyNS {
 		/** The email contact for this SOA record. */
 		email?: string | null;
 
-		/** The expire time for this SOA record. */
-		expireTime?: number | null;
+		/**
+		 * The expire time for this SOA record.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expireTime?: string | null;
 
 		/** The domain name of the authoritative name server for this SOA record. */
 		host?: string | null;
 
-		/** The minimum value for this SOA record. By convention this is used to determine the negative caching duration. */
-		minimumTTL?: number | null;
+		/**
+		 * The minimum value for this SOA record. By convention this is used to determine the negative caching duration.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minimumTTL?: string | null;
 
-		/** The refresh value for this SOA record. */
-		refreshTime?: number | null;
+		/**
+		 * The refresh value for this SOA record.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refreshTime?: string | null;
 
-		/** The retry time for this SOA record. */
-		retryTime?: number | null;
+		/**
+		 * The retry time for this SOA record.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		retryTime?: string | null;
 
-		/** The serial number for this SOA record. */
-		serialNumber?: number | null;
+		/**
+		 * The serial number for this SOA record.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		serialNumber?: string | null;
 	}
 
 	/** An SOA record. */
@@ -642,33 +693,48 @@ export namespace MyNS {
 		/** The email contact for this SOA record. */
 		email: FormControl<string | null | undefined>,
 
-		/** The expire time for this SOA record. */
-		expireTime: FormControl<number | null | undefined>,
+		/**
+		 * The expire time for this SOA record.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expireTime: FormControl<string | null | undefined>,
 
 		/** The domain name of the authoritative name server for this SOA record. */
 		host: FormControl<string | null | undefined>,
 
-		/** The minimum value for this SOA record. By convention this is used to determine the negative caching duration. */
-		minimumTTL: FormControl<number | null | undefined>,
+		/**
+		 * The minimum value for this SOA record. By convention this is used to determine the negative caching duration.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minimumTTL: FormControl<string | null | undefined>,
 
-		/** The refresh value for this SOA record. */
-		refreshTime: FormControl<number | null | undefined>,
+		/**
+		 * The refresh value for this SOA record.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refreshTime: FormControl<string | null | undefined>,
 
-		/** The retry time for this SOA record. */
-		retryTime: FormControl<number | null | undefined>,
+		/**
+		 * The retry time for this SOA record.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		retryTime: FormControl<string | null | undefined>,
 
-		/** The serial number for this SOA record. */
-		serialNumber: FormControl<number | null | undefined>,
+		/**
+		 * The serial number for this SOA record.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		serialNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateSoaRecordFormGroup() {
 		return new FormGroup<SoaRecordFormProperties>({
 			email: new FormControl<string | null | undefined>(undefined),
-			expireTime: new FormControl<number | null | undefined>(undefined),
+			expireTime: new FormControl<string | null | undefined>(undefined),
 			host: new FormControl<string | null | undefined>(undefined),
-			minimumTTL: new FormControl<number | null | undefined>(undefined),
-			refreshTime: new FormControl<number | null | undefined>(undefined),
-			retryTime: new FormControl<number | null | undefined>(undefined),
-			serialNumber: new FormControl<number | null | undefined>(undefined),
+			minimumTTL: new FormControl<string | null | undefined>(undefined),
+			refreshTime: new FormControl<string | null | undefined>(undefined),
+			retryTime: new FormControl<string | null | undefined>(undefined),
+			serialNumber: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -730,14 +796,20 @@ export namespace MyNS {
 	/** Represents the properties of the zone. */
 	export interface ZoneProperties {
 
-		/** The maximum number of record sets that can be created in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored. */
-		maxNumberOfRecordSets?: number | null;
+		/**
+		 * The maximum number of record sets that can be created in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxNumberOfRecordSets?: string | null;
 
 		/** The name servers for this DNS zone. This is a read-only property and any attempt to set this value will be ignored. */
 		nameServers?: Array<string>;
 
-		/** The current number of record sets in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored. */
-		numberOfRecordSets?: number | null;
+		/**
+		 * The current number of record sets in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfRecordSets?: string | null;
 
 		/** A list of references to virtual networks that register hostnames in this DNS zone. This is a only when ZoneType is Private. */
 		registrationVirtualNetworks?: Array<SubResource>;
@@ -752,19 +824,25 @@ export namespace MyNS {
 	/** Represents the properties of the zone. */
 	export interface ZonePropertiesFormProperties {
 
-		/** The maximum number of record sets that can be created in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored. */
-		maxNumberOfRecordSets: FormControl<number | null | undefined>,
+		/**
+		 * The maximum number of record sets that can be created in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxNumberOfRecordSets: FormControl<string | null | undefined>,
 
-		/** The current number of record sets in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored. */
-		numberOfRecordSets: FormControl<number | null | undefined>,
+		/**
+		 * The current number of record sets in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfRecordSets: FormControl<string | null | undefined>,
 
 		/** The type of this DNS zone (Public or Private). */
 		zoneType: FormControl<ZonePropertiesZoneType | null | undefined>,
 	}
 	export function CreateZonePropertiesFormGroup() {
 		return new FormGroup<ZonePropertiesFormProperties>({
-			maxNumberOfRecordSets: new FormControl<number | null | undefined>(undefined),
-			numberOfRecordSets: new FormControl<number | null | undefined>(undefined),
+			maxNumberOfRecordSets: new FormControl<string | null | undefined>(undefined),
+			numberOfRecordSets: new FormControl<string | null | undefined>(undefined),
 			zoneType: new FormControl<ZonePropertiesZoneType | null | undefined>(undefined),
 		});
 

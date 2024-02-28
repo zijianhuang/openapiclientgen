@@ -24,8 +24,11 @@ export namespace MyNS {
 	/** Storage share properties. */
 	export interface ShareProperties {
 
-		/** The free space of the storage share in bytes. */
-		freeCapacity?: number | null;
+		/**
+		 * The free space of the storage share in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		freeCapacity?: string | null;
 
 		/** Current health status. */
 		healthStatus?: SharePropertiesHealthStatus | null;
@@ -33,21 +36,30 @@ export namespace MyNS {
 		/** The name of the storage share. */
 		shareName?: string | null;
 
-		/** The total capacity of the storage share in bytes. */
-		totalCapacity?: number | null;
+		/**
+		 * The total capacity of the storage share in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity?: string | null;
 
 		/** The UNC path to the storage share. */
 		uncPath?: string | null;
 
-		/** The used capacity of the storage share in bytes. */
-		usedCapacity?: number | null;
+		/**
+		 * The used capacity of the storage share in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		usedCapacity?: string | null;
 	}
 
 	/** Storage share properties. */
 	export interface SharePropertiesFormProperties {
 
-		/** The free space of the storage share in bytes. */
-		freeCapacity: FormControl<number | null | undefined>,
+		/**
+		 * The free space of the storage share in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		freeCapacity: FormControl<string | null | undefined>,
 
 		/** Current health status. */
 		healthStatus: FormControl<SharePropertiesHealthStatus | null | undefined>,
@@ -55,23 +67,29 @@ export namespace MyNS {
 		/** The name of the storage share. */
 		shareName: FormControl<string | null | undefined>,
 
-		/** The total capacity of the storage share in bytes. */
-		totalCapacity: FormControl<number | null | undefined>,
+		/**
+		 * The total capacity of the storage share in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity: FormControl<string | null | undefined>,
 
 		/** The UNC path to the storage share. */
 		uncPath: FormControl<string | null | undefined>,
 
-		/** The used capacity of the storage share in bytes. */
-		usedCapacity: FormControl<number | null | undefined>,
+		/**
+		 * The used capacity of the storage share in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		usedCapacity: FormControl<string | null | undefined>,
 	}
 	export function CreateSharePropertiesFormGroup() {
 		return new FormGroup<SharePropertiesFormProperties>({
-			freeCapacity: new FormControl<number | null | undefined>(undefined),
+			freeCapacity: new FormControl<string | null | undefined>(undefined),
 			healthStatus: new FormControl<SharePropertiesHealthStatus | null | undefined>(undefined),
 			shareName: new FormControl<string | null | undefined>(undefined),
-			totalCapacity: new FormControl<number | null | undefined>(undefined),
+			totalCapacity: new FormControl<string | null | undefined>(undefined),
 			uncPath: new FormControl<string | null | undefined>(undefined),
-			usedCapacity: new FormControl<number | null | undefined>(undefined),
+			usedCapacity: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -307,16 +325,28 @@ export namespace MyNS {
 
 	export interface Shares_ListMetricsReturnValueMetricValues {
 
-		/** Average value of metric. */
+		/**
+		 * Average value of metric.
+		 * Type: float
+		 */
 		average?: number | null;
 
-		/** Count of metric values. */
+		/**
+		 * Count of metric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Maximum value of metric. */
+		/**
+		 * Maximum value of metric.
+		 * Type: float
+		 */
 		maximum?: number | null;
 
-		/** Minimum value of metric. */
+		/**
+		 * Minimum value of metric.
+		 * Type: float
+		 */
 		minimum?: number | null;
 
 		/** Metric value properties. */
@@ -325,21 +355,36 @@ export namespace MyNS {
 		/** Timestamp of metric value. */
 		timeStamp?: Date | null;
 
-		/** Total value of metric. */
+		/**
+		 * Total value of metric.
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface Shares_ListMetricsReturnValueMetricValuesFormProperties {
 
-		/** Average value of metric. */
+		/**
+		 * Average value of metric.
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Count of metric values. */
+		/**
+		 * Count of metric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Maximum value of metric. */
+		/**
+		 * Maximum value of metric.
+		 * Type: float
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum value of metric. */
+		/**
+		 * Minimum value of metric.
+		 * Type: float
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Metric value properties. */
@@ -348,7 +393,10 @@ export namespace MyNS {
 		/** Timestamp of metric value. */
 		timeStamp: FormControl<Date | null | undefined>,
 
-		/** Total value of metric. */
+		/**
+		 * Total value of metric.
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateShares_ListMetricsReturnValueMetricValuesFormGroup() {

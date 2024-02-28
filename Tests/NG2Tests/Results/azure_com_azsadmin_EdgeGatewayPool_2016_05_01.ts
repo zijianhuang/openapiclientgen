@@ -27,7 +27,10 @@ export namespace MyNS {
 		/** List of the edge gateways in the pool. */
 		edgeGateways?: Array<string>;
 
-		/** Gateway capacity in kilobits per second. */
+		/**
+		 * Gateway capacity in kilobits per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gatewayCapacityKiloBitsPerSecond?: number | null;
 
 		/** The gateway type, for example, S2sIPsec, S2sGre, and so on. */
@@ -36,20 +39,29 @@ export namespace MyNS {
 		/** The GRE VIP subnet. */
 		greVipSubnet?: string | null;
 
-		/** The number of gateways in the pool. */
+		/**
+		 * The number of gateways in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfGateways?: number | null;
 
 		/** The public IP address. */
 		publicIpAddress?: string | null;
 
-		/** The number of redundant gateways. */
-		redundantGatewayCount?: number | null;
+		/**
+		 * The number of redundant gateways.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		redundantGatewayCount?: string | null;
 	}
 
 	/** An object that contains the properties of an edge gateway pool. */
 	export interface EdgeGatewayPoolModelFormProperties {
 
-		/** Gateway capacity in kilobits per second. */
+		/**
+		 * Gateway capacity in kilobits per second.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gatewayCapacityKiloBitsPerSecond: FormControl<number | null | undefined>,
 
 		/** The gateway type, for example, S2sIPsec, S2sGre, and so on. */
@@ -58,14 +70,20 @@ export namespace MyNS {
 		/** The GRE VIP subnet. */
 		greVipSubnet: FormControl<string | null | undefined>,
 
-		/** The number of gateways in the pool. */
+		/**
+		 * The number of gateways in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfGateways: FormControl<number | null | undefined>,
 
 		/** The public IP address. */
 		publicIpAddress: FormControl<string | null | undefined>,
 
-		/** The number of redundant gateways. */
-		redundantGatewayCount: FormControl<number | null | undefined>,
+		/**
+		 * The number of redundant gateways.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		redundantGatewayCount: FormControl<string | null | undefined>,
 	}
 	export function CreateEdgeGatewayPoolModelFormGroup() {
 		return new FormGroup<EdgeGatewayPoolModelFormProperties>({
@@ -74,7 +92,7 @@ export namespace MyNS {
 			greVipSubnet: new FormControl<string | null | undefined>(undefined),
 			numberOfGateways: new FormControl<number | null | undefined>(undefined),
 			publicIpAddress: new FormControl<string | null | undefined>(undefined),
-			redundantGatewayCount: new FormControl<number | null | undefined>(undefined),
+			redundantGatewayCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

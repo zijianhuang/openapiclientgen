@@ -52,7 +52,10 @@ export namespace MyNS {
 		password?: string | null;
 		phone?: string | null;
 
-		/** User Status */
+		/**
+		 * User Status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userStatus?: number | null;
 	}
 

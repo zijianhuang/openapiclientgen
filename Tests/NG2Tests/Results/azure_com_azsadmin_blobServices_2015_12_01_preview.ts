@@ -55,26 +55,44 @@ export namespace MyNS {
 	/** Settings of BLOB service. */
 	export interface BlobServiceWritableSettings {
 
-		/** The interval, in seconds, of container garbage collection. */
+		/**
+		 * The interval, in seconds, of container garbage collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blobSvcContainerGcInterval?: number | null;
 
-		/** The interval ,in seconds, of shallow garbage collection. */
+		/**
+		 * The interval ,in seconds, of shallow garbage collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blobSvcShallowGcInterval?: number | null;
 
-		/** The minimal container occupancy percent for stream mapping. */
+		/**
+		 * The minimal container occupancy percent for stream mapping.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blobSvcStreamMapMinContainerOccupancyPercent?: number | null;
 	}
 
 	/** Settings of BLOB service. */
 	export interface BlobServiceWritableSettingsFormProperties {
 
-		/** The interval, in seconds, of container garbage collection. */
+		/**
+		 * The interval, in seconds, of container garbage collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blobSvcContainerGcInterval: FormControl<number | null | undefined>,
 
-		/** The interval ,in seconds, of shallow garbage collection. */
+		/**
+		 * The interval ,in seconds, of shallow garbage collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blobSvcShallowGcInterval: FormControl<number | null | undefined>,
 
-		/** The minimal container occupancy percent for stream mapping. */
+		/**
+		 * The minimal container occupancy percent for stream mapping.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blobSvcStreamMapMinContainerOccupancyPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateBlobServiceWritableSettingsFormGroup() {
@@ -304,16 +322,28 @@ export namespace MyNS {
 
 	export interface BlobServices_ListMetricsReturnValueMetricValues {
 
-		/** Average value of metric. */
+		/**
+		 * Average value of metric.
+		 * Type: float
+		 */
 		average?: number | null;
 
-		/** Count of metric values. */
+		/**
+		 * Count of metric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Maximum value of metric. */
+		/**
+		 * Maximum value of metric.
+		 * Type: float
+		 */
 		maximum?: number | null;
 
-		/** Minimum value of metric. */
+		/**
+		 * Minimum value of metric.
+		 * Type: float
+		 */
 		minimum?: number | null;
 
 		/** Metric value properties. */
@@ -322,21 +352,36 @@ export namespace MyNS {
 		/** Timestamp of metric value. */
 		timeStamp?: Date | null;
 
-		/** Total value of metric. */
+		/**
+		 * Total value of metric.
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface BlobServices_ListMetricsReturnValueMetricValuesFormProperties {
 
-		/** Average value of metric. */
+		/**
+		 * Average value of metric.
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Count of metric values. */
+		/**
+		 * Count of metric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Maximum value of metric. */
+		/**
+		 * Maximum value of metric.
+		 * Type: float
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum value of metric. */
+		/**
+		 * Minimum value of metric.
+		 * Type: float
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Metric value properties. */
@@ -345,7 +390,10 @@ export namespace MyNS {
 		/** Timestamp of metric value. */
 		timeStamp: FormControl<Date | null | undefined>,
 
-		/** Total value of metric. */
+		/**
+		 * Total value of metric.
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateBlobServices_ListMetricsReturnValueMetricValuesFormGroup() {

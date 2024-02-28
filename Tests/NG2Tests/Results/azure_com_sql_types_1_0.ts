@@ -93,7 +93,10 @@ export namespace MyNS {
 	/** An ARM Resource SKU. */
 	export interface Sku {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -115,7 +118,10 @@ export namespace MyNS {
 	/** An ARM Resource SKU. */
 	export interface SkuFormProperties {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */

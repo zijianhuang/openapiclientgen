@@ -208,28 +208,52 @@ export namespace MyNS {
 	/** Defines the properties of a latency metric used in the latency scorecard */
 	export interface LatencyMetric {
 
-		/** The lower end of the 95% confidence interval for endpoint A */
+		/**
+		 * The lower end of the 95% confidence interval for endpoint A
+		 * Type: double
+		 */
 		aCLower95CI?: number | null;
 
-		/** The upper end of the 95% confidence interval for endpoint A */
+		/**
+		 * The upper end of the 95% confidence interval for endpoint A
+		 * Type: double
+		 */
 		aHUpper95CI?: number | null;
 
-		/** The metric value of the A endpoint */
+		/**
+		 * The metric value of the A endpoint
+		 * Type: double
+		 */
 		aValue?: number | null;
 
-		/** The lower end of the 95% confidence interval for endpoint B */
+		/**
+		 * The lower end of the 95% confidence interval for endpoint B
+		 * Type: double
+		 */
 		bCLower95CI?: number | null;
 
-		/** The upper end of the 95% confidence interval for endpoint B */
+		/**
+		 * The upper end of the 95% confidence interval for endpoint B
+		 * Type: double
+		 */
 		bUpper95CI?: number | null;
 
-		/** The metric value of the B endpoint */
+		/**
+		 * The metric value of the B endpoint
+		 * Type: double
+		 */
 		bValue?: number | null;
 
-		/** The difference in value between endpoint A and B */
+		/**
+		 * The difference in value between endpoint A and B
+		 * Type: double
+		 */
 		delta?: number | null;
 
-		/** The percent difference between endpoint A and B */
+		/**
+		 * The percent difference between endpoint A and B
+		 * Type: double
+		 */
 		deltaPercent?: number | null;
 
 		/** The end time of the Latency Scorecard in UTC */
@@ -242,28 +266,52 @@ export namespace MyNS {
 	/** Defines the properties of a latency metric used in the latency scorecard */
 	export interface LatencyMetricFormProperties {
 
-		/** The lower end of the 95% confidence interval for endpoint A */
+		/**
+		 * The lower end of the 95% confidence interval for endpoint A
+		 * Type: double
+		 */
 		aCLower95CI: FormControl<number | null | undefined>,
 
-		/** The upper end of the 95% confidence interval for endpoint A */
+		/**
+		 * The upper end of the 95% confidence interval for endpoint A
+		 * Type: double
+		 */
 		aHUpper95CI: FormControl<number | null | undefined>,
 
-		/** The metric value of the A endpoint */
+		/**
+		 * The metric value of the A endpoint
+		 * Type: double
+		 */
 		aValue: FormControl<number | null | undefined>,
 
-		/** The lower end of the 95% confidence interval for endpoint B */
+		/**
+		 * The lower end of the 95% confidence interval for endpoint B
+		 * Type: double
+		 */
 		bCLower95CI: FormControl<number | null | undefined>,
 
-		/** The upper end of the 95% confidence interval for endpoint B */
+		/**
+		 * The upper end of the 95% confidence interval for endpoint B
+		 * Type: double
+		 */
 		bUpper95CI: FormControl<number | null | undefined>,
 
-		/** The metric value of the B endpoint */
+		/**
+		 * The metric value of the B endpoint
+		 * Type: double
+		 */
 		bValue: FormControl<number | null | undefined>,
 
-		/** The difference in value between endpoint A and B */
+		/**
+		 * The difference in value between endpoint A and B
+		 * Type: double
+		 */
 		delta: FormControl<number | null | undefined>,
 
-		/** The percent difference between endpoint A and B */
+		/**
+		 * The percent difference between endpoint A and B
+		 * Type: double
+		 */
 		deltaPercent: FormControl<number | null | undefined>,
 
 		/** The end time of the Latency Scorecard in UTC */
@@ -577,7 +625,10 @@ export namespace MyNS {
 		/** The DateTime of the Timeseries data point in UTC */
 		dateTimeUTC?: string | null;
 
-		/** The Value of the Timeseries data point */
+		/**
+		 * The Value of the Timeseries data point
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -587,7 +638,10 @@ export namespace MyNS {
 		/** The DateTime of the Timeseries data point in UTC */
 		dateTimeUTC: FormControl<string | null | undefined>,
 
-		/** The Value of the Timeseries data point */
+		/**
+		 * The Value of the Timeseries data point
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeseriesDataPointFormGroup() {

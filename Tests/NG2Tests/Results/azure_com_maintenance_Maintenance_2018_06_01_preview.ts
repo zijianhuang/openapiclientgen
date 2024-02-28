@@ -260,7 +260,10 @@ export namespace MyNS {
 	/** Maintenance update on a resource */
 	export interface Update {
 
-		/** Duration of impact in seconds */
+		/**
+		 * Duration of impact in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		impactDurationInSec?: number | null;
 
 		/** The impact type */
@@ -282,7 +285,10 @@ export namespace MyNS {
 	/** Maintenance update on a resource */
 	export interface UpdateFormProperties {
 
-		/** Duration of impact in seconds */
+		/**
+		 * Duration of impact in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		impactDurationInSec: FormControl<number | null | undefined>,
 
 		/** The impact type */

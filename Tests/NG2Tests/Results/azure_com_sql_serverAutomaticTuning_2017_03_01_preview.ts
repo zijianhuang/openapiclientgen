@@ -13,7 +13,10 @@ export namespace MyNS {
 		/** Automatic tuning option desired state. */
 		desiredState?: AutomaticTuningServerOptionsDesiredState | null;
 
-		/** Reason code if desired and actual state are different. */
+		/**
+		 * Reason code if desired and actual state are different.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reasonCode?: number | null;
 
 		/** Reason description if desired and actual state are different. */
@@ -29,7 +32,10 @@ export namespace MyNS {
 		/** Automatic tuning option desired state. */
 		desiredState: FormControl<AutomaticTuningServerOptionsDesiredState | null | undefined>,
 
-		/** Reason code if desired and actual state are different. */
+		/**
+		 * Reason code if desired and actual state are different.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reasonCode: FormControl<number | null | undefined>,
 
 		/** Reason description if desired and actual state are different. */

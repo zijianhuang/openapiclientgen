@@ -11,7 +11,10 @@ export namespace MyNS {
 		 */
 		category: AlternatePatternElementCategory;
 
-		/** A number between 0 and 1 which indicates the confidence level in the result */
+		/**
+		 * A number between 0 and 1 which indicates the confidence level in the result
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** Array of point objects that represent points that are relevant to the type of recognition unit. For example, for leaf node of inkDrawing category that represents a triangle, points would include the x,y coordinates of the vertices of the recognized triangle. The points represent the coordinates of points used to create the perfectly drawn shape that is closest to the original input. They may not exactly match. */
@@ -23,7 +26,10 @@ export namespace MyNS {
 		 */
 		recognizedString: string;
 
-		/** The angular orientation of an object relative to the horizontal axis */
+		/**
+		 * The angular orientation of an object relative to the horizontal axis
+		 * Type: double
+		 */
 		rotationAngle?: number | null;
 	}
 	export interface AlternatePatternElementFormProperties {
@@ -34,7 +40,10 @@ export namespace MyNS {
 		 */
 		category: FormControl<AlternatePatternElementCategory | null | undefined>,
 
-		/** A number between 0 and 1 which indicates the confidence level in the result */
+		/**
+		 * A number between 0 and 1 which indicates the confidence level in the result
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/**
@@ -43,7 +52,10 @@ export namespace MyNS {
 		 */
 		recognizedString: FormControl<string | null | undefined>,
 
-		/** The angular orientation of an object relative to the horizontal axis */
+		/**
+		 * The angular orientation of an object relative to the horizontal axis
+		 * Type: double
+		 */
 		rotationAngle: FormControl<number | null | undefined>,
 	}
 	export function CreateAlternatePatternElementFormGroup() {
@@ -65,12 +77,14 @@ export namespace MyNS {
 		/**
 		 * This represents the x coordinate of the point
 		 * Required
+		 * Type: double
 		 */
 		x: number;
 
 		/**
 		 * This represents the y coordinate of the point
 		 * Required
+		 * Type: double
 		 */
 		y: number;
 	}
@@ -81,12 +95,14 @@ export namespace MyNS {
 		/**
 		 * This represents the x coordinate of the point
 		 * Required
+		 * Type: double
 		 */
 		x: FormControl<number | null | undefined>,
 
 		/**
 		 * This represents the y coordinate of the point
 		 * Required
+		 * Type: double
 		 */
 		y: FormControl<number | null | undefined>,
 	}
@@ -124,7 +140,10 @@ export namespace MyNS {
 		/** This is the physical unit of the ink strokes. It is up to the application developer to decide how to convert the device specific units to physical units before calling the service. The conversion factor can be different based on the type of the device used. */
 		unit?: AnalysisRequestUnit | null;
 
-		/** This is a scaling factor to be applied to the point coordinates when interpreting them in the physical units specified. */
+		/**
+		 * This is a scaling factor to be applied to the point coordinates when interpreting them in the physical units specified.
+		 * Type: double
+		 */
 		unitMultiple?: number | null;
 	}
 
@@ -146,7 +165,10 @@ export namespace MyNS {
 		/** This is the physical unit of the ink strokes. It is up to the application developer to decide how to convert the device specific units to physical units before calling the service. The conversion factor can be different based on the type of the device used. */
 		unit: FormControl<AnalysisRequestUnit | null | undefined>,
 
-		/** This is a scaling factor to be applied to the point coordinates when interpreting them in the physical units specified. */
+		/**
+		 * This is a scaling factor to be applied to the point coordinates when interpreting them in the physical units specified.
+		 * Type: double
+		 */
 		unitMultiple: FormControl<number | null | undefined>,
 	}
 	export function CreateAnalysisRequestFormGroup() {
@@ -166,10 +188,16 @@ export namespace MyNS {
 	/** A container for the attributes of a value contained in the ink point object. */
 	export interface InkPointValueAttribute {
 
-		/** The maximum value for the attribute */
+		/**
+		 * The maximum value for the attribute
+		 * Type: double
+		 */
 		logicalMaximum?: number | null;
 
-		/** The minimum value for the attribute */
+		/**
+		 * The minimum value for the attribute
+		 * Type: double
+		 */
 		logicalMinimum?: number | null;
 
 		/** The name of the point attribute. */
@@ -179,10 +207,16 @@ export namespace MyNS {
 	/** A container for the attributes of a value contained in the ink point object. */
 	export interface InkPointValueAttributeFormProperties {
 
-		/** The maximum value for the attribute */
+		/**
+		 * The maximum value for the attribute
+		 * Type: double
+		 */
 		logicalMaximum: FormControl<number | null | undefined>,
 
-		/** The minimum value for the attribute */
+		/**
+		 * The minimum value for the attribute
+		 * Type: double
+		 */
 		logicalMinimum: FormControl<number | null | undefined>,
 
 		/** The name of the point attribute. */
@@ -207,6 +241,7 @@ export namespace MyNS {
 		/**
 		 * This is treated as a unique identifier for each stroke within a request. If the id is repeated within the same request, the service will return an error.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -224,6 +259,7 @@ export namespace MyNS {
 		/**
 		 * This is treated as a unique identifier for each stroke within a request. If the id is repeated within the same request, the service will return an error.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -252,7 +288,10 @@ export namespace MyNS {
 		/** This indicates whether Bezier smoothing is used to render the stroke */
 		fitToCurve?: boolean | null;
 
-		/** The height of the stylus used to draw the stroke */
+		/**
+		 * The height of the stylus used to draw the stroke
+		 * Type: double
+		 */
 		height?: number | null;
 
 		/** This indicates whether the thickness of a rendered Stroke changes according the amount of pressure applied. */
@@ -262,7 +301,10 @@ export namespace MyNS {
 		/** This specifies the tip to be used to draw a stroke */
 		tip?: DrawingAttributesPatternTip | null;
 
-		/** The width of the stylus used to draw the stroke */
+		/**
+		 * The width of the stylus used to draw the stroke
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 
@@ -272,7 +314,10 @@ export namespace MyNS {
 		/** This indicates whether Bezier smoothing is used to render the stroke */
 		fitToCurve: FormControl<boolean | null | undefined>,
 
-		/** The height of the stylus used to draw the stroke */
+		/**
+		 * The height of the stylus used to draw the stroke
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** This indicates whether the thickness of a rendered Stroke changes according the amount of pressure applied. */
@@ -282,7 +327,10 @@ export namespace MyNS {
 		/** This specifies the tip to be used to draw a stroke */
 		tip: FormControl<DrawingAttributesPatternTip | null | undefined>,
 
-		/** The width of the stylus used to draw the stroke */
+		/**
+		 * The width of the stylus used to draw the stroke
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateDrawingAttributesPatternFormGroup() {
@@ -299,30 +347,54 @@ export namespace MyNS {
 
 	export interface DrawingAttributesPatternColor {
 
-		/** The alpha component of the color */
+		/**
+		 * The alpha component of the color
+		 * Type: double
+		 */
 		a?: number | null;
 
-		/** The blue component of the color */
+		/**
+		 * The blue component of the color
+		 * Type: double
+		 */
 		b?: number | null;
 
-		/** The green component of the color */
+		/**
+		 * The green component of the color
+		 * Type: double
+		 */
 		g?: number | null;
 
-		/** The red component of the color */
+		/**
+		 * The red component of the color
+		 * Type: double
+		 */
 		r?: number | null;
 	}
 	export interface DrawingAttributesPatternColorFormProperties {
 
-		/** The alpha component of the color */
+		/**
+		 * The alpha component of the color
+		 * Type: double
+		 */
 		a: FormControl<number | null | undefined>,
 
-		/** The blue component of the color */
+		/**
+		 * The blue component of the color
+		 * Type: double
+		 */
 		b: FormControl<number | null | undefined>,
 
-		/** The green component of the color */
+		/**
+		 * The green component of the color
+		 * Type: double
+		 */
 		g: FormControl<number | null | undefined>,
 
-		/** The red component of the color */
+		/**
+		 * The red component of the color
+		 * Type: double
+		 */
 		r: FormControl<number | null | undefined>,
 	}
 	export function CreateDrawingAttributesPatternColorFormGroup() {
@@ -345,7 +417,10 @@ export namespace MyNS {
 	/** An object containing the properties of an point in the path of an ink stroke. The main properties are the x and y values. Other include tip pressure, x tilt etc. For the coordinate values, it is recommended to have a precision of 8 digits after the decimal to obtain most accurate recognition results. The origin (0,0) of the canvas is assumed to be at the top left corner of the canvas */
 	export interface InkPoint {
 
-		/** The force exerted directly by the user on a transducer sensor, such as a pressure-sensitive button on the barrel of a stylus. This may not be used for recognition. */
+		/**
+		 * The force exerted directly by the user on a transducer sensor, such as a pressure-sensitive button on the barrel of a stylus. This may not be used for recognition.
+		 * Type: double
+		 */
 		barrelPressure?: number | null;
 
 		/** A non-tip button located on the barrel of a stylus. Its function is typically mapped to a system secondary button. This may not be used for recognition. */
@@ -354,7 +429,10 @@ export namespace MyNS {
 		/** The control is used for erasing objects. It is typically located opposite the writing end of a stylus. This may not be used for recognition. */
 		eraser?: boolean | null;
 
-		/** The height of the tip of the writing instrument. This is used by touch screen devices to report the height of the finger contact on the writing surface. This may not be used for recognition. */
+		/**
+		 * The height of the tip of the writing instrument. This is used by touch screen devices to report the height of the finger contact on the writing surface. This may not be used for recognition.
+		 * Type: double
+		 */
 		height?: number | null;
 
 		/** A value that indicates that the currently sensed position originates from the end of a stylus opposite the tip switch. This may not be used for recognition. */
@@ -363,44 +441,67 @@ export namespace MyNS {
 		/** A secondary switch used in conjunction with the tip switch to indicate pressure above a certain threshold applied with the stylus. This may not be used for recognition. */
 		secondaryTip?: boolean | null;
 
-		/** The time relative to the absolute time the transducer last became active. This may not be used for recognition. */
+		/**
+		 * The time relative to the absolute time the transducer last became active. This may not be used for recognition.
+		 * Type: double
+		 */
 		timestamp?: number | null;
 
-		/** The force exerted against the tablet surface by the transducer, typically a stylus. This may not be used for recognition. */
+		/**
+		 * The force exerted against the tablet surface by the transducer, typically a stylus. This may not be used for recognition.
+		 * Type: double
+		 */
 		tipPressure?: number | null;
 
 		/** A switch located on the tip of a stylus indicating contact of the stylus with a surface. This may not be used for recognition. */
 		tipSwitch?: boolean | null;
 
-		/** The width of the tip of the writing instrument. This is used by touch screen devices to report the width of the finger contact on the writing surface. This may not be used for recognition. */
+		/**
+		 * The width of the tip of the writing instrument. This is used by touch screen devices to report the width of the finger contact on the writing surface. This may not be used for recognition.
+		 * Type: double
+		 */
 		width?: number | null;
 
 		/**
 		 * The x coordinate of the pen location on the writing surface.
 		 * Required
+		 * Type: double
 		 */
 		x: number;
 
-		/** The plane angle between the Y-Z plane and the plane containing the transducer axis and the Y axis. This may not be used for recognition. */
+		/**
+		 * The plane angle between the Y-Z plane and the plane containing the transducer axis and the Y axis. This may not be used for recognition.
+		 * Type: double
+		 */
 		xTilt?: number | null;
 
 		/**
 		 * The y coordinate of the pen location on the writing surface.
 		 * Required
+		 * Type: double
 		 */
 		y: number;
 
-		/** The angle between the X-Z and transducer-X planes. A positive Y Tilt is toward the user. This may not be used for recognition. */
+		/**
+		 * The angle between the X-Z and transducer-X planes. A positive Y Tilt is toward the user. This may not be used for recognition.
+		 * Type: double
+		 */
 		yTilt?: number | null;
 
-		/** The z coordinate of the pen location on the writing space. This may not be used for recognition. */
+		/**
+		 * The z coordinate of the pen location on the writing space. This may not be used for recognition.
+		 * Type: double
+		 */
 		z?: number | null;
 	}
 
 	/** An object containing the properties of an point in the path of an ink stroke. The main properties are the x and y values. Other include tip pressure, x tilt etc. For the coordinate values, it is recommended to have a precision of 8 digits after the decimal to obtain most accurate recognition results. The origin (0,0) of the canvas is assumed to be at the top left corner of the canvas */
 	export interface InkPointFormProperties {
 
-		/** The force exerted directly by the user on a transducer sensor, such as a pressure-sensitive button on the barrel of a stylus. This may not be used for recognition. */
+		/**
+		 * The force exerted directly by the user on a transducer sensor, such as a pressure-sensitive button on the barrel of a stylus. This may not be used for recognition.
+		 * Type: double
+		 */
 		barrelPressure: FormControl<number | null | undefined>,
 
 		/** A non-tip button located on the barrel of a stylus. Its function is typically mapped to a system secondary button. This may not be used for recognition. */
@@ -409,7 +510,10 @@ export namespace MyNS {
 		/** The control is used for erasing objects. It is typically located opposite the writing end of a stylus. This may not be used for recognition. */
 		eraser: FormControl<boolean | null | undefined>,
 
-		/** The height of the tip of the writing instrument. This is used by touch screen devices to report the height of the finger contact on the writing surface. This may not be used for recognition. */
+		/**
+		 * The height of the tip of the writing instrument. This is used by touch screen devices to report the height of the finger contact on the writing surface. This may not be used for recognition.
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** A value that indicates that the currently sensed position originates from the end of a stylus opposite the tip switch. This may not be used for recognition. */
@@ -418,37 +522,57 @@ export namespace MyNS {
 		/** A secondary switch used in conjunction with the tip switch to indicate pressure above a certain threshold applied with the stylus. This may not be used for recognition. */
 		secondaryTip: FormControl<boolean | null | undefined>,
 
-		/** The time relative to the absolute time the transducer last became active. This may not be used for recognition. */
+		/**
+		 * The time relative to the absolute time the transducer last became active. This may not be used for recognition.
+		 * Type: double
+		 */
 		timestamp: FormControl<number | null | undefined>,
 
-		/** The force exerted against the tablet surface by the transducer, typically a stylus. This may not be used for recognition. */
+		/**
+		 * The force exerted against the tablet surface by the transducer, typically a stylus. This may not be used for recognition.
+		 * Type: double
+		 */
 		tipPressure: FormControl<number | null | undefined>,
 
 		/** A switch located on the tip of a stylus indicating contact of the stylus with a surface. This may not be used for recognition. */
 		tipSwitch: FormControl<boolean | null | undefined>,
 
-		/** The width of the tip of the writing instrument. This is used by touch screen devices to report the width of the finger contact on the writing surface. This may not be used for recognition. */
+		/**
+		 * The width of the tip of the writing instrument. This is used by touch screen devices to report the width of the finger contact on the writing surface. This may not be used for recognition.
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 
 		/**
 		 * The x coordinate of the pen location on the writing surface.
 		 * Required
+		 * Type: double
 		 */
 		x: FormControl<number | null | undefined>,
 
-		/** The plane angle between the Y-Z plane and the plane containing the transducer axis and the Y axis. This may not be used for recognition. */
+		/**
+		 * The plane angle between the Y-Z plane and the plane containing the transducer axis and the Y axis. This may not be used for recognition.
+		 * Type: double
+		 */
 		xTilt: FormControl<number | null | undefined>,
 
 		/**
 		 * The y coordinate of the pen location on the writing surface.
 		 * Required
+		 * Type: double
 		 */
 		y: FormControl<number | null | undefined>,
 
-		/** The angle between the X-Z and transducer-X planes. A positive Y Tilt is toward the user. This may not be used for recognition. */
+		/**
+		 * The angle between the X-Z and transducer-X planes. A positive Y Tilt is toward the user. This may not be used for recognition.
+		 * Type: double
+		 */
 		yTilt: FormControl<number | null | undefined>,
 
-		/** The z coordinate of the pen location on the writing space. This may not be used for recognition. */
+		/**
+		 * The z coordinate of the pen location on the writing space. This may not be used for recognition.
+		 * Type: double
+		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreateInkPointFormGroup() {
@@ -490,7 +614,10 @@ export namespace MyNS {
 		/** This is the physical unit of the ink strokes. It is up to the application developer to decide how to convert the device specific units to physical units before calling the service. The conversion factor can be different based on the type of the device used. */
 		unit?: AnalysisRequestUnit | null;
 
-		/** This is a scaling factor to be applied to the point coordinates when interpreting them in the physical units specified. */
+		/**
+		 * This is a scaling factor to be applied to the point coordinates when interpreting them in the physical units specified.
+		 * Type: double
+		 */
 		unitMultiple?: number | null;
 	}
 
@@ -503,7 +630,10 @@ export namespace MyNS {
 		/** This is the physical unit of the ink strokes. It is up to the application developer to decide how to convert the device specific units to physical units before calling the service. The conversion factor can be different based on the type of the device used. */
 		unit: FormControl<AnalysisRequestUnit | null | undefined>,
 
-		/** This is a scaling factor to be applied to the point coordinates when interpreting them in the physical units specified. */
+		/**
+		 * This is a scaling factor to be applied to the point coordinates when interpreting them in the physical units specified.
+		 * Type: double
+		 */
 		unitMultiple: FormControl<number | null | undefined>,
 	}
 	export function CreateAnalysisResponseFormGroup() {
@@ -541,18 +671,23 @@ export namespace MyNS {
 		 */
 		class: AnalysisResponseRecognitionUnitsClass;
 
-		/** A number between 0 and 1 which indicates the confidence level in the result. */
+		/**
+		 * A number between 0 and 1 which indicates the confidence level in the result.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/**
 		 * The identifier of the recognition unit. This id is used to indicate parent/child relationship between different recognition units.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * The id of the parent node in the tree structure of the recognition results. parent = 0 indicates that there is no dedicated parent node for this unit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		parentId: number;
 
@@ -568,7 +703,10 @@ export namespace MyNS {
 		/** This is the rotated bounding rectangle that covers the entire recognized object along the angle of rotation of the object. Note that this is NOT the same as rotating the boundingRectangle by the rotation angle. */
 		rotatedBoundingRectangle?: Array<PointDetailsPattern>;
 
-		/** This is the angle at which the unit is rotated in degrees with respect to the positive X axis. */
+		/**
+		 * This is the angle at which the unit is rotated in degrees with respect to the positive X axis.
+		 * Type: double
+		 */
 		rotationAngle?: number | null;
 
 		/**
@@ -591,18 +729,23 @@ export namespace MyNS {
 		 */
 		class: FormControl<AnalysisResponseRecognitionUnitsClass | null | undefined>,
 
-		/** A number between 0 and 1 which indicates the confidence level in the result. */
+		/**
+		 * A number between 0 and 1 which indicates the confidence level in the result.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/**
 		 * The identifier of the recognition unit. This id is used to indicate parent/child relationship between different recognition units.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The id of the parent node in the tree structure of the recognition results. parent = 0 indicates that there is no dedicated parent node for this unit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		parentId: FormControl<number | null | undefined>,
 
@@ -612,7 +755,10 @@ export namespace MyNS {
 		/** The string contains the text that was recognized. It can be an empty string if the recognizer cannot determine the text. */
 		recognizedText: FormControl<string | null | undefined>,
 
-		/** This is the angle at which the unit is rotated in degrees with respect to the positive X axis. */
+		/**
+		 * This is the angle at which the unit is rotated in degrees with respect to the positive X axis.
+		 * Type: double
+		 */
 		rotationAngle: FormControl<number | null | undefined>,
 	}
 	export function CreateAnalysisResponseRecognitionUnitsFormGroup() {
@@ -631,30 +777,54 @@ export namespace MyNS {
 
 	export interface AnalysisResponseRecognitionUnitsBoundingRectangle {
 
-		/** The is the height of the bounding rectangle */
+		/**
+		 * The is the height of the bounding rectangle
+		 * Type: double
+		 */
 		height?: number | null;
 
-		/** This is the top left x coordinate */
+		/**
+		 * This is the top left x coordinate
+		 * Type: double
+		 */
 		topX?: number | null;
 
-		/** This is the top left y coordinate */
+		/**
+		 * This is the top left y coordinate
+		 * Type: double
+		 */
 		topY?: number | null;
 
-		/** This is width of the bounding rectangle */
+		/**
+		 * This is width of the bounding rectangle
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 	export interface AnalysisResponseRecognitionUnitsBoundingRectangleFormProperties {
 
-		/** The is the height of the bounding rectangle */
+		/**
+		 * The is the height of the bounding rectangle
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** This is the top left x coordinate */
+		/**
+		 * This is the top left x coordinate
+		 * Type: double
+		 */
 		topX: FormControl<number | null | undefined>,
 
-		/** This is the top left y coordinate */
+		/**
+		 * This is the top left y coordinate
+		 * Type: double
+		 */
 		topY: FormControl<number | null | undefined>,
 
-		/** This is width of the bounding rectangle */
+		/**
+		 * This is width of the bounding rectangle
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateAnalysisResponseRecognitionUnitsBoundingRectangleFormGroup() {
@@ -794,18 +964,23 @@ export namespace MyNS {
 		 */
 		class: AnalysisResponseRecognitionUnitsClass;
 
-		/** A number between 0 and 1 which indicates the confidence level in the result. */
+		/**
+		 * A number between 0 and 1 which indicates the confidence level in the result.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/**
 		 * The identifier of the recognition unit. This id is used to indicate parent/child relationship between different recognition units.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * The id of the parent node in the tree structure of the recognition results. parent = 0 indicates that there is no dedicated parent node for this unit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		parentId: number;
 
@@ -821,7 +996,10 @@ export namespace MyNS {
 		/** This is the rotated bounding rectangle that covers the entire recognized object along the angle of rotation of the object. Note that this is NOT the same as rotating the boundingRectangle by the rotation angle. */
 		rotatedBoundingRectangle?: Array<PointDetailsPattern>;
 
-		/** This is the angle at which the unit is rotated in degrees with respect to the positive X axis. */
+		/**
+		 * This is the angle at which the unit is rotated in degrees with respect to the positive X axis.
+		 * Type: double
+		 */
 		rotationAngle?: number | null;
 
 		/**
@@ -846,18 +1024,23 @@ export namespace MyNS {
 		 */
 		class: FormControl<AnalysisResponseRecognitionUnitsClass | null | undefined>,
 
-		/** A number between 0 and 1 which indicates the confidence level in the result. */
+		/**
+		 * A number between 0 and 1 which indicates the confidence level in the result.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/**
 		 * The identifier of the recognition unit. This id is used to indicate parent/child relationship between different recognition units.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The id of the parent node in the tree structure of the recognition results. parent = 0 indicates that there is no dedicated parent node for this unit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		parentId: FormControl<number | null | undefined>,
 
@@ -867,7 +1050,10 @@ export namespace MyNS {
 		/** The string contains the text that was recognized. It can be an empty string if the recognizer cannot determine the text. */
 		recognizedText: FormControl<string | null | undefined>,
 
-		/** This is the angle at which the unit is rotated in degrees with respect to the positive X axis. */
+		/**
+		 * This is the angle at which the unit is rotated in degrees with respect to the positive X axis.
+		 * Type: double
+		 */
 		rotationAngle: FormControl<number | null | undefined>,
 	}
 	export function CreateRecognitionUnitElementFormGroup() {
@@ -886,30 +1072,54 @@ export namespace MyNS {
 
 	export interface RecognitionUnitElementBoundingRectangle {
 
-		/** The is the height of the bounding rectangle */
+		/**
+		 * The is the height of the bounding rectangle
+		 * Type: double
+		 */
 		height?: number | null;
 
-		/** This is the top left x coordinate */
+		/**
+		 * This is the top left x coordinate
+		 * Type: double
+		 */
 		topX?: number | null;
 
-		/** This is the top left y coordinate */
+		/**
+		 * This is the top left y coordinate
+		 * Type: double
+		 */
 		topY?: number | null;
 
-		/** This is width of the bounding rectangle */
+		/**
+		 * This is width of the bounding rectangle
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 	export interface RecognitionUnitElementBoundingRectangleFormProperties {
 
-		/** The is the height of the bounding rectangle */
+		/**
+		 * The is the height of the bounding rectangle
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** This is the top left x coordinate */
+		/**
+		 * This is the top left x coordinate
+		 * Type: double
+		 */
 		topX: FormControl<number | null | undefined>,
 
-		/** This is the top left y coordinate */
+		/**
+		 * This is the top left y coordinate
+		 * Type: double
+		 */
 		topY: FormControl<number | null | undefined>,
 
-		/** This is width of the bounding rectangle */
+		/**
+		 * This is width of the bounding rectangle
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateRecognitionUnitElementBoundingRectangleFormGroup() {

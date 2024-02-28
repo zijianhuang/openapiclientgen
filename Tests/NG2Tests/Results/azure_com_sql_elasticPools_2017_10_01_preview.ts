@@ -40,8 +40,11 @@ export namespace MyNS {
 		/** The license type to apply for this elastic pool. */
 		licenseType?: ElasticPoolPropertiesLicenseType | null;
 
-		/** The storage limit for the database elastic pool in bytes. */
-		maxSizeBytes?: number | null;
+		/**
+		 * The storage limit for the database elastic pool in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSizeBytes?: string | null;
 
 		/** Per database settings of an elastic pool. */
 		perDatabaseSettings?: ElasticPoolPerDatabaseSettings;
@@ -62,8 +65,11 @@ export namespace MyNS {
 		/** The license type to apply for this elastic pool. */
 		licenseType: FormControl<ElasticPoolPropertiesLicenseType | null | undefined>,
 
-		/** The storage limit for the database elastic pool in bytes. */
-		maxSizeBytes: FormControl<number | null | undefined>,
+		/**
+		 * The storage limit for the database elastic pool in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSizeBytes: FormControl<string | null | undefined>,
 
 		/** The state of the elastic pool. */
 		state: FormControl<ElasticPoolPropertiesState | null | undefined>,
@@ -75,7 +81,7 @@ export namespace MyNS {
 		return new FormGroup<ElasticPoolPropertiesFormProperties>({
 			creationDate: new FormControl<Date | null | undefined>(undefined),
 			licenseType: new FormControl<ElasticPoolPropertiesLicenseType | null | undefined>(undefined),
-			maxSizeBytes: new FormControl<number | null | undefined>(undefined),
+			maxSizeBytes: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<ElasticPoolPropertiesState | null | undefined>(undefined),
 			zoneRedundant: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -88,20 +94,32 @@ export namespace MyNS {
 	/** Per database settings of an elastic pool. */
 	export interface ElasticPoolPerDatabaseSettings {
 
-		/** The maximum capacity any one database can consume. */
+		/**
+		 * The maximum capacity any one database can consume.
+		 * Type: double
+		 */
 		maxCapacity?: number | null;
 
-		/** The minimum capacity all databases are guaranteed. */
+		/**
+		 * The minimum capacity all databases are guaranteed.
+		 * Type: double
+		 */
 		minCapacity?: number | null;
 	}
 
 	/** Per database settings of an elastic pool. */
 	export interface ElasticPoolPerDatabaseSettingsFormProperties {
 
-		/** The maximum capacity any one database can consume. */
+		/**
+		 * The maximum capacity any one database can consume.
+		 * Type: double
+		 */
 		maxCapacity: FormControl<number | null | undefined>,
 
-		/** The minimum capacity all databases are guaranteed. */
+		/**
+		 * The minimum capacity all databases are guaranteed.
+		 * Type: double
+		 */
 		minCapacity: FormControl<number | null | undefined>,
 	}
 	export function CreateElasticPoolPerDatabaseSettingsFormGroup() {
@@ -116,7 +134,10 @@ export namespace MyNS {
 
 	export interface ElasticPoolSku {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -136,7 +157,10 @@ export namespace MyNS {
 	}
 	export interface ElasticPoolSkuFormProperties {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -223,8 +247,11 @@ export namespace MyNS {
 		/** The license type to apply for this elastic pool. */
 		licenseType?: ElasticPoolPropertiesLicenseType | null;
 
-		/** The storage limit for the database elastic pool in bytes. */
-		maxSizeBytes?: number | null;
+		/**
+		 * The storage limit for the database elastic pool in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSizeBytes?: string | null;
 
 		/** Per database settings of an elastic pool. */
 		perDatabaseSettings?: ElasticPoolPerDatabaseSettings;
@@ -239,8 +266,11 @@ export namespace MyNS {
 		/** The license type to apply for this elastic pool. */
 		licenseType: FormControl<ElasticPoolPropertiesLicenseType | null | undefined>,
 
-		/** The storage limit for the database elastic pool in bytes. */
-		maxSizeBytes: FormControl<number | null | undefined>,
+		/**
+		 * The storage limit for the database elastic pool in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSizeBytes: FormControl<string | null | undefined>,
 
 		/** Whether or not this elastic pool is zone redundant, which means the replicas of this elastic pool will be spread across multiple availability zones. */
 		zoneRedundant: FormControl<boolean | null | undefined>,
@@ -248,7 +278,7 @@ export namespace MyNS {
 	export function CreateElasticPoolUpdatePropertiesFormGroup() {
 		return new FormGroup<ElasticPoolUpdatePropertiesFormProperties>({
 			licenseType: new FormControl<ElasticPoolPropertiesLicenseType | null | undefined>(undefined),
-			maxSizeBytes: new FormControl<number | null | undefined>(undefined),
+			maxSizeBytes: new FormControl<string | null | undefined>(undefined),
 			zoneRedundant: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -256,7 +286,10 @@ export namespace MyNS {
 
 	export interface ElasticPoolUpdateSku {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -276,7 +309,10 @@ export namespace MyNS {
 	}
 	export interface ElasticPoolUpdateSkuFormProperties {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */

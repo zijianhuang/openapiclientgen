@@ -7,10 +7,16 @@ export namespace MyNS {
 	/** An object describing whether the image contains adult-oriented content and/or is racy. */
 	export interface AdultInfo {
 
-		/** Score from 0 to 1 that indicates how much the content is considered adult-oriented within the image. */
+		/**
+		 * Score from 0 to 1 that indicates how much the content is considered adult-oriented within the image.
+		 * Type: double
+		 */
 		adultScore?: number | null;
 
-		/** Score from 0 to 1 that indicates how gory is the image. */
+		/**
+		 * Score from 0 to 1 that indicates how gory is the image.
+		 * Type: double
+		 */
 		goreScore?: number | null;
 
 		/** A value indicating if the image contains adult-oriented content. */
@@ -22,17 +28,26 @@ export namespace MyNS {
 		/** A value indicating if the image is racy. */
 		isRacyContent?: boolean | null;
 
-		/** Score from 0 to 1 that indicates how suggestive is the image. */
+		/**
+		 * Score from 0 to 1 that indicates how suggestive is the image.
+		 * Type: double
+		 */
 		racyScore?: number | null;
 	}
 
 	/** An object describing whether the image contains adult-oriented content and/or is racy. */
 	export interface AdultInfoFormProperties {
 
-		/** Score from 0 to 1 that indicates how much the content is considered adult-oriented within the image. */
+		/**
+		 * Score from 0 to 1 that indicates how much the content is considered adult-oriented within the image.
+		 * Type: double
+		 */
 		adultScore: FormControl<number | null | undefined>,
 
-		/** Score from 0 to 1 that indicates how gory is the image. */
+		/**
+		 * Score from 0 to 1 that indicates how gory is the image.
+		 * Type: double
+		 */
 		goreScore: FormControl<number | null | undefined>,
 
 		/** A value indicating if the image contains adult-oriented content. */
@@ -44,7 +59,10 @@ export namespace MyNS {
 		/** A value indicating if the image is racy. */
 		isRacyContent: FormControl<boolean | null | undefined>,
 
-		/** Score from 0 to 1 that indicates how suggestive is the image. */
+		/**
+		 * Score from 0 to 1 that indicates how suggestive is the image.
+		 * Type: double
+		 */
 		racyScore: FormControl<number | null | undefined>,
 	}
 	export function CreateAdultInfoFormGroup() {
@@ -90,32 +108,56 @@ export namespace MyNS {
 	/** A bounding box for an area inside an image. */
 	export interface BoundingRect {
 
-		/** Height measured from the top-left point of the area, in pixels. */
+		/**
+		 * Height measured from the top-left point of the area, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		h?: number | null;
 
-		/** Width measured from the top-left point of the area, in pixels. */
+		/**
+		 * Width measured from the top-left point of the area, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w?: number | null;
 
-		/** X-coordinate of the top left point of the area, in pixels. */
+		/**
+		 * X-coordinate of the top left point of the area, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Y-coordinate of the top left point of the area, in pixels. */
+		/**
+		 * Y-coordinate of the top left point of the area, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** A bounding box for an area inside an image. */
 	export interface BoundingRectFormProperties {
 
-		/** Height measured from the top-left point of the area, in pixels. */
+		/**
+		 * Height measured from the top-left point of the area, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		h: FormControl<number | null | undefined>,
 
-		/** Width measured from the top-left point of the area, in pixels. */
+		/**
+		 * Width measured from the top-left point of the area, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w: FormControl<number | null | undefined>,
 
-		/** X-coordinate of the top left point of the area, in pixels. */
+		/**
+		 * X-coordinate of the top left point of the area, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y-coordinate of the top left point of the area, in pixels. */
+		/**
+		 * Y-coordinate of the top left point of the area, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateBoundingRectFormGroup() {
@@ -135,10 +177,16 @@ export namespace MyNS {
 		/** Image format. */
 		format?: string | null;
 
-		/** Image height, in pixels. */
+		/**
+		 * Image height, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** Image width, in pixels. */
+		/**
+		 * Image width, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -148,10 +196,16 @@ export namespace MyNS {
 		/** Image format. */
 		format: FormControl<string | null | undefined>,
 
-		/** Image height, in pixels. */
+		/**
+		 * Image height, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Image width, in pixels. */
+		/**
+		 * Image width, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageMetadataFormGroup() {
@@ -173,7 +227,10 @@ export namespace MyNS {
 		/** Name of the category. */
 		name?: string | null;
 
-		/** Scoring of the category. */
+		/**
+		 * Scoring of the category.
+		 * Type: double
+		 */
 		score?: number | null;
 	}
 
@@ -183,7 +240,10 @@ export namespace MyNS {
 		/** Name of the category. */
 		name: FormControl<string | null | undefined>,
 
-		/** Scoring of the category. */
+		/**
+		 * Scoring of the category.
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateCategoryFormGroup() {
@@ -218,7 +278,10 @@ export namespace MyNS {
 	/** An object describing possible celebrity identification. */
 	export interface CelebritiesModel {
 
-		/** Confidence level for the celebrity recognition as a value ranging from 0 to 1. */
+		/**
+		 * Confidence level for the celebrity recognition as a value ranging from 0 to 1.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** An object describing face rectangle. */
@@ -231,7 +294,10 @@ export namespace MyNS {
 	/** An object describing possible celebrity identification. */
 	export interface CelebritiesModelFormProperties {
 
-		/** Confidence level for the celebrity recognition as a value ranging from 0 to 1. */
+		/**
+		 * Confidence level for the celebrity recognition as a value ranging from 0 to 1.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Name of the celebrity. */
@@ -249,32 +315,56 @@ export namespace MyNS {
 	/** An object describing face rectangle. */
 	export interface FaceRectangle {
 
-		/** Height measured from the top-left point of the face, in pixels. */
+		/**
+		 * Height measured from the top-left point of the face, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** X-coordinate of the top left point of the face, in pixels. */
+		/**
+		 * X-coordinate of the top left point of the face, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left?: number | null;
 
-		/** Y-coordinate of the top left point of the face, in pixels. */
+		/**
+		 * Y-coordinate of the top left point of the face, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top?: number | null;
 
-		/** Width measured from the top-left point of the face, in pixels. */
+		/**
+		 * Width measured from the top-left point of the face, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** An object describing face rectangle. */
 	export interface FaceRectangleFormProperties {
 
-		/** Height measured from the top-left point of the face, in pixels. */
+		/**
+		 * Height measured from the top-left point of the face, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** X-coordinate of the top left point of the face, in pixels. */
+		/**
+		 * X-coordinate of the top left point of the face, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** Y-coordinate of the top left point of the face, in pixels. */
+		/**
+		 * Y-coordinate of the top left point of the face, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top: FormControl<number | null | undefined>,
 
-		/** Width measured from the top-left point of the face, in pixels. */
+		/**
+		 * Width measured from the top-left point of the face, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateFaceRectangleFormGroup() {
@@ -291,7 +381,10 @@ export namespace MyNS {
 	/** A landmark recognized in the image. */
 	export interface LandmarksModel {
 
-		/** Confidence level for the landmark recognition as a value ranging from 0 to 1. */
+		/**
+		 * Confidence level for the landmark recognition as a value ranging from 0 to 1.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** Name of the landmark. */
@@ -301,7 +394,10 @@ export namespace MyNS {
 	/** A landmark recognized in the image. */
 	export interface LandmarksModelFormProperties {
 
-		/** Confidence level for the landmark recognition as a value ranging from 0 to 1. */
+		/**
+		 * Confidence level for the landmark recognition as a value ranging from 0 to 1.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Name of the landmark. */
@@ -467,7 +563,10 @@ export namespace MyNS {
 	/** An object detected in an image. */
 	export interface DetectedObject {
 
-		/** Confidence score of having observed the object in the image, as a value ranging from 0 to 1. */
+		/**
+		 * Confidence score of having observed the object in the image, as a value ranging from 0 to 1.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** Label for the object. */
@@ -483,7 +582,10 @@ export namespace MyNS {
 	/** An object detected in an image. */
 	export interface DetectedObjectFormProperties {
 
-		/** Confidence score of having observed the object in the image, as a value ranging from 0 to 1. */
+		/**
+		 * Confidence score of having observed the object in the image, as a value ranging from 0 to 1.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Label for the object. */
@@ -501,7 +603,10 @@ export namespace MyNS {
 	/** An object detected inside an image. */
 	export interface ObjectHierarchy {
 
-		/** Confidence score of having observed the object in the image, as a value ranging from 0 to 1. */
+		/**
+		 * Confidence score of having observed the object in the image, as a value ranging from 0 to 1.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** Label for the object. */
@@ -514,7 +619,10 @@ export namespace MyNS {
 	/** An object detected inside an image. */
 	export interface ObjectHierarchyFormProperties {
 
-		/** Confidence score of having observed the object in the image, as a value ranging from 0 to 1. */
+		/**
+		 * Confidence score of having observed the object in the image, as a value ranging from 0 to 1.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Label for the object. */
@@ -532,7 +640,10 @@ export namespace MyNS {
 	/** A brand detected in an image. */
 	export interface DetectedBrand {
 
-		/** Confidence score of having observed the brand in the image, as a value ranging from 0 to 1. */
+		/**
+		 * Confidence score of having observed the brand in the image, as a value ranging from 0 to 1.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** Label for the brand. */
@@ -545,7 +656,10 @@ export namespace MyNS {
 	/** A brand detected in an image. */
 	export interface DetectedBrandFormProperties {
 
-		/** Confidence score of having observed the brand in the image, as a value ranging from 0 to 1. */
+		/**
+		 * Confidence score of having observed the brand in the image, as a value ranging from 0 to 1.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Label for the brand. */
@@ -594,7 +708,10 @@ export namespace MyNS {
 	/** An object describing a face identified in the image. */
 	export interface FaceDescription {
 
-		/** Possible age of the face. */
+		/**
+		 * Possible age of the face.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		age?: number | null;
 
 		/** An object describing face rectangle. */
@@ -607,7 +724,10 @@ export namespace MyNS {
 	/** An object describing a face identified in the image. */
 	export interface FaceDescriptionFormProperties {
 
-		/** Possible age of the face. */
+		/**
+		 * Possible age of the face.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		age: FormControl<number | null | undefined>,
 
 		/** Possible gender of the face. */
@@ -698,7 +818,10 @@ export namespace MyNS {
 	/** An image caption, i.e. a brief description of what the image depicts. */
 	export interface ImageCaption {
 
-		/** The level of confidence the service has in the caption. */
+		/**
+		 * The level of confidence the service has in the caption.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** The text of the caption. */
@@ -708,7 +831,10 @@ export namespace MyNS {
 	/** An image caption, i.e. a brief description of what the image depicts. */
 	export interface ImageCaptionFormProperties {
 
-		/** The level of confidence the service has in the caption. */
+		/**
+		 * The level of confidence the service has in the caption.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The text of the caption. */
@@ -726,20 +852,32 @@ export namespace MyNS {
 	/** An object providing possible image types and matching confidence levels. */
 	export interface ImageType {
 
-		/** Confidence level that the image is a clip art. */
+		/**
+		 * Confidence level that the image is a clip art.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clipArtType?: number | null;
 
-		/** Confidence level that the image is a line drawing. */
+		/**
+		 * Confidence level that the image is a line drawing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineDrawingType?: number | null;
 	}
 
 	/** An object providing possible image types and matching confidence levels. */
 	export interface ImageTypeFormProperties {
 
-		/** Confidence level that the image is a clip art. */
+		/**
+		 * Confidence level that the image is a clip art.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clipArtType: FormControl<number | null | undefined>,
 
-		/** Confidence level that the image is a line drawing. */
+		/**
+		 * Confidence level that the image is a line drawing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineDrawingType: FormControl<number | null | undefined>,
 	}
 	export function CreateImageTypeFormGroup() {
@@ -754,7 +892,10 @@ export namespace MyNS {
 	/** An entity observation in the image, along with the confidence score. */
 	export interface ImageTag {
 
-		/** The level of confidence that the entity was observed. */
+		/**
+		 * The level of confidence that the entity was observed.
+		 * Type: double
+		 */
 		confidence?: number | null;
 
 		/** Optional hint/details for this tag. */
@@ -767,7 +908,10 @@ export namespace MyNS {
 	/** An entity observation in the image, along with the confidence score. */
 	export interface ImageTagFormProperties {
 
-		/** The level of confidence that the entity was observed. */
+		/**
+		 * The level of confidence that the entity was observed.
+		 * Type: double
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Optional hint/details for this tag. */
@@ -993,7 +1137,10 @@ export namespace MyNS {
 		/** An array of objects, where each object represents a region of recognized text. */
 		regions?: Array<OcrRegion>;
 
-		/** The angle, in radians, of the detected text with respect to the closest horizontal or vertical direction. After rotating the input image clockwise by this angle, the recognized text lines become horizontal or vertical. In combination with the orientation property it can be used to overlay recognition results correctly on the original image, by rotating either the original image or recognition results by a suitable angle around the center of the original image. If the angle cannot be confidently detected, this property is not present. If the image contains text at different angles, only part of the text will be recognized correctly. */
+		/**
+		 * The angle, in radians, of the detected text with respect to the closest horizontal or vertical direction. After rotating the input image clockwise by this angle, the recognized text lines become horizontal or vertical. In combination with the orientation property it can be used to overlay recognition results correctly on the original image, by rotating either the original image or recognition results by a suitable angle around the center of the original image. If the angle cannot be confidently detected, this property is not present. If the image contains text at different angles, only part of the text will be recognized correctly.
+		 * Type: double
+		 */
 		textAngle?: number | null;
 	}
 	export interface OcrResultFormProperties {
@@ -1007,7 +1154,10 @@ export namespace MyNS {
 		 */
 		orientation: FormControl<string | null | undefined>,
 
-		/** The angle, in radians, of the detected text with respect to the closest horizontal or vertical direction. After rotating the input image clockwise by this angle, the recognized text lines become horizontal or vertical. In combination with the orientation property it can be used to overlay recognition results correctly on the original image, by rotating either the original image or recognition results by a suitable angle around the center of the original image. If the angle cannot be confidently detected, this property is not present. If the image contains text at different angles, only part of the text will be recognized correctly. */
+		/**
+		 * The angle, in radians, of the detected text with respect to the closest horizontal or vertical direction. After rotating the input image clockwise by this angle, the recognized text lines become horizontal or vertical. In combination with the orientation property it can be used to overlay recognition results correctly on the original image, by rotating either the original image or recognition results by a suitable angle around the center of the original image. If the angle cannot be confidently detected, this property is not present. If the image contains text at different angles, only part of the text will be recognized correctly.
+		 * Type: double
+		 */
 		textAngle: FormControl<number | null | undefined>,
 	}
 	export function CreateOcrResultFormGroup() {

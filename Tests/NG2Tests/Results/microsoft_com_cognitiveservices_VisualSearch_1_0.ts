@@ -148,20 +148,32 @@ export namespace MyNS {
 		/** Defines a list of offers from merchants that are related to the image. */
 		aggregateOffer?: AggregateOffer;
 
-		/** The number of websites that offer recipes of the food seen in the image. */
+		/**
+		 * The number of websites that offer recipes of the food seen in the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recipeSourcesCount?: number | null;
 
-		/** The number of websites that sell the products seen in the image. */
+		/**
+		 * The number of websites that sell the products seen in the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shoppingSourcesCount?: number | null;
 	}
 
 	/** Defines a count of the number of websites where you can shop or perform other actions related to the image. */
 	export interface ImagesImageMetadataFormProperties {
 
-		/** The number of websites that offer recipes of the food seen in the image. */
+		/**
+		 * The number of websites that offer recipes of the food seen in the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recipeSourcesCount: FormControl<number | null | undefined>,
 
-		/** The number of websites that sell the products seen in the image. */
+		/**
+		 * The number of websites that sell the products seen in the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shoppingSourcesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateImagesImageMetadataFormGroup() {
@@ -202,7 +214,10 @@ export namespace MyNS {
 		/** The last date that the offer was updated. The date is in the form YYYY-MM-DD. */
 		lastUpdated?: string | null;
 
-		/** The item's price. */
+		/**
+		 * The item's price.
+		 * Type: float
+		 */
 		price?: number | null;
 
 		/** The monetary currency. For example, USD. */
@@ -221,7 +236,10 @@ export namespace MyNS {
 		/** The last date that the offer was updated. The date is in the form YYYY-MM-DD. */
 		lastUpdated: FormControl<string | null | undefined>,
 
-		/** The item's price. */
+		/**
+		 * The item's price.
+		 * Type: float
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** The monetary currency. For example, USD. */
@@ -241,14 +259,20 @@ export namespace MyNS {
 	/** Defines the metrics that indicate how well an item was rated by others. */
 	export interface AggregateRating {
 
-		/** The number of times the recipe has been rated or reviewed. */
+		/**
+		 * The number of times the recipe has been rated or reviewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount?: number | null;
 	}
 
 	/** Defines the metrics that indicate how well an item was rated by others. */
 	export interface AggregateRatingFormProperties {
 
-		/** The number of times the recipe has been rated or reviewed. */
+		/**
+		 * The number of times the recipe has been rated or reviewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAggregateRatingFormGroup() {
@@ -321,24 +345,28 @@ export namespace MyNS {
 		/**
 		 * The bottom coordinate of the region to be cropped. The coordinate is a fractional value of the original image's height and is measured from the top edge of the image. Specify the coordinate as a value from 0.0 through 1.0.
 		 * Required
+		 * Type: float
 		 */
 		bottom: number;
 
 		/**
 		 * The left coordinate of the region to be cropped. The coordinate is a fractional value of the original image's width and is measured from the left edge of the image. Specify the coordinate as a value from 0.0 through 1.0.
 		 * Required
+		 * Type: float
 		 */
 		left: number;
 
 		/**
 		 * The right coordinate of the region to be cropped. The coordinate is a fractional value of the original image's width and is measured from the left edge of the image. Specify the coordinate as a value from 0.0 through 1.0.
 		 * Required
+		 * Type: float
 		 */
 		right: number;
 
 		/**
 		 * The top coordinate of the region to be cropped. The coordinate is a fractional value of the original image's height and is measured from the top edge of the image. Specify the coordinate as a value from 0.0 through 1.0.
 		 * Required
+		 * Type: float
 		 */
 		top: number;
 	}
@@ -349,24 +377,28 @@ export namespace MyNS {
 		/**
 		 * The bottom coordinate of the region to be cropped. The coordinate is a fractional value of the original image's height and is measured from the top edge of the image. Specify the coordinate as a value from 0.0 through 1.0.
 		 * Required
+		 * Type: float
 		 */
 		bottom: FormControl<number | null | undefined>,
 
 		/**
 		 * The left coordinate of the region to be cropped. The coordinate is a fractional value of the original image's width and is measured from the left edge of the image. Specify the coordinate as a value from 0.0 through 1.0.
 		 * Required
+		 * Type: float
 		 */
 		left: FormControl<number | null | undefined>,
 
 		/**
 		 * The right coordinate of the region to be cropped. The coordinate is a fractional value of the original image's width and is measured from the left edge of the image. Specify the coordinate as a value from 0.0 through 1.0.
 		 * Required
+		 * Type: float
 		 */
 		right: FormControl<number | null | undefined>,
 
 		/**
 		 * The top coordinate of the region to be cropped. The coordinate is a fractional value of the original image's height and is measured from the top edge of the image. Specify the coordinate as a value from 0.0 through 1.0.
 		 * Required
+		 * Type: float
 		 */
 		top: FormControl<number | null | undefined>,
 	}
@@ -707,12 +739,14 @@ export namespace MyNS {
 		/**
 		 * The x-coordinate of the point.
 		 * Required
+		 * Type: float
 		 */
 		x: number;
 
 		/**
 		 * The y-coordinate of the point.
 		 * Required
+		 * Type: float
 		 */
 		y: number;
 	}
@@ -723,12 +757,14 @@ export namespace MyNS {
 		/**
 		 * The x-coordinate of the point.
 		 * Required
+		 * Type: float
 		 */
 		x: FormControl<number | null | undefined>,
 
 		/**
 		 * The y-coordinate of the point.
 		 * Required
+		 * Type: float
 		 */
 		y: FormControl<number | null | undefined>,
 	}
@@ -989,7 +1025,10 @@ export namespace MyNS {
 		/** Encoding format (e.g., png, gif, jpeg, etc). */
 		encodingFormat?: string | null;
 
-		/** The height of the media object, in pixels. */
+		/**
+		 * The height of the media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Display URL of the page that hosts the media object. */
@@ -998,7 +1037,10 @@ export namespace MyNS {
 		/** URL of the page that hosts the media object. */
 		hostPageUrl?: string | null;
 
-		/** The width of the media object, in pixels. */
+		/**
+		 * The width of the media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -1014,7 +1056,10 @@ export namespace MyNS {
 		/** Encoding format (e.g., png, gif, jpeg, etc). */
 		encodingFormat: FormControl<string | null | undefined>,
 
-		/** The height of the media object, in pixels. */
+		/**
+		 * The height of the media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Display URL of the page that hosts the media object. */
@@ -1023,7 +1068,10 @@ export namespace MyNS {
 		/** URL of the page that hosts the media object. */
 		hostPageUrl: FormControl<string | null | undefined>,
 
-		/** The width of the media object, in pixels. */
+		/**
+		 * The width of the media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMediaObjectFormGroup() {
@@ -1099,12 +1147,16 @@ export namespace MyNS {
 	/** Defines a rating. */
 	export interface Rating {
 
-		/** The highest rated review. The possible values are 1.0 through 5.0. */
+		/**
+		 * The highest rated review. The possible values are 1.0 through 5.0.
+		 * Type: float
+		 */
 		bestRating?: number | null;
 
 		/**
 		 * The mean (average) rating. The possible values are 1.0 through 5.0.
 		 * Required
+		 * Type: float
 		 */
 		ratingValue: number;
 	}
@@ -1112,12 +1164,16 @@ export namespace MyNS {
 	/** Defines a rating. */
 	export interface RatingFormProperties {
 
-		/** The highest rated review. The possible values are 1.0 through 5.0. */
+		/**
+		 * The highest rated review. The possible values are 1.0 through 5.0.
+		 * Type: float
+		 */
 		bestRating: FormControl<number | null | undefined>,
 
 		/**
 		 * The mean (average) rating. The possible values are 1.0 through 5.0.
 		 * Required
+		 * Type: float
 		 */
 		ratingValue: FormControl<number | null | undefined>,
 	}

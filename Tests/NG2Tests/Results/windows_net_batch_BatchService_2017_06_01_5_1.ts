@@ -623,7 +623,10 @@ export namespace MyNS {
 		/** This property is not set if the job is in its initial Active state. */
 		previousStateTransitionTime?: Date | null;
 
-		/** Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. */
+		/**
+		 * Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/**
@@ -685,7 +688,10 @@ export namespace MyNS {
 		/** This property is not set if the job is in its initial Active state. */
 		previousStateTransitionTime: FormControl<Date | null | undefined>,
 
-		/** Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. */
+		/**
+		 * Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/**
@@ -963,9 +969,14 @@ export namespace MyNS {
 		certificateReferences?: Array<CertificateReference>;
 		cloudServiceConfiguration?: CloudServiceConfiguration;
 		creationTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentDedicatedNodes?: number | null;
 
-		/** Low-priority compute nodes which have been preempted are included in this count. */
+		/**
+		 * Low-priority compute nodes which have been preempted are included in this count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentLowPriorityNodes?: number | null;
 
 		/** The display name need not be unique and can contain any Unicode characters up to a maximum length of 1024. */
@@ -985,6 +996,8 @@ export namespace MyNS {
 
 		/** This is the last time at which the pool level data, such as the targetDedicatedNodes or enableAutoscale settings, changed. It does not factor in node-level changes such as a compute node changing state. */
 		lastModified?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxTasksPerNode?: number | null;
 		metadata?: Array<MetadataItem>;
 
@@ -1007,7 +1020,11 @@ export namespace MyNS {
 		state?: CloudPoolState | null;
 		stateTransitionTime?: Date | null;
 		stats?: PoolStatistics;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetDedicatedNodes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetLowPriorityNodes?: number | null;
 		taskSchedulingPolicy?: TaskSchedulingPolicy;
 		url?: string | null;
@@ -1034,9 +1051,14 @@ export namespace MyNS {
 		/** This property is set only if the pool automatically scales, i.e. enableAutoScale is true. */
 		autoScaleFormula: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		currentDedicatedNodes: FormControl<number | null | undefined>,
 
-		/** Low-priority compute nodes which have been preempted are included in this count. */
+		/**
+		 * Low-priority compute nodes which have been preempted are included in this count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentLowPriorityNodes: FormControl<number | null | undefined>,
 
 		/** The display name need not be unique and can contain any Unicode characters up to a maximum length of 1024. */
@@ -1056,6 +1078,8 @@ export namespace MyNS {
 
 		/** This is the last time at which the pool level data, such as the targetDedicatedNodes or enableAutoscale settings, changed. It does not factor in node-level changes such as a compute node changing state. */
 		lastModified: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxTasksPerNode: FormControl<number | null | undefined>,
 
 		/** This is the timeout for the most recent resize operation. (The initial sizing when the pool is created counts as a resize.) The default value is 15 minutes. */
@@ -1069,7 +1093,11 @@ export namespace MyNS {
 		 */
 		state: FormControl<CloudPoolState | null | undefined>,
 		stateTransitionTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetDedicatedNodes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetLowPriorityNodes: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 
@@ -1432,9 +1460,14 @@ export namespace MyNS {
 		/** This property is set only if the subtask is in the Completed state. */
 		endTime?: Date | null;
 
-		/** This property is set only if the subtask is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the subtask (due to timeout, or user termination via the API) you may see an operating system-defined exit code. */
+		/**
+		 * This property is set only if the subtask is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the subtask (due to timeout, or user termination via the API) you may see an operating system-defined exit code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 		failureInfo?: TaskFailureInformation;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		nodeInfo?: ComputeNodeInformation;
 
@@ -1471,8 +1504,13 @@ export namespace MyNS {
 		/** This property is set only if the subtask is in the Completed state. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** This property is set only if the subtask is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the subtask (due to timeout, or user termination via the API) you may see an operating system-defined exit code. */
+		/**
+		 * This property is set only if the subtask is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the subtask (due to timeout, or user termination via the API) you may see an operating system-defined exit code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -1545,6 +1583,8 @@ export namespace MyNS {
 
 		/** This property is present only if at least one task has run on this node since it was assigned to the pool. */
 		recentTasks?: Array<TaskInformation>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		runningTasksCount?: number | null;
 
 		/**
@@ -1574,7 +1614,11 @@ export namespace MyNS {
 		 */
 		state?: ComputeNodeState | null;
 		stateTransitionTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalTasksRun?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalTasksSucceeded?: number | null;
 		url?: string | null;
 
@@ -1596,6 +1640,8 @@ export namespace MyNS {
 
 		/** This property may not be present if the node state is unusable. */
 		lastBootTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		runningTasksCount: FormControl<number | null | undefined>,
 
 		/**
@@ -1623,7 +1669,11 @@ export namespace MyNS {
 		 */
 		state: FormControl<ComputeNodeState | null | undefined>,
 		stateTransitionTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalTasksRun: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalTasksSucceeded: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 
@@ -1670,6 +1720,8 @@ export namespace MyNS {
 	export interface TaskInformation {
 		executionInfo?: TaskExecutionInformation;
 		jobId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subtaskId?: number | null;
 		taskId?: string | null;
 
@@ -1686,6 +1738,8 @@ export namespace MyNS {
 	}
 	export interface TaskInformationFormProperties {
 		jobId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subtaskId: FormControl<number | null | undefined>,
 		taskId: FormControl<string | null | undefined>,
 
@@ -1741,10 +1795,16 @@ export namespace MyNS {
 
 	export interface InboundEndpoint {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backendPort: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontendPort: number;
 
 		/** Required */
@@ -1761,10 +1821,16 @@ export namespace MyNS {
 	}
 	export interface InboundEndpointFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backendPort: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontendPort: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1798,7 +1864,10 @@ export namespace MyNS {
 		/** Required */
 		remoteLoginIPAddress: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remoteLoginPort: number;
 	}
 	export interface ComputeNodeGetRemoteLoginSettingsResultFormProperties {
@@ -1806,7 +1875,10 @@ export namespace MyNS {
 		/** Required */
 		remoteLoginIPAddress: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remoteLoginPort: FormControl<number | null | undefined>,
 	}
 	export function CreateComputeNodeGetRemoteLoginSettingsResultFormGroup() {
@@ -1951,7 +2023,10 @@ export namespace MyNS {
 
 	export interface ExitCodeMapping {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: number;
 
 		/** Required */
@@ -1959,7 +2034,10 @@ export namespace MyNS {
 	}
 	export interface ExitCodeMappingFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 	}
 	export function CreateExitCodeMappingFormGroup() {
@@ -1971,21 +2049,33 @@ export namespace MyNS {
 
 	export interface ExitCodeRangeMapping {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: number;
 
 		/** Required */
 		exitOptions: ExitOptions;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: number;
 	}
 	export interface ExitCodeRangeMappingFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateExitCodeRangeMappingFormGroup() {
@@ -2063,8 +2153,11 @@ export namespace MyNS {
 
 	export interface FileProperties {
 
-		/** Required */
-		contentLength: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentLength: string;
 		contentType?: string | null;
 
 		/** The creation time is not returned for files on Linux compute nodes. */
@@ -2078,8 +2171,11 @@ export namespace MyNS {
 	}
 	export interface FilePropertiesFormProperties {
 
-		/** Required */
-		contentLength: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentLength: FormControl<string | null | undefined>,
 		contentType: FormControl<string | null | undefined>,
 
 		/** The creation time is not returned for files on Linux compute nodes. */
@@ -2093,7 +2189,7 @@ export namespace MyNS {
 	}
 	export function CreateFilePropertiesFormGroup() {
 		return new FormGroup<FilePropertiesFormProperties>({
-			contentLength: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			contentLength: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			contentType: new FormControl<string | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			fileMode: new FormControl<string | null | undefined>(undefined),
@@ -2107,18 +2203,21 @@ export namespace MyNS {
 		/**
 		 * This must be unique within a Batch pool. Acceptable values are between 1 and 65535 except for 22, 3389, 29876 and 29877 as these are reserved. If any reserved values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		backendPort: number;
 
 		/**
 		 * Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved by the Batch service. All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frontendPortRangeEnd: number;
 
 		/**
 		 * Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved. All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frontendPortRangeStart: number;
 
@@ -2139,18 +2238,21 @@ export namespace MyNS {
 		/**
 		 * This must be unique within a Batch pool. Acceptable values are between 1 and 65535 except for 22, 3389, 29876 and 29877 as these are reserved. If any reserved values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		backendPort: FormControl<number | null | undefined>,
 
 		/**
 		 * Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved by the Batch service. All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frontendPortRangeEnd: FormControl<number | null | undefined>,
 
 		/**
 		 * Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved. All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frontendPortRangeStart: FormControl<number | null | undefined>,
 
@@ -2182,6 +2284,7 @@ export namespace MyNS {
 		/**
 		 * Priorities within a pool must be unique and are evaluated in order of priority. The lower the number the higher the priority. For example, rules could be specified with order numbers of 150, 250, and 350. The rule with the order number of 150 takes precedence over the rule that has an order of 250. Allowed priorities are 150 to 3500. If any reserved or duplicate values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: number;
 
@@ -2199,6 +2302,7 @@ export namespace MyNS {
 		/**
 		 * Priorities within a pool must be unique and are evaluated in order of priority. The lower the number the higher the priority. For example, rules could be specified with order numbers of 150, 250, and 350. The rule with the order number of 150 takes precedence over the rule that has an order of 250. Allowed priorities are 150 to 3500. If any reserved or duplicate values are provided the request fails with HTTP status code 400.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: FormControl<number | null | undefined>,
 
@@ -2264,7 +2368,10 @@ export namespace MyNS {
 		/** Required */
 		poolInfo: PoolInformation;
 
-		/** Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. */
+		/**
+		 * Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 		usesTaskDependencies?: boolean | null;
 	}
@@ -2294,7 +2401,10 @@ export namespace MyNS {
 		 */
 		onTaskFailure: FormControl<CloudJobOnTaskFailure | null | undefined>,
 
-		/** Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. */
+		/**
+		 * Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 		usesTaskDependencies: FormControl<boolean | null | undefined>,
 	}
@@ -2312,7 +2422,10 @@ export namespace MyNS {
 
 	export interface JobConstraints {
 
-		/** Note that this value specifically controls the number of retries. The Batch service will try each task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries a task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry tasks. If the maximum retry count is -1, the Batch service retries tasks without limit. The default value is 0 (no retries). */
+		/**
+		 * Note that this value specifically controls the number of retries. The Batch service will try each task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries a task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry tasks. If the maximum retry count is -1, the Batch service retries tasks without limit. The default value is 0 (no retries).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount?: number | null;
 
 		/** If the job does not complete within the time limit, the Batch service terminates it and any tasks that are still running. In this case, the termination reason will be MaxWallClockTimeExpiry. If this property is not specified, there is no time limit on how long the job may run. */
@@ -2320,7 +2433,10 @@ export namespace MyNS {
 	}
 	export interface JobConstraintsFormProperties {
 
-		/** Note that this value specifically controls the number of retries. The Batch service will try each task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries a task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry tasks. If the maximum retry count is -1, the Batch service retries tasks without limit. The default value is 0 (no retries). */
+		/**
+		 * Note that this value specifically controls the number of retries. The Batch service will try each task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries a task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry tasks. If the maximum retry count is -1, the Batch service retries tasks without limit. The default value is 0 (no retries).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount: FormControl<number | null | undefined>,
 
 		/** If the job does not complete within the time limit, the Batch service terminates it and any tasks that are still running. In this case, the termination reason will be MaxWallClockTimeExpiry. If this property is not specified, there is no time limit on how long the job may run. */
@@ -2507,7 +2623,10 @@ export namespace MyNS {
 		onAllTasksComplete?: CloudJobOnAllTasksComplete | null;
 		poolInfo?: PoolInformation;
 
-		/** Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged. */
+		/**
+		 * Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 	}
 	export interface JobPatchParameterFormProperties {
@@ -2519,7 +2638,10 @@ export namespace MyNS {
 		 */
 		onAllTasksComplete: FormControl<CloudJobOnAllTasksComplete | null | undefined>,
 
-		/** Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged. */
+		/**
+		 * Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, the priority of the job is left unchanged.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateJobPatchParameterFormGroup() {
@@ -2591,7 +2713,10 @@ export namespace MyNS {
 		/** This property is set only if the task is in the Completed state. */
 		endTime?: Date | null;
 
-		/** This parameter is returned only if the task is in the completed state. The exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. Note that the exit code may also be generated by the compute node operating system, such as when a process is forcibly terminated. */
+		/**
+		 * This parameter is returned only if the task is in the completed state. The exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. Note that the exit code may also be generated by the compute node operating system, such as when a process is forcibly terminated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 		failureInfo?: TaskFailureInformation;
 
@@ -2608,6 +2733,7 @@ export namespace MyNS {
 		/**
 		 * Task application failures (non-zero exit code) are retried, pre-processing errors (the task could not be run) and file upload errors are not retried. The Batch service will retry the task up to the limit specified by the constraints.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: number;
 
@@ -2632,7 +2758,10 @@ export namespace MyNS {
 		/** This property is set only if the task is in the Completed state. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** This parameter is returned only if the task is in the completed state. The exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. Note that the exit code may also be generated by the compute node operating system, such as when a process is forcibly terminated. */
+		/**
+		 * This parameter is returned only if the task is in the completed state. The exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. Note that the exit code may also be generated by the compute node operating system, such as when a process is forcibly terminated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** This property is set only if the task was retried (i.e. retryCount is nonzero). If present, this is typically the same as startTime, but may be different if the task has been restarted for reasons other than retry; for example, if the compute node was rebooted during a retry, then the startTime is updated but the lastRetryTime is not. */
@@ -2648,6 +2777,7 @@ export namespace MyNS {
 		/**
 		 * Task application failures (non-zero exit code) are retried, pre-processing errors (the task could not be run) and file upload errors are not retried. The Batch service will retry the task up to the limit specified by the constraints.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: FormControl<number | null | undefined>,
 
@@ -2740,7 +2870,10 @@ export namespace MyNS {
 		/** This property is set only if the task is in the Completed state. */
 		endTime?: Date | null;
 
-		/** This parameter is returned only if the task is in the completed state. The exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. Note that the exit code may also be generated by the compute node operating system, such as when a process is forcibly terminated. */
+		/**
+		 * This parameter is returned only if the task is in the completed state. The exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. Note that the exit code may also be generated by the compute node operating system, such as when a process is forcibly terminated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 		failureInfo?: TaskFailureInformation;
 
@@ -2772,7 +2905,10 @@ export namespace MyNS {
 		/** This property is set only if the task is in the Completed state. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** This parameter is returned only if the task is in the completed state. The exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. Note that the exit code may also be generated by the compute node operating system, such as when a process is forcibly terminated. */
+		/**
+		 * This parameter is returned only if the task is in the completed state. The exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. Note that the exit code may also be generated by the compute node operating system, such as when a process is forcibly terminated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/**
@@ -2909,20 +3045,35 @@ export namespace MyNS {
 		/** Required */
 		lastUpdateTime: Date;
 
-		/** Required */
-		numFailedTasks: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numFailedTasks: string;
 
-		/** Required */
-		numSucceededTasks: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numSucceededTasks: string;
 
-		/** Required */
-		numTaskRetries: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numTaskRetries: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		readIOGiB: number;
 
-		/** Required */
-		readIOps: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		readIOps: string;
 
 		/** Required */
 		startTime: Date;
@@ -2945,11 +3096,17 @@ export namespace MyNS {
 		 */
 		wallClockTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		writeIOGiB: number;
 
-		/** Required */
-		writeIOps: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		writeIOps: string;
 	}
 	export interface JobScheduleStatisticsFormProperties {
 
@@ -2959,20 +3116,35 @@ export namespace MyNS {
 		/** Required */
 		lastUpdateTime: FormControl<Date | null | undefined>,
 
-		/** Required */
-		numFailedTasks: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numFailedTasks: FormControl<string | null | undefined>,
 
-		/** Required */
-		numSucceededTasks: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numSucceededTasks: FormControl<string | null | undefined>,
 
-		/** Required */
-		numTaskRetries: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numTaskRetries: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		readIOGiB: FormControl<number | null | undefined>,
 
-		/** Required */
-		readIOps: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		readIOps: FormControl<string | null | undefined>,
 
 		/** Required */
 		startTime: FormControl<Date | null | undefined>,
@@ -2995,28 +3167,34 @@ export namespace MyNS {
 		 */
 		wallClockTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		writeIOGiB: FormControl<number | null | undefined>,
 
-		/** Required */
-		writeIOps: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		writeIOps: FormControl<string | null | undefined>,
 	}
 	export function CreateJobScheduleStatisticsFormGroup() {
 		return new FormGroup<JobScheduleStatisticsFormProperties>({
 			kernelCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			numFailedTasks: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			numSucceededTasks: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			numTaskRetries: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			numFailedTasks: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			numSucceededTasks: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			numTaskRetries: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			readIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			readIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			readIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			waitTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			wallClockTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			writeIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			writeIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			writeIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3103,7 +3281,10 @@ export namespace MyNS {
 		/** Required */
 		poolInfo: PoolInformation;
 
-		/** Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. This priority is used as the default for all jobs under the job schedule. You can update a job's priority after it has been created using by using the update job API. */
+		/**
+		 * Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. This priority is used as the default for all jobs under the job schedule. You can update a job's priority after it has been created using by using the update job API.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 		usesTaskDependencies?: boolean | null;
 	}
@@ -3127,7 +3308,10 @@ export namespace MyNS {
 		 */
 		onTaskFailure: FormControl<CloudJobOnTaskFailure | null | undefined>,
 
-		/** Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. This priority is used as the default for all jobs under the job schedule. You can update a job's priority after it has been created using by using the update job API. */
+		/**
+		 * Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. This priority is used as the default for all jobs under the job schedule. You can update a job's priority after it has been created using by using the update job API.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 		usesTaskDependencies: FormControl<boolean | null | undefined>,
 	}
@@ -3166,23 +3350,34 @@ export namespace MyNS {
 		/**
 		 * A task fails if it exhausts its maximum retry count without returning exit code 0.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numFailedTasks: number;
+		numFailedTasks: string;
 
 		/**
 		 * A task completes successfully if it returns exit code 0.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numSucceededTasks: number;
+		numSucceededTasks: string;
 
-		/** Required */
-		numTaskRetries: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numTaskRetries: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		readIOGiB: number;
 
-		/** Required */
-		readIOps: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		readIOps: string;
 
 		/** Required */
 		startTime: Date;
@@ -3205,11 +3400,17 @@ export namespace MyNS {
 		 */
 		wallClockTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		writeIOGiB: number;
 
-		/** Required */
-		writeIOps: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		writeIOps: string;
 	}
 	export interface JobStatisticsFormProperties {
 
@@ -3222,23 +3423,34 @@ export namespace MyNS {
 		/**
 		 * A task fails if it exhausts its maximum retry count without returning exit code 0.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numFailedTasks: FormControl<number | null | undefined>,
+		numFailedTasks: FormControl<string | null | undefined>,
 
 		/**
 		 * A task completes successfully if it returns exit code 0.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		numSucceededTasks: FormControl<number | null | undefined>,
+		numSucceededTasks: FormControl<string | null | undefined>,
 
-		/** Required */
-		numTaskRetries: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numTaskRetries: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		readIOGiB: FormControl<number | null | undefined>,
 
-		/** Required */
-		readIOps: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		readIOps: FormControl<string | null | undefined>,
 
 		/** Required */
 		startTime: FormControl<Date | null | undefined>,
@@ -3261,28 +3473,34 @@ export namespace MyNS {
 		 */
 		wallClockTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		writeIOGiB: FormControl<number | null | undefined>,
 
-		/** Required */
-		writeIOps: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		writeIOps: FormControl<string | null | undefined>,
 	}
 	export function CreateJobStatisticsFormGroup() {
 		return new FormGroup<JobStatisticsFormProperties>({
 			kernelCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			numFailedTasks: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			numSucceededTasks: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			numTaskRetries: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			numFailedTasks: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			numSucceededTasks: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			numTaskRetries: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			readIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			readIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			readIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			waitTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			wallClockTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			writeIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			writeIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			writeIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3316,7 +3534,10 @@ export namespace MyNS {
 		/** Required */
 		poolInfo: PoolInformation;
 
-		/** Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, it is set to the default value 0. */
+		/**
+		 * Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, it is set to the default value 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 	}
 	export interface JobUpdateParameterFormProperties {
@@ -3328,7 +3549,10 @@ export namespace MyNS {
 		 */
 		onAllTasksComplete: FormControl<CloudJobOnAllTasksComplete | null | undefined>,
 
-		/** Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, it is set to the default value 0. */
+		/**
+		 * Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. If omitted, it is set to the default value 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateJobUpdateParameterFormGroup() {
@@ -3341,24 +3565,36 @@ export namespace MyNS {
 
 	export interface LinuxUserConfiguration {
 
-		/** The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the gid. */
+		/**
+		 * The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the gid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gid?: number | null;
 
 		/** The private key must not be password protected. The private key is used to automatically configure asymmetric-key based authentication for SSH between nodes in a Linux pool when the pool's enableInterNodeCommunication property is true (it is ignored if enableInterNodeCommunication is false). It does this by placing the key pair into the user's .ssh directory. If not specified, password-less SSH is not configured between nodes (no modification of the user's .ssh directory is done). */
 		sshPrivateKey?: string | null;
 
-		/** The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the uid. */
+		/**
+		 * The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the uid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uid?: number | null;
 	}
 	export interface LinuxUserConfigurationFormProperties {
 
-		/** The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the gid. */
+		/**
+		 * The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the gid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gid: FormControl<number | null | undefined>,
 
 		/** The private key must not be password protected. The private key is used to automatically configure asymmetric-key based authentication for SSH between nodes in a Linux pool when the pool's enableInterNodeCommunication property is true (it is ignored if enableInterNodeCommunication is false). It does this by placing the key pair into the user's .ssh directory. If not specified, password-less SSH is not configured between nodes (no modification of the user's .ssh directory is done). */
 		sshPrivateKey: FormControl<string | null | undefined>,
 
-		/** The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the uid. */
+		/**
+		 * The uid and gid properties must be specified together or not at all. If not specified the underlying operating system picks the uid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uid: FormControl<number | null | undefined>,
 	}
 	export function CreateLinuxUserConfigurationFormGroup() {
@@ -3380,7 +3616,10 @@ export namespace MyNS {
 		/** A typical coordination command line launches a background service and verifies that the service is ready to process inter-node messages. */
 		coordinationCommandLine?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfInstances: number;
 	}
 
@@ -3390,7 +3629,10 @@ export namespace MyNS {
 		/** A typical coordination command line launches a background service and verifies that the service is ready to process inter-node messages. */
 		coordinationCommandLine: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfInstances: FormControl<number | null | undefined>,
 	}
 	export function CreateMultiInstanceSettingsFormGroup() {
@@ -3789,7 +4031,10 @@ export namespace MyNS {
 		 */
 		id: string;
 
-		/** The default value is 1. The maximum value of this setting depends on the size of the compute nodes in the pool (the vmSize setting). */
+		/**
+		 * The default value is 1. The maximum value of this setting depends on the size of the compute nodes in the pool (the vmSize setting).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode?: number | null;
 
 		/** The Batch service does not assign any meaning to metadata; it is solely for the use of user code. */
@@ -3802,10 +4047,16 @@ export namespace MyNS {
 		resizeTimeout?: string | null;
 		startTask?: StartTask;
 
-		/** This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both. */
+		/**
+		 * This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicatedNodes?: number | null;
 
-		/** This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both. */
+		/**
+		 * This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetLowPriorityNodes?: number | null;
 		taskSchedulingPolicy?: TaskSchedulingPolicy;
 		userAccounts?: Array<UserAccount>;
@@ -3840,16 +4091,25 @@ export namespace MyNS {
 		 */
 		id: FormControl<string | null | undefined>,
 
-		/** The default value is 1. The maximum value of this setting depends on the size of the compute nodes in the pool (the vmSize setting). */
+		/**
+		 * The default value is 1. The maximum value of this setting depends on the size of the compute nodes in the pool (the vmSize setting).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode: FormControl<number | null | undefined>,
 
 		/** This timeout applies only to manual scaling; it has no effect when enableAutoScale is set to true. The default value is 15 minutes. The minimum value is 5 minutes. If you specify a value less than 5 minutes, the Batch service returns an error; if you are calling the REST API directly, the HTTP status code is 400 (Bad Request). */
 		resizeTimeout: FormControl<string | null | undefined>,
 
-		/** This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both. */
+		/**
+		 * This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicatedNodes: FormControl<number | null | undefined>,
 
-		/** This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both. */
+		/**
+		 * This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetLowPriorityNodes: FormControl<number | null | undefined>,
 
 		/**
@@ -3972,10 +4232,16 @@ export namespace MyNS {
 
 	export interface PoolUsageMetrics {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		dataEgressGiB: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		dataIngressGiB: number;
 
 		/** Required */
@@ -3987,7 +4253,10 @@ export namespace MyNS {
 		/** Required */
 		startTime: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		totalCoreHours: number;
 
 		/**
@@ -3998,10 +4267,16 @@ export namespace MyNS {
 	}
 	export interface PoolUsageMetricsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		dataEgressGiB: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		dataIngressGiB: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4013,7 +4288,10 @@ export namespace MyNS {
 		/** Required */
 		startTime: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		totalCoreHours: FormControl<number | null | undefined>,
 
 		/**
@@ -4069,7 +4347,11 @@ export namespace MyNS {
 
 		/** The default value is 15 minutes. The minimum value is 5 minutes. If you specify a value less than 5 minutes, the Batch service returns an error; if you are calling the REST API directly, the HTTP status code is 400 (Bad Request). */
 		resizeTimeout?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetDedicatedNodes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetLowPriorityNodes?: number | null;
 	}
 	export interface PoolResizeParameterFormProperties {
@@ -4086,7 +4368,11 @@ export namespace MyNS {
 
 		/** The default value is 15 minutes. The minimum value is 5 minutes. If you specify a value less than 5 minutes, the Batch service returns an error; if you are calling the REST API directly, the HTTP status code is 400 (Bad Request). */
 		resizeTimeout: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetDedicatedNodes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targetLowPriorityNodes: FormControl<number | null | undefined>,
 	}
 	export function CreatePoolResizeParameterFormGroup() {
@@ -4124,7 +4410,10 @@ export namespace MyNS {
 		/** Enabling inter-node communication limits the maximum size of the pool due to deployment restrictions on the nodes of the pool. This may result in the pool not reaching its desired size. The default value is false. */
 		enableInterNodeCommunication?: boolean | null;
 
-		/** The default value is 1. The maximum value of this setting depends on the size of the compute nodes in the pool (the vmSize setting). */
+		/**
+		 * The default value is 1. The maximum value of this setting depends on the size of the compute nodes in the pool (the vmSize setting).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode?: number | null;
 
 		/** The Batch service does not assign any meaning to metadata; it is solely for the use of user code. */
@@ -4137,10 +4426,16 @@ export namespace MyNS {
 		resizeTimeout?: string | null;
 		startTask?: StartTask;
 
-		/** This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both. */
+		/**
+		 * This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicatedNodes?: number | null;
 
-		/** This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both. */
+		/**
+		 * This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetLowPriorityNodes?: number | null;
 		taskSchedulingPolicy?: TaskSchedulingPolicy;
 		userAccounts?: Array<UserAccount>;
@@ -4169,16 +4464,25 @@ export namespace MyNS {
 		/** Enabling inter-node communication limits the maximum size of the pool due to deployment restrictions on the nodes of the pool. This may result in the pool not reaching its desired size. The default value is false. */
 		enableInterNodeCommunication: FormControl<boolean | null | undefined>,
 
-		/** The default value is 1. The maximum value of this setting depends on the size of the compute nodes in the pool (the vmSize setting). */
+		/**
+		 * The default value is 1. The maximum value of this setting depends on the size of the compute nodes in the pool (the vmSize setting).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTasksPerNode: FormControl<number | null | undefined>,
 
 		/** This timeout applies only to manual scaling; it has no effect when enableAutoScale is set to true. The default value is 15 minutes. The minimum value is 5 minutes. If you specify a value less than 5 minutes, the Batch service rejects the request with an error; if you are calling the REST API directly, the HTTP status code is 400 (Bad Request). */
 		resizeTimeout: FormControl<string | null | undefined>,
 
-		/** This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both. */
+		/**
+		 * This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetDedicatedNodes: FormControl<number | null | undefined>,
 
-		/** This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both. */
+		/**
+		 * This property must not be specified if enableAutoScale is set to true. If enableAutoScale is set to false, then you must set either targetDedicatedNodes, targetLowPriorityNodes, or both.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetLowPriorityNodes: FormControl<number | null | undefined>,
 
 		/**
@@ -4300,40 +4604,73 @@ export namespace MyNS {
 
 	export interface ResourceStatistics {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		avgCPUPercentage: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		avgDiskGiB: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		avgMemoryGiB: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		diskReadGiB: number;
 
-		/** Required */
-		diskReadIOps: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskReadIOps: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		diskWriteGiB: number;
 
-		/** Required */
-		diskWriteIOps: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskWriteIOps: string;
 
 		/** Required */
 		lastUpdateTime: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		networkReadGiB: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		networkWriteGiB: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		peakDiskGiB: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		peakMemoryGiB: number;
 
 		/** Required */
@@ -4341,40 +4678,73 @@ export namespace MyNS {
 	}
 	export interface ResourceStatisticsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		avgCPUPercentage: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		avgDiskGiB: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		avgMemoryGiB: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		diskReadGiB: FormControl<number | null | undefined>,
 
-		/** Required */
-		diskReadIOps: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskReadIOps: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		diskWriteGiB: FormControl<number | null | undefined>,
 
-		/** Required */
-		diskWriteIOps: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskWriteIOps: FormControl<string | null | undefined>,
 
 		/** Required */
 		lastUpdateTime: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		networkReadGiB: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		networkWriteGiB: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		peakDiskGiB: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		peakMemoryGiB: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4386,9 +4756,9 @@ export namespace MyNS {
 			avgDiskGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			avgMemoryGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			diskReadGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			diskReadIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			diskReadIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			diskWriteGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			diskWriteIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			diskWriteIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			networkReadGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			networkWriteGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -4446,7 +4816,10 @@ export namespace MyNS {
 		commandLine: string;
 		environmentSettings?: Array<EnvironmentSetting>;
 
-		/** The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit. */
+		/**
+		 * The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount?: number | null;
 
 		/** Files listed under this element are located in the task's working directory. */
@@ -4466,7 +4839,10 @@ export namespace MyNS {
 		 */
 		commandLine: FormControl<string | null | undefined>,
 
-		/** The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit. */
+		/**
+		 * The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount: FormControl<number | null | undefined>,
 
 		/** If true and the start task fails on a compute node, the Batch service retries the start task up to its maximum retry count (maxTaskRetryCount). If the task has still not completed successfully after all retries, then the Batch service marks the compute node unusable, and will not schedule tasks to it. This condition can be detected via the node state and failure info details. If false, the Batch service will not wait for the start task to complete. In this case, other tasks can start executing on the compute node while the start task is still running; and even if the start task fails, new tasks will continue to be scheduled on the node. The default is false. */
@@ -4486,7 +4862,10 @@ export namespace MyNS {
 		/** This is the end time of the most recent run of the start task, if that run has completed (even if that run failed and a retry is pending). This element is not present if the start task is currently running. */
 		endTime?: Date | null;
 
-		/** This property is set only if the start task is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the start task (due to timeout, or user termination via the API) you may see an operating system-defined exit code. */
+		/**
+		 * This property is set only if the start task is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the start task (due to timeout, or user termination via the API) you may see an operating system-defined exit code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 		failureInfo?: TaskFailureInformation;
 
@@ -4503,6 +4882,7 @@ export namespace MyNS {
 		/**
 		 * Task application failures (non-zero exit code) are retried, pre-processing errors (the task could not be run) and file upload errors are not retried. The Batch service will retry the task up to the limit specified by the constraints.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: number;
 
@@ -4525,7 +4905,10 @@ export namespace MyNS {
 		/** This is the end time of the most recent run of the start task, if that run has completed (even if that run failed and a retry is pending). This element is not present if the start task is currently running. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** This property is set only if the start task is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the start task (due to timeout, or user termination via the API) you may see an operating system-defined exit code. */
+		/**
+		 * This property is set only if the start task is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the start task (due to timeout, or user termination via the API) you may see an operating system-defined exit code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** This element is present only if the task was retried (i.e. retryCount is nonzero). If present, this is typically the same as startTime, but may be different if the task has been restarted for reasons other than retry; for example, if the compute node was rebooted during a retry, then the startTime is updated but the lastRetryTime is not. */
@@ -4541,6 +4924,7 @@ export namespace MyNS {
 		/**
 		 * Task application failures (non-zero exit code) are retried, pre-processing errors (the task could not be run) and file upload errors are not retried. The Batch service will retry the task up to the limit specified by the constraints.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: FormControl<number | null | undefined>,
 
@@ -4726,7 +5110,10 @@ export namespace MyNS {
 
 	export interface TaskConstraints {
 
-		/** Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit. */
+		/**
+		 * Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount?: number | null;
 
 		/** If this is not specified, there is no time limit on how long the task may run. */
@@ -4737,7 +5124,10 @@ export namespace MyNS {
 	}
 	export interface TaskConstraintsFormProperties {
 
-		/** Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit. */
+		/**
+		 * Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTaskRetryCount: FormControl<number | null | undefined>,
 
 		/** If this is not specified, there is no time limit on how long the task may run. */
@@ -4757,19 +5147,34 @@ export namespace MyNS {
 
 	export interface TaskCounts {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completed: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		running: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		succeeded: number;
 
 		/**
@@ -4780,19 +5185,34 @@ export namespace MyNS {
 	}
 	export interface TaskCountsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completed: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		running: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		succeeded: FormControl<number | null | undefined>,
 
 		/**
@@ -4833,20 +5253,32 @@ export namespace MyNS {
 	/** The start and end of the range are inclusive. For example, if a range has start 9 and end 12, then it represents tasks '9', '10', '11' and '12'. */
 	export interface TaskIdRange {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: number;
 	}
 
 	/** The start and end of the range are inclusive. For example, if a range has start 9 and end 12, then it represents tasks '9', '10', '11' and '12'. */
 	export interface TaskIdRangeFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateTaskIdRangeFormGroup() {
@@ -4862,7 +5294,10 @@ export namespace MyNS {
 		/** This property is set only if the task is in the Completed state. */
 		endTime?: Date | null;
 
-		/** This property is set only if the task is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the task (due to timeout, or user termination via the API) you may see an operating system-defined exit code. */
+		/**
+		 * This property is set only if the task is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the task (due to timeout, or user termination via the API) you may see an operating system-defined exit code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 		failureInfo?: TaskFailureInformation;
 
@@ -4875,6 +5310,7 @@ export namespace MyNS {
 		/**
 		 * When the user removes nodes from a pool (by resizing/shrinking the pool) or when the job is being disabled, the user can specify that running tasks on the nodes be requeued for execution. This count tracks how many times the task has been requeued for these reasons.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		requeueCount: number;
 
@@ -4888,6 +5324,7 @@ export namespace MyNS {
 		/**
 		 * Task application failures (non-zero exit code) are retried, pre-processing errors (the task could not be run) and file upload errors are not retried. The Batch service will retry the task up to the limit specified by the constraints.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: number;
 
@@ -4899,7 +5336,10 @@ export namespace MyNS {
 		/** This property is set only if the task is in the Completed state. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** This property is set only if the task is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the task (due to timeout, or user termination via the API) you may see an operating system-defined exit code. */
+		/**
+		 * This property is set only if the task is in the completed state. In general, the exit code for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process. However, if the Batch service terminates the task (due to timeout, or user termination via the API) you may see an operating system-defined exit code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** This property is set only if the requeueCount is nonzero. */
@@ -4911,6 +5351,7 @@ export namespace MyNS {
 		/**
 		 * When the user removes nodes from a pool (by resizing/shrinking the pool) or when the job is being disabled, the user can specify that running tasks on the nodes be requeued for execution. This count tracks how many times the task has been requeued for these reasons.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		requeueCount: FormControl<number | null | undefined>,
 
@@ -4924,6 +5365,7 @@ export namespace MyNS {
 		/**
 		 * Task application failures (non-zero exit code) are retried, pre-processing errors (the task could not be run) and file upload errors are not retried. The Batch service will retry the task up to the limit specified by the constraints.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retryCount: FormControl<number | null | undefined>,
 
@@ -5013,11 +5455,17 @@ export namespace MyNS {
 		/** Required */
 		lastUpdateTime: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		readIOGiB: number;
 
-		/** Required */
-		readIOps: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		readIOps: string;
 
 		/** Required */
 		startTime: Date;
@@ -5037,11 +5485,17 @@ export namespace MyNS {
 		 */
 		wallClockTime: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		writeIOGiB: number;
 
-		/** Required */
-		writeIOps: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		writeIOps: string;
 	}
 	export interface TaskStatisticsFormProperties {
 
@@ -5051,11 +5505,17 @@ export namespace MyNS {
 		/** Required */
 		lastUpdateTime: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		readIOGiB: FormControl<number | null | undefined>,
 
-		/** Required */
-		readIOps: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		readIOps: FormControl<string | null | undefined>,
 
 		/** Required */
 		startTime: FormControl<Date | null | undefined>,
@@ -5075,25 +5535,31 @@ export namespace MyNS {
 		 */
 		wallClockTime: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		writeIOGiB: FormControl<number | null | undefined>,
 
-		/** Required */
-		writeIOps: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		writeIOps: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskStatisticsFormGroup() {
 		return new FormGroup<TaskStatisticsFormProperties>({
 			kernelCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			readIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			readIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			readIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			userCPUTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			waitTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			wallClockTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			writeIOGiB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			writeIOps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			writeIOps: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -109,7 +109,10 @@ export namespace MyNS {
 		/** The state of the managed instance. */
 		state?: string | null;
 
-		/** Storage size in GB. Minimum value: 32. Maximum value: 8192. Increments of 32 GB allowed only. */
+		/**
+		 * Storage size in GB. Minimum value: 32. Maximum value: 8192. Increments of 32 GB allowed only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		storageSizeInGB?: number | null;
 
 		/** Subnet resource ID for the managed instance. */
@@ -125,7 +128,10 @@ export namespace MyNS {
 		 */
 		timezoneId?: string | null;
 
-		/** The number of vCores. Allowed values: 8, 16, 24, 32, 40, 64, 80. */
+		/**
+		 * The number of vCores. Allowed values: 8, 16, 24, 32, 40, 64, 80.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vCores?: number | null;
 	}
 
@@ -178,7 +184,10 @@ export namespace MyNS {
 		/** The state of the managed instance. */
 		state: FormControl<string | null | undefined>,
 
-		/** Storage size in GB. Minimum value: 32. Maximum value: 8192. Increments of 32 GB allowed only. */
+		/**
+		 * Storage size in GB. Minimum value: 32. Maximum value: 8192. Increments of 32 GB allowed only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		storageSizeInGB: FormControl<number | null | undefined>,
 
 		/** Subnet resource ID for the managed instance. */
@@ -194,7 +203,10 @@ export namespace MyNS {
 		 */
 		timezoneId: FormControl<string | null | undefined>,
 
-		/** The number of vCores. Allowed values: 8, 16, 24, 32, 40, 64, 80. */
+		/**
+		 * The number of vCores. Allowed values: 8, 16, 24, 32, 40, 64, 80.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vCores: FormControl<number | null | undefined>,
 	}
 	export function CreateManagedInstancePropertiesFormGroup() {
@@ -229,7 +241,10 @@ export namespace MyNS {
 
 	export interface ManagedInstanceSku {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -249,7 +264,10 @@ export namespace MyNS {
 	}
 	export interface ManagedInstanceSkuFormProperties {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -331,7 +349,10 @@ export namespace MyNS {
 
 	export interface ManagedInstanceUpdateSku {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -351,7 +372,10 @@ export namespace MyNS {
 	}
 	export interface ManagedInstanceUpdateSkuFormProperties {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */

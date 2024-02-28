@@ -30,11 +30,17 @@ export namespace MyNS {
 		/** Metadata related to the MAC pool. */
 		metadata?: {[id: string]: string };
 
-		/** Number of MAC addresses allocated. */
-		numberOfAllocatedMacAddresses?: number | null;
+		/**
+		 * Number of MAC addresses allocated.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfAllocatedMacAddresses?: string | null;
 
-		/** Number of MAC addresses available. */
-		numberOfAvailableMacAddresses?: number | null;
+		/**
+		 * Number of MAC addresses available.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfAvailableMacAddresses?: string | null;
 
 		/** Starting MAC address. */
 		startMacAddress?: string | null;
@@ -49,11 +55,17 @@ export namespace MyNS {
 		/** Metadata related to the MAC pool. */
 		metadata: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Number of MAC addresses allocated. */
-		numberOfAllocatedMacAddresses: FormControl<number | null | undefined>,
+		/**
+		 * Number of MAC addresses allocated.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfAllocatedMacAddresses: FormControl<string | null | undefined>,
 
-		/** Number of MAC addresses available. */
-		numberOfAvailableMacAddresses: FormControl<number | null | undefined>,
+		/**
+		 * Number of MAC addresses available.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfAvailableMacAddresses: FormControl<string | null | undefined>,
 
 		/** Starting MAC address. */
 		startMacAddress: FormControl<string | null | undefined>,
@@ -62,8 +74,8 @@ export namespace MyNS {
 		return new FormGroup<MacAddressPoolModelFormProperties>({
 			endMacAddress: new FormControl<string | null | undefined>(undefined),
 			metadata: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			numberOfAllocatedMacAddresses: new FormControl<number | null | undefined>(undefined),
-			numberOfAvailableMacAddresses: new FormControl<number | null | undefined>(undefined),
+			numberOfAllocatedMacAddresses: new FormControl<string | null | undefined>(undefined),
+			numberOfAvailableMacAddresses: new FormControl<string | null | undefined>(undefined),
 			startMacAddress: new FormControl<string | null | undefined>(undefined),
 		});
 

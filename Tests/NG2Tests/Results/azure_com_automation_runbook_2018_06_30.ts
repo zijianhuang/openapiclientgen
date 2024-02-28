@@ -227,7 +227,10 @@ export namespace MyNS {
 		/** Required */
 		draft: RunbookDraft;
 
-		/** Gets or sets the activity-level tracing options of the runbook. */
+		/**
+		 * Gets or sets the activity-level tracing options of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logActivityTrace?: number | null;
 
 		/** Gets or sets progress log option. */
@@ -249,7 +252,10 @@ export namespace MyNS {
 		/** Gets or sets the description of the runbook. */
 		description: FormControl<string | null | undefined>,
 
-		/** Gets or sets the activity-level tracing options of the runbook. */
+		/**
+		 * Gets or sets the activity-level tracing options of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logActivityTrace: FormControl<number | null | undefined>,
 
 		/** Gets or sets progress log option. */
@@ -326,7 +332,10 @@ export namespace MyNS {
 		description?: string | null;
 		draft?: RunbookDraft;
 
-		/** Gets or sets the activity-level tracing options of the runbook. */
+		/**
+		 * Gets or sets the activity-level tracing options of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logActivityTrace?: number | null;
 
 		/** Gets or sets progress log option. */
@@ -351,7 +360,10 @@ export namespace MyNS {
 		/** Gets or sets the description of the runbook. */
 		description: FormControl<string | null | undefined>,
 
-		/** Gets or sets the activity-level tracing options of the runbook. */
+		/**
+		 * Gets or sets the activity-level tracing options of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logActivityTrace: FormControl<number | null | undefined>,
 
 		/** Gets or sets progress log option. */
@@ -477,7 +489,10 @@ export namespace MyNS {
 		/** Gets or sets a Boolean value to indicate whether the parameter is mandatory or not. */
 		isMandatory?: boolean | null;
 
-		/** Get or sets the position of the parameter. */
+		/**
+		 * Get or sets the position of the parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 
 		/** Gets or sets the type of the parameter. */
@@ -493,7 +508,10 @@ export namespace MyNS {
 		/** Gets or sets a Boolean value to indicate whether the parameter is mandatory or not. */
 		isMandatory: FormControl<boolean | null | undefined>,
 
-		/** Get or sets the position of the parameter. */
+		/**
+		 * Get or sets the position of the parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** Gets or sets the type of the parameter. */
@@ -520,7 +538,10 @@ export namespace MyNS {
 		description?: string | null;
 		draft?: RunbookDraft;
 
-		/** Gets or sets the job count of the runbook. */
+		/**
+		 * Gets or sets the job count of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jobCount?: number | null;
 
 		/** Gets or sets the last modified by. */
@@ -529,7 +550,10 @@ export namespace MyNS {
 		/** Gets or sets the last modified time. */
 		lastModifiedTime?: Date | null;
 
-		/** Gets or sets the option to log activity trace of the runbook. */
+		/**
+		 * Gets or sets the option to log activity trace of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logActivityTrace?: number | null;
 
 		/** Gets or sets progress log option. */
@@ -566,7 +590,10 @@ export namespace MyNS {
 		/** Gets or sets the description. */
 		description: FormControl<string | null | undefined>,
 
-		/** Gets or sets the job count of the runbook. */
+		/**
+		 * Gets or sets the job count of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jobCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the last modified by. */
@@ -575,7 +602,10 @@ export namespace MyNS {
 		/** Gets or sets the last modified time. */
 		lastModifiedTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the option to log activity trace of the runbook. */
+		/**
+		 * Gets or sets the option to log activity trace of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logActivityTrace: FormControl<number | null | undefined>,
 
 		/** Gets or sets progress log option. */
@@ -663,7 +693,10 @@ export namespace MyNS {
 		/** Gets or sets the description of the runbook. */
 		description?: string | null;
 
-		/** Gets or sets the activity-level tracing options of the runbook. */
+		/**
+		 * Gets or sets the activity-level tracing options of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logActivityTrace?: number | null;
 
 		/** Gets or sets progress log option. */
@@ -679,7 +712,10 @@ export namespace MyNS {
 		/** Gets or sets the description of the runbook. */
 		description: FormControl<string | null | undefined>,
 
-		/** Gets or sets the activity-level tracing options of the runbook. */
+		/**
+		 * Gets or sets the activity-level tracing options of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logActivityTrace: FormControl<number | null | undefined>,
 
 		/** Gets or sets progress log option. */
@@ -717,7 +753,10 @@ export namespace MyNS {
 		/** Gets or sets the last status modified time of the test job. */
 		lastStatusModifiedTime?: Date | null;
 
-		/** The activity-level tracing options of the runbook. */
+		/**
+		 * The activity-level tracing options of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logActivityTrace?: number | null;
 
 		/** Gets or sets the parameters of the test job. */
@@ -754,7 +793,10 @@ export namespace MyNS {
 		/** Gets or sets the last status modified time of the test job. */
 		lastStatusModifiedTime: FormControl<Date | null | undefined>,
 
-		/** The activity-level tracing options of the runbook. */
+		/**
+		 * The activity-level tracing options of the runbook.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logActivityTrace: FormControl<number | null | undefined>,
 
 		/** Gets or sets the parameters of the test job. */

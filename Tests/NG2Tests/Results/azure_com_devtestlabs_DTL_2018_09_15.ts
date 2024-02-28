@@ -163,14 +163,20 @@ export namespace MyNS {
 	/** Properties of an hourly schedule. */
 	export interface HourDetails {
 
-		/** Minutes of the hour the schedule will run. */
+		/**
+		 * Minutes of the hour the schedule will run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute?: number | null;
 	}
 
 	/** Properties of an hourly schedule. */
 	export interface HourDetailsFormProperties {
 
-		/** Minutes of the hour the schedule will run. */
+		/**
+		 * Minutes of the hour the schedule will run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute: FormControl<number | null | undefined>,
 	}
 	export function CreateHourDetailsFormGroup() {
@@ -193,7 +199,10 @@ export namespace MyNS {
 		/** If notifications are enabled for this schedule (i.e. Enabled, Disabled). */
 		status?: NotificationSettingsStatus | null;
 
-		/** Time in minutes before event at which notification will be sent. */
+		/**
+		 * Time in minutes before event at which notification will be sent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeInMinutes?: number | null;
 
 		/** The webhook URL to which the notification will be sent. */
@@ -212,7 +221,10 @@ export namespace MyNS {
 		/** If notifications are enabled for this schedule (i.e. Enabled, Disabled). */
 		status: FormControl<NotificationSettingsStatus | null | undefined>,
 
-		/** Time in minutes before event at which notification will be sent. */
+		/**
+		 * Time in minutes before event at which notification will be sent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeInMinutes: FormControl<number | null | undefined>,
 
 		/** The webhook URL to which the notification will be sent. */
@@ -388,14 +400,20 @@ export namespace MyNS {
 	/** Properties of an hourly schedule. */
 	export interface HourDetailsFragment {
 
-		/** Minutes of the hour the schedule will run. */
+		/**
+		 * Minutes of the hour the schedule will run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute?: number | null;
 	}
 
 	/** Properties of an hourly schedule. */
 	export interface HourDetailsFragmentFormProperties {
 
-		/** Minutes of the hour the schedule will run. */
+		/**
+		 * Minutes of the hour the schedule will run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute: FormControl<number | null | undefined>,
 	}
 	export function CreateHourDetailsFragmentFormGroup() {
@@ -418,7 +436,10 @@ export namespace MyNS {
 		/** If notifications are enabled for this schedule (i.e. Enabled, Disabled). */
 		status?: NotificationSettingsStatus | null;
 
-		/** Time in minutes before event at which notification will be sent. */
+		/**
+		 * Time in minutes before event at which notification will be sent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeInMinutes?: number | null;
 
 		/** The webhook URL to which the notification will be sent. */
@@ -437,7 +458,10 @@ export namespace MyNS {
 		/** If notifications are enabled for this schedule (i.e. Enabled, Disabled). */
 		status: FormControl<NotificationSettingsStatus | null | undefined>,
 
-		/** Time in minutes before event at which notification will be sent. */
+		/**
+		 * Time in minutes before event at which notification will be sent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeInMinutes: FormControl<number | null | undefined>,
 
 		/** The webhook URL to which the notification will be sent. */
@@ -898,26 +922,38 @@ export namespace MyNS {
 	/** Properties of an artifact deployment. */
 	export interface ArtifactDeploymentStatusProperties {
 
-		/** The total count of the artifacts that were successfully applied. */
+		/**
+		 * The total count of the artifacts that were successfully applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		artifactsApplied?: number | null;
 
 		/** The deployment status of the artifact. */
 		deploymentStatus?: string | null;
 
-		/** The total count of the artifacts that were tentatively applied. */
+		/**
+		 * The total count of the artifacts that were tentatively applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalArtifacts?: number | null;
 	}
 
 	/** Properties of an artifact deployment. */
 	export interface ArtifactDeploymentStatusPropertiesFormProperties {
 
-		/** The total count of the artifacts that were successfully applied. */
+		/**
+		 * The total count of the artifacts that were successfully applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		artifactsApplied: FormControl<number | null | undefined>,
 
 		/** The deployment status of the artifact. */
 		deploymentStatus: FormControl<string | null | undefined>,
 
-		/** The total count of the artifacts that were tentatively applied. */
+		/**
+		 * The total count of the artifacts that were tentatively applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalArtifacts: FormControl<number | null | undefined>,
 	}
 	export function CreateArtifactDeploymentStatusPropertiesFormGroup() {
@@ -933,26 +969,38 @@ export namespace MyNS {
 	/** Properties of an artifact deployment. */
 	export interface ArtifactDeploymentStatusPropertiesFragment {
 
-		/** The total count of the artifacts that were successfully applied. */
+		/**
+		 * The total count of the artifacts that were successfully applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		artifactsApplied?: number | null;
 
 		/** The deployment status of the artifact. */
 		deploymentStatus?: string | null;
 
-		/** The total count of the artifacts that were tentatively applied. */
+		/**
+		 * The total count of the artifacts that were tentatively applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalArtifacts?: number | null;
 	}
 
 	/** Properties of an artifact deployment. */
 	export interface ArtifactDeploymentStatusPropertiesFragmentFormProperties {
 
-		/** The total count of the artifacts that were successfully applied. */
+		/**
+		 * The total count of the artifacts that were successfully applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		artifactsApplied: FormControl<number | null | undefined>,
 
 		/** The deployment status of the artifact. */
 		deploymentStatus: FormControl<string | null | undefined>,
 
-		/** The total count of the artifacts that were tentatively applied. */
+		/**
+		 * The total count of the artifacts that were tentatively applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalArtifacts: FormControl<number | null | undefined>,
 	}
 	export function CreateArtifactDeploymentStatusPropertiesFragmentFormGroup() {
@@ -1327,7 +1375,10 @@ export namespace MyNS {
 		/** The name of the disk to be attached. */
 		diskName?: string | null;
 
-		/** Size of the disk to be attached in GibiBytes. */
+		/**
+		 * Size of the disk to be attached in GibiBytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB?: number | null;
 
 		/** The storage type for the disk (i.e. Standard, Premium). */
@@ -1340,7 +1391,10 @@ export namespace MyNS {
 		/** The name of the disk to be attached. */
 		diskName: FormControl<string | null | undefined>,
 
-		/** Size of the disk to be attached in GibiBytes. */
+		/**
+		 * Size of the disk to be attached in GibiBytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB: FormControl<number | null | undefined>,
 
 		/** The storage type for the disk (i.e. Standard, Premium). */
@@ -1364,7 +1418,10 @@ export namespace MyNS {
 		/** The name of the disk to be attached. */
 		diskName?: string | null;
 
-		/** Size of the disk to be attached in GibiBytes. */
+		/**
+		 * Size of the disk to be attached in GibiBytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB?: number | null;
 
 		/** The storage type for the disk (i.e. Standard, Premium). */
@@ -1377,7 +1434,10 @@ export namespace MyNS {
 		/** The name of the disk to be attached. */
 		diskName: FormControl<string | null | undefined>,
 
-		/** Size of the disk to be attached in GibiBytes. */
+		/**
+		 * Size of the disk to be attached in GibiBytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB: FormControl<number | null | undefined>,
 
 		/** The storage type for the disk (i.e. Standard, Premium). */
@@ -1396,14 +1456,20 @@ export namespace MyNS {
 	/** Parameters for creating multiple virtual machines as a single action. */
 	export interface BulkCreationParameters {
 
-		/** The number of virtual machine instances to create. */
+		/**
+		 * The number of virtual machine instances to create.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instanceCount?: number | null;
 	}
 
 	/** Parameters for creating multiple virtual machines as a single action. */
 	export interface BulkCreationParametersFormProperties {
 
-		/** The number of virtual machine instances to create. */
+		/**
+		 * The number of virtual machine instances to create.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBulkCreationParametersFormGroup() {
@@ -1417,14 +1483,20 @@ export namespace MyNS {
 	/** Parameters for creating multiple virtual machines as a single action. */
 	export interface BulkCreationParametersFragment {
 
-		/** The number of virtual machine instances to create. */
+		/**
+		 * The number of virtual machine instances to create.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instanceCount?: number | null;
 	}
 
 	/** Parameters for creating multiple virtual machines as a single action. */
 	export interface BulkCreationParametersFragmentFormProperties {
 
-		/** The number of virtual machine instances to create. */
+		/**
+		 * The number of virtual machine instances to create.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBulkCreationParametersFragmentFormGroup() {
@@ -1493,7 +1565,10 @@ export namespace MyNS {
 	/** A data disks attached to a virtual machine. */
 	export interface ComputeDataDisk {
 
-		/** Gets data disk size in GiB. */
+		/**
+		 * Gets data disk size in GiB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB?: number | null;
 
 		/** When backed by a blob, the URI of underlying blob. */
@@ -1509,7 +1584,10 @@ export namespace MyNS {
 	/** A data disks attached to a virtual machine. */
 	export interface ComputeDataDiskFormProperties {
 
-		/** Gets data disk size in GiB. */
+		/**
+		 * Gets data disk size in GiB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB: FormControl<number | null | undefined>,
 
 		/** When backed by a blob, the URI of underlying blob. */
@@ -1535,7 +1613,10 @@ export namespace MyNS {
 	/** A data disks attached to a virtual machine. */
 	export interface ComputeDataDiskFragment {
 
-		/** Gets data disk size in GiB. */
+		/**
+		 * Gets data disk size in GiB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB?: number | null;
 
 		/** When backed by a blob, the URI of underlying blob. */
@@ -1551,7 +1632,10 @@ export namespace MyNS {
 	/** A data disks attached to a virtual machine. */
 	export interface ComputeDataDiskFragmentFormProperties {
 
-		/** Gets data disk size in GiB. */
+		/**
+		 * Gets data disk size in GiB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB: FormControl<number | null | undefined>,
 
 		/** When backed by a blob, the URI of underlying blob. */
@@ -1794,14 +1878,20 @@ export namespace MyNS {
 	/** Properties of a percentage cost threshold. */
 	export interface PercentageCostThresholdProperties {
 
-		/** The cost threshold value. */
+		/**
+		 * The cost threshold value.
+		 * Type: double
+		 */
 		thresholdValue?: number | null;
 	}
 
 	/** Properties of a percentage cost threshold. */
 	export interface PercentageCostThresholdPropertiesFormProperties {
 
-		/** The cost threshold value. */
+		/**
+		 * The cost threshold value.
+		 * Type: double
+		 */
 		thresholdValue: FormControl<number | null | undefined>,
 	}
 	export function CreatePercentageCostThresholdPropertiesFormGroup() {
@@ -2497,7 +2587,10 @@ export namespace MyNS {
 		/** When backed by a blob, the name of the VHD blob without extension. */
 		diskBlobName?: string | null;
 
-		/** The size of the disk in GibiBytes. */
+		/**
+		 * The size of the disk in GibiBytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB?: number | null;
 
 		/** The storage type for the disk (i.e. Standard, Premium). */
@@ -2531,7 +2624,10 @@ export namespace MyNS {
 		/** When backed by a blob, the name of the VHD blob without extension. */
 		diskBlobName: FormControl<string | null | undefined>,
 
-		/** The size of the disk in GibiBytes. */
+		/**
+		 * The size of the disk in GibiBytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB: FormControl<number | null | undefined>,
 
 		/** The storage type for the disk (i.e. Standard, Premium). */
@@ -2595,7 +2691,10 @@ export namespace MyNS {
 		/** When backed by a blob, the name of the VHD blob without extension. */
 		diskBlobName?: string | null;
 
-		/** The size of the disk in GibiBytes. */
+		/**
+		 * The size of the disk in GibiBytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB?: number | null;
 
 		/** The storage type for the disk (i.e. Standard, Premium). */
@@ -2620,7 +2719,10 @@ export namespace MyNS {
 		/** When backed by a blob, the name of the VHD blob without extension. */
 		diskBlobName: FormControl<string | null | undefined>,
 
-		/** The size of the disk in GibiBytes. */
+		/**
+		 * The size of the disk in GibiBytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGiB: FormControl<number | null | undefined>,
 
 		/** The storage type for the disk (i.e. Standard, Premium). */
@@ -3589,10 +3691,16 @@ export namespace MyNS {
 	/** A rule for NAT - exposing a VM's port (backendPort) on the public IP address using a load balancer. */
 	export interface InboundNatRule {
 
-		/** The port to which the external traffic will be redirected. */
+		/**
+		 * The port to which the external traffic will be redirected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backendPort?: number | null;
 
-		/** The external endpoint port of the inbound connection. Possible values range between 1 and 65535, inclusive. If unspecified, a value will be allocated automatically. */
+		/**
+		 * The external endpoint port of the inbound connection. Possible values range between 1 and 65535, inclusive. If unspecified, a value will be allocated automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontendPort?: number | null;
 
 		/** The transport protocol for the endpoint. */
@@ -3602,10 +3710,16 @@ export namespace MyNS {
 	/** A rule for NAT - exposing a VM's port (backendPort) on the public IP address using a load balancer. */
 	export interface InboundNatRuleFormProperties {
 
-		/** The port to which the external traffic will be redirected. */
+		/**
+		 * The port to which the external traffic will be redirected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backendPort: FormControl<number | null | undefined>,
 
-		/** The external endpoint port of the inbound connection. Possible values range between 1 and 65535, inclusive. If unspecified, a value will be allocated automatically. */
+		/**
+		 * The external endpoint port of the inbound connection. Possible values range between 1 and 65535, inclusive. If unspecified, a value will be allocated automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontendPort: FormControl<number | null | undefined>,
 
 		/** The transport protocol for the endpoint. */
@@ -4186,10 +4300,16 @@ export namespace MyNS {
 	/** A rule for NAT - exposing a VM's port (backendPort) on the public IP address using a load balancer. */
 	export interface InboundNatRuleFragment {
 
-		/** The port to which the external traffic will be redirected. */
+		/**
+		 * The port to which the external traffic will be redirected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backendPort?: number | null;
 
-		/** The external endpoint port of the inbound connection. Possible values range between 1 and 65535, inclusive. If unspecified, a value will be allocated automatically. */
+		/**
+		 * The external endpoint port of the inbound connection. Possible values range between 1 and 65535, inclusive. If unspecified, a value will be allocated automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontendPort?: number | null;
 
 		/** The transport protocol for the endpoint. */
@@ -4199,10 +4319,16 @@ export namespace MyNS {
 	/** A rule for NAT - exposing a VM's port (backendPort) on the public IP address using a load balancer. */
 	export interface InboundNatRuleFragmentFormProperties {
 
-		/** The port to which the external traffic will be redirected. */
+		/**
+		 * The port to which the external traffic will be redirected.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backendPort: FormControl<number | null | undefined>,
 
-		/** The external endpoint port of the inbound connection. Possible values range between 1 and 65535, inclusive. If unspecified, a value will be allocated automatically. */
+		/**
+		 * The external endpoint port of the inbound connection. Possible values range between 1 and 65535, inclusive. If unspecified, a value will be allocated automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontendPort: FormControl<number | null | undefined>,
 
 		/** The transport protocol for the endpoint. */
@@ -5043,7 +5169,10 @@ export namespace MyNS {
 	/** The properties of a lab cost item. */
 	export interface LabCostDetailsProperties {
 
-		/** The cost component of the cost item. */
+		/**
+		 * The cost component of the cost item.
+		 * Type: double
+		 */
 		cost?: number | null;
 
 		/** The type of the cost. */
@@ -5056,7 +5185,10 @@ export namespace MyNS {
 	/** The properties of a lab cost item. */
 	export interface LabCostDetailsPropertiesFormProperties {
 
-		/** The cost component of the cost item. */
+		/**
+		 * The cost component of the cost item.
+		 * Type: double
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** The type of the cost. */
@@ -5080,14 +5212,20 @@ export namespace MyNS {
 	/** The properties of the cost summary. */
 	export interface LabCostSummaryProperties {
 
-		/** The cost component of the cost item. */
+		/**
+		 * The cost component of the cost item.
+		 * Type: double
+		 */
 		estimatedLabCost?: number | null;
 	}
 
 	/** The properties of the cost summary. */
 	export interface LabCostSummaryPropertiesFormProperties {
 
-		/** The cost component of the cost item. */
+		/**
+		 * The cost component of the cost item.
+		 * Type: double
+		 */
 		estimatedLabCost: FormControl<number | null | undefined>,
 	}
 	export function CreateLabCostSummaryPropertiesFormGroup() {
@@ -5104,7 +5242,10 @@ export namespace MyNS {
 		/** The ID of the external resource */
 		externalResourceId?: string | null;
 
-		/** The cost component of the resource cost item. */
+		/**
+		 * The cost component of the resource cost item.
+		 * Type: double
+		 */
 		resourceCost?: number | null;
 
 		/** The ID of the resource */
@@ -5135,7 +5276,10 @@ export namespace MyNS {
 		/** The ID of the external resource */
 		externalResourceId: FormControl<string | null | undefined>,
 
-		/** The cost component of the resource cost item. */
+		/**
+		 * The cost component of the resource cost item.
+		 * Type: double
+		 */
 		resourceCost: FormControl<number | null | undefined>,
 
 		/** The ID of the resource */
@@ -5193,7 +5337,10 @@ export namespace MyNS {
 		/** Target cost status */
 		status?: NotificationSettingsStatus | null;
 
-		/** Lab target cost */
+		/**
+		 * Lab target cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		target?: number | null;
 	}
 
@@ -5212,7 +5359,10 @@ export namespace MyNS {
 		/** Target cost status */
 		status: FormControl<NotificationSettingsStatus | null | undefined>,
 
-		/** Lab target cost */
+		/**
+		 * Lab target cost
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		target: FormControl<number | null | undefined>,
 	}
 	export function CreateTargetCostPropertiesFormGroup() {
@@ -6428,7 +6578,10 @@ export namespace MyNS {
 	/** Properties of a network port. */
 	export interface Port {
 
-		/** Backend port of the target virtual machine. */
+		/**
+		 * Backend port of the target virtual machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backendPort?: number | null;
 
 		/** Protocol type of the port. */
@@ -6438,7 +6591,10 @@ export namespace MyNS {
 	/** Properties of a network port. */
 	export interface PortFormProperties {
 
-		/** Backend port of the target virtual machine. */
+		/**
+		 * Backend port of the target virtual machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backendPort: FormControl<number | null | undefined>,
 
 		/** Protocol type of the port. */
@@ -6456,7 +6612,10 @@ export namespace MyNS {
 	/** Properties of a network port. */
 	export interface PortFragment {
 
-		/** Backend port of the target virtual machine. */
+		/**
+		 * Backend port of the target virtual machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backendPort?: number | null;
 
 		/** Protocol type of the port. */
@@ -6466,7 +6625,10 @@ export namespace MyNS {
 	/** Properties of a network port. */
 	export interface PortFragmentFormProperties {
 
-		/** Backend port of the target virtual machine. */
+		/**
+		 * Backend port of the target virtual machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backendPort: FormControl<number | null | undefined>,
 
 		/** Protocol type of the port. */

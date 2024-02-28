@@ -43,7 +43,10 @@ export namespace MyNS {
 		/** External reference identifier. */
 		externalReferenceId?: string | null;
 
-		/** Current subscription count. */
+		/**
+		 * Current subscription count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscriptionCount?: number | null;
 	}
 
@@ -65,7 +68,10 @@ export namespace MyNS {
 		/** External reference identifier. */
 		externalReferenceId: FormControl<string | null | undefined>,
 
-		/** Current subscription count. */
+		/**
+		 * Current subscription count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscriptionCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDelegatedProviderOfferPropertiesFormGroup() {

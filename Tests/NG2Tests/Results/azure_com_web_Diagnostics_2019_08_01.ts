@@ -50,7 +50,10 @@ export namespace MyNS {
 		/** Downtime metadata */
 		metaData?: Array<string>;
 
-		/** Represents the rank of the Detector */
+		/**
+		 * Represents the rank of the Detector
+		 * Type: double
+		 */
 		priority?: number | null;
 
 		/** List of proposed solutions */
@@ -75,7 +78,10 @@ export namespace MyNS {
 		/** Message describing the event */
 		message: FormControl<string | null | undefined>,
 
-		/** Represents the rank of the Detector */
+		/**
+		 * Represents the rank of the Detector
+		 * Type: double
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Represents the name of the Detector */
@@ -112,13 +118,19 @@ export namespace MyNS {
 		/** Display Name of the solution */
 		displayName?: string | null;
 
-		/** Solution Id. */
+		/**
+		 * Solution Id.
+		 * Type: double
+		 */
 		id?: number | null;
 
 		/** Solution Metadata. */
 		metadata?: Array<string>;
 
-		/** Order of the solution. */
+		/**
+		 * Order of the solution.
+		 * Type: double
+		 */
 		order?: number | null;
 
 		/** Type of Solution */
@@ -134,10 +146,16 @@ export namespace MyNS {
 		/** Display Name of the solution */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Solution Id. */
+		/**
+		 * Solution Id.
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Order of the solution. */
+		/**
+		 * Order of the solution.
+		 * Type: double
+		 */
 		order: FormControl<number | null | undefined>,
 
 		/** Type of Solution */
@@ -326,10 +344,16 @@ export namespace MyNS {
 		/** Whether the values are aggregates across all workers or not */
 		isAggregated?: boolean | null;
 
-		/** Maximum of the metric sampled during the time period */
+		/**
+		 * Maximum of the metric sampled during the time period
+		 * Type: double
+		 */
 		maximum?: number | null;
 
-		/** Minimum of the metric sampled during the time period */
+		/**
+		 * Minimum of the metric sampled during the time period
+		 * Type: double
+		 */
 		minimum?: number | null;
 
 		/**
@@ -343,7 +367,10 @@ export namespace MyNS {
 		/** Time at which metric is measured */
 		timestamp?: Date | null;
 
-		/** Total value of the metric. If multiple measurements are made this will have sum of all. */
+		/**
+		 * Total value of the metric. If multiple measurements are made this will have sum of all.
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 
@@ -353,10 +380,16 @@ export namespace MyNS {
 		/** Whether the values are aggregates across all workers or not */
 		isAggregated: FormControl<boolean | null | undefined>,
 
-		/** Maximum of the metric sampled during the time period */
+		/**
+		 * Maximum of the metric sampled during the time period
+		 * Type: double
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum of the metric sampled during the time period */
+		/**
+		 * Minimum of the metric sampled during the time period
+		 * Type: double
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/**
@@ -370,7 +403,10 @@ export namespace MyNS {
 		/** Time at which metric is measured */
 		timestamp: FormControl<Date | null | undefined>,
 
-		/** Total value of the metric. If multiple measurements are made this will have sum of all. */
+		/**
+		 * Total value of the metric. If multiple measurements are made this will have sum of all.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateDiagnosticMetricSampleFormGroup() {

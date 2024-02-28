@@ -182,7 +182,10 @@ export namespace MyNS {
 		/** The name of the Azure Storage account. Required on PUT (CreateOrReplace) requests. */
 		accountName?: string | null;
 
-		/** The number of rows to write to the Azure Table at a time. */
+		/**
+		 * The number of rows to write to the Azure Table at a time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize?: number | null;
 
 		/** If specified, each item in the array is the name of a column to remove (if present) from output event entities. */
@@ -207,7 +210,10 @@ export namespace MyNS {
 		/** The name of the Azure Storage account. Required on PUT (CreateOrReplace) requests. */
 		accountName: FormControl<string | null | undefined>,
 
-		/** The number of rows to write to the Azure Table at a time. */
+		/**
+		 * The number of rows to write to the Azure Table at a time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize: FormControl<number | null | undefined>,
 
 		/** This element indicates the name of a column from the SELECT statement in the query that will be used as the partition key for the Azure Table. Required on PUT (CreateOrReplace) requests. */

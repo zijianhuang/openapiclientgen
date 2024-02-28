@@ -667,7 +667,10 @@ export namespace MyNS {
 		/** Trace properties payload */
 		trace?: TraceProperties;
 
-		/** Version of the Service */
+		/**
+		 * Version of the Service
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -680,7 +683,10 @@ export namespace MyNS {
 		/** ServiceInstanceEntity GUID which uniquely identifies a created resource */
 		serviceId: FormControl<string | null | undefined>,
 
-		/** Version of the Service */
+		/**
+		 * Version of the Service
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateClusterResourcePropertiesFormGroup() {

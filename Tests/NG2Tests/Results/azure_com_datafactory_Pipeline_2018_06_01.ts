@@ -3681,7 +3681,10 @@ export namespace MyNS {
 		/** Compute type of the cluster which will execute data flow job. */
 		computeType?: ExecuteDataFlowActivityTypePropertiesComputeComputeType | null;
 
-		/** Core count of the cluster which will execute data flow job. Supported values are: 8, 16, 32, 48, 80, 144 and 272. */
+		/**
+		 * Core count of the cluster which will execute data flow job. Supported values are: 8, 16, 32, 48, 80, 144 and 272.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreCount?: number | null;
 	}
 	export interface ExecuteDataFlowActivityTypePropertiesComputeFormProperties {
@@ -3689,7 +3692,10 @@ export namespace MyNS {
 		/** Compute type of the cluster which will execute data flow job. */
 		computeType: FormControl<ExecuteDataFlowActivityTypePropertiesComputeComputeType | null | undefined>,
 
-		/** Core count of the cluster which will execute data flow job. Supported values are: 8, 16, 32, 48, 80, 144 and 272. */
+		/**
+		 * Core count of the cluster which will execute data flow job. Supported values are: 8, 16, 32, 48, 80, 144 and 272.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreCount: FormControl<number | null | undefined>,
 	}
 	export function CreateExecuteDataFlowActivityTypePropertiesComputeFormGroup() {
@@ -5027,7 +5033,10 @@ export namespace MyNS {
 		/** The HDInsightActivityDebugInfoOption settings to use. */
 		getDebugInfo?: HDInsightActivityDebugInfoOption | null;
 
-		/** Query timeout value (in minutes).  Effective when the HDInsight cluster is with ESP (Enterprise Security Package) */
+		/**
+		 * Query timeout value (in minutes).  Effective when the HDInsight cluster is with ESP (Enterprise Security Package)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queryTimeout?: number | null;
 
 		/** Linked service reference type. */
@@ -5052,7 +5061,10 @@ export namespace MyNS {
 		/** The HDInsightActivityDebugInfoOption settings to use. */
 		getDebugInfo: FormControl<HDInsightActivityDebugInfoOption | null | undefined>,
 
-		/** Query timeout value (in minutes).  Effective when the HDInsight cluster is with ESP (Enterprise Security Package) */
+		/**
+		 * Query timeout value (in minutes).  Effective when the HDInsight cluster is with ESP (Enterprise Security Package)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queryTimeout: FormControl<number | null | undefined>,
 
 		/** Linked service reference type. */
@@ -8626,6 +8638,7 @@ export namespace MyNS {
 		/**
 		 * Duration in seconds.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		waitTimeInSeconds: number;
 	}
@@ -8636,6 +8649,7 @@ export namespace MyNS {
 		/**
 		 * Duration in seconds.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		waitTimeInSeconds: FormControl<number | null | undefined>,
 	}

@@ -204,7 +204,10 @@ export namespace MyNS {
 		phone?: string | null;
 		username?: string | null;
 
-		/** User Status */
+		/**
+		 * User Status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userStatus?: number | null;
 	}
 	export interface UserFormProperties {
@@ -218,7 +221,10 @@ export namespace MyNS {
 		phone: FormControl<string | null | undefined>,
 		username: FormControl<string | null | undefined>,
 
-		/** User Status */
+		/**
+		 * User Status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userStatus: FormControl<number | null | undefined>,
 	}
 	export function CreateUserFormGroup() {

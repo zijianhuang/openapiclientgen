@@ -28,7 +28,10 @@ export namespace MyNS {
 		/** The API key used to authenticate with Request-Response endpoint. */
 		apiKey?: string | null;
 
-		/** Number between 1 and 10000 describing maximum number of rows for every Azure ML RRS execute request. Default is 1000. */
+		/**
+		 * Number between 1 and 10000 describing maximum number of rows for every Azure ML RRS execute request. Default is 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize?: number | null;
 
 		/** The Request-Response execute endpoint of the Azure Machine Learning web service. Find out more here: https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-consume-web-services#request-response-service-rrs */
@@ -47,7 +50,10 @@ export namespace MyNS {
 		/** The API key used to authenticate with Request-Response endpoint. */
 		apiKey: FormControl<string | null | undefined>,
 
-		/** Number between 1 and 10000 describing maximum number of rows for every Azure ML RRS execute request. Default is 1000. */
+		/**
+		 * Number between 1 and 10000 describing maximum number of rows for every Azure ML RRS execute request. Default is 1000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize: FormControl<number | null | undefined>,
 
 		/** The Request-Response execute endpoint of the Azure Machine Learning web service. Find out more here: https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-consume-web-services#request-response-service-rrs */
@@ -145,7 +151,10 @@ export namespace MyNS {
 		/** The (Azure Machine Learning supported) data type of the input column. A list of valid  Azure Machine Learning data types are described at https://msdn.microsoft.com/en-us/library/azure/dn905923.aspx . */
 		dataType?: string | null;
 
-		/** The zero based index of the function parameter this input maps to. */
+		/**
+		 * The zero based index of the function parameter this input maps to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mapTo?: number | null;
 
 		/** The name of the input column. */
@@ -158,7 +167,10 @@ export namespace MyNS {
 		/** The (Azure Machine Learning supported) data type of the input column. A list of valid  Azure Machine Learning data types are described at https://msdn.microsoft.com/en-us/library/azure/dn905923.aspx . */
 		dataType: FormControl<string | null | undefined>,
 
-		/** The zero based index of the function parameter this input maps to. */
+		/**
+		 * The zero based index of the function parameter this input maps to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mapTo: FormControl<number | null | undefined>,
 
 		/** The name of the input column. */

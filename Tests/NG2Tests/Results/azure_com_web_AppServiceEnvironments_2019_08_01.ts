@@ -88,7 +88,10 @@ export namespace MyNS {
 		/** Service objective of the metadata database for the App Service Environment, e.g. "S0". */
 		databaseServiceObjective?: string | null;
 
-		/** Default Scale Factor for FrontEnds. */
+		/**
+		 * Default Scale Factor for FrontEnds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultFrontEndScaleFactor?: number | null;
 
 		/** DNS suffix of the App Service Environment. */
@@ -109,7 +112,10 @@ export namespace MyNS {
 		/** Detailed message about with results of the last check of the App Service Environment. */
 		environmentStatus?: string | null;
 
-		/** Scale factor for front-ends. */
+		/**
+		 * Scale factor for front-ends.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndScaleFactor?: number | null;
 
 		/** Flag that displays whether an ASE has linux workers or not */
@@ -118,7 +124,10 @@ export namespace MyNS {
 		/** Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. */
 		internalLoadBalancingMode?: AppServiceEnvironmentResourcePropertiesInternalLoadBalancingMode | null;
 
-		/** Number of IP SSL addresses reserved for the App Service Environment. */
+		/**
+		 * Number of IP SSL addresses reserved for the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipsslAddressCount?: number | null;
 
 		/** Last deployment action on the App Service Environment. */
@@ -133,10 +142,16 @@ export namespace MyNS {
 		 */
 		location: string;
 
-		/** Maximum number of VMs in the App Service Environment. */
+		/**
+		 * Maximum number of VMs in the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumNumberOfMachines?: number | null;
 
-		/** Number of front-end instances. */
+		/**
+		 * Number of front-end instances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multiRoleCount?: number | null;
 
 		/** Front-end VM size, e.g. "Medium", "Large". */
@@ -175,7 +190,10 @@ export namespace MyNS {
 		 */
 		suspended?: boolean | null;
 
-		/** Number of upgrade domains of the App Service Environment. */
+		/**
+		 * Number of upgrade domains of the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upgradeDomains?: number | null;
 
 		/** User added ip ranges to whitelist on ASE db */
@@ -222,7 +240,10 @@ export namespace MyNS {
 		/** Service objective of the metadata database for the App Service Environment, e.g. "S0". */
 		databaseServiceObjective: FormControl<string | null | undefined>,
 
-		/** Default Scale Factor for FrontEnds. */
+		/**
+		 * Default Scale Factor for FrontEnds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultFrontEndScaleFactor: FormControl<number | null | undefined>,
 
 		/** DNS suffix of the App Service Environment. */
@@ -240,7 +261,10 @@ export namespace MyNS {
 		/** Detailed message about with results of the last check of the App Service Environment. */
 		environmentStatus: FormControl<string | null | undefined>,
 
-		/** Scale factor for front-ends. */
+		/**
+		 * Scale factor for front-ends.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndScaleFactor: FormControl<number | null | undefined>,
 
 		/** Flag that displays whether an ASE has linux workers or not */
@@ -249,7 +273,10 @@ export namespace MyNS {
 		/** Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. */
 		internalLoadBalancingMode: FormControl<AppServiceEnvironmentResourcePropertiesInternalLoadBalancingMode | null | undefined>,
 
-		/** Number of IP SSL addresses reserved for the App Service Environment. */
+		/**
+		 * Number of IP SSL addresses reserved for the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipsslAddressCount: FormControl<number | null | undefined>,
 
 		/** Last deployment action on the App Service Environment. */
@@ -264,10 +291,16 @@ export namespace MyNS {
 		 */
 		location: FormControl<string | null | undefined>,
 
-		/** Maximum number of VMs in the App Service Environment. */
+		/**
+		 * Maximum number of VMs in the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumNumberOfMachines: FormControl<number | null | undefined>,
 
-		/** Number of front-end instances. */
+		/**
+		 * Number of front-end instances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multiRoleCount: FormControl<number | null | undefined>,
 
 		/** Front-end VM size, e.g. "Medium", "Large". */
@@ -303,7 +336,10 @@ export namespace MyNS {
 		 */
 		suspended: FormControl<boolean | null | undefined>,
 
-		/** Number of upgrade domains of the App Service Environment. */
+		/**
+		 * Number of upgrade domains of the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upgradeDomains: FormControl<number | null | undefined>,
 
 		/** Name of the Virtual Network for the App Service Environment. */
@@ -379,8 +415,11 @@ export namespace MyNS {
 
 	export interface AppServiceEnvironmentResourcePropertiesEnvironmentCapacities {
 
-		/** Available capacity (# of machines, bytes of storage etc...). */
-		availableCapacity?: number | null;
+		/**
+		 * Available capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		availableCapacity?: string | null;
 
 		/** Shared/dedicated workers. */
 		computeMode?: AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null;
@@ -403,8 +442,11 @@ export namespace MyNS {
 		/** Shared or Dedicated. */
 		siteMode?: string | null;
 
-		/** Total capacity (# of machines, bytes of storage etc...). */
-		totalCapacity?: number | null;
+		/**
+		 * Total capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity?: string | null;
 
 		/** Name of the unit. */
 		unit?: string | null;
@@ -417,13 +459,17 @@ export namespace MyNS {
 		 * 0 - Small
 		 * 1 - Medium
 		 * 2 - Large
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		workerSizeId?: number | null;
 	}
 	export interface AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesFormProperties {
 
-		/** Available capacity (# of machines, bytes of storage etc...). */
-		availableCapacity: FormControl<number | null | undefined>,
+		/**
+		 * Available capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		availableCapacity: FormControl<string | null | undefined>,
 
 		/** Shared/dedicated workers. */
 		computeMode: FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null | undefined>,
@@ -446,8 +492,11 @@ export namespace MyNS {
 		/** Shared or Dedicated. */
 		siteMode: FormControl<string | null | undefined>,
 
-		/** Total capacity (# of machines, bytes of storage etc...). */
-		totalCapacity: FormControl<number | null | undefined>,
+		/**
+		 * Total capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity: FormControl<string | null | undefined>,
 
 		/** Name of the unit. */
 		unit: FormControl<string | null | undefined>,
@@ -460,19 +509,20 @@ export namespace MyNS {
 		 * 0 - Small
 		 * 1 - Medium
 		 * 2 - Large
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		workerSizeId: FormControl<number | null | undefined>,
 	}
 	export function CreateAppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesFormGroup() {
 		return new FormGroup<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesFormProperties>({
-			availableCapacity: new FormControl<number | null | undefined>(undefined),
+			availableCapacity: new FormControl<string | null | undefined>(undefined),
 			computeMode: new FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null | undefined>(undefined),
 			excludeFromCapacityAllocation: new FormControl<boolean | null | undefined>(undefined),
 			isApplicableForAllComputeModes: new FormControl<boolean | null | undefined>(undefined),
 			isLinux: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			siteMode: new FormControl<string | null | undefined>(undefined),
-			totalCapacity: new FormControl<number | null | undefined>(undefined),
+			totalCapacity: new FormControl<string | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 			workerSize: new FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesWorkerSize | null | undefined>(undefined),
 			workerSizeId: new FormControl<number | null | undefined>(undefined),
@@ -494,7 +544,10 @@ export namespace MyNS {
 		/** Description of network access control entry. */
 		description?: string | null;
 
-		/** Order of precedence. */
+		/**
+		 * Order of precedence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order?: number | null;
 
 		/** Remote subnet. */
@@ -508,7 +561,10 @@ export namespace MyNS {
 		/** Description of network access control entry. */
 		description: FormControl<string | null | undefined>,
 
-		/** Order of precedence. */
+		/**
+		 * Order of precedence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order: FormControl<number | null | undefined>,
 
 		/** Remote subnet. */
@@ -535,10 +591,16 @@ export namespace MyNS {
 		/** Is virtual IP mapping in use. */
 		inUse?: boolean | null;
 
-		/** Internal HTTP port. */
+		/**
+		 * Internal HTTP port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpPort?: number | null;
 
-		/** Internal HTTPS port. */
+		/**
+		 * Internal HTTPS port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpsPort?: number | null;
 
 		/** name of the service that virtual IP is assigned to */
@@ -552,10 +614,16 @@ export namespace MyNS {
 		/** Is virtual IP mapping in use. */
 		inUse: FormControl<boolean | null | undefined>,
 
-		/** Internal HTTP port. */
+		/**
+		 * Internal HTTP port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpPort: FormControl<number | null | undefined>,
 
-		/** Internal HTTPS port. */
+		/**
+		 * Internal HTTPS port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpsPort: FormControl<number | null | undefined>,
 
 		/** name of the service that virtual IP is assigned to */
@@ -621,13 +689,19 @@ export namespace MyNS {
 		/** Names of all instances in the worker pool (read only). */
 		instanceNames?: Array<string>;
 
-		/** Number of instances in the worker pool. */
+		/**
+		 * Number of instances in the worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount?: number | null;
 
 		/** VM size of the worker pool instances. */
 		workerSize?: string | null;
 
-		/** Worker size ID for referencing this worker pool. */
+		/**
+		 * Worker size ID for referencing this worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerSizeId?: number | null;
 	}
 	export interface AppServiceEnvironmentResourcePropertiesWorkerPoolsFormProperties {
@@ -635,13 +709,19 @@ export namespace MyNS {
 		/** Shared or dedicated app hosting. */
 		computeMode: FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null | undefined>,
 
-		/** Number of instances in the worker pool. */
+		/**
+		 * Number of instances in the worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount: FormControl<number | null | undefined>,
 
 		/** VM size of the worker pool instances. */
 		workerSize: FormControl<string | null | undefined>,
 
-		/** Worker size ID for referencing this worker pool. */
+		/**
+		 * Worker size ID for referencing this worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerSizeId: FormControl<number | null | undefined>,
 	}
 	export function CreateAppServiceEnvironmentResourcePropertiesWorkerPoolsFormGroup() {
@@ -691,7 +771,10 @@ export namespace MyNS {
 		/** Service objective of the metadata database for the App Service Environment, e.g. "S0". */
 		databaseServiceObjective?: string | null;
 
-		/** Default Scale Factor for FrontEnds. */
+		/**
+		 * Default Scale Factor for FrontEnds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultFrontEndScaleFactor?: number | null;
 
 		/** DNS suffix of the App Service Environment. */
@@ -712,7 +795,10 @@ export namespace MyNS {
 		/** Detailed message about with results of the last check of the App Service Environment. */
 		environmentStatus?: string | null;
 
-		/** Scale factor for front-ends. */
+		/**
+		 * Scale factor for front-ends.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndScaleFactor?: number | null;
 
 		/** Flag that displays whether an ASE has linux workers or not */
@@ -721,7 +807,10 @@ export namespace MyNS {
 		/** Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. */
 		internalLoadBalancingMode?: AppServiceEnvironmentResourcePropertiesInternalLoadBalancingMode | null;
 
-		/** Number of IP SSL addresses reserved for the App Service Environment. */
+		/**
+		 * Number of IP SSL addresses reserved for the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipsslAddressCount?: number | null;
 
 		/** Last deployment action on the App Service Environment. */
@@ -736,10 +825,16 @@ export namespace MyNS {
 		 */
 		location: string;
 
-		/** Maximum number of VMs in the App Service Environment. */
+		/**
+		 * Maximum number of VMs in the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumNumberOfMachines?: number | null;
 
-		/** Number of front-end instances. */
+		/**
+		 * Number of front-end instances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multiRoleCount?: number | null;
 
 		/** Front-end VM size, e.g. "Medium", "Large". */
@@ -778,7 +873,10 @@ export namespace MyNS {
 		 */
 		suspended?: boolean | null;
 
-		/** Number of upgrade domains of the App Service Environment. */
+		/**
+		 * Number of upgrade domains of the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upgradeDomains?: number | null;
 
 		/** User added ip ranges to whitelist on ASE db */
@@ -825,7 +923,10 @@ export namespace MyNS {
 		/** Service objective of the metadata database for the App Service Environment, e.g. "S0". */
 		databaseServiceObjective: FormControl<string | null | undefined>,
 
-		/** Default Scale Factor for FrontEnds. */
+		/**
+		 * Default Scale Factor for FrontEnds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultFrontEndScaleFactor: FormControl<number | null | undefined>,
 
 		/** DNS suffix of the App Service Environment. */
@@ -843,7 +944,10 @@ export namespace MyNS {
 		/** Detailed message about with results of the last check of the App Service Environment. */
 		environmentStatus: FormControl<string | null | undefined>,
 
-		/** Scale factor for front-ends. */
+		/**
+		 * Scale factor for front-ends.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndScaleFactor: FormControl<number | null | undefined>,
 
 		/** Flag that displays whether an ASE has linux workers or not */
@@ -852,7 +956,10 @@ export namespace MyNS {
 		/** Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. */
 		internalLoadBalancingMode: FormControl<AppServiceEnvironmentResourcePropertiesInternalLoadBalancingMode | null | undefined>,
 
-		/** Number of IP SSL addresses reserved for the App Service Environment. */
+		/**
+		 * Number of IP SSL addresses reserved for the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipsslAddressCount: FormControl<number | null | undefined>,
 
 		/** Last deployment action on the App Service Environment. */
@@ -867,10 +974,16 @@ export namespace MyNS {
 		 */
 		location: FormControl<string | null | undefined>,
 
-		/** Maximum number of VMs in the App Service Environment. */
+		/**
+		 * Maximum number of VMs in the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumNumberOfMachines: FormControl<number | null | undefined>,
 
-		/** Number of front-end instances. */
+		/**
+		 * Number of front-end instances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multiRoleCount: FormControl<number | null | undefined>,
 
 		/** Front-end VM size, e.g. "Medium", "Large". */
@@ -906,7 +1019,10 @@ export namespace MyNS {
 		 */
 		suspended: FormControl<boolean | null | undefined>,
 
-		/** Number of upgrade domains of the App Service Environment. */
+		/**
+		 * Number of upgrade domains of the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upgradeDomains: FormControl<number | null | undefined>,
 
 		/** Name of the Virtual Network for the App Service Environment. */
@@ -982,8 +1098,11 @@ export namespace MyNS {
 
 	export interface AppServiceEnvironmentPatchResourcePropertiesEnvironmentCapacities {
 
-		/** Available capacity (# of machines, bytes of storage etc...). */
-		availableCapacity?: number | null;
+		/**
+		 * Available capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		availableCapacity?: string | null;
 
 		/** Shared/dedicated workers. */
 		computeMode?: AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null;
@@ -1006,8 +1125,11 @@ export namespace MyNS {
 		/** Shared or Dedicated. */
 		siteMode?: string | null;
 
-		/** Total capacity (# of machines, bytes of storage etc...). */
-		totalCapacity?: number | null;
+		/**
+		 * Total capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity?: string | null;
 
 		/** Name of the unit. */
 		unit?: string | null;
@@ -1020,13 +1142,17 @@ export namespace MyNS {
 		 * 0 - Small
 		 * 1 - Medium
 		 * 2 - Large
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		workerSizeId?: number | null;
 	}
 	export interface AppServiceEnvironmentPatchResourcePropertiesEnvironmentCapacitiesFormProperties {
 
-		/** Available capacity (# of machines, bytes of storage etc...). */
-		availableCapacity: FormControl<number | null | undefined>,
+		/**
+		 * Available capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		availableCapacity: FormControl<string | null | undefined>,
 
 		/** Shared/dedicated workers. */
 		computeMode: FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null | undefined>,
@@ -1049,8 +1175,11 @@ export namespace MyNS {
 		/** Shared or Dedicated. */
 		siteMode: FormControl<string | null | undefined>,
 
-		/** Total capacity (# of machines, bytes of storage etc...). */
-		totalCapacity: FormControl<number | null | undefined>,
+		/**
+		 * Total capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity: FormControl<string | null | undefined>,
 
 		/** Name of the unit. */
 		unit: FormControl<string | null | undefined>,
@@ -1063,19 +1192,20 @@ export namespace MyNS {
 		 * 0 - Small
 		 * 1 - Medium
 		 * 2 - Large
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		workerSizeId: FormControl<number | null | undefined>,
 	}
 	export function CreateAppServiceEnvironmentPatchResourcePropertiesEnvironmentCapacitiesFormGroup() {
 		return new FormGroup<AppServiceEnvironmentPatchResourcePropertiesEnvironmentCapacitiesFormProperties>({
-			availableCapacity: new FormControl<number | null | undefined>(undefined),
+			availableCapacity: new FormControl<string | null | undefined>(undefined),
 			computeMode: new FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null | undefined>(undefined),
 			excludeFromCapacityAllocation: new FormControl<boolean | null | undefined>(undefined),
 			isApplicableForAllComputeModes: new FormControl<boolean | null | undefined>(undefined),
 			isLinux: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			siteMode: new FormControl<string | null | undefined>(undefined),
-			totalCapacity: new FormControl<number | null | undefined>(undefined),
+			totalCapacity: new FormControl<string | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 			workerSize: new FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesWorkerSize | null | undefined>(undefined),
 			workerSizeId: new FormControl<number | null | undefined>(undefined),
@@ -1091,7 +1221,10 @@ export namespace MyNS {
 		/** Description of network access control entry. */
 		description?: string | null;
 
-		/** Order of precedence. */
+		/**
+		 * Order of precedence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order?: number | null;
 
 		/** Remote subnet. */
@@ -1105,7 +1238,10 @@ export namespace MyNS {
 		/** Description of network access control entry. */
 		description: FormControl<string | null | undefined>,
 
-		/** Order of precedence. */
+		/**
+		 * Order of precedence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order: FormControl<number | null | undefined>,
 
 		/** Remote subnet. */
@@ -1126,10 +1262,16 @@ export namespace MyNS {
 		/** Is virtual IP mapping in use. */
 		inUse?: boolean | null;
 
-		/** Internal HTTP port. */
+		/**
+		 * Internal HTTP port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpPort?: number | null;
 
-		/** Internal HTTPS port. */
+		/**
+		 * Internal HTTPS port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpsPort?: number | null;
 
 		/** name of the service that virtual IP is assigned to */
@@ -1143,10 +1285,16 @@ export namespace MyNS {
 		/** Is virtual IP mapping in use. */
 		inUse: FormControl<boolean | null | undefined>,
 
-		/** Internal HTTP port. */
+		/**
+		 * Internal HTTP port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpPort: FormControl<number | null | undefined>,
 
-		/** Internal HTTPS port. */
+		/**
+		 * Internal HTTPS port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpsPort: FormControl<number | null | undefined>,
 
 		/** name of the service that virtual IP is assigned to */
@@ -1212,13 +1360,19 @@ export namespace MyNS {
 		/** Names of all instances in the worker pool (read only). */
 		instanceNames?: Array<string>;
 
-		/** Number of instances in the worker pool. */
+		/**
+		 * Number of instances in the worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount?: number | null;
 
 		/** VM size of the worker pool instances. */
 		workerSize?: string | null;
 
-		/** Worker size ID for referencing this worker pool. */
+		/**
+		 * Worker size ID for referencing this worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerSizeId?: number | null;
 	}
 	export interface AppServiceEnvironmentPatchResourcePropertiesWorkerPoolsFormProperties {
@@ -1226,13 +1380,19 @@ export namespace MyNS {
 		/** Shared or dedicated app hosting. */
 		computeMode: FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null | undefined>,
 
-		/** Number of instances in the worker pool. */
+		/**
+		 * Number of instances in the worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount: FormControl<number | null | undefined>,
 
 		/** VM size of the worker pool instances. */
 		workerSize: FormControl<string | null | undefined>,
 
-		/** Worker size ID for referencing this worker pool. */
+		/**
+		 * Worker size ID for referencing this worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerSizeId: FormControl<number | null | undefined>,
 	}
 	export function CreateAppServiceEnvironmentPatchResourcePropertiesWorkerPoolsFormGroup() {
@@ -1279,10 +1439,16 @@ export namespace MyNS {
 		/** Whether it is possible to create a TCP connection from the App Service Environment to this IpAddress at this Port. */
 		isAccessible?: boolean | null;
 
-		/** The time in milliseconds it takes for a TCP connection to be created from the App Service Environment to this IpAddress at this Port. */
+		/**
+		 * The time in milliseconds it takes for a TCP connection to be created from the App Service Environment to this IpAddress at this Port.
+		 * Type: double
+		 */
 		latency?: number | null;
 
-		/** The port an endpoint is connected to. */
+		/**
+		 * The port an endpoint is connected to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 
@@ -1295,10 +1461,16 @@ export namespace MyNS {
 		/** Whether it is possible to create a TCP connection from the App Service Environment to this IpAddress at this Port. */
 		isAccessible: FormControl<boolean | null | undefined>,
 
-		/** The time in milliseconds it takes for a TCP connection to be created from the App Service Environment to this IpAddress at this Port. */
+		/**
+		 * The time in milliseconds it takes for a TCP connection to be created from the App Service Environment to this IpAddress at this Port.
+		 * Type: double
+		 */
 		latency: FormControl<number | null | undefined>,
 
-		/** The port an endpoint is connected to. */
+		/**
+		 * The port an endpoint is connected to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateEndpointDetailFormGroup() {
@@ -1559,13 +1731,22 @@ export namespace MyNS {
 
 	export interface SkuInfoCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -1573,13 +1754,22 @@ export namespace MyNS {
 	}
 	export interface SkuInfoCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -1600,7 +1790,10 @@ export namespace MyNS {
 		/** Capabilities of the SKU, e.g., is traffic manager enabled? */
 		SkuInfoSkuCapabilities?: Array<SkuInfoSkuCapabilities>;
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Family code of the resource SKU. */
@@ -1623,7 +1816,10 @@ export namespace MyNS {
 	}
 	export interface SkuInfoSkuFormProperties {
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Family code of the resource SKU. */
@@ -1682,13 +1878,22 @@ export namespace MyNS {
 
 	export interface SkuInfoSkuSkuCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -1696,13 +1901,22 @@ export namespace MyNS {
 	}
 	export interface SkuInfoSkuSkuCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -1774,8 +1988,11 @@ export namespace MyNS {
 
 	export interface StampCapacityCollectionValue {
 
-		/** Available capacity (# of machines, bytes of storage etc...). */
-		availableCapacity?: number | null;
+		/**
+		 * Available capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		availableCapacity?: string | null;
 
 		/** Shared/dedicated workers. */
 		computeMode?: AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null;
@@ -1798,8 +2015,11 @@ export namespace MyNS {
 		/** Shared or Dedicated. */
 		siteMode?: string | null;
 
-		/** Total capacity (# of machines, bytes of storage etc...). */
-		totalCapacity?: number | null;
+		/**
+		 * Total capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity?: string | null;
 
 		/** Name of the unit. */
 		unit?: string | null;
@@ -1812,13 +2032,17 @@ export namespace MyNS {
 		 * 0 - Small
 		 * 1 - Medium
 		 * 2 - Large
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		workerSizeId?: number | null;
 	}
 	export interface StampCapacityCollectionValueFormProperties {
 
-		/** Available capacity (# of machines, bytes of storage etc...). */
-		availableCapacity: FormControl<number | null | undefined>,
+		/**
+		 * Available capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		availableCapacity: FormControl<string | null | undefined>,
 
 		/** Shared/dedicated workers. */
 		computeMode: FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null | undefined>,
@@ -1841,8 +2065,11 @@ export namespace MyNS {
 		/** Shared or Dedicated. */
 		siteMode: FormControl<string | null | undefined>,
 
-		/** Total capacity (# of machines, bytes of storage etc...). */
-		totalCapacity: FormControl<number | null | undefined>,
+		/**
+		 * Total capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity: FormControl<string | null | undefined>,
 
 		/** Name of the unit. */
 		unit: FormControl<string | null | undefined>,
@@ -1855,19 +2082,20 @@ export namespace MyNS {
 		 * 0 - Small
 		 * 1 - Medium
 		 * 2 - Large
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		workerSizeId: FormControl<number | null | undefined>,
 	}
 	export function CreateStampCapacityCollectionValueFormGroup() {
 		return new FormGroup<StampCapacityCollectionValueFormProperties>({
-			availableCapacity: new FormControl<number | null | undefined>(undefined),
+			availableCapacity: new FormControl<string | null | undefined>(undefined),
 			computeMode: new FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null | undefined>(undefined),
 			excludeFromCapacityAllocation: new FormControl<boolean | null | undefined>(undefined),
 			isApplicableForAllComputeModes: new FormControl<boolean | null | undefined>(undefined),
 			isLinux: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			siteMode: new FormControl<string | null | undefined>(undefined),
-			totalCapacity: new FormControl<number | null | undefined>(undefined),
+			totalCapacity: new FormControl<string | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 			workerSize: new FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesWorkerSize | null | undefined>(undefined),
 			workerSizeId: new FormControl<number | null | undefined>(undefined),
@@ -1978,13 +2206,19 @@ export namespace MyNS {
 		/** Names of all instances in the worker pool (read only). */
 		instanceNames?: Array<string>;
 
-		/** Number of instances in the worker pool. */
+		/**
+		 * Number of instances in the worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount?: number | null;
 
 		/** VM size of the worker pool instances. */
 		workerSize?: string | null;
 
-		/** Worker size ID for referencing this worker pool. */
+		/**
+		 * Worker size ID for referencing this worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerSizeId?: number | null;
 	}
 	export interface WorkerPoolResourcePropertiesFormProperties {
@@ -1992,13 +2226,19 @@ export namespace MyNS {
 		/** Shared or dedicated app hosting. */
 		computeMode: FormControl<AppServiceEnvironmentResourcePropertiesEnvironmentCapacitiesComputeMode | null | undefined>,
 
-		/** Number of instances in the worker pool. */
+		/**
+		 * Number of instances in the worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount: FormControl<number | null | undefined>,
 
 		/** VM size of the worker pool instances. */
 		workerSize: FormControl<string | null | undefined>,
 
-		/** Worker size ID for referencing this worker pool. */
+		/**
+		 * Worker size ID for referencing this worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerSizeId: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkerPoolResourcePropertiesFormGroup() {
@@ -2016,7 +2256,10 @@ export namespace MyNS {
 		/** Capabilities of the SKU, e.g., is traffic manager enabled? */
 		WorkerPoolResourceSkuCapabilities?: Array<WorkerPoolResourceSkuCapabilities>;
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Family code of the resource SKU. */
@@ -2039,7 +2282,10 @@ export namespace MyNS {
 	}
 	export interface WorkerPoolResourceSkuFormProperties {
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Family code of the resource SKU. */
@@ -2098,13 +2344,22 @@ export namespace MyNS {
 
 	export interface WorkerPoolResourceSkuSkuCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -2112,13 +2367,22 @@ export namespace MyNS {
 	}
 	export interface WorkerPoolResourceSkuSkuCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -3067,7 +3331,10 @@ export namespace MyNS {
 		/** Capabilities of the SKU, e.g., is traffic manager enabled? */
 		AppServiceEnvironments_ListAppServicePlansReturnValueSkuCapabilities?: Array<AppServiceEnvironments_ListAppServicePlansReturnValueSkuCapabilities>;
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Family code of the resource SKU. */
@@ -3090,7 +3357,10 @@ export namespace MyNS {
 	}
 	export interface AppServiceEnvironments_ListAppServicePlansReturnValueSkuFormProperties {
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Family code of the resource SKU. */
@@ -3149,13 +3419,22 @@ export namespace MyNS {
 
 	export interface AppServiceEnvironments_ListAppServicePlansReturnValueSkuSkuCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -3163,13 +3442,22 @@ export namespace MyNS {
 	}
 	export interface AppServiceEnvironments_ListAppServicePlansReturnValueSkuSkuCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -3420,11 +3708,17 @@ export namespace MyNS {
 
 	export interface AppServiceEnvironments_ListUsagesReturnValue {
 
-		/** The current value of the resource counter. */
-		currentValue?: number | null;
+		/**
+		 * The current value of the resource counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue?: string | null;
 
-		/** The resource limit. */
-		limit?: number | null;
+		/**
+		 * The resource limit.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit?: string | null;
 
 		/** Localizable string object containing the name and a localized value. */
 		name?: AppServiceEnvironments_ListUsagesReturnValueName;
@@ -3437,11 +3731,17 @@ export namespace MyNS {
 	}
 	export interface AppServiceEnvironments_ListUsagesReturnValueFormProperties {
 
-		/** The current value of the resource counter. */
-		currentValue: FormControl<number | null | undefined>,
+		/**
+		 * The current value of the resource counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue: FormControl<string | null | undefined>,
 
-		/** The resource limit. */
-		limit: FormControl<number | null | undefined>,
+		/**
+		 * The resource limit.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit: FormControl<string | null | undefined>,
 
 		/** Next reset time for the resource counter. */
 		nextResetTime: FormControl<Date | null | undefined>,
@@ -3451,8 +3751,8 @@ export namespace MyNS {
 	}
 	export function CreateAppServiceEnvironments_ListUsagesReturnValueFormGroup() {
 		return new FormGroup<AppServiceEnvironments_ListUsagesReturnValueFormProperties>({
-			currentValue: new FormControl<number | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			currentValue: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			nextResetTime: new FormControl<Date | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 		});

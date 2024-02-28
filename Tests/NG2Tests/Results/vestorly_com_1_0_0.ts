@@ -130,9 +130,13 @@ export namespace MyNS {
 		external_url?: string | null;
 		external_url_source?: string | null;
 		external_url_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		image_height?: number | null;
 		image_path?: string | null;
 		image_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		image_width?: number | null;
 		is_mobile_proxy_needed?: boolean | null;
 		is_proxy_needed?: boolean | null;
@@ -159,9 +163,13 @@ export namespace MyNS {
 		external_url: FormControl<string | null | undefined>,
 		external_url_source: FormControl<string | null | undefined>,
 		external_url_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		image_height: FormControl<number | null | undefined>,
 		image_path: FormControl<string | null | undefined>,
 		image_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		image_width: FormControl<number | null | undefined>,
 		is_mobile_proxy_needed: FormControl<boolean | null | undefined>,
 		is_proxy_needed: FormControl<boolean | null | undefined>,
@@ -209,12 +217,20 @@ export namespace MyNS {
 	}
 
 	export interface ArticlePhrase {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created_at?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length?: number | null;
 		text?: string | null;
 	}
 	export interface ArticlePhraseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		created_at: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 	}
@@ -278,6 +294,8 @@ export namespace MyNS {
 		custom_feed_filter_id?: string | null;
 		custom_feed_permission_id?: string | null;
 		custom_feed_template_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		custom_feed_visibility?: number | null;
 		default?: boolean | null;
 		display_label?: string | null;
@@ -286,6 +304,8 @@ export namespace MyNS {
 		/** Required */
 		label: string;
 		links?: string | null;
+
+		/** Type: float */
 		popularity?: number | null;
 		premium_content?: boolean | null;
 		seed_custom_feed_id?: string | null;
@@ -298,6 +318,8 @@ export namespace MyNS {
 		custom_feed_filter_id: FormControl<string | null | undefined>,
 		custom_feed_permission_id: FormControl<string | null | undefined>,
 		custom_feed_template_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		custom_feed_visibility: FormControl<number | null | undefined>,
 		default: FormControl<boolean | null | undefined>,
 		display_label: FormControl<string | null | undefined>,
@@ -306,6 +328,8 @@ export namespace MyNS {
 		/** Required */
 		label: FormControl<string | null | undefined>,
 		links: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		popularity: FormControl<number | null | undefined>,
 		premium_content: FormControl<boolean | null | undefined>,
 		seed_custom_feed_id: FormControl<string | null | undefined>,
@@ -399,12 +423,16 @@ export namespace MyNS {
 	export interface CustomFeedInput {
 		custom_feed_filter_id?: string | null;
 		custom_feed_permission_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		custom_feed_visibility?: number | null;
 		default?: boolean | null;
 		is_auto_curated_newsletter_custom_feed?: boolean | null;
 
 		/** Required */
 		label: string;
+
+		/** Type: float */
 		popularity?: number | null;
 		premium_content?: boolean | null;
 		seed_custom_feed_id?: string | null;
@@ -414,12 +442,16 @@ export namespace MyNS {
 	export interface CustomFeedInputFormProperties {
 		custom_feed_filter_id: FormControl<string | null | undefined>,
 		custom_feed_permission_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		custom_feed_visibility: FormControl<number | null | undefined>,
 		default: FormControl<boolean | null | undefined>,
 		is_auto_curated_newsletter_custom_feed: FormControl<boolean | null | undefined>,
 
 		/** Required */
 		label: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		popularity: FormControl<number | null | undefined>,
 		premium_content: FormControl<boolean | null | undefined>,
 		seed_custom_feed_id: FormControl<string | null | undefined>,
@@ -675,7 +707,11 @@ export namespace MyNS {
 		name?: string | null;
 		new_weekly_mailer_content?: string | null;
 		newsletter_subject?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_articles_per_group?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_articles_per_newsletter?: number | null;
 	}
 	export interface GroupFormProperties {
@@ -688,7 +724,11 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		new_weekly_mailer_content: FormControl<string | null | undefined>,
 		newsletter_subject: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_articles_per_group: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_articles_per_newsletter: FormControl<number | null | undefined>,
 	}
 	export function CreateGroupFormGroup() {
@@ -716,7 +756,11 @@ export namespace MyNS {
 		name?: string | null;
 		new_weekly_mailer_content?: string | null;
 		newsletter_subject?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_articles_per_group?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_articles_per_newsletter?: number | null;
 	}
 	export interface GroupInputFormProperties {
@@ -729,7 +773,11 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		new_weekly_mailer_content: FormControl<string | null | undefined>,
 		newsletter_subject: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_articles_per_group: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_articles_per_newsletter: FormControl<number | null | undefined>,
 	}
 	export function CreateGroupInputFormGroup() {
@@ -1026,21 +1074,33 @@ export namespace MyNS {
 	}
 
 	export interface MemberReport {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		day?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		event_count?: number | null;
 		originator_group_id?: string | null;
 		parent_originator_id?: string | null;
 		source?: string | null;
 		type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year?: number | null;
 	}
 	export interface MemberReportFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		day: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		event_count: FormControl<number | null | undefined>,
 		originator_group_id: FormControl<string | null | undefined>,
 		parent_originator_id: FormControl<string | null | undefined>,
 		source: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateMemberReportFormGroup() {
@@ -1108,53 +1168,77 @@ export namespace MyNS {
 
 	export interface Newsletter {
 		_id?: string | null;
-		click_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		click_count?: string | null;
 		is_default?: boolean | null;
 		is_sent?: boolean | null;
-		total_click_count?: number | null;
-		unique_click_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_click_count?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		unique_click_count?: string | null;
 	}
 	export interface NewsletterFormProperties {
 		_id: FormControl<string | null | undefined>,
-		click_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		click_count: FormControl<string | null | undefined>,
 		is_default: FormControl<boolean | null | undefined>,
 		is_sent: FormControl<boolean | null | undefined>,
-		total_click_count: FormControl<number | null | undefined>,
-		unique_click_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_click_count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		unique_click_count: FormControl<string | null | undefined>,
 	}
 	export function CreateNewsletterFormGroup() {
 		return new FormGroup<NewsletterFormProperties>({
 			_id: new FormControl<string | null | undefined>(undefined),
-			click_count: new FormControl<number | null | undefined>(undefined),
+			click_count: new FormControl<string | null | undefined>(undefined),
 			is_default: new FormControl<boolean | null | undefined>(undefined),
 			is_sent: new FormControl<boolean | null | undefined>(undefined),
-			total_click_count: new FormControl<number | null | undefined>(undefined),
-			unique_click_count: new FormControl<number | null | undefined>(undefined),
+			total_click_count: new FormControl<string | null | undefined>(undefined),
+			unique_click_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface NewsletterInput {
-		click_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		click_count?: string | null;
 		is_default?: boolean | null;
 		is_sent?: boolean | null;
-		total_click_count?: number | null;
-		unique_click_count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_click_count?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		unique_click_count?: string | null;
 	}
 	export interface NewsletterInputFormProperties {
-		click_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		click_count: FormControl<string | null | undefined>,
 		is_default: FormControl<boolean | null | undefined>,
 		is_sent: FormControl<boolean | null | undefined>,
-		total_click_count: FormControl<number | null | undefined>,
-		unique_click_count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total_click_count: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		unique_click_count: FormControl<string | null | undefined>,
 	}
 	export function CreateNewsletterInputFormGroup() {
 		return new FormGroup<NewsletterInputFormProperties>({
-			click_count: new FormControl<number | null | undefined>(undefined),
+			click_count: new FormControl<string | null | undefined>(undefined),
 			is_default: new FormControl<boolean | null | undefined>(undefined),
 			is_sent: new FormControl<boolean | null | undefined>(undefined),
-			total_click_count: new FormControl<number | null | undefined>(undefined),
-			unique_click_count: new FormControl<number | null | undefined>(undefined),
+			total_click_count: new FormControl<string | null | undefined>(undefined),
+			unique_click_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1166,7 +1250,11 @@ export namespace MyNS {
 		banner_color?: string | null;
 		body_html?: string | null;
 		email_accent_color?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		email_day_of_week?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		email_hour?: number | null;
 		email_status?: string | null;
 		facebook_active_wall?: string | null;
@@ -1187,6 +1275,8 @@ export namespace MyNS {
 		newsletter_type?: string | null;
 		primary_email_font?: string | null;
 		salutation_text?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		social_day_of_week?: number | null;
 		social_description?: string | null;
 		social_posting_text?: string | null;
@@ -1201,7 +1291,11 @@ export namespace MyNS {
 		banner_color: FormControl<string | null | undefined>,
 		body_html: FormControl<string | null | undefined>,
 		email_accent_color: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		email_day_of_week: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		email_hour: FormControl<number | null | undefined>,
 		email_status: FormControl<string | null | undefined>,
 		facebook_active_wall: FormControl<string | null | undefined>,
@@ -1221,6 +1315,8 @@ export namespace MyNS {
 		newsletter_type: FormControl<string | null | undefined>,
 		primary_email_font: FormControl<string | null | undefined>,
 		salutation_text: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		social_day_of_week: FormControl<number | null | undefined>,
 		social_description: FormControl<string | null | undefined>,
 		social_posting_text: FormControl<string | null | undefined>,

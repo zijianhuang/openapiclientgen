@@ -33,7 +33,10 @@ export namespace MyNS {
 		/** The last date that the offer was updated. The date is in the form YYYY-MM-DD. */
 		lastUpdated?: string | null;
 
-		/** The item's price. */
+		/**
+		 * The item's price.
+		 * Type: float
+		 */
 		price?: number | null;
 
 		/** The monetary currency. For example, USD. */
@@ -52,7 +55,10 @@ export namespace MyNS {
 		/** The last date that the offer was updated. The date is in the form YYYY-MM-DD. */
 		lastUpdated: FormControl<string | null | undefined>,
 
-		/** The item's price. */
+		/**
+		 * The item's price.
+		 * Type: float
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** The monetary currency. For example, USD. */
@@ -72,14 +78,20 @@ export namespace MyNS {
 	/** Defines the metrics that indicate how well an item was rated by others. */
 	export interface AggregateRating {
 
-		/** The number of times the recipe has been rated or reviewed. */
+		/**
+		 * The number of times the recipe has been rated or reviewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount?: number | null;
 	}
 
 	/** Defines the metrics that indicate how well an item was rated by others. */
 	export interface AggregateRatingFormProperties {
 
-		/** The number of times the recipe has been rated or reviewed. */
+		/**
+		 * The number of times the recipe has been rated or reviewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAggregateRatingFormGroup() {
@@ -280,20 +292,32 @@ export namespace MyNS {
 		/** Defines a list of offers from merchants that are related to the image. */
 		aggregateOffer?: AggregateOffer;
 
-		/** The number of websites that offer recipes of the food seen in the image. */
+		/**
+		 * The number of websites that offer recipes of the food seen in the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recipeSourcesCount?: number | null;
 
-		/** The number of websites that offer goods of the products seen in the image. */
+		/**
+		 * The number of websites that offer goods of the products seen in the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shoppingSourcesCount?: number | null;
 	}
 
 	/** Defines a count of the number of websites where you can shop or perform other actions related to the image. */
 	export interface ImagesImageMetadataFormProperties {
 
-		/** The number of websites that offer recipes of the food seen in the image. */
+		/**
+		 * The number of websites that offer recipes of the food seen in the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recipeSourcesCount: FormControl<number | null | undefined>,
 
-		/** The number of websites that offer goods of the products seen in the image. */
+		/**
+		 * The number of websites that offer goods of the products seen in the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shoppingSourcesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateImagesImageMetadataFormGroup() {
@@ -421,11 +445,17 @@ export namespace MyNS {
 	/** Defines a link to a webpage that contains a collection of related images. */
 	export interface ImageGallery {
 
-		/** The number of users on the social network that follow the creator. */
-		followersCount?: number | null;
+		/**
+		 * The number of users on the social network that follow the creator.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		followersCount?: string | null;
 
-		/** The number of related images found in the collection. */
-		imagesCount?: number | null;
+		/**
+		 * The number of related images found in the collection.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		imagesCount?: string | null;
 
 		/** The publisher or social network where the images were found. You must attribute the publisher as the source where the collection was found. */
 		source?: string | null;
@@ -434,19 +464,25 @@ export namespace MyNS {
 	/** Defines a link to a webpage that contains a collection of related images. */
 	export interface ImageGalleryFormProperties {
 
-		/** The number of users on the social network that follow the creator. */
-		followersCount: FormControl<number | null | undefined>,
+		/**
+		 * The number of users on the social network that follow the creator.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		followersCount: FormControl<string | null | undefined>,
 
-		/** The number of related images found in the collection. */
-		imagesCount: FormControl<number | null | undefined>,
+		/**
+		 * The number of related images found in the collection.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		imagesCount: FormControl<string | null | undefined>,
 
 		/** The publisher or social network where the images were found. You must attribute the publisher as the source where the collection was found. */
 		source: FormControl<string | null | undefined>,
 	}
 	export function CreateImageGalleryFormGroup() {
 		return new FormGroup<ImageGalleryFormProperties>({
-			followersCount: new FormControl<number | null | undefined>(undefined),
-			imagesCount: new FormControl<number | null | undefined>(undefined),
+			followersCount: new FormControl<string | null | undefined>(undefined),
+			imagesCount: new FormControl<string | null | undefined>(undefined),
 			source: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -790,14 +826,20 @@ export namespace MyNS {
 		/** Defines a thing. */
 		entity?: Thing;
 
-		/** The confidence that Bing has that the entity in the image matches this entity. The confidence ranges from 0.0 through 1.0 with 1.0 being very confident. */
+		/**
+		 * The confidence that Bing has that the entity in the image matches this entity. The confidence ranges from 0.0 through 1.0 with 1.0 being very confident.
+		 * Type: float
+		 */
 		matchConfidence?: number | null;
 	}
 
 	/** Defines a recognized entity. */
 	export interface RecognizedEntityFormProperties {
 
-		/** The confidence that Bing has that the entity in the image matches this entity. The confidence ranges from 0.0 through 1.0 with 1.0 being very confident. */
+		/**
+		 * The confidence that Bing has that the entity in the image matches this entity. The confidence ranges from 0.0 through 1.0 with 1.0 being very confident.
+		 * Type: float
+		 */
 		matchConfidence: FormControl<number | null | undefined>,
 	}
 	export function CreateRecognizedEntityFormGroup() {
@@ -814,24 +856,28 @@ export namespace MyNS {
 		/**
 		 * The bottom coordinate
 		 * Required
+		 * Type: float
 		 */
 		bottom: number;
 
 		/**
 		 * The left coordinate.
 		 * Required
+		 * Type: float
 		 */
 		left: number;
 
 		/**
 		 * The right coordinate
 		 * Required
+		 * Type: float
 		 */
 		right: number;
 
 		/**
 		 * The top coordinate
 		 * Required
+		 * Type: float
 		 */
 		top: number;
 	}
@@ -842,24 +888,28 @@ export namespace MyNS {
 		/**
 		 * The bottom coordinate
 		 * Required
+		 * Type: float
 		 */
 		bottom: FormControl<number | null | undefined>,
 
 		/**
 		 * The left coordinate.
 		 * Required
+		 * Type: float
 		 */
 		left: FormControl<number | null | undefined>,
 
 		/**
 		 * The right coordinate
 		 * Required
+		 * Type: float
 		 */
 		right: FormControl<number | null | undefined>,
 
 		/**
 		 * The top coordinate
 		 * Required
+		 * Type: float
 		 */
 		top: FormControl<number | null | undefined>,
 	}
@@ -911,7 +961,10 @@ export namespace MyNS {
 	/** Defines an image answer */
 	export interface Images {
 
-		/** Used as part of deduping. Tells client the next offset that client should use in the next pagination request */
+		/**
+		 * Used as part of deduping. Tells client the next offset that client should use in the next pagination request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nextOffset?: number | null;
 
 		/** A list of segments in the original query. For example, if the query was Red Flowers, Bing might segment the query into Red and Flowers. The Flowers pivot may contain query suggestions such as Red Peonies and Red Daisies, and the Red pivot may contain query suggestions such as Green Flowers and Yellow Flowers. */
@@ -933,7 +986,10 @@ export namespace MyNS {
 	/** Defines an image answer */
 	export interface ImagesFormProperties {
 
-		/** Used as part of deduping. Tells client the next offset that client should use in the next pagination request */
+		/**
+		 * Used as part of deduping. Tells client the next offset that client should use in the next pagination request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nextOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateImagesFormGroup() {
@@ -1003,7 +1059,10 @@ export namespace MyNS {
 		/** Encoding format (e.g mp3, mp4, jpeg, etc). */
 		encodingFormat?: string | null;
 
-		/** The height of the source media object, in pixels. */
+		/**
+		 * The height of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Display URL of the page that hosts the media object. */
@@ -1012,7 +1071,10 @@ export namespace MyNS {
 		/** URL of the page that hosts the media object. */
 		hostPageUrl?: string | null;
 
-		/** The width of the source media object, in pixels. */
+		/**
+		 * The width of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -1028,7 +1090,10 @@ export namespace MyNS {
 		/** Encoding format (e.g mp3, mp4, jpeg, etc). */
 		encodingFormat: FormControl<string | null | undefined>,
 
-		/** The height of the source media object, in pixels. */
+		/**
+		 * The height of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Display URL of the page that hosts the media object. */
@@ -1037,7 +1102,10 @@ export namespace MyNS {
 		/** URL of the page that hosts the media object. */
 		hostPageUrl: FormControl<string | null | undefined>,
 
-		/** The width of the source media object, in pixels. */
+		/**
+		 * The width of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMediaObjectFormGroup() {
@@ -1113,12 +1181,16 @@ export namespace MyNS {
 	/** Defines a rating. */
 	export interface Rating {
 
-		/** The highest rated review. The possible values are 1.0 through 5.0. */
+		/**
+		 * The highest rated review. The possible values are 1.0 through 5.0.
+		 * Type: float
+		 */
 		bestRating?: number | null;
 
 		/**
 		 * The mean (average) rating. The possible values are 1.0 through 5.0.
 		 * Required
+		 * Type: float
 		 */
 		ratingValue: number;
 	}
@@ -1126,12 +1198,16 @@ export namespace MyNS {
 	/** Defines a rating. */
 	export interface RatingFormProperties {
 
-		/** The highest rated review. The possible values are 1.0 through 5.0. */
+		/**
+		 * The highest rated review. The possible values are 1.0 through 5.0.
+		 * Type: float
+		 */
 		bestRating: FormControl<number | null | undefined>,
 
 		/**
 		 * The mean (average) rating. The possible values are 1.0 through 5.0.
 		 * Required
+		 * Type: float
 		 */
 		ratingValue: FormControl<number | null | undefined>,
 	}
@@ -1196,19 +1272,25 @@ export namespace MyNS {
 	/** Defines a search result answer. */
 	export interface SearchResultsAnswer {
 
-		/** The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results. */
-		totalEstimatedMatches?: number | null;
+		/**
+		 * The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalEstimatedMatches?: string | null;
 	}
 
 	/** Defines a search result answer. */
 	export interface SearchResultsAnswerFormProperties {
 
-		/** The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results. */
-		totalEstimatedMatches: FormControl<number | null | undefined>,
+		/**
+		 * The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalEstimatedMatches: FormControl<string | null | undefined>,
 	}
 	export function CreateSearchResultsAnswerFormGroup() {
 		return new FormGroup<SearchResultsAnswerFormProperties>({
-			totalEstimatedMatches: new FormControl<number | null | undefined>(undefined),
+			totalEstimatedMatches: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1358,13 +1440,13 @@ export namespace MyNS {
 		 * @param {Images_SearchImageType} imageType Filter images by the following image types. AnimatedGif: Return only animated GIFs. Clipart: Return only clip art images. Line: Return only line drawings. Photo: Return only photographs(excluding line drawings, animated Gifs, and clip art). Shopping: Return only images that contain items where Bing knows of a merchant that is selling the items. This option is valid in the en - US market only.Transparent: Return only images with a transparent background.
 		 * @param {Images_SearchLicense} license Filter images by the following license types. All: Do not filter by license type.Specifying this value is the same as not specifying the license parameter. Any: Return images that are under any license type. The response doesn't include images that do not specify a license or the license is unknown. Public: Return images where the creator has waived their exclusive rights, to the fullest extent allowed by law. Share: Return images that may be shared with others. Changing or editing the image might not be allowed. Also, modifying, sharing, and using the image for commercial purposes might not be allowed. Typically, this option returns the most images. ShareCommercially: Return images that may be shared with others for personal or commercial purposes. Changing or editing the image might not be allowed. Modify: Return images that may be modified, shared, and used. Changing or editing the image might not be allowed. Modifying, sharing, and using the image for commercial purposes might not be allowed. ModifyCommercially: Return images that may be modified, shared, and used for personal or commercial purposes. Typically, this option returns the fewest images. For more information about these license types, see [Filter Images By License Type](http://go.microsoft.com/fwlink/?LinkId=309768).
 		 * @param {string} mkt The market where the results come from. Typically, mkt is the country where the user is making the request from. However, it could be a different country if the user is not located in a country where Bing delivers results. The market must be in the form <language code>-<country code>. For example, en-US. The string is case insensitive. For a list of possible market values, see [Market Codes](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-images-api-v7-reference#market-codes). NOTE: If known, you are encouraged to always specify the market. Specifying the market helps Bing route the request and return an appropriate and optimal response. If you specify a market that is not listed in [Market Codes](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-images-api-v7-reference#market-codes), Bing uses a best fit market code based on an internal mapping that is subject to change. This parameter and the [cc](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-images-api-v7-reference#cc) query parameter are mutually exclusive—do not specify both.
-		 * @param {number} maxFileSize Filter images that are less than or equal to the specified file size. The maximum file size that you may specify is 520,192 bytes. If you specify a larger value, the API uses 520,192. It is possible that the response may include images that are slightly larger than the specified maximum. You may specify this filter and minFileSize to filter images within a range of file sizes.
-		 * @param {number} maxHeight Filter images that have a height that is less than or equal to the specified height. Specify the height in pixels. You may specify this filter and minHeight to filter images within a range of heights. This filter and the height filter are mutually exclusive.
-		 * @param {number} maxWidth Filter images that have a width that is less than or equal to the specified width. Specify the width in pixels. You may specify this filter and maxWidth to filter images within a range of widths. This filter and the width filter are mutually exclusive.
-		 * @param {number} minFileSize Filter images that are greater than or equal to the specified file size. The maximum file size that you may specify is 520,192 bytes. If you specify a larger value, the API uses 520,192. It is possible that the response may include images that are slightly smaller than the specified minimum. You may specify this filter and maxFileSize to filter images within a range of file sizes.
-		 * @param {number} minHeight Filter images that have a height that is greater than or equal to the specified height. Specify the height in pixels. You may specify this filter and maxHeight to filter images within a range of heights. This filter and the height filter are mutually exclusive.
-		 * @param {number} minWidth Filter images that have a width that is greater than or equal to the specified width. Specify the width in pixels. You may specify this filter and maxWidth to filter images within a range of widths. This filter and the width filter are mutually exclusive.
-		 * @param {number} offset The zero-based offset that indicates the number of images to skip before returning images. The default is 0. The offset should be less than ([totalEstimatedMatches](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-images-api-v7-reference#totalestimatedmatches) - count). Use this parameter along with the count parameter to page results. For example, if your user interface displays 20 images per page, set count to 20 and offset to 0 to get the first page of results. For each subsequent page, increment offset by 20 (for example, 0, 20, 40). It is possible for multiple pages to include some overlap in results. To prevent duplicates, see [nextOffset](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-images-api-v7-reference#nextoffset). Use this parameter only with the Image API. Do not specify this parameter when calling the Trending Images API or the Web Search API.
+		 * @param {string} maxFileSize Filter images that are less than or equal to the specified file size. The maximum file size that you may specify is 520,192 bytes. If you specify a larger value, the API uses 520,192. It is possible that the response may include images that are slightly larger than the specified maximum. You may specify this filter and minFileSize to filter images within a range of file sizes.
+		 * @param {string} maxHeight Filter images that have a height that is less than or equal to the specified height. Specify the height in pixels. You may specify this filter and minHeight to filter images within a range of heights. This filter and the height filter are mutually exclusive.
+		 * @param {string} maxWidth Filter images that have a width that is less than or equal to the specified width. Specify the width in pixels. You may specify this filter and maxWidth to filter images within a range of widths. This filter and the width filter are mutually exclusive.
+		 * @param {string} minFileSize Filter images that are greater than or equal to the specified file size. The maximum file size that you may specify is 520,192 bytes. If you specify a larger value, the API uses 520,192. It is possible that the response may include images that are slightly smaller than the specified minimum. You may specify this filter and maxFileSize to filter images within a range of file sizes.
+		 * @param {string} minHeight Filter images that have a height that is greater than or equal to the specified height. Specify the height in pixels. You may specify this filter and maxHeight to filter images within a range of heights. This filter and the height filter are mutually exclusive.
+		 * @param {string} minWidth Filter images that have a width that is greater than or equal to the specified width. Specify the width in pixels. You may specify this filter and maxWidth to filter images within a range of widths. This filter and the width filter are mutually exclusive.
+		 * @param {string} offset The zero-based offset that indicates the number of images to skip before returning images. The default is 0. The offset should be less than ([totalEstimatedMatches](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-images-api-v7-reference#totalestimatedmatches) - count). Use this parameter along with the count parameter to page results. For example, if your user interface displays 20 images per page, set count to 20 and offset to 0 to get the first page of results. For each subsequent page, increment offset by 20 (for example, 0, 20, 40). It is possible for multiple pages to include some overlap in results. To prevent duplicates, see [nextOffset](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-images-api-v7-reference#nextoffset). Use this parameter only with the Image API. Do not specify this parameter when calling the Trending Images API or the Web Search API.
 		 * @param {string} q The user's search query term. The term cannot be empty. The term may contain [Bing Advanced Operators](http://msdn.microsoft.com/library/ff795620.aspx). For example, to limit images to a specific domain, use the [site:](http://msdn.microsoft.com/library/ff795613.aspx) operator. To help improve relevance of an insights query (see [insightsToken](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-images-api-v7-reference#insightstoken)), you should always include the user's query term. Use this parameter only with the Image Search API.Do not specify this parameter when calling the Trending Images API.
 		 * @param {Images_DetailsSafeSearch} safeSearch Filter images for adult content. The following are the possible filter values. Off: May return images with adult content. If the request is through the Image Search API, the response includes thumbnail images that are clear (non-fuzzy). However, if the request is through the Web Search API, the response includes thumbnail images that are pixelated (fuzzy). Moderate: If the request is through the Image Search API, the response doesn't include images with adult content. If the request is through the Web Search API, the response may include images with adult content (the thumbnail images are pixelated (fuzzy)). Strict: Do not return images with adult content. The default is Moderate. If the request comes from a market that Bing's adult policy requires that safeSearch is set to Strict, Bing ignores the safeSearch value and uses Strict. If you use the site: query operator, there is the chance that the response may contain adult content regardless of what the safeSearch query parameter is set to. Use site: only if you are aware of the content on the site and your scenario supports the possibility of adult content.
 		 * @param {Images_SearchSize} size Filter images by the following sizes. All: Do not filter by size. Specifying this value is the same as not specifying the size parameter. Small: Return images that are less than 200x200 pixels. Medium: Return images that are greater than or equal to 200x200 pixels but less than 500x500 pixels. Large: Return images that are 500x500 pixels or larger. Wallpaper: Return wallpaper images. You may use this parameter along with the height or width parameters. For example, you may use height and size to request small images that are 150 pixels tall.
@@ -1372,7 +1454,7 @@ export namespace MyNS {
 		 * @param {number} width Filter images that have the specified width, in pixels. You may use this filter with the size filter to return small images that have a width of 150 pixels.
 		 * @return {Images} Success.
 		 */
-		Images_Search(aspect: Images_SearchAspect | null | undefined, color: Images_SearchColor | null | undefined, cc: string | null | undefined, count: number | null | undefined, freshness: Images_SearchFreshness | null | undefined, height: number | null | undefined, id: string | null | undefined, imageContent: Images_SearchImageContent | null | undefined, imageType: Images_SearchImageType | null | undefined, license: Images_SearchLicense | null | undefined, mkt: string | null | undefined, maxFileSize: number | null | undefined, maxHeight: number | null | undefined, maxWidth: number | null | undefined, minFileSize: number | null | undefined, minHeight: number | null | undefined, minWidth: number | null | undefined, offset: number | null | undefined, q: string, safeSearch: Images_DetailsSafeSearch | null | undefined, size: Images_SearchSize | null | undefined, setLang: string | null | undefined, width: number | null | undefined): Observable<Images> {
+		Images_Search(aspect: Images_SearchAspect | null | undefined, color: Images_SearchColor | null | undefined, cc: string | null | undefined, count: number | null | undefined, freshness: Images_SearchFreshness | null | undefined, height: number | null | undefined, id: string | null | undefined, imageContent: Images_SearchImageContent | null | undefined, imageType: Images_SearchImageType | null | undefined, license: Images_SearchLicense | null | undefined, mkt: string | null | undefined, maxFileSize: string | null | undefined, maxHeight: string | null | undefined, maxWidth: string | null | undefined, minFileSize: string | null | undefined, minHeight: string | null | undefined, minWidth: string | null | undefined, offset: string | null | undefined, q: string, safeSearch: Images_DetailsSafeSearch | null | undefined, size: Images_SearchSize | null | undefined, setLang: string | null | undefined, width: number | null | undefined): Observable<Images> {
 			return this.http.get<Images>(this.baseUri + 'images/search?aspect=' + aspect + '&color=' + color + '&cc=' + (cc == null ? '' : encodeURIComponent(cc)) + '&count=' + count + '&freshness=' + freshness + '&height=' + height + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&imageContent=' + imageContent + '&imageType=' + imageType + '&license=' + license + '&mkt=' + (mkt == null ? '' : encodeURIComponent(mkt)) + '&maxFileSize=' + maxFileSize + '&maxHeight=' + maxHeight + '&maxWidth=' + maxWidth + '&minFileSize=' + minFileSize + '&minHeight=' + minHeight + '&minWidth=' + minWidth + '&offset=' + offset + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&safeSearch=' + safeSearch + '&size=' + size + '&setLang=' + (setLang == null ? '' : encodeURIComponent(setLang)) + '&width=' + width, {});
 		}
 

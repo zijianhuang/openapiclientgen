@@ -38,16 +38,20 @@ export namespace MyNS {
 	}
 
 	export interface Absolute_bytes_differenceItemsResults {
-		abs_bytes_diff?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		abs_bytes_diff?: string | null;
 		timestamp?: string | null;
 	}
 	export interface Absolute_bytes_differenceItemsResultsFormProperties {
-		abs_bytes_diff: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		abs_bytes_diff: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateAbsolute_bytes_differenceItemsResultsFormGroup() {
 		return new FormGroup<Absolute_bytes_differenceItemsResultsFormProperties>({
-			abs_bytes_diff: new FormControl<number | null | undefined>(undefined),
+			abs_bytes_diff: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -88,16 +92,20 @@ export namespace MyNS {
 	}
 
 	export interface Absolute_bytes_difference_per_editorItemsResults {
-		abs_bytes_diff?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		abs_bytes_diff?: string | null;
 		timestamp?: string | null;
 	}
 	export interface Absolute_bytes_difference_per_editorItemsResultsFormProperties {
-		abs_bytes_diff: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		abs_bytes_diff: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateAbsolute_bytes_difference_per_editorItemsResultsFormGroup() {
 		return new FormGroup<Absolute_bytes_difference_per_editorItemsResultsFormProperties>({
-			abs_bytes_diff: new FormControl<number | null | undefined>(undefined),
+			abs_bytes_diff: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -138,16 +146,20 @@ export namespace MyNS {
 	}
 
 	export interface Absolute_bytes_difference_per_pageItemsResults {
-		abs_bytes_diff?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		abs_bytes_diff?: string | null;
 		timestamp?: string | null;
 	}
 	export interface Absolute_bytes_difference_per_pageItemsResultsFormProperties {
-		abs_bytes_diff: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		abs_bytes_diff: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateAbsolute_bytes_difference_per_pageItemsResultsFormGroup() {
 		return new FormGroup<Absolute_bytes_difference_per_pageItemsResultsFormProperties>({
-			abs_bytes_diff: new FormControl<number | null | undefined>(undefined),
+			abs_bytes_diff: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -229,19 +241,27 @@ export namespace MyNS {
 
 	export interface By_countryItemsCountries {
 		country?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
-		views?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		views?: string | null;
 	}
 	export interface By_countryItemsCountriesFormProperties {
 		country: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
-		views: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		views: FormControl<string | null | undefined>,
 	}
 	export function CreateBy_countryItemsCountriesFormGroup() {
 		return new FormGroup<By_countryItemsCountriesFormProperties>({
 			country: new FormControl<string | null | undefined>(undefined),
 			rank: new FormControl<number | null | undefined>(undefined),
-			views: new FormControl<number | null | undefined>(undefined),
+			views: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -391,10 +411,14 @@ export namespace MyNS {
 	}
 
 	export interface Edited_pagesItemsResults {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		edited_pages?: number | null;
 		timestamp?: string | null;
 	}
 	export interface Edited_pagesItemsResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		edited_pages: FormControl<number | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
@@ -444,10 +468,14 @@ export namespace MyNS {
 	}
 
 	export interface EditorsItemsResults {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		editors?: number | null;
 		timestamp?: string | null;
 	}
 	export interface EditorsItemsResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		editors: FormControl<number | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
@@ -494,16 +522,20 @@ export namespace MyNS {
 	}
 
 	export interface EditsItemsResults {
-		edits?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		edits?: string | null;
 		timestamp?: string | null;
 	}
 	export interface EditsItemsResultsFormProperties {
-		edits: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		edits: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateEditsItemsResultsFormGroup() {
 		return new FormGroup<EditsItemsResultsFormProperties>({
-			edits: new FormControl<number | null | undefined>(undefined),
+			edits: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -544,16 +576,20 @@ export namespace MyNS {
 	}
 
 	export interface Edits_per_editorItemsResults {
-		edits?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		edits?: string | null;
 		timestamp?: string | null;
 	}
 	export interface Edits_per_editorItemsResultsFormProperties {
-		edits: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		edits: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateEdits_per_editorItemsResultsFormGroup() {
 		return new FormGroup<Edits_per_editorItemsResultsFormProperties>({
-			edits: new FormControl<number | null | undefined>(undefined),
+			edits: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -594,16 +630,20 @@ export namespace MyNS {
 	}
 
 	export interface Edits_per_pageItemsResults {
-		edits?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		edits?: string | null;
 		timestamp?: string | null;
 	}
 	export interface Edits_per_pageItemsResultsFormProperties {
-		edits: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		edits: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateEdits_per_pageItemsResultsFormGroup() {
 		return new FormGroup<Edits_per_pageItemsResultsFormProperties>({
-			edits: new FormControl<number | null | undefined>(undefined),
+			edits: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -661,16 +701,20 @@ export namespace MyNS {
 	}
 
 	export interface Net_bytes_differenceItemsResults {
-		net_bytes_diff?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		net_bytes_diff?: string | null;
 		timestamp?: string | null;
 	}
 	export interface Net_bytes_differenceItemsResultsFormProperties {
-		net_bytes_diff: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		net_bytes_diff: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateNet_bytes_differenceItemsResultsFormGroup() {
 		return new FormGroup<Net_bytes_differenceItemsResultsFormProperties>({
-			net_bytes_diff: new FormControl<number | null | undefined>(undefined),
+			net_bytes_diff: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -711,16 +755,20 @@ export namespace MyNS {
 	}
 
 	export interface Net_bytes_difference_per_editorItemsResults {
-		net_bytes_diff?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		net_bytes_diff?: string | null;
 		timestamp?: string | null;
 	}
 	export interface Net_bytes_difference_per_editorItemsResultsFormProperties {
-		net_bytes_diff: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		net_bytes_diff: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateNet_bytes_difference_per_editorItemsResultsFormGroup() {
 		return new FormGroup<Net_bytes_difference_per_editorItemsResultsFormProperties>({
-			net_bytes_diff: new FormControl<number | null | undefined>(undefined),
+			net_bytes_diff: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -761,16 +809,20 @@ export namespace MyNS {
 	}
 
 	export interface Net_bytes_difference_per_pageItemsResults {
-		net_bytes_diff?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		net_bytes_diff?: string | null;
 		timestamp?: string | null;
 	}
 	export interface Net_bytes_difference_per_pageItemsResultsFormProperties {
-		net_bytes_diff: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		net_bytes_diff: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateNet_bytes_difference_per_pageItemsResultsFormGroup() {
 		return new FormGroup<Net_bytes_difference_per_pageItemsResultsFormProperties>({
-			net_bytes_diff: new FormControl<number | null | undefined>(undefined),
+			net_bytes_diff: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -811,10 +863,14 @@ export namespace MyNS {
 	}
 
 	export interface New_pagesItemsResults {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		new_pages?: number | null;
 		timestamp?: string | null;
 	}
 	export interface New_pagesItemsResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		new_pages: FormControl<number | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
@@ -855,10 +911,14 @@ export namespace MyNS {
 	}
 
 	export interface New_registered_usersItemsResults {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		new_registered_users?: number | null;
 		timestamp?: string | null;
 	}
 	export interface New_registered_usersItemsResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		new_registered_users: FormControl<number | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
@@ -875,6 +935,7 @@ export namespace MyNS {
 		/**
 		 * Original image height
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: number;
 
@@ -887,6 +948,7 @@ export namespace MyNS {
 		/**
 		 * Original image width
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: number;
 	}
@@ -895,6 +957,7 @@ export namespace MyNS {
 		/**
 		 * Original image height
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: FormControl<number | null | undefined>,
 
@@ -907,6 +970,7 @@ export namespace MyNS {
 		/**
 		 * Original image width
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -932,14 +996,18 @@ export namespace MyNS {
 
 	export interface Pagecounts_projectItems {
 		'access-site'?: string | null;
-		count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count?: string | null;
 		granularity?: string | null;
 		project?: string | null;
 		timestamp?: string | null;
 	}
 	export interface Pagecounts_projectItemsFormProperties {
 		'access-site': FormControl<string | null | undefined>,
-		count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count: FormControl<string | null | undefined>,
 		granularity: FormControl<string | null | undefined>,
 		project: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
@@ -947,7 +1015,7 @@ export namespace MyNS {
 	export function CreatePagecounts_projectItemsFormGroup() {
 		return new FormGroup<Pagecounts_projectItemsFormProperties>({
 			'access-site': new FormControl<string | null | undefined>(undefined),
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<string | null | undefined>(undefined),
 			granularity: new FormControl<string | null | undefined>(undefined),
 			project: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
@@ -973,7 +1041,9 @@ export namespace MyNS {
 		granularity?: string | null;
 		project?: string | null;
 		timestamp?: string | null;
-		views?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		views?: string | null;
 	}
 	export interface Pageview_articleItemsFormProperties {
 		access: FormControl<string | null | undefined>,
@@ -982,7 +1052,9 @@ export namespace MyNS {
 		granularity: FormControl<string | null | undefined>,
 		project: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
-		views: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		views: FormControl<string | null | undefined>,
 	}
 	export function CreatePageview_articleItemsFormGroup() {
 		return new FormGroup<Pageview_articleItemsFormProperties>({
@@ -992,7 +1064,7 @@ export namespace MyNS {
 			granularity: new FormControl<string | null | undefined>(undefined),
 			project: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
-			views: new FormControl<number | null | undefined>(undefined),
+			views: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1014,7 +1086,9 @@ export namespace MyNS {
 		granularity?: string | null;
 		project?: string | null;
 		timestamp?: string | null;
-		views?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		views?: string | null;
 	}
 	export interface Pageview_projectItemsFormProperties {
 		access: FormControl<string | null | undefined>,
@@ -1022,7 +1096,9 @@ export namespace MyNS {
 		granularity: FormControl<string | null | undefined>,
 		project: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
-		views: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		views: FormControl<string | null | undefined>,
 	}
 	export function CreatePageview_projectItemsFormGroup() {
 		return new FormGroup<Pageview_projectItemsFormProperties>({
@@ -1031,7 +1107,7 @@ export namespace MyNS {
 			granularity: new FormControl<string | null | undefined>(undefined),
 			project: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
-			views: new FormControl<number | null | undefined>(undefined),
+			views: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1075,19 +1151,27 @@ export namespace MyNS {
 
 	export interface Pageview_topsItemsArticles {
 		article?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
-		views?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		views?: string | null;
 	}
 	export interface Pageview_topsItemsArticlesFormProperties {
 		article: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
-		views: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		views: FormControl<string | null | undefined>,
 	}
 	export function CreatePageview_topsItemsArticlesFormGroup() {
 		return new FormGroup<Pageview_topsItemsArticlesFormProperties>({
 			article: new FormControl<string | null | undefined>(undefined),
 			rank: new FormControl<number | null | undefined>(undefined),
-			views: new FormControl<number | null | undefined>(undefined),
+			views: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1095,6 +1179,8 @@ export namespace MyNS {
 	export interface Problem {
 		detail?: string | null;
 		method?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 
@@ -1105,6 +1191,8 @@ export namespace MyNS {
 	export interface ProblemFormProperties {
 		detail: FormControl<string | null | undefined>,
 		method: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 
@@ -1157,7 +1245,10 @@ export namespace MyNS {
 		lang: string;
 		originalimage?: Originalimage;
 
-		/** The page ID */
+		/**
+		 * The page ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageid?: number | null;
 		thumbnail?: Thumbnail;
 
@@ -1199,7 +1290,10 @@ export namespace MyNS {
 		 */
 		lang: FormControl<string | null | undefined>,
 
-		/** The page ID */
+		/**
+		 * The page ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageid: FormControl<number | null | undefined>,
 
 		/** The time when the page was last editted in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format */
@@ -1231,12 +1325,14 @@ export namespace MyNS {
 		/**
 		 * The latitude
 		 * Required
+		 * Type: double
 		 */
 		lat: number;
 
 		/**
 		 * The longitude
 		 * Required
+		 * Type: double
 		 */
 		lon: number;
 	}
@@ -1245,12 +1341,14 @@ export namespace MyNS {
 		/**
 		 * The latitude
 		 * Required
+		 * Type: double
 		 */
 		lat: FormControl<number | null | undefined>,
 
 		/**
 		 * The longitude
 		 * Required
+		 * Type: double
 		 */
 		lon: FormControl<number | null | undefined>,
 	}
@@ -1267,6 +1365,7 @@ export namespace MyNS {
 		/**
 		 * Thumnail height
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: number;
 
@@ -1279,6 +1378,7 @@ export namespace MyNS {
 		/**
 		 * Thumbnail width
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: number;
 	}
@@ -1287,6 +1387,7 @@ export namespace MyNS {
 		/**
 		 * Thumnail height
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: FormControl<number | null | undefined>,
 
@@ -1299,6 +1400,7 @@ export namespace MyNS {
 		/**
 		 * Thumbnail width
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -1360,18 +1462,26 @@ export namespace MyNS {
 	}
 
 	export interface Top_edited_pages_by_abs_bytes_diffItemsResultsTop {
-		abs_bytes_diff?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		abs_bytes_diff?: string | null;
 		page_title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
 	}
 	export interface Top_edited_pages_by_abs_bytes_diffItemsResultsTopFormProperties {
-		abs_bytes_diff: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		abs_bytes_diff: FormControl<string | null | undefined>,
 		page_title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
 	}
 	export function CreateTop_edited_pages_by_abs_bytes_diffItemsResultsTopFormGroup() {
 		return new FormGroup<Top_edited_pages_by_abs_bytes_diffItemsResultsTopFormProperties>({
-			abs_bytes_diff: new FormControl<number | null | undefined>(undefined),
+			abs_bytes_diff: new FormControl<string | null | undefined>(undefined),
 			page_title: new FormControl<string | null | undefined>(undefined),
 			rank: new FormControl<number | null | undefined>(undefined),
 		});
@@ -1427,18 +1537,26 @@ export namespace MyNS {
 	}
 
 	export interface Top_edited_pages_by_editsItemsResultsTop {
-		edits?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		edits?: string | null;
 		page_title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
 	}
 	export interface Top_edited_pages_by_editsItemsResultsTopFormProperties {
-		edits: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		edits: FormControl<string | null | undefined>,
 		page_title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
 	}
 	export function CreateTop_edited_pages_by_editsItemsResultsTopFormGroup() {
 		return new FormGroup<Top_edited_pages_by_editsItemsResultsTopFormProperties>({
-			edits: new FormControl<number | null | undefined>(undefined),
+			edits: new FormControl<string | null | undefined>(undefined),
 			page_title: new FormControl<string | null | undefined>(undefined),
 			rank: new FormControl<number | null | undefined>(undefined),
 		});
@@ -1494,18 +1612,26 @@ export namespace MyNS {
 	}
 
 	export interface Top_edited_pages_by_net_bytes_diffItemsResultsTop {
-		net_bytes_diff?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		net_bytes_diff?: string | null;
 		page_title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
 	}
 	export interface Top_edited_pages_by_net_bytes_diffItemsResultsTopFormProperties {
-		net_bytes_diff: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		net_bytes_diff: FormControl<string | null | undefined>,
 		page_title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
 	}
 	export function CreateTop_edited_pages_by_net_bytes_diffItemsResultsTopFormGroup() {
 		return new FormGroup<Top_edited_pages_by_net_bytes_diffItemsResultsTopFormProperties>({
-			net_bytes_diff: new FormControl<number | null | undefined>(undefined),
+			net_bytes_diff: new FormControl<string | null | undefined>(undefined),
 			page_title: new FormControl<string | null | undefined>(undefined),
 			rank: new FormControl<number | null | undefined>(undefined),
 		});
@@ -1561,18 +1687,26 @@ export namespace MyNS {
 	}
 
 	export interface Top_editors_by_abs_bytes_diffItemsResultsTop {
-		abs_bytes_diff?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		abs_bytes_diff?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
 		user_text?: string | null;
 	}
 	export interface Top_editors_by_abs_bytes_diffItemsResultsTopFormProperties {
-		abs_bytes_diff: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		abs_bytes_diff: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
 		user_text: FormControl<string | null | undefined>,
 	}
 	export function CreateTop_editors_by_abs_bytes_diffItemsResultsTopFormGroup() {
 		return new FormGroup<Top_editors_by_abs_bytes_diffItemsResultsTopFormProperties>({
-			abs_bytes_diff: new FormControl<number | null | undefined>(undefined),
+			abs_bytes_diff: new FormControl<string | null | undefined>(undefined),
 			rank: new FormControl<number | null | undefined>(undefined),
 			user_text: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1628,18 +1762,26 @@ export namespace MyNS {
 	}
 
 	export interface Top_editors_by_editsItemsResultsTop {
-		edits?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		edits?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
 		user_text?: string | null;
 	}
 	export interface Top_editors_by_editsItemsResultsTopFormProperties {
-		edits: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		edits: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
 		user_text: FormControl<string | null | undefined>,
 	}
 	export function CreateTop_editors_by_editsItemsResultsTopFormGroup() {
 		return new FormGroup<Top_editors_by_editsItemsResultsTopFormProperties>({
-			edits: new FormControl<number | null | undefined>(undefined),
+			edits: new FormControl<string | null | undefined>(undefined),
 			rank: new FormControl<number | null | undefined>(undefined),
 			user_text: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1695,18 +1837,26 @@ export namespace MyNS {
 	}
 
 	export interface Top_editors_by_net_bytes_diffItemsResultsTop {
-		net_bytes_diff?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		net_bytes_diff?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
 		user_text?: string | null;
 	}
 	export interface Top_editors_by_net_bytes_diffItemsResultsTopFormProperties {
-		net_bytes_diff: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		net_bytes_diff: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
 		user_text: FormControl<string | null | undefined>,
 	}
 	export function CreateTop_editors_by_net_bytes_diffItemsResultsTopFormGroup() {
 		return new FormGroup<Top_editors_by_net_bytes_diffItemsResultsTopFormProperties>({
-			net_bytes_diff: new FormControl<number | null | undefined>(undefined),
+			net_bytes_diff: new FormControl<string | null | undefined>(undefined),
 			rank: new FormControl<number | null | undefined>(undefined),
 			user_text: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1726,14 +1876,18 @@ export namespace MyNS {
 
 	export interface Unique_devicesItems {
 		'access-site'?: string | null;
-		devices?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		devices?: string | null;
 		granularity?: string | null;
 		project?: string | null;
 		timestamp?: string | null;
 	}
 	export interface Unique_devicesItemsFormProperties {
 		'access-site': FormControl<string | null | undefined>,
-		devices: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		devices: FormControl<string | null | undefined>,
 		granularity: FormControl<string | null | undefined>,
 		project: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
@@ -1741,7 +1895,7 @@ export namespace MyNS {
 	export function CreateUnique_devicesItemsFormGroup() {
 		return new FormGroup<Unique_devicesItemsFormProperties>({
 			'access-site': new FormControl<string | null | undefined>(undefined),
-			devices: new FormControl<number | null | undefined>(undefined),
+			devices: new FormControl<string | null | undefined>(undefined),
 			granularity: new FormControl<string | null | undefined>(undefined),
 			project: new FormControl<string | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),

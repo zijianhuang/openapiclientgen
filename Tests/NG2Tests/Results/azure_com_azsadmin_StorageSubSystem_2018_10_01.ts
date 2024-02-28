@@ -33,10 +33,16 @@ export namespace MyNS {
 		/** Rebalance status of the subsystem. */
 		rebalanceStatus?: string | null;
 
-		/** Remaining capacity in GB of the subsystem. */
+		/**
+		 * Remaining capacity in GB of the subsystem.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remainingCapacityGB?: number | null;
 
-		/** Total capacity in GB of the subsystem. */
+		/**
+		 * Total capacity in GB of the subsystem.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCapacityGB?: number | null;
 	}
 
@@ -52,10 +58,16 @@ export namespace MyNS {
 		/** Rebalance status of the subsystem. */
 		rebalanceStatus: FormControl<string | null | undefined>,
 
-		/** Remaining capacity in GB of the subsystem. */
+		/**
+		 * Remaining capacity in GB of the subsystem.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remainingCapacityGB: FormControl<number | null | undefined>,
 
-		/** Total capacity in GB of the subsystem. */
+		/**
+		 * Total capacity in GB of the subsystem.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCapacityGB: FormControl<number | null | undefined>,
 	}
 	export function CreateStorageSubSystemModelFormGroup() {

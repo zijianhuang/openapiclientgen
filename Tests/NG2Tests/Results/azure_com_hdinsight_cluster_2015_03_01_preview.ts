@@ -27,20 +27,32 @@ export namespace MyNS {
 	/** The load-based autoscale request parameters */
 	export interface AutoscaleCapacity {
 
-		/** The maximum instance count of the cluster */
+		/**
+		 * The maximum instance count of the cluster
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstanceCount?: number | null;
 
-		/** The minimum instance count of the cluster */
+		/**
+		 * The minimum instance count of the cluster
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstanceCount?: number | null;
 	}
 
 	/** The load-based autoscale request parameters */
 	export interface AutoscaleCapacityFormProperties {
 
-		/** The maximum instance count of the cluster */
+		/**
+		 * The maximum instance count of the cluster
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstanceCount: FormControl<number | null | undefined>,
 
-		/** The minimum instance count of the cluster */
+		/**
+		 * The minimum instance count of the cluster
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoscaleCapacityFormGroup() {
@@ -99,10 +111,16 @@ export namespace MyNS {
 	/** Time and capacity request parameters */
 	export interface AutoscaleTimeAndCapacity {
 
-		/** The maximum instance count of the cluster */
+		/**
+		 * The maximum instance count of the cluster
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstanceCount?: number | null;
 
-		/** The minimum instance count of the cluster */
+		/**
+		 * The minimum instance count of the cluster
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstanceCount?: number | null;
 
 		/** 24-hour time in the form xx:xx */
@@ -112,10 +130,16 @@ export namespace MyNS {
 	/** Time and capacity request parameters */
 	export interface AutoscaleTimeAndCapacityFormProperties {
 
-		/** The maximum instance count of the cluster */
+		/**
+		 * The maximum instance count of the cluster
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstanceCount: FormControl<number | null | undefined>,
 
-		/** The minimum instance count of the cluster */
+		/**
+		 * The minimum instance count of the cluster
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstanceCount: FormControl<number | null | undefined>,
 
 		/** 24-hour time in the form xx:xx */
@@ -451,7 +475,10 @@ export namespace MyNS {
 		/** The name of the endpoint. */
 		name?: string | null;
 
-		/** The port to connect to. */
+		/**
+		 * The port to connect to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** The protocol of the endpoint. */
@@ -467,7 +494,10 @@ export namespace MyNS {
 		/** The name of the endpoint. */
 		name: FormControl<string | null | undefined>,
 
-		/** The port to connect to. */
+		/**
+		 * The port to connect to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** The protocol of the endpoint. */
@@ -727,8 +757,11 @@ export namespace MyNS {
 		/** The reason why the script action was executed. */
 		operation?: string | null;
 
-		/** The execution id of the script action. */
-		scriptExecutionId?: number | null;
+		/**
+		 * The execution id of the script action.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		scriptExecutionId?: string | null;
 
 		/** The start time of script action execution. */
 		startTime?: string | null;
@@ -749,8 +782,11 @@ export namespace MyNS {
 		/** The reason why the script action was executed. */
 		operation: FormControl<string | null | undefined>,
 
-		/** The execution id of the script action. */
-		scriptExecutionId: FormControl<number | null | undefined>,
+		/**
+		 * The execution id of the script action.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		scriptExecutionId: FormControl<string | null | undefined>,
 
 		/** The start time of script action execution. */
 		startTime: FormControl<string | null | undefined>,
@@ -767,7 +803,7 @@ export namespace MyNS {
 			debugInformation: new FormControl<string | null | undefined>(undefined),
 			endTime: new FormControl<string | null | undefined>(undefined),
 			operation: new FormControl<string | null | undefined>(undefined),
-			scriptExecutionId: new FormControl<number | null | undefined>(undefined),
+			scriptExecutionId: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
 		});
@@ -778,7 +814,10 @@ export namespace MyNS {
 	/** The execution summary of a script action. */
 	export interface ScriptActionExecutionSummary {
 
-		/** The instance count for a given script action execution status. */
+		/**
+		 * The instance count for a given script action execution status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instanceCount?: number | null;
 
 		/** The status of script action execution. */
@@ -788,7 +827,10 @@ export namespace MyNS {
 	/** The execution summary of a script action. */
 	export interface ScriptActionExecutionSummaryFormProperties {
 
-		/** The instance count for a given script action execution status. */
+		/**
+		 * The instance count for a given script action execution status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instanceCount: FormControl<number | null | undefined>,
 
 		/** The status of script action execution. */
@@ -827,14 +869,20 @@ export namespace MyNS {
 	/** The Resize Cluster request parameters. */
 	export interface ClusterResizeParameters {
 
-		/** The target instance count for the operation. */
+		/**
+		 * The target instance count for the operation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetInstanceCount?: number | null;
 	}
 
 	/** The Resize Cluster request parameters. */
 	export interface ClusterResizeParametersFormProperties {
 
-		/** The target instance count for the operation. */
+		/**
+		 * The target instance count for the operation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetInstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateClusterResizeParametersFormGroup() {
@@ -874,7 +922,10 @@ export namespace MyNS {
 		/** The hardware profile. */
 		hardwareProfile?: HardwareProfile;
 
-		/** The minimum instance count of the cluster. */
+		/**
+		 * The minimum instance count of the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstanceCount?: number | null;
 
 		/** The name of the role. */
@@ -886,7 +937,10 @@ export namespace MyNS {
 		/** The list of script actions on the role. */
 		RoleScriptActions?: Array<RoleScriptActions>;
 
-		/** The instance count of the cluster. */
+		/**
+		 * The instance count of the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetInstanceCount?: number | null;
 
 		/** The virtual network properties. */
@@ -896,13 +950,19 @@ export namespace MyNS {
 	/** Describes a role on the cluster. */
 	export interface RoleFormProperties {
 
-		/** The minimum instance count of the cluster. */
+		/**
+		 * The minimum instance count of the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstanceCount: FormControl<number | null | undefined>,
 
 		/** The name of the role. */
 		name: FormControl<string | null | undefined>,
 
-		/** The instance count of the cluster. */
+		/**
+		 * The instance count of the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetInstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateRoleFormGroup() {
@@ -918,10 +978,16 @@ export namespace MyNS {
 	/** The data disks groups for the role. */
 	export interface DataDisksGroups {
 
-		/** ReadOnly. The DiskSize in GB. Do not set this value. */
+		/**
+		 * ReadOnly. The DiskSize in GB. Do not set this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 
-		/** The number of disks per node. */
+		/**
+		 * The number of disks per node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disksPerNode?: number | null;
 
 		/** ReadOnly. The storage account type. Do not set this value. */
@@ -931,10 +997,16 @@ export namespace MyNS {
 	/** The data disks groups for the role. */
 	export interface DataDisksGroupsFormProperties {
 
-		/** ReadOnly. The DiskSize in GB. Do not set this value. */
+		/**
+		 * ReadOnly. The DiskSize in GB. Do not set this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
-		/** The number of disks per node. */
+		/**
+		 * The number of disks per node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disksPerNode: FormControl<number | null | undefined>,
 
 		/** ReadOnly. The storage account type. Do not set this value. */
@@ -1244,14 +1316,20 @@ export namespace MyNS {
 	/** The quota properties for the cluster. */
 	export interface QuotaInfo {
 
-		/** The cores used by the cluster. */
+		/**
+		 * The cores used by the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coresUsed?: number | null;
 	}
 
 	/** The quota properties for the cluster. */
 	export interface QuotaInfoFormProperties {
 
-		/** The cores used by the cluster. */
+		/**
+		 * The cores used by the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coresUsed: FormControl<number | null | undefined>,
 	}
 	export function CreateQuotaInfoFormGroup() {

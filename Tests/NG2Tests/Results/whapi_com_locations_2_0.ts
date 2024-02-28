@@ -124,19 +124,34 @@ export namespace MyNS {
 		/** The code of the currency */
 		code?: string | null;
 
-		/** The exchange rate for the currency */
+		/**
+		 * The exchange rate for the currency
+		 * Type: double
+		 */
 		exchangeRate?: number | null;
 
-		/** The maximum deposit for the currency */
+		/**
+		 * The maximum deposit for the currency
+		 * Type: double
+		 */
 		maxDeposit?: number | null;
 
-		/** The maximum withdrawl for the currency */
+		/**
+		 * The maximum withdrawl for the currency
+		 * Type: double
+		 */
 		maxWithdrawal?: number | null;
 
-		/** The minimum deposit for the currency */
+		/**
+		 * The minimum deposit for the currency
+		 * Type: double
+		 */
 		minDeposit?: number | null;
 
-		/** The minimum withdrawal for the currency */
+		/**
+		 * The minimum withdrawal for the currency
+		 * Type: double
+		 */
 		minWithdrawal?: number | null;
 
 		/** The name of the currency */
@@ -147,19 +162,34 @@ export namespace MyNS {
 		/** The code of the currency */
 		code: FormControl<string | null | undefined>,
 
-		/** The exchange rate for the currency */
+		/**
+		 * The exchange rate for the currency
+		 * Type: double
+		 */
 		exchangeRate: FormControl<number | null | undefined>,
 
-		/** The maximum deposit for the currency */
+		/**
+		 * The maximum deposit for the currency
+		 * Type: double
+		 */
 		maxDeposit: FormControl<number | null | undefined>,
 
-		/** The maximum withdrawl for the currency */
+		/**
+		 * The maximum withdrawl for the currency
+		 * Type: double
+		 */
 		maxWithdrawal: FormControl<number | null | undefined>,
 
-		/** The minimum deposit for the currency */
+		/**
+		 * The minimum deposit for the currency
+		 * Type: double
+		 */
 		minDeposit: FormControl<number | null | undefined>,
 
-		/** The minimum withdrawal for the currency */
+		/**
+		 * The minimum withdrawal for the currency
+		 * Type: double
+		 */
 		minWithdrawal: FormControl<number | null | undefined>,
 
 		/** The name of the currency */

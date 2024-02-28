@@ -694,7 +694,10 @@ export namespace MyNS {
 	/** Error Details */
 	export interface ErrorDetails {
 
-		/** Error code. */
+		/**
+		 * Error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode?: number | null;
 
 		/** Error message. */
@@ -710,7 +713,10 @@ export namespace MyNS {
 	/** Error Details */
 	export interface ErrorDetailsFormProperties {
 
-		/** Error code. */
+		/**
+		 * Error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode: FormControl<number | null | undefined>,
 
 		/** Error message. */
@@ -792,8 +798,11 @@ export namespace MyNS {
 	/** Job Properties */
 	export interface JobProperties {
 
-		/** Number of bytes processed by the job as of now. */
-		bytesProcessed?: number | null;
+		/**
+		 * Number of bytes processed by the job as of now.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bytesProcessed?: string | null;
 
 		/** Name of the data sink on which the job was triggered. */
 		dataSinkName?: string | null;
@@ -810,21 +819,33 @@ export namespace MyNS {
 		 */
 		isCancellable: JobPropertiesIsCancellable;
 
-		/** Number of items processed by the job as of now */
-		itemsProcessed?: number | null;
+		/**
+		 * Number of items processed by the job as of now
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		itemsProcessed?: string | null;
 
-		/** Number of bytes to be processed by the job in total. */
-		totalBytesToProcess?: number | null;
+		/**
+		 * Number of bytes to be processed by the job in total.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalBytesToProcess?: string | null;
 
-		/** Number of items to be processed by the job in total */
-		totalItemsToProcess?: number | null;
+		/**
+		 * Number of items to be processed by the job in total
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalItemsToProcess?: string | null;
 	}
 
 	/** Job Properties */
 	export interface JobPropertiesFormProperties {
 
-		/** Number of bytes processed by the job as of now. */
-		bytesProcessed: FormControl<number | null | undefined>,
+		/**
+		 * Number of bytes processed by the job as of now.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bytesProcessed: FormControl<string | null | undefined>,
 
 		/** Name of the data sink on which the job was triggered. */
 		dataSinkName: FormControl<string | null | undefined>,
@@ -838,24 +859,33 @@ export namespace MyNS {
 		 */
 		isCancellable: FormControl<JobPropertiesIsCancellable | null | undefined>,
 
-		/** Number of items processed by the job as of now */
-		itemsProcessed: FormControl<number | null | undefined>,
+		/**
+		 * Number of items processed by the job as of now
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		itemsProcessed: FormControl<string | null | undefined>,
 
-		/** Number of bytes to be processed by the job in total. */
-		totalBytesToProcess: FormControl<number | null | undefined>,
+		/**
+		 * Number of bytes to be processed by the job in total.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalBytesToProcess: FormControl<string | null | undefined>,
 
-		/** Number of items to be processed by the job in total */
-		totalItemsToProcess: FormControl<number | null | undefined>,
+		/**
+		 * Number of items to be processed by the job in total
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalItemsToProcess: FormControl<string | null | undefined>,
 	}
 	export function CreateJobPropertiesFormGroup() {
 		return new FormGroup<JobPropertiesFormProperties>({
-			bytesProcessed: new FormControl<number | null | undefined>(undefined),
+			bytesProcessed: new FormControl<string | null | undefined>(undefined),
 			dataSinkName: new FormControl<string | null | undefined>(undefined),
 			dataSourceName: new FormControl<string | null | undefined>(undefined),
 			isCancellable: new FormControl<JobPropertiesIsCancellable | null | undefined>(undefined, [Validators.required]),
-			itemsProcessed: new FormControl<number | null | undefined>(undefined),
-			totalBytesToProcess: new FormControl<number | null | undefined>(undefined),
-			totalItemsToProcess: new FormControl<number | null | undefined>(undefined),
+			itemsProcessed: new FormControl<string | null | undefined>(undefined),
+			totalBytesToProcess: new FormControl<string | null | undefined>(undefined),
+			totalItemsToProcess: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1203,6 +1233,7 @@ export namespace MyNS {
 		/**
 		 * The maximum byte size that can be encrypted by the key. For a key size larger than the size, break into chunks and encrypt each chunk, append each encrypted chunk with : to mark the end of the chunk.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		encryptionChunkSizeInBytes: number;
 
@@ -1225,6 +1256,7 @@ export namespace MyNS {
 		/**
 		 * The maximum byte size that can be encrypted by the key. For a key size larger than the size, break into chunks and encrypt each chunk, append each encrypted chunk with : to mark the end of the chunk.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		encryptionChunkSizeInBytes: FormControl<number | null | undefined>,
 

@@ -125,7 +125,10 @@ export namespace MyNS {
 	export interface EtwEventConfiguration {
 		filter?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -134,7 +137,10 @@ export namespace MyNS {
 	export interface EtwEventConfigurationFormProperties {
 		filter: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */

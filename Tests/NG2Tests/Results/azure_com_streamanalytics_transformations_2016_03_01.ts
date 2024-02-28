@@ -68,7 +68,10 @@ export namespace MyNS {
 		/** Specifies the query that will be run in the streaming job. You can learn more about the Stream Analytics Query Language (SAQL) here: https://msdn.microsoft.com/library/azure/dn834998 . Required on PUT (CreateOrReplace) requests. */
 		query?: string | null;
 
-		/** Specifies the number of streaming units that the streaming job uses. */
+		/**
+		 * Specifies the number of streaming units that the streaming job uses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		streamingUnits?: number | null;
 	}
 
@@ -81,7 +84,10 @@ export namespace MyNS {
 		/** Specifies the query that will be run in the streaming job. You can learn more about the Stream Analytics Query Language (SAQL) here: https://msdn.microsoft.com/library/azure/dn834998 . Required on PUT (CreateOrReplace) requests. */
 		query: FormControl<string | null | undefined>,
 
-		/** Specifies the number of streaming units that the streaming job uses. */
+		/**
+		 * Specifies the number of streaming units that the streaming job uses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		streamingUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateTransformationPropertiesFormGroup() {

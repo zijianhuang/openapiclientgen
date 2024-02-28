@@ -490,7 +490,7 @@ export namespace MyNS {
 		 * Minimum: 4398046511104
 		 * Maximum: 549755813888000
 		 */
-		size: number;
+		size: string;
 	}
 
 	/** Pool properties */
@@ -518,14 +518,14 @@ export namespace MyNS {
 		 * Minimum: 4398046511104
 		 * Maximum: 549755813888000
 		 */
-		size: FormControl<number | null | undefined>,
+		size: FormControl<string | null | undefined>,
 	}
 	export function CreatePoolPropertiesFormGroup() {
 		return new FormGroup<PoolPropertiesFormProperties>({
 			poolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$')]),
 			provisioningState: new FormControl<string | null | undefined>(undefined),
 			serviceLevel: new FormControl<PoolPropertiesServiceLevel | null | undefined>(undefined, [Validators.required]),
-			size: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(4398046511104), Validators.max(549755813888000)]),
+			size: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(4398046511104), Validators.max(549755813888000)]),
 		});
 
 	}
@@ -623,7 +623,7 @@ export namespace MyNS {
 		 * Minimum: 4398046511104
 		 * Maximum: 549755813888000
 		 */
-		size?: number | null;
+		size?: string | null;
 	}
 
 	/** Patchable pool properties */
@@ -637,12 +637,12 @@ export namespace MyNS {
 		 * Minimum: 4398046511104
 		 * Maximum: 549755813888000
 		 */
-		size: FormControl<number | null | undefined>,
+		size: FormControl<string | null | undefined>,
 	}
 	export function CreatePoolPatchPropertiesFormGroup() {
 		return new FormGroup<PoolPatchPropertiesFormProperties>({
 			serviceLevel: new FormControl<PoolPropertiesServiceLevel | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined, [Validators.min(4398046511104), Validators.max(549755813888000)]),
+			size: new FormControl<string | null | undefined>(undefined, [Validators.min(4398046511104), Validators.max(549755813888000)]),
 		});
 
 	}
@@ -663,7 +663,10 @@ export namespace MyNS {
 		/** Allows NFSv4.1 protocol */
 		nfsv41?: boolean | null;
 
-		/** Order index */
+		/**
+		 * Order index
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ruleIndex?: number | null;
 
 		/** Read only access */
@@ -688,7 +691,10 @@ export namespace MyNS {
 		/** Allows NFSv4.1 protocol */
 		nfsv41: FormControl<boolean | null | undefined>,
 
-		/** Order index */
+		/**
+		 * Order index
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ruleIndex: FormControl<number | null | undefined>,
 
 		/** Read only access */
@@ -1344,7 +1350,7 @@ export namespace MyNS {
 		 * Minimum: 107374182400
 		 * Maximum: 109951162777600
 		 */
-		usageThreshold: number;
+		usageThreshold: string;
 
 		/** What type of volume is this */
 		volumeType?: string | null;
@@ -1412,7 +1418,7 @@ export namespace MyNS {
 		 * Minimum: 107374182400
 		 * Maximum: 109951162777600
 		 */
-		usageThreshold: FormControl<number | null | undefined>,
+		usageThreshold: FormControl<string | null | undefined>,
 
 		/** What type of volume is this */
 		volumeType: FormControl<string | null | undefined>,
@@ -1430,7 +1436,7 @@ export namespace MyNS {
 			serviceLevel: new FormControl<PoolPropertiesServiceLevel | null | undefined>(undefined),
 			snapshotId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|(\\?([^\/]*[\/])*)([^\/]+)$')]),
 			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			usageThreshold: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(107374182400), Validators.max(109951162777600)]),
+			usageThreshold: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(107374182400), Validators.max(109951162777600)]),
 			volumeType: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1516,7 +1522,7 @@ export namespace MyNS {
 		 * Minimum: 107374182400
 		 * Maximum: 109951162777600
 		 */
-		usageThreshold?: number | null;
+		usageThreshold?: string | null;
 	}
 
 	/** Patchable volume properties */
@@ -1533,13 +1539,13 @@ export namespace MyNS {
 		 * Minimum: 107374182400
 		 * Maximum: 109951162777600
 		 */
-		usageThreshold: FormControl<number | null | undefined>,
+		usageThreshold: FormControl<string | null | undefined>,
 	}
 	export function CreateVolumePatchPropertiesFormGroup() {
 		return new FormGroup<VolumePatchPropertiesFormProperties>({
 			exportPolicy: new FormControl<any | null | undefined>(undefined),
 			serviceLevel: new FormControl<PoolPropertiesServiceLevel | null | undefined>(undefined),
-			usageThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(107374182400), Validators.max(109951162777600)]),
+			usageThreshold: new FormControl<string | null | undefined>(undefined, [Validators.min(107374182400), Validators.max(109951162777600)]),
 		});
 
 	}

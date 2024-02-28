@@ -268,7 +268,10 @@ export namespace MyNS {
 		/** Indicate if we are using Workspace ManagedIdentities/MSI token */
 		areWorkspaceManagedIdentitiesAllowed?: boolean | null;
 
-		/** If this is an Microsoft.MachineLearning.DataStore.Contracts.DataStoreType.AzureBlob, the length of time (in seconds) to cache files locally after they are accessed (downloaded). */
+		/**
+		 * If this is an Microsoft.MachineLearning.DataStore.Contracts.DataStoreType.AzureBlob, the length of time (in seconds) to cache files locally after they are accessed (downloaded).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blobCacheTimeout?: number | null;
 		clientCredentials?: ClientCredentials;
 
@@ -310,7 +313,10 @@ export namespace MyNS {
 		/** Indicate if we are using Workspace ManagedIdentities/MSI token */
 		areWorkspaceManagedIdentitiesAllowed: FormControl<boolean | null | undefined>,
 
-		/** If this is an Microsoft.MachineLearning.DataStore.Contracts.DataStoreType.AzureBlob, the length of time (in seconds) to cache files locally after they are accessed (downloaded). */
+		/**
+		 * If this is an Microsoft.MachineLearning.DataStore.Contracts.DataStoreType.AzureBlob, the length of time (in seconds) to cache files locally after they are accessed (downloaded).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blobCacheTimeout: FormControl<number | null | undefined>,
 
 		/** The storage container name */

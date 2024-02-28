@@ -24,14 +24,20 @@ export namespace MyNS {
 	/** User activities of a data warehouse. This currently includes the count of running or suspended queries. For more information, please view the sys.dm_pdw_exec_requests dynamic management view (DMV). */
 	export interface DataWarehouseUserActivitiesProperties {
 
-		/** Count of running and suspended queries. */
+		/**
+		 * Count of running and suspended queries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeQueriesCount?: number | null;
 	}
 
 	/** User activities of a data warehouse. This currently includes the count of running or suspended queries. For more information, please view the sys.dm_pdw_exec_requests dynamic management view (DMV). */
 	export interface DataWarehouseUserActivitiesPropertiesFormProperties {
 
-		/** Count of running and suspended queries. */
+		/**
+		 * Count of running and suspended queries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeQueriesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDataWarehouseUserActivitiesPropertiesFormGroup() {

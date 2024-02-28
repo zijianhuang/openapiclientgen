@@ -17,12 +17,14 @@ export namespace MyNS {
 		/**
 		 * The bet number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
 		/**
 		 * The amount of the stake placed on the bet
 		 * Required
+		 * Type: double
 		 */
 		stake: number;
 
@@ -43,12 +45,14 @@ export namespace MyNS {
 		/**
 		 * The bet number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of the stake placed on the bet
 		 * Required
+		 * Type: double
 		 */
 		stake: FormControl<number | null | undefined>,
 
@@ -113,24 +117,28 @@ export namespace MyNS {
 		/**
 		 * Price denominator - will be ignored for types other than L (Fixed Price)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceDen: number;
 
 		/**
 		 * Price numerator - will be ignored for types other than L (Fixed Price)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceNum: number;
 
 		/**
 		 * The type of price selected. For example - ‘L’ (Fixed)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceType: number;
 
 		/**
 		 * The selection identifier
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		selectionId: number;
 	}
@@ -145,24 +153,28 @@ export namespace MyNS {
 		/**
 		 * Price denominator - will be ignored for types other than L (Fixed Price)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceDen: FormControl<number | null | undefined>,
 
 		/**
 		 * Price numerator - will be ignored for types other than L (Fixed Price)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceNum: FormControl<number | null | undefined>,
 
 		/**
 		 * The type of price selected. For example - ‘L’ (Fixed)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceType: FormControl<number | null | undefined>,
 
 		/**
 		 * The selection identifier
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		selectionId: FormControl<number | null | undefined>,
 	}
@@ -182,6 +194,7 @@ export namespace MyNS {
 		/**
 		 * The delay time period of the bet in seconds. The resubmission of the bet has to wait for the length of time (in seconds) returned in the delayPeriod before submitting the second request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		delayPeriodSeconds: number;
 
@@ -197,7 +210,10 @@ export namespace MyNS {
 		 */
 		id: string;
 
-		/** Number of the bet if this is part of a multiple bet */
+		/**
+		 * Number of the bet if this is part of a multiple bet
+		 * Type: double
+		 */
 		number?: number | null;
 	}
 	export interface BetDelayedFormProperties {
@@ -205,6 +221,7 @@ export namespace MyNS {
 		/**
 		 * The delay time period of the bet in seconds. The resubmission of the bet has to wait for the length of time (in seconds) returned in the delayPeriod before submitting the second request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		delayPeriodSeconds: FormControl<number | null | undefined>,
 
@@ -220,7 +237,10 @@ export namespace MyNS {
 		 */
 		id: FormControl<string | null | undefined>,
 
-		/** Number of the bet if this is part of a multiple bet */
+		/**
+		 * Number of the bet if this is part of a multiple bet
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateBetDelayedFormGroup() {
@@ -246,16 +266,23 @@ export namespace MyNS {
 
 	export interface PlacedBet {
 
-		/** The cash in value of the bet. For example £0.88. When no value is given or no value is present, no cash in is available */
+		/**
+		 * The cash in value of the bet. For example £0.88. When no value is given or no value is present, no cash in is available
+		 * Type: double
+		 */
 		cashinValue?: number | null;
 
 		/**
 		 * The estimated value of the returns if the bet is successful. Note: when an estimated return isn’t available, as in the case of a bet placed on a horse at SP (starting price) where the actual price is unknown when the bet is placed, ‘NOT_AVAILABLE’ will appear in the response field.
 		 * Required
+		 * Type: double
 		 */
 		estimatedReturns: number;
 
-		/** If a free bet token is used for the bet, this element represents the value */
+		/**
+		 * If a free bet token is used for the bet, this element represents the value
+		 * Type: double
+		 */
 		freeBetValue?: number | null;
 
 		/**
@@ -265,10 +292,16 @@ export namespace MyNS {
 		id: string;
 		legs?: Array<PlacedBetLeg>;
 
-		/** Number of lines of bets */
+		/**
+		 * Number of lines of bets
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numLines?: number | null;
 
-		/** Number of selections that the bet is made of */
+		/**
+		 * Number of selections that the bet is made of
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numSelections?: number | null;
 
 		/** The unique identifier of the receipt for the bet */
@@ -283,10 +316,14 @@ export namespace MyNS {
 		/**
 		 * The bet stake, which represents the total value of the bet. For example: £ 12.34
 		 * Required
+		 * Type: double
 		 */
 		stake: number;
 
-		/** The individual stake on each line of the bet. For example: £ 6.17 */
+		/**
+		 * The individual stake on each line of the bet. For example: £ 6.17
+		 * Type: double
+		 */
 		stakePerLine?: number | null;
 
 		/**
@@ -316,21 +353,29 @@ export namespace MyNS {
 		/**
 		 * Actual value of the returns from this bet
 		 * Required
+		 * Type: double
 		 */
 		winnings: number;
 	}
 	export interface PlacedBetFormProperties {
 
-		/** The cash in value of the bet. For example £0.88. When no value is given or no value is present, no cash in is available */
+		/**
+		 * The cash in value of the bet. For example £0.88. When no value is given or no value is present, no cash in is available
+		 * Type: double
+		 */
 		cashinValue: FormControl<number | null | undefined>,
 
 		/**
 		 * The estimated value of the returns if the bet is successful. Note: when an estimated return isn’t available, as in the case of a bet placed on a horse at SP (starting price) where the actual price is unknown when the bet is placed, ‘NOT_AVAILABLE’ will appear in the response field.
 		 * Required
+		 * Type: double
 		 */
 		estimatedReturns: FormControl<number | null | undefined>,
 
-		/** If a free bet token is used for the bet, this element represents the value */
+		/**
+		 * If a free bet token is used for the bet, this element represents the value
+		 * Type: double
+		 */
 		freeBetValue: FormControl<number | null | undefined>,
 
 		/**
@@ -339,10 +384,16 @@ export namespace MyNS {
 		 */
 		id: FormControl<string | null | undefined>,
 
-		/** Number of lines of bets */
+		/**
+		 * Number of lines of bets
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numLines: FormControl<number | null | undefined>,
 
-		/** Number of selections that the bet is made of */
+		/**
+		 * Number of selections that the bet is made of
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numSelections: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the receipt for the bet */
@@ -357,10 +408,14 @@ export namespace MyNS {
 		/**
 		 * The bet stake, which represents the total value of the bet. For example: £ 12.34
 		 * Required
+		 * Type: double
 		 */
 		stake: FormControl<number | null | undefined>,
 
-		/** The individual stake on each line of the bet. For example: £ 6.17 */
+		/**
+		 * The individual stake on each line of the bet. For example: £ 6.17
+		 * Type: double
+		 */
 		stakePerLine: FormControl<number | null | undefined>,
 
 		/**
@@ -390,6 +445,7 @@ export namespace MyNS {
 		/**
 		 * Actual value of the returns from this bet
 		 * Required
+		 * Type: double
 		 */
 		winnings: FormControl<number | null | undefined>,
 	}
@@ -419,6 +475,7 @@ export namespace MyNS {
 		/**
 		 * The leg number of the bet
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
@@ -439,6 +496,7 @@ export namespace MyNS {
 		/**
 		 * The leg number of the bet
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
@@ -468,13 +526,22 @@ export namespace MyNS {
 		 */
 		description: string;
 
-		/** When the odds are shown in vulgar fractions this is the denominator of the fraction. For example: 2 in 5/2 */
+		/**
+		 * When the odds are shown in vulgar fractions this is the denominator of the fraction. For example: 2 in 5/2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eachWayDen?: number | null;
 
-		/** When the odds are shown in vulgar fractions this is the numerator of the fraction. For example: 5 in 5/2 */
+		/**
+		 * When the odds are shown in vulgar fractions this is the numerator of the fraction. For example: 5 in 5/2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eachWayNum?: number | null;
 
-		/** The Each-way places available for the bet */
+		/**
+		 * The Each-way places available for the bet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eachWayPlaces?: number | null;
 
 		/**
@@ -495,18 +562,23 @@ export namespace MyNS {
 		/** The description of type of the event */
 		eventTypeDescription?: string | null;
 
-		/** Denotes if the bet is part of a handicap market. For example: -1 if the selection starts on -1 goals (in football) */
+		/**
+		 * Denotes if the bet is part of a handicap market. For example: -1 if the selection starts on -1 goals (in football)
+		 * Type: double
+		 */
 		handicap?: number | null;
 
 		/**
 		 * The number of the bet
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
 		/**
 		 * When the odds are shown in vulgar fractions this is the denominator of the fraction. For example: 2 in 5/2
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceDen: number;
 		priceFormatted?: PriceFormatted;
@@ -514,6 +586,7 @@ export namespace MyNS {
 		/**
 		 * When the odds are shown in vulgar fractions this is the numerator of the fraction. For example: 5 in 5/2
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceNum: number;
 
@@ -529,7 +602,10 @@ export namespace MyNS {
 		 */
 		result: string;
 
-		/** The official scale of deductions that apply when a runner is withdrawn */
+		/**
+		 * The official scale of deductions that apply when a runner is withdrawn
+		 * Type: double
+		 */
 		rule4Deductions?: number | null;
 
 		/** Unique identifier of the selection */
@@ -549,13 +625,22 @@ export namespace MyNS {
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** When the odds are shown in vulgar fractions this is the denominator of the fraction. For example: 2 in 5/2 */
+		/**
+		 * When the odds are shown in vulgar fractions this is the denominator of the fraction. For example: 2 in 5/2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eachWayDen: FormControl<number | null | undefined>,
 
-		/** When the odds are shown in vulgar fractions this is the numerator of the fraction. For example: 5 in 5/2 */
+		/**
+		 * When the odds are shown in vulgar fractions this is the numerator of the fraction. For example: 5 in 5/2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eachWayNum: FormControl<number | null | undefined>,
 
-		/** The Each-way places available for the bet */
+		/**
+		 * The Each-way places available for the bet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		eachWayPlaces: FormControl<number | null | undefined>,
 
 		/**
@@ -576,24 +661,30 @@ export namespace MyNS {
 		/** The description of type of the event */
 		eventTypeDescription: FormControl<string | null | undefined>,
 
-		/** Denotes if the bet is part of a handicap market. For example: -1 if the selection starts on -1 goals (in football) */
+		/**
+		 * Denotes if the bet is part of a handicap market. For example: -1 if the selection starts on -1 goals (in football)
+		 * Type: double
+		 */
 		handicap: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of the bet
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
 		/**
 		 * When the odds are shown in vulgar fractions this is the denominator of the fraction. For example: 2 in 5/2
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceDen: FormControl<number | null | undefined>,
 
 		/**
 		 * When the odds are shown in vulgar fractions this is the numerator of the fraction. For example: 5 in 5/2
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceNum: FormControl<number | null | undefined>,
 
@@ -609,7 +700,10 @@ export namespace MyNS {
 		 */
 		result: FormControl<string | null | undefined>,
 
-		/** The official scale of deductions that apply when a runner is withdrawn */
+		/**
+		 * The official scale of deductions that apply when a runner is withdrawn
+		 * Type: double
+		 */
 		rule4Deductions: FormControl<number | null | undefined>,
 
 		/** Unique identifier of the selection */
@@ -649,7 +743,10 @@ export namespace MyNS {
 		/** The price in American format */
 		american?: string | null;
 
-		/** The decimal format of the price */
+		/**
+		 * The decimal format of the price
+		 * Type: double
+		 */
 		decimal?: number | null;
 
 		/** The fractional format of the price or EVS when the price evens. */
@@ -660,7 +757,10 @@ export namespace MyNS {
 		/** The price in American format */
 		american: FormControl<string | null | undefined>,
 
-		/** The decimal format of the price */
+		/**
+		 * The decimal format of the price
+		 * Type: double
+		 */
 		decimal: FormControl<number | null | undefined>,
 
 		/** The fractional format of the price or EVS when the price evens. */
@@ -680,10 +780,16 @@ export namespace MyNS {
 		/** The bet id */
 		id?: string | null;
 
-		/** The number of lines the bet consists of */
+		/**
+		 * The number of lines the bet consists of
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numLines?: number | null;
 
-		/** Number of the bet if this is part of a multiple bet */
+		/**
+		 * Number of the bet if this is part of a multiple bet
+		 * Type: double
+		 */
 		number?: number | null;
 
 		/** The time the bet was placed. For example: 2013-01-30TT13:34:20. The value of this element can be replaced with the current timestamp if it was missing. */
@@ -695,7 +801,10 @@ export namespace MyNS {
 		 */
 		receipt: string;
 
-		/** The total amount staked on the bet */
+		/**
+		 * The total amount staked on the bet
+		 * Type: double
+		 */
 		totalStake?: number | null;
 	}
 	export interface BetPlacedFormProperties {
@@ -703,10 +812,16 @@ export namespace MyNS {
 		/** The bet id */
 		id: FormControl<string | null | undefined>,
 
-		/** The number of lines the bet consists of */
+		/**
+		 * The number of lines the bet consists of
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numLines: FormControl<number | null | undefined>,
 
-		/** Number of the bet if this is part of a multiple bet */
+		/**
+		 * Number of the bet if this is part of a multiple bet
+		 * Type: double
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The time the bet was placed. For example: 2013-01-30TT13:34:20. The value of this element can be replaced with the current timestamp if it was missing. */
@@ -718,7 +833,10 @@ export namespace MyNS {
 		 */
 		receipt: FormControl<string | null | undefined>,
 
-		/** The total amount staked on the bet */
+		/**
+		 * The total amount staked on the bet
+		 * Type: double
+		 */
 		totalStake: FormControl<number | null | undefined>,
 	}
 	export function CreateBetPlacedFormGroup() {
@@ -757,7 +875,10 @@ export namespace MyNS {
 
 	export interface Betslipbet {
 
-		/** The total aggregated odds, as a decimal, of the multiple bet placed */
+		/**
+		 * The total aggregated odds, as a decimal, of the multiple bet placed
+		 * Type: double
+		 */
 		betMultiplier?: number | null;
 
 		/** Free bets that can be used with this bet */
@@ -766,18 +887,28 @@ export namespace MyNS {
 		/** Required */
 		legs: Array<Betslipleg>;
 
-		/** Maximum stake allowable on the bet. For example: 2500.00 (GBP) */
+		/**
+		 * Maximum stake allowable on the bet. For example: 2500.00 (GBP)
+		 * Type: double
+		 */
 		maxStake?: number | null;
 
-		/** Minumum stake allowable on the bet. For example: 0.05 (GBP) */
+		/**
+		 * Minumum stake allowable on the bet. For example: 0.05 (GBP)
+		 * Type: double
+		 */
 		minStake?: number | null;
 
-		/** The number of lines (selections) of a bet */
+		/**
+		 * The number of lines (selections) of a bet
+		 * Type: double
+		 */
 		numLines?: number | null;
 
 		/**
 		 * The bet number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
@@ -792,21 +923,34 @@ export namespace MyNS {
 	}
 	export interface BetslipbetFormProperties {
 
-		/** The total aggregated odds, as a decimal, of the multiple bet placed */
+		/**
+		 * The total aggregated odds, as a decimal, of the multiple bet placed
+		 * Type: double
+		 */
 		betMultiplier: FormControl<number | null | undefined>,
 
-		/** Maximum stake allowable on the bet. For example: 2500.00 (GBP) */
+		/**
+		 * Maximum stake allowable on the bet. For example: 2500.00 (GBP)
+		 * Type: double
+		 */
 		maxStake: FormControl<number | null | undefined>,
 
-		/** Minumum stake allowable on the bet. For example: 0.05 (GBP) */
+		/**
+		 * Minumum stake allowable on the bet. For example: 0.05 (GBP)
+		 * Type: double
+		 */
 		minStake: FormControl<number | null | undefined>,
 
-		/** The number of lines (selections) of a bet */
+		/**
+		 * The number of lines (selections) of a bet
+		 * Type: double
+		 */
 		numLines: FormControl<number | null | undefined>,
 
 		/**
 		 * The bet number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
@@ -846,13 +990,17 @@ export namespace MyNS {
 		/**
 		 * The identifier of the free bet
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/** The description of the offer that enabled the customer to place a free bet */
 		offerDesc?: string | null;
 
-		/** The identifier of the offer */
+		/**
+		 * The identifier of the offer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offerId?: number | null;
 
 		/**
@@ -867,6 +1015,7 @@ export namespace MyNS {
 		/**
 		 * The value of the free bet
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 	}
@@ -884,13 +1033,17 @@ export namespace MyNS {
 		/**
 		 * The identifier of the free bet
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The description of the offer that enabled the customer to place a free bet */
 		offerDesc: FormControl<string | null | undefined>,
 
-		/** The identifier of the offer */
+		/**
+		 * The identifier of the offer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offerId: FormControl<number | null | undefined>,
 
 		/**
@@ -905,6 +1058,7 @@ export namespace MyNS {
 		/**
 		 * The value of the free bet
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -967,7 +1121,10 @@ export namespace MyNS {
 		 */
 		includeInMultiple: boolean;
 
-		/** To organise a number of outcome selections into one or more bet groups, such as a Single bet, a Double bet, a Trixie, etc */
+		/**
+		 * To organise a number of outcome selections into one or more bet groups, such as a Single bet, a Double bet, a Trixie, etc
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		legGroup?: number | null;
 
 		/** Indicates if there has been a change in the price */
@@ -976,24 +1133,28 @@ export namespace MyNS {
 		/**
 		 * Price denominator - will be ignored for types other than L (Fixed Price)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceDen: number;
 
 		/**
 		 * Price numerator - will be ignored for types other than L (Fixed Price)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceNum: number;
 
 		/**
 		 * The type of price selected. For example - ‘L’ (Fixed)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceType: number;
 
 		/**
 		 * The selection identifier
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		selectionId: number;
 
@@ -1020,7 +1181,10 @@ export namespace MyNS {
 		 */
 		includeInMultiple: FormControl<boolean | null | undefined>,
 
-		/** To organise a number of outcome selections into one or more bet groups, such as a Single bet, a Double bet, a Trixie, etc */
+		/**
+		 * To organise a number of outcome selections into one or more bet groups, such as a Single bet, a Double bet, a Trixie, etc
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		legGroup: FormControl<number | null | undefined>,
 
 		/** Indicates if there has been a change in the price */
@@ -1029,24 +1193,28 @@ export namespace MyNS {
 		/**
 		 * Price denominator - will be ignored for types other than L (Fixed Price)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceDen: FormControl<number | null | undefined>,
 
 		/**
 		 * Price numerator - will be ignored for types other than L (Fixed Price)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceNum: FormControl<number | null | undefined>,
 
 		/**
 		 * The type of price selected. For example - ‘L’ (Fixed)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priceType: FormControl<number | null | undefined>,
 
 		/**
 		 * The selection identifier
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		selectionId: FormControl<number | null | undefined>,
 
@@ -1233,10 +1401,16 @@ export namespace MyNS {
 		/** The ID number of the free bet token if used in conjunction with this bet */
 		freeBetId?: string | null;
 
-		/** When the odds are shown in vulgar fractions this is the denominator of the fraction. For example: 2 in 5/2 */
+		/**
+		 * When the odds are shown in vulgar fractions this is the denominator of the fraction. For example: 2 in 5/2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceDen?: number | null;
 
-		/** When the odds are shown in vulgar fractions this is the numerator of the fraction. For example: 5 in 5/2 */
+		/**
+		 * When the odds are shown in vulgar fractions this is the numerator of the fraction. For example: 5 in 5/2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceNum?: number | null;
 
 		/**
@@ -1254,6 +1428,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the stake placed on the bet
 		 * Required
+		 * Type: double
 		 */
 		stake: number;
 
@@ -1271,10 +1446,16 @@ export namespace MyNS {
 		/** The ID number of the free bet token if used in conjunction with this bet */
 		freeBetId: FormControl<string | null | undefined>,
 
-		/** When the odds are shown in vulgar fractions this is the denominator of the fraction. For example: 2 in 5/2 */
+		/**
+		 * When the odds are shown in vulgar fractions this is the denominator of the fraction. For example: 2 in 5/2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceDen: FormControl<number | null | undefined>,
 
-		/** When the odds are shown in vulgar fractions this is the numerator of the fraction. For example: 5 in 5/2 */
+		/**
+		 * When the odds are shown in vulgar fractions this is the numerator of the fraction. For example: 5 in 5/2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priceNum: FormControl<number | null | undefined>,
 
 		/**
@@ -1292,6 +1473,7 @@ export namespace MyNS {
 		/**
 		 * The amount of the stake placed on the bet
 		 * Required
+		 * Type: double
 		 */
 		stake: FormControl<number | null | undefined>,
 
@@ -1353,7 +1535,6 @@ export namespace MyNS {
 		 * Post betslips
 		 * @param {string} expanded Allows for all bets for given selections to be returned - not just the specified type
 		 * @param {BetSlipRequest} requestBody Betslip Body
-		 * @return {BetSlipResponse} 
 		 */
 		ValidateBetslip(expanded: string | null | undefined, requestBody: BetSlipRequest): Observable<BetSlipResponse> {
 			return this.http.post<BetSlipResponse>(this.baseUri + 'betslips?expanded=' + (expanded == null ? '' : encodeURIComponent(expanded)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });

@@ -94,7 +94,10 @@ export namespace MyNS {
 	/** The ARP table associated with the ExpressRouteCircuit. */
 	export interface ExpressRouteCircuitArpTable {
 
-		/** Entry age in minutes. */
+		/**
+		 * Entry age in minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		age?: number | null;
 
 		/** Interface address. */
@@ -110,7 +113,10 @@ export namespace MyNS {
 	/** The ARP table associated with the ExpressRouteCircuit. */
 	export interface ExpressRouteCircuitArpTableFormProperties {
 
-		/** Entry age in minutes. */
+		/**
+		 * Entry age in minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		age: FormControl<number | null | undefined>,
 
 		/** Interface address. */
@@ -269,10 +275,16 @@ export namespace MyNS {
 		/** The advertised public prefix state of the Peering resource. */
 		advertisedPublicPrefixesState?: ExpressRouteCircuitPeeringConfigAdvertisedPublicPrefixesState | null;
 
-		/** The CustomerASN of the peering. */
+		/**
+		 * The CustomerASN of the peering.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerASN?: number | null;
 
-		/** The legacy mode of the peering. */
+		/**
+		 * The legacy mode of the peering.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		legacyMode?: number | null;
 
 		/** The RoutingRegistryName of the configuration. */
@@ -285,10 +297,16 @@ export namespace MyNS {
 		/** The advertised public prefix state of the Peering resource. */
 		advertisedPublicPrefixesState: FormControl<ExpressRouteCircuitPeeringConfigAdvertisedPublicPrefixesState | null | undefined>,
 
-		/** The CustomerASN of the peering. */
+		/**
+		 * The CustomerASN of the peering.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customerASN: FormControl<number | null | undefined>,
 
-		/** The legacy mode of the peering. */
+		/**
+		 * The legacy mode of the peering.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		legacyMode: FormControl<number | null | undefined>,
 
 		/** The RoutingRegistryName of the configuration. */
@@ -334,7 +352,10 @@ export namespace MyNS {
 	/** Properties of the express route circuit peering. */
 	export interface ExpressRouteCircuitPeeringPropertiesFormat {
 
-		/** The Azure ASN. */
+		/**
+		 * The Azure ASN.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		azureASN?: number | null;
 
 		/** The list of circuit connections associated with Azure Private Peering for this circuit. */
@@ -360,7 +381,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 4294967295
 		 */
-		peerASN?: number | null;
+		peerASN?: string | null;
 
 		/** The list of peered circuit connections associated with Azure Private Peering for this circuit. */
 		peeredConnections?: Array<PeerExpressRouteCircuitConnection>;
@@ -395,14 +416,20 @@ export namespace MyNS {
 		/** Contains stats associated with the peering. */
 		stats?: ExpressRouteCircuitStats;
 
-		/** The VLAN ID. */
+		/**
+		 * The VLAN ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 
 	/** Properties of the express route circuit peering. */
 	export interface ExpressRouteCircuitPeeringPropertiesFormatFormProperties {
 
-		/** The Azure ASN. */
+		/**
+		 * The Azure ASN.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		azureASN: FormControl<number | null | undefined>,
 
 		/** The ID of the ExpressRouteConnection. */
@@ -419,7 +446,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 4294967295
 		 */
-		peerASN: FormControl<number | null | undefined>,
+		peerASN: FormControl<string | null | undefined>,
 
 		/** The peering type. */
 		peeringType: FormControl<ExpressRouteCircuitPeeringPropertiesFormatPeeringType | null | undefined>,
@@ -448,7 +475,10 @@ export namespace MyNS {
 		/** The state of peering. */
 		state: FormControl<ExpressRouteCircuitPeeringPropertiesFormatState | null | undefined>,
 
-		/** The VLAN ID. */
+		/**
+		 * The VLAN ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateExpressRouteCircuitPeeringPropertiesFormatFormGroup() {
@@ -457,7 +487,7 @@ export namespace MyNS {
 			expressRouteConnection: new FormControl<any | null | undefined>(undefined),
 			gatewayManagerEtag: new FormControl<string | null | undefined>(undefined),
 			lastModifiedBy: new FormControl<string | null | undefined>(undefined),
-			peerASN: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(4294967295)]),
+			peerASN: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(4294967295)]),
 			peeringType: new FormControl<ExpressRouteCircuitPeeringPropertiesFormatPeeringType | null | undefined>(undefined),
 			primaryAzurePort: new FormControl<string | null | undefined>(undefined),
 			primaryPeerAddressPrefix: new FormControl<string | null | undefined>(undefined),
@@ -496,7 +526,10 @@ export namespace MyNS {
 		/** The list of authorizations. */
 		authorizations?: Array<ExpressRouteCircuitAuthorization>;
 
-		/** The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource. */
+		/**
+		 * The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource.
+		 * Type: double
+		 */
 		bandwidthInGbps?: number | null;
 
 		/** The CircuitProvisioningState state of the resource. */
@@ -529,7 +562,10 @@ export namespace MyNS {
 		/** The ServiceProviderProvisioningState state of the resource. */
 		serviceProviderProvisioningState?: ExpressRouteCircuitPropertiesFormatServiceProviderProvisioningState | null;
 
-		/** The identifier of the circuit traffic. Outer tag for QinQ encapsulation. */
+		/**
+		 * The identifier of the circuit traffic. Outer tag for QinQ encapsulation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stag?: number | null;
 	}
 
@@ -539,7 +575,10 @@ export namespace MyNS {
 		/** Allow classic operations. */
 		allowClassicOperations: FormControl<boolean | null | undefined>,
 
-		/** The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource. */
+		/**
+		 * The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource.
+		 * Type: double
+		 */
 		bandwidthInGbps: FormControl<number | null | undefined>,
 
 		/** The CircuitProvisioningState state of the resource. */
@@ -566,7 +605,10 @@ export namespace MyNS {
 		/** The ServiceProviderProvisioningState state of the resource. */
 		serviceProviderProvisioningState: FormControl<ExpressRouteCircuitPropertiesFormatServiceProviderProvisioningState | null | undefined>,
 
-		/** The identifier of the circuit traffic. Outer tag for QinQ encapsulation. */
+		/**
+		 * The identifier of the circuit traffic. Outer tag for QinQ encapsulation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stag: FormControl<number | null | undefined>,
 	}
 	export function CreateExpressRouteCircuitPropertiesFormatFormGroup() {
@@ -604,7 +646,10 @@ export namespace MyNS {
 		/** Autonomous system paths to the destination network. */
 		path?: string | null;
 
-		/** Route Weight. */
+		/**
+		 * Route Weight.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
@@ -623,7 +668,10 @@ export namespace MyNS {
 		/** Autonomous system paths to the destination network. */
 		path: FormControl<string | null | undefined>,
 
-		/** Route Weight. */
+		/**
+		 * Route Weight.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateExpressRouteCircuitRoutesTableFormGroup() {
@@ -641,7 +689,10 @@ export namespace MyNS {
 	/** The routes table associated with the ExpressRouteCircuit. */
 	export interface ExpressRouteCircuitRoutesTableSummary {
 
-		/** Autonomous system number. */
+		/**
+		 * Autonomous system number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		as?: number | null;
 
 		/** IP address of the neighbor. */
@@ -653,14 +704,20 @@ export namespace MyNS {
 		/** The length of time that the BGP session has been in the Established state, or the current status if not in the Established state. */
 		upDown?: string | null;
 
-		/** BGP version number spoken to the neighbor. */
+		/**
+		 * BGP version number spoken to the neighbor.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		v?: number | null;
 	}
 
 	/** The routes table associated with the ExpressRouteCircuit. */
 	export interface ExpressRouteCircuitRoutesTableSummaryFormProperties {
 
-		/** Autonomous system number. */
+		/**
+		 * Autonomous system number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		as: FormControl<number | null | undefined>,
 
 		/** IP address of the neighbor. */
@@ -672,7 +729,10 @@ export namespace MyNS {
 		/** The length of time that the BGP session has been in the Established state, or the current status if not in the Established state. */
 		upDown: FormControl<string | null | undefined>,
 
-		/** BGP version number spoken to the neighbor. */
+		/**
+		 * BGP version number spoken to the neighbor.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		v: FormControl<number | null | undefined>,
 	}
 	export function CreateExpressRouteCircuitRoutesTableSummaryFormGroup() {
@@ -690,7 +750,10 @@ export namespace MyNS {
 	/** Contains ServiceProviderProperties in an ExpressRouteCircuit. */
 	export interface ExpressRouteCircuitServiceProviderProperties {
 
-		/** The BandwidthInMbps. */
+		/**
+		 * The BandwidthInMbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bandwidthInMbps?: number | null;
 
 		/** The peering location. */
@@ -703,7 +766,10 @@ export namespace MyNS {
 	/** Contains ServiceProviderProperties in an ExpressRouteCircuit. */
 	export interface ExpressRouteCircuitServiceProviderPropertiesFormProperties {
 
-		/** The BandwidthInMbps. */
+		/**
+		 * The BandwidthInMbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bandwidthInMbps: FormControl<number | null | undefined>,
 
 		/** The peering location. */
@@ -764,40 +830,64 @@ export namespace MyNS {
 	/** Contains stats associated with the peering. */
 	export interface ExpressRouteCircuitStats {
 
-		/** The Primary BytesIn of the peering. */
-		primarybytesIn?: number | null;
+		/**
+		 * The Primary BytesIn of the peering.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		primarybytesIn?: string | null;
 
-		/** The primary BytesOut of the peering. */
-		primarybytesOut?: number | null;
+		/**
+		 * The primary BytesOut of the peering.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		primarybytesOut?: string | null;
 
-		/** The secondary BytesIn of the peering. */
-		secondarybytesIn?: number | null;
+		/**
+		 * The secondary BytesIn of the peering.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		secondarybytesIn?: string | null;
 
-		/** The secondary BytesOut of the peering. */
-		secondarybytesOut?: number | null;
+		/**
+		 * The secondary BytesOut of the peering.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		secondarybytesOut?: string | null;
 	}
 
 	/** Contains stats associated with the peering. */
 	export interface ExpressRouteCircuitStatsFormProperties {
 
-		/** The Primary BytesIn of the peering. */
-		primarybytesIn: FormControl<number | null | undefined>,
+		/**
+		 * The Primary BytesIn of the peering.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		primarybytesIn: FormControl<string | null | undefined>,
 
-		/** The primary BytesOut of the peering. */
-		primarybytesOut: FormControl<number | null | undefined>,
+		/**
+		 * The primary BytesOut of the peering.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		primarybytesOut: FormControl<string | null | undefined>,
 
-		/** The secondary BytesIn of the peering. */
-		secondarybytesIn: FormControl<number | null | undefined>,
+		/**
+		 * The secondary BytesIn of the peering.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		secondarybytesIn: FormControl<string | null | undefined>,
 
-		/** The secondary BytesOut of the peering. */
-		secondarybytesOut: FormControl<number | null | undefined>,
+		/**
+		 * The secondary BytesOut of the peering.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		secondarybytesOut: FormControl<string | null | undefined>,
 	}
 	export function CreateExpressRouteCircuitStatsFormGroup() {
 		return new FormGroup<ExpressRouteCircuitStatsFormProperties>({
-			primarybytesIn: new FormControl<number | null | undefined>(undefined),
-			primarybytesOut: new FormControl<number | null | undefined>(undefined),
-			secondarybytesIn: new FormControl<number | null | undefined>(undefined),
-			secondarybytesOut: new FormControl<number | null | undefined>(undefined),
+			primarybytesIn: new FormControl<string | null | undefined>(undefined),
+			primarybytesOut: new FormControl<string | null | undefined>(undefined),
+			secondarybytesIn: new FormControl<string | null | undefined>(undefined),
+			secondarybytesOut: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -899,7 +989,10 @@ export namespace MyNS {
 		/** The OfferName. */
 		offerName?: string | null;
 
-		/** The ValueInMbps. */
+		/**
+		 * The ValueInMbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valueInMbps?: number | null;
 	}
 
@@ -909,7 +1002,10 @@ export namespace MyNS {
 		/** The OfferName. */
 		offerName: FormControl<string | null | undefined>,
 
-		/** The ValueInMbps. */
+		/**
+		 * The ValueInMbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valueInMbps: FormControl<number | null | undefined>,
 	}
 	export function CreateExpressRouteServiceProviderBandwidthsOfferedFormGroup() {

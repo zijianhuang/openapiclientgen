@@ -956,10 +956,16 @@ export namespace MyNS {
 	/** The usage data for a usage request. */
 	export interface Usage {
 
-		/** Current value for this metric. */
+		/**
+		 * Current value for this metric.
+		 * Type: double
+		 */
 		currentValue?: number | null;
 
-		/** Maximum value for this metric. */
+		/**
+		 * Maximum value for this metric.
+		 * Type: double
+		 */
 		limit?: number | null;
 
 		/** A metric name. */
@@ -981,10 +987,16 @@ export namespace MyNS {
 	/** The usage data for a usage request. */
 	export interface UsageFormProperties {
 
-		/** Current value for this metric. */
+		/**
+		 * Current value for this metric.
+		 * Type: double
+		 */
 		currentValue: FormControl<number | null | undefined>,
 
-		/** Maximum value for this metric. */
+		/**
+		 * Maximum value for this metric.
+		 * Type: double
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Next reset time for current quota. */
@@ -1204,7 +1216,6 @@ export namespace MyNS {
 		 * @param {string} api_version Version of the API to be used with the client request. Current version is 2017-04-18
 		 * @param {string} subscriptionId Azure Subscription ID.
 		 * @param {RegenerateKeyParameters} requestBody regenerate key parameters.
-		 * @return {CognitiveServicesAccountKeys} 
 		 */
 		Accounts_RegenerateKey(resourceGroupName: string, accountName: string, api_version: string, subscriptionId: string, requestBody: RegenerateKeyParameters): Observable<CognitiveServicesAccountKeys> {
 			return this.http.post<CognitiveServicesAccountKeys>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.CognitiveServices/accounts/' + (accountName == null ? '' : encodeURIComponent(accountName)) + '/regenerateKey&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });

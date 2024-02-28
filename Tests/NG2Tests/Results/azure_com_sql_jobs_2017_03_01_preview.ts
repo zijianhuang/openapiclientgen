@@ -30,7 +30,10 @@ export namespace MyNS {
 		/** Scheduling properties of a job. */
 		schedule?: JobSchedule;
 
-		/** The job version number. */
+		/**
+		 * The job version number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -40,7 +43,10 @@ export namespace MyNS {
 		/** User-defined description of the job. */
 		description: FormControl<string | null | undefined>,
 
-		/** The job version number. */
+		/**
+		 * The job version number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateJobPropertiesFormGroup() {
@@ -160,7 +166,10 @@ export namespace MyNS {
 
 	export interface JobAgentSku {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -180,7 +189,10 @@ export namespace MyNS {
 	}
 	export interface JobAgentSkuFormProperties {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -362,7 +374,10 @@ export namespace MyNS {
 		/** Start time of the current attempt. */
 		currentAttemptStartTime?: Date | null;
 
-		/** Number of times the job execution has been attempted. */
+		/**
+		 * Number of times the job execution has been attempted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentAttempts?: number | null;
 
 		/** The time that the job execution completed. */
@@ -371,7 +386,10 @@ export namespace MyNS {
 		/** The unique identifier of the job execution. */
 		jobExecutionId?: string | null;
 
-		/** The job version number. */
+		/**
+		 * The job version number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jobVersion?: number | null;
 
 		/** The last status or error message. */
@@ -386,7 +404,10 @@ export namespace MyNS {
 		/** The time that the job execution started. */
 		startTime?: Date | null;
 
-		/** The job step id. */
+		/**
+		 * The job step id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepId?: number | null;
 
 		/** The job step name. */
@@ -405,7 +426,10 @@ export namespace MyNS {
 		/** Start time of the current attempt. */
 		currentAttemptStartTime: FormControl<Date | null | undefined>,
 
-		/** Number of times the job execution has been attempted. */
+		/**
+		 * Number of times the job execution has been attempted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentAttempts: FormControl<number | null | undefined>,
 
 		/** The time that the job execution completed. */
@@ -414,7 +438,10 @@ export namespace MyNS {
 		/** The unique identifier of the job execution. */
 		jobExecutionId: FormControl<string | null | undefined>,
 
-		/** The job version number. */
+		/**
+		 * The job version number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jobVersion: FormControl<number | null | undefined>,
 
 		/** The last status or error message. */
@@ -429,7 +456,10 @@ export namespace MyNS {
 		/** The time that the job execution started. */
 		startTime: FormControl<Date | null | undefined>,
 
-		/** The job step id. */
+		/**
+		 * The job step id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepId: FormControl<number | null | undefined>,
 
 		/** The job step name. */
@@ -581,7 +611,10 @@ export namespace MyNS {
 		/** The output configuration of a job step. */
 		output?: JobStepOutput;
 
-		/** The job step's index within the job. If not specified when creating the job step, it will be created as the last step. If not specified when updating the job step, the step id is not modified. */
+		/**
+		 * The job step's index within the job. If not specified when creating the job step, it will be created as the last step. If not specified when updating the job step, the step id is not modified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepId?: number | null;
 
 		/**
@@ -600,7 +633,10 @@ export namespace MyNS {
 		 */
 		credential: FormControl<string | null | undefined>,
 
-		/** The job step's index within the job. If not specified when creating the job step, it will be created as the last step. If not specified when updating the job step, the step id is not modified. */
+		/**
+		 * The job step's index within the job. If not specified when creating the job step, it will be created as the last step. If not specified when updating the job step, the step id is not modified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepId: FormControl<number | null | undefined>,
 
 		/**
@@ -667,38 +703,68 @@ export namespace MyNS {
 	/** The execution options of a job step. */
 	export interface JobStepExecutionOptions {
 
-		/** Initial delay between retries for job step execution. */
+		/**
+		 * Initial delay between retries for job step execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialRetryIntervalSeconds?: number | null;
 
-		/** The maximum amount of time to wait between retries for job step execution. */
+		/**
+		 * The maximum amount of time to wait between retries for job step execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumRetryIntervalSeconds?: number | null;
 
-		/** Maximum number of times the job step will be reattempted if the first attempt fails. */
+		/**
+		 * Maximum number of times the job step will be reattempted if the first attempt fails.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retryAttempts?: number | null;
 
-		/** The backoff multiplier for the time between retries. */
+		/**
+		 * The backoff multiplier for the time between retries.
+		 * Type: float
+		 */
 		retryIntervalBackoffMultiplier?: number | null;
 
-		/** Execution timeout for the job step. */
+		/**
+		 * Execution timeout for the job step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds?: number | null;
 	}
 
 	/** The execution options of a job step. */
 	export interface JobStepExecutionOptionsFormProperties {
 
-		/** Initial delay between retries for job step execution. */
+		/**
+		 * Initial delay between retries for job step execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialRetryIntervalSeconds: FormControl<number | null | undefined>,
 
-		/** The maximum amount of time to wait between retries for job step execution. */
+		/**
+		 * The maximum amount of time to wait between retries for job step execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumRetryIntervalSeconds: FormControl<number | null | undefined>,
 
-		/** Maximum number of times the job step will be reattempted if the first attempt fails. */
+		/**
+		 * Maximum number of times the job step will be reattempted if the first attempt fails.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retryAttempts: FormControl<number | null | undefined>,
 
-		/** The backoff multiplier for the time between retries. */
+		/**
+		 * The backoff multiplier for the time between retries.
+		 * Type: float
+		 */
 		retryIntervalBackoffMultiplier: FormControl<number | null | undefined>,
 
-		/** Execution timeout for the job step. */
+		/**
+		 * Execution timeout for the job step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateJobStepExecutionOptionsFormGroup() {

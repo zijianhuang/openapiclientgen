@@ -182,7 +182,10 @@ export namespace MyNS {
 	/** An update history of the ImmutabilityPolicy of a blob container. */
 	export interface UpdateHistoryProperty {
 
-		/** The immutability period for the blobs in the container since the policy creation, in days. */
+		/**
+		 * The immutability period for the blobs in the container since the policy creation, in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		immutabilityPeriodSinceCreationInDays?: number | null;
 
 		/** Returns the Object ID of the user who updated the ImmutabilityPolicy. */
@@ -204,7 +207,10 @@ export namespace MyNS {
 	/** An update history of the ImmutabilityPolicy of a blob container. */
 	export interface UpdateHistoryPropertyFormProperties {
 
-		/** The immutability period for the blobs in the container since the policy creation, in days. */
+		/**
+		 * The immutability period for the blobs in the container since the policy creation, in days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		immutabilityPeriodSinceCreationInDays: FormControl<number | null | undefined>,
 
 		/** Returns the Object ID of the user who updated the ImmutabilityPolicy. */
@@ -243,6 +249,7 @@ export namespace MyNS {
 		/**
 		 * The immutability period for the blobs in the container since the policy creation, in days.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		immutabilityPeriodSinceCreationInDays: number;
 
@@ -256,6 +263,7 @@ export namespace MyNS {
 		/**
 		 * The immutability period for the blobs in the container since the policy creation, in days.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		immutabilityPeriodSinceCreationInDays: FormControl<number | null | undefined>,
 
@@ -280,10 +288,16 @@ export namespace MyNS {
 		 */
 		action: LeaseContainerRequestAction;
 
-		/** Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds, between 0 and 60. */
+		/**
+		 * Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds, between 0 and 60.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		breakPeriod?: number | null;
 
-		/** Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that never expires. */
+		/**
+		 * Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that never expires.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leaseDuration?: number | null;
 
 		/** Identifies the lease. Can be specified in any valid GUID string format. */
@@ -302,10 +316,16 @@ export namespace MyNS {
 		 */
 		action: FormControl<LeaseContainerRequestAction | null | undefined>,
 
-		/** Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds, between 0 and 60. */
+		/**
+		 * Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds, between 0 and 60.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		breakPeriod: FormControl<number | null | undefined>,
 
-		/** Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that never expires. */
+		/**
+		 * Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that never expires.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leaseDuration: FormControl<number | null | undefined>,
 
 		/** Identifies the lease. Can be specified in any valid GUID string format. */

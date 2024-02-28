@@ -7,29 +7,45 @@ export namespace MyNS {
 		DfsSlateGames?: Array<DfsSlateGame>;
 		DfsSlatePlayers?: Array<DfsSlatePlayer>;
 		IsMultiDaySlate?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NumberOfGames?: number | null;
 		Operator?: string | null;
 		OperatorDay?: string | null;
 		OperatorGameType?: string | null;
 		OperatorName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSlateID?: number | null;
 		OperatorStartTime?: string | null;
 		RemovedByOperator?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SalaryCap?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID?: number | null;
 		SlateRosterSlots?: Array<string>;
 	}
 	export interface DfsSlateFormProperties {
 		IsMultiDaySlate: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NumberOfGames: FormControl<number | null | undefined>,
 		Operator: FormControl<string | null | undefined>,
 		OperatorDay: FormControl<string | null | undefined>,
 		OperatorGameType: FormControl<string | null | undefined>,
 		OperatorName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSlateID: FormControl<number | null | undefined>,
 		OperatorStartTime: FormControl<string | null | undefined>,
 		RemovedByOperator: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SalaryCap: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID: FormControl<number | null | undefined>,
 	}
 	export function CreateDfsSlateFormGroup() {
@@ -51,19 +67,39 @@ export namespace MyNS {
 
 	export interface DfsSlateGame {
 		Game?: Schedule;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorGameID?: number | null;
 		RemovedByOperator?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID?: number | null;
 	}
 	export interface DfsSlateGameFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorGameID: FormControl<number | null | undefined>,
 		RemovedByOperator: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID: FormControl<number | null | undefined>,
 	}
 	export function CreateDfsSlateGameFormGroup() {
@@ -79,34 +115,66 @@ export namespace MyNS {
 	}
 
 	export interface DfsSlatePlayer {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDefenseProjectionStatID?: number | null;
 		OperatorPlayerID?: string | null;
 		OperatorPlayerName?: string | null;
 		OperatorPosition?: string | null;
 		OperatorRosterSlots?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSalary?: number | null;
 		OperatorSlatePlayerID?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerGameProjectionStatID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlatePlayerID?: number | null;
 		Team?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID?: number | null;
 	}
 	export interface DfsSlatePlayerFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDefenseProjectionStatID: FormControl<number | null | undefined>,
 		OperatorPlayerID: FormControl<string | null | undefined>,
 		OperatorPlayerName: FormControl<string | null | undefined>,
 		OperatorPosition: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSalary: FormControl<number | null | undefined>,
 		OperatorSlatePlayerID: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerGameProjectionStatID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlatePlayerID: FormControl<number | null | undefined>,
 		Team: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID: FormControl<number | null | undefined>,
 	}
 	export function CreateDfsSlatePlayerFormGroup() {
@@ -129,226 +197,610 @@ export namespace MyNS {
 	}
 
 	export interface FantasyDefenseGameProjection {
+
+		/** Type: double */
 		AssistedTackles?: number | null;
+
+		/** Type: double */
 		BlockedKickReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		BlockedKickReturnYards?: number | null;
+
+		/** Type: double */
 		BlockedKicks?: number | null;
 		Date?: string | null;
 		DateTime?: string | null;
 		Day?: string | null;
+
+		/** Type: double */
 		DefensiveTouchdowns?: number | null;
+
+		/** Type: double */
 		DraftKingsFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		DraftKingsKickerFantasyPointsAllowed?: number | null;
 		DraftKingsPosition?: string | null;
+
+		/** Type: double */
 		DraftKingsQuarterbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		DraftKingsRunningbackFantasyPointsAllowed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary?: number | null;
+
+		/** Type: double */
 		DraftKingsTightEndFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		DraftKingsWideReceiverFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FanDuelFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FanDuelKickerFantasyPointsAllowed?: number | null;
 		FanDuelPosition?: string | null;
+
+		/** Type: double */
 		FanDuelQuarterbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FanDuelRunningbackFantasyPointsAllowed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FanDuelSalary?: number | null;
+
+		/** Type: double */
 		FanDuelTightEndFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FanDuelWideReceiverFantasyPointsAllowed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDataSalary?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDefenseID?: number | null;
+
+		/** Type: double */
 		FantasyDraftFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyDraftKickerFantasyPointsAllowed?: number | null;
 		FantasyDraftPosition?: string | null;
+
+		/** Type: double */
 		FantasyDraftQuarterbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyDraftRunningbackFantasyPointsAllowed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDraftSalary?: number | null;
+
+		/** Type: double */
 		FantasyDraftTightEndFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyDraftWideReceiverFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyPoints?: number | null;
+
+		/** Type: double */
 		FantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyPointsDraftKings?: number | null;
+
+		/** Type: double */
 		FantasyPointsFanDuel?: number | null;
+
+		/** Type: double */
 		FantasyPointsFantasyDraft?: number | null;
+
+		/** Type: double */
 		FantasyPointsYahoo?: number | null;
+
+		/** Type: double */
 		FieldGoalReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		FieldGoalReturnYards?: number | null;
+
+		/** Type: double */
 		FourthDownAttempts?: number | null;
+
+		/** Type: double */
 		FourthDownConversions?: number | null;
+
+		/** Type: double */
 		FumbleReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		FumbleReturnYards?: number | null;
+
+		/** Type: double */
 		FumblesForced?: number | null;
+
+		/** Type: double */
 		FumblesRecovered?: number | null;
 		GameKey?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalOpponentID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalTeamID?: number | null;
 		HomeOrAway?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Humidity?: number | null;
+
+		/** Type: double */
 		InterceptionReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		InterceptionReturnYards?: number | null;
+
+		/** Type: double */
 		Interceptions?: number | null;
 		IsGameOver?: boolean | null;
+
+		/** Type: double */
 		KickReturnLong?: number | null;
+
+		/** Type: double */
 		KickReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		KickReturnYards?: number | null;
+
+		/** Type: double */
 		KickReturns?: number | null;
+
+		/** Type: double */
 		KickerFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		OffensiveYardsAllowed?: number | null;
 		Opponent?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentPositionRank?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentRank?: number | null;
+
+		/** Type: double */
 		PassesDefended?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: double */
 		PointsAllowed?: number | null;
+
+		/** Type: double */
 		PointsAllowedByDefenseSpecialTeams?: number | null;
+
+		/** Type: double */
 		PuntReturnLong?: number | null;
+
+		/** Type: double */
 		PuntReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		PuntReturnYards?: number | null;
+
+		/** Type: double */
 		PuntReturns?: number | null;
+
+		/** Type: double */
 		QuarterbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		QuarterbackHits?: number | null;
+
+		/** Type: double */
 		RunningbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		SackYards?: number | null;
+
+		/** Type: double */
 		Sacks?: number | null;
+
+		/** Type: double */
 		Safeties?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreID?: number | null;
 		ScoringDetails?: Array<ScoringDetail>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
+
+		/** Type: double */
 		SoloTackles?: number | null;
+
+		/** Type: double */
 		SpecialTeamsTouchdowns?: number | null;
 		Stadium?: string | null;
+
+		/** Type: double */
 		TacklesForLoss?: number | null;
 		Team?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Temperature?: number | null;
+
+		/** Type: double */
 		ThirdDownAttempts?: number | null;
+
+		/** Type: double */
 		ThirdDownConversions?: number | null;
+
+		/** Type: double */
 		TightEndFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		TouchdownsScored?: number | null;
+
+		/** Type: double */
 		TwoPointConversionReturns?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VictivSalary?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week?: number | null;
+
+		/** Type: double */
 		WideReceiverFantasyPointsAllowed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WindSpeed?: number | null;
+
+		/** Type: double */
 		YahooFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		YahooKickerFantasyPointsAllowed?: number | null;
 		YahooPosition?: string | null;
+
+		/** Type: double */
 		YahooQuarterbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		YahooRunningbackFantasyPointsAllowed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		YahooSalary?: number | null;
+
+		/** Type: double */
 		YahooTightEndFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		YahooWideReceiverFantasyPointsAllowed?: number | null;
 	}
 	export interface FantasyDefenseGameProjectionFormProperties {
+
+		/** Type: double */
 		AssistedTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKickReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKickReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKicks: FormControl<number | null | undefined>,
 		Date: FormControl<string | null | undefined>,
 		DateTime: FormControl<string | null | undefined>,
 		Day: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DefensiveTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsKickerFantasyPointsAllowed: FormControl<number | null | undefined>,
 		DraftKingsPosition: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DraftKingsQuarterbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsRunningbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsTightEndFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsWideReceiverFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelKickerFantasyPointsAllowed: FormControl<number | null | undefined>,
 		FanDuelPosition: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		FanDuelQuarterbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelRunningbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FanDuelSalary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelTightEndFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelWideReceiverFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDataSalary: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDefenseID: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftKickerFantasyPointsAllowed: FormControl<number | null | undefined>,
 		FantasyDraftPosition: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftQuarterbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftRunningbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDraftSalary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftTightEndFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftWideReceiverFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPoints: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsDraftKings: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFanDuel: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFantasyDraft: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsYahoo: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FourthDownAttempts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FourthDownConversions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumbleReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumbleReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesForced: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesRecovered: FormControl<number | null | undefined>,
 		GameKey: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalOpponentID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalTeamID: FormControl<number | null | undefined>,
 		HomeOrAway: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Humidity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		InterceptionReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		InterceptionReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Interceptions: FormControl<number | null | undefined>,
 		IsGameOver: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		KickReturnLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickerFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		OffensiveYardsAllowed: FormControl<number | null | undefined>,
 		Opponent: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentPositionRank: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentRank: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassesDefended: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PointsAllowedByDefenseSpecialTeams: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		QuarterbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		QuarterbackHits: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RunningbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SackYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Sacks: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Safeties: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SoloTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsTouchdowns: FormControl<number | null | undefined>,
 		Stadium: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		TacklesForLoss: FormControl<number | null | undefined>,
 		Team: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Temperature: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ThirdDownAttempts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ThirdDownConversions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TightEndFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TouchdownsScored: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TwoPointConversionReturns: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VictivSalary: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		WideReceiverFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WindSpeed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooKickerFantasyPointsAllowed: FormControl<number | null | undefined>,
 		YahooPosition: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		YahooQuarterbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooRunningbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		YahooSalary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooTightEndFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooWideReceiverFantasyPointsAllowed: FormControl<number | null | undefined>,
 	}
 	export function CreateFantasyDefenseGameProjectionFormGroup() {
@@ -468,28 +920,60 @@ export namespace MyNS {
 
 	export interface ScoringDetail {
 		GameKey?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Length?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoringDetailID?: number | null;
 		ScoringType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
 		Team?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week?: number | null;
 	}
 	export interface ScoringDetailFormProperties {
 		GameKey: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Length: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoringDetailID: FormControl<number | null | undefined>,
 		ScoringType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
 		Team: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week: FormControl<number | null | undefined>,
 	}
 	export function CreateScoringDetailFormGroup() {
@@ -510,188 +994,544 @@ export namespace MyNS {
 	}
 
 	export interface FantasyDefenseSeasonProjection {
+
+		/** Type: double */
 		AssistedTackles?: number | null;
+
+		/** Type: double */
 		AuctionValue?: number | null;
+
+		/** Type: double */
 		AuctionValuePPR?: number | null;
+
+		/** Type: double */
 		AverageDraftPosition?: number | null;
+
+		/** Type: double */
 		AverageDraftPosition2QB?: number | null;
+
+		/** Type: double */
 		AverageDraftPositionDynasty?: number | null;
+
+		/** Type: double */
 		AverageDraftPositionPPR?: number | null;
+
+		/** Type: double */
 		BlockedKickReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		BlockedKickReturnYards?: number | null;
+
+		/** Type: double */
 		BlockedKicks?: number | null;
+
+		/** Type: double */
 		DefensiveTouchdowns?: number | null;
+
+		/** Type: double */
 		DraftKingsFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		DraftKingsKickerFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		DraftKingsQuarterbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		DraftKingsRunningbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		DraftKingsTightEndFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		DraftKingsWideReceiverFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FanDuelFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FanDuelKickerFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FanDuelQuarterbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FanDuelRunningbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FanDuelTightEndFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FanDuelWideReceiverFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyDraftFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyDraftKickerFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyDraftQuarterbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyDraftRunningbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyDraftTightEndFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyDraftWideReceiverFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyPoints?: number | null;
+
+		/** Type: double */
 		FantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		FantasyPointsDraftKings?: number | null;
+
+		/** Type: double */
 		FantasyPointsFanDuel?: number | null;
+
+		/** Type: double */
 		FantasyPointsFantasyDraft?: number | null;
+
+		/** Type: double */
 		FantasyPointsYahoo?: number | null;
+
+		/** Type: double */
 		FieldGoalReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		FieldGoalReturnYards?: number | null;
+
+		/** Type: double */
 		FourthDownAttempts?: number | null;
+
+		/** Type: double */
 		FourthDownConversions?: number | null;
+
+		/** Type: double */
 		FumbleReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		FumbleReturnYards?: number | null;
+
+		/** Type: double */
 		FumblesForced?: number | null;
+
+		/** Type: double */
 		FumblesRecovered?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Games?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Humidity?: number | null;
+
+		/** Type: double */
 		InterceptionReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		InterceptionReturnYards?: number | null;
+
+		/** Type: double */
 		Interceptions?: number | null;
+
+		/** Type: double */
 		KickReturnLong?: number | null;
+
+		/** Type: double */
 		KickReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		KickReturnYards?: number | null;
+
+		/** Type: double */
 		KickReturns?: number | null;
+
+		/** Type: double */
 		KickerFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		OffensiveYardsAllowed?: number | null;
+
+		/** Type: double */
 		PassesDefended?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: double */
 		PointsAllowed?: number | null;
+
+		/** Type: double */
 		PointsAllowedByDefenseSpecialTeams?: number | null;
+
+		/** Type: double */
 		PuntReturnLong?: number | null;
+
+		/** Type: double */
 		PuntReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		PuntReturnYards?: number | null;
+
+		/** Type: double */
 		PuntReturns?: number | null;
+
+		/** Type: double */
 		QuarterbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		QuarterbackHits?: number | null;
+
+		/** Type: double */
 		RunningbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		SackYards?: number | null;
+
+		/** Type: double */
 		Sacks?: number | null;
+
+		/** Type: double */
 		Safeties?: number | null;
 		ScoringDetails?: Array<ScoringDetail>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
+
+		/** Type: double */
 		SoloTackles?: number | null;
+
+		/** Type: double */
 		SpecialTeamsTouchdowns?: number | null;
+
+		/** Type: double */
 		TacklesForLoss?: number | null;
 		Team?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Temperature?: number | null;
+
+		/** Type: double */
 		ThirdDownAttempts?: number | null;
+
+		/** Type: double */
 		ThirdDownConversions?: number | null;
+
+		/** Type: double */
 		TightEndFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		TouchdownsScored?: number | null;
+
+		/** Type: double */
 		TwoPointConversionReturns?: number | null;
+
+		/** Type: double */
 		WideReceiverFantasyPointsAllowed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WindSpeed?: number | null;
+
+		/** Type: double */
 		YahooFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		YahooKickerFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		YahooQuarterbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		YahooRunningbackFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		YahooTightEndFantasyPointsAllowed?: number | null;
+
+		/** Type: double */
 		YahooWideReceiverFantasyPointsAllowed?: number | null;
 	}
 	export interface FantasyDefenseSeasonProjectionFormProperties {
+
+		/** Type: double */
 		AssistedTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AuctionValue: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AuctionValuePPR: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageDraftPosition: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageDraftPosition2QB: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageDraftPositionDynasty: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageDraftPositionPPR: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKickReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKickReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKicks: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DefensiveTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsKickerFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsQuarterbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsRunningbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsTightEndFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DraftKingsWideReceiverFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelKickerFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelQuarterbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelRunningbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelTightEndFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FanDuelWideReceiverFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftKickerFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftQuarterbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftRunningbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftTightEndFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyDraftWideReceiverFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPoints: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsDraftKings: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFanDuel: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFantasyDraft: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsYahoo: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FourthDownAttempts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FourthDownConversions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumbleReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumbleReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesForced: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesRecovered: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Games: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Humidity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		InterceptionReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		InterceptionReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Interceptions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickerFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		OffensiveYardsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassesDefended: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PointsAllowedByDefenseSpecialTeams: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		QuarterbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		QuarterbackHits: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RunningbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SackYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Sacks: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Safeties: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SoloTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TacklesForLoss: FormControl<number | null | undefined>,
 		Team: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Temperature: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ThirdDownAttempts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ThirdDownConversions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TightEndFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TouchdownsScored: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TwoPointConversionReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		WideReceiverFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WindSpeed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooKickerFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooQuarterbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooRunningbackFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooTightEndFantasyPointsAllowed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		YahooWideReceiverFantasyPointsAllowed: FormControl<number | null | undefined>,
 	}
 	export function CreateFantasyDefenseSeasonProjectionFormGroup() {
@@ -791,60 +1631,150 @@ export namespace MyNS {
 	}
 
 	export interface PlayerGameProjection {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Activated?: number | null;
+
+		/** Type: double */
 		AssistedTackles?: number | null;
+
+		/** Type: double */
 		BlockedKickReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		BlockedKickReturnYards?: number | null;
+
+		/** Type: double */
 		BlockedKicks?: number | null;
 		DateTime?: string | null;
 		Day?: string | null;
 		DeclaredInactive?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefensiveSnapsPlayed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefensiveTeamSnaps?: number | null;
+
+		/** Type: double */
 		DefensiveTouchdowns?: number | null;
 		DraftKingsPosition?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary?: number | null;
+
+		/** Type: double */
 		ExtraPointsAttempted?: number | null;
+
+		/** Type: double */
 		ExtraPointsHadBlocked?: number | null;
+
+		/** Type: double */
 		ExtraPointsMade?: number | null;
 		FanDuelPosition?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FanDuelSalary?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDataSalary?: number | null;
 		FantasyDraftPosition?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDraftSalary?: number | null;
+
+		/** Type: double */
 		FantasyPoints?: number | null;
+
+		/** Type: double */
 		FantasyPointsDraftKings?: number | null;
+
+		/** Type: double */
 		FantasyPointsFanDuel?: number | null;
+
+		/** Type: double */
 		FantasyPointsFantasyDraft?: number | null;
+
+		/** Type: double */
 		FantasyPointsPPR?: number | null;
+
+		/** Type: double */
 		FantasyPointsYahoo?: number | null;
 		FantasyPosition?: string | null;
+
+		/** Type: double */
 		FieldGoalPercentage?: number | null;
+
+		/** Type: double */
 		FieldGoalReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		FieldGoalReturnYards?: number | null;
+
+		/** Type: double */
 		FieldGoalsAttempted?: number | null;
+
+		/** Type: double */
 		FieldGoalsHadBlocked?: number | null;
+
+		/** Type: double */
 		FieldGoalsLongestMade?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade0to19?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade20to29?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade30to39?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade40to49?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade50Plus?: number | null;
+
+		/** Type: double */
 		FumbleReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		FumbleReturnYards?: number | null;
+
+		/** Type: double */
 		Fumbles?: number | null;
+
+		/** Type: double */
 		FumblesForced?: number | null;
+
+		/** Type: double */
 		FumblesLost?: number | null;
+
+		/** Type: double */
 		FumblesOutOfBounds?: number | null;
+
+		/** Type: double */
 		FumblesOwnRecoveries?: number | null;
+
+		/** Type: double */
 		FumblesRecovered?: number | null;
 		GameDate?: string | null;
 		GameKey?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalOpponentID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalTeamID?: number | null;
 		HomeOrAway?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Humidity?: number | null;
 		InjuryBodyPart?: string | null;
 		InjuryNotes?: string | null;
@@ -852,168 +1782,448 @@ export namespace MyNS {
 		InjuryPracticeDescription?: string | null;
 		InjuryStartDate?: string | null;
 		InjuryStatus?: string | null;
+
+		/** Type: double */
 		InterceptionReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		InterceptionReturnYards?: number | null;
+
+		/** Type: double */
 		Interceptions?: number | null;
 		IsGameOver?: boolean | null;
+
+		/** Type: double */
 		KickReturnFairCatches?: number | null;
+
+		/** Type: double */
 		KickReturnLong?: number | null;
+
+		/** Type: double */
 		KickReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		KickReturnYards?: number | null;
+
+		/** Type: double */
 		KickReturnYardsPerAttempt?: number | null;
+
+		/** Type: double */
 		KickReturns?: number | null;
+
+		/** Type: double */
 		MiscAssistedTackles?: number | null;
+
+		/** Type: double */
 		MiscFumblesForced?: number | null;
+
+		/** Type: double */
 		MiscFumblesRecovered?: number | null;
+
+		/** Type: double */
 		MiscSoloTackles?: number | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number?: number | null;
+
+		/** Type: double */
 		OffensiveFumbleRecoveryTouchdowns?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OffensiveSnapsPlayed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OffensiveTeamSnaps?: number | null;
+
+		/** Type: double */
 		OffensiveTouchdowns?: number | null;
 		Opponent?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentPositionRank?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentRank?: number | null;
+
+		/** Type: double */
 		PassesDefended?: number | null;
+
+		/** Type: double */
 		PassingAttempts?: number | null;
+
+		/** Type: double */
 		PassingCompletionPercentage?: number | null;
+
+		/** Type: double */
 		PassingCompletions?: number | null;
+
+		/** Type: double */
 		PassingInterceptions?: number | null;
+
+		/** Type: double */
 		PassingLong?: number | null;
+
+		/** Type: double */
 		PassingRating?: number | null;
+
+		/** Type: double */
 		PassingSackYards?: number | null;
+
+		/** Type: double */
 		PassingSacks?: number | null;
+
+		/** Type: double */
 		PassingTouchdowns?: number | null;
+
+		/** Type: double */
 		PassingYards?: number | null;
+
+		/** Type: double */
 		PassingYardsPerAttempt?: number | null;
+
+		/** Type: double */
 		PassingYardsPerCompletion?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Played?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
 		PlayingSurface?: string | null;
 		Position?: string | null;
 		PositionCategory?: string | null;
+
+		/** Type: double */
 		PuntAverage?: number | null;
+
+		/** Type: double */
 		PuntInside20?: number | null;
+
+		/** Type: double */
 		PuntLong?: number | null;
+
+		/** Type: double */
 		PuntNetAverage?: number | null;
+
+		/** Type: double */
 		PuntNetYards?: number | null;
+
+		/** Type: double */
 		PuntReturnFairCatches?: number | null;
+
+		/** Type: double */
 		PuntReturnLong?: number | null;
+
+		/** Type: double */
 		PuntReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		PuntReturnYards?: number | null;
+
+		/** Type: double */
 		PuntReturnYardsPerAttempt?: number | null;
+
+		/** Type: double */
 		PuntReturns?: number | null;
+
+		/** Type: double */
 		PuntTouchbacks?: number | null;
+
+		/** Type: double */
 		PuntYards?: number | null;
+
+		/** Type: double */
 		Punts?: number | null;
+
+		/** Type: double */
 		PuntsHadBlocked?: number | null;
+
+		/** Type: double */
 		QuarterbackHits?: number | null;
+
+		/** Type: double */
 		ReceivingLong?: number | null;
+
+		/** Type: double */
 		ReceivingTargets?: number | null;
+
+		/** Type: double */
 		ReceivingTouchdowns?: number | null;
+
+		/** Type: double */
 		ReceivingYards?: number | null;
+
+		/** Type: double */
 		ReceivingYardsPerReception?: number | null;
+
+		/** Type: double */
 		ReceivingYardsPerTarget?: number | null;
+
+		/** Type: double */
 		ReceptionPercentage?: number | null;
+
+		/** Type: double */
 		Receptions?: number | null;
+
+		/** Type: double */
 		RushingAttempts?: number | null;
+
+		/** Type: double */
 		RushingLong?: number | null;
+
+		/** Type: double */
 		RushingTouchdowns?: number | null;
+
+		/** Type: double */
 		RushingYards?: number | null;
+
+		/** Type: double */
 		RushingYardsPerAttempt?: number | null;
+
+		/** Type: double */
 		SackYards?: number | null;
+
+		/** Type: double */
 		Sacks?: number | null;
+
+		/** Type: double */
 		Safeties?: number | null;
+
+		/** Type: double */
 		SafetiesAllowed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreID?: number | null;
 		ScoringDetails?: Array<ScoringDetail>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
 		ShortName?: string | null;
+
+		/** Type: double */
 		SoloTackles?: number | null;
+
+		/** Type: double */
 		SpecialTeamsAssistedTackles?: number | null;
+
+		/** Type: double */
 		SpecialTeamsFumblesForced?: number | null;
+
+		/** Type: double */
 		SpecialTeamsFumblesRecovered?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SpecialTeamsSnapsPlayed?: number | null;
+
+		/** Type: double */
 		SpecialTeamsSoloTackles?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SpecialTeamsTeamSnaps?: number | null;
+
+		/** Type: double */
 		SpecialTeamsTouchdowns?: number | null;
 		Stadium?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Started?: number | null;
+
+		/** Type: double */
 		Tackles?: number | null;
+
+		/** Type: double */
 		TacklesForLoss?: number | null;
 		Team?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Temperature?: number | null;
+
+		/** Type: double */
 		Touchdowns?: number | null;
+
+		/** Type: double */
 		TwoPointConversionPasses?: number | null;
+
+		/** Type: double */
 		TwoPointConversionReceptions?: number | null;
+
+		/** Type: double */
 		TwoPointConversionReturns?: number | null;
+
+		/** Type: double */
 		TwoPointConversionRuns?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VictivSalary?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WindSpeed?: number | null;
 		YahooPosition?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		YahooSalary?: number | null;
 	}
 	export interface PlayerGameProjectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Activated: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AssistedTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKickReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKickReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKicks: FormControl<number | null | undefined>,
 		DateTime: FormControl<string | null | undefined>,
 		Day: FormControl<string | null | undefined>,
 		DeclaredInactive: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefensiveSnapsPlayed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefensiveTeamSnaps: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DefensiveTouchdowns: FormControl<number | null | undefined>,
 		DraftKingsPosition: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ExtraPointsAttempted: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ExtraPointsHadBlocked: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ExtraPointsMade: FormControl<number | null | undefined>,
 		FanDuelPosition: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FanDuelSalary: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDataSalary: FormControl<number | null | undefined>,
 		FantasyDraftPosition: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDraftSalary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPoints: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsDraftKings: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFanDuel: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFantasyDraft: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsPPR: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsYahoo: FormControl<number | null | undefined>,
 		FantasyPosition: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		FieldGoalPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsAttempted: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsHadBlocked: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsLongestMade: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade0to19: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade20to29: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade30to39: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade40to49: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade50Plus: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumbleReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumbleReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Fumbles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesForced: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesLost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesOutOfBounds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesOwnRecoveries: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesRecovered: FormControl<number | null | undefined>,
 		GameDate: FormControl<string | null | undefined>,
 		GameKey: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalOpponentID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalTeamID: FormControl<number | null | undefined>,
 		HomeOrAway: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Humidity: FormControl<number | null | undefined>,
 		InjuryBodyPart: FormControl<string | null | undefined>,
 		InjuryNotes: FormControl<string | null | undefined>,
@@ -1021,110 +2231,300 @@ export namespace MyNS {
 		InjuryPracticeDescription: FormControl<string | null | undefined>,
 		InjuryStartDate: FormControl<string | null | undefined>,
 		InjuryStatus: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		InterceptionReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		InterceptionReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Interceptions: FormControl<number | null | undefined>,
 		IsGameOver: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		KickReturnFairCatches: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnYardsPerAttempt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MiscAssistedTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MiscFumblesForced: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MiscFumblesRecovered: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MiscSoloTackles: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		OffensiveFumbleRecoveryTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OffensiveSnapsPlayed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OffensiveTeamSnaps: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		OffensiveTouchdowns: FormControl<number | null | undefined>,
 		Opponent: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentPositionRank: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentRank: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassesDefended: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingAttempts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingCompletionPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingCompletions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingInterceptions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingRating: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingSackYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingSacks: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingYardsPerAttempt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingYardsPerCompletion: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Played: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
 		PlayingSurface: FormControl<string | null | undefined>,
 		Position: FormControl<string | null | undefined>,
 		PositionCategory: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		PuntAverage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntInside20: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntNetAverage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntNetYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnFairCatches: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnYardsPerAttempt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntTouchbacks: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Punts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntsHadBlocked: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		QuarterbackHits: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingTargets: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingYardsPerReception: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingYardsPerTarget: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceptionPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Receptions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushingAttempts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushingLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushingTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushingYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushingYardsPerAttempt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SackYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Sacks: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Safeties: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SafetiesAllowed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
 		ShortName: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		SoloTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsAssistedTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsFumblesForced: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsFumblesRecovered: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SpecialTeamsSnapsPlayed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsSoloTackles: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SpecialTeamsTeamSnaps: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsTouchdowns: FormControl<number | null | undefined>,
 		Stadium: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Started: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Tackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TacklesForLoss: FormControl<number | null | undefined>,
 		Team: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Temperature: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Touchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TwoPointConversionPasses: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TwoPointConversionReceptions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TwoPointConversionReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TwoPointConversionRuns: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VictivSalary: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WindSpeed: FormControl<number | null | undefined>,
 		YahooPosition: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		YahooSalary: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerGameProjectionFormGroup() {
@@ -1300,286 +2700,818 @@ export namespace MyNS {
 	}
 
 	export interface PlayerSeasonProjection {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Activated?: number | null;
+
+		/** Type: double */
 		AssistedTackles?: number | null;
+
+		/** Type: double */
 		AuctionValue?: number | null;
+
+		/** Type: double */
 		AuctionValuePPR?: number | null;
+
+		/** Type: double */
 		AverageDraftPosition?: number | null;
+
+		/** Type: double */
 		AverageDraftPosition2QB?: number | null;
+
+		/** Type: double */
 		AverageDraftPositionDynasty?: number | null;
+
+		/** Type: double */
 		AverageDraftPositionPPR?: number | null;
+
+		/** Type: double */
 		AverageDraftPositionRookie?: number | null;
+
+		/** Type: double */
 		BlockedKickReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		BlockedKickReturnYards?: number | null;
+
+		/** Type: double */
 		BlockedKicks?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefensiveSnapsPlayed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefensiveTeamSnaps?: number | null;
+
+		/** Type: double */
 		DefensiveTouchdowns?: number | null;
+
+		/** Type: double */
 		ExtraPointsAttempted?: number | null;
+
+		/** Type: double */
 		ExtraPointsHadBlocked?: number | null;
+
+		/** Type: double */
 		ExtraPointsMade?: number | null;
+
+		/** Type: double */
 		FantasyPoints?: number | null;
+
+		/** Type: double */
 		FantasyPointsDraftKings?: number | null;
+
+		/** Type: double */
 		FantasyPointsFanDuel?: number | null;
+
+		/** Type: double */
 		FantasyPointsFantasyDraft?: number | null;
+
+		/** Type: double */
 		FantasyPointsPPR?: number | null;
+
+		/** Type: double */
 		FantasyPointsYahoo?: number | null;
 		FantasyPosition?: string | null;
+
+		/** Type: double */
 		FieldGoalPercentage?: number | null;
+
+		/** Type: double */
 		FieldGoalReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		FieldGoalReturnYards?: number | null;
+
+		/** Type: double */
 		FieldGoalsAttempted?: number | null;
+
+		/** Type: double */
 		FieldGoalsHadBlocked?: number | null;
+
+		/** Type: double */
 		FieldGoalsLongestMade?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade0to19?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade20to29?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade30to39?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade40to49?: number | null;
+
+		/** Type: double */
 		FieldGoalsMade50Plus?: number | null;
+
+		/** Type: double */
 		FumbleReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		FumbleReturnYards?: number | null;
+
+		/** Type: double */
 		Fumbles?: number | null;
+
+		/** Type: double */
 		FumblesForced?: number | null;
+
+		/** Type: double */
 		FumblesLost?: number | null;
+
+		/** Type: double */
 		FumblesOutOfBounds?: number | null;
+
+		/** Type: double */
 		FumblesOwnRecoveries?: number | null;
+
+		/** Type: double */
 		FumblesRecovered?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Humidity?: number | null;
+
+		/** Type: double */
 		InterceptionReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		InterceptionReturnYards?: number | null;
+
+		/** Type: double */
 		Interceptions?: number | null;
+
+		/** Type: double */
 		KickReturnFairCatches?: number | null;
+
+		/** Type: double */
 		KickReturnLong?: number | null;
+
+		/** Type: double */
 		KickReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		KickReturnYards?: number | null;
+
+		/** Type: double */
 		KickReturnYardsPerAttempt?: number | null;
+
+		/** Type: double */
 		KickReturns?: number | null;
+
+		/** Type: double */
 		MiscAssistedTackles?: number | null;
+
+		/** Type: double */
 		MiscFumblesForced?: number | null;
+
+		/** Type: double */
 		MiscFumblesRecovered?: number | null;
+
+		/** Type: double */
 		MiscSoloTackles?: number | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OffensiveSnapsPlayed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OffensiveTeamSnaps?: number | null;
+
+		/** Type: double */
 		OffensiveTouchdowns?: number | null;
+
+		/** Type: double */
 		PassesDefended?: number | null;
+
+		/** Type: double */
 		PassingAttempts?: number | null;
+
+		/** Type: double */
 		PassingCompletionPercentage?: number | null;
+
+		/** Type: double */
 		PassingCompletions?: number | null;
+
+		/** Type: double */
 		PassingInterceptions?: number | null;
+
+		/** Type: double */
 		PassingLong?: number | null;
+
+		/** Type: double */
 		PassingRating?: number | null;
+
+		/** Type: double */
 		PassingSackYards?: number | null;
+
+		/** Type: double */
 		PassingSacks?: number | null;
+
+		/** Type: double */
 		PassingTouchdowns?: number | null;
+
+		/** Type: double */
 		PassingYards?: number | null;
+
+		/** Type: double */
 		PassingYardsPerAttempt?: number | null;
+
+		/** Type: double */
 		PassingYardsPerCompletion?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Played?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerSeasonID?: number | null;
 		Position?: string | null;
 		PositionCategory?: string | null;
+
+		/** Type: double */
 		PuntAverage?: number | null;
+
+		/** Type: double */
 		PuntInside20?: number | null;
+
+		/** Type: double */
 		PuntLong?: number | null;
+
+		/** Type: double */
 		PuntNetAverage?: number | null;
+
+		/** Type: double */
 		PuntNetYards?: number | null;
+
+		/** Type: double */
 		PuntReturnFairCatches?: number | null;
+
+		/** Type: double */
 		PuntReturnLong?: number | null;
+
+		/** Type: double */
 		PuntReturnTouchdowns?: number | null;
+
+		/** Type: double */
 		PuntReturnYards?: number | null;
+
+		/** Type: double */
 		PuntReturnYardsPerAttempt?: number | null;
+
+		/** Type: double */
 		PuntReturns?: number | null;
+
+		/** Type: double */
 		PuntTouchbacks?: number | null;
+
+		/** Type: double */
 		PuntYards?: number | null;
+
+		/** Type: double */
 		Punts?: number | null;
+
+		/** Type: double */
 		PuntsHadBlocked?: number | null;
+
+		/** Type: double */
 		QuarterbackHits?: number | null;
+
+		/** Type: double */
 		ReceivingLong?: number | null;
+
+		/** Type: double */
 		ReceivingTargets?: number | null;
+
+		/** Type: double */
 		ReceivingTouchdowns?: number | null;
+
+		/** Type: double */
 		ReceivingYards?: number | null;
+
+		/** Type: double */
 		ReceivingYardsPerReception?: number | null;
+
+		/** Type: double */
 		ReceivingYardsPerTarget?: number | null;
+
+		/** Type: double */
 		ReceptionPercentage?: number | null;
+
+		/** Type: double */
 		Receptions?: number | null;
+
+		/** Type: double */
 		RushingAttempts?: number | null;
+
+		/** Type: double */
 		RushingLong?: number | null;
+
+		/** Type: double */
 		RushingTouchdowns?: number | null;
+
+		/** Type: double */
 		RushingYards?: number | null;
+
+		/** Type: double */
 		RushingYardsPerAttempt?: number | null;
+
+		/** Type: double */
 		SackYards?: number | null;
+
+		/** Type: double */
 		Sacks?: number | null;
+
+		/** Type: double */
 		Safeties?: number | null;
+
+		/** Type: double */
 		SafetiesAllowed?: number | null;
 		ScoringDetails?: Array<ScoringDetail>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
 		ShortName?: string | null;
+
+		/** Type: double */
 		SoloTackles?: number | null;
+
+		/** Type: double */
 		SpecialTeamsAssistedTackles?: number | null;
+
+		/** Type: double */
 		SpecialTeamsFumblesForced?: number | null;
+
+		/** Type: double */
 		SpecialTeamsFumblesRecovered?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SpecialTeamsSnapsPlayed?: number | null;
+
+		/** Type: double */
 		SpecialTeamsSoloTackles?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SpecialTeamsTeamSnaps?: number | null;
+
+		/** Type: double */
 		SpecialTeamsTouchdowns?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Started?: number | null;
+
+		/** Type: double */
 		Tackles?: number | null;
+
+		/** Type: double */
 		TacklesForLoss?: number | null;
 		Team?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Temperature?: number | null;
+
+		/** Type: double */
 		Touchdowns?: number | null;
+
+		/** Type: double */
 		TwoPointConversionPasses?: number | null;
+
+		/** Type: double */
 		TwoPointConversionReceptions?: number | null;
+
+		/** Type: double */
 		TwoPointConversionReturns?: number | null;
+
+		/** Type: double */
 		TwoPointConversionRuns?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WindSpeed?: number | null;
 	}
 	export interface PlayerSeasonProjectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Activated: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AssistedTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AuctionValue: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AuctionValuePPR: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageDraftPosition: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageDraftPosition2QB: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageDraftPositionDynasty: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageDraftPositionPPR: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageDraftPositionRookie: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKickReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKickReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BlockedKicks: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefensiveSnapsPlayed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefensiveTeamSnaps: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DefensiveTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ExtraPointsAttempted: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ExtraPointsHadBlocked: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ExtraPointsMade: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPoints: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsDraftKings: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFanDuel: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFantasyDraft: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsPPR: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsYahoo: FormControl<number | null | undefined>,
 		FantasyPosition: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		FieldGoalPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsAttempted: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsHadBlocked: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsLongestMade: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade0to19: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade20to29: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade30to39: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade40to49: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FieldGoalsMade50Plus: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumbleReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumbleReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Fumbles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesForced: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesLost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesOutOfBounds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesOwnRecoveries: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FumblesRecovered: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Humidity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		InterceptionReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		InterceptionReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Interceptions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnFairCatches: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturnYardsPerAttempt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		KickReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MiscAssistedTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MiscFumblesForced: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MiscFumblesRecovered: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MiscSoloTackles: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OffensiveSnapsPlayed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OffensiveTeamSnaps: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		OffensiveTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassesDefended: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingAttempts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingCompletionPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingCompletions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingInterceptions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingRating: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingSackYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingSacks: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingYardsPerAttempt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PassingYardsPerCompletion: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Played: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerSeasonID: FormControl<number | null | undefined>,
 		Position: FormControl<string | null | undefined>,
 		PositionCategory: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		PuntAverage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntInside20: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntNetAverage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntNetYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnFairCatches: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturnYardsPerAttempt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntTouchbacks: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Punts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PuntsHadBlocked: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		QuarterbackHits: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingTargets: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingYardsPerReception: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceivingYardsPerTarget: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ReceptionPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Receptions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushingAttempts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushingLong: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushingTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushingYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushingYardsPerAttempt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SackYards: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Sacks: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Safeties: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SafetiesAllowed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
 		ShortName: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		SoloTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsAssistedTackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsFumblesForced: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsFumblesRecovered: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SpecialTeamsSnapsPlayed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsSoloTackles: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SpecialTeamsTeamSnaps: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpecialTeamsTouchdowns: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Started: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Tackles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TacklesForLoss: FormControl<number | null | undefined>,
 		Team: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Temperature: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Touchdowns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TwoPointConversionPasses: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TwoPointConversionReceptions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TwoPointConversionReturns: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TwoPointConversionRuns: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WindSpeed: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerSeasonProjectionFormGroup() {
@@ -1729,6 +3661,8 @@ export namespace MyNS {
 
 	export interface Schedule {
 		AwayTeam?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamMoneyLine?: number | null;
 		Canceled?: boolean | null;
 		Channel?: string | null;
@@ -1736,30 +3670,66 @@ export namespace MyNS {
 		DateTime?: string | null;
 		Day?: string | null;
 		ForecastDescription?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastTempHigh?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastTempLow?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastWindChill?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastWindSpeed?: number | null;
 		GameKey?: string | null;
+
+		/** Type: double */
 		GeoLat?: number | null;
+
+		/** Type: double */
 		GeoLong?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalAwayTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalHomeTeamID?: number | null;
 		HomeTeam?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamMoneyLine?: number | null;
+
+		/** Type: double */
 		OverUnder?: number | null;
+
+		/** Type: double */
 		PointSpread?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
 		StadiumDetails?: Stadium;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StadiumID?: number | null;
 		Status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week?: number | null;
 	}
 	export interface ScheduleFormProperties {
 		AwayTeam: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamMoneyLine: FormControl<number | null | undefined>,
 		Canceled: FormControl<boolean | null | undefined>,
 		Channel: FormControl<string | null | undefined>,
@@ -1767,25 +3737,59 @@ export namespace MyNS {
 		DateTime: FormControl<string | null | undefined>,
 		Day: FormControl<string | null | undefined>,
 		ForecastDescription: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastTempHigh: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastTempLow: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastWindChill: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastWindSpeed: FormControl<number | null | undefined>,
 		GameKey: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		GeoLat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		GeoLong: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalAwayTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalHomeTeamID: FormControl<number | null | undefined>,
 		HomeTeam: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamMoneyLine: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		OverUnder: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PointSpread: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ScoreID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StadiumID: FormControl<number | null | undefined>,
 		Status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleFormGroup() {
@@ -1823,25 +3827,41 @@ export namespace MyNS {
 	}
 
 	export interface Stadium {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Capacity?: number | null;
 		City?: string | null;
 		Country?: string | null;
+
+		/** Type: double */
 		GeoLat?: number | null;
+
+		/** Type: double */
 		GeoLong?: number | null;
 		Name?: string | null;
 		PlayingSurface?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StadiumID?: number | null;
 		State?: string | null;
 		Type?: string | null;
 	}
 	export interface StadiumFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Capacity: FormControl<number | null | undefined>,
 		City: FormControl<string | null | undefined>,
 		Country: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		GeoLat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		GeoLong: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		PlayingSurface: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StadiumID: FormControl<number | null | undefined>,
 		State: FormControl<string | null | undefined>,
 		Type: FormControl<string | null | undefined>,
@@ -1873,7 +3893,6 @@ export namespace MyNS {
 		 * @param {DfsSlatesByDateFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} date The date of the slates.
 		 * <br>Examples: <code>2017-SEP-25</code>, <code>2017-10-31</code>.
-		 * @return {Array<DfsSlate>} 
 		 */
 		DfsSlatesByDate(format: DfsSlatesByDateFormat, date: string): Observable<Array<DfsSlate>> {
 			return this.http.get<Array<DfsSlate>>(this.baseUri + format + '/DfsSlatesByDate/' + (date == null ? '' : encodeURIComponent(date)) + '', {});
@@ -1887,7 +3906,6 @@ export namespace MyNS {
 		 *           <br>Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>
 		 * @param {string} week Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4.
 		 *           Example: <code>1</code>
-		 * @return {Array<DfsSlate>} 
 		 */
 		DfsSlatesByWeek(format: DfsSlatesByDateFormat, season: string, week: string): Observable<Array<DfsSlate>> {
 			return this.http.get<Array<DfsSlate>>(this.baseUri + format + '/DfsSlatesByWeek/' + (season == null ? '' : encodeURIComponent(season)) + '/' + (week == null ? '' : encodeURIComponent(week)) + '', {});
@@ -1903,7 +3921,6 @@ export namespace MyNS {
 		 * @param {string} week Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4.
 		 *           Example: <code>1</code>
 		 *         
-		 * @return {Array<FantasyDefenseGameProjection>} 
 		 */
 		ProjectedFantasyDefenseGameStatsWDfsSalaries(format: DfsSlatesByDateFormat, season: string, week: string): Observable<Array<FantasyDefenseGameProjection>> {
 			return this.http.get<Array<FantasyDefenseGameProjection>>(this.baseUri + format + '/FantasyDefenseProjectionsByGame/' + (season == null ? '' : encodeURIComponent(season)) + '/' + (week == null ? '' : encodeURIComponent(week)) + '', {});
@@ -1916,7 +3933,6 @@ export namespace MyNS {
 		 * @param {string} season Year of the season and the season type. If no season type is provided, then the default is regular season.
 		 *           <br>Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.
 		 *         
-		 * @return {Array<FantasyDefenseSeasonProjection>} 
 		 */
 		ProjectedFantasyDefenseSeasonStatsWByeWeekAdp(format: DfsSlatesByDateFormat, season: string): Observable<Array<FantasyDefenseSeasonProjection>> {
 			return this.http.get<Array<FantasyDefenseSeasonProjection>>(this.baseUri + format + '/FantasyDefenseProjectionsBySeason/' + (season == null ? '' : encodeURIComponent(season)) + '', {});
@@ -1933,7 +3949,6 @@ export namespace MyNS {
 		 *           Example: <code>1</code>
 		 *         
 		 * @param {string} playerid Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>14257</code>.
-		 * @return {PlayerGameProjection} 
 		 */
 		IdpProjectedPlayerGameStatsByPlayerWInjuriesLineupsDfsSalaries(format: DfsSlatesByDateFormat, season: string, week: string, playerid: string): Observable<PlayerGameProjection> {
 			return this.http.get<PlayerGameProjection>(this.baseUri + format + '/IdpPlayerGameProjectionStatsByPlayerID/' + (season == null ? '' : encodeURIComponent(season)) + '/' + (week == null ? '' : encodeURIComponent(week)) + '/' + (playerid == null ? '' : encodeURIComponent(playerid)) + '', {});
@@ -1950,7 +3965,6 @@ export namespace MyNS {
 		 *           Example: <code>1</code>
 		 *         
 		 * @param {string} team Abbreviation of the team. Example: <code>WAS</code>.
-		 * @return {Array<PlayerGameProjection>} 
 		 */
 		IdpProjectedPlayerGameStatsByTeamWInjuriesLineupsDfsSalaries(format: DfsSlatesByDateFormat, season: string, week: string, team: string): Observable<Array<PlayerGameProjection>> {
 			return this.http.get<Array<PlayerGameProjection>>(this.baseUri + format + '/IdpPlayerGameProjectionStatsByTeam/' + (season == null ? '' : encodeURIComponent(season)) + '/' + (week == null ? '' : encodeURIComponent(week)) + '/' + (team == null ? '' : encodeURIComponent(team)) + '', {});
@@ -1966,7 +3980,6 @@ export namespace MyNS {
 		 * @param {string} week Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4.
 		 *           Example: <code>1</code>
 		 *         
-		 * @return {Array<PlayerGameProjection>} 
 		 */
 		IdpProjectedPlayerGameStatsByWeekWInjuriesLineupsDfsSalaries(format: DfsSlatesByDateFormat, season: string, week: string): Observable<Array<PlayerGameProjection>> {
 			return this.http.get<Array<PlayerGameProjection>>(this.baseUri + format + '/IdpPlayerGameProjectionStatsByWeek/' + (season == null ? '' : encodeURIComponent(season)) + '/' + (week == null ? '' : encodeURIComponent(week)) + '', {});
@@ -1984,7 +3997,6 @@ export namespace MyNS {
 		 *           Example: <code>1</code>
 		 *         
 		 * @param {string} playerid Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>14257</code>.
-		 * @return {PlayerGameProjection} 
 		 */
 		ProjectedPlayerGameStatsByPlayerWInjuriesLineupsDfsSalaries(format: DfsSlatesByDateFormat, season: string, week: string, playerid: string): Observable<PlayerGameProjection> {
 			return this.http.get<PlayerGameProjection>(this.baseUri + format + '/PlayerGameProjectionStatsByPlayerID/' + (season == null ? '' : encodeURIComponent(season)) + '/' + (week == null ? '' : encodeURIComponent(week)) + '/' + (playerid == null ? '' : encodeURIComponent(playerid)) + '', {});
@@ -2001,7 +4013,6 @@ export namespace MyNS {
 		 *           Example: <code>1</code>
 		 *         
 		 * @param {string} team Abbreviation of the team. Example: <code>WAS</code>.
-		 * @return {Array<PlayerGameProjection>} 
 		 */
 		ProjectedPlayerGameStatsByTeamWInjuriesLineupsDfsSalaries(format: DfsSlatesByDateFormat, season: string, week: string, team: string): Observable<Array<PlayerGameProjection>> {
 			return this.http.get<Array<PlayerGameProjection>>(this.baseUri + format + '/PlayerGameProjectionStatsByTeam/' + (season == null ? '' : encodeURIComponent(season)) + '/' + (week == null ? '' : encodeURIComponent(week)) + '/' + (team == null ? '' : encodeURIComponent(team)) + '', {});
@@ -2018,7 +4029,6 @@ export namespace MyNS {
 		 *           Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4.
 		 *           Example: <code>1</code>
 		 *         
-		 * @return {Array<PlayerGameProjection>} 
 		 */
 		ProjectedPlayerGameStatsByWeekWInjuriesLineupsDfsSalaries(format: DfsSlatesByDateFormat, season: string, week: string): Observable<Array<PlayerGameProjection>> {
 			return this.http.get<Array<PlayerGameProjection>>(this.baseUri + format + '/PlayerGameProjectionStatsByWeek/' + (season == null ? '' : encodeURIComponent(season)) + '/' + (week == null ? '' : encodeURIComponent(week)) + '', {});
@@ -2031,7 +4041,6 @@ export namespace MyNS {
 		 * @param {string} season Year of the season and the season type. If no season type is provided, then the default is regular season.
 		 *           <br>Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.
 		 *         
-		 * @return {Array<PlayerSeasonProjection>} 
 		 */
 		ProjectedPlayerSeasonStatsWByeWeekAdp(format: DfsSlatesByDateFormat, season: string): Observable<Array<PlayerSeasonProjection>> {
 			return this.http.get<Array<PlayerSeasonProjection>>(this.baseUri + format + '/PlayerSeasonProjectionStats/' + (season == null ? '' : encodeURIComponent(season)) + '', {});
@@ -2045,7 +4054,6 @@ export namespace MyNS {
 		 *           <br>Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.
 		 *         
 		 * @param {string} playerid Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>14257</code>.
-		 * @return {PlayerSeasonProjection} 
 		 */
 		ProjectedPlayerSeasonStatsByPlayerWByeWeekAdp(format: DfsSlatesByDateFormat, season: string, playerid: string): Observable<PlayerSeasonProjection> {
 			return this.http.get<PlayerSeasonProjection>(this.baseUri + format + '/PlayerSeasonProjectionStatsByPlayerID/' + (season == null ? '' : encodeURIComponent(season)) + '/' + (playerid == null ? '' : encodeURIComponent(playerid)) + '', {});
@@ -2059,7 +4067,6 @@ export namespace MyNS {
 		 *           <br>Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.
 		 *         
 		 * @param {string} team Abbreviation of the team. Example: <code>WAS</code>.
-		 * @return {Array<PlayerSeasonProjection>} 
 		 */
 		ProjectedPlayerSeasonStatsByTeamWByeWeekAdp(format: DfsSlatesByDateFormat, season: string, team: string): Observable<Array<PlayerSeasonProjection>> {
 			return this.http.get<Array<PlayerSeasonProjection>>(this.baseUri + format + '/PlayerSeasonProjectionStatsByTeam/' + (season == null ? '' : encodeURIComponent(season)) + '/' + (team == null ? '' : encodeURIComponent(team)) + '', {});

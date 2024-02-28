@@ -501,6 +501,7 @@ export namespace MyNS {
 		 * If present, following values are allowed:
 		 * Free: 1
 		 * Standard: 1,2,5,10,20,50,100
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		capacity?: number | null;
 
@@ -532,6 +533,7 @@ export namespace MyNS {
 		 * If present, following values are allowed:
 		 * Free: 1
 		 * Standard: 1,2,5,10,20,50,100
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		capacity: FormControl<number | null | undefined>,
 
@@ -770,10 +772,16 @@ export namespace MyNS {
 		/** Provisioning state of the resource. */
 		provisioningState?: SignalRPropertiesProvisioningState | null;
 
-		/** The publicly accessible port of the SignalR service which is designed for browser/client side usage. */
+		/**
+		 * The publicly accessible port of the SignalR service which is designed for browser/client side usage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		publicPort?: number | null;
 
-		/** The publicly accessible port of the SignalR service which is designed for customer server side usage. */
+		/**
+		 * The publicly accessible port of the SignalR service which is designed for customer server side usage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		serverPort?: number | null;
 
 		/** Version of the SignalR resource. Probably you need the same or higher version of client SDKs. */
@@ -792,10 +800,16 @@ export namespace MyNS {
 		/** Provisioning state of the resource. */
 		provisioningState: FormControl<SignalRPropertiesProvisioningState | null | undefined>,
 
-		/** The publicly accessible port of the SignalR service which is designed for browser/client side usage. */
+		/**
+		 * The publicly accessible port of the SignalR service which is designed for browser/client side usage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		publicPort: FormControl<number | null | undefined>,
 
-		/** The publicly accessible port of the SignalR service which is designed for customer server side usage. */
+		/**
+		 * The publicly accessible port of the SignalR service which is designed for customer server side usage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		serverPort: FormControl<number | null | undefined>,
 
 		/** Version of the SignalR resource. Probably you need the same or higher version of client SDKs. */
@@ -917,14 +931,20 @@ export namespace MyNS {
 	/** Object that describes a specific usage of SignalR resources. */
 	export interface SignalRUsage {
 
-		/** Current value for the usage quota. */
-		currentValue?: number | null;
+		/**
+		 * Current value for the usage quota.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue?: string | null;
 
 		/** Fully qualified ARM resource id */
 		id?: string | null;
 
-		/** The maximum permitted value for the usage quota. If there is no limit, this value will be -1. */
-		limit?: number | null;
+		/**
+		 * The maximum permitted value for the usage quota. If there is no limit, this value will be -1.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit?: string | null;
 
 		/** Localizable String object containing the name and a localized value. */
 		name?: SignalRUsageName;
@@ -936,23 +956,29 @@ export namespace MyNS {
 	/** Object that describes a specific usage of SignalR resources. */
 	export interface SignalRUsageFormProperties {
 
-		/** Current value for the usage quota. */
-		currentValue: FormControl<number | null | undefined>,
+		/**
+		 * Current value for the usage quota.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue: FormControl<string | null | undefined>,
 
 		/** Fully qualified ARM resource id */
 		id: FormControl<string | null | undefined>,
 
-		/** The maximum permitted value for the usage quota. If there is no limit, this value will be -1. */
-		limit: FormControl<number | null | undefined>,
+		/**
+		 * The maximum permitted value for the usage quota. If there is no limit, this value will be -1.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit: FormControl<string | null | undefined>,
 
 		/** Representing the units of the usage quota. Possible values are: Count, Bytes, Seconds, Percent, CountPerSecond, BytesPerSecond. */
 		unit: FormControl<string | null | undefined>,
 	}
 	export function CreateSignalRUsageFormGroup() {
 		return new FormGroup<SignalRUsageFormProperties>({
-			currentValue: new FormControl<number | null | undefined>(undefined),
+			currentValue: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 		});
 

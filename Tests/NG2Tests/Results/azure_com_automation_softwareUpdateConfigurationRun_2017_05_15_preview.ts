@@ -117,7 +117,10 @@ export namespace MyNS {
 	/** Software update configuration properties. */
 	export interface SoftwareUpdateConfigurationRunProperties {
 
-		/** Number of computers in the software update configuration run. */
+		/**
+		 * Number of computers in the software update configuration run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		computerCount?: number | null;
 
 		/** Configured duration for the software update configuration run. */
@@ -132,7 +135,10 @@ export namespace MyNS {
 		/** End time of the software update configuration run. */
 		endTime?: Date | null;
 
-		/** Number of computers with failed status. */
+		/**
+		 * Number of computers with failed status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedCount?: number | null;
 
 		/** LastModifiedBy property, which only appears in the response. */
@@ -160,7 +166,10 @@ export namespace MyNS {
 	/** Software update configuration properties. */
 	export interface SoftwareUpdateConfigurationRunPropertiesFormProperties {
 
-		/** Number of computers in the software update configuration run. */
+		/**
+		 * Number of computers in the software update configuration run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		computerCount: FormControl<number | null | undefined>,
 
 		/** Configured duration for the software update configuration run. */
@@ -175,7 +184,10 @@ export namespace MyNS {
 		/** End time of the software update configuration run. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Number of computers with failed status. */
+		/**
+		 * Number of computers with failed status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedCount: FormControl<number | null | undefined>,
 
 		/** LastModifiedBy property, which only appears in the response. */

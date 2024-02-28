@@ -55,44 +55,68 @@ export namespace MyNS {
 	/** Represents database metrics. */
 	export interface MetricValue {
 
-		/** The average value of the metric. */
+		/**
+		 * The average value of the metric.
+		 * Type: double
+		 */
 		average?: number | null;
 
 		/** The number of values for the metric. */
 		count?: string | null;
 
-		/** The max value of the metric. */
+		/**
+		 * The max value of the metric.
+		 * Type: double
+		 */
 		maximum?: number | null;
 
-		/** The min value of the metric. */
+		/**
+		 * The min value of the metric.
+		 * Type: double
+		 */
 		minimum?: number | null;
 
 		/** The metric timestamp (ISO-8601 format). */
 		timestamp?: Date | null;
 
-		/** The total value of the metric. */
+		/**
+		 * The total value of the metric.
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 
 	/** Represents database metrics. */
 	export interface MetricValueFormProperties {
 
-		/** The average value of the metric. */
+		/**
+		 * The average value of the metric.
+		 * Type: double
+		 */
 		average: FormControl<number | null | undefined>,
 
 		/** The number of values for the metric. */
 		count: FormControl<string | null | undefined>,
 
-		/** The max value of the metric. */
+		/**
+		 * The max value of the metric.
+		 * Type: double
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** The min value of the metric. */
+		/**
+		 * The min value of the metric.
+		 * Type: double
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** The metric timestamp (ISO-8601 format). */
 		timestamp: FormControl<Date | null | undefined>,
 
-		/** The total value of the metric. */
+		/**
+		 * The total value of the metric.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricValueFormGroup() {

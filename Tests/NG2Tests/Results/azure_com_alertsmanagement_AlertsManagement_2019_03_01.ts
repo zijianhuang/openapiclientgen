@@ -412,10 +412,16 @@ export namespace MyNS {
 		/** Name of the field aggregated */
 		groupedby?: string | null;
 
-		/** Total count of the smart groups. */
+		/**
+		 * Total count of the smart groups.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		smartGroupsCount?: number | null;
 
-		/** Total count of the result set. */
+		/**
+		 * Total count of the result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 
 		/** List of the items */
@@ -428,10 +434,16 @@ export namespace MyNS {
 		/** Name of the field aggregated */
 		groupedby: FormControl<string | null | undefined>,
 
-		/** Total count of the smart groups. */
+		/**
+		 * Total count of the smart groups.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		smartGroupsCount: FormControl<number | null | undefined>,
 
-		/** Total count of the result set. */
+		/**
+		 * Total count of the result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateAlertsSummaryGroupFormGroup() {
@@ -447,7 +459,10 @@ export namespace MyNS {
 	/** Alerts summary group item */
 	export interface AlertsSummaryGroupItem {
 
-		/** Count of the aggregated field */
+		/**
+		 * Count of the aggregated field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Name of the field aggregated */
@@ -463,7 +478,10 @@ export namespace MyNS {
 	/** Alerts summary group item */
 	export interface AlertsSummaryGroupItemFormProperties {
 
-		/** Count of the aggregated field */
+		/**
+		 * Count of the aggregated field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Name of the field aggregated */
@@ -655,7 +673,10 @@ export namespace MyNS {
 		/** Summary of alertStates in the smart group */
 		alertStates?: Array<SmartGroupAggregatedProperty>;
 
-		/** Total number of alerts in smart group */
+		/**
+		 * Total number of alerts in smart group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alertsCount?: number | null;
 
 		/** Last updated time of smart group. Date-Time in ISO-8601 format. */
@@ -695,7 +716,10 @@ export namespace MyNS {
 	/** Properties of smart group. */
 	export interface SmartGroupPropertiesFormProperties {
 
-		/** Total number of alerts in smart group */
+		/**
+		 * Total number of alerts in smart group
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		alertsCount: FormControl<number | null | undefined>,
 
 		/** Last updated time of smart group. Date-Time in ISO-8601 format. */
@@ -733,7 +757,10 @@ export namespace MyNS {
 	/** Aggregated property of each type */
 	export interface SmartGroupAggregatedProperty {
 
-		/** Total number of items of type. */
+		/**
+		 * Total number of items of type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Name of the type. */
@@ -743,7 +770,10 @@ export namespace MyNS {
 	/** Aggregated property of each type */
 	export interface SmartGroupAggregatedPropertyFormProperties {
 
-		/** Total number of items of type. */
+		/**
+		 * Total number of items of type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Name of the type. */

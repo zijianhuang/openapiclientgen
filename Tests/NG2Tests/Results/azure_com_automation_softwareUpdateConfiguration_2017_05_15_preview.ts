@@ -33,7 +33,10 @@ export namespace MyNS {
 		/** Day of the occurrence. Must be one of monday, tuesday, wednesday, thursday, friday, saturday, sunday. */
 		day?: AdvancedScheduleMonthlyOccurrenceDay | null;
 
-		/** Occurrence of the week within the month. Must be between 1 and 5 */
+		/**
+		 * Occurrence of the week within the month. Must be between 1 and 5
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrence?: number | null;
 	}
 
@@ -43,7 +46,10 @@ export namespace MyNS {
 		/** Day of the occurrence. Must be one of monday, tuesday, wednesday, thursday, friday, saturday, sunday. */
 		day: FormControl<AdvancedScheduleMonthlyOccurrenceDay | null | undefined>,
 
-		/** Occurrence of the week within the month. Must be between 1 and 5 */
+		/**
+		 * Occurrence of the week within the month. Must be between 1 and 5
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrence: FormControl<number | null | undefined>,
 	}
 	export function CreateAdvancedScheduleMonthlyOccurrenceFormGroup() {
@@ -189,13 +195,19 @@ export namespace MyNS {
 		/** Gets or sets the end time of the schedule. */
 		expiryTime?: Date | null;
 
-		/** Gets or sets the expiry time's offset in minutes. */
+		/**
+		 * Gets or sets the expiry time's offset in minutes.
+		 * Type: double
+		 */
 		expiryTimeOffsetMinutes?: number | null;
 
 		/** Gets or sets the frequency of the schedule. */
 		frequency?: SchedulePropertiesFrequency | null;
 
-		/** Gets or sets the interval of the schedule. */
+		/**
+		 * Gets or sets the interval of the schedule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval?: number | null;
 
 		/** Gets or sets a value indicating whether this schedule is enabled. */
@@ -207,13 +219,19 @@ export namespace MyNS {
 		/** Gets or sets the next run time of the schedule. */
 		nextRun?: Date | null;
 
-		/** Gets or sets the next run time's offset in minutes. */
+		/**
+		 * Gets or sets the next run time's offset in minutes.
+		 * Type: double
+		 */
 		nextRunOffsetMinutes?: number | null;
 
 		/** Gets or sets the start time of the schedule. */
 		startTime?: Date | null;
 
-		/** Gets the start time's offset in minutes. */
+		/**
+		 * Gets the start time's offset in minutes.
+		 * Type: double
+		 */
 		startTimeOffsetMinutes?: number | null;
 
 		/** Gets or sets the time zone of the schedule. */
@@ -232,13 +250,19 @@ export namespace MyNS {
 		/** Gets or sets the end time of the schedule. */
 		expiryTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the expiry time's offset in minutes. */
+		/**
+		 * Gets or sets the expiry time's offset in minutes.
+		 * Type: double
+		 */
 		expiryTimeOffsetMinutes: FormControl<number | null | undefined>,
 
 		/** Gets or sets the frequency of the schedule. */
 		frequency: FormControl<SchedulePropertiesFrequency | null | undefined>,
 
-		/** Gets or sets the interval of the schedule. */
+		/**
+		 * Gets or sets the interval of the schedule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether this schedule is enabled. */
@@ -250,13 +274,19 @@ export namespace MyNS {
 		/** Gets or sets the next run time of the schedule. */
 		nextRun: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the next run time's offset in minutes. */
+		/**
+		 * Gets or sets the next run time's offset in minutes.
+		 * Type: double
+		 */
 		nextRunOffsetMinutes: FormControl<number | null | undefined>,
 
 		/** Gets or sets the start time of the schedule. */
 		startTime: FormControl<Date | null | undefined>,
 
-		/** Gets the start time's offset in minutes. */
+		/**
+		 * Gets the start time's offset in minutes.
+		 * Type: double
+		 */
 		startTimeOffsetMinutes: FormControl<number | null | undefined>,
 
 		/** Gets or sets the time zone of the schedule. */

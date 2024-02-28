@@ -41,7 +41,10 @@ export namespace MyNS {
 	/** The database's properties. */
 	export interface DatabaseProperties {
 
-		/** Time in minutes after which database is automatically paused. A value of -1 means that automatic pause is disabled */
+		/**
+		 * Time in minutes after which database is automatically paused. A value of -1 means that automatic pause is disabled
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		autoPauseDelay?: number | null;
 
 		/** Collation of the metadata catalog. */
@@ -93,19 +96,31 @@ export namespace MyNS {
 		/** The resource identifier of the long term retention backup associated with create operation of this database. */
 		longTermRetentionBackupResourceId?: string | null;
 
-		/** The max log size for this database. */
-		maxLogSizeBytes?: number | null;
+		/**
+		 * The max log size for this database.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxLogSizeBytes?: string | null;
 
-		/** The max size of the database expressed in bytes. */
-		maxSizeBytes?: number | null;
+		/**
+		 * The max size of the database expressed in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSizeBytes?: string | null;
 
-		/** Minimal capacity that database will always have allocated, if not paused */
+		/**
+		 * Minimal capacity that database will always have allocated, if not paused
+		 * Type: double
+		 */
 		minCapacity?: number | null;
 
 		/** The date when database was paused by user configuration or action(ISO8601 format). Null if the database is ready. */
 		pausedDate?: Date | null;
 
-		/** The number of readonly secondary replicas associated with the database. */
+		/**
+		 * The number of readonly secondary replicas associated with the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		readReplicaCount?: number | null;
 
 		/** The state of read-only routing. If enabled, connections that have application intent set to readonly in their connection string may be routed to a readonly secondary replica in the same region. */
@@ -151,7 +166,10 @@ export namespace MyNS {
 	/** The database's properties. */
 	export interface DatabasePropertiesFormProperties {
 
-		/** Time in minutes after which database is automatically paused. A value of -1 means that automatic pause is disabled */
+		/**
+		 * Time in minutes after which database is automatically paused. A value of -1 means that automatic pause is disabled
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		autoPauseDelay: FormControl<number | null | undefined>,
 
 		/** Collation of the metadata catalog. */
@@ -200,19 +218,31 @@ export namespace MyNS {
 		/** The resource identifier of the long term retention backup associated with create operation of this database. */
 		longTermRetentionBackupResourceId: FormControl<string | null | undefined>,
 
-		/** The max log size for this database. */
-		maxLogSizeBytes: FormControl<number | null | undefined>,
+		/**
+		 * The max log size for this database.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxLogSizeBytes: FormControl<string | null | undefined>,
 
-		/** The max size of the database expressed in bytes. */
-		maxSizeBytes: FormControl<number | null | undefined>,
+		/**
+		 * The max size of the database expressed in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxSizeBytes: FormControl<string | null | undefined>,
 
-		/** Minimal capacity that database will always have allocated, if not paused */
+		/**
+		 * Minimal capacity that database will always have allocated, if not paused
+		 * Type: double
+		 */
 		minCapacity: FormControl<number | null | undefined>,
 
 		/** The date when database was paused by user configuration or action(ISO8601 format). Null if the database is ready. */
 		pausedDate: FormControl<Date | null | undefined>,
 
-		/** The number of readonly secondary replicas associated with the database. */
+		/**
+		 * The number of readonly secondary replicas associated with the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		readReplicaCount: FormControl<number | null | undefined>,
 
 		/** The state of read-only routing. If enabled, connections that have application intent set to readonly in their connection string may be routed to a readonly secondary replica in the same region. */
@@ -269,8 +299,8 @@ export namespace MyNS {
 			failoverGroupId: new FormControl<string | null | undefined>(undefined),
 			licenseType: new FormControl<DatabasePropertiesLicenseType | null | undefined>(undefined),
 			longTermRetentionBackupResourceId: new FormControl<string | null | undefined>(undefined),
-			maxLogSizeBytes: new FormControl<number | null | undefined>(undefined),
-			maxSizeBytes: new FormControl<number | null | undefined>(undefined),
+			maxLogSizeBytes: new FormControl<string | null | undefined>(undefined),
+			maxSizeBytes: new FormControl<string | null | undefined>(undefined),
 			minCapacity: new FormControl<number | null | undefined>(undefined),
 			pausedDate: new FormControl<Date | null | undefined>(undefined),
 			readReplicaCount: new FormControl<number | null | undefined>(undefined),
@@ -299,7 +329,10 @@ export namespace MyNS {
 	/** An ARM Resource SKU. */
 	export interface Sku {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */
@@ -321,7 +354,10 @@ export namespace MyNS {
 	/** An ARM Resource SKU. */
 	export interface SkuFormProperties {
 
-		/** Capacity of the particular SKU. */
+		/**
+		 * Capacity of the particular SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** If the service has different generations of hardware, for the same SKU, then that can be captured here. */

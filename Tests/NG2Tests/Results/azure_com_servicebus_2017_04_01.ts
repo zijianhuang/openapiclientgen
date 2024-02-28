@@ -70,7 +70,10 @@ export namespace MyNS {
 	/** Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression. */
 	export interface Action {
 
-		/** This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20. */
+		/**
+		 * This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibilityLevel?: number | null;
 
 		/** Value that indicates whether the rule action requires preprocessing. */
@@ -83,7 +86,10 @@ export namespace MyNS {
 	/** Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression. */
 	export interface ActionFormProperties {
 
-		/** This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20. */
+		/**
+		 * This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibilityLevel: FormControl<number | null | undefined>,
 
 		/** Value that indicates whether the rule action requires preprocessing. */
@@ -496,47 +502,77 @@ export namespace MyNS {
 	/** Message Count Details. */
 	export interface MessageCountDetails {
 
-		/** Number of active messages in the queue, topic, or subscription. */
-		activeMessageCount?: number | null;
+		/**
+		 * Number of active messages in the queue, topic, or subscription.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		activeMessageCount?: string | null;
 
-		/** Number of messages that are dead lettered. */
-		deadLetterMessageCount?: number | null;
+		/**
+		 * Number of messages that are dead lettered.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		deadLetterMessageCount?: string | null;
 
-		/** Number of scheduled messages. */
-		scheduledMessageCount?: number | null;
+		/**
+		 * Number of scheduled messages.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		scheduledMessageCount?: string | null;
 
-		/** Number of messages transferred into dead letters. */
-		transferDeadLetterMessageCount?: number | null;
+		/**
+		 * Number of messages transferred into dead letters.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transferDeadLetterMessageCount?: string | null;
 
-		/** Number of messages transferred to another queue, topic, or subscription. */
-		transferMessageCount?: number | null;
+		/**
+		 * Number of messages transferred to another queue, topic, or subscription.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transferMessageCount?: string | null;
 	}
 
 	/** Message Count Details. */
 	export interface MessageCountDetailsFormProperties {
 
-		/** Number of active messages in the queue, topic, or subscription. */
-		activeMessageCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of active messages in the queue, topic, or subscription.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		activeMessageCount: FormControl<string | null | undefined>,
 
-		/** Number of messages that are dead lettered. */
-		deadLetterMessageCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of messages that are dead lettered.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		deadLetterMessageCount: FormControl<string | null | undefined>,
 
-		/** Number of scheduled messages. */
-		scheduledMessageCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of scheduled messages.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		scheduledMessageCount: FormControl<string | null | undefined>,
 
-		/** Number of messages transferred into dead letters. */
-		transferDeadLetterMessageCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of messages transferred into dead letters.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transferDeadLetterMessageCount: FormControl<string | null | undefined>,
 
-		/** Number of messages transferred to another queue, topic, or subscription. */
-		transferMessageCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of messages transferred to another queue, topic, or subscription.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transferMessageCount: FormControl<string | null | undefined>,
 	}
 	export function CreateMessageCountDetailsFormGroup() {
 		return new FormGroup<MessageCountDetailsFormProperties>({
-			activeMessageCount: new FormControl<number | null | undefined>(undefined),
-			deadLetterMessageCount: new FormControl<number | null | undefined>(undefined),
-			scheduledMessageCount: new FormControl<number | null | undefined>(undefined),
-			transferDeadLetterMessageCount: new FormControl<number | null | undefined>(undefined),
-			transferMessageCount: new FormControl<number | null | undefined>(undefined),
+			activeMessageCount: new FormControl<string | null | undefined>(undefined),
+			deadLetterMessageCount: new FormControl<string | null | undefined>(undefined),
+			scheduledMessageCount: new FormControl<string | null | undefined>(undefined),
+			transferDeadLetterMessageCount: new FormControl<string | null | undefined>(undefined),
+			transferMessageCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1085,7 +1121,10 @@ export namespace MyNS {
 	/** SKU of the namespace. */
 	export interface SBSku {
 
-		/** The specified messaging units for the tier. For Premium tier, capacity are 1,2 and 4. */
+		/**
+		 * The specified messaging units for the tier. For Premium tier, capacity are 1,2 and 4.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/**
@@ -1101,7 +1140,10 @@ export namespace MyNS {
 	/** SKU of the namespace. */
 	export interface SBSkuFormProperties {
 
-		/** The specified messaging units for the tier. For Premium tier, capacity are 1,2 and 4. */
+		/**
+		 * The specified messaging units for the tier. For Premium tier, capacity are 1,2 and 4.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/**
@@ -1338,14 +1380,23 @@ export namespace MyNS {
 		/** ISO 8601 timespan duration of a peek-lock; that is, the amount of time that the message is locked for other receivers. The maximum value for LockDuration is 5 minutes; the default value is 1 minute. */
 		lockDuration?: string | null;
 
-		/** The maximum delivery count. A message is automatically deadlettered after this number of deliveries. default value is 10. */
+		/**
+		 * The maximum delivery count. A message is automatically deadlettered after this number of deliveries. default value is 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeliveryCount?: number | null;
 
-		/** The maximum size of the queue in megabytes, which is the size of memory allocated for the queue. Default is 1024. */
+		/**
+		 * The maximum size of the queue in megabytes, which is the size of memory allocated for the queue. Default is 1024.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSizeInMegabytes?: number | null;
 
-		/** The number of messages in the queue. */
-		messageCount?: number | null;
+		/**
+		 * The number of messages in the queue.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		messageCount?: string | null;
 
 		/** A value indicating if this queue requires duplicate detection. */
 		requiresDuplicateDetection?: boolean | null;
@@ -1353,8 +1404,11 @@ export namespace MyNS {
 		/** A value that indicates whether the queue supports the concept of sessions. */
 		requiresSession?: boolean | null;
 
-		/** The size of the queue, in bytes. */
-		sizeInBytes?: number | null;
+		/**
+		 * The size of the queue, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sizeInBytes?: string | null;
 
 		/** Entity status. */
 		status?: EntityStatus | null;
@@ -1402,14 +1456,23 @@ export namespace MyNS {
 		/** ISO 8601 timespan duration of a peek-lock; that is, the amount of time that the message is locked for other receivers. The maximum value for LockDuration is 5 minutes; the default value is 1 minute. */
 		lockDuration: FormControl<string | null | undefined>,
 
-		/** The maximum delivery count. A message is automatically deadlettered after this number of deliveries. default value is 10. */
+		/**
+		 * The maximum delivery count. A message is automatically deadlettered after this number of deliveries. default value is 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeliveryCount: FormControl<number | null | undefined>,
 
-		/** The maximum size of the queue in megabytes, which is the size of memory allocated for the queue. Default is 1024. */
+		/**
+		 * The maximum size of the queue in megabytes, which is the size of memory allocated for the queue. Default is 1024.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSizeInMegabytes: FormControl<number | null | undefined>,
 
-		/** The number of messages in the queue. */
-		messageCount: FormControl<number | null | undefined>,
+		/**
+		 * The number of messages in the queue.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		messageCount: FormControl<string | null | undefined>,
 
 		/** A value indicating if this queue requires duplicate detection. */
 		requiresDuplicateDetection: FormControl<boolean | null | undefined>,
@@ -1417,8 +1480,11 @@ export namespace MyNS {
 		/** A value that indicates whether the queue supports the concept of sessions. */
 		requiresSession: FormControl<boolean | null | undefined>,
 
-		/** The size of the queue, in bytes. */
-		sizeInBytes: FormControl<number | null | undefined>,
+		/**
+		 * The size of the queue, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sizeInBytes: FormControl<string | null | undefined>,
 
 		/** Entity status. */
 		status: FormControl<EntityStatus | null | undefined>,
@@ -1442,10 +1508,10 @@ export namespace MyNS {
 			lockDuration: new FormControl<string | null | undefined>(undefined),
 			maxDeliveryCount: new FormControl<number | null | undefined>(undefined),
 			maxSizeInMegabytes: new FormControl<number | null | undefined>(undefined),
-			messageCount: new FormControl<number | null | undefined>(undefined),
+			messageCount: new FormControl<string | null | undefined>(undefined),
 			requiresDuplicateDetection: new FormControl<boolean | null | undefined>(undefined),
 			requiresSession: new FormControl<boolean | null | undefined>(undefined),
-			sizeInBytes: new FormControl<number | null | undefined>(undefined),
+			sizeInBytes: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<EntityStatus | null | undefined>(undefined),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1536,11 +1602,17 @@ export namespace MyNS {
 		/** ISO 8061 lock duration timespan for the subscription. The default value is 1 minute. */
 		lockDuration?: string | null;
 
-		/** Number of maximum deliveries. */
+		/**
+		 * Number of maximum deliveries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeliveryCount?: number | null;
 
-		/** Number of messages. */
-		messageCount?: number | null;
+		/**
+		 * Number of messages.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		messageCount?: string | null;
 
 		/** Value indicating if a subscription supports the concept of sessions. */
 		requiresSession?: boolean | null;
@@ -1588,11 +1660,17 @@ export namespace MyNS {
 		/** ISO 8061 lock duration timespan for the subscription. The default value is 1 minute. */
 		lockDuration: FormControl<string | null | undefined>,
 
-		/** Number of maximum deliveries. */
+		/**
+		 * Number of maximum deliveries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDeliveryCount: FormControl<number | null | undefined>,
 
-		/** Number of messages. */
-		messageCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of messages.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		messageCount: FormControl<string | null | undefined>,
 
 		/** Value indicating if a subscription supports the concept of sessions. */
 		requiresSession: FormControl<boolean | null | undefined>,
@@ -1617,7 +1695,7 @@ export namespace MyNS {
 			forwardTo: new FormControl<string | null | undefined>(undefined),
 			lockDuration: new FormControl<string | null | undefined>(undefined),
 			maxDeliveryCount: new FormControl<number | null | undefined>(undefined),
-			messageCount: new FormControl<number | null | undefined>(undefined),
+			messageCount: new FormControl<string | null | undefined>(undefined),
 			requiresSession: new FormControl<boolean | null | undefined>(undefined),
 			status: new FormControl<EntityStatus | null | undefined>(undefined),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
@@ -1700,19 +1778,28 @@ export namespace MyNS {
 		/** Value that indicates whether the topic to be partitioned across multiple message brokers is enabled. */
 		enablePartitioning?: boolean | null;
 
-		/** Maximum size of the topic in megabytes, which is the size of the memory allocated for the topic. Default is 1024. */
+		/**
+		 * Maximum size of the topic in megabytes, which is the size of the memory allocated for the topic. Default is 1024.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSizeInMegabytes?: number | null;
 
 		/** Value indicating if this topic requires duplicate detection. */
 		requiresDuplicateDetection?: boolean | null;
 
-		/** Size of the topic, in bytes. */
-		sizeInBytes?: number | null;
+		/**
+		 * Size of the topic, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sizeInBytes?: string | null;
 
 		/** Entity status. */
 		status?: EntityStatus | null;
 
-		/** Number of subscriptions. */
+		/**
+		 * Number of subscriptions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscriptionCount?: number | null;
 
 		/** Value that indicates whether the topic supports ordering. */
@@ -1749,19 +1836,28 @@ export namespace MyNS {
 		/** Value that indicates whether the topic to be partitioned across multiple message brokers is enabled. */
 		enablePartitioning: FormControl<boolean | null | undefined>,
 
-		/** Maximum size of the topic in megabytes, which is the size of the memory allocated for the topic. Default is 1024. */
+		/**
+		 * Maximum size of the topic in megabytes, which is the size of the memory allocated for the topic. Default is 1024.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSizeInMegabytes: FormControl<number | null | undefined>,
 
 		/** Value indicating if this topic requires duplicate detection. */
 		requiresDuplicateDetection: FormControl<boolean | null | undefined>,
 
-		/** Size of the topic, in bytes. */
-		sizeInBytes: FormControl<number | null | undefined>,
+		/**
+		 * Size of the topic, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sizeInBytes: FormControl<string | null | undefined>,
 
 		/** Entity status. */
 		status: FormControl<EntityStatus | null | undefined>,
 
-		/** Number of subscriptions. */
+		/**
+		 * Number of subscriptions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscriptionCount: FormControl<number | null | undefined>,
 
 		/** Value that indicates whether the topic supports ordering. */
@@ -1782,7 +1878,7 @@ export namespace MyNS {
 			enablePartitioning: new FormControl<boolean | null | undefined>(undefined),
 			maxSizeInMegabytes: new FormControl<number | null | undefined>(undefined),
 			requiresDuplicateDetection: new FormControl<boolean | null | undefined>(undefined),
-			sizeInBytes: new FormControl<number | null | undefined>(undefined),
+			sizeInBytes: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<EntityStatus | null | undefined>(undefined),
 			subscriptionCount: new FormControl<number | null | undefined>(undefined),
 			supportOrdering: new FormControl<boolean | null | undefined>(undefined),
@@ -1795,7 +1891,10 @@ export namespace MyNS {
 	/** Represents set of actions written in SQL language-based syntax that is performed against a ServiceBus.Messaging.BrokeredMessage  */
 	export interface SqlRuleAction {
 
-		/** This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20. */
+		/**
+		 * This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibilityLevel?: number | null;
 
 		/** Value that indicates whether the rule action requires preprocessing. */
@@ -1808,7 +1907,10 @@ export namespace MyNS {
 	/** Represents set of actions written in SQL language-based syntax that is performed against a ServiceBus.Messaging.BrokeredMessage  */
 	export interface SqlRuleActionFormProperties {
 
-		/** This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20. */
+		/**
+		 * This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibilityLevel: FormControl<number | null | undefined>,
 
 		/** Value that indicates whether the rule action requires preprocessing. */

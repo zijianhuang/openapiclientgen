@@ -731,7 +731,10 @@ export namespace MyNS {
 		/** Detailed error information of any failure. */
 		error?: CloudErrorBody;
 
-		/** The ordinal count of the number of retry attempts on a rollout. 0 if no retries of the rollout have been performed. If the rollout is updated with a PUT, this count is reset to 0. */
+		/**
+		 * The ordinal count of the number of retry attempts on a rollout. 0 if no retries of the rollout have been performed. If the rollout is updated with a PUT, this count is reset to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retryAttempt?: number | null;
 
 		/** True, if all steps that succeeded on the previous run/attempt were chosen to be skipped in this retry attempt. False, otherwise. */
@@ -747,7 +750,10 @@ export namespace MyNS {
 		/** The start time of the rollout in UTC. This property will not be set if the rollout has not completed yet. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** The ordinal count of the number of retry attempts on a rollout. 0 if no retries of the rollout have been performed. If the rollout is updated with a PUT, this count is reset to 0. */
+		/**
+		 * The ordinal count of the number of retry attempts on a rollout. 0 if no retries of the rollout have been performed. If the rollout is updated with a PUT, this count is reset to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retryAttempt: FormControl<number | null | undefined>,
 
 		/** True, if all steps that succeeded on the previous run/attempt were chosen to be skipped in this retry attempt. False, otherwise. */
@@ -779,7 +785,10 @@ export namespace MyNS {
 		/** The current status of the rollout. */
 		status?: string | null;
 
-		/** The cardinal count of total number of retries performed on the rollout at a given time. */
+		/**
+		 * The cardinal count of total number of retries performed on the rollout at a given time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRetryAttempts?: number | null;
 	}
 
@@ -789,7 +798,10 @@ export namespace MyNS {
 		/** The current status of the rollout. */
 		status: FormControl<string | null | undefined>,
 
-		/** The cardinal count of total number of retries performed on the rollout at a given time. */
+		/**
+		 * The cardinal count of total number of retries performed on the rollout at a given time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRetryAttempts: FormControl<number | null | undefined>,
 	}
 	export function CreateRolloutPropertiesFormGroup() {

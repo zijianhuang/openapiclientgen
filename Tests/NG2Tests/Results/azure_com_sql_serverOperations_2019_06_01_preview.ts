@@ -76,13 +76,19 @@ export namespace MyNS {
 		/** The operation description. */
 		description?: string | null;
 
-		/** The operation error code. */
+		/**
+		 * The operation error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode?: number | null;
 
 		/** The operation error description. */
 		errorDescription?: string | null;
 
-		/** The operation error severity. */
+		/**
+		 * The operation error severity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorSeverity?: number | null;
 
 		/** The estimated completion time of the operation. */
@@ -100,7 +106,10 @@ export namespace MyNS {
 		/** The friendly name of operation. */
 		operationFriendlyName?: string | null;
 
-		/** The percentage of the operation completed. */
+		/**
+		 * The percentage of the operation completed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete?: number | null;
 
 		/** The name of the server. */
@@ -119,13 +128,19 @@ export namespace MyNS {
 		/** The operation description. */
 		description: FormControl<string | null | undefined>,
 
-		/** The operation error code. */
+		/**
+		 * The operation error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCode: FormControl<number | null | undefined>,
 
 		/** The operation error description. */
 		errorDescription: FormControl<string | null | undefined>,
 
-		/** The operation error severity. */
+		/**
+		 * The operation error severity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorSeverity: FormControl<number | null | undefined>,
 
 		/** The estimated completion time of the operation. */
@@ -143,7 +158,10 @@ export namespace MyNS {
 		/** The friendly name of operation. */
 		operationFriendlyName: FormControl<string | null | undefined>,
 
-		/** The percentage of the operation completed. */
+		/**
+		 * The percentage of the operation completed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** The name of the server. */

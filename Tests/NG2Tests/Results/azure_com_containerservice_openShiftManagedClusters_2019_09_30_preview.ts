@@ -180,6 +180,7 @@ export namespace MyNS {
 		/**
 		 * Number of agents (VMs) to host docker containers.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -211,6 +212,7 @@ export namespace MyNS {
 		/**
 		 * Number of agents (VMs) to host docker containers.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -346,6 +348,7 @@ export namespace MyNS {
 		/**
 		 * Number of masters (VMs) to host docker containers. The default value is 3.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -371,6 +374,7 @@ export namespace MyNS {
 		/**
 		 * Number of masters (VMs) to host docker containers. The default value is 3.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 

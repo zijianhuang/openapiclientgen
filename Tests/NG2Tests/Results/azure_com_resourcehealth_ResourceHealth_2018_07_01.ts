@@ -805,7 +805,10 @@ export namespace MyNS {
 		/** Useful links of event. */
 		links?: Array<Link>;
 
-		/** Priority level of the event. */
+		/**
+		 * Priority level of the event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Recommended actions of event. */
@@ -858,7 +861,10 @@ export namespace MyNS {
 		/** Level of insight. */
 		level: FormControl<EventPropertiesLevel | null | undefined>,
 
-		/** Priority level of the event. */
+		/**
+		 * Priority level of the event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Current status of event. */
@@ -1150,7 +1156,10 @@ export namespace MyNS {
 		/** Recommended action text */
 		actionText?: string | null;
 
-		/** Recommended action group Id for the service health event. */
+		/**
+		 * Recommended action group Id for the service health event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupId?: number | null;
 	}
 	export interface EventPropertiesRecommendedActionsActionsFormProperties {
@@ -1158,7 +1167,10 @@ export namespace MyNS {
 		/** Recommended action text */
 		actionText: FormControl<string | null | undefined>,
 
-		/** Recommended action group Id for the service health event. */
+		/**
+		 * Recommended action group Id for the service health event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupId: FormControl<number | null | undefined>,
 	}
 	export function CreateEventPropertiesRecommendedActionsActionsFormGroup() {

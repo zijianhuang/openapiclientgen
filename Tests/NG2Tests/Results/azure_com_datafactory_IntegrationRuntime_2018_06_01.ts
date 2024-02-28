@@ -417,7 +417,10 @@ export namespace MyNS {
 		/** Compute type of the cluster which will execute data flow job. */
 		computeType?: IntegrationRuntimeDataFlowPropertiesComputeType | null;
 
-		/** Core count of the cluster which will execute data flow job. Supported values are: 8, 16, 32, 48, 80, 144 and 272. */
+		/**
+		 * Core count of the cluster which will execute data flow job. Supported values are: 8, 16, 32, 48, 80, 144 and 272.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreCount?: number | null;
 
 		/**
@@ -433,7 +436,10 @@ export namespace MyNS {
 		/** Compute type of the cluster which will execute data flow job. */
 		computeType: FormControl<IntegrationRuntimeDataFlowPropertiesComputeType | null | undefined>,
 
-		/** Core count of the cluster which will execute data flow job. Supported values are: 8, 16, 32, 48, 80, 144 and 272. */
+		/**
+		 * Core count of the cluster which will execute data flow job. Supported values are: 8, 16, 32, 48, 80, 144 and 272.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		coreCount: FormControl<number | null | undefined>,
 
 		/**
@@ -642,56 +648,98 @@ export namespace MyNS {
 	/** Monitoring data for integration runtime node. */
 	export interface IntegrationRuntimeNodeMonitoringData {
 
-		/** Available memory (MB) on the integration runtime node. */
+		/**
+		 * Available memory (MB) on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableMemoryInMB?: number | null;
 
-		/** Maximum concurrent jobs on the integration runtime node. */
+		/**
+		 * Maximum concurrent jobs on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentJobsLimit?: number | null;
 
-		/** The number of jobs currently running on the integration runtime node. */
+		/**
+		 * The number of jobs currently running on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentJobsRunning?: number | null;
 
-		/** CPU percentage on the integration runtime node. */
+		/**
+		 * CPU percentage on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuUtilization?: number | null;
 
-		/** The maximum concurrent jobs in this integration runtime. */
+		/**
+		 * The maximum concurrent jobs in this integration runtime.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentJobs?: number | null;
 
 		/** Name of the integration runtime node. */
 		nodeName?: string | null;
 
-		/** Received bytes on the integration runtime node. */
+		/**
+		 * Received bytes on the integration runtime node.
+		 * Type: double
+		 */
 		receivedBytes?: number | null;
 
-		/** Sent bytes on the integration runtime node. */
+		/**
+		 * Sent bytes on the integration runtime node.
+		 * Type: double
+		 */
 		sentBytes?: number | null;
 	}
 
 	/** Monitoring data for integration runtime node. */
 	export interface IntegrationRuntimeNodeMonitoringDataFormProperties {
 
-		/** Available memory (MB) on the integration runtime node. */
+		/**
+		 * Available memory (MB) on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableMemoryInMB: FormControl<number | null | undefined>,
 
-		/** Maximum concurrent jobs on the integration runtime node. */
+		/**
+		 * Maximum concurrent jobs on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentJobsLimit: FormControl<number | null | undefined>,
 
-		/** The number of jobs currently running on the integration runtime node. */
+		/**
+		 * The number of jobs currently running on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentJobsRunning: FormControl<number | null | undefined>,
 
-		/** CPU percentage on the integration runtime node. */
+		/**
+		 * CPU percentage on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuUtilization: FormControl<number | null | undefined>,
 
-		/** The maximum concurrent jobs in this integration runtime. */
+		/**
+		 * The maximum concurrent jobs in this integration runtime.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentJobs: FormControl<number | null | undefined>,
 
 		/** Name of the integration runtime node. */
 		nodeName: FormControl<string | null | undefined>,
 
-		/** Received bytes on the integration runtime node. */
+		/**
+		 * Received bytes on the integration runtime node.
+		 * Type: double
+		 */
 		receivedBytes: FormControl<number | null | undefined>,
 
-		/** Sent bytes on the integration runtime node. */
+		/**
+		 * Sent bytes on the integration runtime node.
+		 * Type: double
+		 */
 		sentBytes: FormControl<number | null | undefined>,
 	}
 	export function CreateIntegrationRuntimeNodeMonitoringDataFormGroup() {
@@ -1319,7 +1367,10 @@ export namespace MyNS {
 		/** The integration runtime capabilities dictionary */
 		capabilities?: {[id: string]: string };
 
-		/** Maximum concurrent jobs on the integration runtime node. */
+		/**
+		 * Maximum concurrent jobs on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentJobsLimit?: number | null;
 
 		/** The time at which the integration runtime will expire in ISO8601 format. */
@@ -1352,7 +1403,10 @@ export namespace MyNS {
 		/** Machine name of the integration runtime node. */
 		machineName?: string | null;
 
-		/** The maximum concurrent jobs in this integration runtime. */
+		/**
+		 * The maximum concurrent jobs in this integration runtime.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentJobs?: number | null;
 
 		/** Name of the integration runtime node. */
@@ -1377,7 +1431,10 @@ export namespace MyNS {
 		/** The integration runtime capabilities dictionary */
 		capabilities: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Maximum concurrent jobs on the integration runtime node. */
+		/**
+		 * Maximum concurrent jobs on the integration runtime node.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentJobsLimit: FormControl<number | null | undefined>,
 
 		/** The time at which the integration runtime will expire in ISO8601 format. */
@@ -1410,7 +1467,10 @@ export namespace MyNS {
 		/** Machine name of the integration runtime node. */
 		machineName: FormControl<string | null | undefined>,
 
-		/** The maximum concurrent jobs in this integration runtime. */
+		/**
+		 * The maximum concurrent jobs in this integration runtime.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxConcurrentJobs: FormControl<number | null | undefined>,
 
 		/** Name of the integration runtime node. */
@@ -1596,8 +1656,11 @@ export namespace MyNS {
 	/** Ssis environment. */
 	export interface SsisEnvironment {
 
-		/** Folder id which contains environment. */
-		folderId?: number | null;
+		/**
+		 * Folder id which contains environment.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		folderId?: string | null;
 
 		/** Variable in environment */
 		variables?: Array<SsisVariable>;
@@ -1606,12 +1669,15 @@ export namespace MyNS {
 	/** Ssis environment. */
 	export interface SsisEnvironmentFormProperties {
 
-		/** Folder id which contains environment. */
-		folderId: FormControl<number | null | undefined>,
+		/**
+		 * Folder id which contains environment.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		folderId: FormControl<string | null | undefined>,
 	}
 	export function CreateSsisEnvironmentFormGroup() {
 		return new FormGroup<SsisEnvironmentFormProperties>({
-			folderId: new FormControl<number | null | undefined>(undefined),
+			folderId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1626,8 +1692,11 @@ export namespace MyNS {
 		/** Variable description. */
 		description?: string | null;
 
-		/** Variable id. */
-		id?: number | null;
+		/**
+		 * Variable id.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Variable name. */
 		name?: string | null;
@@ -1651,8 +1720,11 @@ export namespace MyNS {
 		/** Variable description. */
 		description: FormControl<string | null | undefined>,
 
-		/** Variable id. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Variable id.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Variable name. */
 		name: FormControl<string | null | undefined>,
@@ -1670,7 +1742,7 @@ export namespace MyNS {
 		return new FormGroup<SsisVariableFormProperties>({
 			dataType: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			sensitive: new FormControl<boolean | null | undefined>(undefined),
 			sensitiveValue: new FormControl<string | null | undefined>(undefined),
@@ -1689,8 +1761,11 @@ export namespace MyNS {
 		/** Environment name. */
 		environmentName?: string | null;
 
-		/** Environment reference id. */
-		id?: number | null;
+		/**
+		 * Environment reference id.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Reference type */
 		referenceType?: string | null;
@@ -1705,8 +1780,11 @@ export namespace MyNS {
 		/** Environment name. */
 		environmentName: FormControl<string | null | undefined>,
 
-		/** Environment reference id. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Environment reference id.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Reference type */
 		referenceType: FormControl<string | null | undefined>,
@@ -1715,7 +1793,7 @@ export namespace MyNS {
 		return new FormGroup<SsisEnvironmentReferenceFormProperties>({
 			environmentFolderName: new FormControl<string | null | undefined>(undefined),
 			environmentName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			referenceType: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1742,8 +1820,11 @@ export namespace MyNS {
 		/** Metadata description. */
 		description?: string | null;
 
-		/** Metadata id. */
-		id?: number | null;
+		/**
+		 * Metadata id.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Metadata name. */
 		name?: string | null;
@@ -1761,8 +1842,11 @@ export namespace MyNS {
 		/** Metadata description. */
 		description: FormControl<string | null | undefined>,
 
-		/** Metadata id. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Metadata id.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Metadata name. */
 		name: FormControl<string | null | undefined>,
@@ -1776,7 +1860,7 @@ export namespace MyNS {
 	export function CreateSsisObjectMetadataFormGroup() {
 		return new FormGroup<SsisObjectMetadataFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<SsisObjectMetadataType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1813,36 +1897,54 @@ export namespace MyNS {
 	/** Ssis Package. */
 	export interface SsisPackage {
 
-		/** Folder id which contains package. */
-		folderId?: number | null;
+		/**
+		 * Folder id which contains package.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		folderId?: string | null;
 
 		/** Parameters in package */
 		parameters?: Array<SsisParameter>;
 
-		/** Project id which contains package. */
-		projectId?: number | null;
+		/**
+		 * Project id which contains package.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		projectId?: string | null;
 
-		/** Project version which contains package. */
-		projectVersion?: number | null;
+		/**
+		 * Project version which contains package.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		projectVersion?: string | null;
 	}
 
 	/** Ssis Package. */
 	export interface SsisPackageFormProperties {
 
-		/** Folder id which contains package. */
-		folderId: FormControl<number | null | undefined>,
+		/**
+		 * Folder id which contains package.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		folderId: FormControl<string | null | undefined>,
 
-		/** Project id which contains package. */
-		projectId: FormControl<number | null | undefined>,
+		/**
+		 * Project id which contains package.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		projectId: FormControl<string | null | undefined>,
 
-		/** Project version which contains package. */
-		projectVersion: FormControl<number | null | undefined>,
+		/**
+		 * Project version which contains package.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		projectVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateSsisPackageFormGroup() {
 		return new FormGroup<SsisPackageFormProperties>({
-			folderId: new FormControl<number | null | undefined>(undefined),
-			projectId: new FormControl<number | null | undefined>(undefined),
-			projectVersion: new FormControl<number | null | undefined>(undefined),
+			folderId: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			projectVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1863,8 +1965,11 @@ export namespace MyNS {
 		/** Design default value of parameter. */
 		designDefaultValue?: string | null;
 
-		/** Parameter id. */
-		id?: number | null;
+		/**
+		 * Parameter id.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Parameter name. */
 		name?: string | null;
@@ -1903,8 +2008,11 @@ export namespace MyNS {
 		/** Design default value of parameter. */
 		designDefaultValue: FormControl<string | null | undefined>,
 
-		/** Parameter id. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Parameter id.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Parameter name. */
 		name: FormControl<string | null | undefined>,
@@ -1933,7 +2041,7 @@ export namespace MyNS {
 			defaultValue: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			designDefaultValue: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			required: new FormControl<boolean | null | undefined>(undefined),
 			sensitive: new FormControl<boolean | null | undefined>(undefined),
@@ -1952,29 +2060,41 @@ export namespace MyNS {
 		/** Environment reference in project */
 		environmentRefs?: Array<SsisEnvironmentReference>;
 
-		/** Folder id which contains project. */
-		folderId?: number | null;
+		/**
+		 * Folder id which contains project.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		folderId?: string | null;
 
 		/** Parameters in project */
 		parameters?: Array<SsisParameter>;
 
-		/** Project version. */
-		version?: number | null;
+		/**
+		 * Project version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version?: string | null;
 	}
 
 	/** Ssis project. */
 	export interface SsisProjectFormProperties {
 
-		/** Folder id which contains project. */
-		folderId: FormControl<number | null | undefined>,
+		/**
+		 * Folder id which contains project.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		folderId: FormControl<string | null | undefined>,
 
-		/** Project version. */
-		version: FormControl<number | null | undefined>,
+		/**
+		 * Project version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateSsisProjectFormGroup() {
 		return new FormGroup<SsisProjectFormProperties>({
-			folderId: new FormControl<number | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
+			folderId: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

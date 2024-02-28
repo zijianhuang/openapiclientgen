@@ -102,7 +102,10 @@ export namespace MyNS {
 		/** Categories to send digest for. If categories are not provided, then digest will be sent for all categories. */
 		categories?: Array<string>;
 
-		/** Frequency that digest will be triggered, in days. Value must be between 7 and 30 days inclusive. */
+		/**
+		 * Frequency that digest will be triggered, in days. Value must be between 7 and 30 days inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency?: number | null;
 
 		/** Language for digest content body. Value must be ISO 639-1 code for one of Azure portal supported languages. Otherwise, it will be converted into one. Default value is English (en). */
@@ -121,7 +124,10 @@ export namespace MyNS {
 		/** Action group resource id used by digest. */
 		actionGroupResourceId: FormControl<string | null | undefined>,
 
-		/** Frequency that digest will be triggered, in days. Value must be between 7 and 30 days inclusive. */
+		/**
+		 * Frequency that digest will be triggered, in days. Value must be between 7 and 30 days inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: FormControl<number | null | undefined>,
 
 		/** Language for digest content body. Value must be ISO 639-1 code for one of Azure portal supported languages. Otherwise, it will be converted into one. Default value is English (en). */

@@ -40,8 +40,11 @@ export namespace MyNS {
 		/** Windows IoT Device Service notes. */
 		notes?: string | null;
 
-		/** Windows IoT Device Service device allocation, */
-		quantity?: number | null;
+		/**
+		 * Windows IoT Device Service device allocation,
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quantity?: string | null;
 
 		/** Windows IoT Device Service start date, */
 		startDate?: Date | null;
@@ -59,8 +62,11 @@ export namespace MyNS {
 		/** Windows IoT Device Service notes. */
 		notes: FormControl<string | null | undefined>,
 
-		/** Windows IoT Device Service device allocation, */
-		quantity: FormControl<number | null | undefined>,
+		/**
+		 * Windows IoT Device Service device allocation,
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quantity: FormControl<string | null | undefined>,
 
 		/** Windows IoT Device Service start date, */
 		startDate: FormControl<Date | null | undefined>,
@@ -70,7 +76,7 @@ export namespace MyNS {
 			adminDomainName: new FormControl<string | null | undefined>(undefined),
 			billingDomainName: new FormControl<string | null | undefined>(undefined),
 			notes: new FormControl<string | null | undefined>(undefined),
-			quantity: new FormControl<number | null | undefined>(undefined),
+			quantity: new FormControl<string | null | undefined>(undefined),
 			startDate: new FormControl<Date | null | undefined>(undefined),
 		});
 

@@ -42,7 +42,10 @@ export namespace MyNS {
 		/** Azure data catalog provision status. */
 		successfullyProvisioned?: boolean | null;
 
-		/** Azure data catalog units. */
+		/**
+		 * Azure data catalog units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		units?: number | null;
 
 		/** Azure data catalog user list. */
@@ -61,7 +64,10 @@ export namespace MyNS {
 		/** Azure data catalog provision status. */
 		successfullyProvisioned: FormControl<boolean | null | undefined>,
 
-		/** Azure data catalog units. */
+		/**
+		 * Azure data catalog units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		units: FormControl<number | null | undefined>,
 	}
 	export function CreateADCCatalogPropertiesFormGroup() {

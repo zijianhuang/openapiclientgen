@@ -50,7 +50,10 @@ export namespace MyNS {
 		/** The string representing completed status, for example 'done'. */
 		completed?: string | null;
 
-		/** The job's exit value. */
+		/**
+		 * The job's exit value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitValue?: number | null;
 
 		/** The job ID. */
@@ -87,7 +90,10 @@ export namespace MyNS {
 		/** The string representing completed status, for example 'done'. */
 		completed: FormControl<string | null | undefined>,
 
-		/** The job's exit value. */
+		/**
+		 * The job's exit value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitValue: FormControl<number | null | undefined>,
 
 		/** The job ID. */
@@ -123,8 +129,11 @@ export namespace MyNS {
 	/** The object with the Job ID. */
 	export interface JobID {
 
-		/** The job number. */
-		id?: number | null;
+		/**
+		 * The job number.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The jobTracker identifier. */
 		jtIdentifier?: string | null;
@@ -133,15 +142,18 @@ export namespace MyNS {
 	/** The object with the Job ID. */
 	export interface JobIDFormProperties {
 
-		/** The job number. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The job number.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The jobTracker identifier. */
 		jtIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateJobIDFormGroup() {
 		return new FormGroup<JobIDFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			jtIdentifier: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -276,14 +288,20 @@ export namespace MyNS {
 	/** Gets or sets the object containing the job status information. */
 	export interface Status {
 
-		/** The progress made on the cleanup. */
+		/**
+		 * The progress made on the cleanup.
+		 * Type: double
+		 */
 		cleanupProgress?: number | null;
 
 		/** The information about any failures that have occurred. */
 		failureInfo?: string | null;
 
-		/** The time at which the job completed. It is an integer in milliseconds, as a Unix timestamp relative to 1/1/1970 00:00:00. */
-		finishTime?: number | null;
+		/**
+		 * The time at which the job completed. It is an integer in milliseconds, as a Unix timestamp relative to 1/1/1970 00:00:00.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		finishTime?: string | null;
 
 		/** The history file of the job. */
 		historyFile?: string | null;
@@ -309,16 +327,28 @@ export namespace MyNS {
 		/** The priority of the job. */
 		jobPriority?: string | null;
 
-		/** The progress made on the maps. */
+		/**
+		 * The progress made on the maps.
+		 * Type: double
+		 */
 		mapProgress?: number | null;
 
-		/** The amount of memory needed for the job. */
-		neededMem?: number | null;
+		/**
+		 * The amount of memory needed for the job.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		neededMem?: string | null;
 
-		/** The number of slots reserved. */
+		/**
+		 * The number of slots reserved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numReservedSlots?: number | null;
 
-		/** The number of slots used for the job. */
+		/**
+		 * The number of slots used for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numUsedSlots?: number | null;
 
 		/** The priority of the job. */
@@ -327,26 +357,41 @@ export namespace MyNS {
 		/** The job queue name. */
 		queue?: string | null;
 
-		/** The progress made on the reduces. */
+		/**
+		 * The progress made on the reduces.
+		 * Type: double
+		 */
 		reduceProgress?: number | null;
 
-		/** The amount of memory reserved for the job. */
-		reservedMem?: number | null;
+		/**
+		 * The amount of memory reserved for the job.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		reservedMem?: string | null;
 
 		/** Whether or not the job has been retired. */
 		retired?: boolean | null;
 
-		/** The current state of the job. */
+		/**
+		 * The current state of the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runState?: number | null;
 
 		/** The information about the scheduling of the job. */
 		schedulingInfo?: string | null;
 
-		/** The progress made on the setup. */
+		/**
+		 * The progress made on the setup.
+		 * Type: double
+		 */
 		setupProgress?: number | null;
 
-		/** The time at which the job started. It is an integer in milliseconds, as a Unix timestamp relative to 1/1/1970 00:00:00. */
-		startTime?: number | null;
+		/**
+		 * The time at which the job started. It is an integer in milliseconds, as a Unix timestamp relative to 1/1/1970 00:00:00.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		startTime?: string | null;
 
 		/** The state of the job. */
 		state?: string | null;
@@ -357,8 +402,11 @@ export namespace MyNS {
 		/** Whether job running in uber mode. */
 		uber?: boolean | null;
 
-		/** The amount of memory used by the job. */
-		usedMem?: number | null;
+		/**
+		 * The amount of memory used by the job.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		usedMem?: string | null;
 
 		/** The userid of the person who submitted the job. */
 		username?: string | null;
@@ -367,14 +415,20 @@ export namespace MyNS {
 	/** Gets or sets the object containing the job status information. */
 	export interface StatusFormProperties {
 
-		/** The progress made on the cleanup. */
+		/**
+		 * The progress made on the cleanup.
+		 * Type: double
+		 */
 		cleanupProgress: FormControl<number | null | undefined>,
 
 		/** The information about any failures that have occurred. */
 		failureInfo: FormControl<string | null | undefined>,
 
-		/** The time at which the job completed. It is an integer in milliseconds, as a Unix timestamp relative to 1/1/1970 00:00:00. */
-		finishTime: FormControl<number | null | undefined>,
+		/**
+		 * The time at which the job completed. It is an integer in milliseconds, as a Unix timestamp relative to 1/1/1970 00:00:00.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		finishTime: FormControl<string | null | undefined>,
 
 		/** The history file of the job. */
 		historyFile: FormControl<string | null | undefined>,
@@ -394,16 +448,28 @@ export namespace MyNS {
 		/** The priority of the job. */
 		jobPriority: FormControl<string | null | undefined>,
 
-		/** The progress made on the maps. */
+		/**
+		 * The progress made on the maps.
+		 * Type: double
+		 */
 		mapProgress: FormControl<number | null | undefined>,
 
-		/** The amount of memory needed for the job. */
-		neededMem: FormControl<number | null | undefined>,
+		/**
+		 * The amount of memory needed for the job.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		neededMem: FormControl<string | null | undefined>,
 
-		/** The number of slots reserved. */
+		/**
+		 * The number of slots reserved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numReservedSlots: FormControl<number | null | undefined>,
 
-		/** The number of slots used for the job. */
+		/**
+		 * The number of slots used for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numUsedSlots: FormControl<number | null | undefined>,
 
 		/** The priority of the job. */
@@ -412,26 +478,41 @@ export namespace MyNS {
 		/** The job queue name. */
 		queue: FormControl<string | null | undefined>,
 
-		/** The progress made on the reduces. */
+		/**
+		 * The progress made on the reduces.
+		 * Type: double
+		 */
 		reduceProgress: FormControl<number | null | undefined>,
 
-		/** The amount of memory reserved for the job. */
-		reservedMem: FormControl<number | null | undefined>,
+		/**
+		 * The amount of memory reserved for the job.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		reservedMem: FormControl<string | null | undefined>,
 
 		/** Whether or not the job has been retired. */
 		retired: FormControl<boolean | null | undefined>,
 
-		/** The current state of the job. */
+		/**
+		 * The current state of the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runState: FormControl<number | null | undefined>,
 
 		/** The information about the scheduling of the job. */
 		schedulingInfo: FormControl<string | null | undefined>,
 
-		/** The progress made on the setup. */
+		/**
+		 * The progress made on the setup.
+		 * Type: double
+		 */
 		setupProgress: FormControl<number | null | undefined>,
 
-		/** The time at which the job started. It is an integer in milliseconds, as a Unix timestamp relative to 1/1/1970 00:00:00. */
-		startTime: FormControl<number | null | undefined>,
+		/**
+		 * The time at which the job started. It is an integer in milliseconds, as a Unix timestamp relative to 1/1/1970 00:00:00.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		startTime: FormControl<string | null | undefined>,
 
 		/** The state of the job. */
 		state: FormControl<string | null | undefined>,
@@ -442,8 +523,11 @@ export namespace MyNS {
 		/** Whether job running in uber mode. */
 		uber: FormControl<boolean | null | undefined>,
 
-		/** The amount of memory used by the job. */
-		usedMem: FormControl<number | null | undefined>,
+		/**
+		 * The amount of memory used by the job.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		usedMem: FormControl<string | null | undefined>,
 
 		/** The userid of the person who submitted the job. */
 		username: FormControl<string | null | undefined>,
@@ -452,7 +536,7 @@ export namespace MyNS {
 		return new FormGroup<StatusFormProperties>({
 			cleanupProgress: new FormControl<number | null | undefined>(undefined),
 			failureInfo: new FormControl<string | null | undefined>(undefined),
-			finishTime: new FormControl<number | null | undefined>(undefined),
+			finishTime: new FormControl<string | null | undefined>(undefined),
 			historyFile: new FormControl<string | null | undefined>(undefined),
 			jobComplete: new FormControl<boolean | null | undefined>(undefined),
 			jobFile: new FormControl<string | null | undefined>(undefined),
@@ -460,22 +544,22 @@ export namespace MyNS {
 			jobName: new FormControl<string | null | undefined>(undefined),
 			jobPriority: new FormControl<string | null | undefined>(undefined),
 			mapProgress: new FormControl<number | null | undefined>(undefined),
-			neededMem: new FormControl<number | null | undefined>(undefined),
+			neededMem: new FormControl<string | null | undefined>(undefined),
 			numReservedSlots: new FormControl<number | null | undefined>(undefined),
 			numUsedSlots: new FormControl<number | null | undefined>(undefined),
 			priority: new FormControl<string | null | undefined>(undefined),
 			queue: new FormControl<string | null | undefined>(undefined),
 			reduceProgress: new FormControl<number | null | undefined>(undefined),
-			reservedMem: new FormControl<number | null | undefined>(undefined),
+			reservedMem: new FormControl<string | null | undefined>(undefined),
 			retired: new FormControl<boolean | null | undefined>(undefined),
 			runState: new FormControl<number | null | undefined>(undefined),
 			schedulingInfo: new FormControl<string | null | undefined>(undefined),
 			setupProgress: new FormControl<number | null | undefined>(undefined),
-			startTime: new FormControl<number | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<string | null | undefined>(undefined),
 			trackingUrl: new FormControl<string | null | undefined>(undefined),
 			uber: new FormControl<boolean | null | undefined>(undefined),
-			usedMem: new FormControl<number | null | undefined>(undefined),
+			usedMem: new FormControl<string | null | undefined>(undefined),
 			username: new FormControl<string | null | undefined>(undefined),
 		});
 

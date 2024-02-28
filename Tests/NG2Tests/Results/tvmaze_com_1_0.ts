@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface EpisodeVote {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		episode_id?: number | null;
 
 		/**
@@ -13,10 +15,15 @@ export namespace MyNS {
 		 */
 		vote?: number | null;
 
-		/** Epoch timestamp for when the user voted for the episode */
+		/**
+		 * Epoch timestamp for when the user voted for the episode
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voted_at?: number | null;
 	}
 	export interface EpisodeVoteFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		episode_id: FormControl<number | null | undefined>,
 
 		/**
@@ -26,7 +33,10 @@ export namespace MyNS {
 		 */
 		vote: FormControl<number | null | undefined>,
 
-		/** Epoch timestamp for when the user voted for the episode */
+		/**
+		 * Epoch timestamp for when the user voted for the episode
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voted_at: FormControl<number | null | undefined>,
 	}
 	export function CreateEpisodeVoteFormGroup() {
@@ -39,18 +49,28 @@ export namespace MyNS {
 	}
 
 	export interface MarkedEpisode {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		episode_id?: number | null;
 
-		/** Epoch timestamp for when the user watched the episode, or 0 for unknown. */
+		/**
+		 * Epoch timestamp for when the user watched the episode, or 0 for unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marked_at?: number | null;
 
 		/** 0 for watched, 1 for acquired, 2 for skipped */
 		type?: MarkedEpisodeType;
 	}
 	export interface MarkedEpisodeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		episode_id: FormControl<number | null | undefined>,
 
-		/** Epoch timestamp for when the user watched the episode, or 0 for unknown. */
+		/**
+		 * Epoch timestamp for when the user watched the episode, or 0 for unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marked_at: FormControl<number | null | undefined>,
 
 		/** 0 for watched, 1 for acquired, 2 for skipped */
@@ -79,9 +99,13 @@ export namespace MyNS {
 
 	export interface NetworkFollow {
 		_embedded?: NetworkFollow_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_id?: number | null;
 	}
 	export interface NetworkFollowFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_id: FormControl<number | null | undefined>,
 	}
 	export function CreateNetworkFollowFormGroup() {
@@ -114,9 +138,13 @@ export namespace MyNS {
 
 	export interface PersonFollow {
 		_embedded?: PersonFollow_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		person_id?: number | null;
 	}
 	export interface PersonFollowFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		person_id: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonFollowFormGroup() {
@@ -149,9 +177,13 @@ export namespace MyNS {
 
 	export interface ShowFollow {
 		_embedded?: ShowFollow_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id?: number | null;
 	}
 	export interface ShowFollowFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id: FormControl<number | null | undefined>,
 	}
 	export function CreateShowFollowFormGroup() {
@@ -173,6 +205,8 @@ export namespace MyNS {
 	}
 
 	export interface ShowVote {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id?: number | null;
 
 		/**
@@ -182,10 +216,15 @@ export namespace MyNS {
 		 */
 		vote?: number | null;
 
-		/** Epoch timestamp for when the user voted for the episode */
+		/**
+		 * Epoch timestamp for when the user voted for the episode
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voted_at?: number | null;
 	}
 	export interface ShowVoteFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id: FormControl<number | null | undefined>,
 
 		/**
@@ -195,7 +234,10 @@ export namespace MyNS {
 		 */
 		vote: FormControl<number | null | undefined>,
 
-		/** Epoch timestamp for when the user voted for the episode */
+		/**
+		 * Epoch timestamp for when the user voted for the episode
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voted_at: FormControl<number | null | undefined>,
 	}
 	export function CreateShowVoteFormGroup() {
@@ -208,10 +250,14 @@ export namespace MyNS {
 	}
 
 	export interface Tag {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface TagFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -225,9 +271,13 @@ export namespace MyNS {
 
 	export interface TagInstance {
 		_embedded?: TagInstance_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id?: number | null;
 	}
 	export interface TagInstanceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id: FormControl<number | null | undefined>,
 	}
 	export function CreateTagInstanceFormGroup() {
@@ -260,9 +310,13 @@ export namespace MyNS {
 
 	export interface WebchannelFollow {
 		_embedded?: WebchannelFollow_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		webchannel_id?: number | null;
 	}
 	export interface WebchannelFollowFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		webchannel_id: FormControl<number | null | undefined>,
 	}
 	export function CreateWebchannelFollowFormGroup() {
@@ -495,6 +549,7 @@ export namespace MyNS {
 		/**
 		 * Delete a specific tag
 		 * Delete user/tags/{tag_id}
+		 * @param {number} tag_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} The tag was deleted
 		 */
 		UserTags_tag_idDelete(tag_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -504,6 +559,7 @@ export namespace MyNS {
 		/**
 		 * Update a specific tag
 		 * Patch user/tags/{tag_id}
+		 * @param {number} tag_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Tag} The tag was updated
 		 */
 		UserTags_tag_idPatch(tag_id: number, requestBody: Tag, headersHandler?: () => HttpHeaders): Observable<Tag> {
@@ -513,6 +569,7 @@ export namespace MyNS {
 		/**
 		 * List all shows under this tag
 		 * Get user/tags/{tag_id}/shows
+		 * @param {number} tag_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {UserFollowsShowsGetByEmbedEmbed} embed Embed full show info
 		 * @return {Array<TagInstance>} A list of tagged shows
 		 */
@@ -523,6 +580,8 @@ export namespace MyNS {
 		/**
 		 * Tag a show
 		 * Put user/tags/{tag_id}/shows/{show_id}
+		 * @param {number} tag_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} show_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TagInstance} The show was tagged
 		 */
 		UserTags_tag_idShows_show_idPut(tag_id: number, show_id: number, headersHandler?: () => HttpHeaders): Observable<TagInstance> {
@@ -532,6 +591,8 @@ export namespace MyNS {
 		/**
 		 * Untag a show
 		 * Delete user/tags/{tag_id}/shows/{show_id}
+		 * @param {number} tag_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} show_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} The show was untagged
 		 */
 		UserTags_tag_idShows_show_idDelete(tag_id: number, show_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

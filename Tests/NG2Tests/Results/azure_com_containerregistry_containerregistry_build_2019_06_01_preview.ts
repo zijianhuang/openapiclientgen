@@ -7,14 +7,20 @@ export namespace MyNS {
 	/** The properties that determine the run agent configuration. */
 	export interface AgentProperties {
 
-		/** The CPU configuration in terms of number of cores required for the run. */
+		/**
+		 * The CPU configuration in terms of number of cores required for the run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpu?: number | null;
 	}
 
 	/** The properties that determine the run agent configuration. */
 	export interface AgentPropertiesFormProperties {
 
-		/** The CPU configuration in terms of number of cores required for the run. */
+		/**
+		 * The CPU configuration in terms of number of cores required for the run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpu: FormControl<number | null | undefined>,
 	}
 	export function CreateAgentPropertiesFormGroup() {
@@ -75,7 +81,10 @@ export namespace MyNS {
 	/** The authorization properties for accessing the source code repository. */
 	export interface AuthInfo {
 
-		/** Time in seconds that the token remains valid */
+		/**
+		 * Time in seconds that the token remains valid
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiresIn?: number | null;
 
 		/** The refresh token used to refresh the access token. */
@@ -100,7 +109,10 @@ export namespace MyNS {
 	/** The authorization properties for accessing the source code repository. */
 	export interface AuthInfoFormProperties {
 
-		/** Time in seconds that the token remains valid */
+		/**
+		 * Time in seconds that the token remains valid
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiresIn: FormControl<number | null | undefined>,
 
 		/** The refresh token used to refresh the access token. */
@@ -138,7 +150,10 @@ export namespace MyNS {
 	/** The authorization properties for accessing the source code repository. */
 	export interface AuthInfoUpdateParameters {
 
-		/** Time in seconds that the token remains valid */
+		/**
+		 * Time in seconds that the token remains valid
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiresIn?: number | null;
 
 		/** The refresh token used to refresh the access token. */
@@ -157,7 +172,10 @@ export namespace MyNS {
 	/** The authorization properties for accessing the source code repository. */
 	export interface AuthInfoUpdateParametersFormProperties {
 
-		/** Time in seconds that the token remains valid */
+		/**
+		 * Time in seconds that the token remains valid
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiresIn: FormControl<number | null | undefined>,
 
 		/** The refresh token used to refresh the access token. */
@@ -2332,7 +2350,10 @@ export namespace MyNS {
 		/** Base properties for updating any task step. */
 		step?: TaskStepUpdateParameters;
 
-		/** Run timeout in seconds. */
+		/**
+		 * Run timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout?: number | null;
 
 		/** The properties for updating triggers. */
@@ -2345,7 +2366,10 @@ export namespace MyNS {
 		/** The current status of task. */
 		status: FormControl<BaseImageTriggerStatus | null | undefined>,
 
-		/** Run timeout in seconds. */
+		/**
+		 * Run timeout in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateTaskPropertiesUpdateParametersFormGroup() {

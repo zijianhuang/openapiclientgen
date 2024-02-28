@@ -2,8 +2,6 @@ export namespace MyNS {
 	export interface BBSReportRequestType {
 		payeeProvider: ProviderType;
 		claimId?: string | null;
-
-		/** Type: DateOnly */
 		lodgementDate?: Date | null;
 	}
 
@@ -20,8 +18,6 @@ export namespace MyNS {
 
 	export interface PaymentRunType {
 		payerName?: string | null;
-
-		/** Type: DateOnly */
 		runDate?: Date | null;
 		runNumber?: string | null;
 	}
@@ -44,8 +40,6 @@ export namespace MyNS {
 		chargeAmount?: string | null;
 		claimChannelCode?: string | null;
 		claimId?: string | null;
-
-		/** Type: DateOnly */
 		lodgementDate?: Date | null;
 		transactionId?: string | null;
 	}
@@ -80,8 +74,6 @@ export namespace MyNS {
 		patient?: MembershipStatusType;
 		service?: Array<ServiceResponseType>;
 		id?: string | null;
-
-		/** Type: DateOnly */
 		eventDate?: Date | null;
 	}
 
@@ -89,14 +81,10 @@ export namespace MyNS {
 		status?: StatusType;
 		currentMembership?: MembershipType;
 		currentMember?: IdentityType;
-
-		/** Type: DateOnly */
 		processDate?: Date | null;
 	}
 
 	export interface StatusType {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		text?: string | null;
 	}
@@ -107,8 +95,6 @@ export namespace MyNS {
 	}
 
 	export interface IdentityType {
-
-		/** Type: DateOnly */
 		dateOfBirth?: Date | null;
 		familyName?: string | null;
 		givenName?: string | null;
@@ -141,12 +127,8 @@ export namespace MyNS {
 
 	export interface BBSMedicalEventType {
 		id: string;
-
-		/** Type: DateOnly */
 		authorisationDate: Date;
 		createDateTime: Date;
-
-		/** Type: DateOnly */
 		medicalEventDate: Date;
 		medicalEventTime?: string | null;
 		patient: MedicarePatientType;
@@ -162,8 +144,6 @@ export namespace MyNS {
 	}
 
 	export interface ReferralType {
-
-		/** Type: DateOnly */
 		issueDate: Date;
 		period?: string | null;
 		periodCode?: string | null;
@@ -212,15 +192,9 @@ export namespace MyNS {
 	export interface VAAMedicalEventType {
 		id: string;
 		acceptedDisability?: AcceptedDisabilityType;
-
-		/** Type: DateOnly */
 		authorisationDate: Date;
-
-		/** Type: DateOnly */
 		breakInEpisodeEndDate?: Date | null;
 		breakInEpisodeOfCareNumber?: string | null;
-
-		/** Type: DateOnly */
 		breakInEpisodeStartDate?: Date | null;
 		numberOfCNCHours?: string | null;
 		numberOfCNCVisits?: string | null;
@@ -228,8 +202,6 @@ export namespace MyNS {
 		numberOfENHours?: string | null;
 		numberOfENVisits?: string | null;
 		facilityId?: string | null;
-
-		/** Type: DateOnly */
 		medicalEventDate: Date;
 		medicalEventTime?: string | null;
 		numberOfNSSHours?: string | null;
@@ -251,15 +223,9 @@ export namespace MyNS {
 	export interface VAAServiceType {
 		id: string;
 		accountReferenceNumber?: string | null;
-
-		/** Type: DateOnly */
 		admissionDate?: Date | null;
 		chargeAmount?: string | null;
-
-		/** Type: DateOnly */
 		dischargeDate?: Date | null;
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distanceKilometres?: number | null;
 		duplicateServiceOverrideInd?: string | null;
 		itemNumber: string;
@@ -315,13 +281,9 @@ export namespace MyNS {
 
 	export interface DVAMedicalEventType {
 		id: string;
-
-		/** Type: DateOnly */
 		authorisationDate: Date;
 		createDateTime: Date;
 		facilityId?: string | null;
-
-		/** Type: DateOnly */
 		medicalEventDate: Date;
 		medicalEventTime?: string | null;
 		referralOverrideCode?: string | null;
@@ -335,8 +297,6 @@ export namespace MyNS {
 
 	export interface DVAServiceType extends ServiceType {
 		accountReferenceNumber?: string | null;
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		distanceKilometres?: number | null;
 	}
 
@@ -348,8 +308,6 @@ export namespace MyNS {
 	export interface DVAReportRequestType {
 		payeeProvider: ProviderType;
 		claimId?: string | null;
-
-		/** Type: DateOnly */
 		lodgementDate?: Date | null;
 	}
 
@@ -377,8 +335,6 @@ export namespace MyNS {
 		patient?: VeteranMembershipStatusType;
 		service?: Array<DVAServiceAssessmentType>;
 		id?: string | null;
-
-		/** Type: DateOnly */
 		eventDate?: Date | null;
 	}
 
@@ -386,8 +342,6 @@ export namespace MyNS {
 		currentMembership?: VeteranMembershipResponseType;
 		currentMember?: IdentityType;
 		status?: StatusType;
-
-		/** Type: DateOnly */
 		processDate?: Date | null;
 	}
 
@@ -407,8 +361,6 @@ export namespace MyNS {
 	}
 
 	export interface EnterpriseConcessionVerificationRequestType {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout?: number | null;
 		concessionVerificationRequest: Array<ReferenceConcessionVerificationRequestType>;
 	}
@@ -419,8 +371,6 @@ export namespace MyNS {
 
 	export interface ConcessionVerificationRequestType {
 		patient: MedicarePatientType;
-
-		/** Type: DateOnly */
 		dateOfService?: Date | null;
 	}
 
@@ -440,14 +390,10 @@ export namespace MyNS {
 
 	export interface ConcessionStatusType {
 		status?: StatusType;
-
-		/** Type: DateOnly */
 		processDate?: Date | null;
 	}
 
 	export interface EnterprisePatientVerificationRequestType {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout?: number | null;
 		patientVerificationRequest: Array<ReferencePatientVerificationRequestType>;
 	}
@@ -459,8 +405,6 @@ export namespace MyNS {
 	export interface PatientVerificationRequestType {
 		patient: FundPatientType;
 		provider?: ProviderType;
-
-		/** Type: DateOnly */
 		dateOfService?: Date | null;
 		typeCode: string;
 	}
@@ -495,14 +439,10 @@ export namespace MyNS {
 		status?: StatusType;
 		currentMembership?: FundMembershipType;
 		currentMember?: IdentityType;
-
-		/** Type: DateOnly */
 		processDate?: Date | null;
 	}
 
 	export interface EnterpriseVeteranVerificationRequestType {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout?: number | null;
 		veteranVerificationRequest: Array<ReferenceVeteranVerificationRequestType>;
 	}
@@ -543,16 +483,12 @@ export namespace MyNS {
 		accountPaidInd: string;
 		accountReferenceId?: string | null;
 		submissionAuthorityInd: string;
-
-		/** Type: DateOnly */
 		authorisationDate: Date;
 	}
 
 	export interface PCIMedicalEventType {
 		service: Array<PCIServiceType>;
 		id: string;
-
-		/** Type: DateOnly */
 		medicalEventDate: Date;
 		medicalEventTime?: string | null;
 	}
@@ -594,8 +530,6 @@ export namespace MyNS {
 
 	export interface PCIMedicalEventResponseType {
 		service?: Array<ServiceResponseType>;
-
-		/** Type: DateOnly */
 		eventDate?: Date | null;
 		id?: string | null;
 	}

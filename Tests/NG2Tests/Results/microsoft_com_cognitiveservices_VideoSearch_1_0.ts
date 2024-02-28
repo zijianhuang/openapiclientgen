@@ -263,13 +263,19 @@ export namespace MyNS {
 		/** Original URL to retrieve the source (file) for the media object (e.g the source URL for the image). */
 		contentUrl?: string | null;
 
-		/** The height of the source media object, in pixels. */
+		/**
+		 * The height of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** URL of the page that hosts the media object. */
 		hostPageUrl?: string | null;
 
-		/** The width of the source media object, in pixels. */
+		/**
+		 * The width of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface MediaObjectFormProperties {
@@ -277,13 +283,19 @@ export namespace MyNS {
 		/** Original URL to retrieve the source (file) for the media object (e.g the source URL for the image). */
 		contentUrl: FormControl<string | null | undefined>,
 
-		/** The height of the source media object, in pixels. */
+		/**
+		 * The height of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** URL of the page that hosts the media object. */
 		hostPageUrl: FormControl<string | null | undefined>,
 
-		/** The width of the source media object, in pixels. */
+		/**
+		 * The width of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMediaObjectFormGroup() {
@@ -415,19 +427,25 @@ export namespace MyNS {
 	export interface SearchResultsAnswer {
 		isFamilyFriendly?: boolean | null;
 
-		/** The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results. */
-		totalEstimatedMatches?: number | null;
+		/**
+		 * The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalEstimatedMatches?: string | null;
 	}
 	export interface SearchResultsAnswerFormProperties {
 		isFamilyFriendly: FormControl<boolean | null | undefined>,
 
-		/** The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results. */
-		totalEstimatedMatches: FormControl<number | null | undefined>,
+		/**
+		 * The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalEstimatedMatches: FormControl<string | null | undefined>,
 	}
 	export function CreateSearchResultsAnswerFormGroup() {
 		return new FormGroup<SearchResultsAnswerFormProperties>({
 			isFamilyFriendly: new FormControl<boolean | null | undefined>(undefined),
-			totalEstimatedMatches: new FormControl<number | null | undefined>(undefined),
+			totalEstimatedMatches: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -548,6 +566,8 @@ export namespace MyNS {
 		/** Defines an image */
 		thumbnail?: ImageObject;
 		videoId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		viewCount?: number | null;
 	}
 
@@ -560,6 +580,8 @@ export namespace MyNS {
 		motionThumbnailId: FormControl<string | null | undefined>,
 		motionThumbnailUrl: FormControl<string | null | undefined>,
 		videoId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		viewCount: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoObjectFormGroup() {
@@ -579,6 +601,8 @@ export namespace MyNS {
 
 	/** Defines a video answer. */
 	export interface Videos {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextOffset?: number | null;
 		pivotSuggestions?: Array<PivotSuggestions>;
 		queryExpansions?: Array<Query>;
@@ -593,6 +617,8 @@ export namespace MyNS {
 
 	/** Defines a video answer. */
 	export interface VideosFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextOffset: FormControl<number | null | undefined>,
 		scenario: FormControl<VideosScenario | null | undefined>,
 	}

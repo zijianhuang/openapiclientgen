@@ -67,7 +67,10 @@ export namespace MyNS {
 		/** Service objective of the metadata database for the App Service Environment, e.g. "S0". */
 		databaseServiceObjective?: string | null;
 
-		/** Default Scale Factor for FrontEnds. */
+		/**
+		 * Default Scale Factor for FrontEnds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultFrontEndScaleFactor?: number | null;
 
 		/** DNS suffix of the App Service Environment. */
@@ -88,7 +91,10 @@ export namespace MyNS {
 		/** Detailed message about with results of the last check of the App Service Environment. */
 		environmentStatus?: string | null;
 
-		/** Scale factor for front-ends. */
+		/**
+		 * Scale factor for front-ends.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndScaleFactor?: number | null;
 
 		/** Flag that displays whether an ASE has linux workers or not */
@@ -97,7 +103,10 @@ export namespace MyNS {
 		/** Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. */
 		internalLoadBalancingMode?: AppServiceEnvironmentInternalLoadBalancingMode | null;
 
-		/** Number of IP SSL addresses reserved for the App Service Environment. */
+		/**
+		 * Number of IP SSL addresses reserved for the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipsslAddressCount?: number | null;
 
 		/** Last deployment action on the App Service Environment. */
@@ -112,10 +121,16 @@ export namespace MyNS {
 		 */
 		location: string;
 
-		/** Maximum number of VMs in the App Service Environment. */
+		/**
+		 * Maximum number of VMs in the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumNumberOfMachines?: number | null;
 
-		/** Number of front-end instances. */
+		/**
+		 * Number of front-end instances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multiRoleCount?: number | null;
 
 		/** Front-end VM size, e.g. "Medium", "Large". */
@@ -154,7 +169,10 @@ export namespace MyNS {
 		 */
 		suspended?: boolean | null;
 
-		/** Number of upgrade domains of the App Service Environment. */
+		/**
+		 * Number of upgrade domains of the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upgradeDomains?: number | null;
 
 		/** User added ip ranges to whitelist on ASE db */
@@ -203,7 +221,10 @@ export namespace MyNS {
 		/** Service objective of the metadata database for the App Service Environment, e.g. "S0". */
 		databaseServiceObjective: FormControl<string | null | undefined>,
 
-		/** Default Scale Factor for FrontEnds. */
+		/**
+		 * Default Scale Factor for FrontEnds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultFrontEndScaleFactor: FormControl<number | null | undefined>,
 
 		/** DNS suffix of the App Service Environment. */
@@ -221,7 +242,10 @@ export namespace MyNS {
 		/** Detailed message about with results of the last check of the App Service Environment. */
 		environmentStatus: FormControl<string | null | undefined>,
 
-		/** Scale factor for front-ends. */
+		/**
+		 * Scale factor for front-ends.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frontEndScaleFactor: FormControl<number | null | undefined>,
 
 		/** Flag that displays whether an ASE has linux workers or not */
@@ -230,7 +254,10 @@ export namespace MyNS {
 		/** Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. */
 		internalLoadBalancingMode: FormControl<AppServiceEnvironmentInternalLoadBalancingMode | null | undefined>,
 
-		/** Number of IP SSL addresses reserved for the App Service Environment. */
+		/**
+		 * Number of IP SSL addresses reserved for the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ipsslAddressCount: FormControl<number | null | undefined>,
 
 		/** Last deployment action on the App Service Environment. */
@@ -245,10 +272,16 @@ export namespace MyNS {
 		 */
 		location: FormControl<string | null | undefined>,
 
-		/** Maximum number of VMs in the App Service Environment. */
+		/**
+		 * Maximum number of VMs in the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumNumberOfMachines: FormControl<number | null | undefined>,
 
-		/** Number of front-end instances. */
+		/**
+		 * Number of front-end instances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		multiRoleCount: FormControl<number | null | undefined>,
 
 		/** Front-end VM size, e.g. "Medium", "Large". */
@@ -284,7 +317,10 @@ export namespace MyNS {
 		 */
 		suspended: FormControl<boolean | null | undefined>,
 
-		/** Number of upgrade domains of the App Service Environment. */
+		/**
+		 * Number of upgrade domains of the App Service Environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upgradeDomains: FormControl<number | null | undefined>,
 
 		/** Name of the Virtual Network for the App Service Environment. */
@@ -366,8 +402,11 @@ export namespace MyNS {
 	/** Stamp capacity information. */
 	export interface StampCapacity {
 
-		/** Available capacity (# of machines, bytes of storage etc...). */
-		availableCapacity?: number | null;
+		/**
+		 * Available capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		availableCapacity?: string | null;
 
 		/** Shared/dedicated workers. */
 		computeMode?: StampCapacityComputeMode | null;
@@ -390,8 +429,11 @@ export namespace MyNS {
 		/** Shared or Dedicated. */
 		siteMode?: string | null;
 
-		/** Total capacity (# of machines, bytes of storage etc...). */
-		totalCapacity?: number | null;
+		/**
+		 * Total capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity?: string | null;
 
 		/** Name of the unit. */
 		unit?: string | null;
@@ -404,6 +446,7 @@ export namespace MyNS {
 		 * 0 - Small
 		 * 1 - Medium
 		 * 2 - Large
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		workerSizeId?: number | null;
 	}
@@ -411,8 +454,11 @@ export namespace MyNS {
 	/** Stamp capacity information. */
 	export interface StampCapacityFormProperties {
 
-		/** Available capacity (# of machines, bytes of storage etc...). */
-		availableCapacity: FormControl<number | null | undefined>,
+		/**
+		 * Available capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		availableCapacity: FormControl<string | null | undefined>,
 
 		/** Shared/dedicated workers. */
 		computeMode: FormControl<StampCapacityComputeMode | null | undefined>,
@@ -435,8 +481,11 @@ export namespace MyNS {
 		/** Shared or Dedicated. */
 		siteMode: FormControl<string | null | undefined>,
 
-		/** Total capacity (# of machines, bytes of storage etc...). */
-		totalCapacity: FormControl<number | null | undefined>,
+		/**
+		 * Total capacity (# of machines, bytes of storage etc...).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity: FormControl<string | null | undefined>,
 
 		/** Name of the unit. */
 		unit: FormControl<string | null | undefined>,
@@ -449,19 +498,20 @@ export namespace MyNS {
 		 * 0 - Small
 		 * 1 - Medium
 		 * 2 - Large
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		workerSizeId: FormControl<number | null | undefined>,
 	}
 	export function CreateStampCapacityFormGroup() {
 		return new FormGroup<StampCapacityFormProperties>({
-			availableCapacity: new FormControl<number | null | undefined>(undefined),
+			availableCapacity: new FormControl<string | null | undefined>(undefined),
 			computeMode: new FormControl<StampCapacityComputeMode | null | undefined>(undefined),
 			excludeFromCapacityAllocation: new FormControl<boolean | null | undefined>(undefined),
 			isApplicableForAllComputeModes: new FormControl<boolean | null | undefined>(undefined),
 			isLinux: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			siteMode: new FormControl<string | null | undefined>(undefined),
-			totalCapacity: new FormControl<number | null | undefined>(undefined),
+			totalCapacity: new FormControl<string | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 			workerSize: new FormControl<StampCapacityWorkerSize | null | undefined>(undefined),
 			workerSizeId: new FormControl<number | null | undefined>(undefined),
@@ -485,7 +535,10 @@ export namespace MyNS {
 		/** Description of network access control entry. */
 		description?: string | null;
 
-		/** Order of precedence. */
+		/**
+		 * Order of precedence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order?: number | null;
 
 		/** Remote subnet. */
@@ -501,7 +554,10 @@ export namespace MyNS {
 		/** Description of network access control entry. */
 		description: FormControl<string | null | undefined>,
 
-		/** Order of precedence. */
+		/**
+		 * Order of precedence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		order: FormControl<number | null | undefined>,
 
 		/** Remote subnet. */
@@ -530,10 +586,16 @@ export namespace MyNS {
 		/** Is virtual IP mapping in use. */
 		inUse?: boolean | null;
 
-		/** Internal HTTP port. */
+		/**
+		 * Internal HTTP port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpPort?: number | null;
 
-		/** Internal HTTPS port. */
+		/**
+		 * Internal HTTPS port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpsPort?: number | null;
 
 		/** name of the service that virtual IP is assigned to */
@@ -549,10 +611,16 @@ export namespace MyNS {
 		/** Is virtual IP mapping in use. */
 		inUse: FormControl<boolean | null | undefined>,
 
-		/** Internal HTTP port. */
+		/**
+		 * Internal HTTP port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpPort: FormControl<number | null | undefined>,
 
-		/** Internal HTTPS port. */
+		/**
+		 * Internal HTTPS port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		internalHttpsPort: FormControl<number | null | undefined>,
 
 		/** name of the service that virtual IP is assigned to */
@@ -624,13 +692,19 @@ export namespace MyNS {
 		/** Names of all instances in the worker pool (read only). */
 		instanceNames?: Array<string>;
 
-		/** Number of instances in the worker pool. */
+		/**
+		 * Number of instances in the worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount?: number | null;
 
 		/** VM size of the worker pool instances. */
 		workerSize?: string | null;
 
-		/** Worker size ID for referencing this worker pool. */
+		/**
+		 * Worker size ID for referencing this worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerSizeId?: number | null;
 	}
 
@@ -640,13 +714,19 @@ export namespace MyNS {
 		/** Shared or dedicated app hosting. */
 		computeMode: FormControl<StampCapacityComputeMode | null | undefined>,
 
-		/** Number of instances in the worker pool. */
+		/**
+		 * Number of instances in the worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount: FormControl<number | null | undefined>,
 
 		/** VM size of the worker pool instances. */
 		workerSize: FormControl<string | null | undefined>,
 
-		/** Worker size ID for referencing this worker pool. */
+		/**
+		 * Worker size ID for referencing this worker pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerSizeId: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkerPoolFormGroup() {
@@ -690,7 +770,10 @@ export namespace MyNS {
 		/** Capabilities of the SKU, e.g., is traffic manager enabled? */
 		capabilities?: Array<Capability>;
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Family code of the resource SKU. */
@@ -715,7 +798,10 @@ export namespace MyNS {
 	/** Description of a SKU for a scalable resource. */
 	export interface SkuDescriptionFormProperties {
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Family code of the resource SKU. */
@@ -780,13 +866,22 @@ export namespace MyNS {
 	/** Description of the App Service plan scale options. */
 	export interface SkuCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -796,13 +891,22 @@ export namespace MyNS {
 	/** Description of the App Service plan scale options. */
 	export interface SkuCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -945,7 +1049,10 @@ export namespace MyNS {
 	/** Triggers for auto-heal. */
 	export interface AutoHealTriggers {
 
-		/** A rule based on private bytes. */
+		/**
+		 * A rule based on private bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		privateBytesInKB?: number | null;
 
 		/** Trigger based on total requests. */
@@ -961,7 +1068,10 @@ export namespace MyNS {
 	/** Triggers for auto-heal. */
 	export interface AutoHealTriggersFormProperties {
 
-		/** A rule based on private bytes. */
+		/**
+		 * A rule based on private bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		privateBytesInKB: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoHealTriggersFormGroup() {
@@ -975,7 +1085,10 @@ export namespace MyNS {
 	/** Trigger based on total requests. */
 	export interface RequestsBasedTrigger {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Time interval. */
@@ -985,7 +1098,10 @@ export namespace MyNS {
 	/** Trigger based on total requests. */
 	export interface RequestsBasedTriggerFormProperties {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Time interval. */
@@ -1003,7 +1119,10 @@ export namespace MyNS {
 	/** Trigger based on request execution time. */
 	export interface SlowRequestsBasedTrigger {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Time interval. */
@@ -1016,7 +1135,10 @@ export namespace MyNS {
 	/** Trigger based on request execution time. */
 	export interface SlowRequestsBasedTriggerFormProperties {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Time interval. */
@@ -1038,38 +1160,62 @@ export namespace MyNS {
 	/** Trigger based on status code. */
 	export interface StatusCodesBasedTrigger {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** HTTP status code. */
+		/**
+		 * HTTP status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
-		/** Request Sub Status. */
+		/**
+		 * Request Sub Status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subStatus?: number | null;
 
 		/** Time interval. */
 		timeInterval?: string | null;
 
-		/** Win32 error code. */
+		/**
+		 * Win32 error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		win32Status?: number | null;
 	}
 
 	/** Trigger based on status code. */
 	export interface StatusCodesBasedTriggerFormProperties {
 
-		/** Request Count. */
+		/**
+		 * Request Count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** HTTP status code. */
+		/**
+		 * HTTP status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
-		/** Request Sub Status. */
+		/**
+		 * Request Sub Status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subStatus: FormControl<number | null | undefined>,
 
 		/** Time interval. */
 		timeInterval: FormControl<string | null | undefined>,
 
-		/** Win32 error code. */
+		/**
+		 * Win32 error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		win32Status: FormControl<number | null | undefined>,
 	}
 	export function CreateStatusCodesBasedTriggerFormGroup() {
@@ -1521,11 +1667,17 @@ export namespace MyNS {
 	/** Usage of the quota resource. */
 	export interface CsmUsageQuota {
 
-		/** The current value of the resource counter. */
-		currentValue?: number | null;
+		/**
+		 * The current value of the resource counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue?: string | null;
 
-		/** The resource limit. */
-		limit?: number | null;
+		/**
+		 * The resource limit.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit?: string | null;
 
 		/** Localizable string object containing the name and a localized value. */
 		name?: LocalizableString;
@@ -1540,11 +1692,17 @@ export namespace MyNS {
 	/** Usage of the quota resource. */
 	export interface CsmUsageQuotaFormProperties {
 
-		/** The current value of the resource counter. */
-		currentValue: FormControl<number | null | undefined>,
+		/**
+		 * The current value of the resource counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue: FormControl<string | null | undefined>,
 
-		/** The resource limit. */
-		limit: FormControl<number | null | undefined>,
+		/**
+		 * The resource limit.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit: FormControl<string | null | undefined>,
 
 		/** Next reset time for the resource counter. */
 		nextResetTime: FormControl<Date | null | undefined>,
@@ -1554,8 +1712,8 @@ export namespace MyNS {
 	}
 	export function CreateCsmUsageQuotaFormGroup() {
 		return new FormGroup<CsmUsageQuotaFormProperties>({
-			currentValue: new FormControl<number | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			currentValue: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			nextResetTime: new FormControl<Date | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1803,26 +1961,39 @@ export namespace MyNS {
 		 */
 		changeDecisionCallbackUrl?: string | null;
 
-		/** Specifies interval in minutes to reevaluate ReroutePercentage. */
+		/**
+		 * Specifies interval in minutes to reevaluate ReroutePercentage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		changeIntervalInMinutes?: number | null;
 
 		/**
 		 * In auto ramp up scenario this is the step to add/remove from <code>ReroutePercentage</code> until it reaches \n<code>MinReroutePercentage</code> or
 		 * <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specified in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm
 		 * can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDecisionCallbackUrl</code>.
+		 * Type: double
 		 */
 		changeStep?: number | null;
 
-		/** Specifies upper boundary below which ReroutePercentage will stay. */
+		/**
+		 * Specifies upper boundary below which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		maxReroutePercentage?: number | null;
 
-		/** Specifies lower boundary above which ReroutePercentage will stay. */
+		/**
+		 * Specifies lower boundary above which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		minReroutePercentage?: number | null;
 
 		/** Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment. */
 		name?: string | null;
 
-		/** Percentage of the traffic which will be redirected to <code>ActionHostName</code>. */
+		/**
+		 * Percentage of the traffic which will be redirected to <code>ActionHostName</code>.
+		 * Type: double
+		 */
 		reroutePercentage?: number | null;
 	}
 
@@ -1838,26 +2009,39 @@ export namespace MyNS {
 		 */
 		changeDecisionCallbackUrl: FormControl<string | null | undefined>,
 
-		/** Specifies interval in minutes to reevaluate ReroutePercentage. */
+		/**
+		 * Specifies interval in minutes to reevaluate ReroutePercentage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		changeIntervalInMinutes: FormControl<number | null | undefined>,
 
 		/**
 		 * In auto ramp up scenario this is the step to add/remove from <code>ReroutePercentage</code> until it reaches \n<code>MinReroutePercentage</code> or
 		 * <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specified in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm
 		 * can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDecisionCallbackUrl</code>.
+		 * Type: double
 		 */
 		changeStep: FormControl<number | null | undefined>,
 
-		/** Specifies upper boundary below which ReroutePercentage will stay. */
+		/**
+		 * Specifies upper boundary below which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		maxReroutePercentage: FormControl<number | null | undefined>,
 
-		/** Specifies lower boundary above which ReroutePercentage will stay. */
+		/**
+		 * Specifies lower boundary above which ReroutePercentage will stay.
+		 * Type: double
+		 */
 		minReroutePercentage: FormControl<number | null | undefined>,
 
 		/** Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment. */
 		name: FormControl<string | null | undefined>,
 
-		/** Percentage of the traffic which will be redirected to <code>ActionHostName</code>. */
+		/**
+		 * Percentage of the traffic which will be redirected to <code>ActionHostName</code>.
+		 * Type: double
+		 */
 		reroutePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateRampUpRuleFormGroup() {
@@ -2100,13 +2284,19 @@ export namespace MyNS {
 		/** IP restriction rule name. */
 		name?: string | null;
 
-		/** Priority of IP restriction rule. */
+		/**
+		 * Priority of IP restriction rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Subnet mask for the range of IP addresses the restriction is valid for. */
 		subnetMask?: string | null;
 
-		/** (internal) Subnet traffic tag */
+		/**
+		 * (internal) Subnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnetTrafficTag?: number | null;
 
 		/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
@@ -2115,7 +2305,10 @@ export namespace MyNS {
 		/** Virtual network resource id */
 		vnetSubnetResourceId?: string | null;
 
-		/** (internal) Vnet traffic tag */
+		/**
+		 * (internal) Vnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vnetTrafficTag?: number | null;
 	}
 
@@ -2139,13 +2332,19 @@ export namespace MyNS {
 		/** IP restriction rule name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Priority of IP restriction rule. */
+		/**
+		 * Priority of IP restriction rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** Subnet mask for the range of IP addresses the restriction is valid for. */
 		subnetMask: FormControl<string | null | undefined>,
 
-		/** (internal) Subnet traffic tag */
+		/**
+		 * (internal) Subnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnetTrafficTag: FormControl<number | null | undefined>,
 
 		/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
@@ -2154,7 +2353,10 @@ export namespace MyNS {
 		/** Virtual network resource id */
 		vnetSubnetResourceId: FormControl<string | null | undefined>,
 
-		/** (internal) Vnet traffic tag */
+		/**
+		 * (internal) Vnet traffic tag
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vnetTrafficTag: FormControl<number | null | undefined>,
 	}
 	export function CreateIpSecurityRestrictionFormGroup() {
@@ -2566,7 +2768,10 @@ export namespace MyNS {
 		/** <code>true</code> to enable local MySQL; otherwise, <code>false</code>. */
 		localMySqlEnabled?: boolean | null;
 
-		/** HTTP logs directory size limit. */
+		/**
+		 * HTTP logs directory size limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logsDirectorySizeLimit?: number | null;
 
 		/** MachineKey of an app. */
@@ -2575,7 +2780,10 @@ export namespace MyNS {
 		/** Managed pipeline mode. */
 		managedPipelineMode?: SiteConfigManagedPipelineMode | null;
 
-		/** Managed Service Identity Id */
+		/**
+		 * Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedServiceIdentityId?: number | null;
 
 		/** MinTlsVersion: configures the minimum version of TLS required for SSL requests */
@@ -2587,7 +2795,10 @@ export namespace MyNS {
 		/** Version of Node.js. */
 		nodeVersion?: string | null;
 
-		/** Number of workers. */
+		/**
+		 * Number of workers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfWorkers?: number | null;
 
 		/** Version of PHP. */
@@ -2649,7 +2860,10 @@ export namespace MyNS {
 		/** Xenon App Framework and version */
 		windowsFxVersion?: string | null;
 
-		/** Explicit Managed Service Identity Id */
+		/**
+		 * Explicit Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		xManagedServiceIdentityId?: number | null;
 	}
 
@@ -2704,13 +2918,19 @@ export namespace MyNS {
 		/** <code>true</code> to enable local MySQL; otherwise, <code>false</code>. */
 		localMySqlEnabled: FormControl<boolean | null | undefined>,
 
-		/** HTTP logs directory size limit. */
+		/**
+		 * HTTP logs directory size limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logsDirectorySizeLimit: FormControl<number | null | undefined>,
 
 		/** Managed pipeline mode. */
 		managedPipelineMode: FormControl<SiteConfigManagedPipelineMode | null | undefined>,
 
-		/** Managed Service Identity Id */
+		/**
+		 * Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedServiceIdentityId: FormControl<number | null | undefined>,
 
 		/** MinTlsVersion: configures the minimum version of TLS required for SSL requests */
@@ -2722,7 +2942,10 @@ export namespace MyNS {
 		/** Version of Node.js. */
 		nodeVersion: FormControl<string | null | undefined>,
 
-		/** Number of workers. */
+		/**
+		 * Number of workers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfWorkers: FormControl<number | null | undefined>,
 
 		/** Version of PHP. */
@@ -2775,7 +2998,10 @@ export namespace MyNS {
 		/** Xenon App Framework and version */
 		windowsFxVersion: FormControl<string | null | undefined>,
 
-		/** Explicit Managed Service Identity Id */
+		/**
+		 * Explicit Managed Service Identity Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		xManagedServiceIdentityId: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteConfigFormGroup() {
@@ -2829,32 +3055,50 @@ export namespace MyNS {
 	/** Metric limits set on an app. */
 	export interface SiteLimits {
 
-		/** Maximum allowed disk size usage in MB. */
-		maxDiskSizeInMb?: number | null;
+		/**
+		 * Maximum allowed disk size usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxDiskSizeInMb?: string | null;
 
-		/** Maximum allowed memory usage in MB. */
-		maxMemoryInMb?: number | null;
+		/**
+		 * Maximum allowed memory usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxMemoryInMb?: string | null;
 
-		/** Maximum allowed CPU usage percentage. */
+		/**
+		 * Maximum allowed CPU usage percentage.
+		 * Type: double
+		 */
 		maxPercentageCpu?: number | null;
 	}
 
 	/** Metric limits set on an app. */
 	export interface SiteLimitsFormProperties {
 
-		/** Maximum allowed disk size usage in MB. */
-		maxDiskSizeInMb: FormControl<number | null | undefined>,
+		/**
+		 * Maximum allowed disk size usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxDiskSizeInMb: FormControl<string | null | undefined>,
 
-		/** Maximum allowed memory usage in MB. */
-		maxMemoryInMb: FormControl<number | null | undefined>,
+		/**
+		 * Maximum allowed memory usage in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxMemoryInMb: FormControl<string | null | undefined>,
 
-		/** Maximum allowed CPU usage percentage. */
+		/**
+		 * Maximum allowed CPU usage percentage.
+		 * Type: double
+		 */
 		maxPercentageCpu: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteLimitsFormGroup() {
 		return new FormGroup<SiteLimitsFormProperties>({
-			maxDiskSizeInMb: new FormControl<number | null | undefined>(undefined),
-			maxMemoryInMb: new FormControl<number | null | undefined>(undefined),
+			maxDiskSizeInMb: new FormControl<string | null | undefined>(undefined),
+			maxMemoryInMb: new FormControl<string | null | undefined>(undefined),
 			maxPercentageCpu: new FormControl<number | null | undefined>(undefined),
 		});
 

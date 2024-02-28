@@ -4,12 +4,16 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Body {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		request?: Request;
 		response?: Array<Response>;
 		version?: string | null;
 	}
 	export interface BodyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		version: FormControl<string | null | undefined>,
 	}
@@ -24,6 +28,8 @@ export namespace MyNS {
 	export interface Request {
 		indent?: string | null;
 		lang?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
 		pos?: string | null;
 		text?: Array<string>;
@@ -32,6 +38,8 @@ export namespace MyNS {
 	export interface RequestFormProperties {
 		indent: FormControl<string | null | undefined>,
 		lang: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
 		pos: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -64,11 +72,15 @@ export namespace MyNS {
 	export interface Item {
 		item?: string | null;
 		pos?: string | null;
+
+		/** Type: double */
 		weight?: number | null;
 	}
 	export interface ItemFormProperties {
 		item: FormControl<string | null | undefined>,
 		pos: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateItemFormGroup() {

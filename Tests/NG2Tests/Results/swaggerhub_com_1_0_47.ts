@@ -9,9 +9,13 @@ export namespace MyNS {
 		description?: string | null;
 		modified?: Date | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
 		specificationVersion?: string | null;
-		totalCount?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalCount?: string | null;
 		url?: string | null;
 	}
 	export interface ApisJsonFormProperties {
@@ -19,9 +23,13 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		modified: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
 		specificationVersion: FormControl<string | null | undefined>,
-		totalCount: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalCount: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateApisJsonFormGroup() {
@@ -32,7 +40,7 @@ export namespace MyNS {
 			name: new FormControl<string | null | undefined>(undefined),
 			offset: new FormControl<number | null | undefined>(undefined),
 			specificationVersion: new FormControl<string | null | undefined>(undefined),
-			totalCount: new FormControl<number | null | undefined>(undefined),
+			totalCount: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -77,6 +85,7 @@ export namespace MyNS {
 
 		/**
 		 * The line number (zero-based) the comment is associated with. For example, if the comment is on line 7 in the editor, `position`=6.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		position?: number | null;
 
@@ -90,6 +99,7 @@ export namespace MyNS {
 
 		/**
 		 * The line number (zero-based) the comment is associated with. For example, if the comment is on line 7 in the editor, `position`=6.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		position: FormControl<number | null | undefined>,
 
@@ -315,17 +325,25 @@ export namespace MyNS {
 
 	export interface Page {
 		items?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
-		total?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total?: string | null;
 	}
 	export interface PageFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
-		total: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreatePageFormGroup() {
 		return new FormGroup<PageFormProperties>({
 			offset: new FormControl<number | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

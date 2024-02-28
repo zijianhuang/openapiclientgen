@@ -59,7 +59,10 @@ export namespace MyNS {
 		/** Indicates the date from which the meter rate is effective. */
 		EffectiveDate?: Date | null;
 
-		/** The resource quantity that is included in the offer at no cost. Consumption beyond this quantity will be charged. */
+		/**
+		 * The resource quantity that is included in the offer at no cost. Consumption beyond this quantity will be charged.
+		 * Type: float
+		 */
 		IncludedQuantity?: number | null;
 
 		/** The category of the meter, e.g., 'Cloud services', 'Networking', etc.. */
@@ -93,7 +96,10 @@ export namespace MyNS {
 		/** Indicates the date from which the meter rate is effective. */
 		EffectiveDate: FormControl<Date | null | undefined>,
 
-		/** The resource quantity that is included in the offer at no cost. Consumption beyond this quantity will be charged. */
+		/**
+		 * The resource quantity that is included in the offer at no cost. Consumption beyond this quantity will be charged.
+		 * Type: float
+		 */
 		IncludedQuantity: FormControl<number | null | undefined>,
 
 		/** The category of the meter, e.g., 'Cloud services', 'Networking', etc.. */
@@ -162,7 +168,10 @@ export namespace MyNS {
 	/** Indicates that this is a monetary credit offer. */
 	export interface MonetaryCredit extends OfferTermInfo {
 
-		/** The amount of credit provided under the terms of the given offer level. */
+		/**
+		 * The amount of credit provided under the terms of the given offer level.
+		 * Type: decimal
+		 */
 		Credit?: number | null;
 
 		/** An array of meter ids that are excluded from the given offer terms. */
@@ -172,7 +181,10 @@ export namespace MyNS {
 	/** Indicates that this is a monetary credit offer. */
 	export interface MonetaryCreditFormProperties extends OfferTermInfoFormProperties {
 
-		/** The amount of credit provided under the terms of the given offer level. */
+		/**
+		 * The amount of credit provided under the terms of the given offer level.
+		 * Type: decimal
+		 */
 		Credit: FormControl<number | null | undefined>,
 	}
 	export function CreateMonetaryCreditFormGroup() {
@@ -290,14 +302,20 @@ export namespace MyNS {
 	/** Indicates a recurring charge is present for this offer. */
 	export interface RecurringCharge extends OfferTermInfo {
 
-		/** The amount of recurring charge as per the offer term. */
+		/**
+		 * The amount of recurring charge as per the offer term.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecurringCharge1?: number | null;
 	}
 
 	/** Indicates a recurring charge is present for this offer. */
 	export interface RecurringChargeFormProperties extends OfferTermInfoFormProperties {
 
-		/** The amount of recurring charge as per the offer term. */
+		/**
+		 * The amount of recurring charge as per the offer term.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecurringCharge1: FormControl<number | null | undefined>,
 	}
 	export function CreateRecurringChargeFormGroup() {
@@ -437,7 +455,10 @@ export namespace MyNS {
 		/** Sub-category of the consumed resource. */
 		meterSubCategory?: string | null;
 
-		/** The amount of the resource consumption that occurred in this time frame. */
+		/**
+		 * The amount of the resource consumption that occurred in this time frame.
+		 * Type: float
+		 */
 		quantity?: number | null;
 
 		/** The subscription identifier for the Azure user. */
@@ -474,7 +495,10 @@ export namespace MyNS {
 		/** Sub-category of the consumed resource. */
 		meterSubCategory: FormControl<string | null | undefined>,
 
-		/** The amount of the resource consumption that occurred in this time frame. */
+		/**
+		 * The amount of the resource consumption that occurred in this time frame.
+		 * Type: float
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The subscription identifier for the Azure user. */

@@ -96,7 +96,10 @@ export namespace MyNS {
 	/** Properties of express route cross connection peering. */
 	export interface ExpressRouteCrossConnectionPeeringProperties {
 
-		/** The Azure ASN. */
+		/**
+		 * The Azure ASN.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		azureASN?: number | null;
 
 		/** The GatewayManager Etag. */
@@ -116,7 +119,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 4294967295
 		 */
-		peerASN?: number | null;
+		peerASN?: string | null;
 
 		/** The peering type. */
 		peeringType?: ExpressRouteCrossConnectionPeeringPropertiesPeeringType | null;
@@ -142,14 +145,20 @@ export namespace MyNS {
 		/** The state of peering. */
 		state?: ExpressRouteCrossConnectionPeeringPropertiesState | null;
 
-		/** The VLAN ID. */
+		/**
+		 * The VLAN ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId?: number | null;
 	}
 
 	/** Properties of express route cross connection peering. */
 	export interface ExpressRouteCrossConnectionPeeringPropertiesFormProperties {
 
-		/** The Azure ASN. */
+		/**
+		 * The Azure ASN.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		azureASN: FormControl<number | null | undefined>,
 
 		/** The GatewayManager Etag. */
@@ -169,7 +178,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 4294967295
 		 */
-		peerASN: FormControl<number | null | undefined>,
+		peerASN: FormControl<string | null | undefined>,
 
 		/** The peering type. */
 		peeringType: FormControl<ExpressRouteCrossConnectionPeeringPropertiesPeeringType | null | undefined>,
@@ -195,7 +204,10 @@ export namespace MyNS {
 		/** The state of peering. */
 		state: FormControl<ExpressRouteCrossConnectionPeeringPropertiesState | null | undefined>,
 
-		/** The VLAN ID. */
+		/**
+		 * The VLAN ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vlanId: FormControl<number | null | undefined>,
 	}
 	export function CreateExpressRouteCrossConnectionPeeringPropertiesFormGroup() {
@@ -205,7 +217,7 @@ export namespace MyNS {
 			ipv6PeeringConfig: new FormControl<any | null | undefined>(undefined),
 			lastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			microsoftPeeringConfig: new FormControl<any | null | undefined>(undefined),
-			peerASN: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(4294967295)]),
+			peerASN: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(4294967295)]),
 			peeringType: new FormControl<ExpressRouteCrossConnectionPeeringPropertiesPeeringType | null | undefined>(undefined),
 			primaryAzurePort: new FormControl<string | null | undefined>(undefined),
 			primaryPeerAddressPrefix: new FormControl<string | null | undefined>(undefined),
@@ -229,7 +241,10 @@ export namespace MyNS {
 	/** Properties of ExpressRouteCrossConnection. */
 	export interface ExpressRouteCrossConnectionProperties {
 
-		/** The circuit bandwidth In Mbps. */
+		/**
+		 * The circuit bandwidth In Mbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bandwidthInMbps?: number | null;
 
 		/** Reference to an express route circuit. */
@@ -247,7 +262,10 @@ export namespace MyNS {
 		/** The current provisioning state. */
 		provisioningState?: ExpressRouteCrossConnectionPeeringPropertiesProvisioningState | null;
 
-		/** The identifier of the circuit traffic. */
+		/**
+		 * The identifier of the circuit traffic.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sTag?: number | null;
 
 		/** The name of the secondary port. */
@@ -263,7 +281,10 @@ export namespace MyNS {
 	/** Properties of ExpressRouteCrossConnection. */
 	export interface ExpressRouteCrossConnectionPropertiesFormProperties {
 
-		/** The circuit bandwidth In Mbps. */
+		/**
+		 * The circuit bandwidth In Mbps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bandwidthInMbps: FormControl<number | null | undefined>,
 
 		/** The peering location of the ExpressRoute circuit. */
@@ -275,7 +296,10 @@ export namespace MyNS {
 		/** The current provisioning state. */
 		provisioningState: FormControl<ExpressRouteCrossConnectionPeeringPropertiesProvisioningState | null | undefined>,
 
-		/** The identifier of the circuit traffic. */
+		/**
+		 * The identifier of the circuit traffic.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sTag: FormControl<number | null | undefined>,
 
 		/** The name of the secondary port. */
@@ -307,7 +331,10 @@ export namespace MyNS {
 	/** The routes table associated with the ExpressRouteCircuit. */
 	export interface ExpressRouteCrossConnectionRoutesTableSummary {
 
-		/** Autonomous system number. */
+		/**
+		 * Autonomous system number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		asn?: number | null;
 
 		/** IP address of Neighbor router. */
@@ -323,7 +350,10 @@ export namespace MyNS {
 	/** The routes table associated with the ExpressRouteCircuit. */
 	export interface ExpressRouteCrossConnectionRoutesTableSummaryFormProperties {
 
-		/** Autonomous system number. */
+		/**
+		 * Autonomous system number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		asn: FormControl<number | null | undefined>,
 
 		/** IP address of Neighbor router. */

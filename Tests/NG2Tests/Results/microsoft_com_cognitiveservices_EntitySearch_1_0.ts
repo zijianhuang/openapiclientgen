@@ -568,13 +568,19 @@ export namespace MyNS {
 		/** Original URL to retrieve the source (file) for the media object (e.g the source URL for the image). */
 		contentUrl?: string | null;
 
-		/** The height of the source media object, in pixels. */
+		/**
+		 * The height of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** URL of the page that hosts the media object. */
 		hostPageUrl?: string | null;
 
-		/** The width of the source media object, in pixels. */
+		/**
+		 * The width of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface MediaObjectFormProperties {
@@ -582,13 +588,19 @@ export namespace MyNS {
 		/** Original URL to retrieve the source (file) for the media object (e.g the source URL for the image). */
 		contentUrl: FormControl<string | null | undefined>,
 
-		/** The height of the source media object, in pixels. */
+		/**
+		 * The height of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** URL of the page that hosts the media object. */
 		hostPageUrl: FormControl<string | null | undefined>,
 
-		/** The width of the source media object, in pixels. */
+		/**
+		 * The width of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMediaObjectFormGroup() {
@@ -602,9 +614,13 @@ export namespace MyNS {
 	}
 
 	export interface MovieTheater {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		screenCount?: number | null;
 	}
 	export interface MovieTheaterFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		screenCount: FormControl<number | null | undefined>,
 	}
 	export function CreateMovieTheaterFormGroup() {

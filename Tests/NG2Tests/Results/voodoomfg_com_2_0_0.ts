@@ -65,16 +65,25 @@ export namespace MyNS {
 
 	export interface Print {
 
-		/** The unique identifier of the material you'd like to print in. This value comes from the id field of the material object. */
+		/**
+		 * The unique identifier of the material you'd like to print in. This value comes from the id field of the material object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		material_id?: number | null;
 
-		/** The unique identifier of the model you'd like to print. This value comes from the id field of the model object. */
+		/**
+		 * The unique identifier of the model you'd like to print. This value comes from the id field of the model object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		model_id?: number | null;
 
 		/** Optional extra parameters for the production of this model. There may be additional charges for each enabled optional service. */
 		options?: ProductionOptions;
 
-		/** The number of prints to order for this material/model pair. */
+		/**
+		 * The number of prints to order for this material/model pair.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** The units of the model file. Either "mm", "cm", or "in". The correct value to pass here depends on which design program you're using. Defaults to "mm". */
@@ -82,13 +91,22 @@ export namespace MyNS {
 	}
 	export interface PrintFormProperties {
 
-		/** The unique identifier of the material you'd like to print in. This value comes from the id field of the material object. */
+		/**
+		 * The unique identifier of the material you'd like to print in. This value comes from the id field of the material object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		material_id: FormControl<number | null | undefined>,
 
-		/** The unique identifier of the model you'd like to print. This value comes from the id field of the model object. */
+		/**
+		 * The unique identifier of the model you'd like to print. This value comes from the id field of the model object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		model_id: FormControl<number | null | undefined>,
 
-		/** The number of prints to order for this material/model pair. */
+		/**
+		 * The number of prints to order for this material/model pair.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The units of the model file. Either "mm", "cm", or "in". The correct value to pass here depends on which design program you're using. Defaults to "mm". */
@@ -183,7 +201,10 @@ export namespace MyNS {
 		/** A hex value providing an approximate visual sample of this color. */
 		color_sample?: string | null;
 
-		/** The unique identifier for this material. Use this value when submitting order items to specify that an ordered model should be printed with a specific material. */
+		/**
+		 * The unique identifier for this material. Use this value when submitting order items to specify that an ordered model should be printed with a specific material.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Type of material, excluding color. Will be one of "PLA", "Semi-flex TPU", or "Full-flex TPU". This field is for display only and is not required for creating an order (use the material's id). */
@@ -197,7 +218,10 @@ export namespace MyNS {
 		/** A hex value providing an approximate visual sample of this color. */
 		color_sample: FormControl<string | null | undefined>,
 
-		/** The unique identifier for this material. Use this value when submitting order items to specify that an ordered model should be printed with a specific material. */
+		/**
+		 * The unique identifier for this material. Use this value when submitting order items to specify that an ordered model should be printed with a specific material.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Type of material, excluding color. Will be one of "PLA", "Semi-flex TPU", or "Full-flex TPU". This field is for display only and is not required for creating an order (use the material's id). */
@@ -215,48 +239,84 @@ export namespace MyNS {
 
 	export interface Model {
 
-		/** The unique identifier for this model. Use this value when submitting an order to specify the model you want to print. */
+		/**
+		 * The unique identifier for this model. Use this value when submitting an order to specify the model you want to print.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** (reserved) URL with a rendering of the model. Value is null until the rendering is completed. */
 		rendering_url?: string | null;
 
-		/** The unitless surface area of the submitted model. This is calculated when the model is created. */
+		/**
+		 * The unitless surface area of the submitted model. This is calculated when the model is created.
+		 * Type: double
+		 */
 		surface_area?: number | null;
 
-		/** The unitless volume of the submitted model. This is calculated when the model is created. */
+		/**
+		 * The unitless volume of the submitted model. This is calculated when the model is created.
+		 * Type: double
+		 */
 		volume?: number | null;
 
-		/** The unitless x-axis length of the model's bounding box. This is calculated when the model is created. */
+		/**
+		 * The unitless x-axis length of the model's bounding box. This is calculated when the model is created.
+		 * Type: double
+		 */
 		x?: number | null;
 
-		/** The unitless y-axis length of the model's bounding box. This is calculated when the model is created. */
+		/**
+		 * The unitless y-axis length of the model's bounding box. This is calculated when the model is created.
+		 * Type: double
+		 */
 		y?: number | null;
 
-		/** The unitless z-axis length of the model's bounding box. This is calculated when the model is created. */
+		/**
+		 * The unitless z-axis length of the model's bounding box. This is calculated when the model is created.
+		 * Type: double
+		 */
 		z?: number | null;
 	}
 	export interface ModelFormProperties {
 
-		/** The unique identifier for this model. Use this value when submitting an order to specify the model you want to print. */
+		/**
+		 * The unique identifier for this model. Use this value when submitting an order to specify the model you want to print.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** (reserved) URL with a rendering of the model. Value is null until the rendering is completed. */
 		rendering_url: FormControl<string | null | undefined>,
 
-		/** The unitless surface area of the submitted model. This is calculated when the model is created. */
+		/**
+		 * The unitless surface area of the submitted model. This is calculated when the model is created.
+		 * Type: double
+		 */
 		surface_area: FormControl<number | null | undefined>,
 
-		/** The unitless volume of the submitted model. This is calculated when the model is created. */
+		/**
+		 * The unitless volume of the submitted model. This is calculated when the model is created.
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 
-		/** The unitless x-axis length of the model's bounding box. This is calculated when the model is created. */
+		/**
+		 * The unitless x-axis length of the model's bounding box. This is calculated when the model is created.
+		 * Type: double
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** The unitless y-axis length of the model's bounding box. This is calculated when the model is created. */
+		/**
+		 * The unitless y-axis length of the model's bounding box. This is calculated when the model is created.
+		 * Type: double
+		 */
 		y: FormControl<number | null | undefined>,
 
-		/** The unitless z-axis length of the model's bounding box. This is calculated when the model is created. */
+		/**
+		 * The unitless z-axis length of the model's bounding box. This is calculated when the model is created.
+		 * Type: double
+		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreateModelFormGroup() {
@@ -276,19 +336,31 @@ export namespace MyNS {
 	/** Quote for a model in the given material_id, units, and quantity. */
 	export interface ModelQuote {
 
-		/** Requested material id. */
+		/**
+		 * Requested material id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		material_id?: number | null;
 
-		/** Requested model id. Not present on the response from /model/quote_attrs. */
+		/**
+		 * Requested model id. Not present on the response from /model/quote_attrs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		model_id?: number | null;
 
 		/** Cost of any requested additional model services. */
 		options?: ProductionOptionsCosts;
 
-		/** The cost for printing the model in the requested quantity, before any additional services. */
+		/**
+		 * The cost for printing the model in the requested quantity, before any additional services.
+		 * Type: double
+		 */
 		quote?: number | null;
 
-		/** The cost of a single print of the specified model. */
+		/**
+		 * The cost of a single print of the specified model.
+		 * Type: double
+		 */
 		unit_cost?: number | null;
 
 		/** Units for the requested print. One of "mm", "cm", or "in". */
@@ -298,16 +370,28 @@ export namespace MyNS {
 	/** Quote for a model in the given material_id, units, and quantity. */
 	export interface ModelQuoteFormProperties {
 
-		/** Requested material id. */
+		/**
+		 * Requested material id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		material_id: FormControl<number | null | undefined>,
 
-		/** Requested model id. Not present on the response from /model/quote_attrs. */
+		/**
+		 * Requested model id. Not present on the response from /model/quote_attrs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		model_id: FormControl<number | null | undefined>,
 
-		/** The cost for printing the model in the requested quantity, before any additional services. */
+		/**
+		 * The cost for printing the model in the requested quantity, before any additional services.
+		 * Type: double
+		 */
 		quote: FormControl<number | null | undefined>,
 
-		/** The cost of a single print of the specified model. */
+		/**
+		 * The cost of a single print of the specified model.
+		 * Type: double
+		 */
 		unit_cost: FormControl<number | null | undefined>,
 
 		/** Units for the requested print. One of "mm", "cm", or "in". */
@@ -327,11 +411,15 @@ export namespace MyNS {
 
 	/** Cost of any requested additional model services. */
 	export interface ProductionOptionsCosts {
+
+		/** Type: double */
 		orientation?: number | null;
 	}
 
 	/** Cost of any requested additional model services. */
 	export interface ProductionOptionsCostsFormProperties {
+
+		/** Type: double */
 		orientation: FormControl<number | null | undefined>,
 	}
 	export function CreateProductionOptionsCostsFormGroup() {
@@ -351,7 +439,10 @@ export namespace MyNS {
 		/** Customer's name. */
 		customer_name?: string | null;
 
-		/** Unique identifier for this order. Reference should be displayed and used for lookups instead of this field. */
+		/**
+		 * Unique identifier for this order. Reference should be displayed and used for lookups instead of this field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The notes field that was submitted with this order. */
@@ -375,7 +466,10 @@ export namespace MyNS {
 		/** Customer's name. */
 		customer_name: FormControl<string | null | undefined>,
 
-		/** Unique identifier for this order. Reference should be displayed and used for lookups instead of this field. */
+		/**
+		 * Unique identifier for this order. Reference should be displayed and used for lookups instead of this field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The notes field that was submitted with this order. */
@@ -403,7 +497,10 @@ export namespace MyNS {
 		material?: Material;
 		model?: Model;
 
-		/** The number of prints requested for this model and material pair. */
+		/**
+		 * The number of prints requested for this model and material pair.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Units for the requested print. One of "mm", "cm", or "in". */
@@ -411,7 +508,10 @@ export namespace MyNS {
 	}
 	export interface OrderPrintFormProperties {
 
-		/** The number of prints requested for this model and material pair. */
+		/**
+		 * The number of prints requested for this model and material pair.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Units for the requested print. One of "mm", "cm", or "in". */
@@ -430,39 +530,69 @@ export namespace MyNS {
 		/** List of any issues quoting your order. */
 		errors?: Array<string>;
 
-		/** Sum of items, shipping costs, and any calculated tax. */
+		/**
+		 * Sum of items, shipping costs, and any calculated tax.
+		 * Type: double
+		 */
 		grand_total?: number | null;
 
-		/** Cost to make the specified models in the specified materials and quantities. */
+		/**
+		 * Cost to make the specified models in the specified materials and quantities.
+		 * Type: double
+		 */
 		items?: number | null;
 
 		/** Cost of any requested additional model services. */
 		options?: ProductionOptionsCosts;
 
-		/** Cost of the selected shipping method. */
+		/**
+		 * Cost of the selected shipping method.
+		 * Type: double
+		 */
 		shipping?: number | null;
 
-		/** The tax calculated for the given order. Tax is not applied to all orders. */
+		/**
+		 * The tax calculated for the given order. Tax is not applied to all orders.
+		 * Type: double
+		 */
 		tax?: number | null;
 
-		/** Sum of items and shipping costs. This is the taxable subtotal. */
+		/**
+		 * Sum of items and shipping costs. This is the taxable subtotal.
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 	export interface QuoteFormProperties {
 
-		/** Sum of items, shipping costs, and any calculated tax. */
+		/**
+		 * Sum of items, shipping costs, and any calculated tax.
+		 * Type: double
+		 */
 		grand_total: FormControl<number | null | undefined>,
 
-		/** Cost to make the specified models in the specified materials and quantities. */
+		/**
+		 * Cost to make the specified models in the specified materials and quantities.
+		 * Type: double
+		 */
 		items: FormControl<number | null | undefined>,
 
-		/** Cost of the selected shipping method. */
+		/**
+		 * Cost of the selected shipping method.
+		 * Type: double
+		 */
 		shipping: FormControl<number | null | undefined>,
 
-		/** The tax calculated for the given order. Tax is not applied to all orders. */
+		/**
+		 * The tax calculated for the given order. Tax is not applied to all orders.
+		 * Type: double
+		 */
 		tax: FormControl<number | null | undefined>,
 
-		/** Sum of items and shipping costs. This is the taxable subtotal. */
+		/**
+		 * Sum of items and shipping costs. This is the taxable subtotal.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateQuoteFormGroup() {
@@ -487,7 +617,10 @@ export namespace MyNS {
 		/** Certain shipping methods have guaranteed delivery dates. This field indicates whether delivery_date is guaranteed or if it is just an estimate. */
 		guaranteed?: boolean | null;
 
-		/** The price of this shipping option for the given set of items. */
+		/**
+		 * The price of this shipping option for the given set of items.
+		 * Type: double
+		 */
 		price?: number | null;
 
 		/** The identifier string for this shipping service. Use this value when creating an order with this as your requested shipping method. */
@@ -510,7 +643,10 @@ export namespace MyNS {
 		/** Certain shipping methods have guaranteed delivery dates. This field indicates whether delivery_date is guaranteed or if it is just an estimate. */
 		guaranteed: FormControl<boolean | null | undefined>,
 
-		/** The price of this shipping option for the given set of items. */
+		/**
+		 * The price of this shipping option for the given set of items.
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** The identifier string for this shipping service. Use this value when creating an order with this as your requested shipping method. */
@@ -621,6 +757,7 @@ export namespace MyNS {
 		 * Retrieve a previously created model by its id.
 		 * In cases where you're ordering models you've created previously, you can fetch a specific model by its id.
 		 * Get model/{model_id}
+		 * @param {number} model_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Model} Model object
 		 */
 		Model_model_idGet(model_id: number, headersHandler?: () => HttpHeaders): Observable<Model> {

@@ -40,10 +40,16 @@ export namespace MyNS {
 		/** The time of metric (ISO8601 format). */
 		dateTime?: Date | null;
 
-		/** Gets or sets the DTUs (Database Transaction Units). See https://azure.microsoft.com/documentation/articles/sql-database-what-is-a-dtu/ */
+		/**
+		 * Gets or sets the DTUs (Database Transaction Units). See https://azure.microsoft.com/documentation/articles/sql-database-what-is-a-dtu/
+		 * Type: double
+		 */
 		dtu?: number | null;
 
-		/** Gets or sets size in gigabytes. */
+		/**
+		 * Gets or sets size in gigabytes.
+		 * Type: double
+		 */
 		sizeGB?: number | null;
 	}
 
@@ -53,10 +59,16 @@ export namespace MyNS {
 		/** The time of metric (ISO8601 format). */
 		dateTime: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the DTUs (Database Transaction Units). See https://azure.microsoft.com/documentation/articles/sql-database-what-is-a-dtu/ */
+		/**
+		 * Gets or sets the DTUs (Database Transaction Units). See https://azure.microsoft.com/documentation/articles/sql-database-what-is-a-dtu/
+		 * Type: double
+		 */
 		dtu: FormControl<number | null | undefined>,
 
-		/** Gets or sets size in gigabytes. */
+		/**
+		 * Gets or sets size in gigabytes.
+		 * Type: double
+		 */
 		sizeGB: FormControl<number | null | undefined>,
 	}
 	export function CreateRecommendedElasticPoolMetricFormGroup() {
@@ -92,10 +104,16 @@ export namespace MyNS {
 	/** Represents the properties of a recommended elastic pool. */
 	export interface RecommendedElasticPoolProperties {
 
-		/** The maximum DTU for the database. */
+		/**
+		 * The maximum DTU for the database.
+		 * Type: double
+		 */
 		databaseDtuMax?: number | null;
 
-		/** The minimum DTU for the database. */
+		/**
+		 * The minimum DTU for the database.
+		 * Type: double
+		 */
 		databaseDtuMin?: number | null;
 
 		/** The edition of the recommended elastic pool. The ElasticPoolEdition enumeration contains all the valid editions. */
@@ -104,13 +122,22 @@ export namespace MyNS {
 		/** The list of databases in this pool. Expanded property */
 		RecommendedElasticPoolPropertiesDatabases?: Array<RecommendedElasticPoolPropertiesDatabases>;
 
-		/** The DTU for the recommended elastic pool. */
+		/**
+		 * The DTU for the recommended elastic pool.
+		 * Type: double
+		 */
 		dtu?: number | null;
 
-		/** Gets maximum observed DTU. */
+		/**
+		 * Gets maximum observed DTU.
+		 * Type: double
+		 */
 		maxObservedDtu?: number | null;
 
-		/** Gets maximum observed storage in megabytes. */
+		/**
+		 * Gets maximum observed storage in megabytes.
+		 * Type: double
+		 */
 		maxObservedStorageMB?: number | null;
 
 		/** The list of databases housed in the server. Expanded property */
@@ -122,29 +149,47 @@ export namespace MyNS {
 		/** The observation period start (ISO8601 format). */
 		observationPeriodStart?: Date | null;
 
-		/** Gets storage size in megabytes. */
+		/**
+		 * Gets storage size in megabytes.
+		 * Type: double
+		 */
 		storageMB?: number | null;
 	}
 
 	/** Represents the properties of a recommended elastic pool. */
 	export interface RecommendedElasticPoolPropertiesFormProperties {
 
-		/** The maximum DTU for the database. */
+		/**
+		 * The maximum DTU for the database.
+		 * Type: double
+		 */
 		databaseDtuMax: FormControl<number | null | undefined>,
 
-		/** The minimum DTU for the database. */
+		/**
+		 * The minimum DTU for the database.
+		 * Type: double
+		 */
 		databaseDtuMin: FormControl<number | null | undefined>,
 
 		/** The edition of the recommended elastic pool. The ElasticPoolEdition enumeration contains all the valid editions. */
 		databaseEdition: FormControl<RecommendedElasticPoolPropertiesDatabaseEdition | null | undefined>,
 
-		/** The DTU for the recommended elastic pool. */
+		/**
+		 * The DTU for the recommended elastic pool.
+		 * Type: double
+		 */
 		dtu: FormControl<number | null | undefined>,
 
-		/** Gets maximum observed DTU. */
+		/**
+		 * Gets maximum observed DTU.
+		 * Type: double
+		 */
 		maxObservedDtu: FormControl<number | null | undefined>,
 
-		/** Gets maximum observed storage in megabytes. */
+		/**
+		 * Gets maximum observed storage in megabytes.
+		 * Type: double
+		 */
 		maxObservedStorageMB: FormControl<number | null | undefined>,
 
 		/** The observation period start (ISO8601 format). */
@@ -153,7 +198,10 @@ export namespace MyNS {
 		/** The observation period start (ISO8601 format). */
 		observationPeriodStart: FormControl<Date | null | undefined>,
 
-		/** Gets storage size in megabytes. */
+		/**
+		 * Gets storage size in megabytes.
+		 * Type: double
+		 */
 		storageMB: FormControl<number | null | undefined>,
 	}
 	export function CreateRecommendedElasticPoolPropertiesFormGroup() {

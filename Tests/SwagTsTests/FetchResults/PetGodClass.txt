@@ -1,7 +1,5 @@
 export namespace MyNS {
 	export interface ApiResponse {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		type?: string | null;
 		message?: string | null;
@@ -58,8 +56,6 @@ export namespace MyNS {
 
 		/** Pet ID */
 		petId?: string | null;
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quantity?: number | null;
 
 		/** Estimated ship date */
@@ -114,8 +110,6 @@ export namespace MyNS {
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
 	export interface User {
-
-		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
 		pet?: Pet;
 

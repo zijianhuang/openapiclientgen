@@ -64,10 +64,16 @@ export namespace MyNS {
 	/** The parameters used to submit a new Data Lake Analytics job. */
 	export interface CreateJobParameters extends BaseJobParameters {
 
-		/** The degree of parallelism to use for this job. At most one of degreeOfParallelism and degreeOfParallelismPercent should be specified. If none, a default value of 1 will be used for degreeOfParallelism. */
+		/**
+		 * The degree of parallelism to use for this job. At most one of degreeOfParallelism and degreeOfParallelismPercent should be specified. If none, a default value of 1 will be used for degreeOfParallelism.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		degreeOfParallelism?: number | null;
 
-		/** the degree of parallelism in percentage used for this job. At most one of degreeOfParallelism and degreeOfParallelismPercent should be specified. If none, a default value of 1 will be used for degreeOfParallelism. */
+		/**
+		 * the degree of parallelism in percentage used for this job. At most one of degreeOfParallelism and degreeOfParallelismPercent should be specified. If none, a default value of 1 will be used for degreeOfParallelism.
+		 * Type: double
+		 */
 		degreeOfParallelismPercent?: number | null;
 
 		/** The list of log file name patterns to find in the logFolder. '*' is the only matching character allowed. Example format: jobExecution*.log or *mylog*.txt */
@@ -79,7 +85,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** The priority value to use for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0. */
+		/**
+		 * The priority value to use for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Job relationship information properties including pipeline information, correlation information, etc. */
@@ -89,10 +98,16 @@ export namespace MyNS {
 	/** The parameters used to submit a new Data Lake Analytics job. */
 	export interface CreateJobParametersFormProperties extends BaseJobParametersFormProperties {
 
-		/** The degree of parallelism to use for this job. At most one of degreeOfParallelism and degreeOfParallelismPercent should be specified. If none, a default value of 1 will be used for degreeOfParallelism. */
+		/**
+		 * The degree of parallelism to use for this job. At most one of degreeOfParallelism and degreeOfParallelismPercent should be specified. If none, a default value of 1 will be used for degreeOfParallelism.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		degreeOfParallelism: FormControl<number | null | undefined>,
 
-		/** the degree of parallelism in percentage used for this job. At most one of degreeOfParallelism and degreeOfParallelismPercent should be specified. If none, a default value of 1 will be used for degreeOfParallelism. */
+		/**
+		 * the degree of parallelism in percentage used for this job. At most one of degreeOfParallelism and degreeOfParallelismPercent should be specified. If none, a default value of 1 will be used for degreeOfParallelism.
+		 * Type: double
+		 */
 		degreeOfParallelismPercent: FormControl<number | null | undefined>,
 
 		/**
@@ -101,7 +116,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** The priority value to use for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0. */
+		/**
+		 * The priority value to use for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateJobParametersFormGroup() {
@@ -273,13 +291,22 @@ export namespace MyNS {
 	/** Error diagnostic information for failed jobs. */
 	export interface Diagnostics {
 
-		/** The column where the error occurred. */
+		/**
+		 * The column where the error occurred.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnNumber?: number | null;
 
-		/** The ending index of the error. */
+		/**
+		 * The ending index of the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end?: number | null;
 
-		/** The line number the error occurred on. */
+		/**
+		 * The line number the error occurred on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber?: number | null;
 
 		/** The error message. */
@@ -288,20 +315,32 @@ export namespace MyNS {
 		/** The severity of the error. */
 		severity?: DiagnosticsSeverity | null;
 
-		/** The starting index of the error. */
+		/**
+		 * The starting index of the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start?: number | null;
 	}
 
 	/** Error diagnostic information for failed jobs. */
 	export interface DiagnosticsFormProperties {
 
-		/** The column where the error occurred. */
+		/**
+		 * The column where the error occurred.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnNumber: FormControl<number | null | undefined>,
 
-		/** The ending index of the error. */
+		/**
+		 * The ending index of the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** The line number the error occurred on. */
+		/**
+		 * The line number the error occurred on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber: FormControl<number | null | undefined>,
 
 		/** The error message. */
@@ -310,7 +349,10 @@ export namespace MyNS {
 		/** The severity of the error. */
 		severity: FormControl<DiagnosticsSeverity | null | undefined>,
 
-		/** The starting index of the error. */
+		/**
+		 * The starting index of the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateDiagnosticsFormGroup() {
@@ -331,7 +373,10 @@ export namespace MyNS {
 	/** Hive job properties used when retrieving Hive jobs. */
 	export interface HiveJobProperties extends JobProperties {
 
-		/** The number of statements that have been run based on the script. */
+		/**
+		 * The number of statements that have been run based on the script.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executedStatementCount?: number | null;
 
 		/** The Hive logs location. */
@@ -340,14 +385,20 @@ export namespace MyNS {
 		/** The location of Hive job output files (both execution output and results). */
 		outputLocation?: string | null;
 
-		/** The number of statements that will be run based on the script. */
+		/**
+		 * The number of statements that will be run based on the script.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statementCount?: number | null;
 	}
 
 	/** Hive job properties used when retrieving Hive jobs. */
 	export interface HiveJobPropertiesFormProperties extends JobPropertiesFormProperties {
 
-		/** The number of statements that have been run based on the script. */
+		/**
+		 * The number of statements that have been run based on the script.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executedStatementCount: FormControl<number | null | undefined>,
 
 		/** The Hive logs location. */
@@ -356,7 +407,10 @@ export namespace MyNS {
 		/** The location of Hive job output files (both execution output and results). */
 		outputLocation: FormControl<string | null | undefined>,
 
-		/** The number of statements that will be run based on the script. */
+		/**
+		 * The number of statements that will be run based on the script.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statementCount: FormControl<number | null | undefined>,
 	}
 	export function CreateHiveJobPropertiesFormGroup() {
@@ -413,7 +467,10 @@ export namespace MyNS {
 		/** The details of the error message. */
 		details?: string | null;
 
-		/** The end offset in the job where the error was found. */
+		/**
+		 * The end offset in the job where the error was found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endOffset?: number | null;
 
 		/** The specific identifier for the type of error encountered in the job. */
@@ -431,7 +488,10 @@ export namespace MyNS {
 		/** The internal diagnostic stack trace if the user requesting the job error details has sufficient permissions it will be retrieved, otherwise it will be empty. */
 		internalDiagnostics?: string | null;
 
-		/** The specific line number in the job where the error occurred. */
+		/**
+		 * The specific line number in the job where the error occurred.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber?: number | null;
 
 		/** The user friendly error message for the failure. */
@@ -446,7 +506,10 @@ export namespace MyNS {
 		/** The ultimate source of the failure (usually either SYSTEM or USER). */
 		source?: string | null;
 
-		/** The start offset in the job where the error was found */
+		/**
+		 * The start offset in the job where the error was found
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startOffset?: number | null;
 	}
 
@@ -459,7 +522,10 @@ export namespace MyNS {
 		/** The details of the error message. */
 		details: FormControl<string | null | undefined>,
 
-		/** The end offset in the job where the error was found. */
+		/**
+		 * The end offset in the job where the error was found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endOffset: FormControl<number | null | undefined>,
 
 		/** The specific identifier for the type of error encountered in the job. */
@@ -474,7 +540,10 @@ export namespace MyNS {
 		/** The internal diagnostic stack trace if the user requesting the job error details has sufficient permissions it will be retrieved, otherwise it will be empty. */
 		internalDiagnostics: FormControl<string | null | undefined>,
 
-		/** The specific line number in the job where the error occurred. */
+		/**
+		 * The specific line number in the job where the error occurred.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber: FormControl<number | null | undefined>,
 
 		/** The user friendly error message for the failure. */
@@ -489,7 +558,10 @@ export namespace MyNS {
 		/** The ultimate source of the failure (usually either SYSTEM or USER). */
 		source: FormControl<string | null | undefined>,
 
-		/** The start offset in the job where the error was found */
+		/**
+		 * The start offset in the job where the error was found
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateJobErrorDetailsFormGroup() {
@@ -539,10 +611,16 @@ export namespace MyNS {
 	/** The common Data Lake Analytics job information properties. */
 	export interface JobInformationBasic {
 
-		/** The degree of parallelism used for this job. */
+		/**
+		 * The degree of parallelism used for this job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		degreeOfParallelism?: number | null;
 
-		/** the degree of parallelism in percentage used for this job. */
+		/**
+		 * the degree of parallelism in percentage used for this job.
+		 * Type: double
+		 */
 		degreeOfParallelismPercent?: number | null;
 
 		/** The completion time of the job. */
@@ -566,7 +644,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** The priority value for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0. */
+		/**
+		 * The priority value for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** Job relationship information properties including pipeline information, correlation information, etc. */
@@ -600,10 +681,16 @@ export namespace MyNS {
 	/** The common Data Lake Analytics job information properties. */
 	export interface JobInformationBasicFormProperties {
 
-		/** The degree of parallelism used for this job. */
+		/**
+		 * The degree of parallelism used for this job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		degreeOfParallelism: FormControl<number | null | undefined>,
 
-		/** the degree of parallelism in percentage used for this job. */
+		/**
+		 * the degree of parallelism in percentage used for this job.
+		 * Type: double
+		 */
 		degreeOfParallelismPercent: FormControl<number | null | undefined>,
 
 		/** The completion time of the job. */
@@ -624,7 +711,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** The priority value for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0. */
+		/**
+		 * The priority value for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** The result of job execution or the current result of the running job. */
@@ -772,7 +862,10 @@ export namespace MyNS {
 		/** The details of the error message. */
 		details?: string | null;
 
-		/** The diagnostic error code. */
+		/**
+		 * The diagnostic error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diagnosticCode?: number | null;
 
 		/** The specific identifier for the type of error encountered in the job. */
@@ -812,7 +905,10 @@ export namespace MyNS {
 		/** The details of the error message. */
 		details: FormControl<string | null | undefined>,
 
-		/** The diagnostic error code. */
+		/**
+		 * The diagnostic error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diagnosticCode: FormControl<number | null | undefined>,
 
 		/** The specific identifier for the type of error encountered in the job. */
@@ -857,25 +953,43 @@ export namespace MyNS {
 	/** Job Pipeline Information, showing the relationship of jobs and recurrences of those jobs in a pipeline. */
 	export interface JobPipelineInformation {
 
-		/** The number of job execution hours that resulted in canceled jobs. */
+		/**
+		 * The number of job execution hours that resulted in canceled jobs.
+		 * Type: double
+		 */
 		auHoursCanceled?: number | null;
 
-		/** The number of job execution hours that resulted in failed jobs. */
+		/**
+		 * The number of job execution hours that resulted in failed jobs.
+		 * Type: double
+		 */
 		auHoursFailed?: number | null;
 
-		/** The number of job execution hours that resulted in successful jobs. */
+		/**
+		 * The number of job execution hours that resulted in successful jobs.
+		 * Type: double
+		 */
 		auHoursSucceeded?: number | null;
 
 		/** The last time a job in this pipeline was submitted. */
 		lastSubmitTime?: Date | null;
 
-		/** The number of jobs in this pipeline that have been canceled. */
+		/**
+		 * The number of jobs in this pipeline that have been canceled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsCanceled?: number | null;
 
-		/** The number of jobs in this pipeline that have failed. */
+		/**
+		 * The number of jobs in this pipeline that have failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsFailed?: number | null;
 
-		/** The number of jobs in this pipeline that have succeeded. */
+		/**
+		 * The number of jobs in this pipeline that have succeeded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsSucceeded?: number | null;
 
 		/** The job relationship pipeline identifier (a GUID). */
@@ -900,25 +1014,43 @@ export namespace MyNS {
 	/** Job Pipeline Information, showing the relationship of jobs and recurrences of those jobs in a pipeline. */
 	export interface JobPipelineInformationFormProperties {
 
-		/** The number of job execution hours that resulted in canceled jobs. */
+		/**
+		 * The number of job execution hours that resulted in canceled jobs.
+		 * Type: double
+		 */
 		auHoursCanceled: FormControl<number | null | undefined>,
 
-		/** The number of job execution hours that resulted in failed jobs. */
+		/**
+		 * The number of job execution hours that resulted in failed jobs.
+		 * Type: double
+		 */
 		auHoursFailed: FormControl<number | null | undefined>,
 
-		/** The number of job execution hours that resulted in successful jobs. */
+		/**
+		 * The number of job execution hours that resulted in successful jobs.
+		 * Type: double
+		 */
 		auHoursSucceeded: FormControl<number | null | undefined>,
 
 		/** The last time a job in this pipeline was submitted. */
 		lastSubmitTime: FormControl<Date | null | undefined>,
 
-		/** The number of jobs in this pipeline that have been canceled. */
+		/**
+		 * The number of jobs in this pipeline that have been canceled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsCanceled: FormControl<number | null | undefined>,
 
-		/** The number of jobs in this pipeline that have failed. */
+		/**
+		 * The number of jobs in this pipeline that have failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsFailed: FormControl<number | null | undefined>,
 
-		/** The number of jobs in this pipeline that have succeeded. */
+		/**
+		 * The number of jobs in this pipeline that have succeeded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsSucceeded: FormControl<number | null | undefined>,
 
 		/** The job relationship pipeline identifier (a GUID). */
@@ -1052,25 +1184,43 @@ export namespace MyNS {
 	/** Recurrence job information for a specific recurrence. */
 	export interface JobRecurrenceInformation {
 
-		/** The number of job execution hours that resulted in canceled jobs. */
+		/**
+		 * The number of job execution hours that resulted in canceled jobs.
+		 * Type: double
+		 */
 		auHoursCanceled?: number | null;
 
-		/** The number of job execution hours that resulted in failed jobs. */
+		/**
+		 * The number of job execution hours that resulted in failed jobs.
+		 * Type: double
+		 */
 		auHoursFailed?: number | null;
 
-		/** The number of job execution hours that resulted in successful jobs. */
+		/**
+		 * The number of job execution hours that resulted in successful jobs.
+		 * Type: double
+		 */
 		auHoursSucceeded?: number | null;
 
 		/** The last time a job in this recurrence was submitted. */
 		lastSubmitTime?: Date | null;
 
-		/** The number of jobs in this recurrence that have been canceled. */
+		/**
+		 * The number of jobs in this recurrence that have been canceled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsCanceled?: number | null;
 
-		/** The number of jobs in this recurrence that have failed. */
+		/**
+		 * The number of jobs in this recurrence that have failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsFailed?: number | null;
 
-		/** The number of jobs in this recurrence that have succeeded. */
+		/**
+		 * The number of jobs in this recurrence that have succeeded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsSucceeded?: number | null;
 
 		/** The recurrence identifier (a GUID), unique per activity/script, regardless of iterations. This is something to link different occurrences of the same job together. */
@@ -1083,25 +1233,43 @@ export namespace MyNS {
 	/** Recurrence job information for a specific recurrence. */
 	export interface JobRecurrenceInformationFormProperties {
 
-		/** The number of job execution hours that resulted in canceled jobs. */
+		/**
+		 * The number of job execution hours that resulted in canceled jobs.
+		 * Type: double
+		 */
 		auHoursCanceled: FormControl<number | null | undefined>,
 
-		/** The number of job execution hours that resulted in failed jobs. */
+		/**
+		 * The number of job execution hours that resulted in failed jobs.
+		 * Type: double
+		 */
 		auHoursFailed: FormControl<number | null | undefined>,
 
-		/** The number of job execution hours that resulted in successful jobs. */
+		/**
+		 * The number of job execution hours that resulted in successful jobs.
+		 * Type: double
+		 */
 		auHoursSucceeded: FormControl<number | null | undefined>,
 
 		/** The last time a job in this recurrence was submitted. */
 		lastSubmitTime: FormControl<Date | null | undefined>,
 
-		/** The number of jobs in this recurrence that have been canceled. */
+		/**
+		 * The number of jobs in this recurrence that have been canceled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsCanceled: FormControl<number | null | undefined>,
 
-		/** The number of jobs in this recurrence that have failed. */
+		/**
+		 * The number of jobs in this recurrence that have failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsFailed: FormControl<number | null | undefined>,
 
-		/** The number of jobs in this recurrence that have succeeded. */
+		/**
+		 * The number of jobs in this recurrence that have succeeded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numJobsSucceeded: FormControl<number | null | undefined>,
 
 		/** The recurrence identifier (a GUID), unique per activity/script, regardless of iterations. This is something to link different occurrences of the same job together. */
@@ -1301,34 +1469,64 @@ export namespace MyNS {
 		/** The statistics information for resource usage. */
 		allocatedContainerMemSize?: ResourceUsageStatistics;
 
-		/** The amount of data read, in bytes. */
-		dataRead?: number | null;
+		/**
+		 * The amount of data read, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataRead?: string | null;
 
-		/** The amount of data read across multiple pods, in bytes. */
-		dataReadCrossPod?: number | null;
+		/**
+		 * The amount of data read across multiple pods, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataReadCrossPod?: string | null;
 
-		/** The amount of data read in one pod, in bytes. */
-		dataReadIntraPod?: number | null;
+		/**
+		 * The amount of data read in one pod, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataReadIntraPod?: string | null;
 
-		/** The amount of data remaining to be read, in bytes. */
-		dataToRead?: number | null;
+		/**
+		 * The amount of data remaining to be read, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataToRead?: string | null;
 
-		/** The amount of data written, in bytes. */
-		dataWritten?: number | null;
+		/**
+		 * The amount of data written, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataWritten?: string | null;
 
-		/** The number of duplicates that were discarded. */
+		/**
+		 * The number of duplicates that were discarded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duplicateDiscardCount?: number | null;
 
-		/** The estimated vertex CPU core count. */
+		/**
+		 * The estimated vertex CPU core count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedVertexCpuCoreCount?: number | null;
 
-		/** The estimated vertex memory size, in bytes. */
-		estimatedVertexMemSize?: number | null;
+		/**
+		 * The estimated vertex memory size, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		estimatedVertexMemSize?: string | null;
 
-		/** The estimated vertex peak CPU core count. */
+		/**
+		 * The estimated vertex peak CPU core count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedVertexPeakCpuCoreCount?: number | null;
 
-		/** The number of failures that occurred in this stage. */
+		/**
+		 * The number of failures that occurred in this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedCount?: number | null;
 
 		/** The detailed information for a vertex. */
@@ -1340,34 +1538,61 @@ export namespace MyNS {
 		/** The detailed information for a vertex. */
 		maxPeakMemUsageVertex?: JobStatisticsVertex;
 
-		/** The maximum amount of data read in a single vertex, in bytes. */
-		maxVertexDataRead?: number | null;
+		/**
+		 * The maximum amount of data read in a single vertex, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxVertexDataRead?: string | null;
 
-		/** The minimum amount of data read in a single vertex, in bytes. */
-		minVertexDataRead?: number | null;
+		/**
+		 * The minimum amount of data read in a single vertex, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minVertexDataRead?: string | null;
 
-		/** The number of read failures in this stage. */
+		/**
+		 * The number of read failures in this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		readFailureCount?: number | null;
 
-		/** The number of vertices that were revoked during this stage. */
+		/**
+		 * The number of vertices that were revoked during this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revocationCount?: number | null;
 
-		/** The number of currently running vertices in this stage. */
+		/**
+		 * The number of currently running vertices in this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runningCount?: number | null;
 
-		/** The number of currently scheduled vertices in this stage. */
+		/**
+		 * The number of currently scheduled vertices in this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scheduledCount?: number | null;
 
 		/** The name of this stage in job execution. */
 		stageName?: string | null;
 
-		/** The number of vertices that succeeded in this stage. */
+		/**
+		 * The number of vertices that succeeded in this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		succeededCount?: number | null;
 
-		/** The amount of temporary data written, in bytes. */
-		tempDataWritten?: number | null;
+		/**
+		 * The amount of temporary data written, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		tempDataWritten?: string | null;
 
-		/** The total vertex count for this stage. */
+		/**
+		 * The total vertex count for this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 
 		/** The sum of the total execution time of all the vertices in the stage. */
@@ -1376,10 +1601,16 @@ export namespace MyNS {
 		/** The amount of time that failed vertices took up in this stage. */
 		totalFailedTime?: string | null;
 
-		/** The sum of the peak memory usage of all the vertices in the stage, in bytes. */
-		totalPeakMemUsage?: number | null;
+		/**
+		 * The sum of the peak memory usage of all the vertices in the stage, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalPeakMemUsage?: string | null;
 
-		/** The current progress of this stage, as a percentage. */
+		/**
+		 * The current progress of this stage, as a percentage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalProgress?: number | null;
 
 		/** The amount of time all successful vertices took in this stage. */
@@ -1395,64 +1626,121 @@ export namespace MyNS {
 	/** The Data Lake Analytics job statistics vertex stage information. */
 	export interface JobStatisticsVertexStageFormProperties {
 
-		/** The amount of data read, in bytes. */
-		dataRead: FormControl<number | null | undefined>,
+		/**
+		 * The amount of data read, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataRead: FormControl<string | null | undefined>,
 
-		/** The amount of data read across multiple pods, in bytes. */
-		dataReadCrossPod: FormControl<number | null | undefined>,
+		/**
+		 * The amount of data read across multiple pods, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataReadCrossPod: FormControl<string | null | undefined>,
 
-		/** The amount of data read in one pod, in bytes. */
-		dataReadIntraPod: FormControl<number | null | undefined>,
+		/**
+		 * The amount of data read in one pod, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataReadIntraPod: FormControl<string | null | undefined>,
 
-		/** The amount of data remaining to be read, in bytes. */
-		dataToRead: FormControl<number | null | undefined>,
+		/**
+		 * The amount of data remaining to be read, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataToRead: FormControl<string | null | undefined>,
 
-		/** The amount of data written, in bytes. */
-		dataWritten: FormControl<number | null | undefined>,
+		/**
+		 * The amount of data written, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataWritten: FormControl<string | null | undefined>,
 
-		/** The number of duplicates that were discarded. */
+		/**
+		 * The number of duplicates that were discarded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duplicateDiscardCount: FormControl<number | null | undefined>,
 
-		/** The estimated vertex CPU core count. */
+		/**
+		 * The estimated vertex CPU core count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedVertexCpuCoreCount: FormControl<number | null | undefined>,
 
-		/** The estimated vertex memory size, in bytes. */
-		estimatedVertexMemSize: FormControl<number | null | undefined>,
+		/**
+		 * The estimated vertex memory size, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		estimatedVertexMemSize: FormControl<string | null | undefined>,
 
-		/** The estimated vertex peak CPU core count. */
+		/**
+		 * The estimated vertex peak CPU core count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedVertexPeakCpuCoreCount: FormControl<number | null | undefined>,
 
-		/** The number of failures that occurred in this stage. */
+		/**
+		 * The number of failures that occurred in this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedCount: FormControl<number | null | undefined>,
 
-		/** The maximum amount of data read in a single vertex, in bytes. */
-		maxVertexDataRead: FormControl<number | null | undefined>,
+		/**
+		 * The maximum amount of data read in a single vertex, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxVertexDataRead: FormControl<string | null | undefined>,
 
-		/** The minimum amount of data read in a single vertex, in bytes. */
-		minVertexDataRead: FormControl<number | null | undefined>,
+		/**
+		 * The minimum amount of data read in a single vertex, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minVertexDataRead: FormControl<string | null | undefined>,
 
-		/** The number of read failures in this stage. */
+		/**
+		 * The number of read failures in this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		readFailureCount: FormControl<number | null | undefined>,
 
-		/** The number of vertices that were revoked during this stage. */
+		/**
+		 * The number of vertices that were revoked during this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revocationCount: FormControl<number | null | undefined>,
 
-		/** The number of currently running vertices in this stage. */
+		/**
+		 * The number of currently running vertices in this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runningCount: FormControl<number | null | undefined>,
 
-		/** The number of currently scheduled vertices in this stage. */
+		/**
+		 * The number of currently scheduled vertices in this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scheduledCount: FormControl<number | null | undefined>,
 
 		/** The name of this stage in job execution. */
 		stageName: FormControl<string | null | undefined>,
 
-		/** The number of vertices that succeeded in this stage. */
+		/**
+		 * The number of vertices that succeeded in this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		succeededCount: FormControl<number | null | undefined>,
 
-		/** The amount of temporary data written, in bytes. */
-		tempDataWritten: FormControl<number | null | undefined>,
+		/**
+		 * The amount of temporary data written, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		tempDataWritten: FormControl<string | null | undefined>,
 
-		/** The total vertex count for this stage. */
+		/**
+		 * The total vertex count for this stage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/** The sum of the total execution time of all the vertices in the stage. */
@@ -1461,10 +1749,16 @@ export namespace MyNS {
 		/** The amount of time that failed vertices took up in this stage. */
 		totalFailedTime: FormControl<string | null | undefined>,
 
-		/** The sum of the peak memory usage of all the vertices in the stage, in bytes. */
-		totalPeakMemUsage: FormControl<number | null | undefined>,
+		/**
+		 * The sum of the peak memory usage of all the vertices in the stage, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalPeakMemUsage: FormControl<string | null | undefined>,
 
-		/** The current progress of this stage, as a percentage. */
+		/**
+		 * The current progress of this stage, as a percentage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalProgress: FormControl<number | null | undefined>,
 
 		/** The amount of time all successful vertices took in this stage. */
@@ -1472,29 +1766,29 @@ export namespace MyNS {
 	}
 	export function CreateJobStatisticsVertexStageFormGroup() {
 		return new FormGroup<JobStatisticsVertexStageFormProperties>({
-			dataRead: new FormControl<number | null | undefined>(undefined),
-			dataReadCrossPod: new FormControl<number | null | undefined>(undefined),
-			dataReadIntraPod: new FormControl<number | null | undefined>(undefined),
-			dataToRead: new FormControl<number | null | undefined>(undefined),
-			dataWritten: new FormControl<number | null | undefined>(undefined),
+			dataRead: new FormControl<string | null | undefined>(undefined),
+			dataReadCrossPod: new FormControl<string | null | undefined>(undefined),
+			dataReadIntraPod: new FormControl<string | null | undefined>(undefined),
+			dataToRead: new FormControl<string | null | undefined>(undefined),
+			dataWritten: new FormControl<string | null | undefined>(undefined),
 			duplicateDiscardCount: new FormControl<number | null | undefined>(undefined),
 			estimatedVertexCpuCoreCount: new FormControl<number | null | undefined>(undefined),
-			estimatedVertexMemSize: new FormControl<number | null | undefined>(undefined),
+			estimatedVertexMemSize: new FormControl<string | null | undefined>(undefined),
 			estimatedVertexPeakCpuCoreCount: new FormControl<number | null | undefined>(undefined),
 			failedCount: new FormControl<number | null | undefined>(undefined),
-			maxVertexDataRead: new FormControl<number | null | undefined>(undefined),
-			minVertexDataRead: new FormControl<number | null | undefined>(undefined),
+			maxVertexDataRead: new FormControl<string | null | undefined>(undefined),
+			minVertexDataRead: new FormControl<string | null | undefined>(undefined),
 			readFailureCount: new FormControl<number | null | undefined>(undefined),
 			revocationCount: new FormControl<number | null | undefined>(undefined),
 			runningCount: new FormControl<number | null | undefined>(undefined),
 			scheduledCount: new FormControl<number | null | undefined>(undefined),
 			stageName: new FormControl<string | null | undefined>(undefined),
 			succeededCount: new FormControl<number | null | undefined>(undefined),
-			tempDataWritten: new FormControl<number | null | undefined>(undefined),
+			tempDataWritten: new FormControl<string | null | undefined>(undefined),
 			totalCount: new FormControl<number | null | undefined>(undefined),
 			totalExecutionTime: new FormControl<string | null | undefined>(undefined),
 			totalFailedTime: new FormControl<string | null | undefined>(undefined),
-			totalPeakMemUsage: new FormControl<number | null | undefined>(undefined),
+			totalPeakMemUsage: new FormControl<string | null | undefined>(undefined),
 			totalProgress: new FormControl<number | null | undefined>(undefined),
 			totalSucceededTime: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1505,8 +1799,11 @@ export namespace MyNS {
 	/** The detailed information for a vertex. */
 	export interface JobStatisticsVertex {
 
-		/** The amount of data read of the vertex, in bytes. */
-		dataRead?: number | null;
+		/**
+		 * The amount of data read of the vertex, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataRead?: string | null;
 
 		/** The amount of execution time of the vertex. */
 		executionTime?: string | null;
@@ -1514,8 +1811,11 @@ export namespace MyNS {
 		/** The name of the vertex. */
 		name?: string | null;
 
-		/** The amount of peak memory usage of the vertex, in bytes. */
-		peakMemUsage?: number | null;
+		/**
+		 * The amount of peak memory usage of the vertex, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		peakMemUsage?: string | null;
 
 		/** The id of the vertex. */
 		vertexId?: string | null;
@@ -1524,8 +1824,11 @@ export namespace MyNS {
 	/** The detailed information for a vertex. */
 	export interface JobStatisticsVertexFormProperties {
 
-		/** The amount of data read of the vertex, in bytes. */
-		dataRead: FormControl<number | null | undefined>,
+		/**
+		 * The amount of data read of the vertex, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dataRead: FormControl<string | null | undefined>,
 
 		/** The amount of execution time of the vertex. */
 		executionTime: FormControl<string | null | undefined>,
@@ -1533,18 +1836,21 @@ export namespace MyNS {
 		/** The name of the vertex. */
 		name: FormControl<string | null | undefined>,
 
-		/** The amount of peak memory usage of the vertex, in bytes. */
-		peakMemUsage: FormControl<number | null | undefined>,
+		/**
+		 * The amount of peak memory usage of the vertex, in bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		peakMemUsage: FormControl<string | null | undefined>,
 
 		/** The id of the vertex. */
 		vertexId: FormControl<string | null | undefined>,
 	}
 	export function CreateJobStatisticsVertexFormGroup() {
 		return new FormGroup<JobStatisticsVertexFormProperties>({
-			dataRead: new FormControl<number | null | undefined>(undefined),
+			dataRead: new FormControl<string | null | undefined>(undefined),
 			executionTime: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			peakMemUsage: new FormControl<number | null | undefined>(undefined),
+			peakMemUsage: new FormControl<string | null | undefined>(undefined),
 			vertexId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1554,33 +1860,51 @@ export namespace MyNS {
 	/** The statistics information for resource usage. */
 	export interface ResourceUsageStatistics {
 
-		/** The average value. */
+		/**
+		 * The average value.
+		 * Type: double
+		 */
 		average?: number | null;
 
-		/** The maximum value. */
-		maximum?: number | null;
+		/**
+		 * The maximum value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximum?: string | null;
 
-		/** The minimum value. */
-		minimum?: number | null;
+		/**
+		 * The minimum value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minimum?: string | null;
 	}
 
 	/** The statistics information for resource usage. */
 	export interface ResourceUsageStatisticsFormProperties {
 
-		/** The average value. */
+		/**
+		 * The average value.
+		 * Type: double
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** The maximum value. */
-		maximum: FormControl<number | null | undefined>,
+		/**
+		 * The maximum value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximum: FormControl<string | null | undefined>,
 
-		/** The minimum value. */
-		minimum: FormControl<number | null | undefined>,
+		/**
+		 * The minimum value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minimum: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceUsageStatisticsFormGroup() {
 		return new FormGroup<ResourceUsageStatisticsFormProperties>({
 			average: new FormControl<number | null | undefined>(undefined),
-			maximum: new FormControl<number | null | undefined>(undefined),
-			minimum: new FormControl<number | null | undefined>(undefined),
+			maximum: new FormControl<string | null | undefined>(undefined),
+			minimum: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1701,8 +2025,11 @@ export namespace MyNS {
 		/** The ID used to identify the yarn application executing the job. This value should not be set by the user and will be ignored if it is. */
 		yarnApplicationId?: string | null;
 
-		/** The timestamp (in ticks) for the yarn application executing the job. This value should not be set by the user and will be ignored if it is. */
-		yarnApplicationTimeStamp?: number | null;
+		/**
+		 * The timestamp (in ticks) for the yarn application executing the job. This value should not be set by the user and will be ignored if it is.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		yarnApplicationTimeStamp?: string | null;
 	}
 
 	/** U-SQL job properties used when retrieving U-SQL jobs. */
@@ -1732,8 +2059,11 @@ export namespace MyNS {
 		/** The ID used to identify the yarn application executing the job. This value should not be set by the user and will be ignored if it is. */
 		yarnApplicationId: FormControl<string | null | undefined>,
 
-		/** The timestamp (in ticks) for the yarn application executing the job. This value should not be set by the user and will be ignored if it is. */
-		yarnApplicationTimeStamp: FormControl<number | null | undefined>,
+		/**
+		 * The timestamp (in ticks) for the yarn application executing the job. This value should not be set by the user and will be ignored if it is.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		yarnApplicationTimeStamp: FormControl<string | null | undefined>,
 	}
 	export function CreateUSqlJobPropertiesFormGroup() {
 		return new FormGroup<USqlJobPropertiesFormProperties>({
@@ -1748,7 +2078,7 @@ export namespace MyNS {
 			totalQueuedTime: new FormControl<string | null | undefined>(undefined),
 			totalRunningTime: new FormControl<string | null | undefined>(undefined),
 			yarnApplicationId: new FormControl<string | null | undefined>(undefined),
-			yarnApplicationTimeStamp: new FormControl<number | null | undefined>(undefined),
+			yarnApplicationTimeStamp: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1757,13 +2087,22 @@ export namespace MyNS {
 	/** The parameters that can be used to update existing Data Lake Analytics job information properties. (Only for use internally with Scope job type.) */
 	export interface UpdateJobParameters {
 
-		/** The degree of parallelism used for this job. */
+		/**
+		 * The degree of parallelism used for this job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		degreeOfParallelism?: number | null;
 
-		/** the degree of parallelism in percentage used for this job. */
+		/**
+		 * the degree of parallelism in percentage used for this job.
+		 * Type: double
+		 */
 		degreeOfParallelismPercent?: number | null;
 
-		/** The priority value for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0. */
+		/**
+		 * The priority value for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 
 		/** The key-value pairs used to add additional metadata to the job information. */
@@ -1773,13 +2112,22 @@ export namespace MyNS {
 	/** The parameters that can be used to update existing Data Lake Analytics job information properties. (Only for use internally with Scope job type.) */
 	export interface UpdateJobParametersFormProperties {
 
-		/** The degree of parallelism used for this job. */
+		/**
+		 * The degree of parallelism used for this job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		degreeOfParallelism: FormControl<number | null | undefined>,
 
-		/** the degree of parallelism in percentage used for this job. */
+		/**
+		 * the degree of parallelism in percentage used for this job.
+		 * Type: double
+		 */
 		degreeOfParallelismPercent: FormControl<number | null | undefined>,
 
-		/** The priority value for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0. */
+		/**
+		 * The priority value for the current job. Lower numbers have a higher priority. By default, a job has a priority of 1000. This must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 
 		/** The key-value pairs used to add additional metadata to the job information. */

@@ -440,19 +440,25 @@ export namespace MyNS {
 		/** Defines the query context that Bing used for the request. */
 		queryContext?: QueryContext;
 
-		/** The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results. */
-		totalEstimatedMatches?: number | null;
+		/**
+		 * The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalEstimatedMatches?: string | null;
 	}
 	export interface SearchResultsAnswerFormProperties {
 		isFamilyFriendly: FormControl<boolean | null | undefined>,
 
-		/** The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results. */
-		totalEstimatedMatches: FormControl<number | null | undefined>,
+		/**
+		 * The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalEstimatedMatches: FormControl<string | null | undefined>,
 	}
 	export function CreateSearchResultsAnswerFormGroup() {
 		return new FormGroup<SearchResultsAnswerFormProperties>({
 			isFamilyFriendly: new FormControl<boolean | null | undefined>(undefined),
-			totalEstimatedMatches: new FormControl<number | null | undefined>(undefined),
+			totalEstimatedMatches: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

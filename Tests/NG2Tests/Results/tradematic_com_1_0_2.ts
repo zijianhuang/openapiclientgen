@@ -454,10 +454,14 @@ export namespace MyNS {
 
 	export interface Error {
 		message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 	}
 	export interface ErrorFormProperties {
 		message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorFormGroup() {
@@ -912,21 +916,49 @@ export namespace MyNS {
 	}
 
 	export interface Result {
+
+		/** Type: double */
 		c?: number | null;
+
+		/** Type: double */
 		h?: number | null;
+
+		/** Type: double */
 		l?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		n?: number | null;
+
+		/** Type: double */
 		o?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		t?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		v?: number | null;
 	}
 	export interface ResultFormProperties {
+
+		/** Type: double */
 		c: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		h: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		l: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		n: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		o: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		t: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		v: FormControl<number | null | undefined>,
 	}
 	export function CreateResultFormGroup() {
@@ -1452,9 +1484,10 @@ export namespace MyNS {
 		 * Get autofollow strategy by ID
 		 * Get autofollow strategy by ID
 		 * Get autofollow/strategies/{strategyid}
+		 * @param {string} strategyid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Strategy} Successful operation
 		 */
-		AutofollowStrategies_strategyidGet(strategyid: number, headersHandler?: () => HttpHeaders): Observable<Strategy> {
+		AutofollowStrategies_strategyidGet(strategyid: string, headersHandler?: () => HttpHeaders): Observable<Strategy> {
 			return this.http.get<Strategy>(this.baseUri + 'autofollow/strategies/' + strategyid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1462,9 +1495,10 @@ export namespace MyNS {
 		 * Update autofollow strategy
 		 * Update autofollow strategy
 		 * Put autofollow/strategies/{strategyid}
+		 * @param {string} strategyid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {AutofollowStrategies_strategyidPutReturn} Successful operation
 		 */
-		AutofollowStrategies_strategyidPut(strategyid: number, requestBody: AutofollowStrategies_strategyidPutPutBody, headersHandler?: () => HttpHeaders): Observable<AutofollowStrategies_strategyidPutReturn> {
+		AutofollowStrategies_strategyidPut(strategyid: string, requestBody: AutofollowStrategies_strategyidPutPutBody, headersHandler?: () => HttpHeaders): Observable<AutofollowStrategies_strategyidPutReturn> {
 			return this.http.put<AutofollowStrategies_strategyidPutReturn>(this.baseUri + 'autofollow/strategies/' + strategyid, JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
@@ -1472,9 +1506,10 @@ export namespace MyNS {
 		 * Update rules for strategy that was created with strategy builder
 		 * Update rules for strategy that was created with strategy builder
 		 * Put autofollow/strategies/{strategyid}/content
+		 * @param {string} strategyid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {AutofollowStrategies_strategyidContentPutReturn} Successful operation
 		 */
-		AutofollowStrategies_strategyidContentPut(strategyid: number, requestBody: AutofollowStrategies_strategyidContentPutPutBody, headersHandler?: () => HttpHeaders): Observable<AutofollowStrategies_strategyidContentPutReturn> {
+		AutofollowStrategies_strategyidContentPut(strategyid: string, requestBody: AutofollowStrategies_strategyidContentPutPutBody, headersHandler?: () => HttpHeaders): Observable<AutofollowStrategies_strategyidContentPutReturn> {
 			return this.http.put<AutofollowStrategies_strategyidContentPutReturn>(this.baseUri + 'autofollow/strategies/' + strategyid + '/content', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
@@ -1482,9 +1517,10 @@ export namespace MyNS {
 		 * Get positions for strategy
 		 * Get positions for strategy
 		 * Get autofollow/strategies/{strategyid}/positions
+		 * @param {string} strategyid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<StrategyPosition>} Successful operation
 		 */
-		AutofollowStrategies_strategyidPositionsGet(strategyid: number, headersHandler?: () => HttpHeaders): Observable<Array<StrategyPosition>> {
+		AutofollowStrategies_strategyidPositionsGet(strategyid: string, headersHandler?: () => HttpHeaders): Observable<Array<StrategyPosition>> {
 			return this.http.get<Array<StrategyPosition>>(this.baseUri + 'autofollow/strategies/' + strategyid + '/positions', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1492,9 +1528,11 @@ export namespace MyNS {
 		 * Get trading signals for strategy
 		 * Get trading signals for strategy
 		 * Get autofollow/strategies/{strategyid}/signals
+		 * @param {string} strategyid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} count Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<Signal>} Successful operation
 		 */
-		AutofollowStrategies_strategyidSignalsGetByCount(strategyid: number, count: number, headersHandler?: () => HttpHeaders): Observable<Array<Signal>> {
+		AutofollowStrategies_strategyidSignalsGetByCount(strategyid: string, count: string, headersHandler?: () => HttpHeaders): Observable<Array<Signal>> {
 			return this.http.get<Array<Signal>>(this.baseUri + 'autofollow/strategies/' + strategyid + '/signals?count=' + count, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1502,9 +1540,10 @@ export namespace MyNS {
 		 * Send a new signal for autofollow strategy
 		 * Send a new signal for autofollow strategy
 		 * Post autofollow/strategies/{strategyid}/signals
+		 * @param {string} strategyid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {AutofollowStrategies_strategyidSignalsPostReturn} Successful operation
 		 */
-		AutofollowStrategies_strategyidSignalsPost(strategyid: number, requestBody: AutofollowStrategies_strategyidSignalsPostPostBody, headersHandler?: () => HttpHeaders): Observable<AutofollowStrategies_strategyidSignalsPostReturn> {
+		AutofollowStrategies_strategyidSignalsPost(strategyid: string, requestBody: AutofollowStrategies_strategyidSignalsPostPostBody, headersHandler?: () => HttpHeaders): Observable<AutofollowStrategies_strategyidSignalsPostReturn> {
 			return this.http.post<AutofollowStrategies_strategyidSignalsPostReturn>(this.baseUri + 'autofollow/strategies/' + strategyid + '/signals', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
@@ -1522,9 +1561,10 @@ export namespace MyNS {
 		 * Get strategy builder rules by ID
 		 * Get strategy builder rules by ID
 		 * Get builder/rules/{ruleid}
+		 * @param {string} ruleid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<Rule>} Successful operation
 		 */
-		BuilderRules_ruleidGet(ruleid: number, headersHandler?: () => HttpHeaders): Observable<Array<Rule>> {
+		BuilderRules_ruleidGet(ruleid: string, headersHandler?: () => HttpHeaders): Observable<Array<Rule>> {
 			return this.http.get<Array<Rule>>(this.baseUri + 'builder/rules/' + ruleid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1552,9 +1592,10 @@ export namespace MyNS {
 		 * Delete API key
 		 * Delete API key
 		 * Delete client/apikeys/{keyid}
+		 * @param {string} keyid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ClientApikeys_keyidDeleteReturn} Successful operation
 		 */
-		ClientApikeys_keyidDelete(keyid: number, headersHandler?: () => HttpHeaders): Observable<ClientApikeys_keyidDeleteReturn> {
+		ClientApikeys_keyidDelete(keyid: string, headersHandler?: () => HttpHeaders): Observable<ClientApikeys_keyidDeleteReturn> {
 			return this.http.delete<ClientApikeys_keyidDeleteReturn>(this.baseUri + 'client/apikeys/' + keyid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1592,9 +1633,10 @@ export namespace MyNS {
 		 * Get user by ID
 		 * Get user by ID
 		 * Get client/users/{userid}
+		 * @param {string} userid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {User} Successful operation
 		 */
-		ClientUsers_useridGet(userid: number, headersHandler?: () => HttpHeaders): Observable<User> {
+		ClientUsers_useridGet(userid: string, headersHandler?: () => HttpHeaders): Observable<User> {
 			return this.http.get<User>(this.baseUri + 'client/users/' + userid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1612,9 +1654,10 @@ export namespace MyNS {
 		 * Get trading account by ID
 		 * Get trading account by ID
 		 * Get cloud/accounts/{accountid}
+		 * @param {string} accountid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Account} Successful operation
 		 */
-		CloudAccounts_accountidGet(accountid: number, headersHandler?: () => HttpHeaders): Observable<Account> {
+		CloudAccounts_accountidGet(accountid: string, headersHandler?: () => HttpHeaders): Observable<Account> {
 			return this.http.get<Account>(this.baseUri + 'cloud/accounts/' + accountid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1622,9 +1665,10 @@ export namespace MyNS {
 		 * Close all positions by account
 		 * Close all positions by account
 		 * Post cloud/accounts/{accountid}/closeall
+		 * @param {string} accountid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		CloudAccounts_accountidCloseallPost(accountid: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		CloudAccounts_accountidCloseallPost(accountid: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'cloud/accounts/' + accountid + '/closeall', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -1632,9 +1676,10 @@ export namespace MyNS {
 		 * Get orders list by account
 		 * Get orders list by account
 		 * Get cloud/accounts/{accountid}/orders
+		 * @param {string} accountid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<Order>} Successful operation
 		 */
-		CloudAccounts_accountidOrdersGet(accountid: number, headersHandler?: () => HttpHeaders): Observable<Array<Order>> {
+		CloudAccounts_accountidOrdersGet(accountid: string, headersHandler?: () => HttpHeaders): Observable<Array<Order>> {
 			return this.http.get<Array<Order>>(this.baseUri + 'cloud/accounts/' + accountid + '/orders', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1642,9 +1687,10 @@ export namespace MyNS {
 		 * Place a new order
 		 * Place a new order
 		 * Post cloud/accounts/{accountid}/orders
+		 * @param {string} accountid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		CloudAccounts_accountidOrdersPost(accountid: number, requestBody: CloudAccounts_accountidOrdersPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		CloudAccounts_accountidOrdersPost(accountid: string, requestBody: CloudAccounts_accountidOrdersPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'cloud/accounts/' + accountid + '/orders', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
@@ -1652,9 +1698,11 @@ export namespace MyNS {
 		 * Cancel an order by ID
 		 * Cancel an order by ID
 		 * Delete cloud/accounts/{accountid}/orders/{orderid}
+		 * @param {string} accountid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} orderid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		CloudAccounts_accountidOrders_orderidDelete(accountid: number, orderid: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		CloudAccounts_accountidOrders_orderidDelete(accountid: string, orderid: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'cloud/accounts/' + accountid + '/orders/' + orderid, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -1662,9 +1710,10 @@ export namespace MyNS {
 		 * Get account equity and cash snapshots
 		 * Get account equity and cash snapshots
 		 * Get cloud/accounts/{accountid}/snapshots
+		 * @param {string} accountid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<Snapshot>} Successful operation
 		 */
-		CloudAccounts_accountidSnapshotsGet(accountid: number, headersHandler?: () => HttpHeaders): Observable<Array<Snapshot>> {
+		CloudAccounts_accountidSnapshotsGet(accountid: string, headersHandler?: () => HttpHeaders): Observable<Array<Snapshot>> {
 			return this.http.get<Array<Snapshot>>(this.baseUri + 'cloud/accounts/' + accountid + '/snapshots', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1672,9 +1721,10 @@ export namespace MyNS {
 		 * Syhchronize an account with account active strategies
 		 * Syhchronize an account with account active strategies
 		 * Post cloud/accounts/{accountid}/sync
+		 * @param {string} accountid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		CloudAccounts_accountidSyncPost(accountid: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		CloudAccounts_accountidSyncPost(accountid: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'cloud/accounts/' + accountid + '/sync', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -1682,9 +1732,10 @@ export namespace MyNS {
 		 * Get trades list by account
 		 * Get trades list by account
 		 * Get cloud/accounts/{accountid}/trades
+		 * @param {string} accountid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<Trade>} Successful operation
 		 */
-		CloudAccounts_accountidTradesGet(accountid: number, headersHandler?: () => HttpHeaders): Observable<Array<Trade>> {
+		CloudAccounts_accountidTradesGet(accountid: string, headersHandler?: () => HttpHeaders): Observable<Array<Trade>> {
 			return this.http.get<Array<Trade>>(this.baseUri + 'cloud/accounts/' + accountid + '/trades', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1702,9 +1753,10 @@ export namespace MyNS {
 		 * Get command by ID
 		 * Get command by ID
 		 * Get cloud/commands/{commandid}
+		 * @param {string} commandid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Command} Successful operation
 		 */
-		CloudCommands_commandidGet(commandid: number, headersHandler?: () => HttpHeaders): Observable<Command> {
+		CloudCommands_commandidGet(commandid: string, headersHandler?: () => HttpHeaders): Observable<Command> {
 			return this.http.get<Command>(this.baseUri + 'cloud/commands/' + commandid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1732,9 +1784,10 @@ export namespace MyNS {
 		 * Get connection by ID
 		 * Get connection by ID
 		 * Get cloud/connections/{connectionid}
+		 * @param {string} connectionid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Connection} Successful operation
 		 */
-		CloudConnections_connectionidGet(connectionid: number, headersHandler?: () => HttpHeaders): Observable<Connection> {
+		CloudConnections_connectionidGet(connectionid: string, headersHandler?: () => HttpHeaders): Observable<Connection> {
 			return this.http.get<Connection>(this.baseUri + 'cloud/connections/' + connectionid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1742,9 +1795,10 @@ export namespace MyNS {
 		 * Update existing connection
 		 * Update existing connection
 		 * Put cloud/connections/{connectionid}
+		 * @param {string} connectionid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CloudConnections_connectionidPutReturn} Successful operation
 		 */
-		CloudConnections_connectionidPut(connectionid: number, requestBody: CloudConnections_connectionidPutPutBody, headersHandler?: () => HttpHeaders): Observable<CloudConnections_connectionidPutReturn> {
+		CloudConnections_connectionidPut(connectionid: string, requestBody: CloudConnections_connectionidPutPutBody, headersHandler?: () => HttpHeaders): Observable<CloudConnections_connectionidPutReturn> {
 			return this.http.put<CloudConnections_connectionidPutReturn>(this.baseUri + 'cloud/connections/' + connectionid, JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
@@ -1752,9 +1806,10 @@ export namespace MyNS {
 		 * Delete connection by ID
 		 * Delete connection by ID
 		 * Delete cloud/connections/{connectionid}
+		 * @param {string} connectionid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {CloudConnections_connectionidDeleteReturn} Successful operation
 		 */
-		CloudConnections_connectionidDelete(connectionid: number, headersHandler?: () => HttpHeaders): Observable<CloudConnections_connectionidDeleteReturn> {
+		CloudConnections_connectionidDelete(connectionid: string, headersHandler?: () => HttpHeaders): Observable<CloudConnections_connectionidDeleteReturn> {
 			return this.http.delete<CloudConnections_connectionidDeleteReturn>(this.baseUri + 'cloud/connections/' + connectionid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1772,9 +1827,10 @@ export namespace MyNS {
 		 * Get connector by ID
 		 * Get connector by ID
 		 * Get cloud/connectors/{connectorid}
+		 * @param {string} connectorid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Connector} Successful operation
 		 */
-		CloudConnectors_connectoridGet(connectorid: number, headersHandler?: () => HttpHeaders): Observable<Connector> {
+		CloudConnectors_connectoridGet(connectorid: string, headersHandler?: () => HttpHeaders): Observable<Connector> {
 			return this.http.get<Connector>(this.baseUri + 'cloud/connectors/' + connectorid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1792,9 +1848,10 @@ export namespace MyNS {
 		 * Get session by ID
 		 * Get session by ID
 		 * Get cloud/sessions/{sessionid}
+		 * @param {string} sessionid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Session} Successful operation
 		 */
-		CloudSessions_sessionidGet(sessionid: number, headersHandler?: () => HttpHeaders): Observable<Session> {
+		CloudSessions_sessionidGet(sessionid: string, headersHandler?: () => HttpHeaders): Observable<Session> {
 			return this.http.get<Session>(this.baseUri + 'cloud/sessions/' + sessionid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1822,9 +1879,10 @@ export namespace MyNS {
 		 * Get active (executing) strategy by ID
 		 * Get active (executing) strategy by ID
 		 * Get cloud/strategies/{strategyid}
+		 * @param {string} strategyid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<CloudStrategy>} Successful operation
 		 */
-		CloudStrategies_strategyidGet(strategyid: number, headersHandler?: () => HttpHeaders): Observable<Array<CloudStrategy>> {
+		CloudStrategies_strategyidGet(strategyid: string, headersHandler?: () => HttpHeaders): Observable<Array<CloudStrategy>> {
 			return this.http.get<Array<CloudStrategy>>(this.baseUri + 'cloud/strategies/' + strategyid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1832,9 +1890,10 @@ export namespace MyNS {
 		 * Stop a strategy execution by ID
 		 * Stop a strategy execution by ID
 		 * Post cloud/strategies/{strategyid}/stop
+		 * @param {string} strategyid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		CloudStrategies_strategyidStopPost(strategyid: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		CloudStrategies_strategyidStopPost(strategyid: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'cloud/strategies/' + strategyid + '/stop', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -1852,9 +1911,10 @@ export namespace MyNS {
 		 * Get market by ID
 		 * Get market by ID
 		 * Get marketdata/markets/{marketid}
+		 * @param {string} marketid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Market} Successful operation
 		 */
-		MarketdataMarkets_marketidGet(marketid: number, headersHandler?: () => HttpHeaders): Observable<Market> {
+		MarketdataMarkets_marketidGet(marketid: string, headersHandler?: () => HttpHeaders): Observable<Market> {
 			return this.http.get<Market>(this.baseUri + 'marketdata/markets/' + marketid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1862,9 +1922,11 @@ export namespace MyNS {
 		 * Get symbols list
 		 * Get symbols list
 		 * Get marketdata/symbols
+		 * @param {string} marketid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} filter Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<string>} Successful operation
 		 */
-		MarketdataSymbolsGetByMarketidAndFilter(marketid: number, filter: number, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
+		MarketdataSymbolsGetByMarketidAndFilter(marketid: string, filter: string, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
 			return this.http.get<Array<string>>(this.baseUri + 'marketdata/symbols?marketid=' + marketid + '&filter=' + filter, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1872,9 +1934,10 @@ export namespace MyNS {
 		 * Get symbol by ID
 		 * Get symbol by ID
 		 * Get marketdata/symbols/{symbolid}
+		 * @param {string} symbolid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {string} Successful operation
 		 */
-		MarketdataSymbols_symbolidGet(symbolid: number, headersHandler?: () => HttpHeaders): Observable<string> {
+		MarketdataSymbols_symbolidGet(symbolid: string, headersHandler?: () => HttpHeaders): Observable<string> {
 			return this.http.get(this.baseUri + 'marketdata/symbols/' + symbolid, { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
 		}
 
@@ -1882,9 +1945,13 @@ export namespace MyNS {
 		 * Get historical data for instrument
 		 * Get historical data for instrument
 		 * Get marketdata/symbols/{symbolid}/histdata
+		 * @param {string} symbolid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} tf Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} from Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} to Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {MarketdataSymbols_symbolidHistdataGetByTfAndFromAndToReturn} Successful operation
 		 */
-		MarketdataSymbols_symbolidHistdataGetByTfAndFromAndTo(symbolid: number, tf: number, from: number, to: number, headersHandler?: () => HttpHeaders): Observable<MarketdataSymbols_symbolidHistdataGetByTfAndFromAndToReturn> {
+		MarketdataSymbols_symbolidHistdataGetByTfAndFromAndTo(symbolid: string, tf: string, from: string, to: string, headersHandler?: () => HttpHeaders): Observable<MarketdataSymbols_symbolidHistdataGetByTfAndFromAndToReturn> {
 			return this.http.get<MarketdataSymbols_symbolidHistdataGetByTfAndFromAndToReturn>(this.baseUri + 'marketdata/symbols/' + symbolid + '/histdata?tf=' + tf + '&from=' + from + '&to=' + to, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1902,9 +1969,10 @@ export namespace MyNS {
 		 * Get news by ID
 		 * Get news by ID
 		 * Get news/news/{newsid}
+		 * @param {string} newsid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {News} Successful operation
 		 */
-		NewsNews_newsidGet(newsid: number, headersHandler?: () => HttpHeaders): Observable<News> {
+		NewsNews_newsidGet(newsid: string, headersHandler?: () => HttpHeaders): Observable<News> {
 			return this.http.get<News>(this.baseUri + 'news/news/' + newsid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1942,9 +2010,10 @@ export namespace MyNS {
 		 * Get task by ID
 		 * Get task by ID
 		 * Get taskmanager/tasks/{taskid}
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Task} Successful operation
 		 */
-		TaskmanagerTasks_taskidGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Task> {
+		TaskmanagerTasks_taskidGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<Task> {
 			return this.http.get<Task>(this.baseUri + 'taskmanager/tasks/' + taskid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1952,9 +2021,10 @@ export namespace MyNS {
 		 * Get backtest data for equity chart, grouped by months
 		 * Get backtest data for equity chart, grouped by months
 		 * Get taskmanager/tasks/{taskid}/bymonths
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<ByMonths>} Successful operation
 		 */
-		TaskmanagerTasks_taskidBymonthsGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Array<ByMonths>> {
+		TaskmanagerTasks_taskidBymonthsGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<Array<ByMonths>> {
 			return this.http.get<Array<ByMonths>>(this.baseUri + 'taskmanager/tasks/' + taskid + '/bymonths', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1962,9 +2032,10 @@ export namespace MyNS {
 		 * Get backtest data for equity chart, grouped by quarters
 		 * Get backtest data for equity chart, grouped by quarters
 		 * Get taskmanager/tasks/{taskid}/byquarters
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<ByQuarters>} Successful operation
 		 */
-		TaskmanagerTasks_taskidByquartersGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Array<ByQuarters>> {
+		TaskmanagerTasks_taskidByquartersGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<Array<ByQuarters>> {
 			return this.http.get<Array<ByQuarters>>(this.baseUri + 'taskmanager/tasks/' + taskid + '/byquarters', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1972,9 +2043,10 @@ export namespace MyNS {
 		 * Get backtest data for equity chart, grouped by years
 		 * Get backtest data for equity chart, grouped by years
 		 * Get taskmanager/tasks/{taskid}/byyears
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<ByYears>} Successful operation
 		 */
-		TaskmanagerTasks_taskidByyearsGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Array<ByYears>> {
+		TaskmanagerTasks_taskidByyearsGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<Array<ByYears>> {
 			return this.http.get<Array<ByYears>>(this.baseUri + 'taskmanager/tasks/' + taskid + '/byyears', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1982,9 +2054,10 @@ export namespace MyNS {
 		 * Get backtest symbol contribution data
 		 * Get backtest symbol contribution data
 		 * Get taskmanager/tasks/{taskid}/contribution
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<Contribution>} Successful operation
 		 */
-		TaskmanagerTasks_taskidContributionGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Array<Contribution>> {
+		TaskmanagerTasks_taskidContributionGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<Array<Contribution>> {
 			return this.http.get<Array<Contribution>>(this.baseUri + 'taskmanager/tasks/' + taskid + '/contribution', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1992,9 +2065,10 @@ export namespace MyNS {
 		 * Get data for drawdown chart
 		 * Get data for drawdown chart
 		 * Get taskmanager/tasks/{taskid}/drawdown
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<DrawdownItem>} Successful operation
 		 */
-		TaskmanagerTasks_taskidDrawdownGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Array<DrawdownItem>> {
+		TaskmanagerTasks_taskidDrawdownGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<Array<DrawdownItem>> {
 			return this.http.get<Array<DrawdownItem>>(this.baseUri + 'taskmanager/tasks/' + taskid + '/drawdown', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2002,9 +2076,10 @@ export namespace MyNS {
 		 * Get data for equity chart
 		 * Get data for equity chart
 		 * Get taskmanager/tasks/{taskid}/equity
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<EquityItem>} Successful operation
 		 */
-		TaskmanagerTasks_taskidEquityGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Array<EquityItem>> {
+		TaskmanagerTasks_taskidEquityGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<Array<EquityItem>> {
 			return this.http.get<Array<EquityItem>>(this.baseUri + 'taskmanager/tasks/' + taskid + '/equity', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2012,9 +2087,10 @@ export namespace MyNS {
 		 * Get data for equity chart (%)
 		 * Get data for equity chart (%)
 		 * Get taskmanager/tasks/{taskid}/equitypct
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<EquityPctItem>} Successful operation
 		 */
-		TaskmanagerTasks_taskidEquitypctGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Array<EquityPctItem>> {
+		TaskmanagerTasks_taskidEquitypctGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<Array<EquityPctItem>> {
 			return this.http.get<Array<EquityPctItem>>(this.baseUri + 'taskmanager/tasks/' + taskid + '/equitypct', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2022,9 +2098,10 @@ export namespace MyNS {
 		 * Get spared data for equity chart (%)
 		 * Get spared data for equity chart (%)
 		 * Get taskmanager/tasks/{taskid}/equitypctsm
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<EquityPctSmItem>} Successful operation
 		 */
-		TaskmanagerTasks_taskidEquitypctsmGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Array<EquityPctSmItem>> {
+		TaskmanagerTasks_taskidEquitypctsmGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<Array<EquityPctSmItem>> {
 			return this.http.get<Array<EquityPctSmItem>>(this.baseUri + 'taskmanager/tasks/' + taskid + '/equitypctsm', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2032,9 +2109,10 @@ export namespace MyNS {
 		 * Get task result folder name
 		 * Get task result folder name
 		 * Get taskmanager/tasks/{taskid}/folder
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {TaskmanagerTasks_taskidFolderGetReturn} Successful operation
 		 */
-		TaskmanagerTasks_taskidFolderGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<TaskmanagerTasks_taskidFolderGetReturn> {
+		TaskmanagerTasks_taskidFolderGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<TaskmanagerTasks_taskidFolderGetReturn> {
 			return this.http.get<TaskmanagerTasks_taskidFolderGetReturn>(this.baseUri + 'taskmanager/tasks/' + taskid + '/folder', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2042,9 +2120,10 @@ export namespace MyNS {
 		 * Get backtest statistics
 		 * Get backtest statistics
 		 * Get taskmanager/tasks/{taskid}/performance
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {TaskmanagerTasks_taskidPerformanceGetReturn} Successful operation
 		 */
-		TaskmanagerTasks_taskidPerformanceGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<TaskmanagerTasks_taskidPerformanceGetReturn> {
+		TaskmanagerTasks_taskidPerformanceGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<TaskmanagerTasks_taskidPerformanceGetReturn> {
 			return this.http.get<TaskmanagerTasks_taskidPerformanceGetReturn>(this.baseUri + 'taskmanager/tasks/' + taskid + '/performance', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2052,9 +2131,10 @@ export namespace MyNS {
 		 * Get task result
 		 * Get task result
 		 * Get taskmanager/tasks/{taskid}/result
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {TaskmanagerTasks_taskidResultGetReturn} Successful operation
 		 */
-		TaskmanagerTasks_taskidResultGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<TaskmanagerTasks_taskidResultGetReturn> {
+		TaskmanagerTasks_taskidResultGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<TaskmanagerTasks_taskidResultGetReturn> {
 			return this.http.get<TaskmanagerTasks_taskidResultGetReturn>(this.baseUri + 'taskmanager/tasks/' + taskid + '/result', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2062,9 +2142,10 @@ export namespace MyNS {
 		 * Get task result (version 2)
 		 * Get task result (version 2)
 		 * Get taskmanager/tasks/{taskid}/result2
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {TaskmanagerTasks_taskidResult2GetReturn} Successful operation
 		 */
-		TaskmanagerTasks_taskidResult2Get(taskid: number, headersHandler?: () => HttpHeaders): Observable<TaskmanagerTasks_taskidResult2GetReturn> {
+		TaskmanagerTasks_taskidResult2Get(taskid: string, headersHandler?: () => HttpHeaders): Observable<TaskmanagerTasks_taskidResult2GetReturn> {
 			return this.http.get<TaskmanagerTasks_taskidResult2GetReturn>(this.baseUri + 'taskmanager/tasks/' + taskid + '/result2', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2072,9 +2153,10 @@ export namespace MyNS {
 		 * Get task status
 		 * Get task status
 		 * Get taskmanager/tasks/{taskid}/status
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {TaskmanagerTasks_taskidStatusGetReturn} Successful operation
 		 */
-		TaskmanagerTasks_taskidStatusGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<TaskmanagerTasks_taskidStatusGetReturn> {
+		TaskmanagerTasks_taskidStatusGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<TaskmanagerTasks_taskidStatusGetReturn> {
 			return this.http.get<TaskmanagerTasks_taskidStatusGetReturn>(this.baseUri + 'taskmanager/tasks/' + taskid + '/status', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2082,9 +2164,10 @@ export namespace MyNS {
 		 * Get backtest trades list
 		 * Get backtest trades list
 		 * Get taskmanager/tasks/{taskid}/trades
+		 * @param {string} taskid Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<BacktestTrade>} Successful operation
 		 */
-		TaskmanagerTasks_taskidTradesGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Array<BacktestTrade>> {
+		TaskmanagerTasks_taskidTradesGet(taskid: string, headersHandler?: () => HttpHeaders): Observable<Array<BacktestTrade>> {
 			return this.http.get<Array<BacktestTrade>>(this.baseUri + 'taskmanager/tasks/' + taskid + '/trades', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -2111,9 +2194,13 @@ export namespace MyNS {
 	}
 
 	export interface AutofollowStrategiesPostReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		strategyid?: number | null;
 	}
 	export interface AutofollowStrategiesPostReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		strategyid: FormControl<number | null | undefined>,
 	}
 	export function CreateAutofollowStrategiesPostReturnFormGroup() {
@@ -2197,10 +2284,14 @@ export namespace MyNS {
 
 	export interface ClientApikeysPostReturn {
 		key?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		keyid?: number | null;
 	}
 	export interface ClientApikeysPostReturnFormProperties {
 		key: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		keyid: FormControl<number | null | undefined>,
 	}
 	export function CreateClientApikeysPostReturnFormGroup() {
@@ -2212,9 +2303,13 @@ export namespace MyNS {
 	}
 
 	export interface ClientApikeys_keyidDeleteReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		keyid?: number | null;
 	}
 	export interface ClientApikeys_keyidDeleteReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		keyid: FormControl<number | null | undefined>,
 	}
 	export function CreateClientApikeys_keyidDeleteReturnFormGroup() {
@@ -2226,10 +2321,14 @@ export namespace MyNS {
 
 	export interface ClientUsersLoginPostReturn {
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		userid?: number | null;
 	}
 	export interface ClientUsersLoginPostReturnFormProperties {
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		userid: FormControl<number | null | undefined>,
 	}
 	export function CreateClientUsersLoginPostReturnFormGroup() {
@@ -2252,9 +2351,13 @@ export namespace MyNS {
 	}
 
 	export interface ClientUsersRegisterPostReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		userid?: number | null;
 	}
 	export interface ClientUsersRegisterPostReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		userid: FormControl<number | null | undefined>,
 	}
 	export function CreateClientUsersRegisterPostReturnFormGroup() {
@@ -2287,9 +2390,13 @@ export namespace MyNS {
 	}
 
 	export interface CloudConnectionsPostReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		connectionid?: number | null;
 	}
 	export interface CloudConnectionsPostReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		connectionid: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudConnectionsPostReturnFormGroup() {
@@ -2311,9 +2418,13 @@ export namespace MyNS {
 	}
 
 	export interface CloudConnections_connectionidPutReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		connectionid?: number | null;
 	}
 	export interface CloudConnections_connectionidPutReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		connectionid: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudConnections_connectionidPutReturnFormGroup() {
@@ -2324,9 +2435,13 @@ export namespace MyNS {
 	}
 
 	export interface CloudConnections_connectionidDeleteReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		connectionid?: number | null;
 	}
 	export interface CloudConnections_connectionidDeleteReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		connectionid: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudConnections_connectionidDeleteReturnFormGroup() {
@@ -2349,15 +2464,23 @@ export namespace MyNS {
 
 	export interface MarketdataSymbols_symbolidHistdataGetByTfAndFromAndToReturn {
 		adjusted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		queryCount?: number | null;
 		results?: Array<Result>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		resultsCount?: number | null;
 		status?: string | null;
 		ticker?: string | null;
 	}
 	export interface MarketdataSymbols_symbolidHistdataGetByTfAndFromAndToReturnFormProperties {
 		adjusted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		queryCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		resultsCount: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 		ticker: FormControl<string | null | undefined>,
@@ -2544,9 +2667,13 @@ export namespace MyNS {
 	}
 
 	export interface TimeGetReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		servertime?: number | null;
 	}
 	export interface TimeGetReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		servertime: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeGetReturnFormGroup() {

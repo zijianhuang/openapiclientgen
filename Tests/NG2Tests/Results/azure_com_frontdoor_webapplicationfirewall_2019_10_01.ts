@@ -35,6 +35,7 @@ export namespace MyNS {
 		/**
 		 * Describes priority of the rule. Rules with a lower value will be evaluated before rules with a higher value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: number;
 
@@ -79,6 +80,7 @@ export namespace MyNS {
 		/**
 		 * Describes priority of the rule. Rules with a lower value will be evaluated before rules with a higher value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: FormControl<number | null | undefined>,
 
@@ -608,7 +610,10 @@ export namespace MyNS {
 		/** If the action type is block, customer can override the response body. The body must be specified in base64 encoding. */
 		customBlockResponseBody?: string | null;
 
-		/** If the action type is block, customer can override the response status code. */
+		/**
+		 * If the action type is block, customer can override the response status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customBlockResponseStatusCode?: number | null;
 
 		/** Describes if the policy is in enabled or disabled state. Defaults to Enabled if not specified. */
@@ -627,7 +632,10 @@ export namespace MyNS {
 		/** If the action type is block, customer can override the response body. The body must be specified in base64 encoding. */
 		customBlockResponseBody: FormControl<string | null | undefined>,
 
-		/** If the action type is block, customer can override the response status code. */
+		/**
+		 * If the action type is block, customer can override the response status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customBlockResponseStatusCode: FormControl<number | null | undefined>,
 
 		/** Describes if the policy is in enabled or disabled state. Defaults to Enabled if not specified. */

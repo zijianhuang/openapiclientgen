@@ -267,40 +267,64 @@ export namespace MyNS {
 	/** Data Lake Store content summary information */
 	export interface ContentSummary {
 
-		/** the number of directories. */
-		directoryCount?: number | null;
+		/**
+		 * the number of directories.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		directoryCount?: string | null;
 
-		/** the number of files. */
-		fileCount?: number | null;
+		/**
+		 * the number of files.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		fileCount?: string | null;
 
-		/** the number of bytes used by the content. */
-		length?: number | null;
+		/**
+		 * the number of bytes used by the content.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		length?: string | null;
 
-		/** the disk space consumed by the content. */
-		spaceConsumed?: number | null;
+		/**
+		 * the disk space consumed by the content.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		spaceConsumed?: string | null;
 	}
 
 	/** Data Lake Store content summary information */
 	export interface ContentSummaryFormProperties {
 
-		/** the number of directories. */
-		directoryCount: FormControl<number | null | undefined>,
+		/**
+		 * the number of directories.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		directoryCount: FormControl<string | null | undefined>,
 
-		/** the number of files. */
-		fileCount: FormControl<number | null | undefined>,
+		/**
+		 * the number of files.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		fileCount: FormControl<string | null | undefined>,
 
-		/** the number of bytes used by the content. */
-		length: FormControl<number | null | undefined>,
+		/**
+		 * the number of bytes used by the content.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		length: FormControl<string | null | undefined>,
 
-		/** the disk space consumed by the content. */
-		spaceConsumed: FormControl<number | null | undefined>,
+		/**
+		 * the disk space consumed by the content.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		spaceConsumed: FormControl<string | null | undefined>,
 	}
 	export function CreateContentSummaryFormGroup() {
 		return new FormGroup<ContentSummaryFormProperties>({
-			directoryCount: new FormControl<number | null | undefined>(undefined),
-			fileCount: new FormControl<number | null | undefined>(undefined),
-			length: new FormControl<number | null | undefined>(undefined),
-			spaceConsumed: new FormControl<number | null | undefined>(undefined),
+			directoryCount: new FormControl<string | null | undefined>(undefined),
+			fileCount: new FormControl<string | null | undefined>(undefined),
+			length: new FormControl<string | null | undefined>(undefined),
+			spaceConsumed: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -347,26 +371,41 @@ export namespace MyNS {
 	/** Data Lake Store file or directory information. */
 	export interface FileStatusProperties {
 
-		/** the last access time as ticks since the epoch. */
-		accessTime?: number | null;
+		/**
+		 * the last access time as ticks since the epoch.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accessTime?: string | null;
 
 		/** flag to indicate if extended acls are enabled */
 		aclBit?: boolean | null;
 
-		/** the block size for the file. */
-		blockSize?: number | null;
+		/**
+		 * the block size for the file.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		blockSize?: string | null;
 
 		/** the group owner. */
 		group?: string | null;
 
-		/** the number of bytes in a file. */
-		length?: number | null;
+		/**
+		 * the number of bytes in a file.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		length?: string | null;
 
-		/** the modification time as ticks since the epoch. */
-		modificationTime?: number | null;
+		/**
+		 * the modification time as ticks since the epoch.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		modificationTime?: string | null;
 
-		/** Gets the expiration time, if any, as ticks since the epoch. If the value is 0 or DateTime.MaxValue there is no expiration. */
-		msExpirationTime?: number | null;
+		/**
+		 * Gets the expiration time, if any, as ticks since the epoch. If the value is 0 or DateTime.MaxValue there is no expiration.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		msExpirationTime?: string | null;
 
 		/** the user who is the owner. */
 		owner?: string | null;
@@ -384,26 +423,41 @@ export namespace MyNS {
 	/** Data Lake Store file or directory information. */
 	export interface FileStatusPropertiesFormProperties {
 
-		/** the last access time as ticks since the epoch. */
-		accessTime: FormControl<number | null | undefined>,
+		/**
+		 * the last access time as ticks since the epoch.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accessTime: FormControl<string | null | undefined>,
 
 		/** flag to indicate if extended acls are enabled */
 		aclBit: FormControl<boolean | null | undefined>,
 
-		/** the block size for the file. */
-		blockSize: FormControl<number | null | undefined>,
+		/**
+		 * the block size for the file.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		blockSize: FormControl<string | null | undefined>,
 
 		/** the group owner. */
 		group: FormControl<string | null | undefined>,
 
-		/** the number of bytes in a file. */
-		length: FormControl<number | null | undefined>,
+		/**
+		 * the number of bytes in a file.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		length: FormControl<string | null | undefined>,
 
-		/** the modification time as ticks since the epoch. */
-		modificationTime: FormControl<number | null | undefined>,
+		/**
+		 * the modification time as ticks since the epoch.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		modificationTime: FormControl<string | null | undefined>,
 
-		/** Gets the expiration time, if any, as ticks since the epoch. If the value is 0 or DateTime.MaxValue there is no expiration. */
-		msExpirationTime: FormControl<number | null | undefined>,
+		/**
+		 * Gets the expiration time, if any, as ticks since the epoch. If the value is 0 or DateTime.MaxValue there is no expiration.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		msExpirationTime: FormControl<string | null | undefined>,
 
 		/** the user who is the owner. */
 		owner: FormControl<string | null | undefined>,
@@ -419,13 +473,13 @@ export namespace MyNS {
 	}
 	export function CreateFileStatusPropertiesFormGroup() {
 		return new FormGroup<FileStatusPropertiesFormProperties>({
-			accessTime: new FormControl<number | null | undefined>(undefined),
+			accessTime: new FormControl<string | null | undefined>(undefined),
 			aclBit: new FormControl<boolean | null | undefined>(undefined),
-			blockSize: new FormControl<number | null | undefined>(undefined),
+			blockSize: new FormControl<string | null | undefined>(undefined),
 			group: new FormControl<string | null | undefined>(undefined),
-			length: new FormControl<number | null | undefined>(undefined),
-			modificationTime: new FormControl<number | null | undefined>(undefined),
-			msExpirationTime: new FormControl<number | null | undefined>(undefined),
+			length: new FormControl<string | null | undefined>(undefined),
+			modificationTime: new FormControl<string | null | undefined>(undefined),
+			msExpirationTime: new FormControl<string | null | undefined>(undefined),
 			owner: new FormControl<string | null | undefined>(undefined),
 			pathSuffix: new FormControl<string | null | undefined>(undefined),
 			permission: new FormControl<string | null | undefined>(undefined),
@@ -497,12 +551,12 @@ export namespace MyNS {
 		 * Put WebHdfsExt/{path}
 		 * @param {string} path The Data Lake Store path (starting with '/') of the file on which to set or remove the expiration time.
 		 * @param {FileSystem_SetFileExpiryExpiryOption} expiryOption Indicates the type of expiration to use for the file: 1. NeverExpire: ExpireTime is ignored. 2. RelativeToNow: ExpireTime is an integer in milliseconds representing the expiration date relative to when file expiration is updated. 3. RelativeToCreationDate: ExpireTime is an integer in milliseconds representing the expiration date relative to file creation. 4. Absolute: ExpireTime is an integer in milliseconds, as a Unix timestamp relative to 1/1/1970 00:00:00.
-		 * @param {number} expireTime The time that the file will expire, corresponding to the ExpiryOption that was set.
+		 * @param {string} expireTime The time that the file will expire, corresponding to the ExpiryOption that was set.
 		 * @param {FileSystem_SetFileExpiryOp} op The constant value for the operation.
 		 * @param {string} api_version Client Api Version.
 		 * @return {void} Successfully set the expiration time on the specified file.
 		 */
-		FileSystem_SetFileExpiry(path: string, expiryOption: FileSystem_SetFileExpiryExpiryOption, expireTime: number | null | undefined, op: FileSystem_SetFileExpiryOp, api_version: string): Observable<HttpResponse<string>> {
+		FileSystem_SetFileExpiry(path: string, expiryOption: FileSystem_SetFileExpiryExpiryOption, expireTime: string | null | undefined, op: FileSystem_SetFileExpiryOp, api_version: string): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'WebHdfsExt/' + (path == null ? '' : encodeURIComponent(path)) + '&expiryOption=' + expiryOption + '&expireTime=' + expireTime + '&op=' + op + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), null, { observe: 'response', responseType: 'text' });
 		}
 

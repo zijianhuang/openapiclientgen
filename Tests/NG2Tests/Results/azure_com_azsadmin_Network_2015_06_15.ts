@@ -68,47 +68,77 @@ export namespace MyNS {
 	/** Resource health information. */
 	export interface AdminOverviewResourceHealth {
 
-		/** Number of resources in the error state. */
-		errorResourceCount?: number | null;
+		/**
+		 * Number of resources in the error state.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		errorResourceCount?: string | null;
 
-		/** Number of resources in an unknown state. */
-		healthUnknownCount?: number | null;
+		/**
+		 * Number of resources in an unknown state.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		healthUnknownCount?: string | null;
 
-		/** Number of resources in the success state. */
-		healthyResourceCount?: number | null;
+		/**
+		 * Number of resources in the success state.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		healthyResourceCount?: string | null;
 
-		/** Total number of resources. */
-		totalResourceCount?: number | null;
+		/**
+		 * Total number of resources.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalResourceCount?: string | null;
 
-		/** Number of resources in the warning state. */
-		warningResourceCount?: number | null;
+		/**
+		 * Number of resources in the warning state.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		warningResourceCount?: string | null;
 	}
 
 	/** Resource health information. */
 	export interface AdminOverviewResourceHealthFormProperties {
 
-		/** Number of resources in the error state. */
-		errorResourceCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of resources in the error state.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		errorResourceCount: FormControl<string | null | undefined>,
 
-		/** Number of resources in an unknown state. */
-		healthUnknownCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of resources in an unknown state.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		healthUnknownCount: FormControl<string | null | undefined>,
 
-		/** Number of resources in the success state. */
-		healthyResourceCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of resources in the success state.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		healthyResourceCount: FormControl<string | null | undefined>,
 
-		/** Total number of resources. */
-		totalResourceCount: FormControl<number | null | undefined>,
+		/**
+		 * Total number of resources.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalResourceCount: FormControl<string | null | undefined>,
 
-		/** Number of resources in the warning state. */
-		warningResourceCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of resources in the warning state.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		warningResourceCount: FormControl<string | null | undefined>,
 	}
 	export function CreateAdminOverviewResourceHealthFormGroup() {
 		return new FormGroup<AdminOverviewResourceHealthFormProperties>({
-			errorResourceCount: new FormControl<number | null | undefined>(undefined),
-			healthUnknownCount: new FormControl<number | null | undefined>(undefined),
-			healthyResourceCount: new FormControl<number | null | undefined>(undefined),
-			totalResourceCount: new FormControl<number | null | undefined>(undefined),
-			warningResourceCount: new FormControl<number | null | undefined>(undefined),
+			errorResourceCount: new FormControl<string | null | undefined>(undefined),
+			healthUnknownCount: new FormControl<string | null | undefined>(undefined),
+			healthyResourceCount: new FormControl<string | null | undefined>(undefined),
+			totalResourceCount: new FormControl<string | null | undefined>(undefined),
+			warningResourceCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -117,26 +147,38 @@ export namespace MyNS {
 	/** Resource usage information. */
 	export interface AdminOverviewResourceUsage {
 
-		/** Number of resources in use. */
-		inUseResourceCount?: number | null;
+		/**
+		 * Number of resources in use.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		inUseResourceCount?: string | null;
 
-		/** Total number of resources. */
-		totalResourceCount?: number | null;
+		/**
+		 * Total number of resources.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalResourceCount?: string | null;
 	}
 
 	/** Resource usage information. */
 	export interface AdminOverviewResourceUsageFormProperties {
 
-		/** Number of resources in use. */
-		inUseResourceCount: FormControl<number | null | undefined>,
+		/**
+		 * Number of resources in use.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		inUseResourceCount: FormControl<string | null | undefined>,
 
-		/** Total number of resources. */
-		totalResourceCount: FormControl<number | null | undefined>,
+		/**
+		 * Total number of resources.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalResourceCount: FormControl<string | null | undefined>,
 	}
 	export function CreateAdminOverviewResourceUsageFormGroup() {
 		return new FormGroup<AdminOverviewResourceUsageFormProperties>({
-			inUseResourceCount: new FormControl<number | null | undefined>(undefined),
-			totalResourceCount: new FormControl<number | null | undefined>(undefined),
+			inUseResourceCount: new FormControl<string | null | undefined>(undefined),
+			totalResourceCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

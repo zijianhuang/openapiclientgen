@@ -131,7 +131,7 @@ export namespace MyNS {
 		 * @param {Array<string>} streamIds Stream Ids
 		 * @param {Date} startDateTime startDateTime
 		 * @param {Date} endDateTime endDateTime
-		 * @param {number} visitDuration visitDuration
+		 * @param {string} visitDuration visitDuration
 		 * @param {number} maxIterations maxIterations
 		 * @param {number} maxBatchIterations maxBatchIterations
 		 * @param {number} minNeighborsMergedPerIteration minNeighborsMergedPerIteration
@@ -139,7 +139,7 @@ export namespace MyNS {
 		 * @param {boolean} shuffling shuffling
 		 * @return {RestResponse} OK
 		 */
-		CounterUsingPOST(accessKey: string, secretKey: string, collectionIds: Array<string> | null | undefined, streamIds: Array<string> | null | undefined, startDateTime: Date | null | undefined, endDateTime: Date | null | undefined, visitDuration: number | null | undefined, maxIterations: number | null | undefined, maxBatchIterations: number | null | undefined, minNeighborsMergedPerIteration: number | null | undefined, mergingStep: number | null | undefined, shuffling: boolean | null | undefined): Observable<RestResponse> {
+		CounterUsingPOST(accessKey: string, secretKey: string, collectionIds: Array<string> | null | undefined, streamIds: Array<string> | null | undefined, startDateTime: Date | null | undefined, endDateTime: Date | null | undefined, visitDuration: string | null | undefined, maxIterations: number | null | undefined, maxBatchIterations: number | null | undefined, minNeighborsMergedPerIteration: number | null | undefined, mergingStep: number | null | undefined, shuffling: boolean | null | undefined): Observable<RestResponse> {
 			return this.http.post<RestResponse>(this.baseUri + 'rest/v1.1/analytics/counting?accessKey=' + (accessKey == null ? '' : encodeURIComponent(accessKey)) + '&secretKey=' + (secretKey == null ? '' : encodeURIComponent(secretKey)) + '&' + collectionIds?.map(z => `collectionIds=${encodeURIComponent(z)}`).join('&') + '&' + streamIds?.map(z => `streamIds=${encodeURIComponent(z)}`).join('&') + '&startDateTime=' + startDateTime?.toISOString() + '&endDateTime=' + endDateTime?.toISOString() + '&visitDuration=' + visitDuration + '&maxIterations=' + maxIterations + '&maxBatchIterations=' + maxBatchIterations + '&minNeighborsMergedPerIteration=' + minNeighborsMergedPerIteration + '&mergingStep=' + mergingStep + '&shuffling=' + shuffling, null, {});
 		}
 
@@ -151,11 +151,11 @@ export namespace MyNS {
 		 * @param {Array<string>} streamIds Stream Ids
 		 * @param {Date} startDateTime startDateTime
 		 * @param {Date} endDateTime endDateTime
-		 * @param {number} step step
+		 * @param {string} step step
 		 * @param {Array<string>} attributes attributes
 		 * @return {RestResponse} OK
 		 */
-		PresenceTimeseriesUsingPOST(accessKey: string, secretKey: string, streamIds: Array<string> | null | undefined, startDateTime: Date | null | undefined, endDateTime: Date | null | undefined, step: number | null | undefined, attributes: Array<string>): Observable<RestResponse> {
+		PresenceTimeseriesUsingPOST(accessKey: string, secretKey: string, streamIds: Array<string> | null | undefined, startDateTime: Date | null | undefined, endDateTime: Date | null | undefined, step: string | null | undefined, attributes: Array<string>): Observable<RestResponse> {
 			return this.http.post<RestResponse>(this.baseUri + 'rest/v1.1/analytics/presence/timeseries?accessKey=' + (accessKey == null ? '' : encodeURIComponent(accessKey)) + '&secretKey=' + (secretKey == null ? '' : encodeURIComponent(secretKey)) + '&' + streamIds?.map(z => `streamIds=${encodeURIComponent(z)}`).join('&') + '&startDateTime=' + startDateTime?.toISOString() + '&endDateTime=' + endDateTime?.toISOString() + '&step=' + step + '&' + attributes.map(z => `attributes=${encodeURIComponent(z)}`).join('&'), null, {});
 		}
 
@@ -598,10 +598,10 @@ export namespace MyNS {
 		 * @param {string} accessKey The accessKey provided by VisageCloud
 		 * @param {string} secretKey The secretKey or readOnlyKey provided by VisageCloud
 		 * @param {string} streamId The id of the stream for which the frames will be retrieved
-		 * @param {number} timestamp Timestamp of frame to retrieve
+		 * @param {string} timestamp Timestamp of frame to retrieve
 		 * @return {void} OK
 		 */
-		GetFrameImageUsingGET(accessKey: string, secretKey: string, streamId: string, timestamp: number): Observable<HttpResponse<string>> {
+		GetFrameImageUsingGET(accessKey: string, secretKey: string, streamId: string, timestamp: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'rest/v1.1/stream/frameImage?accessKey=' + (accessKey == null ? '' : encodeURIComponent(accessKey)) + '&secretKey=' + (secretKey == null ? '' : encodeURIComponent(secretKey)) + '&streamId=' + (streamId == null ? '' : encodeURIComponent(streamId)) + '&timestamp=' + timestamp, { observe: 'response', responseType: 'text' });
 		}
 

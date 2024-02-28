@@ -21,6 +21,8 @@ export namespace MyNS {
 		description?: string | null;
 		links?: Array<string>;
 		message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 	}
@@ -28,6 +30,8 @@ export namespace MyNS {
 		code: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -60,6 +64,8 @@ export namespace MyNS {
 		description?: string | null;
 		links?: Array<string>;
 		message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 	}
@@ -67,6 +73,8 @@ export namespace MyNS {
 		code: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -99,6 +107,8 @@ export namespace MyNS {
 		description?: string | null;
 		links?: Array<string>;
 		message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 	}
@@ -106,6 +116,8 @@ export namespace MyNS {
 		code: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -138,6 +150,8 @@ export namespace MyNS {
 		description?: string | null;
 		links?: Array<string>;
 		message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 	}
@@ -145,6 +159,8 @@ export namespace MyNS {
 		code: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -177,6 +193,8 @@ export namespace MyNS {
 		description?: string | null;
 		links?: Array<string>;
 		message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 	}
@@ -184,6 +202,8 @@ export namespace MyNS {
 		code: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -216,6 +236,8 @@ export namespace MyNS {
 		description?: string | null;
 		links?: Array<string>;
 		message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 	}
@@ -223,6 +245,8 @@ export namespace MyNS {
 		code: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -370,7 +394,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: float
+		 */
 		value?: number | null;
 	}
 	export interface Bits_in_rate_metricFormProperties {
@@ -384,7 +411,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateBits_in_rate_metricFormGroup() {
@@ -408,7 +438,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: float
+		 */
 		value?: number | null;
 	}
 	export interface Bits_out_rate_metricFormProperties {
@@ -422,7 +455,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateBits_out_rate_metricFormGroup() {
@@ -446,7 +482,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: float
+		 */
 		value?: number | null;
 	}
 	export interface Bytes_in_rate_metricFormProperties {
@@ -460,7 +499,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateBytes_in_rate_metricFormGroup() {
@@ -484,7 +526,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: float
+		 */
 		value?: number | null;
 	}
 	export interface Bytes_out_rate_metricFormProperties {
@@ -498,7 +543,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateBytes_out_rate_metricFormGroup() {
@@ -522,7 +570,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Configured_bytes_out_rate_metricFormProperties {
@@ -536,7 +587,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateConfigured_bytes_out_rate_metricFormGroup() {
@@ -598,7 +652,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Cpu_idle_metricFormProperties {
@@ -612,7 +669,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateCpu_idle_metricFormGroup() {
@@ -636,7 +696,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Cpu_metricFormProperties {
@@ -650,7 +713,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateCpu_metricFormGroup() {
@@ -798,7 +864,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Frame_rate_metricFormProperties {
@@ -812,7 +881,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateFrame_rate_metricFormGroup() {
@@ -991,7 +1063,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Gpu_decoder_usage_metricFormProperties {
@@ -1005,7 +1080,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGpu_decoder_usage_metricFormGroup() {
@@ -1067,7 +1145,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Gpu_encoder_usage_metricFormProperties {
@@ -1081,7 +1162,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGpu_encoder_usage_metricFormGroup() {
@@ -1105,7 +1189,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Gpu_memory_usage_metricFormProperties {
@@ -1119,7 +1206,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGpu_memory_usage_metricFormGroup() {
@@ -1143,7 +1233,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Gpu_usage_metricFormProperties {
@@ -1157,7 +1250,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGpu_usage_metricFormGroup() {
@@ -1181,7 +1277,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Height_metricFormProperties {
@@ -1195,7 +1294,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateHeight_metricFormGroup() {
@@ -1347,7 +1449,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Keyframe_interval_metricFormProperties {
@@ -1361,7 +1466,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateKeyframe_interval_metricFormGroup() {
@@ -1376,10 +1484,16 @@ export namespace MyNS {
 
 	export interface Live_stream {
 
-		/** The height, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8. */
+		/**
+		 * The height, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_height?: number | null;
 
-		/** The width, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8. */
+		/**
+		 * The width, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_width?: number | null;
 
 		/** The billing mode for the stream. The default is <strong>pay_as_you_go</strong>. */
@@ -1478,7 +1592,10 @@ export namespace MyNS {
 		/** The path to a GIF, JPEG, or PNG poster image that appears in the player before the stream begins. Poster image files must be 2.5 MB or smaller. */
 		player_video_poster_image_url?: string | null;
 
-		/** The width, in pixels, of a fixed-size player. The default is <strong>640</strong>. */
+		/**
+		 * The width, in pixels, of a fixed-size player. The default is <strong>640</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		player_width?: number | null;
 
 		/** If <strong>true</strong>, creates a recording of the live stream. The default is <strong>false</strong>. */
@@ -1510,10 +1627,16 @@ export namespace MyNS {
 	}
 	export interface Live_streamFormProperties {
 
-		/** The height, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8. */
+		/**
+		 * The height, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_height: FormControl<number | null | undefined>,
 
-		/** The width, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8. */
+		/**
+		 * The width, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_width: FormControl<number | null | undefined>,
 
 		/** The billing mode for the stream. The default is <strong>pay_as_you_go</strong>. */
@@ -1606,7 +1729,10 @@ export namespace MyNS {
 		/** The path to a GIF, JPEG, or PNG poster image that appears in the player before the stream begins. Poster image files must be 2.5 MB or smaller. */
 		player_video_poster_image_url: FormControl<string | null | undefined>,
 
-		/** The width, in pixels, of a fixed-size player. The default is <strong>640</strong>. */
+		/**
+		 * The width, in pixels, of a fixed-size player. The default is <strong>640</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		player_width: FormControl<number | null | undefined>,
 
 		/** If <strong>true</strong>, creates a recording of the live stream. The default is <strong>false</strong>. */
@@ -1762,12 +1888,14 @@ export namespace MyNS {
 		/**
 		 * The height, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		aspect_ratio_height: number;
 
 		/**
 		 * The width, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		aspect_ratio_width: number;
 
@@ -1852,7 +1980,10 @@ export namespace MyNS {
 		/** A Base64-encoded string representation of a GIF, JPEG, or PNG poster image that appears in the player before the stream begins. Poster image files must be 2.5 MB or smaller. */
 		player_video_poster_image?: string | null;
 
-		/** The width, in pixels, of a fixed-size player. The default is <strong>640</strong>. */
+		/**
+		 * The width, in pixels, of a fixed-size player. The default is <strong>640</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		player_width?: number | null;
 
 		/** If <strong>true</strong>, creates a recording of the live stream. The default is <strong>false</strong>. */
@@ -1893,12 +2024,14 @@ export namespace MyNS {
 		/**
 		 * The height, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		aspect_ratio_height: FormControl<number | null | undefined>,
 
 		/**
 		 * The width, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		aspect_ratio_width: FormControl<number | null | undefined>,
 
@@ -1980,7 +2113,10 @@ export namespace MyNS {
 		/** A Base64-encoded string representation of a GIF, JPEG, or PNG poster image that appears in the player before the stream begins. Poster image files must be 2.5 MB or smaller. */
 		player_video_poster_image: FormControl<string | null | undefined>,
 
-		/** The width, in pixels, of a fixed-size player. The default is <strong>640</strong>. */
+		/**
+		 * The width, in pixels, of a fixed-size player. The default is <strong>640</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		player_width: FormControl<number | null | undefined>,
 
 		/** If <strong>true</strong>, creates a recording of the live stream. The default is <strong>false</strong>. */
@@ -2075,12 +2211,14 @@ export namespace MyNS {
 		/**
 		 * The height, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		aspect_ratio_height: number;
 
 		/**
 		 * The width, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		aspect_ratio_width: number;
 
@@ -2144,7 +2282,10 @@ export namespace MyNS {
 		/** A Base64-encoded string representation of a GIF, JPEG, or PNG poster image that appears in the player before the stream begins. Poster image files must be 2.5 MB or smaller. */
 		player_video_poster_image?: string | null;
 
-		/** The width, in pixels, of a fixed-size player. The default is <strong>640</strong>. */
+		/**
+		 * The width, in pixels, of a fixed-size player. The default is <strong>640</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		player_width?: number | null;
 
 		/** If <strong>true</strong>, creates a recording of the live stream. The default is <strong>false</strong>. */
@@ -2179,12 +2320,14 @@ export namespace MyNS {
 		/**
 		 * The height, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		aspect_ratio_height: FormControl<number | null | undefined>,
 
 		/**
 		 * The width, in pixels, of the video source. Should correspond to a widescreen (16:9) or standard (4:3) aspect ratio and be divisible by 8.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		aspect_ratio_width: FormControl<number | null | undefined>,
 
@@ -2245,7 +2388,10 @@ export namespace MyNS {
 		/** A Base64-encoded string representation of a GIF, JPEG, or PNG poster image that appears in the player before the stream begins. Poster image files must be 2.5 MB or smaller. */
 		player_video_poster_image: FormControl<string | null | undefined>,
 
-		/** The width, in pixels, of a fixed-size player. The default is <strong>640</strong>. */
+		/**
+		 * The width, in pixels, of a fixed-size player. The default is <strong>640</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		player_width: FormControl<number | null | undefined>,
 
 		/** If <strong>true</strong>, creates a recording of the live stream. The default is <strong>false</strong>. */
@@ -2325,16 +2471,28 @@ export namespace MyNS {
 
 	export interface Output {
 
-		/** The height, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1080</strong>. */
+		/**
+		 * The height, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1080</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_height?: number | null;
 
-		/** The width, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1980</strong>. */
+		/**
+		 * The width, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1980</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_width?: number | null;
 
-		/** The audio bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough audio) and <strong>1000</strong>. The default is <strong>128</strong>. */
+		/**
+		 * The audio bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough audio) and <strong>1000</strong>. The default is <strong>128</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate_audio?: number | null;
 
-		/** The video bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough video) and <strong>10240</strong>. The default is <strong>4000</strong>. */
+		/**
+		 * The video bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough video) and <strong>10240</strong>. The default is <strong>4000</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate_video?: number | null;
 
 		/** The date and time that the output rendition was created. */
@@ -2373,16 +2531,28 @@ export namespace MyNS {
 	}
 	export interface OutputFormProperties {
 
-		/** The height, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1080</strong>. */
+		/**
+		 * The height, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1080</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_height: FormControl<number | null | undefined>,
 
-		/** The width, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1980</strong>. */
+		/**
+		 * The width, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1980</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_width: FormControl<number | null | undefined>,
 
-		/** The audio bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough audio) and <strong>1000</strong>. The default is <strong>128</strong>. */
+		/**
+		 * The audio bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough audio) and <strong>1000</strong>. The default is <strong>128</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate_audio: FormControl<number | null | undefined>,
 
-		/** The video bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough video) and <strong>10240</strong>. The default is <strong>4000</strong>. */
+		/**
+		 * The video bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough video) and <strong>10240</strong>. The default is <strong>4000</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate_video: FormControl<number | null | undefined>,
 
 		/** The date and time that the output rendition was created. */
@@ -2808,16 +2978,28 @@ export namespace MyNS {
 
 	export interface Output_inputOutput {
 
-		/** The height, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1080</strong>. */
+		/**
+		 * The height, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1080</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_height?: number | null;
 
-		/** The width, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1980</strong>. */
+		/**
+		 * The width, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1980</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_width?: number | null;
 
-		/** The audio bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough audio) and <strong>1000</strong>. The default is <strong>128</strong>. */
+		/**
+		 * The audio bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough audio) and <strong>1000</strong>. The default is <strong>128</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate_audio?: number | null;
 
-		/** The video bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough video) and <strong>10240</strong>. The default is <strong>4000</strong>. */
+		/**
+		 * The video bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough video) and <strong>10240</strong>. The default is <strong>4000</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate_video?: number | null;
 
 		/** Reduce the frame rate of the transcoded output rendition. The default, <strong>0</strong>, uses the encoded stream's frame rate without reduction. */
@@ -2843,16 +3025,28 @@ export namespace MyNS {
 	}
 	export interface Output_inputOutputFormProperties {
 
-		/** The height, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1080</strong>. */
+		/**
+		 * The height, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1080</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_height: FormControl<number | null | undefined>,
 
-		/** The width, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1980</strong>. */
+		/**
+		 * The width, in pixels, of the output rendition. Should correspond to a widescreen or standard aspect ratio and be divisible by 8. The default is <strong>1980</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		aspect_ratio_width: FormControl<number | null | undefined>,
 
-		/** The audio bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough audio) and <strong>1000</strong>. The default is <strong>128</strong>. */
+		/**
+		 * The audio bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough audio) and <strong>1000</strong>. The default is <strong>128</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate_audio: FormControl<number | null | undefined>,
 
-		/** The video bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough video) and <strong>10240</strong>. The default is <strong>4000</strong>. */
+		/**
+		 * The video bitrate, in kilobits per second (Kbps). Must be between <strong>0</strong> (for passthrough video) and <strong>10240</strong>. The default is <strong>4000</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate_video: FormControl<number | null | undefined>,
 
 		/** Reduce the frame rate of the transcoded output rendition. The default, <strong>0</strong>, uses the encoded stream's frame rate without reduction. */
@@ -3089,7 +3283,10 @@ export namespace MyNS {
 		/** The path to a GIF, JPEG, or PNG poster image that appears in the player before the stream begins. Poster image files must be 2.5 MB or smaller. */
 		video_poster_image_url?: string | null;
 
-		/** The width, in pixels, of a fixed-size player. The default is <strong>640</strong>. */
+		/**
+		 * The width, in pixels, of a fixed-size player. The default is <strong>640</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface PlayerFormProperties {
@@ -3154,7 +3351,10 @@ export namespace MyNS {
 		/** The path to a GIF, JPEG, or PNG poster image that appears in the player before the stream begins. Poster image files must be 2.5 MB or smaller. */
 		video_poster_image_url: FormControl<string | null | undefined>,
 
-		/** The width, in pixels, of a fixed-size player. The default is <strong>640</strong>. */
+		/**
+		 * The width, in pixels, of a fixed-size player. The default is <strong>640</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerFormGroup() {
@@ -3244,7 +3444,10 @@ export namespace MyNS {
 		/** A Base64-encoded string representation of a GIF, JPEG, or PNG poster image that appears in the player before the stream begins. Poster image files must be 2.5 MB or smaller. */
 		video_poster_image?: string | null;
 
-		/** The width, in pixels, of a fixed-size player. The default is <strong>640</strong>. */
+		/**
+		 * The width, in pixels, of a fixed-size player. The default is <strong>640</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface Player_update_inputPlayerFormProperties {
@@ -3294,7 +3497,10 @@ export namespace MyNS {
 		/** A Base64-encoded string representation of a GIF, JPEG, or PNG poster image that appears in the player before the stream begins. Poster image files must be 2.5 MB or smaller. */
 		video_poster_image: FormControl<string | null | undefined>,
 
-		/** The width, in pixels, of a fixed-size player. The default is <strong>640</strong>. */
+		/**
+		 * The width, in pixels, of a fixed-size player. The default is <strong>640</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayer_update_inputPlayerFormGroup() {
@@ -3340,14 +3546,20 @@ export namespace MyNS {
 		/** The URL that can be used to download the recording. */
 		download_url?: string | null;
 
-		/** The length of the recording, in hours, minutes, and seconds. */
-		duration?: number | null;
+		/**
+		 * The length of the recording, in hours, minutes, and seconds.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration?: string | null;
 
 		/** The file name of the recording. */
 		file_name?: string | null;
 
-		/** The file size of the recording. */
-		file_size?: number | null;
+		/**
+		 * The file size of the recording.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		file_size?: string | null;
 
 		/** The unique alphanumeric string that identifies the recording. */
 		id?: string | null;
@@ -3381,14 +3593,20 @@ export namespace MyNS {
 		/** The URL that can be used to download the recording. */
 		download_url: FormControl<string | null | undefined>,
 
-		/** The length of the recording, in hours, minutes, and seconds. */
-		duration: FormControl<number | null | undefined>,
+		/**
+		 * The length of the recording, in hours, minutes, and seconds.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration: FormControl<string | null | undefined>,
 
 		/** The file name of the recording. */
 		file_name: FormControl<string | null | undefined>,
 
-		/** The file size of the recording. */
-		file_size: FormControl<number | null | undefined>,
+		/**
+		 * The file size of the recording.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		file_size: FormControl<string | null | undefined>,
 
 		/** The unique alphanumeric string that identifies the recording. */
 		id: FormControl<string | null | undefined>,
@@ -3418,9 +3636,9 @@ export namespace MyNS {
 		return new FormGroup<RecordingFormProperties>({
 			created_at: new FormControl<Date | null | undefined>(undefined),
 			download_url: new FormControl<string | null | undefined>(undefined),
-			duration: new FormControl<number | null | undefined>(undefined),
+			duration: new FormControl<string | null | undefined>(undefined),
 			file_name: new FormControl<string | null | undefined>(undefined),
-			file_size: new FormControl<number | null | undefined>(undefined),
+			file_size: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			reason: new FormControl<string | null | undefined>(undefined),
 			starts_at: new FormControl<string | null | undefined>(undefined),
@@ -3456,7 +3674,10 @@ export namespace MyNS {
 		/** The date and time that the schedule was created. */
 		created_at?: Date | null;
 
-		/** The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		end_repeat?: Date | null;
 
 		/** The unique alphanumeric string that identifies the schedule. */
@@ -3471,7 +3692,10 @@ export namespace MyNS {
 		/** A schedule can run one time only (<strong>once</strong>) or repeat (<strong>recur</strong>) until a specified <em>end_repeat</em> date. The default is <strong>once</strong>. */
 		recurrence_type?: ScheduleRecurrence_type | null;
 
-		/** The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		start_repeat?: Date | null;
 
 		/** The month, day, year, and time of day that the <em>action_type</em> <strong>start</strong> should occur. Specify <strong>YYYY-MM-DD HH:MM:SS</strong> where <strong>HH</strong> is a 24-hour clock in UTC. */
@@ -3500,7 +3724,10 @@ export namespace MyNS {
 		/** The date and time that the schedule was created. */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		end_repeat: FormControl<Date | null | undefined>,
 
 		/** The unique alphanumeric string that identifies the schedule. */
@@ -3515,7 +3742,10 @@ export namespace MyNS {
 		/** A schedule can run one time only (<strong>once</strong>) or repeat (<strong>recur</strong>) until a specified <em>end_repeat</em> date. The default is <strong>once</strong>. */
 		recurrence_type: FormControl<ScheduleRecurrence_type | null | undefined>,
 
-		/** The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		start_repeat: FormControl<Date | null | undefined>,
 
 		/** The month, day, year, and time of day that the <em>action_type</em> <strong>start</strong> should occur. Specify <strong>YYYY-MM-DD HH:MM:SS</strong> where <strong>HH</strong> is a 24-hour clock in UTC. */
@@ -3585,7 +3815,10 @@ export namespace MyNS {
 		 */
 		action_type: ScheduleAction_type;
 
-		/** The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		end_repeat?: Date | null;
 
 		/**
@@ -3603,7 +3836,10 @@ export namespace MyNS {
 		 */
 		recurrence_type: ScheduleRecurrence_type;
 
-		/** The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		start_repeat?: Date | null;
 
 		/** The month, day, year, and time of day that the <em>action_type</em> <strong>start</strong> should occur. Specify <strong>YYYY-MM-DD HH:MM:SS</strong> where <strong>HH</strong> is a 24-hour clock in UTC. */
@@ -3626,7 +3862,10 @@ export namespace MyNS {
 		 */
 		action_type: FormControl<ScheduleAction_type | null | undefined>,
 
-		/** The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		end_repeat: FormControl<Date | null | undefined>,
 
 		/**
@@ -3644,7 +3883,10 @@ export namespace MyNS {
 		 */
 		recurrence_type: FormControl<ScheduleRecurrence_type | null | undefined>,
 
-		/** The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		start_repeat: FormControl<Date | null | undefined>,
 
 		/** The month, day, year, and time of day that the <em>action_type</em> <strong>start</strong> should occur. Specify <strong>YYYY-MM-DD HH:MM:SS</strong> where <strong>HH</strong> is a 24-hour clock in UTC. */
@@ -3695,7 +3937,10 @@ export namespace MyNS {
 		 */
 		action_type: ScheduleAction_type;
 
-		/** The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		end_repeat?: Date | null;
 
 		/**
@@ -3707,7 +3952,10 @@ export namespace MyNS {
 		/** The day or days of the week that a recurring schedule should run. */
 		recurrence_data?: ScheduleRecurrence_data | null;
 
-		/** The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		start_repeat?: Date | null;
 
 		/** The month, day, year, and time of day that the <em>action_type</em> <strong>start</strong> should occur. Specify <strong>YYYY-MM-DD HH:MM:SS</strong> where <strong>HH</strong> is a 24-hour clock in UTC. */
@@ -3724,7 +3972,10 @@ export namespace MyNS {
 		 */
 		action_type: FormControl<ScheduleAction_type | null | undefined>,
 
-		/** The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that a recurring schedule should stop running. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		end_repeat: FormControl<Date | null | undefined>,
 
 		/**
@@ -3736,7 +3987,10 @@ export namespace MyNS {
 		/** The day or days of the week that a recurring schedule should run. */
 		recurrence_data: FormControl<ScheduleRecurrence_data | null | undefined>,
 
-		/** The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>. */
+		/**
+		 * The month, day, and year that the recurring schedule should go into effect. Specify <strong>YYYY-MM-DD</strong>.
+		 * Type: DateOnly
+		 */
 		start_repeat: FormControl<Date | null | undefined>,
 
 		/** The month, day, year, and time of day that the <em>action_type</em> <strong>start</strong> should occur. Specify <strong>YYYY-MM-DD HH:MM:SS</strong> where <strong>HH</strong> is a 24-hour clock in UTC. */
@@ -3846,7 +4100,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Width_metricFormProperties {
@@ -3860,7 +4117,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateWidth_metricFormGroup() {
@@ -3953,7 +4213,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units?: string | null;
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface Unique_views_metricFormProperties {
@@ -3967,7 +4230,10 @@ export namespace MyNS {
 		/** The unit of the returned value, such as <strong>Kbps</strong>, <strong>bps</strong>, <strong>%</strong>, <strong>FPS</strong>, or <strong>GOP</strong>. */
 		units: FormControl<string | null | undefined>,
 
-		/** The value of the associated key. */
+		/**
+		 * The value of the associated key.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateUnique_views_metricFormGroup() {
@@ -4439,48 +4705,84 @@ export namespace MyNS {
 
 	export interface Stream_target_metrics {
 
-		/** The average number of bytes transfered to the origin server by the source. */
+		/**
+		 * The average number of bytes transfered to the origin server by the source.
+		 * Type: float
+		 */
 		average_bytes_in?: number | null;
 
-		/** The total number of current connections. */
+		/**
+		 * The total number of current connections.
+		 * Type: float
+		 */
 		average_total_connections?: number | null;
 
 		/** The date and time, in UTC, that the metrics were recorded. */
 		created_at?: Date | null;
 
-		/** The total number of dropped connections since the last interval. */
+		/**
+		 * The total number of dropped connections since the last interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dropped_connections?: number | null;
 
-		/** The maximum number of connections during the interval. */
+		/**
+		 * The maximum number of connections during the interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum_total_connections?: number | null;
 
-		/** The minimum number of connections during the interval. */
+		/**
+		 * The minimum number of connections during the interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum_total_connections?: number | null;
 
-		/** The total number of new connections since the last interval. */
+		/**
+		 * The total number of new connections since the last interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		new_connections?: number | null;
 	}
 	export interface Stream_target_metricsFormProperties {
 
-		/** The average number of bytes transfered to the origin server by the source. */
+		/**
+		 * The average number of bytes transfered to the origin server by the source.
+		 * Type: float
+		 */
 		average_bytes_in: FormControl<number | null | undefined>,
 
-		/** The total number of current connections. */
+		/**
+		 * The total number of current connections.
+		 * Type: float
+		 */
 		average_total_connections: FormControl<number | null | undefined>,
 
 		/** The date and time, in UTC, that the metrics were recorded. */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** The total number of dropped connections since the last interval. */
+		/**
+		 * The total number of dropped connections since the last interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dropped_connections: FormControl<number | null | undefined>,
 
-		/** The maximum number of connections during the interval. */
+		/**
+		 * The maximum number of connections during the interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum_total_connections: FormControl<number | null | undefined>,
 
-		/** The minimum number of connections during the interval. */
+		/**
+		 * The minimum number of connections during the interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum_total_connections: FormControl<number | null | undefined>,
 
-		/** The total number of new connections since the last interval. */
+		/**
+		 * The total number of new connections since the last interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		new_connections: FormControl<number | null | undefined>,
 	}
 	export function CreateStream_target_metricsFormGroup() {
@@ -4917,7 +5219,10 @@ export namespace MyNS {
 		/** The unique alphanumeric string that identifies the transcoder. */
 		id?: string | null;
 
-		/** The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes). */
+		/**
+		 * The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idle_timeout?: number | null;
 
 		/** If <strong>true</strong>, turns off the sort packet buffer and speeds the time it takes to decode and deliver video data to the player. The default is <strong>false</strong>. */
@@ -4941,7 +5246,10 @@ export namespace MyNS {
 		/** If <strong>true</strong>, creates a recording of the transcoded output. The default is <strong>false</strong>. */
 		recording?: boolean | null;
 
-		/** The port used for RTMP pull connections to Wowza Streaming Cloud. */
+		/**
+		 * The port used for RTMP pull connections to Wowza Streaming Cloud.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		source_port?: number | null;
 
 		/** For the <em>delivery_method</em> <strong>pull</strong>. Enter the source's web address without the preceding protocol or the trailing slash (/). */
@@ -4977,7 +5285,10 @@ export namespace MyNS {
 		/** Embeds an image into the transcoded stream for copyright protection. Specify <strong>true</strong> to embed a watermark image. */
 		watermark?: boolean | null;
 
-		/** The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height. */
+		/**
+		 * The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_height?: number | null;
 
 		/** The path to a GIF, JPEG, or PNG image that is embedded in all bitrate renditions of the stream. Watermark image files must be 2.5 MB or smaller. */
@@ -4989,7 +5300,10 @@ export namespace MyNS {
 		/** The corner of the video frame in which you want the watermark to appear. The default is <strong>top-left</strong>. */
 		watermark_position?: Live_streamPlayer_logo_position | null;
 
-		/** The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width. */
+		/**
+		 * The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_width?: number | null;
 	}
 	export interface TranscoderFormProperties {
@@ -5027,7 +5341,10 @@ export namespace MyNS {
 		/** The unique alphanumeric string that identifies the transcoder. */
 		id: FormControl<string | null | undefined>,
 
-		/** The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes). */
+		/**
+		 * The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idle_timeout: FormControl<number | null | undefined>,
 
 		/** If <strong>true</strong>, turns off the sort packet buffer and speeds the time it takes to decode and deliver video data to the player. The default is <strong>false</strong>. */
@@ -5048,7 +5365,10 @@ export namespace MyNS {
 		/** If <strong>true</strong>, creates a recording of the transcoded output. The default is <strong>false</strong>. */
 		recording: FormControl<boolean | null | undefined>,
 
-		/** The port used for RTMP pull connections to Wowza Streaming Cloud. */
+		/**
+		 * The port used for RTMP pull connections to Wowza Streaming Cloud.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		source_port: FormControl<number | null | undefined>,
 
 		/** For the <em>delivery_method</em> <strong>pull</strong>. Enter the source's web address without the preceding protocol or the trailing slash (/). */
@@ -5084,7 +5404,10 @@ export namespace MyNS {
 		/** Embeds an image into the transcoded stream for copyright protection. Specify <strong>true</strong> to embed a watermark image. */
 		watermark: FormControl<boolean | null | undefined>,
 
-		/** The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height. */
+		/**
+		 * The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_height: FormControl<number | null | undefined>,
 
 		/** The path to a GIF, JPEG, or PNG image that is embedded in all bitrate renditions of the stream. Watermark image files must be 2.5 MB or smaller. */
@@ -5096,7 +5419,10 @@ export namespace MyNS {
 		/** The corner of the video frame in which you want the watermark to appear. The default is <strong>top-left</strong>. */
 		watermark_position: FormControl<Live_streamPlayer_logo_position | null | undefined>,
 
-		/** The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width. */
+		/**
+		 * The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_width: FormControl<number | null | undefined>,
 	}
 	export function CreateTranscoderFormGroup() {
@@ -5227,7 +5553,10 @@ export namespace MyNS {
 		/** Authentication is required by default for RTMP and RTSP push connections from a video source to the transcoder. Specify <strong>true</strong> to disable authentication with the video source. */
 		disable_authentication?: boolean | null;
 
-		/** The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes). */
+		/**
+		 * The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idle_timeout?: number | null;
 
 		/** If <strong>true</strong>, turns off the sort packet buffer and speeds the time it takes to decode and deliver video data to the player. The default is <strong>false</strong>. */
@@ -5284,7 +5613,10 @@ export namespace MyNS {
 		/** Embeds an image into the transcoded stream for copyright protection. Specify <strong>true</strong> to embed a watermark image. */
 		watermark?: boolean | null;
 
-		/** The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height. */
+		/**
+		 * The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_height?: number | null;
 
 		/** A Base64-encoded string representation of a GIF, JPEG, or PNG image that is embedded in all bitrate renditions of the stream. Watermark image files must be 2.5 MB or smaller. */
@@ -5296,7 +5628,10 @@ export namespace MyNS {
 		/** The corner of the video frame in which you want the watermark to appear. The default is <strong>top-left</strong>. */
 		watermark_position?: Live_streamPlayer_logo_position | null;
 
-		/** The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width. */
+		/**
+		 * The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_width?: number | null;
 	}
 	export interface Transcoder_create_inputTranscoderFormProperties {
@@ -5331,7 +5666,10 @@ export namespace MyNS {
 		/** Authentication is required by default for RTMP and RTSP push connections from a video source to the transcoder. Specify <strong>true</strong> to disable authentication with the video source. */
 		disable_authentication: FormControl<boolean | null | undefined>,
 
-		/** The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes). */
+		/**
+		 * The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idle_timeout: FormControl<number | null | undefined>,
 
 		/** If <strong>true</strong>, turns off the sort packet buffer and speeds the time it takes to decode and deliver video data to the player. The default is <strong>false</strong>. */
@@ -5388,7 +5726,10 @@ export namespace MyNS {
 		/** Embeds an image into the transcoded stream for copyright protection. Specify <strong>true</strong> to embed a watermark image. */
 		watermark: FormControl<boolean | null | undefined>,
 
-		/** The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height. */
+		/**
+		 * The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_height: FormControl<number | null | undefined>,
 
 		/** A Base64-encoded string representation of a GIF, JPEG, or PNG image that is embedded in all bitrate renditions of the stream. Watermark image files must be 2.5 MB or smaller. */
@@ -5400,7 +5741,10 @@ export namespace MyNS {
 		/** The corner of the video frame in which you want the watermark to appear. The default is <strong>top-left</strong>. */
 		watermark_position: FormControl<Live_streamPlayer_logo_position | null | undefined>,
 
-		/** The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width. */
+		/**
+		 * The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_width: FormControl<number | null | undefined>,
 	}
 	export function CreateTranscoder_create_inputTranscoderFormGroup() {
@@ -5595,7 +5939,10 @@ export namespace MyNS {
 		/** Authentication is required by default for RTMP and RTSP push connections from a video source to the transcoder. Specify <strong>true</strong> to disable authentication with the video source. */
 		disable_authentication?: boolean | null;
 
-		/** The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes). */
+		/**
+		 * The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idle_timeout?: number | null;
 
 		/** If <strong>true</strong>, turns off the sort packet buffer and speeds the time it takes to decode and deliver video data to the player. The default is <strong>false</strong>. */
@@ -5649,7 +5996,10 @@ export namespace MyNS {
 		/** Embeds an image into the transcoded stream for copyright protection. Specify <strong>true</strong> to embed a watermark image. */
 		watermark?: boolean | null;
 
-		/** The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height. */
+		/**
+		 * The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_height?: number | null;
 
 		/** A Base64-encoded string representation of a GIF, JPEG, or PNG image that is embedded in all bitrate renditions of the stream. Watermark image files must be 2.5 MB or smaller. */
@@ -5661,7 +6011,10 @@ export namespace MyNS {
 		/** The corner of the video frame in which you want the watermark to appear. The default is <strong>top-left</strong>. */
 		watermark_position?: Live_streamPlayer_logo_position | null;
 
-		/** The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width. */
+		/**
+		 * The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_width?: number | null;
 	}
 	export interface Transcoder_update_inputTranscoderFormProperties {
@@ -5687,7 +6040,10 @@ export namespace MyNS {
 		/** Authentication is required by default for RTMP and RTSP push connections from a video source to the transcoder. Specify <strong>true</strong> to disable authentication with the video source. */
 		disable_authentication: FormControl<boolean | null | undefined>,
 
-		/** The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes). */
+		/**
+		 * The amount of idle time, in seconds, before the transcoder automatically shuts down. Valid values are the integers <strong>0</strong> (never shuts down) to <strong>172800</strong> (48 hours). The default is <strong>1200</strong> (20 minutes).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idle_timeout: FormControl<number | null | undefined>,
 
 		/** If <strong>true</strong>, turns off the sort packet buffer and speeds the time it takes to decode and deliver video data to the player. The default is <strong>false</strong>. */
@@ -5741,7 +6097,10 @@ export namespace MyNS {
 		/** Embeds an image into the transcoded stream for copyright protection. Specify <strong>true</strong> to embed a watermark image. */
 		watermark: FormControl<boolean | null | undefined>,
 
-		/** The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height. */
+		/**
+		 * The height, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_height: FormControl<number | null | undefined>,
 
 		/** A Base64-encoded string representation of a GIF, JPEG, or PNG image that is embedded in all bitrate renditions of the stream. Watermark image files must be 2.5 MB or smaller. */
@@ -5753,7 +6112,10 @@ export namespace MyNS {
 		/** The corner of the video frame in which you want the watermark to appear. The default is <strong>top-left</strong>. */
 		watermark_position: FormControl<Live_streamPlayer_logo_position | null | undefined>,
 
-		/** The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width. */
+		/**
+		 * The width, in pixels, of the watermark image. If blank, Wowza Streaming Cloud uses the original image width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		watermark_width: FormControl<number | null | undefined>,
 	}
 	export function CreateTranscoder_update_inputTranscoderFormGroup() {
@@ -5989,13 +6351,19 @@ export namespace MyNS {
 
 	export interface Url {
 
-		/** The video bitrate, in kilobits per second (Kbps), of the output rendition that will be played at the URL. May correspond to the bitrate of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The video bitrate, in kilobits per second (Kbps), of the output rendition that will be played at the URL. May correspond to the bitrate of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate?: number | null;
 
 		/** The date and time that the player URL was created. */
 		created_at?: Date | null;
 
-		/** The height, in pixels, of the output rendition that will be played at the URL. May correspond to the height of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The height, in pixels, of the output rendition that will be played at the URL. May correspond to the height of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The unique alphanumeric string that identifies the player URL. */
@@ -6013,18 +6381,27 @@ export namespace MyNS {
 		/** The URL of the player. If using a Wowza CDN target, the URL format is `http://[wowzasubdomain]-f.akamaihd.net/z/[stream_name]_[angle]@[stream_id]/manifest.f4m` for Adobe HDS playback or `http://[wowzasubdomain]-f.akamaihd.net/i/[stream_name]_[angle]@[stream_id]/master.m3u8` for Apple HLS playback. */
 		url?: string | null;
 
-		/** The width, in pixels, of the output rendition that will be played at the URL. May correspond to the width of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The width, in pixels, of the output rendition that will be played at the URL. May correspond to the width of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface UrlFormProperties {
 
-		/** The video bitrate, in kilobits per second (Kbps), of the output rendition that will be played at the URL. May correspond to the bitrate of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The video bitrate, in kilobits per second (Kbps), of the output rendition that will be played at the URL. May correspond to the bitrate of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate: FormControl<number | null | undefined>,
 
 		/** The date and time that the player URL was created. */
 		created_at: FormControl<Date | null | undefined>,
 
-		/** The height, in pixels, of the output rendition that will be played at the URL. May correspond to the height of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The height, in pixels, of the output rendition that will be played at the URL. May correspond to the height of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The unique alphanumeric string that identifies the player URL. */
@@ -6042,7 +6419,10 @@ export namespace MyNS {
 		/** The URL of the player. If using a Wowza CDN target, the URL format is `http://[wowzasubdomain]-f.akamaihd.net/z/[stream_name]_[angle]@[stream_id]/manifest.f4m` for Adobe HDS playback or `http://[wowzasubdomain]-f.akamaihd.net/i/[stream_name]_[angle]@[stream_id]/master.m3u8` for Apple HLS playback. */
 		url: FormControl<string | null | undefined>,
 
-		/** The width, in pixels, of the output rendition that will be played at the URL. May correspond to the width of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The width, in pixels, of the output rendition that will be played at the URL. May correspond to the width of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateUrlFormGroup() {
@@ -6085,10 +6465,16 @@ export namespace MyNS {
 
 	export interface Url_inputUrl {
 
-		/** The video bitrate, in kilobits per second (Kbps), of the output rendition that will be played at the URL. May correspond to the bitrate of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The video bitrate, in kilobits per second (Kbps), of the output rendition that will be played at the URL. May correspond to the bitrate of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate?: number | null;
 
-		/** The height, in pixels, of the output rendition that will be played at the URL. May correspond to the height of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The height, in pixels, of the output rendition that will be played at the URL. May correspond to the height of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** A descriptive name for the player URL. Maximum 255 characters. */
@@ -6097,15 +6483,24 @@ export namespace MyNS {
 		/** The URL of the player. If using a Wowza CDN target, the URL format is `http://[wowzasubdomain]-f.akamaihd.net/z/[stream_name]_[angle]@[stream_id]/manifest.f4m` for Adobe HDS playback or `http://[wowzasubdomain]-f.akamaihd.net/i/[stream_name]_[angle]@[stream_id]/master.m3u8` for Apple HLS playback. */
 		url?: string | null;
 
-		/** The width, in pixels, of the output rendition that will be played at the URL. May correspond to the width of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The width, in pixels, of the output rendition that will be played at the URL. May correspond to the width of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface Url_inputUrlFormProperties {
 
-		/** The video bitrate, in kilobits per second (Kbps), of the output rendition that will be played at the URL. May correspond to the bitrate of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The video bitrate, in kilobits per second (Kbps), of the output rendition that will be played at the URL. May correspond to the bitrate of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrate: FormControl<number | null | undefined>,
 
-		/** The height, in pixels, of the output rendition that will be played at the URL. May correspond to the height of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The height, in pixels, of the output rendition that will be played at the URL. May correspond to the height of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** A descriptive name for the player URL. Maximum 255 characters. */
@@ -6114,7 +6509,10 @@ export namespace MyNS {
 		/** The URL of the player. If using a Wowza CDN target, the URL format is `http://[wowzasubdomain]-f.akamaihd.net/z/[stream_name]_[angle]@[stream_id]/manifest.f4m` for Adobe HDS playback or `http://[wowzasubdomain]-f.akamaihd.net/i/[stream_name]_[angle]@[stream_id]/master.m3u8` for Apple HLS playback. */
 		url: FormControl<string | null | undefined>,
 
-		/** The width, in pixels, of the output rendition that will be played at the URL. May correspond to the width of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>. */
+		/**
+		 * The width, in pixels, of the output rendition that will be played at the URL. May correspond to the width of an output rendition being used by the live stream or transcoder. Must be greater than <strong>0</strong>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateUrl_inputUrlFormGroup() {
@@ -6153,10 +6551,16 @@ export namespace MyNS {
 
 	export interface Usage_network_stream_source {
 
-		/** The amount of usage, in bytes, that was billed for the stream source during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream source during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed?: number | null;
 
-		/** The amount of content, in bytes, that went through the stream source during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream source during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used?: number | null;
 
 		/** A value of <strong>true</strong> indicates that the stream source has been removed from Wowza Streaming Cloud. */
@@ -6170,10 +6574,16 @@ export namespace MyNS {
 	}
 	export interface Usage_network_stream_sourceFormProperties {
 
-		/** The amount of usage, in bytes, that was billed for the stream source during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream source during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed: FormControl<number | null | undefined>,
 
-		/** The amount of content, in bytes, that went through the stream source during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream source during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used: FormControl<number | null | undefined>,
 
 		/** A value of <strong>true</strong> indicates that the stream source has been removed from Wowza Streaming Cloud. */
@@ -6225,10 +6635,16 @@ export namespace MyNS {
 
 	export interface Usage_network_stream_targetStream_targets {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed?: number | null;
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used?: number | null;
 
 		/** A value of <strong>true</strong> indicates that the stream target has been removed from Wowza Streaming Cloud. */
@@ -6245,10 +6661,16 @@ export namespace MyNS {
 	}
 	export interface Usage_network_stream_targetStream_targetsFormProperties {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed: FormControl<number | null | undefined>,
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used: FormControl<number | null | undefined>,
 
 		/** A value of <strong>true</strong> indicates that the stream target has been removed from Wowza Streaming Cloud. */
@@ -6286,18 +6708,30 @@ export namespace MyNS {
 
 	export interface Usage_network_stream_targetStream_targetsProtocolsZones {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed?: number | null;
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used?: number | null;
 	}
 	export interface Usage_network_stream_targetStream_targetsProtocolsZonesFormProperties {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed: FormControl<number | null | undefined>,
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_network_stream_targetStream_targetsProtocolsZonesFormGroup() {
@@ -6310,10 +6744,16 @@ export namespace MyNS {
 
 	export interface Usage_network_stream_targetTotal {
 
-		/** The amount of usage, in bytes, that was billed for all stream targets during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for all stream targets during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed?: number | null;
 
-		/** The amount of content, in bytes, that went through all stream targets during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through all stream targets during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used?: number | null;
 
 		/** A hash of protocols that accrued network usage, keyed by the name of the protocol that generated the usage. */
@@ -6321,10 +6761,16 @@ export namespace MyNS {
 	}
 	export interface Usage_network_stream_targetTotalFormProperties {
 
-		/** The amount of usage, in bytes, that was billed for all stream targets during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for all stream targets during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed: FormControl<number | null | undefined>,
 
-		/** The amount of content, in bytes, that went through all stream targets during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through all stream targets during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_network_stream_targetTotalFormGroup() {
@@ -6350,18 +6796,30 @@ export namespace MyNS {
 
 	export interface Usage_network_stream_targetTotalProtocolsZones {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed?: number | null;
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used?: number | null;
 	}
 	export interface Usage_network_stream_targetTotalProtocolsZonesFormProperties {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed: FormControl<number | null | undefined>,
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_network_stream_targetTotalProtocolsZonesFormGroup() {
@@ -6390,10 +6848,16 @@ export namespace MyNS {
 
 	export interface Usage_network_stream_targetsStream_targets {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed?: number | null;
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used?: number | null;
 
 		/** A value of <strong>true</strong> indicates that the stream target has been removed from Wowza Streaming Cloud. */
@@ -6410,10 +6874,16 @@ export namespace MyNS {
 	}
 	export interface Usage_network_stream_targetsStream_targetsFormProperties {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed: FormControl<number | null | undefined>,
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used: FormControl<number | null | undefined>,
 
 		/** A value of <strong>true</strong> indicates that the stream target has been removed from Wowza Streaming Cloud. */
@@ -6451,18 +6921,30 @@ export namespace MyNS {
 
 	export interface Usage_network_stream_targetsStream_targetsProtocolsZones {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed?: number | null;
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used?: number | null;
 	}
 	export interface Usage_network_stream_targetsStream_targetsProtocolsZonesFormProperties {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed: FormControl<number | null | undefined>,
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_network_stream_targetsStream_targetsProtocolsZonesFormGroup() {
@@ -6475,10 +6957,16 @@ export namespace MyNS {
 
 	export interface Usage_network_stream_targetsTotal {
 
-		/** The amount of usage, in bytes, that was billed for all stream targets during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for all stream targets during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed?: number | null;
 
-		/** The amount of content, in bytes, that went through all stream targets during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through all stream targets during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used?: number | null;
 
 		/** A hash of protocols that accrued network usage, keyed by the name of the protocol that generated the usage. */
@@ -6486,10 +6974,16 @@ export namespace MyNS {
 	}
 	export interface Usage_network_stream_targetsTotalFormProperties {
 
-		/** The amount of usage, in bytes, that was billed for all stream targets during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for all stream targets during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed: FormControl<number | null | undefined>,
 
-		/** The amount of content, in bytes, that went through all stream targets during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through all stream targets during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_network_stream_targetsTotalFormGroup() {
@@ -6515,18 +7009,30 @@ export namespace MyNS {
 
 	export interface Usage_network_stream_targetsTotalProtocolsZones {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed?: number | null;
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used?: number | null;
 	}
 	export interface Usage_network_stream_targetsTotalProtocolsZonesFormProperties {
 
-		/** The amount of usage, in bytes, that was billed for the stream target during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed: FormControl<number | null | undefined>,
 
-		/** The amount of content, in bytes, that went through the stream target during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the stream target during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_network_stream_targetsTotalProtocolsZonesFormGroup() {
@@ -6539,16 +7045,25 @@ export namespace MyNS {
 
 	export interface Usage_network_transcoder {
 
-		/** The amount of usage, in bytes, that was billed for the live stream or transcoder during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the live stream or transcoder during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed?: number | null;
 
-		/** The amount of content, in bytes, that went through the live stream or transcoder during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the live stream or transcoder during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used?: number | null;
 
 		/** A value of <strong>true</strong> indicates that the live stream or transcoder has been removed from Wowza Streaming Cloud. */
 		deleted?: boolean | null;
 
-		/** The unique alphanumeric string that identifies the live stream or transcoder. */
+		/**
+		 * The unique alphanumeric string that identifies the live stream or transcoder.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** A descriptive name for the live stream or transcoder. */
@@ -6556,16 +7071,25 @@ export namespace MyNS {
 	}
 	export interface Usage_network_transcoderFormProperties {
 
-		/** The amount of usage, in bytes, that was billed for the live stream or transcoder during the selected time frame. */
+		/**
+		 * The amount of usage, in bytes, that was billed for the live stream or transcoder during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_billed: FormControl<number | null | undefined>,
 
-		/** The amount of content, in bytes, that went through the live stream or transcoder during the selected time frame. */
+		/**
+		 * The amount of content, in bytes, that went through the live stream or transcoder during the selected time frame.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_used: FormControl<number | null | undefined>,
 
 		/** A value of <strong>true</strong> indicates that the live stream or transcoder has been removed from Wowza Streaming Cloud. */
 		deleted: FormControl<boolean | null | undefined>,
 
-		/** The unique alphanumeric string that identifies the live stream or transcoder. */
+		/**
+		 * The unique alphanumeric string that identifies the live stream or transcoder.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** A descriptive name for the live stream or transcoder. */
@@ -6606,12 +7130,18 @@ export namespace MyNS {
 
 	export interface Usage_storage_peak_recordingPeak_recording {
 
-		/** The amount, in bytes, used to store recordings during the selected time frame. If the time frame is in the past, <em>bytes_total</em> is the amount of storage that was used and billed. If the time frame includes the current billing period, <em>bytes_total</em> is the greatest amount of content stored in Wowza Streaming Cloud at any point to date in the billing period. */
+		/**
+		 * The amount, in bytes, used to store recordings during the selected time frame. If the time frame is in the past, <em>bytes_total</em> is the amount of storage that was used and billed. If the time frame includes the current billing period, <em>bytes_total</em> is the greatest amount of content stored in Wowza Streaming Cloud at any point to date in the billing period.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_total?: number | null;
 	}
 	export interface Usage_storage_peak_recordingPeak_recordingFormProperties {
 
-		/** The amount, in bytes, used to store recordings during the selected time frame. If the time frame is in the past, <em>bytes_total</em> is the amount of storage that was used and billed. If the time frame includes the current billing period, <em>bytes_total</em> is the greatest amount of content stored in Wowza Streaming Cloud at any point to date in the billing period. */
+		/**
+		 * The amount, in bytes, used to store recordings during the selected time frame. If the time frame is in the past, <em>bytes_total</em> is the amount of storage that was used and billed. If the time frame includes the current billing period, <em>bytes_total</em> is the greatest amount of content stored in Wowza Streaming Cloud at any point to date in the billing period.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytes_total: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_storage_peak_recordingPeak_recordingFormGroup() {
@@ -6626,16 +7156,25 @@ export namespace MyNS {
 		/** A value of <strong>true</strong> indicates that the live stream or transcoder has been removed from Wowza Streaming Cloud. */
 		deleted?: boolean | null;
 
-		/** The unique alphanumeric string that identifies the live stream or transcoder. */
+		/**
+		 * The unique alphanumeric string that identifies the live stream or transcoder.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** A descriptive name for the live stream or transcoder. */
 		name?: string | null;
 
-		/** The amount of stream processing time, in seconds, that was billed for the live stream or transcoder. */
+		/**
+		 * The amount of stream processing time, in seconds, that was billed for the live stream or transcoder.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_billed?: number | null;
 
-		/** The amount of time, in seconds, that it took for the live stream or transcoder to be processed. */
+		/**
+		 * The amount of time, in seconds, that it took for the live stream or transcoder to be processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_used?: number | null;
 	}
 	export interface Usage_time_transcoderFormProperties {
@@ -6643,16 +7182,25 @@ export namespace MyNS {
 		/** A value of <strong>true</strong> indicates that the live stream or transcoder has been removed from Wowza Streaming Cloud. */
 		deleted: FormControl<boolean | null | undefined>,
 
-		/** The unique alphanumeric string that identifies the live stream or transcoder. */
+		/**
+		 * The unique alphanumeric string that identifies the live stream or transcoder.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** A descriptive name for the live stream or transcoder. */
 		name: FormControl<string | null | undefined>,
 
-		/** The amount of stream processing time, in seconds, that was billed for the live stream or transcoder. */
+		/**
+		 * The amount of stream processing time, in seconds, that was billed for the live stream or transcoder.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_billed: FormControl<number | null | undefined>,
 
-		/** The amount of time, in seconds, that it took for the live stream or transcoder to be processed. */
+		/**
+		 * The amount of time, in seconds, that it took for the live stream or transcoder to be processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_used: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_time_transcoderFormGroup() {
@@ -6693,20 +7241,35 @@ export namespace MyNS {
 		/** The name of the country. */
 		name?: string | null;
 
-		/** Total percentage of viewers (<strong>100</strong>). */
+		/**
+		 * Total percentage of viewers (<strong>100</strong>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewers?: number | null;
 
-		/** The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>. */
+		/**
+		 * The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewing_time?: number | null;
 		Usage_viewer_data_countriesElementCountry_codeProtocols?: Array<Usage_viewer_data_countriesElementCountry_codeProtocols>;
 
-		/** The average length of time, in seconds, that viewers played the stream at the target. */
+		/**
+		 * The average length of time, in seconds, that viewers played the stream at the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_avg_viewing_time?: number | null;
 
-		/** The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream. */
+		/**
+		 * The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_total_viewing_time?: number | null;
 
-		/** The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once. */
+		/**
+		 * The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_unique_viewers?: number | null;
 	}
 	export interface Usage_viewer_data_countriesElementCountry_codeFormProperties {
@@ -6714,19 +7277,34 @@ export namespace MyNS {
 		/** The name of the country. */
 		name: FormControl<string | null | undefined>,
 
-		/** Total percentage of viewers (<strong>100</strong>). */
+		/**
+		 * Total percentage of viewers (<strong>100</strong>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewers: FormControl<number | null | undefined>,
 
-		/** The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>. */
+		/**
+		 * The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewing_time: FormControl<number | null | undefined>,
 
-		/** The average length of time, in seconds, that viewers played the stream at the target. */
+		/**
+		 * The average length of time, in seconds, that viewers played the stream at the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_avg_viewing_time: FormControl<number | null | undefined>,
 
-		/** The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream. */
+		/**
+		 * The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_total_viewing_time: FormControl<number | null | undefined>,
 
-		/** The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once. */
+		/**
+		 * The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_unique_viewers: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_viewer_data_countriesElementCountry_codeFormGroup() {
@@ -6757,19 +7335,34 @@ export namespace MyNS {
 		/** The name of the protocol. */
 		name?: string | null;
 
-		/** Total percentage of viewers (<strong>100</strong>). */
+		/**
+		 * Total percentage of viewers (<strong>100</strong>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewers?: number | null;
 
-		/** The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>. */
+		/**
+		 * The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewing_time?: number | null;
 
-		/** The average length of time, in seconds, that viewers played the stream at the target. */
+		/**
+		 * The average length of time, in seconds, that viewers played the stream at the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_avg_viewing_time?: number | null;
 
-		/** The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream. */
+		/**
+		 * The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_total_viewing_time?: number | null;
 
-		/** The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once. */
+		/**
+		 * The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_unique_viewers?: number | null;
 	}
 	export interface Usage_viewer_data_countriesElementCountry_codeProtocolsProtocol_nameFormProperties {
@@ -6777,19 +7370,34 @@ export namespace MyNS {
 		/** The name of the protocol. */
 		name: FormControl<string | null | undefined>,
 
-		/** Total percentage of viewers (<strong>100</strong>). */
+		/**
+		 * Total percentage of viewers (<strong>100</strong>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewers: FormControl<number | null | undefined>,
 
-		/** The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>. */
+		/**
+		 * The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewing_time: FormControl<number | null | undefined>,
 
-		/** The average length of time, in seconds, that viewers played the stream at the target. */
+		/**
+		 * The average length of time, in seconds, that viewers played the stream at the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_avg_viewing_time: FormControl<number | null | undefined>,
 
-		/** The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream. */
+		/**
+		 * The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_total_viewing_time: FormControl<number | null | undefined>,
 
-		/** The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once. */
+		/**
+		 * The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_unique_viewers: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_viewer_data_countriesElementCountry_codeProtocolsProtocol_nameFormGroup() {
@@ -6820,19 +7428,34 @@ export namespace MyNS {
 		/** The name of the protocol. */
 		name?: string | null;
 
-		/** Total percentage of viewers (<strong>100</strong>). */
+		/**
+		 * Total percentage of viewers (<strong>100</strong>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewers?: number | null;
 
-		/** The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>. */
+		/**
+		 * The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewing_time?: number | null;
 
-		/** The average length of time, in seconds, that viewers played the stream at the target. */
+		/**
+		 * The average length of time, in seconds, that viewers played the stream at the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_avg_viewing_time?: number | null;
 
-		/** The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream. */
+		/**
+		 * The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_total_viewing_time?: number | null;
 
-		/** The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once. */
+		/**
+		 * The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_unique_viewers?: number | null;
 	}
 	export interface Usage_viewer_data_protocolsElementProtocol_nameFormProperties {
@@ -6840,19 +7463,34 @@ export namespace MyNS {
 		/** The name of the protocol. */
 		name: FormControl<string | null | undefined>,
 
-		/** Total percentage of viewers (<strong>100</strong>). */
+		/**
+		 * Total percentage of viewers (<strong>100</strong>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewers: FormControl<number | null | undefined>,
 
-		/** The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>. */
+		/**
+		 * The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewing_time: FormControl<number | null | undefined>,
 
-		/** The average length of time, in seconds, that viewers played the stream at the target. */
+		/**
+		 * The average length of time, in seconds, that viewers played the stream at the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_avg_viewing_time: FormControl<number | null | undefined>,
 
-		/** The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream. */
+		/**
+		 * The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_total_viewing_time: FormControl<number | null | undefined>,
 
-		/** The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once. */
+		/**
+		 * The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_unique_viewers: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_viewer_data_protocolsElementProtocol_nameFormGroup() {
@@ -6884,20 +7522,35 @@ export namespace MyNS {
 		/** The name of the rendition. */
 		name?: string | null;
 
-		/** Total percentage of viewers (<strong>100</strong>). */
+		/**
+		 * Total percentage of viewers (<strong>100</strong>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewers?: number | null;
 
-		/** The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>. */
+		/**
+		 * The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewing_time?: number | null;
 		protocols?: Array<Usage_viewer_data_protocolsElement>;
 
-		/** The average length of time, in seconds, that viewers played the stream at the target. */
+		/**
+		 * The average length of time, in seconds, that viewers played the stream at the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_avg_viewing_time?: number | null;
 
-		/** The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream. */
+		/**
+		 * The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_total_viewing_time?: number | null;
 
-		/** The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once. */
+		/**
+		 * The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_unique_viewers?: number | null;
 	}
 	export interface Usage_viewer_data_renditionsElementRendition_nameFormProperties {
@@ -6905,19 +7558,34 @@ export namespace MyNS {
 		/** The name of the rendition. */
 		name: FormControl<string | null | undefined>,
 
-		/** Total percentage of viewers (<strong>100</strong>). */
+		/**
+		 * Total percentage of viewers (<strong>100</strong>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewers: FormControl<number | null | undefined>,
 
-		/** The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>. */
+		/**
+		 * The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewing_time: FormControl<number | null | undefined>,
 
-		/** The average length of time, in seconds, that viewers played the stream at the target. */
+		/**
+		 * The average length of time, in seconds, that viewers played the stream at the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_avg_viewing_time: FormControl<number | null | undefined>,
 
-		/** The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream. */
+		/**
+		 * The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_total_viewing_time: FormControl<number | null | undefined>,
 
-		/** The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once. */
+		/**
+		 * The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_unique_viewers: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_viewer_data_renditionsElementRendition_nameFormGroup() {
@@ -6949,10 +7617,16 @@ export namespace MyNS {
 		/** A comma-separated list of all viewed country codes shown as strings, for quick reference. */
 		country_list?: Array<string>;
 
-		/** Total percentage of viewers (<strong>100</strong>). */
+		/**
+		 * Total percentage of viewers (<strong>100</strong>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewers?: number | null;
 
-		/** The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>. */
+		/**
+		 * The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewing_time?: number | null;
 		protocols?: Array<Usage_viewer_data_protocolsElement>;
 
@@ -6960,30 +7634,54 @@ export namespace MyNS {
 		rendition_list?: Array<string>;
 		renditions?: Array<Usage_viewer_data_renditionsElement>;
 
-		/** The average length of time, in seconds, that viewers played the stream at the target. */
+		/**
+		 * The average length of time, in seconds, that viewers played the stream at the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_avg_viewing_time?: number | null;
 
-		/** The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream. */
+		/**
+		 * The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_total_viewing_time?: number | null;
 
-		/** The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once. */
+		/**
+		 * The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_unique_viewers?: number | null;
 	}
 	export interface Usage_viewer_data_stream_targetStream_targetFormProperties {
 
-		/** Total percentage of viewers (<strong>100</strong>). */
+		/**
+		 * Total percentage of viewers (<strong>100</strong>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewers: FormControl<number | null | undefined>,
 
-		/** The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>. */
+		/**
+		 * The percentage of total viewing time that the protocol or rendition was viewed. Always <strong>100</strong> for <em>stream_target</em>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage_viewing_time: FormControl<number | null | undefined>,
 
-		/** The average length of time, in seconds, that viewers played the stream at the target. */
+		/**
+		 * The average length of time, in seconds, that viewers played the stream at the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_avg_viewing_time: FormControl<number | null | undefined>,
 
-		/** The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream. */
+		/**
+		 * The total length of time, in seconds, that all viewers played the stream at the target. <em>seconds_total_viewing_time</em> may be longer than the duration of the stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds_total_viewing_time: FormControl<number | null | undefined>,
 
-		/** The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once. */
+		/**
+		 * The total number of unique viewers that downloaded at least one chunk of the stream at the target (for HTTP streams) or connected to and viewed the stream (for ultra low latency streams). A unique viewer is a single IP address; multiple users that share the same IP address are counted once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_unique_viewers: FormControl<number | null | undefined>,
 	}
 	export function CreateUsage_viewer_data_stream_targetStream_targetFormGroup() {

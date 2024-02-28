@@ -162,14 +162,20 @@ export namespace MyNS {
 	/** The properties that are associated with a blob input containing stream data. */
 	export interface BlobStreamInputDataSourceProperties extends BlobDataSourceProperties {
 
-		/** The partition count of the blob input data source. Range 1 - 256. */
+		/**
+		 * The partition count of the blob input data source. Range 1 - 256.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourcePartitionCount?: number | null;
 	}
 
 	/** The properties that are associated with a blob input containing stream data. */
 	export interface BlobStreamInputDataSourcePropertiesFormProperties extends BlobDataSourcePropertiesFormProperties {
 
-		/** The partition count of the blob input data source. Range 1 - 256. */
+		/**
+		 * The partition count of the blob input data source. Range 1 - 256.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourcePartitionCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBlobStreamInputDataSourcePropertiesFormGroup() {

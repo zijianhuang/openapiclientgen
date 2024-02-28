@@ -22,8 +22,11 @@ export namespace MyNS {
 		/** The file path unc of the page BLOB file on storage cluster. */
 		filePathUnc?: string | null;
 
-		/** The maximum size of the page BLOB. */
-		maximumblobsize?: number | null;
+		/**
+		 * The maximum size of the page BLOB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximumblobsize?: string | null;
 
 		/** The status of page BLOB acquisition. */
 		status?: AcquisitionStatus | null;
@@ -53,8 +56,11 @@ export namespace MyNS {
 		/** The file path unc of the page BLOB file on storage cluster. */
 		filePathUnc: FormControl<string | null | undefined>,
 
-		/** The maximum size of the page BLOB. */
-		maximumblobsize: FormControl<number | null | undefined>,
+		/**
+		 * The maximum size of the page BLOB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximumblobsize: FormControl<string | null | undefined>,
 
 		/** The status of page BLOB acquisition. */
 		status: FormControl<AcquisitionStatus | null | undefined>,
@@ -72,7 +78,7 @@ export namespace MyNS {
 			container: new FormControl<string | null | undefined>(undefined),
 			filePath: new FormControl<string | null | undefined>(undefined),
 			filePathUnc: new FormControl<string | null | undefined>(undefined),
-			maximumblobsize: new FormControl<number | null | undefined>(undefined),
+			maximumblobsize: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AcquisitionStatus | null | undefined>(undefined),
 			storageaccount: new FormControl<string | null | undefined>(undefined),
 			susbcriptionid: new FormControl<string | null | undefined>(undefined),

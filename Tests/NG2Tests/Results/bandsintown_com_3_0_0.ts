@@ -7,6 +7,8 @@ export namespace MyNS {
 
 		/** Required */
 		facebook_page_url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Required */
@@ -21,10 +23,16 @@ export namespace MyNS {
 		/** Required */
 		thumb_url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tracker_count: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upcoming_event_count: number;
 
 		/** Required */
@@ -34,6 +42,8 @@ export namespace MyNS {
 
 		/** Required */
 		facebook_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -48,10 +58,16 @@ export namespace MyNS {
 		/** Required */
 		thumb_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tracker_count: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upcoming_event_count: FormControl<number | null | undefined>,
 
 		/** Required */

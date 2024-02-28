@@ -278,7 +278,10 @@ export namespace MyNS {
 		/** Required */
 		action: Body_4Action;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		elapsed_time: number;
 
 		/** Required */
@@ -295,7 +298,10 @@ export namespace MyNS {
 		/** Required */
 		action: FormControl<Body_4Action | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		elapsed_time: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -343,7 +349,10 @@ export namespace MyNS {
 		/** Required */
 		titles: ProgrammeTitles;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_available_episodes: number;
 
 		/** Required */
@@ -357,7 +366,10 @@ export namespace MyNS {
 		/** Required */
 		short_synopsis: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_available_episodes: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -547,7 +559,10 @@ export namespace MyNS {
 
 	export interface Broadcast {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: number;
 
 		/** Required */
@@ -589,7 +604,10 @@ export namespace MyNS {
 	}
 	export interface BroadcastFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -678,16 +696,25 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
 		/** Required */
 		results: Array<Broadcast>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface BroadcastsResponseFormProperties {
@@ -695,13 +722,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateBroadcastsResponseFormGroup() {
@@ -719,16 +755,25 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
 		/** Required */
 		results: Array<Category>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface CategoriesResponseFormProperties {
@@ -736,13 +781,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCategoriesResponseFormGroup() {
@@ -763,7 +817,10 @@ export namespace MyNS {
 		/** Required */
 		child_categories: Array<ChildCategory>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth: number;
 
 		/** Required */
@@ -786,7 +843,10 @@ export namespace MyNS {
 		/** Required */
 		category_type: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -825,7 +885,10 @@ export namespace MyNS {
 		/** Required */
 		child_categories: Array<ChildCategory>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth: number;
 
 		/** Required */
@@ -848,7 +911,10 @@ export namespace MyNS {
 		/** Required */
 		category_type: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -893,7 +959,10 @@ export namespace MyNS {
 		/** Required */
 		replied_at: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 	}
 	export interface CategoryErrorFormProperties {
@@ -910,7 +979,10 @@ export namespace MyNS {
 		/** Required */
 		replied_at: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateCategoryErrorFormGroup() {
@@ -1316,10 +1388,16 @@ export namespace MyNS {
 		/** Required */
 		message: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replied_at: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 	}
 	export interface MusicExportErrorFormProperties {
@@ -1327,10 +1405,16 @@ export namespace MyNS {
 		/** Required */
 		message: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replied_at: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateMusicExportErrorFormGroup() {
@@ -1501,7 +1585,10 @@ export namespace MyNS {
 		/** Required */
 		schema: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface MusicExportPreferencesResponseFormProperties {
@@ -1515,7 +1602,10 @@ export namespace MyNS {
 		/** Required */
 		schema: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateMusicExportPreferencesResponseFormGroup() {
@@ -1573,7 +1663,10 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: number;
 
 		/** Required */
@@ -1593,7 +1686,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1612,10 +1708,14 @@ export namespace MyNS {
 	}
 
 	export interface MusicPopularityArtists {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
 
 		/** Required */
 		method: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
 
 		/** Required */
@@ -1627,14 +1727,21 @@ export namespace MyNS {
 		/** Required */
 		schema: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface MusicPopularityArtistsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Required */
 		method: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1643,7 +1750,10 @@ export namespace MyNS {
 		/** Required */
 		schema: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateMusicPopularityArtistsFormGroup() {
@@ -1710,7 +1820,10 @@ export namespace MyNS {
 		/** Required */
 		playlistPlaybackType: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: number;
 
 		/** Required */
@@ -1763,7 +1876,10 @@ export namespace MyNS {
 		/** Required */
 		playlistPlaybackType: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1808,10 +1924,14 @@ export namespace MyNS {
 	}
 
 	export interface MusicPopularityPlaylists {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
 
 		/** Required */
 		method: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
 
 		/** Required */
@@ -1823,14 +1943,21 @@ export namespace MyNS {
 		/** Required */
 		schema: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface MusicPopularityPlaylistsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Required */
 		method: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1839,7 +1966,10 @@ export namespace MyNS {
 		/** Required */
 		schema: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateMusicPopularityPlaylistsFormGroup() {
@@ -1872,7 +2002,10 @@ export namespace MyNS {
 		recordImageHref?: string | null;
 		recordImagePid?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: number;
 		title?: string | null;
 		type?: string | null;
@@ -1890,7 +2023,10 @@ export namespace MyNS {
 		recordImageHref: FormControl<string | null | undefined>,
 		recordImagePid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -1963,7 +2099,10 @@ export namespace MyNS {
 		/** Required */
 		audioType: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: number;
 
 		/** Required */
@@ -1977,7 +2116,10 @@ export namespace MyNS {
 		/** Required */
 		audioType: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1997,10 +2139,14 @@ export namespace MyNS {
 	}
 
 	export interface MusicPopularityTracks {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit?: number | null;
 
 		/** Required */
 		method: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
 
 		/** Required */
@@ -2012,14 +2158,21 @@ export namespace MyNS {
 		/** Required */
 		schema: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface MusicPopularityTracksFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Required */
 		method: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2028,7 +2181,10 @@ export namespace MyNS {
 		/** Required */
 		schema: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateMusicPopularityTracksFormGroup() {
@@ -2076,7 +2232,10 @@ export namespace MyNS {
 		/** Required */
 		short_title: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sort: number;
 
 		/** Required */
@@ -2108,7 +2267,10 @@ export namespace MyNS {
 		/** Required */
 		short_title: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sort: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2214,16 +2376,25 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
 		/** Required */
 		results: Array<Network>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface NetworksResponseFormProperties {
@@ -2231,13 +2402,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateNetworksResponseFormGroup() {
@@ -2279,13 +2459,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface PersonalisedCategoriesResponseFormProperties {
@@ -2293,13 +2482,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonalisedCategoriesResponseFormGroup() {
@@ -2676,7 +2874,10 @@ export namespace MyNS {
 
 	export interface PersonalisedMusicTrackMedia {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: number;
 
 		/** Required */
@@ -2696,7 +2897,10 @@ export namespace MyNS {
 	}
 	export interface PersonalisedMusicTrackMediaFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2840,10 +3044,16 @@ export namespace MyNS {
 		/** Required */
 		message: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replied_at: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 	}
 	export interface PersonalisedMusicErrorFormProperties {
@@ -2851,10 +3061,16 @@ export namespace MyNS {
 		/** Required */
 		message: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replied_at: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonalisedMusicErrorFormGroup() {
@@ -2912,13 +3128,19 @@ export namespace MyNS {
 
 	export interface PersonalisedMusicResponse {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
 		/** Required */
 		method: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
 		/** Required */
@@ -2930,18 +3152,27 @@ export namespace MyNS {
 		/** Required */
 		schema: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface PersonalisedMusicResponseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Required */
 		method: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2950,7 +3181,10 @@ export namespace MyNS {
 		/** Required */
 		schema: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonalisedMusicResponseFormGroup() {
@@ -3025,16 +3259,25 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
 		/** Required */
 		results: Array<PersonalisedNetworks>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface PersonalisedNetworksResponseFormProperties {
@@ -3042,13 +3285,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonalisedNetworksResponseFormGroup() {
@@ -3214,10 +3466,16 @@ export namespace MyNS {
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: number;
 
 		/** Required */
@@ -3237,10 +3495,16 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3288,13 +3552,19 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
 		/** Required */
 		method: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
 		/** Required */
@@ -3303,7 +3573,10 @@ export namespace MyNS {
 		/** Required */
 		results: Array<PersonalisedRadioActivity>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface PersonalisedRadioResponseFormProperties {
@@ -3311,19 +3584,28 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Required */
 		method: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Required */
 		replied_at: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonalisedRadioResponseFormGroup() {
@@ -3422,7 +3704,10 @@ export namespace MyNS {
 		/** Required */
 		category_summaries: Array<CategorySummary>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_available: number;
 
 		/** Required */
@@ -3458,7 +3743,10 @@ export namespace MyNS {
 		/** Required */
 		titles: ProgrammeTitles;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_available_episodes: number;
 
 		/** Required */
@@ -3469,7 +3757,10 @@ export namespace MyNS {
 	}
 	export interface PodcastFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_available: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3490,7 +3781,10 @@ export namespace MyNS {
 		/** Required */
 		territory: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_available_episodes: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3622,16 +3916,25 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		offset: number;
 
 		/** Required */
 		results: Array<PodcastEpisodeSummary>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total: number;
 	}
 	export interface PodcastEpisodesResponseFormProperties {
@@ -3639,13 +3942,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePodcastEpisodesResponseFormGroup() {
@@ -3663,6 +3975,8 @@ export namespace MyNS {
 		id?: string | null;
 		message?: string | null;
 		replied_at?: string | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface PodcastErrorFormProperties {
@@ -3670,6 +3984,8 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		replied_at: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreatePodcastErrorFormGroup() {
@@ -3719,16 +4035,25 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		offset: number;
 
 		/** Required */
 		results: Array<PodcastsFeatured>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total: number;
 	}
 	export interface PodcastsFeaturedResponseFormProperties {
@@ -3736,13 +4061,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePodcastsFeaturedResponseFormGroup() {
@@ -3760,16 +4094,25 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
 		/** Required */
 		results: Array<Podcast>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface PodcastsResponseFormProperties {
@@ -3777,13 +4120,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePodcastsResponseFormGroup() {
@@ -3810,7 +4162,10 @@ export namespace MyNS {
 		/** Required */
 		replied_at: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 	}
 	export interface PopularErrorFormProperties {
@@ -3827,7 +4182,10 @@ export namespace MyNS {
 		/** Required */
 		replied_at: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreatePopularErrorFormGroup() {
@@ -3869,7 +4227,10 @@ export namespace MyNS {
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: number;
 
 		/** Required */
@@ -3880,7 +4241,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3900,16 +4264,25 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
 		/** Required */
 		results: Array<PopularItemSummary>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface PopularResponseFormProperties {
@@ -3917,13 +4290,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePopularResponseFormGroup() {
@@ -3953,6 +4335,8 @@ export namespace MyNS {
 
 		/** Required */
 		titles: ProgrammeTitles;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_available_episodes?: number | null;
 
 		/** Required */
@@ -3965,6 +4349,8 @@ export namespace MyNS {
 
 		/** Required */
 		short_synopsis: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_available_episodes: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3985,16 +4371,25 @@ export namespace MyNS {
 		/** Required */
 		'$schema': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: number;
 
 		/** Required */
 		results: Array<ProgrammeSummary>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface ProgrammesResponseFormProperties {
@@ -4002,13 +4397,22 @@ export namespace MyNS {
 		/** Required */
 		'$schema': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateProgrammesResponseFormGroup() {
@@ -4035,10 +4439,16 @@ export namespace MyNS {
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: number;
 
 		/** Required */
@@ -4058,10 +4468,16 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -4123,7 +4539,10 @@ export namespace MyNS {
 		/** Required */
 		titles: ProgrammeTitles;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_available_episodes: number;
 
 		/** Required */
@@ -4137,7 +4556,10 @@ export namespace MyNS {
 		/** Required */
 		short_synopsis: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_available_episodes: FormControl<number | null | undefined>,
 
 		/** Required */

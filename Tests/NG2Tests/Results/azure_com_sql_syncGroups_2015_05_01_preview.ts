@@ -234,7 +234,10 @@ export namespace MyNS {
 		/** User name for the sync group hub database credential. */
 		hubDatabaseUserName?: string | null;
 
-		/** Sync interval of the sync group. */
+		/**
+		 * Sync interval of the sync group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval?: number | null;
 
 		/** Last sync time of the sync group. */
@@ -262,7 +265,10 @@ export namespace MyNS {
 		/** User name for the sync group hub database credential. */
 		hubDatabaseUserName: FormControl<string | null | undefined>,
 
-		/** Sync interval of the sync group. */
+		/**
+		 * Sync interval of the sync group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: FormControl<number | null | undefined>,
 
 		/** Last sync time of the sync group. */

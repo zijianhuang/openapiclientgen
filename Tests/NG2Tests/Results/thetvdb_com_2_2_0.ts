@@ -23,27 +23,55 @@ export namespace MyNS {
 	}
 
 	export interface BasicEpisode {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		absoluteNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airedEpisodeNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airedSeason?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dvdEpisodeNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dvdSeason?: number | null;
 		episodeName?: string | null;
 		firstAired?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		language?: EpisodeLanguageInfo;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastUpdated?: number | null;
 		overview?: string | null;
 	}
 	export interface BasicEpisodeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		absoluteNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airedEpisodeNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airedSeason: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dvdEpisodeNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dvdSeason: FormControl<number | null | undefined>,
 		episodeName: FormControl<string | null | undefined>,
 		firstAired: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastUpdated: FormControl<number | null | undefined>,
 		overview: FormControl<string | null | undefined>,
 	}
@@ -93,64 +121,120 @@ export namespace MyNS {
 	}
 
 	export interface Episode {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		absoluteNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airedEpisodeNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airedSeason?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airsAfterSeason?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airsBeforeEpisode?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airsBeforeSeason?: number | null;
 		director?: string | null;
 		directors?: Array<string>;
+
+		/** Type: double */
 		dvdChapter?: number | null;
 		dvdDiscid?: string | null;
+
+		/** Type: double */
 		dvdEpisodeNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dvdSeason?: number | null;
 		episodeName?: string | null;
 		filename?: string | null;
 		firstAired?: string | null;
 		guestStars?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		imdbId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastUpdated?: number | null;
 		lastUpdatedBy?: string | null;
 		overview?: string | null;
 		productionCode?: string | null;
 		seriesId?: string | null;
 		showUrl?: string | null;
+
+		/** Type: double */
 		siteRating?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		siteRatingCount?: number | null;
 		thumbAdded?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		thumbAuthor?: number | null;
 		thumbHeight?: string | null;
 		thumbWidth?: string | null;
 		writers?: Array<string>;
 	}
 	export interface EpisodeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		absoluteNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airedEpisodeNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airedSeason: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airsAfterSeason: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airsBeforeEpisode: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		airsBeforeSeason: FormControl<number | null | undefined>,
 		director: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		dvdChapter: FormControl<number | null | undefined>,
 		dvdDiscid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		dvdEpisodeNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dvdSeason: FormControl<number | null | undefined>,
 		episodeName: FormControl<string | null | undefined>,
 		filename: FormControl<string | null | undefined>,
 		firstAired: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		imdbId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastUpdated: FormControl<number | null | undefined>,
 		lastUpdatedBy: FormControl<string | null | undefined>,
 		overview: FormControl<string | null | undefined>,
 		productionCode: FormControl<string | null | undefined>,
 		seriesId: FormControl<string | null | undefined>,
 		showUrl: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		siteRating: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		siteRatingCount: FormControl<number | null | undefined>,
 		thumbAdded: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		thumbAuthor: FormControl<number | null | undefined>,
 		thumbHeight: FormControl<string | null | undefined>,
 		thumbWidth: FormControl<string | null | undefined>,
@@ -249,12 +333,16 @@ export namespace MyNS {
 	export interface Language {
 		abbreviation?: string | null;
 		englishName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface LanguageFormProperties {
 		abbreviation: FormControl<string | null | undefined>,
 		englishName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -280,15 +368,31 @@ export namespace MyNS {
 	}
 
 	export interface Links {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		first?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		next?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		previous?: number | null;
 	}
 	export interface LinksFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		first: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		next: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		previous: FormControl<number | null | undefined>,
 	}
 	export function CreateLinksFormGroup() {
@@ -335,8 +439,12 @@ export namespace MyNS {
 		banner?: string | null;
 		firstAired?: string | null;
 		genre?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		imdbId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastUpdated?: number | null;
 		network?: string | null;
 		networkId?: string | null;
@@ -345,7 +453,11 @@ export namespace MyNS {
 		runtime?: string | null;
 		seriesId?: string | null;
 		seriesName?: string | null;
+
+		/** Type: double */
 		siteRating?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		siteRatingCount?: number | null;
 		slug?: string | null;
 		status?: string | null;
@@ -357,8 +469,12 @@ export namespace MyNS {
 		airsTime: FormControl<string | null | undefined>,
 		banner: FormControl<string | null | undefined>,
 		firstAired: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		imdbId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastUpdated: FormControl<number | null | undefined>,
 		network: FormControl<string | null | undefined>,
 		networkId: FormControl<string | null | undefined>,
@@ -367,7 +483,11 @@ export namespace MyNS {
 		runtime: FormControl<string | null | undefined>,
 		seriesId: FormControl<string | null | undefined>,
 		seriesName: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		siteRating: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		siteRatingCount: FormControl<number | null | undefined>,
 		slug: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
@@ -412,25 +532,41 @@ export namespace MyNS {
 	}
 
 	export interface SeriesActorsData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		image?: string | null;
 		imageAdded?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		imageAuthor?: number | null;
 		lastUpdated?: string | null;
 		name?: string | null;
 		role?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seriesId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface SeriesActorsDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		image: FormControl<string | null | undefined>,
 		imageAdded: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		imageAuthor: FormControl<number | null | undefined>,
 		lastUpdated: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		role: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seriesId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateSeriesActorsDataFormGroup() {
@@ -525,8 +661,12 @@ export namespace MyNS {
 
 	export interface SeriesImageQueryResult {
 		fileName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		keyType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		languageId?: number | null;
 		ratingsInfo?: SeriesImageQueryResultRatingsInfo;
 		resolution?: string | null;
@@ -535,8 +675,12 @@ export namespace MyNS {
 	}
 	export interface SeriesImageQueryResultFormProperties {
 		fileName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		keyType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		languageId: FormControl<number | null | undefined>,
 		resolution: FormControl<string | null | undefined>,
 		subKey: FormControl<string | null | undefined>,
@@ -557,18 +701,30 @@ export namespace MyNS {
 
 	export interface SeriesImageQueryResultRatingsInfo {
 
-		/** Average rating for the given record. */
+		/**
+		 * Average rating for the given record.
+		 * Type: double
+		 */
 		average?: number | null;
 
-		/** Number of ratings for the given record. */
+		/**
+		 * Number of ratings for the given record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 	}
 	export interface SeriesImageQueryResultRatingsInfoFormProperties {
 
-		/** Average rating for the given record. */
+		/**
+		 * Average rating for the given record.
+		 * Type: double
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Number of ratings for the given record. */
+		/**
+		 * Number of ratings for the given record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateSeriesImageQueryResultRatingsInfoFormGroup() {
@@ -592,17 +748,37 @@ export namespace MyNS {
 	}
 
 	export interface SeriesImagesCount {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fanart?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		poster?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seasonwide?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		series?: number | null;
 	}
 	export interface SeriesImagesCountFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fanart: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		poster: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seasonwide: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		series: FormControl<number | null | undefined>,
 	}
 	export function CreateSeriesImagesCountFormGroup() {
@@ -660,6 +836,8 @@ export namespace MyNS {
 		aliases?: Array<string>;
 		banner?: string | null;
 		firstAired?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		network?: string | null;
 		overview?: string | null;
@@ -670,6 +848,8 @@ export namespace MyNS {
 	export interface SeriesSearchResultFormProperties {
 		banner: FormControl<string | null | undefined>,
 		firstAired: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		network: FormControl<string | null | undefined>,
 		overview: FormControl<string | null | undefined>,
@@ -716,11 +896,19 @@ export namespace MyNS {
 	}
 
 	export interface Update {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastUpdated?: number | null;
 	}
 	export interface UpdateFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastUpdated: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateFormGroup() {
@@ -808,12 +996,20 @@ export namespace MyNS {
 	}
 
 	export interface UserRatings {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingItemId?: number | null;
 		ratingType?: string | null;
 	}
 	export interface UserRatingsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingItemId: FormControl<number | null | undefined>,
 		ratingType: FormControl<string | null | undefined>,
 	}
@@ -880,10 +1076,10 @@ export namespace MyNS {
 		/**
 		 * Returns the full information for a given episode id. __Deprecation Warning:__ The _director_ key will be deprecated in favor of the new _directors_ key in a future release.
 		 * Get episodes/{id}
-		 * @param {number} id ID of the episode
+		 * @param {string} id ID of the episode
 		 * @return {EpisodeRecordData} An array of query keys as strings
 		 */
-		Episodes_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<EpisodeRecordData> {
+		Episodes_idGet(id: string, headersHandler?: () => HttpHeaders): Observable<EpisodeRecordData> {
 			return this.http.get<EpisodeRecordData>(this.baseUri + 'episodes/' + id, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -950,38 +1146,38 @@ export namespace MyNS {
 		/**
 		 * Returns a series records that contains all information known about a particular series id.
 		 * Get series/{id}
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @return {SeriesData} A series record.
 		 */
-		Series_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<SeriesData> {
+		Series_idGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesData> {
 			return this.http.get<SeriesData>(this.baseUri + 'series/' + id, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Returns actors for the given series id
 		 * Get series/{id}/actors
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @return {SeriesActors} An array of actor objects for the given series id.
 		 */
-		Series_idActorsGet(id: number, headersHandler?: () => HttpHeaders): Observable<SeriesActors> {
+		Series_idActorsGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesActors> {
 			return this.http.get<SeriesActors>(this.baseUri + 'series/' + id + '/actors', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * All episodes for a given series. Paginated with 100 results per page.
 		 * Get series/{id}/episodes
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @param {string} page Page of results to fetch. Defaults to page 1 if not provided.
 		 * @return {SeriesEpisodes} An array of episode objects for the given series id.
 		 */
-		Series_idEpisodesGetByPage(id: number, page: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<SeriesEpisodes> {
+		Series_idEpisodesGetByPage(id: string, page: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<SeriesEpisodes> {
 			return this.http.get<SeriesEpisodes>(this.baseUri + 'series/' + id + '/episodes?page=' + (page == null ? '' : encodeURIComponent(page)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * This route allows the user to query against episodes for the given series. The response is a paginated array of episode records.
 		 * Get series/{id}/episodes/query
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @param {string} absoluteNumber Absolute number of the episode
 		 * @param {string} airedSeason Aired season number
 		 * @param {string} airedEpisode Aired episode number
@@ -991,17 +1187,17 @@ export namespace MyNS {
 		 * @param {string} page Page of results to fetch. Defaults to page 1 if not provided.
 		 * @return {SeriesEpisodesQuery} An array of basic Episode results that matched the query
 		 */
-		Series_idEpisodesQueryGetByAbsoluteNumberAndAiredSeasonAndAiredEpisodeAndDvdSeasonAndDvdEpisodeAndImdbIdAndPage(id: number, absoluteNumber: string | null | undefined, airedSeason: string | null | undefined, airedEpisode: string | null | undefined, dvdSeason: string | null | undefined, dvdEpisode: string | null | undefined, imdbId: string | null | undefined, page: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<SeriesEpisodesQuery> {
+		Series_idEpisodesQueryGetByAbsoluteNumberAndAiredSeasonAndAiredEpisodeAndDvdSeasonAndDvdEpisodeAndImdbIdAndPage(id: string, absoluteNumber: string | null | undefined, airedSeason: string | null | undefined, airedEpisode: string | null | undefined, dvdSeason: string | null | undefined, dvdEpisode: string | null | undefined, imdbId: string | null | undefined, page: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<SeriesEpisodesQuery> {
 			return this.http.get<SeriesEpisodesQuery>(this.baseUri + 'series/' + id + '/episodes/query?absoluteNumber=' + (absoluteNumber == null ? '' : encodeURIComponent(absoluteNumber)) + '&airedSeason=' + (airedSeason == null ? '' : encodeURIComponent(airedSeason)) + '&airedEpisode=' + (airedEpisode == null ? '' : encodeURIComponent(airedEpisode)) + '&dvdSeason=' + (dvdSeason == null ? '' : encodeURIComponent(dvdSeason)) + '&dvdEpisode=' + (dvdEpisode == null ? '' : encodeURIComponent(dvdEpisode)) + '&imdbId=' + (imdbId == null ? '' : encodeURIComponent(imdbId)) + '&page=' + (page == null ? '' : encodeURIComponent(page)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Returns the allowed query keys for the `/series/{id}/episodes/query` route
 		 * Get series/{id}/episodes/query/params
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @return {SeriesEpisodesQueryParams} An array of query keys as strings
 		 */
-		Series_idEpisodesQueryParamsGet(id: number, headersHandler?: () => HttpHeaders): Observable<SeriesEpisodesQueryParams> {
+		Series_idEpisodesQueryParamsGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesEpisodesQueryParams> {
 			return this.http.get<SeriesEpisodesQueryParams>(this.baseUri + 'series/' + id + '/episodes/query/params', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1009,64 +1205,64 @@ export namespace MyNS {
 		 * Returns a summary of the episodes and seasons available for the series.
 		 * __Note__: Season "0" is for all episodes that are considered to be specials.
 		 * Get series/{id}/episodes/summary
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @return {SeriesEpisodesSummary} A summary of the episodes and seasons avaialable for the given series.
 		 */
-		Series_idEpisodesSummaryGet(id: number, headersHandler?: () => HttpHeaders): Observable<SeriesEpisodesSummary> {
+		Series_idEpisodesSummaryGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesEpisodesSummary> {
 			return this.http.get<SeriesEpisodesSummary>(this.baseUri + 'series/' + id + '/episodes/summary', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Returns a series records, filtered by the supplied comma-separated list of keys. Query keys can be found at the `/series/{id}/filter/params` route.
 		 * Get series/{id}/filter
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @param {string} keys Comma-separated list of keys to filter by
 		 * @return {SeriesData} A filtered series record
 		 */
-		Series_idFilterGetByKeys(id: number, keys: string, headersHandler?: () => HttpHeaders): Observable<SeriesData> {
+		Series_idFilterGetByKeys(id: string, keys: string, headersHandler?: () => HttpHeaders): Observable<SeriesData> {
 			return this.http.get<SeriesData>(this.baseUri + 'series/' + id + '/filter?keys=' + (keys == null ? '' : encodeURIComponent(keys)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Returns the list of keys available for the `/series/{id}/filter` route
 		 * Get series/{id}/filter/params
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @return {FilterKeys} A list of keys to filter by
 		 */
-		Series_idFilterParamsGet(id: number, headersHandler?: () => HttpHeaders): Observable<FilterKeys> {
+		Series_idFilterParamsGet(id: string, headersHandler?: () => HttpHeaders): Observable<FilterKeys> {
 			return this.http.get<FilterKeys>(this.baseUri + 'series/' + id + '/filter/params', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Returns a summary of the images for a particular series
 		 * Get series/{id}/images
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @return {SeriesImagesCounts} A summary of the image types and counts available for the given series.
 		 */
-		Series_idImagesGet(id: number, headersHandler?: () => HttpHeaders): Observable<SeriesImagesCounts> {
+		Series_idImagesGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesImagesCounts> {
 			return this.http.get<SeriesImagesCounts>(this.baseUri + 'series/' + id + '/images', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Query images for the given series ID.
 		 * Get series/{id}/images/query
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @param {string} keyType Type of image you're querying for (fanart, poster, etc. See ../images/query/params for more details).
 		 * @param {string} resolution Resolution to filter by (1280x1024, for example)
 		 * @param {string} subKey Subkey for the above query keys. See /series/{id}/images/query/params for more information
 		 * @return {SeriesImageQueryResults} An array of basic Episode results that matched the query
 		 */
-		Series_idImagesQueryGetByKeyTypeAndResolutionAndSubKey(id: number, keyType: string | null | undefined, resolution: string | null | undefined, subKey: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<SeriesImageQueryResults> {
+		Series_idImagesQueryGetByKeyTypeAndResolutionAndSubKey(id: string, keyType: string | null | undefined, resolution: string | null | undefined, subKey: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<SeriesImageQueryResults> {
 			return this.http.get<SeriesImageQueryResults>(this.baseUri + 'series/' + id + '/images/query?keyType=' + (keyType == null ? '' : encodeURIComponent(keyType)) + '&resolution=' + (resolution == null ? '' : encodeURIComponent(resolution)) + '&subKey=' + (subKey == null ? '' : encodeURIComponent(subKey)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Returns the allowed query keys for the `/series/{id}/images/query` route. Contains a parameter record for each unique `keyType`, listing values that will return results.
 		 * Get series/{id}/images/query/params
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @return {SeriesImagesQueryParams} An array of query keys as strings
 		 */
-		Series_idImagesQueryParamsGet(id: number, headersHandler?: () => HttpHeaders): Observable<SeriesImagesQueryParams> {
+		Series_idImagesQueryParamsGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesImagesQueryParams> {
 			return this.http.get<SeriesImagesQueryParams>(this.baseUri + 'series/' + id + '/images/query/params', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1112,20 +1308,20 @@ export namespace MyNS {
 		/**
 		 * Adds the supplied series ID to the user’s favorite’s list and returns the updated list.
 		 * Put user/favorites/{id}
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @return {UserFavoritesData} List of user favorites.
 		 */
-		UserFavorites_idPut(id: number, headersHandler?: () => HttpHeaders): Observable<UserFavoritesData> {
+		UserFavorites_idPut(id: string, headersHandler?: () => HttpHeaders): Observable<UserFavoritesData> {
 			return this.http.put<UserFavoritesData>(this.baseUri + 'user/favorites/' + id, null, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
 		 * Deletes the given series ID from the user’s favorite’s list and returns the updated list.
 		 * Delete user/favorites/{id}
-		 * @param {number} id ID of the series
+		 * @param {string} id ID of the series
 		 * @return {UserFavoritesData} List of user favorites.
 		 */
-		UserFavorites_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<UserFavoritesData> {
+		UserFavorites_idDelete(id: string, headersHandler?: () => HttpHeaders): Observable<UserFavoritesData> {
 			return this.http.delete<UserFavoritesData>(this.baseUri + 'user/favorites/' + id, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1161,10 +1357,10 @@ export namespace MyNS {
 		 * This route deletes a given rating of a given type.
 		 * Delete user/ratings/{itemType}/{itemId}
 		 * @param {string} itemType Item to update. Can be either 'series', 'episode', or 'image'
-		 * @param {number} itemId ID of the ratings record that you wish to modify
+		 * @param {string} itemId ID of the ratings record that you wish to modify
 		 * @return {UserRatingsDataNoLinksEmptyArray} Returns OK if the delete was successful
 		 */
-		UserRatings_itemType_itemIdDelete(itemType: string, itemId: number, headersHandler?: () => HttpHeaders): Observable<UserRatingsDataNoLinksEmptyArray> {
+		UserRatings_itemType_itemIdDelete(itemType: string, itemId: string, headersHandler?: () => HttpHeaders): Observable<UserRatingsDataNoLinksEmptyArray> {
 			return this.http.delete<UserRatingsDataNoLinksEmptyArray>(this.baseUri + 'user/ratings/' + (itemType == null ? '' : encodeURIComponent(itemType)) + '/' + itemId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -1172,11 +1368,11 @@ export namespace MyNS {
 		 * This route updates a given rating of a given type.
 		 * Put user/ratings/{itemType}/{itemId}/{itemRating}
 		 * @param {string} itemType Item to update. Can be either 'series', 'episode', or 'image'
-		 * @param {number} itemId ID of the ratings record that you wish to modify
-		 * @param {number} itemRating The updated rating number
+		 * @param {string} itemId ID of the ratings record that you wish to modify
+		 * @param {string} itemRating The updated rating number
 		 * @return {UserRatingsDataNoLinks} Update OK if the update was successful
 		 */
-		UserRatings_itemType_itemId_itemRatingPut(itemType: string, itemId: number, itemRating: number, headersHandler?: () => HttpHeaders): Observable<UserRatingsDataNoLinks> {
+		UserRatings_itemType_itemId_itemRatingPut(itemType: string, itemId: string, itemRating: string, headersHandler?: () => HttpHeaders): Observable<UserRatingsDataNoLinks> {
 			return this.http.put<UserRatingsDataNoLinks>(this.baseUri + 'user/ratings/' + (itemType == null ? '' : encodeURIComponent(itemType)) + '/' + itemId + '/' + itemRating, null, { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}

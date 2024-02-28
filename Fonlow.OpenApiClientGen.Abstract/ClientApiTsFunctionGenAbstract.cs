@@ -182,7 +182,28 @@ namespace Fonlow.CodeDom.Web.Ts
 
 
 			string returnTypeOfResponse = ReturnTypeReference == null ? "void" : TypeMapper.MapCodeTypeReferenceToTsText(ReturnTypeReference);
-			builder.AppendLine($"@return {{{returnTypeOfResponse}}} {NameComposer.GetOperationReturnComment(apiOperation)}");
+			var returnComment = NameComposer.GetOperationReturnComment(apiOperation);
+			if (string.IsNullOrEmpty(returnComment))
+			{
+				if (ReturnTypeReference != null)
+				{
+					var fieldTypeInfo = ReturnTypeReference.UserData.Contains(Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo) ?
+					ReturnTypeReference.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] as FieldTypeInfo
+					: null;
+					if (fieldTypeInfo != null && fieldTypeInfo.ClrType != null && dotNetTypeCommentDic.TryGetValue(fieldTypeInfo.ClrType, out string ctm))
+					{
+						builder.AppendLine($"@return {{{returnTypeOfResponse}}} {ctm}");
+					}
+				}
+				else
+				{
+					builder.AppendLine($"@return {{{returnTypeOfResponse}}} {returnComment}");
+				}
+			}
+			else
+			{
+				builder.AppendLine($"@return {{{returnTypeOfResponse}}} {returnComment}");
+			}
 
 			Method.Comments.Add(new CodeCommentStatement(builder.ToString(), true));
 		}

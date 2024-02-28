@@ -22,8 +22,11 @@ export namespace MyNS {
 
 	export interface DiskListInputElementProperties {
 
-		/** The actual size of disk in GB. */
-		actualSizeGB?: number | null;
+		/**
+		 * The actual size of disk in GB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		actualSizeGB?: string | null;
 
 		/** The disk id. */
 		diskId?: string | null;
@@ -37,8 +40,11 @@ export namespace MyNS {
 		/** Compute resource Uri which owns this disk. */
 		managedBy?: string | null;
 
-		/** The provision size of disk in GB. */
-		provisionSizeGB?: number | null;
+		/**
+		 * The provision size of disk in GB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		provisionSizeGB?: string | null;
 
 		/** The disk share path. */
 		sharePath?: string | null;
@@ -51,8 +57,11 @@ export namespace MyNS {
 	}
 	export interface DiskListInputElementPropertiesFormProperties {
 
-		/** The actual size of disk in GB. */
-		actualSizeGB: FormControl<number | null | undefined>,
+		/**
+		 * The actual size of disk in GB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		actualSizeGB: FormControl<string | null | undefined>,
 
 		/** The disk id. */
 		diskId: FormControl<string | null | undefined>,
@@ -66,8 +75,11 @@ export namespace MyNS {
 		/** Compute resource Uri which owns this disk. */
 		managedBy: FormControl<string | null | undefined>,
 
-		/** The provision size of disk in GB. */
-		provisionSizeGB: FormControl<number | null | undefined>,
+		/**
+		 * The provision size of disk in GB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		provisionSizeGB: FormControl<string | null | undefined>,
 
 		/** The disk share path. */
 		sharePath: FormControl<string | null | undefined>,
@@ -80,12 +92,12 @@ export namespace MyNS {
 	}
 	export function CreateDiskListInputElementPropertiesFormGroup() {
 		return new FormGroup<DiskListInputElementPropertiesFormProperties>({
-			actualSizeGB: new FormControl<number | null | undefined>(undefined),
+			actualSizeGB: new FormControl<string | null | undefined>(undefined),
 			diskId: new FormControl<string | null | undefined>(undefined),
 			diskSku: new FormControl<DiskListInputElementPropertiesDiskSku | null | undefined>(undefined),
 			diskType: new FormControl<DiskListInputElementPropertiesDiskType | null | undefined>(undefined),
 			managedBy: new FormControl<string | null | undefined>(undefined),
-			provisionSizeGB: new FormControl<number | null | undefined>(undefined),
+			provisionSizeGB: new FormControl<string | null | undefined>(undefined),
 			sharePath: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
 			userResourceId: new FormControl<string | null | undefined>(undefined),
@@ -1030,8 +1042,11 @@ export namespace MyNS {
 
 	export interface DiskMigrationJobs_CreatePutBodyProperties {
 
-		/** The actual size of disk in GB. */
-		actualSizeGB?: number | null;
+		/**
+		 * The actual size of disk in GB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		actualSizeGB?: string | null;
 
 		/** The disk id. */
 		diskId?: string | null;
@@ -1045,8 +1060,11 @@ export namespace MyNS {
 		/** Compute resource Uri which owns this disk. */
 		managedBy?: string | null;
 
-		/** The provision size of disk in GB. */
-		provisionSizeGB?: number | null;
+		/**
+		 * The provision size of disk in GB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		provisionSizeGB?: string | null;
 
 		/** The disk share path. */
 		sharePath?: string | null;
@@ -1059,8 +1077,11 @@ export namespace MyNS {
 	}
 	export interface DiskMigrationJobs_CreatePutBodyPropertiesFormProperties {
 
-		/** The actual size of disk in GB. */
-		actualSizeGB: FormControl<number | null | undefined>,
+		/**
+		 * The actual size of disk in GB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		actualSizeGB: FormControl<string | null | undefined>,
 
 		/** The disk id. */
 		diskId: FormControl<string | null | undefined>,
@@ -1074,8 +1095,11 @@ export namespace MyNS {
 		/** Compute resource Uri which owns this disk. */
 		managedBy: FormControl<string | null | undefined>,
 
-		/** The provision size of disk in GB. */
-		provisionSizeGB: FormControl<number | null | undefined>,
+		/**
+		 * The provision size of disk in GB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		provisionSizeGB: FormControl<string | null | undefined>,
 
 		/** The disk share path. */
 		sharePath: FormControl<string | null | undefined>,
@@ -1088,12 +1112,12 @@ export namespace MyNS {
 	}
 	export function CreateDiskMigrationJobs_CreatePutBodyPropertiesFormGroup() {
 		return new FormGroup<DiskMigrationJobs_CreatePutBodyPropertiesFormProperties>({
-			actualSizeGB: new FormControl<number | null | undefined>(undefined),
+			actualSizeGB: new FormControl<string | null | undefined>(undefined),
 			diskId: new FormControl<string | null | undefined>(undefined),
 			diskSku: new FormControl<DiskListInputElementPropertiesDiskSku | null | undefined>(undefined),
 			diskType: new FormControl<DiskListInputElementPropertiesDiskType | null | undefined>(undefined),
 			managedBy: new FormControl<string | null | undefined>(undefined),
-			provisionSizeGB: new FormControl<number | null | undefined>(undefined),
+			provisionSizeGB: new FormControl<string | null | undefined>(undefined),
 			sharePath: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
 			userResourceId: new FormControl<string | null | undefined>(undefined),

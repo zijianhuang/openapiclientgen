@@ -250,14 +250,20 @@ export namespace MyNS {
 		/** the error message */
 		error?: string | null;
 
-		/** transaction nonce */
+		/**
+		 * transaction nonce
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 		pagination?: string | null;
 
 		/** The name of the requested object/model/resource. Plural if a collection. */
 		resources?: HeaderErrorResources | null;
 
-		/** https://en.wikipedia.org/wiki/List_of_HTTP_status_codes */
+		/**
+		 * https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface HeaderErrorFormProperties {
@@ -268,14 +274,20 @@ export namespace MyNS {
 		/** the error message */
 		error: FormControl<string | null | undefined>,
 
-		/** transaction nonce */
+		/**
+		 * transaction nonce
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		pagination: FormControl<string | null | undefined>,
 
 		/** The name of the requested object/model/resource. Plural if a collection. */
 		resources: FormControl<HeaderErrorResources | null | undefined>,
 
-		/** https://en.wikipedia.org/wiki/List_of_HTTP_status_codes */
+		/**
+		 * https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateHeaderErrorFormGroup() {
@@ -298,14 +310,20 @@ export namespace MyNS {
 		code?: string | null;
 		error?: string | null;
 
-		/** transaction nonce */
+		/**
+		 * transaction nonce
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 		pagination?: Pagination;
 
 		/** The name of the requested object/model/resource. Plural if a collection. */
 		resources?: HeaderErrorResources | null;
 
-		/** https://en.wikipedia.org/wiki/List_of_HTTP_status_codes */
+		/**
+		 * https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface HeaderSuccessFormProperties {
@@ -314,13 +332,19 @@ export namespace MyNS {
 		code: FormControl<string | null | undefined>,
 		error: FormControl<string | null | undefined>,
 
-		/** transaction nonce */
+		/**
+		 * transaction nonce
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The name of the requested object/model/resource. Plural if a collection. */
 		resources: FormControl<HeaderErrorResources | null | undefined>,
 
-		/** https://en.wikipedia.org/wiki/List_of_HTTP_status_codes */
+		/**
+		 * https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateHeaderSuccessFormGroup() {
@@ -336,24 +360,42 @@ export namespace MyNS {
 
 	export interface Pagination {
 
-		/** the nubmer of items per page */
+		/**
+		 * the nubmer of items per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
-		/** the current page */
+		/**
+		 * the current page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** the total number of pages */
+		/**
+		 * the total number of pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface PaginationFormProperties {
 
-		/** the nubmer of items per page */
+		/**
+		 * the nubmer of items per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** the current page */
+		/**
+		 * the current page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** the total number of pages */
+		/**
+		 * the total number of pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {

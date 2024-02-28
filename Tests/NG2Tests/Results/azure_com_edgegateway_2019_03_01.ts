@@ -217,7 +217,10 @@ export namespace MyNS {
 		/** Error Message. */
 		errorMessage?: string | null;
 
-		/** Number of occurrences. */
+		/**
+		 * Number of occurrences.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrences?: number | null;
 	}
 
@@ -230,7 +233,10 @@ export namespace MyNS {
 		/** Error Message. */
 		errorMessage: FormControl<string | null | undefined>,
 
-		/** Number of occurrences. */
+		/**
+		 * Number of occurrences.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrences: FormControl<number | null | undefined>,
 	}
 	export function CreateAlertErrorDetailsFormGroup() {
@@ -439,6 +445,7 @@ export namespace MyNS {
 		/**
 		 * The bandwidth rate in Mbps.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rateInMbps: number;
 
@@ -461,6 +468,7 @@ export namespace MyNS {
 		/**
 		 * The bandwidth rate in Mbps.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rateInMbps: FormControl<number | null | undefined>,
 
@@ -724,8 +732,11 @@ export namespace MyNS {
 		/** The device software version number of the device (eg: 1.2.18105.6). */
 		deviceHcsVersion?: string | null;
 
-		/** The Data Box Edge/Gateway device local capacity in MB. */
-		deviceLocalCapacity?: number | null;
+		/**
+		 * The Data Box Edge/Gateway device local capacity in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		deviceLocalCapacity?: string | null;
 
 		/** The Data Box Edge/Gateway device model. */
 		deviceModel?: string | null;
@@ -764,8 +775,11 @@ export namespace MyNS {
 		/** The device software version number of the device (eg: 1.2.18105.6). */
 		deviceHcsVersion: FormControl<string | null | undefined>,
 
-		/** The Data Box Edge/Gateway device local capacity in MB. */
-		deviceLocalCapacity: FormControl<number | null | undefined>,
+		/**
+		 * The Data Box Edge/Gateway device local capacity in MB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		deviceLocalCapacity: FormControl<string | null | undefined>,
 
 		/** The Data Box Edge/Gateway device model. */
 		deviceModel: FormControl<string | null | undefined>,
@@ -794,7 +808,7 @@ export namespace MyNS {
 			dataBoxEdgeDeviceStatus: new FormControl<DataBoxEdgeDevicePropertiesDataBoxEdgeDeviceStatus | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			deviceHcsVersion: new FormControl<string | null | undefined>(undefined),
-			deviceLocalCapacity: new FormControl<number | null | undefined>(undefined),
+			deviceLocalCapacity: new FormControl<string | null | undefined>(undefined),
 			deviceModel: new FormControl<string | null | undefined>(undefined),
 			deviceSoftwareVersion: new FormControl<string | null | undefined>(undefined),
 			deviceType: new FormControl<DataBoxEdgeDevicePropertiesDeviceType | null | undefined>(undefined),
@@ -1302,7 +1316,10 @@ export namespace MyNS {
 		/** The IPv6 address of the network adapter. */
 		ipAddress?: string | null;
 
-		/** The IPv6 prefix of the network adapter. */
+		/**
+		 * The IPv6 prefix of the network adapter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		prefixLength?: number | null;
 	}
 
@@ -1315,7 +1332,10 @@ export namespace MyNS {
 		/** The IPv6 address of the network adapter. */
 		ipAddress: FormControl<string | null | undefined>,
 
-		/** The IPv6 prefix of the network adapter. */
+		/**
+		 * The IPv6 prefix of the network adapter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		prefixLength: FormControl<number | null | undefined>,
 	}
 	export function CreateIpv6ConfigFormGroup() {
@@ -1343,7 +1363,10 @@ export namespace MyNS {
 		/** The name of the object. */
 		name?: string | null;
 
-		/** The percentage of the job that is complete. */
+		/**
+		 * The percentage of the job that is complete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete?: number | null;
 
 		/** The properties for the job. */
@@ -1371,7 +1394,10 @@ export namespace MyNS {
 		/** The name of the object. */
 		name: FormControl<string | null | undefined>,
 
-		/** The percentage of the job that is complete. */
+		/**
+		 * The percentage of the job that is complete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** The UTC date and time at which the job started. */
@@ -1483,7 +1509,10 @@ export namespace MyNS {
 		/** ARM ID of the share that was refreshed. */
 		shareId?: string | null;
 
-		/** Total number of errors encountered during the refresh process. */
+		/**
+		 * Total number of errors encountered during the refresh process.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRefreshErrors?: number | null;
 	}
 
@@ -1505,7 +1534,10 @@ export namespace MyNS {
 		/** ARM ID of the share that was refreshed. */
 		shareId: FormControl<string | null | undefined>,
 
-		/** Total number of errors encountered during the refresh process. */
+		/**
+		 * Total number of errors encountered during the refresh process.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRefreshErrors: FormControl<number | null | undefined>,
 	}
 	export function CreateJobPropertiesFormGroup() {
@@ -1529,19 +1561,34 @@ export namespace MyNS {
 		/** The download phase. */
 		downloadPhase?: UpdateDownloadProgressDownloadPhase | null;
 
-		/** Number of updates downloaded. */
+		/**
+		 * Number of updates downloaded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfUpdatesDownloaded?: number | null;
 
-		/** Number of updates to download. */
+		/**
+		 * Number of updates to download.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfUpdatesToDownload?: number | null;
 
-		/** Percentage of completion. */
+		/**
+		 * Percentage of completion.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete?: number | null;
 
-		/** Total bytes downloaded. */
+		/**
+		 * Total bytes downloaded.
+		 * Type: double
+		 */
 		totalBytesDownloaded?: number | null;
 
-		/** Total bytes to download. */
+		/**
+		 * Total bytes to download.
+		 * Type: double
+		 */
 		totalBytesToDownload?: number | null;
 	}
 
@@ -1551,19 +1598,34 @@ export namespace MyNS {
 		/** The download phase. */
 		downloadPhase: FormControl<UpdateDownloadProgressDownloadPhase | null | undefined>,
 
-		/** Number of updates downloaded. */
+		/**
+		 * Number of updates downloaded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfUpdatesDownloaded: FormControl<number | null | undefined>,
 
-		/** Number of updates to download. */
+		/**
+		 * Number of updates to download.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfUpdatesToDownload: FormControl<number | null | undefined>,
 
-		/** Percentage of completion. */
+		/**
+		 * Percentage of completion.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
-		/** Total bytes downloaded. */
+		/**
+		 * Total bytes downloaded.
+		 * Type: double
+		 */
 		totalBytesDownloaded: FormControl<number | null | undefined>,
 
-		/** Total bytes to download. */
+		/**
+		 * Total bytes to download.
+		 * Type: double
+		 */
 		totalBytesToDownload: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDownloadProgressFormGroup() {
@@ -1584,26 +1646,44 @@ export namespace MyNS {
 	/** Progress details during installation of updates. */
 	export interface UpdateInstallProgress {
 
-		/** Number of updates installed. */
+		/**
+		 * Number of updates installed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfUpdatesInstalled?: number | null;
 
-		/** Number of updates to install. */
+		/**
+		 * Number of updates to install.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfUpdatesToInstall?: number | null;
 
-		/** Percentage completed. */
+		/**
+		 * Percentage completed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete?: number | null;
 	}
 
 	/** Progress details during installation of updates. */
 	export interface UpdateInstallProgressFormProperties {
 
-		/** Number of updates installed. */
+		/**
+		 * Number of updates installed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfUpdatesInstalled: FormControl<number | null | undefined>,
 
-		/** Number of updates to install. */
+		/**
+		 * Number of updates to install.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfUpdatesToInstall: FormControl<number | null | undefined>,
 
-		/** Percentage completed. */
+		/**
+		 * Percentage completed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateInstallProgressFormGroup() {
@@ -1755,7 +1835,10 @@ export namespace MyNS {
 		/** The list of DNS Servers of the device. */
 		dnsServers?: Array<string>;
 
-		/** Logical index of the adapter. */
+		/**
+		 * Logical index of the adapter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Details related to the IPv4 address configuration. */
@@ -1770,8 +1853,11 @@ export namespace MyNS {
 		/** Hardware label for the adapter. */
 		label?: string | null;
 
-		/** Link speed. */
-		linkSpeed?: number | null;
+		/**
+		 * Link speed.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		linkSpeed?: string | null;
 
 		/** MAC address. */
 		macAddress?: string | null;
@@ -1798,7 +1884,10 @@ export namespace MyNS {
 		/** Value indicating whether this adapter has DHCP enabled. */
 		dhcpStatus: FormControl<NetworkAdapterDhcpStatus | null | undefined>,
 
-		/** Logical index of the adapter. */
+		/**
+		 * Logical index of the adapter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** The IPv6 local address. */
@@ -1807,8 +1896,11 @@ export namespace MyNS {
 		/** Hardware label for the adapter. */
 		label: FormControl<string | null | undefined>,
 
-		/** Link speed. */
-		linkSpeed: FormControl<number | null | undefined>,
+		/**
+		 * Link speed.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		linkSpeed: FormControl<string | null | undefined>,
 
 		/** MAC address. */
 		macAddress: FormControl<string | null | undefined>,
@@ -1832,7 +1924,7 @@ export namespace MyNS {
 			index: new FormControl<number | null | undefined>(undefined),
 			ipv6LinkLocalAddress: new FormControl<string | null | undefined>(undefined),
 			label: new FormControl<string | null | undefined>(undefined),
-			linkSpeed: new FormControl<number | null | undefined>(undefined),
+			linkSpeed: new FormControl<string | null | undefined>(undefined),
 			macAddress: new FormControl<string | null | undefined>(undefined),
 			networkAdapterName: new FormControl<string | null | undefined>(undefined),
 			nodeId: new FormControl<string | null | undefined>(undefined),
@@ -1849,7 +1941,10 @@ export namespace MyNS {
 		/** The network group. */
 		networkGroup?: NetworkAdapterPositionNetworkGroup | null;
 
-		/** The port. */
+		/**
+		 * The port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 
@@ -1859,7 +1954,10 @@ export namespace MyNS {
 		/** The network group. */
 		networkGroup: FormControl<NetworkAdapterPositionNetworkGroup | null | undefined>,
 
-		/** The port. */
+		/**
+		 * The port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateNetworkAdapterPositionFormGroup() {
@@ -2957,16 +3055,28 @@ export namespace MyNS {
 		/** Indicates if updates are available and at least one of the updates needs a reboot. */
 		rebootBehavior?: UpdateSummaryPropertiesRebootBehavior | null;
 
-		/** The number of updates available for the current device version as per the last device scan. */
+		/**
+		 * The number of updates available for the current device version as per the last device scan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalNumberOfUpdatesAvailable?: number | null;
 
-		/** The total number of items pending download. */
+		/**
+		 * The total number of items pending download.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalNumberOfUpdatesPendingDownload?: number | null;
 
-		/** The total number of items pending install. */
+		/**
+		 * The total number of items pending install.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalNumberOfUpdatesPendingInstall?: number | null;
 
-		/** The total size of updates available for download in bytes. */
+		/**
+		 * The total size of updates available for download in bytes.
+		 * Type: double
+		 */
 		totalUpdateSizeInBytes?: number | null;
 
 		/** The list of updates available for install. */
@@ -3012,16 +3122,28 @@ export namespace MyNS {
 		/** Indicates if updates are available and at least one of the updates needs a reboot. */
 		rebootBehavior: FormControl<UpdateSummaryPropertiesRebootBehavior | null | undefined>,
 
-		/** The number of updates available for the current device version as per the last device scan. */
+		/**
+		 * The number of updates available for the current device version as per the last device scan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalNumberOfUpdatesAvailable: FormControl<number | null | undefined>,
 
-		/** The total number of items pending download. */
+		/**
+		 * The total number of items pending download.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalNumberOfUpdatesPendingDownload: FormControl<number | null | undefined>,
 
-		/** The total number of items pending install. */
+		/**
+		 * The total number of items pending install.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalNumberOfUpdatesPendingInstall: FormControl<number | null | undefined>,
 
-		/** The total size of updates available for download in bytes. */
+		/**
+		 * The total size of updates available for download in bytes.
+		 * Type: double
+		 */
 		totalUpdateSizeInBytes: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateSummaryPropertiesFormGroup() {

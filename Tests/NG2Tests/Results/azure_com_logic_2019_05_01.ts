@@ -652,6 +652,7 @@ export namespace MyNS {
 		/**
 		 * The number of days to look back for duplicate interchange.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interchangeDuplicatesValidityDays: number;
 
@@ -713,6 +714,7 @@ export namespace MyNS {
 		/**
 		 * The number of days to look back for duplicate interchange.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interchangeDuplicatesValidityDays: FormControl<number | null | undefined>,
 
@@ -947,6 +949,7 @@ export namespace MyNS {
 		/**
 		 * The acknowledgement control number lower bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		acknowledgementControlNumberLowerBound: number;
 
@@ -959,6 +962,7 @@ export namespace MyNS {
 		/**
 		 * The acknowledgement control number upper bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		acknowledgementControlNumberUpperBound: number;
 
@@ -1011,6 +1015,7 @@ export namespace MyNS {
 		/**
 		 * The acknowledgement control number lower bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		acknowledgementControlNumberLowerBound: FormControl<number | null | undefined>,
 
@@ -1023,6 +1028,7 @@ export namespace MyNS {
 		/**
 		 * The acknowledgement control number upper bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		acknowledgementControlNumberUpperBound: FormControl<number | null | undefined>,
 
@@ -1092,12 +1098,14 @@ export namespace MyNS {
 		/**
 		 * The component separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		componentSeparator: number;
 
 		/**
 		 * The data element separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dataElementSeparator: number;
 
@@ -1122,18 +1130,21 @@ export namespace MyNS {
 		/**
 		 * The release indicator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		releaseIndicator: number;
 
 		/**
 		 * The repetition separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		repetitionSeparator: number;
 
 		/**
 		 * The segment terminator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		segmentTerminator: number;
 
@@ -1153,12 +1164,14 @@ export namespace MyNS {
 		/**
 		 * The component separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		componentSeparator: FormControl<number | null | undefined>,
 
 		/**
 		 * The data element separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dataElementSeparator: FormControl<number | null | undefined>,
 
@@ -1183,18 +1196,21 @@ export namespace MyNS {
 		/**
 		 * The release indicator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		releaseIndicator: FormControl<number | null | undefined>,
 
 		/**
 		 * The repetition separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		repetitionSeparator: FormControl<number | null | undefined>,
 
 		/**
 		 * The segment terminator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		segmentTerminator: FormControl<number | null | undefined>,
 
@@ -1400,8 +1416,9 @@ export namespace MyNS {
 		/**
 		 * The group control number lower bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		groupControlNumberLowerBound: number;
+		groupControlNumberLowerBound: string;
 
 		/** The group control number prefix. */
 		groupControlNumberPrefix?: string | null;
@@ -1412,8 +1429,9 @@ export namespace MyNS {
 		/**
 		 * The group control number upper bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		groupControlNumberUpperBound: number;
+		groupControlNumberUpperBound: string;
 
 		/** The group controlling agency code. */
 		groupControllingAgencyCode?: string | null;
@@ -1427,8 +1445,9 @@ export namespace MyNS {
 		/**
 		 * The interchange control number lower bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		interchangeControlNumberLowerBound: number;
+		interchangeControlNumberLowerBound: string;
 
 		/** The interchange control number prefix. */
 		interchangeControlNumberPrefix?: string | null;
@@ -1439,8 +1458,9 @@ export namespace MyNS {
 		/**
 		 * The interchange control number upper bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		interchangeControlNumberUpperBound: number;
+		interchangeControlNumberUpperBound: string;
 
 		/**
 		 * The value indicating whether the message is a test interchange.
@@ -1502,8 +1522,9 @@ export namespace MyNS {
 		/**
 		 * The transaction set control number lower bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		transactionSetControlNumberLowerBound: number;
+		transactionSetControlNumberLowerBound: string;
 
 		/** The transaction set control number prefix. */
 		transactionSetControlNumberPrefix?: string | null;
@@ -1514,8 +1535,9 @@ export namespace MyNS {
 		/**
 		 * The transaction set control number upper bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		transactionSetControlNumberUpperBound: number;
+		transactionSetControlNumberUpperBound: string;
 	}
 
 	/** The Edifact agreement envelope settings. */
@@ -1569,8 +1591,9 @@ export namespace MyNS {
 		/**
 		 * The group control number lower bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		groupControlNumberLowerBound: FormControl<number | null | undefined>,
+		groupControlNumberLowerBound: FormControl<string | null | undefined>,
 
 		/** The group control number prefix. */
 		groupControlNumberPrefix: FormControl<string | null | undefined>,
@@ -1581,8 +1604,9 @@ export namespace MyNS {
 		/**
 		 * The group control number upper bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		groupControlNumberUpperBound: FormControl<number | null | undefined>,
+		groupControlNumberUpperBound: FormControl<string | null | undefined>,
 
 		/** The group controlling agency code. */
 		groupControllingAgencyCode: FormControl<string | null | undefined>,
@@ -1596,8 +1620,9 @@ export namespace MyNS {
 		/**
 		 * The interchange control number lower bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		interchangeControlNumberLowerBound: FormControl<number | null | undefined>,
+		interchangeControlNumberLowerBound: FormControl<string | null | undefined>,
 
 		/** The interchange control number prefix. */
 		interchangeControlNumberPrefix: FormControl<string | null | undefined>,
@@ -1608,8 +1633,9 @@ export namespace MyNS {
 		/**
 		 * The interchange control number upper bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		interchangeControlNumberUpperBound: FormControl<number | null | undefined>,
+		interchangeControlNumberUpperBound: FormControl<string | null | undefined>,
 
 		/**
 		 * The value indicating whether the message is a test interchange.
@@ -1671,8 +1697,9 @@ export namespace MyNS {
 		/**
 		 * The transaction set control number lower bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		transactionSetControlNumberLowerBound: FormControl<number | null | undefined>,
+		transactionSetControlNumberLowerBound: FormControl<string | null | undefined>,
 
 		/** The transaction set control number prefix. */
 		transactionSetControlNumberPrefix: FormControl<string | null | undefined>,
@@ -1683,8 +1710,9 @@ export namespace MyNS {
 		/**
 		 * The transaction set control number upper bound.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		transactionSetControlNumberUpperBound: FormControl<number | null | undefined>,
+		transactionSetControlNumberUpperBound: FormControl<string | null | undefined>,
 	}
 	export function CreateEdifactEnvelopeSettingsFormGroup() {
 		return new FormGroup<EdifactEnvelopeSettingsFormProperties>({
@@ -1700,17 +1728,17 @@ export namespace MyNS {
 			groupApplicationSenderId: new FormControl<string | null | undefined>(undefined),
 			groupApplicationSenderQualifier: new FormControl<string | null | undefined>(undefined),
 			groupAssociationAssignedCode: new FormControl<string | null | undefined>(undefined),
-			groupControlNumberLowerBound: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			groupControlNumberLowerBound: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			groupControlNumberPrefix: new FormControl<string | null | undefined>(undefined),
 			groupControlNumberSuffix: new FormControl<string | null | undefined>(undefined),
-			groupControlNumberUpperBound: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			groupControlNumberUpperBound: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			groupControllingAgencyCode: new FormControl<string | null | undefined>(undefined),
 			groupMessageRelease: new FormControl<string | null | undefined>(undefined),
 			groupMessageVersion: new FormControl<string | null | undefined>(undefined),
-			interchangeControlNumberLowerBound: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			interchangeControlNumberLowerBound: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			interchangeControlNumberPrefix: new FormControl<string | null | undefined>(undefined),
 			interchangeControlNumberSuffix: new FormControl<string | null | undefined>(undefined),
-			interchangeControlNumberUpperBound: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			interchangeControlNumberUpperBound: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isTestInterchange: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			overwriteExistingTransactionSetControlNumber: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			processingPriorityCode: new FormControl<string | null | undefined>(undefined),
@@ -1725,10 +1753,10 @@ export namespace MyNS {
 			senderInternalIdentification: new FormControl<string | null | undefined>(undefined),
 			senderInternalSubIdentification: new FormControl<string | null | undefined>(undefined),
 			senderReverseRoutingAddress: new FormControl<string | null | undefined>(undefined),
-			transactionSetControlNumberLowerBound: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			transactionSetControlNumberLowerBound: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			transactionSetControlNumberPrefix: new FormControl<string | null | undefined>(undefined),
 			transactionSetControlNumberSuffix: new FormControl<string | null | undefined>(undefined),
-			transactionSetControlNumberUpperBound: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			transactionSetControlNumberUpperBound: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1749,12 +1777,14 @@ export namespace MyNS {
 		/**
 		 * The component separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		componentSeparator: number;
 
 		/**
 		 * The data element separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dataElementSeparator: number;
 
@@ -1767,24 +1797,28 @@ export namespace MyNS {
 		/**
 		 * The protocol version.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		protocolVersion: number;
 
 		/**
 		 * The release indicator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		releaseIndicator: number;
 
 		/**
 		 * The repetition separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		repetitionSeparator: number;
 
 		/**
 		 * The segment terminator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		segmentTerminator: number;
 
@@ -1813,12 +1847,14 @@ export namespace MyNS {
 		/**
 		 * The component separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		componentSeparator: FormControl<number | null | undefined>,
 
 		/**
 		 * The data element separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dataElementSeparator: FormControl<number | null | undefined>,
 
@@ -1831,24 +1867,28 @@ export namespace MyNS {
 		/**
 		 * The protocol version.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		protocolVersion: FormControl<number | null | undefined>,
 
 		/**
 		 * The release indicator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		releaseIndicator: FormControl<number | null | undefined>,
 
 		/**
 		 * The repetition separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		repetitionSeparator: FormControl<number | null | undefined>,
 
 		/**
 		 * The segment terminator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		segmentTerminator: FormControl<number | null | undefined>,
 
@@ -2240,6 +2280,7 @@ export namespace MyNS {
 		/**
 		 * The validity period of interchange control number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interchangeControlNumberValidityDays: number;
 
@@ -2304,6 +2345,7 @@ export namespace MyNS {
 		/**
 		 * The validity period of interchange control number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interchangeControlNumberValidityDays: FormControl<number | null | undefined>,
 
@@ -2492,6 +2534,7 @@ export namespace MyNS {
 		/**
 		 * The acknowledgement control number lower bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		acknowledgementControlNumberLowerBound: number;
 
@@ -2504,6 +2547,7 @@ export namespace MyNS {
 		/**
 		 * The acknowledgement control number upper bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		acknowledgementControlNumberUpperBound: number;
 
@@ -2574,6 +2618,7 @@ export namespace MyNS {
 		/**
 		 * The acknowledgement control number lower bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		acknowledgementControlNumberLowerBound: FormControl<number | null | undefined>,
 
@@ -2586,6 +2631,7 @@ export namespace MyNS {
 		/**
 		 * The acknowledgement control number upper bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		acknowledgementControlNumberUpperBound: FormControl<number | null | undefined>,
 
@@ -2819,6 +2865,7 @@ export namespace MyNS {
 		/**
 		 * The controls standards id.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		controlStandardsId: number;
 
@@ -2840,12 +2887,14 @@ export namespace MyNS {
 		/**
 		 * The group control number lower bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		groupControlNumberLowerBound: number;
 
 		/**
 		 * The group control number upper bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		groupControlNumberUpperBound: number;
 
@@ -2876,12 +2925,14 @@ export namespace MyNS {
 		/**
 		 * The interchange  control number lower bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interchangeControlNumberLowerBound: number;
 
 		/**
 		 * The interchange  control number upper bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interchangeControlNumberUpperBound: number;
 
@@ -2924,6 +2975,7 @@ export namespace MyNS {
 		/**
 		 * The transaction set control number lower bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transactionSetControlNumberLowerBound: number;
 
@@ -2936,6 +2988,7 @@ export namespace MyNS {
 		/**
 		 * The transaction set control number upper bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transactionSetControlNumberUpperBound: number;
 
@@ -2958,6 +3011,7 @@ export namespace MyNS {
 		/**
 		 * The controls standards id.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		controlStandardsId: FormControl<number | null | undefined>,
 
@@ -2979,12 +3033,14 @@ export namespace MyNS {
 		/**
 		 * The group control number lower bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		groupControlNumberLowerBound: FormControl<number | null | undefined>,
 
 		/**
 		 * The group control number upper bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		groupControlNumberUpperBound: FormControl<number | null | undefined>,
 
@@ -3015,12 +3071,14 @@ export namespace MyNS {
 		/**
 		 * The interchange  control number lower bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interchangeControlNumberLowerBound: FormControl<number | null | undefined>,
 
 		/**
 		 * The interchange  control number upper bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interchangeControlNumberUpperBound: FormControl<number | null | undefined>,
 
@@ -3063,6 +3121,7 @@ export namespace MyNS {
 		/**
 		 * The transaction set control number lower bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transactionSetControlNumberLowerBound: FormControl<number | null | undefined>,
 
@@ -3075,6 +3134,7 @@ export namespace MyNS {
 		/**
 		 * The transaction set control number upper bound.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transactionSetControlNumberUpperBound: FormControl<number | null | undefined>,
 
@@ -3135,18 +3195,21 @@ export namespace MyNS {
 		/**
 		 * The component separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		componentSeparator: number;
 
 		/**
 		 * The data element separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dataElementSeparator: number;
 
 		/**
 		 * The replacement character.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		replaceCharacter: number;
 
@@ -3159,6 +3222,7 @@ export namespace MyNS {
 		/**
 		 * The segment terminator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		segmentTerminator: number;
 
@@ -3181,18 +3245,21 @@ export namespace MyNS {
 		/**
 		 * The component separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		componentSeparator: FormControl<number | null | undefined>,
 
 		/**
 		 * The data element separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dataElementSeparator: FormControl<number | null | undefined>,
 
 		/**
 		 * The replacement character.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		replaceCharacter: FormControl<number | null | undefined>,
 
@@ -3205,6 +3272,7 @@ export namespace MyNS {
 		/**
 		 * The segment terminator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		segmentTerminator: FormControl<number | null | undefined>,
 
@@ -3625,6 +3693,7 @@ export namespace MyNS {
 		/**
 		 * The validity period of interchange control number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interchangeControlNumberValidityDays: number;
 
@@ -3689,6 +3758,7 @@ export namespace MyNS {
 		/**
 		 * The validity period of interchange control number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interchangeControlNumberValidityDays: FormControl<number | null | undefined>,
 
@@ -3745,12 +3815,14 @@ export namespace MyNS {
 		/**
 		 * The component separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		componentSeparator: number;
 
 		/**
 		 * The data element separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dataElementSeparator: number;
 
@@ -3763,6 +3835,7 @@ export namespace MyNS {
 		/**
 		 * The replacement character.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		replaceCharacter: number;
 
@@ -3775,6 +3848,7 @@ export namespace MyNS {
 		/**
 		 * The segment terminator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		segmentTerminator: number;
 
@@ -3794,12 +3868,14 @@ export namespace MyNS {
 		/**
 		 * The component separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		componentSeparator: FormControl<number | null | undefined>,
 
 		/**
 		 * The data element separator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dataElementSeparator: FormControl<number | null | undefined>,
 
@@ -3812,6 +3888,7 @@ export namespace MyNS {
 		/**
 		 * The replacement character.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		replaceCharacter: FormControl<number | null | undefined>,
 
@@ -3824,6 +3901,7 @@ export namespace MyNS {
 		/**
 		 * The segment terminator.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		segmentTerminator: FormControl<number | null | undefined>,
 
@@ -4040,7 +4118,10 @@ export namespace MyNS {
 		/** The family. */
 		family?: string | null;
 
-		/** The revision. */
+		/**
+		 * The revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 
 		/** The status annotation. */
@@ -4053,7 +4134,10 @@ export namespace MyNS {
 		/** The family. */
 		family: FormControl<string | null | undefined>,
 
-		/** The revision. */
+		/**
+		 * The revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 
 		/** The status annotation. */
@@ -4200,10 +4284,16 @@ export namespace MyNS {
 		/** The swagger schema. */
 		items?: SwaggerSchema;
 
-		/** The maximum number of allowed properties. */
+		/**
+		 * The maximum number of allowed properties.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxProperties?: number | null;
 
-		/** The minimum number of allowed properties. */
+		/**
+		 * The minimum number of allowed properties.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minProperties?: number | null;
 
 		/** Indicates the notification url extension. If this is set, the property's value should be a callback url for a webhook. */
@@ -4237,10 +4327,16 @@ export namespace MyNS {
 		/** The discriminator. */
 		discriminator: FormControl<string | null | undefined>,
 
-		/** The maximum number of allowed properties. */
+		/**
+		 * The maximum number of allowed properties.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxProperties: FormControl<number | null | undefined>,
 
-		/** The minimum number of allowed properties. */
+		/**
+		 * The minimum number of allowed properties.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minProperties: FormControl<number | null | undefined>,
 
 		/** Indicates the notification url extension. If this is set, the property's value should be a callback url for a webhook. */
@@ -5020,8 +5116,11 @@ export namespace MyNS {
 		/** The content hash. */
 		contentHash?: ContentHash;
 
-		/** The content size. */
-		contentSize?: number | null;
+		/**
+		 * The content size.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentSize?: string | null;
 
 		/** The content version. */
 		contentVersion?: string | null;
@@ -5034,8 +5133,11 @@ export namespace MyNS {
 	/** The content link. */
 	export interface ContentLinkFormProperties {
 
-		/** The content size. */
-		contentSize: FormControl<number | null | undefined>,
+		/**
+		 * The content size.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		contentSize: FormControl<string | null | undefined>,
 
 		/** The content version. */
 		contentVersion: FormControl<string | null | undefined>,
@@ -5045,7 +5147,7 @@ export namespace MyNS {
 	}
 	export function CreateContentLinkFormGroup() {
 		return new FormGroup<ContentLinkFormProperties>({
-			contentSize: new FormControl<number | null | undefined>(undefined),
+			contentSize: new FormControl<string | null | undefined>(undefined),
 			contentVersion: new FormControl<string | null | undefined>(undefined),
 			uri: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5316,10 +5418,16 @@ export namespace MyNS {
 	/** The batch release criteria. */
 	export interface BatchReleaseCriteria {
 
-		/** The batch size in bytes. */
+		/**
+		 * The batch size in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize?: number | null;
 
-		/** The message count. */
+		/**
+		 * The message count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageCount?: number | null;
 
 		/** The workflow trigger recurrence. */
@@ -5329,10 +5437,16 @@ export namespace MyNS {
 	/** The batch release criteria. */
 	export interface BatchReleaseCriteriaFormProperties {
 
-		/** The batch size in bytes. */
+		/**
+		 * The batch size in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize: FormControl<number | null | undefined>,
 
-		/** The message count. */
+		/**
+		 * The message count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchReleaseCriteriaFormGroup() {
@@ -5353,7 +5467,10 @@ export namespace MyNS {
 		/** The recurrence frequency. */
 		frequency?: WorkflowTriggerRecurrenceFrequency | null;
 
-		/** The interval. */
+		/**
+		 * The interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval?: number | null;
 
 		/** The recurrence schedule. */
@@ -5375,7 +5492,10 @@ export namespace MyNS {
 		/** The recurrence frequency. */
 		frequency: FormControl<WorkflowTriggerRecurrenceFrequency | null | undefined>,
 
-		/** The interval. */
+		/**
+		 * The interval.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: FormControl<number | null | undefined>,
 
 		/** The start time. */
@@ -5433,7 +5553,10 @@ export namespace MyNS {
 		/** The day of the week. */
 		day?: RecurrenceScheduleOccurrenceDay | null;
 
-		/** The occurrence. */
+		/**
+		 * The occurrence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrence?: number | null;
 	}
 
@@ -5443,7 +5566,10 @@ export namespace MyNS {
 		/** The day of the week. */
 		day: FormControl<RecurrenceScheduleOccurrenceDay | null | undefined>,
 
-		/** The occurrence. */
+		/**
+		 * The occurrence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrence: FormControl<number | null | undefined>,
 	}
 	export function CreateRecurrenceScheduleOccurrenceFormGroup() {
@@ -5996,7 +6122,10 @@ export namespace MyNS {
 	/** The integration service environment sku. */
 	export interface IntegrationServiceEnvironmentSku {
 
-		/** The sku capacity. */
+		/**
+		 * The sku capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** The integration service environment sku name. */
@@ -6006,7 +6135,10 @@ export namespace MyNS {
 	/** The integration service environment sku. */
 	export interface IntegrationServiceEnvironmentSkuFormProperties {
 
-		/** The sku capacity. */
+		/**
+		 * The sku capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** The integration service environment sku name. */
@@ -7099,13 +7231,22 @@ export namespace MyNS {
 	/** The integration service environment sku capacity. */
 	export interface IntegrationServiceEnvironmentSkuCapacity {
 
-		/** The default capacity. */
+		/**
+		 * The default capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** The maximum capacity. */
+		/**
+		 * The maximum capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** The minimum capacity. */
+		/**
+		 * The minimum capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** The integration service environment sku scale type. */
@@ -7115,13 +7256,22 @@ export namespace MyNS {
 	/** The integration service environment sku capacity. */
 	export interface IntegrationServiceEnvironmentSkuCapacityFormProperties {
 
-		/** The default capacity. */
+		/**
+		 * The default capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** The maximum capacity. */
+		/**
+		 * The maximum capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** The minimum capacity. */
+		/**
+		 * The minimum capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** The integration service environment sku scale type. */
@@ -7309,31 +7459,43 @@ export namespace MyNS {
 
 	export interface KeyVaultKeyAttributes {
 
-		/** When the key was created. */
-		created?: number | null;
+		/**
+		 * When the key was created.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		created?: string | null;
 
 		/** Whether the key is enabled or not. */
 		enabled?: boolean | null;
 
-		/** When the key was updated. */
-		updated?: number | null;
+		/**
+		 * When the key was updated.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updated?: string | null;
 	}
 	export interface KeyVaultKeyAttributesFormProperties {
 
-		/** When the key was created. */
-		created: FormControl<number | null | undefined>,
+		/**
+		 * When the key was created.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		created: FormControl<string | null | undefined>,
 
 		/** Whether the key is enabled or not. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** When the key was updated. */
-		updated: FormControl<number | null | undefined>,
+		/**
+		 * When the key was updated.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		updated: FormControl<string | null | undefined>,
 	}
 	export function CreateKeyVaultKeyAttributesFormGroup() {
 		return new FormGroup<KeyVaultKeyAttributesFormProperties>({
-			created: new FormControl<number | null | undefined>(undefined),
+			created: new FormControl<string | null | undefined>(undefined),
 			enabled: new FormControl<boolean | null | undefined>(undefined),
-			updated: new FormControl<number | null | undefined>(undefined),
+			updated: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -7545,6 +7707,8 @@ export namespace MyNS {
 
 		/** The content link. */
 		inputsLink?: ContentLink;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		iterationCount?: number | null;
 		outputs?: Object;
 
@@ -7561,6 +7725,8 @@ export namespace MyNS {
 
 	/** The operation result definition. */
 	export interface OperationResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		iterationCount: FormControl<number | null | undefined>,
 
 		/** Gets the tracking id. */
@@ -7737,6 +7903,7 @@ export namespace MyNS {
 		/**
 		 * The index.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		itemIndex: number;
 
@@ -7750,6 +7917,7 @@ export namespace MyNS {
 		/**
 		 * The index.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		itemIndex: FormControl<number | null | undefined>,
 
@@ -7852,14 +8020,20 @@ export namespace MyNS {
 		bodyLink?: ContentLink;
 		headers?: Object;
 
-		/** The status code of the response. */
+		/**
+		 * The status code of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
 	/** A response. */
 	export interface ResponseFormProperties {
 
-		/** The status code of the response. */
+		/**
+		 * The status code of the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateResponseFormGroup() {

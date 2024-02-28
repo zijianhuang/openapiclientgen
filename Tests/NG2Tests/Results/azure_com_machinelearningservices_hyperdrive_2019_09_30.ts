@@ -24,6 +24,7 @@ export namespace MyNS {
 		/**
 		 * Response code.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
@@ -40,6 +41,7 @@ export namespace MyNS {
 		/**
 		 * Response code.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 
@@ -92,6 +94,7 @@ export namespace MyNS {
 		/**
 		 * Error response code.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
@@ -108,6 +111,7 @@ export namespace MyNS {
 		/**
 		 * Error response code.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 
@@ -397,6 +401,7 @@ export namespace MyNS {
 		/**
 		 * Response code.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
@@ -413,6 +418,7 @@ export namespace MyNS {
 		/**
 		 * Response code.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 	}

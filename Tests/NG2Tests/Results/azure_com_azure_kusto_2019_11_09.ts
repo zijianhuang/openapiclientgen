@@ -104,18 +104,21 @@ export namespace MyNS {
 		/**
 		 * The default capacity that would be used.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		default: number;
 
 		/**
 		 * Maximum allowed capacity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maximum: number;
 
 		/**
 		 * Minimum allowed capacity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minimum: number;
 
@@ -132,18 +135,21 @@ export namespace MyNS {
 		/**
 		 * The default capacity that would be used.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		default: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum allowed capacity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maximum: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum allowed capacity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minimum: FormControl<number | null | undefined>,
 
@@ -196,7 +202,10 @@ export namespace MyNS {
 	/** Azure SKU definition. */
 	export interface AzureSku {
 
-		/** The number of instances of the cluster. */
+		/**
+		 * The number of instances of the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/**
@@ -215,7 +224,10 @@ export namespace MyNS {
 	/** Azure SKU definition. */
 	export interface AzureSkuFormProperties {
 
-		/** The number of instances of the cluster. */
+		/**
+		 * The number of instances of the cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/**
@@ -695,18 +707,21 @@ export namespace MyNS {
 		/**
 		 * Maximum allowed instances count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maximum: number;
 
 		/**
 		 * Minimum allowed instances count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minimum: number;
 
 		/**
 		 * The version of the template defined, for instance 1.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version: number;
 	}
@@ -723,18 +738,21 @@ export namespace MyNS {
 		/**
 		 * Maximum allowed instances count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maximum: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum allowed instances count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/**
 		 * The version of the template defined, for instance 1.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version: FormControl<number | null | undefined>,
 	}
@@ -1267,14 +1285,20 @@ export namespace MyNS {
 	/** A class that contains database statistics information. */
 	export interface DatabaseStatistics {
 
-		/** The database size - the total size of compressed data and index in bytes. */
+		/**
+		 * The database size - the total size of compressed data and index in bytes.
+		 * Type: double
+		 */
 		size?: number | null;
 	}
 
 	/** A class that contains database statistics information. */
 	export interface DatabaseStatisticsFormProperties {
 
-		/** The database size - the total size of compressed data and index in bytes. */
+		/**
+		 * The database size - the total size of compressed data and index in bytes.
+		 * Type: double
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateDatabaseStatisticsFormGroup() {

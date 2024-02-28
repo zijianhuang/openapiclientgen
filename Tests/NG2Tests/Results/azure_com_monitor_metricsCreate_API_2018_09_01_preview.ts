@@ -88,6 +88,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets Count value
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -97,18 +98,21 @@ export namespace MyNS {
 		/**
 		 * Gets or sets Max value
 		 * Required
+		 * Type: double
 		 */
 		max: number;
 
 		/**
 		 * Gets or sets Min value
 		 * Required
+		 * Type: double
 		 */
 		min: number;
 
 		/**
 		 * Gets or sets Sum value
 		 * Required
+		 * Type: double
 		 */
 		sum: number;
 	}
@@ -117,24 +121,28 @@ export namespace MyNS {
 		/**
 		 * Gets or sets Count value
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets Max value
 		 * Required
+		 * Type: double
 		 */
 		max: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets Min value
 		 * Required
+		 * Type: double
 		 */
 		min: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets Sum value
 		 * Required
+		 * Type: double
 		 */
 		sum: FormControl<number | null | undefined>,
 	}
@@ -190,12 +198,18 @@ export namespace MyNS {
 	export interface AzureMetricsResult {
 		apiFailureResponse?: ApiFailureResponse;
 
-		/** Http status code response */
+		/**
+		 * Http status code response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 	export interface AzureMetricsResultFormProperties {
 
-		/** Http status code response */
+		/**
+		 * Http status code response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateAzureMetricsResultFormGroup() {

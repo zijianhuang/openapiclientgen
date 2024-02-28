@@ -98,10 +98,14 @@ export namespace MyNS {
 		/**
 		 * Specifies the amount of time in milliseconds that can elapse before audit actions are forced to be processed.
 		 * The default minimum value is 1000 (1 second). The maximum is 2,147,483,647.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queueDelayMs?: number | null;
 
-		/** Specifies the number of days to keep in the audit logs in the storage account. */
+		/**
+		 * Specifies the number of days to keep in the audit logs in the storage account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays?: number | null;
 
 		/**
@@ -141,10 +145,14 @@ export namespace MyNS {
 		/**
 		 * Specifies the amount of time in milliseconds that can elapse before audit actions are forced to be processed.
 		 * The default minimum value is 1000 (1 second). The maximum is 2,147,483,647.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queueDelayMs: FormControl<number | null | undefined>,
 
-		/** Specifies the number of days to keep in the audit logs in the storage account. */
+		/**
+		 * Specifies the number of days to keep in the audit logs in the storage account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays: FormControl<number | null | undefined>,
 
 		/**
@@ -293,10 +301,14 @@ export namespace MyNS {
 		/**
 		 * Specifies the amount of time in milliseconds that can elapse before audit actions are forced to be processed.
 		 * The default minimum value is 1000 (1 second). The maximum is 2,147,483,647.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queueDelayMs?: number | null;
 
-		/** Specifies the number of days to keep in the audit logs in the storage account. */
+		/**
+		 * Specifies the number of days to keep in the audit logs in the storage account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays?: number | null;
 
 		/**
@@ -339,10 +351,14 @@ export namespace MyNS {
 		/**
 		 * Specifies the amount of time in milliseconds that can elapse before audit actions are forced to be processed.
 		 * The default minimum value is 1000 (1 second). The maximum is 2,147,483,647.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queueDelayMs: FormControl<number | null | undefined>,
 
-		/** Specifies the number of days to keep in the audit logs in the storage account. */
+		/**
+		 * Specifies the number of days to keep in the audit logs in the storage account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays: FormControl<number | null | undefined>,
 
 		/**
@@ -466,10 +482,14 @@ export namespace MyNS {
 		/**
 		 * Specifies the amount of time in milliseconds that can elapse before audit actions are forced to be processed.
 		 * The default minimum value is 1000 (1 second). The maximum is 2,147,483,647.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queueDelayMs?: number | null;
 
-		/** Specifies the number of days to keep in the audit logs in the storage account. */
+		/**
+		 * Specifies the number of days to keep in the audit logs in the storage account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays?: number | null;
 
 		/**
@@ -512,10 +532,14 @@ export namespace MyNS {
 		/**
 		 * Specifies the amount of time in milliseconds that can elapse before audit actions are forced to be processed.
 		 * The default minimum value is 1000 (1 second). The maximum is 2,147,483,647.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queueDelayMs: FormControl<number | null | undefined>,
 
-		/** Specifies the number of days to keep in the audit logs in the storage account. */
+		/**
+		 * Specifies the number of days to keep in the audit logs in the storage account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays: FormControl<number | null | undefined>,
 
 		/**
@@ -636,10 +660,14 @@ export namespace MyNS {
 		/**
 		 * Specifies the amount of time in milliseconds that can elapse before audit actions are forced to be processed.
 		 * The default minimum value is 1000 (1 second). The maximum is 2,147,483,647.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queueDelayMs?: number | null;
 
-		/** Specifies the number of days to keep in the audit logs in the storage account. */
+		/**
+		 * Specifies the number of days to keep in the audit logs in the storage account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays?: number | null;
 
 		/**
@@ -679,10 +707,14 @@ export namespace MyNS {
 		/**
 		 * Specifies the amount of time in milliseconds that can elapse before audit actions are forced to be processed.
 		 * The default minimum value is 1000 (1 second). The maximum is 2,147,483,647.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		queueDelayMs: FormControl<number | null | undefined>,
 
-		/** Specifies the number of days to keep in the audit logs in the storage account. */
+		/**
+		 * Specifies the number of days to keep in the audit logs in the storage account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays: FormControl<number | null | undefined>,
 
 		/**

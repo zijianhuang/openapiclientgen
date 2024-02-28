@@ -463,7 +463,10 @@ export namespace MyNS {
 		 */
 		organization: OrganizationReference;
 
-		/** Unique identifier of the Azure Pipeline within the Azure DevOps Project. */
+		/**
+		 * Unique identifier of the Azure Pipeline within the Azure DevOps Project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pipelineId?: number | null;
 
 		/**
@@ -476,7 +479,10 @@ export namespace MyNS {
 	/** Custom properties of a Pipeline. */
 	export interface PipelinePropertiesFormProperties {
 
-		/** Unique identifier of the Azure Pipeline within the Azure DevOps Project. */
+		/**
+		 * Unique identifier of the Azure Pipeline within the Azure DevOps Project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pipelineId: FormControl<number | null | undefined>,
 	}
 	export function CreatePipelinePropertiesFormGroup() {

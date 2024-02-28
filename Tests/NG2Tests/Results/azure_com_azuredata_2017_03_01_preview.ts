@@ -179,7 +179,10 @@ export namespace MyNS {
 	/** The SQL server properties. */
 	export interface SqlServerProperties {
 
-		/** Cores of the Sql Server. */
+		/**
+		 * Cores of the Sql Server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cores?: number | null;
 
 		/** Sql Server Edition. */
@@ -198,7 +201,10 @@ export namespace MyNS {
 	/** The SQL server properties. */
 	export interface SqlServerPropertiesFormProperties {
 
-		/** Cores of the Sql Server. */
+		/**
+		 * Cores of the Sql Server.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cores: FormControl<number | null | undefined>,
 
 		/** Sql Server Edition. */

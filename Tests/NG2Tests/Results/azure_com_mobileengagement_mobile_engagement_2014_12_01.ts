@@ -10,7 +10,10 @@ export namespace MyNS {
 		/** Action that was performed on the announcement. */
 		action?: AnnouncementFeedbackCriterionAction | null;
 
-		/** The unique identifier of the announcement. */
+		/**
+		 * The unique identifier of the announcement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-id'?: number | null;
 	}
 
@@ -20,7 +23,10 @@ export namespace MyNS {
 		/** Action that was performed on the announcement. */
 		action: FormControl<AnnouncementFeedbackCriterionAction | null | undefined>,
 
-		/** The unique identifier of the announcement. */
+		/**
+		 * The unique identifier of the announcement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-id': FormControl<number | null | undefined>,
 	}
 	export function CreateAnnouncementFeedbackCriterionFormGroup() {
@@ -568,7 +574,10 @@ export namespace MyNS {
 		/** List of possible choices for this question. */
 		choices?: Array<PollQuestionChoice>;
 
-		/** Unique identifier of the question. */
+		/**
+		 * Unique identifier of the question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -578,7 +587,10 @@ export namespace MyNS {
 	}
 	export interface PollQuestionFormProperties extends PollQuestionLocalizationFormProperties {
 
-		/** Unique identifier of the question. */
+		/**
+		 * Unique identifier of the question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -597,7 +609,10 @@ export namespace MyNS {
 
 	export interface PollQuestionChoice extends PollQuestionChoiceLocalization {
 
-		/** Unique identifier of the choice. */
+		/**
+		 * Unique identifier of the choice.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** A flag indicating if this choice is the default choice for the associated question. Only one choice in the array can have this value set to true. */
@@ -610,7 +625,10 @@ export namespace MyNS {
 	}
 	export interface PollQuestionChoiceFormProperties extends PollQuestionChoiceLocalizationFormProperties {
 
-		/** Unique identifier of the choice. */
+		/**
+		 * Unique identifier of the choice.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** A flag indicating if this choice is the default choice for the associated question. Only one choice in the array can have this value set to true. */
@@ -873,7 +891,10 @@ export namespace MyNS {
 		 */
 		finishedDate?: Date | null;
 
-		/** Campaign identifier. */
+		/**
+		 * Campaign identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** State of the campaign, or 'queued' when testing a campaign. */
@@ -891,7 +912,10 @@ export namespace MyNS {
 		 */
 		finishedDate: FormControl<Date | null | undefined>,
 
-		/** Campaign identifier. */
+		/**
+		 * Campaign identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** State of the campaign, or 'queued' when testing a campaign. */
@@ -955,6 +979,7 @@ export namespace MyNS {
 		/**
 		 * Campaign identifier.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -963,6 +988,7 @@ export namespace MyNS {
 		/**
 		 * Campaign identifier.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -979,52 +1005,100 @@ export namespace MyNS {
 		/** Poll specific statistics. */
 		answers?: {[id: string]: any };
 
-		/** Number of times the campaign’s content view was actioned (Not present in case of a notification-only announcement or a native-push). */
+		/**
+		 * Number of times the campaign’s content view was actioned (Not present in case of a notification-only announcement or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-actioned'?: number | null;
 
-		/** Number of times the campaign’s content view was displayed (Not present in case of a notification-only announcement, a data-push or a native-push). */
+		/**
+		 * Number of times the campaign’s content view was displayed (Not present in case of a notification-only announcement, a data-push or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-displayed'?: number | null;
 
-		/** Number of times the campaign’s content view was exited (Not present in case of a notification-only announcement or a native-push). */
+		/**
+		 * Number of times the campaign’s content view was exited (Not present in case of a notification-only announcement or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-exited'?: number | null;
 
-		/** Number of times the campaign was received by the application (Not present in case of a native-push). */
+		/**
+		 * Number of times the campaign was received by the application (Not present in case of a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		delivered?: number | null;
 
-		/** Number of times the campaign was dropped by the application. It can happen if the SDK failed to parse the campaign payload or if an error occurred while trying to notify the end-user (Not present in case of a native-push). */
+		/**
+		 * Number of times the campaign was dropped by the application. It can happen if the SDK failed to parse the campaign payload or if an error occurred while trying to notify the end-user (Not present in case of a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dropped?: number | null;
 
-		/** Number of times the in-app notification was actioned (Not present in case of a data-push or a native-push). */
+		/**
+		 * Number of times the in-app notification was actioned (Not present in case of a data-push or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'in-app-notification-actioned'?: number | null;
 
-		/** Number of times the in-app notification was displayed (Not present in case of a data-push or a native-push). */
+		/**
+		 * Number of times the in-app notification was displayed (Not present in case of a data-push or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'in-app-notification-displayed'?: number | null;
 
-		/** Number of times the in-app notification was exited (Not present in case of a data-push or a native-push). */
+		/**
+		 * Number of times the in-app notification was exited (Not present in case of a data-push or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'in-app-notification-exited'?: number | null;
 
-		/** Number of pushes performed. */
+		/**
+		 * Number of pushes performed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pushed?: number | null;
 
-		/** Total number of native pushes. Information only available on Android, iOS, Windows Phone and Windows applications. */
+		/**
+		 * Total number of native pushes. Information only available on Android, iOS, Windows Phone and Windows applications.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'pushed-native'?: number | null;
 
-		/** Number of ADM pushes (available only on Android applications). */
+		/**
+		 * Number of ADM pushes (available only on Android applications).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'pushed-native-adm'?: number | null;
 
-		/** Number of C2DM/GCM pushes (available only on Android applications). */
+		/**
+		 * Number of C2DM/GCM pushes (available only on Android applications).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'pushed-native-google'?: number | null;
 
-		/** Number of times the campaign was registered to be pushed. */
+		/**
+		 * Number of times the campaign was registered to be pushed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queued?: number | null;
 
-		/** Number of times the system notification (On Android it corresponds to a status bar notification. On iOS, it is the Apple Push notification) was actioned. */
+		/**
+		 * Number of times the system notification (On Android it corresponds to a status bar notification. On iOS, it is the Apple Push notification) was actioned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'system-notification-actioned'?: number | null;
 
-		/** Number of times the system notification was displayed (Not present in case of a data-push or a native-push). On Android it corresponds to a status bar notification. */
+		/**
+		 * Number of times the system notification was displayed (Not present in case of a data-push or a native-push). On Android it corresponds to a status bar notification.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'system-notification-displayed'?: number | null;
 
-		/** Number of times the system notification was exited (Not present in case of a data-push or a native-push). */
+		/**
+		 * Number of times the system notification was exited (Not present in case of a data-push or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'system-notification-exited'?: number | null;
 	}
 	export interface CampaignStatisticsResultFormProperties {
@@ -1032,52 +1106,100 @@ export namespace MyNS {
 		/** Poll specific statistics. */
 		answers: FormControl<{[id: string]: any } | null | undefined>,
 
-		/** Number of times the campaign’s content view was actioned (Not present in case of a notification-only announcement or a native-push). */
+		/**
+		 * Number of times the campaign’s content view was actioned (Not present in case of a notification-only announcement or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-actioned': FormControl<number | null | undefined>,
 
-		/** Number of times the campaign’s content view was displayed (Not present in case of a notification-only announcement, a data-push or a native-push). */
+		/**
+		 * Number of times the campaign’s content view was displayed (Not present in case of a notification-only announcement, a data-push or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-displayed': FormControl<number | null | undefined>,
 
-		/** Number of times the campaign’s content view was exited (Not present in case of a notification-only announcement or a native-push). */
+		/**
+		 * Number of times the campaign’s content view was exited (Not present in case of a notification-only announcement or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-exited': FormControl<number | null | undefined>,
 
-		/** Number of times the campaign was received by the application (Not present in case of a native-push). */
+		/**
+		 * Number of times the campaign was received by the application (Not present in case of a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		delivered: FormControl<number | null | undefined>,
 
-		/** Number of times the campaign was dropped by the application. It can happen if the SDK failed to parse the campaign payload or if an error occurred while trying to notify the end-user (Not present in case of a native-push). */
+		/**
+		 * Number of times the campaign was dropped by the application. It can happen if the SDK failed to parse the campaign payload or if an error occurred while trying to notify the end-user (Not present in case of a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dropped: FormControl<number | null | undefined>,
 
-		/** Number of times the in-app notification was actioned (Not present in case of a data-push or a native-push). */
+		/**
+		 * Number of times the in-app notification was actioned (Not present in case of a data-push or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'in-app-notification-actioned': FormControl<number | null | undefined>,
 
-		/** Number of times the in-app notification was displayed (Not present in case of a data-push or a native-push). */
+		/**
+		 * Number of times the in-app notification was displayed (Not present in case of a data-push or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'in-app-notification-displayed': FormControl<number | null | undefined>,
 
-		/** Number of times the in-app notification was exited (Not present in case of a data-push or a native-push). */
+		/**
+		 * Number of times the in-app notification was exited (Not present in case of a data-push or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'in-app-notification-exited': FormControl<number | null | undefined>,
 
-		/** Number of pushes performed. */
+		/**
+		 * Number of pushes performed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pushed: FormControl<number | null | undefined>,
 
-		/** Total number of native pushes. Information only available on Android, iOS, Windows Phone and Windows applications. */
+		/**
+		 * Total number of native pushes. Information only available on Android, iOS, Windows Phone and Windows applications.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'pushed-native': FormControl<number | null | undefined>,
 
-		/** Number of ADM pushes (available only on Android applications). */
+		/**
+		 * Number of ADM pushes (available only on Android applications).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'pushed-native-adm': FormControl<number | null | undefined>,
 
-		/** Number of C2DM/GCM pushes (available only on Android applications). */
+		/**
+		 * Number of C2DM/GCM pushes (available only on Android applications).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'pushed-native-google': FormControl<number | null | undefined>,
 
-		/** Number of times the campaign was registered to be pushed. */
+		/**
+		 * Number of times the campaign was registered to be pushed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queued: FormControl<number | null | undefined>,
 
-		/** Number of times the system notification (On Android it corresponds to a status bar notification. On iOS, it is the Apple Push notification) was actioned. */
+		/**
+		 * Number of times the system notification (On Android it corresponds to a status bar notification. On iOS, it is the Apple Push notification) was actioned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'system-notification-actioned': FormControl<number | null | undefined>,
 
-		/** Number of times the system notification was displayed (Not present in case of a data-push or a native-push). On Android it corresponds to a status bar notification. */
+		/**
+		 * Number of times the system notification was displayed (Not present in case of a data-push or a native-push). On Android it corresponds to a status bar notification.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'system-notification-displayed': FormControl<number | null | undefined>,
 
-		/** Number of times the system notification was exited (Not present in case of a data-push or a native-push). */
+		/**
+		 * Number of times the system notification was exited (Not present in case of a data-push or a native-push).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'system-notification-exited': FormControl<number | null | undefined>,
 	}
 	export function CreateCampaignStatisticsResultFormGroup() {
@@ -1225,7 +1347,10 @@ export namespace MyNS {
 		 */
 		action?: AnnouncementFeedbackCriterionAction | null;
 
-		/** The unique identifier of the data push. */
+		/**
+		 * The unique identifier of the data push.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-id'?: number | null;
 	}
 
@@ -1237,7 +1362,10 @@ export namespace MyNS {
 		 */
 		action: FormControl<AnnouncementFeedbackCriterionAction | null | undefined>,
 
-		/** The unique identifier of the data push. */
+		/**
+		 * The unique identifier of the data push.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-id': FormControl<number | null | undefined>,
 	}
 	export function CreateDatapushFeedbackCriterionFormGroup() {
@@ -1261,6 +1389,7 @@ export namespace MyNS {
 
 		/**
 		 * It can be either: * an absolute date using yyyy-MM-dd format (e.g. 1969-12-07 stands for 7 Dec 1969). * an offset in days relative to the current day (`TODAY` + `value`).
+		 * Type: DateOnly
 		 */
 		value?: Date | null;
 	}
@@ -1276,6 +1405,7 @@ export namespace MyNS {
 
 		/**
 		 * It can be either: * an absolute date using yyyy-MM-dd format (e.g. 1969-12-07 stands for 7 Dec 1969). * an offset in days relative to the current day (`TODAY` + `value`).
+		 * Type: DateOnly
 		 */
 		value: FormControl<Date | null | undefined>,
 	}
@@ -1326,10 +1456,16 @@ export namespace MyNS {
 
 	export interface DeviceInfo {
 
-		/** Android API level. */
+		/**
+		 * Android API level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		androidAPILevel?: number | null;
 
-		/** Application version code. */
+		/**
+		 * Application version code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applicationVersionCode?: number | null;
 
 		/** Application version name. */
@@ -1365,15 +1501,24 @@ export namespace MyNS {
 		/** SDK version. */
 		serviceVersion?: string | null;
 
-		/** The offset in minutes from UTC for the device time zone, including daylight savings time. */
+		/**
+		 * The offset in minutes from UTC for the device time zone, including daylight savings time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeZoneOffset?: number | null;
 	}
 	export interface DeviceInfoFormProperties {
 
-		/** Android API level. */
+		/**
+		 * Android API level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		androidAPILevel: FormControl<number | null | undefined>,
 
-		/** Application version code. */
+		/**
+		 * Application version code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applicationVersionCode: FormControl<number | null | undefined>,
 
 		/** Application version name. */
@@ -1409,7 +1554,10 @@ export namespace MyNS {
 		/** SDK version. */
 		serviceVersion: FormControl<string | null | undefined>,
 
-		/** The offset in minutes from UTC for the device time zone, including daylight savings time. */
+		/**
+		 * The offset in minutes from UTC for the device time zone, including daylight savings time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeZoneOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceInfoFormGroup() {
@@ -1487,44 +1635,68 @@ export namespace MyNS {
 
 	export interface DeviceMeta {
 
-		/** First time the device used the application in milliseconds since January 1st, 1970 UTC. */
-		firstSeen?: number | null;
+		/**
+		 * First time the device used the application in milliseconds since January 1st, 1970 UTC.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		firstSeen?: string | null;
 
-		/** Timestamp corresponding to the info object in milliseconds since January 1st, 1970 UTC. */
-		lastInfo?: number | null;
+		/**
+		 * Timestamp corresponding to the info object in milliseconds since January 1st, 1970 UTC.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastInfo?: string | null;
 
-		/** Timestamp corresponding to the location object in milliseconds since January 1st, 1970 UTC. */
-		lastLocation?: number | null;
+		/**
+		 * Timestamp corresponding to the location object in milliseconds since January 1st, 1970 UTC.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastLocation?: string | null;
 
-		/** Last time the device used the application in milliseconds since January 1st, 1970 UTC. */
-		lastSeen?: number | null;
+		/**
+		 * Last time the device used the application in milliseconds since January 1st, 1970 UTC.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastSeen?: string | null;
 
 		/** Boolean indicating if native push notifications (like Android’s GCM or Apple’s APNS) are enabled for the application. This boolean is set to true when the application registers successfully to the native push service, and set to false when the native push service reports to Mobile Engagement that the application can no longer be pushed (which means that it has been uninstalled). This report is performed a few hours after Mobile Engagement has tried to perform a native push to a device on which the application has been uninstalled. */
 		nativePushEnabled?: boolean | null;
 	}
 	export interface DeviceMetaFormProperties {
 
-		/** First time the device used the application in milliseconds since January 1st, 1970 UTC. */
-		firstSeen: FormControl<number | null | undefined>,
+		/**
+		 * First time the device used the application in milliseconds since January 1st, 1970 UTC.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		firstSeen: FormControl<string | null | undefined>,
 
-		/** Timestamp corresponding to the info object in milliseconds since January 1st, 1970 UTC. */
-		lastInfo: FormControl<number | null | undefined>,
+		/**
+		 * Timestamp corresponding to the info object in milliseconds since January 1st, 1970 UTC.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastInfo: FormControl<string | null | undefined>,
 
-		/** Timestamp corresponding to the location object in milliseconds since January 1st, 1970 UTC. */
-		lastLocation: FormControl<number | null | undefined>,
+		/**
+		 * Timestamp corresponding to the location object in milliseconds since January 1st, 1970 UTC.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastLocation: FormControl<string | null | undefined>,
 
-		/** Last time the device used the application in milliseconds since January 1st, 1970 UTC. */
-		lastSeen: FormControl<number | null | undefined>,
+		/**
+		 * Last time the device used the application in milliseconds since January 1st, 1970 UTC.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastSeen: FormControl<string | null | undefined>,
 
 		/** Boolean indicating if native push notifications (like Android’s GCM or Apple’s APNS) are enabled for the application. This boolean is set to true when the application registers successfully to the native push service, and set to false when the native push service reports to Mobile Engagement that the application can no longer be pushed (which means that it has been uninstalled). This report is performed a few hours after Mobile Engagement has tried to perform a native push to a device on which the application has been uninstalled. */
 		nativePushEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeviceMetaFormGroup() {
 		return new FormGroup<DeviceMetaFormProperties>({
-			firstSeen: new FormControl<number | null | undefined>(undefined),
-			lastInfo: new FormControl<number | null | undefined>(undefined),
-			lastLocation: new FormControl<number | null | undefined>(undefined),
-			lastSeen: new FormControl<number | null | undefined>(undefined),
+			firstSeen: new FormControl<string | null | undefined>(undefined),
+			lastInfo: new FormControl<string | null | undefined>(undefined),
+			lastLocation: new FormControl<string | null | undefined>(undefined),
+			lastSeen: new FormControl<string | null | undefined>(undefined),
 			nativePushEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1657,14 +1829,20 @@ export namespace MyNS {
 	/** Send only to users who have used the app in the last {threshold} days. */
 	export interface EngageActiveUsersFilter extends Filter {
 
-		/** An integer value representing the threshold to apply on this filter. */
+		/**
+		 * An integer value representing the threshold to apply on this filter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threshold?: number | null;
 	}
 
 	/** Send only to users who have used the app in the last {threshold} days. */
 	export interface EngageActiveUsersFilterFormProperties extends FilterFormProperties {
 
-		/** An integer value representing the threshold to apply on this filter. */
+		/**
+		 * An integer value representing the threshold to apply on this filter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateEngageActiveUsersFilterFormGroup() {
@@ -1679,14 +1857,20 @@ export namespace MyNS {
 	/** Send only to users who haven't used the app in the last {threshold} days. */
 	export interface EngageIdleUsersFilter extends Filter {
 
-		/** An integer value representing the threshold to apply on this filter. */
+		/**
+		 * An integer value representing the threshold to apply on this filter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threshold?: number | null;
 	}
 
 	/** Send only to users who haven't used the app in the last {threshold} days. */
 	export interface EngageIdleUsersFilterFormProperties extends FilterFormProperties {
 
-		/** An integer value representing the threshold to apply on this filter. */
+		/**
+		 * An integer value representing the threshold to apply on this filter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateEngageIdleUsersFilterFormGroup() {
@@ -1701,14 +1885,20 @@ export namespace MyNS {
 	/** Send only to users whose first app use is less than {threshold} days old. */
 	export interface EngageNewUsersFilter extends Filter {
 
-		/** An integer value representing the threshold to apply on this filter. */
+		/**
+		 * An integer value representing the threshold to apply on this filter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threshold?: number | null;
 	}
 
 	/** Send only to users whose first app use is less than {threshold} days old. */
 	export interface EngageNewUsersFilterFormProperties extends FilterFormProperties {
 
-		/** An integer value representing the threshold to apply on this filter. */
+		/**
+		 * An integer value representing the threshold to apply on this filter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateEngageNewUsersFilterFormGroup() {
@@ -1723,14 +1913,20 @@ export namespace MyNS {
 	/** Send only to users whose first app use is more than {threshold} days old. */
 	export interface EngageOldUsersFilter extends Filter {
 
-		/** An integer value representing the threshold to apply on this filter. */
+		/**
+		 * An integer value representing the threshold to apply on this filter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threshold?: number | null;
 	}
 
 	/** Send only to users whose first app use is more than {threshold} days old. */
 	export interface EngageOldUsersFilterFormProperties extends FilterFormProperties {
 
-		/** An integer value representing the threshold to apply on this filter. */
+		/**
+		 * An integer value representing the threshold to apply on this filter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateEngageOldUsersFilterFormGroup() {
@@ -1745,14 +1941,20 @@ export namespace MyNS {
 	/** Send only to a maximum of max users. */
 	export interface EngageSubsetFilter extends Filter {
 
-		/** An integer value representing the maximum users that should be pushed. */
+		/**
+		 * An integer value representing the maximum users that should be pushed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max?: number | null;
 	}
 
 	/** Send only to a maximum of max users. */
 	export interface EngageSubsetFilterFormProperties extends FilterFormProperties {
 
-		/** An integer value representing the maximum users that should be pushed. */
+		/**
+		 * An integer value representing the maximum users that should be pushed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max: FormControl<number | null | undefined>,
 	}
 	export function CreateEngageSubsetFilterFormGroup() {
@@ -1791,16 +1993,28 @@ export namespace MyNS {
 	 */
 	export interface GeoFencingCriterion extends Criterion {
 
-		/** Number of minutes before device location is considered to be expired. */
+		/**
+		 * Number of minutes before device location is considered to be expired.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiration?: number | null;
 
-		/** The latitude of the central point of the region. */
+		/**
+		 * The latitude of the central point of the region.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** The longitude of the central point of the region. */
+		/**
+		 * The longitude of the central point of the region.
+		 * Type: double
+		 */
 		lon?: number | null;
 
-		/** The radius of the central point of the region, in meters. */
+		/**
+		 * The radius of the central point of the region, in meters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radius?: number | null;
 	}
 
@@ -1809,16 +2023,28 @@ export namespace MyNS {
 	 */
 	export interface GeoFencingCriterionFormProperties extends CriterionFormProperties {
 
-		/** Number of minutes before device location is considered to be expired. */
+		/**
+		 * Number of minutes before device location is considered to be expired.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiration: FormControl<number | null | undefined>,
 
-		/** The latitude of the central point of the region. */
+		/**
+		 * The latitude of the central point of the region.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** The longitude of the central point of the region. */
+		/**
+		 * The longitude of the central point of the region.
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 
-		/** The radius of the central point of the region, in meters. */
+		/**
+		 * The radius of the central point of the region, in meters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radius: FormControl<number | null | undefined>,
 	}
 	export function CreateGeoFencingCriterionFormGroup() {
@@ -1842,7 +2068,10 @@ export namespace MyNS {
 		/** comparison operator: `EQ` (equal to), `LT` (less than), `GT` (greater than), `LE` (less than or equal to) or `GE` (greater than or equal to). */
 		op?: DateTagCriterionOp | null;
 
-		/** A custom integer value to match. */
+		/**
+		 * A custom integer value to match.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 
@@ -1855,7 +2084,10 @@ export namespace MyNS {
 		/** comparison operator: `EQ` (equal to), `LT` (less than), `GT` (greater than), `LE` (less than or equal to) or `GE` (greater than or equal to). */
 		op: FormControl<DateTagCriterionOp | null | undefined>,
 
-		/** A custom integer value to match. */
+		/**
+		 * A custom integer value to match.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateIntegerTagCriterionFormGroup() {
@@ -2058,20 +2290,32 @@ export namespace MyNS {
 	/** Used to target devices who answered X to a given question. */
 	export interface PollAnswerFeedbackCriterion extends Criterion {
 
-		/** The unique identifier of the choice. */
+		/**
+		 * The unique identifier of the choice.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'choice-id'?: number | null;
 
-		/** The unique identifier of the poll. */
+		/**
+		 * The unique identifier of the poll.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-id'?: number | null;
 	}
 
 	/** Used to target devices who answered X to a given question. */
 	export interface PollAnswerFeedbackCriterionFormProperties extends CriterionFormProperties {
 
-		/** The unique identifier of the choice. */
+		/**
+		 * The unique identifier of the choice.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'choice-id': FormControl<number | null | undefined>,
 
-		/** The unique identifier of the poll. */
+		/**
+		 * The unique identifier of the poll.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-id': FormControl<number | null | undefined>,
 	}
 	export function CreatePollAnswerFeedbackCriterionFormGroup() {
@@ -2090,7 +2334,10 @@ export namespace MyNS {
 		/** Action that was performed on the poll. */
 		action?: AnnouncementFeedbackCriterionAction | null;
 
-		/** The unique identifier of the poll. */
+		/**
+		 * The unique identifier of the poll.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-id'?: number | null;
 	}
 
@@ -2100,7 +2347,10 @@ export namespace MyNS {
 		/** Action that was performed on the poll. */
 		action: FormControl<AnnouncementFeedbackCriterionAction | null | undefined>,
 
-		/** The unique identifier of the poll. */
+		/**
+		 * The unique identifier of the poll.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'content-id': FormControl<number | null | undefined>,
 	}
 	export function CreatePollFeedbackCriterionFormGroup() {
@@ -2252,7 +2502,10 @@ export namespace MyNS {
 		/** If value is true, the criterion will target users that are NOT part of the segment. */
 		exclude?: boolean | null;
 
-		/** Segment identifier. */
+		/**
+		 * Segment identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 	}
 
@@ -2262,7 +2515,10 @@ export namespace MyNS {
 		/** If value is true, the criterion will target users that are NOT part of the segment. */
 		exclude: FormControl<boolean | null | undefined>,
 
-		/** Segment identifier. */
+		/**
+		 * Segment identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateSegmentCriterionFormGroup() {
@@ -2327,6 +2583,7 @@ export namespace MyNS {
 		/**
 		 * A date as defined by full-date in RFC3339.
 		 * Required
+		 * Type: DateOnly
 		 */
 		endDate: Date;
 
@@ -2339,6 +2596,7 @@ export namespace MyNS {
 		/**
 		 * A date as defined by full-date in RFC3339.
 		 * Required
+		 * Type: DateOnly
 		 */
 		startDate: Date;
 	}
@@ -2353,6 +2611,7 @@ export namespace MyNS {
 		/**
 		 * A date as defined by full-date in RFC3339.
 		 * Required
+		 * Type: DateOnly
 		 */
 		endDate: FormControl<Date | null | undefined>,
 
@@ -2365,6 +2624,7 @@ export namespace MyNS {
 		/**
 		 * A date as defined by full-date in RFC3339.
 		 * Required
+		 * Type: DateOnly
 		 */
 		startDate: FormControl<Date | null | undefined>,
 	}
@@ -2803,7 +3063,6 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.MobileEngagement/appCollections
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
-		 * @return {AppCollectionListResult} 
 		 */
 		AppCollections_List(subscriptionId: string, api_version: string): Observable<AppCollectionListResult> {
 			return this.http.get<AppCollectionListResult>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/providers/Microsoft.MobileEngagement/appCollections&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -2814,7 +3073,6 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/providers/Microsoft.MobileEngagement/checkAppCollectionNameAvailability
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
-		 * @return {AppCollectionNameAvailability} 
 		 */
 		AppCollections_CheckNameAvailability(subscriptionId: string, api_version: string, requestBody: AppCollectionNameAvailability): Observable<AppCollectionNameAvailability> {
 			return this.http.post<AppCollectionNameAvailability>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/providers/Microsoft.MobileEngagement/checkAppCollectionNameAvailability&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -2825,7 +3083,6 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.MobileEngagement/supportedPlatforms
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client Api Version.
-		 * @return {SupportedPlatformsListResult} 
 		 */
 		SupportedPlatforms_List(subscriptionId: string, api_version: string): Observable<SupportedPlatformsListResult> {
 			return this.http.get<SupportedPlatformsListResult>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/providers/Microsoft.MobileEngagement/supportedPlatforms&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
@@ -2838,7 +3095,6 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} appCollection Application collection.
-		 * @return {AppListResult} 
 		 */
 		Apps_List(subscriptionId: string, api_version: string, resourceGroupName: string, appCollection: string): Observable<AppListResult> {
 			return this.http.get<AppListResult>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.MobileEngagement/appcollections/' + (appCollection == null ? '' : encodeURIComponent(appCollection)) + '/apps&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});

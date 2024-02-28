@@ -48,7 +48,11 @@ export namespace MyNS {
 		enrichmentPeriodLabel?: Array<string>;
 		enrichmentPeriodTerm?: Array<string>;
 		enrichmentPlaceLabel?: Array<string>;
+
+		/** Type: float */
 		enrichmentPlaceLatitude?: number | null;
+
+		/** Type: float */
 		enrichmentPlaceLongitude?: number | null;
 		enrichmentPlaceTerm?: Array<string>;
 		europeanaDataProvider?: string | null;
@@ -66,7 +70,11 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		enrichmentPeriodBegin: FormControl<string | null | undefined>,
 		enrichmentPeriodEnd: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		enrichmentPlaceLatitude: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		enrichmentPlaceLongitude: FormControl<number | null | undefined>,
 		europeanaDataProvider: FormControl<string | null | undefined>,
 		europeanaLanguage: FormControl<string | null | undefined>,
@@ -171,10 +179,14 @@ export namespace MyNS {
 
 	export interface Query {
 		searchTerms?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startPage?: number | null;
 	}
 	export interface QueryFormProperties {
 		searchTerms: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startPage: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryFormGroup() {
@@ -197,14 +209,18 @@ export namespace MyNS {
 	}
 
 	export interface Statistic {
-		value?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		value?: string | null;
 	}
 	export interface StatisticFormProperties {
-		value: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		value: FormControl<string | null | undefined>,
 	}
 	export function CreateStatisticFormGroup() {
 		return new FormGroup<StatisticFormProperties>({
-			value: new FormControl<number | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

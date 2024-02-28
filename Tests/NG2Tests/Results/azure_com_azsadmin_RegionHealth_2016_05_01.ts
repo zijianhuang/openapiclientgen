@@ -101,7 +101,10 @@ export namespace MyNS {
 		/** The unit of the metric. */
 		unit?: RegionHealthModelUsageMetricsMetricsValueUnit | null;
 
-		/** Name of the usage metric. */
+		/**
+		 * Name of the usage metric.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 	export interface RegionHealthModelUsageMetricsMetricsValueFormProperties {
@@ -124,7 +127,10 @@ export namespace MyNS {
 		/** The unit of the metric. */
 		unit: FormControl<RegionHealthModelUsageMetricsMetricsValueUnit | null | undefined>,
 
-		/** Name of the usage metric. */
+		/**
+		 * Name of the usage metric.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateRegionHealthModelUsageMetricsMetricsValueFormGroup() {

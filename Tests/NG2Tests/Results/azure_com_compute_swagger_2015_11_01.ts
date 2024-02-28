@@ -501,7 +501,6 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {Deployment} requestBody Additional parameters supplied to the operation.
-		 * @return {DeploymentExtended} 
 		 */
 		VirtualMachines_QuickCreate(resourceGroupName: string, deploymentName: string, api_version: string, subscriptionId: string, requestBody: Deployment): Observable<DeploymentExtended> {
 			return this.http.put<DeploymentExtended>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourcegroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.Resources/deployments/' + (deploymentName == null ? '' : encodeURIComponent(deploymentName)) + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });

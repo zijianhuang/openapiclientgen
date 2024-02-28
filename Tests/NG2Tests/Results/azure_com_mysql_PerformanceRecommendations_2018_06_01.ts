@@ -65,7 +65,10 @@ export namespace MyNS {
 	/** The properties of a recommendation action. */
 	export interface RecommendationActionProperties {
 
-		/** Recommendation action identifier. */
+		/**
+		 * Recommendation action identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionId?: number | null;
 
 		/** Advisor name. */
@@ -93,7 +96,10 @@ export namespace MyNS {
 	/** The properties of a recommendation action. */
 	export interface RecommendationActionPropertiesFormProperties {
 
-		/** Recommendation action identifier. */
+		/**
+		 * Recommendation action identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actionId: FormControl<number | null | undefined>,
 
 		/** Advisor name. */

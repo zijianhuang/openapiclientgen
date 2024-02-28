@@ -195,21 +195,45 @@ export namespace MyNS {
 
 	export interface PolicyResultSummary {
 		aggregateTimeWindow?: string | null;
+
+		/** Type: float */
 		confidenceInterval?: number | null;
+
+		/** Type: float */
 		ipsEstimatorDenominator?: number | null;
+
+		/** Type: float */
 		ipsEstimatorNumerator?: number | null;
+
+		/** Type: float */
 		nonZeroProbability?: number | null;
+
+		/** Type: float */
 		snipsEstimatorDenominator?: number | null;
+
+		/** Type: float */
 		sumOfSquares?: number | null;
 		timeStamp?: Date | null;
 	}
 	export interface PolicyResultSummaryFormProperties {
 		aggregateTimeWindow: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		confidenceInterval: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		ipsEstimatorDenominator: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		ipsEstimatorNumerator: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		nonZeroProbability: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		snipsEstimatorDenominator: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		sumOfSquares: FormControl<number | null | undefined>,
 		timeStamp: FormControl<Date | null | undefined>,
 	}
@@ -572,6 +596,7 @@ export namespace MyNS {
 		/**
 		 * Reward to be assigned to an action. Value should be between -1 and 1 inclusive.
 		 * Required
+		 * Type: float
 		 */
 		value: number;
 	}
@@ -582,6 +607,7 @@ export namespace MyNS {
 		/**
 		 * Reward to be assigned to an action. Value should be between -1 and 1 inclusive.
 		 * Required
+		 * Type: float
 		 */
 		value: FormControl<number | null | undefined>,
 	}

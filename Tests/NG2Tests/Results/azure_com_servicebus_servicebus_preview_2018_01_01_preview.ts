@@ -395,7 +395,10 @@ export namespace MyNS {
 	/** SKU of the namespace. */
 	export interface SBSku {
 
-		/** The specified messaging units for the tier. For Premium tier, capacity are 1,2 and 4. */
+		/**
+		 * The specified messaging units for the tier. For Premium tier, capacity are 1,2 and 4.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/**
@@ -411,7 +414,10 @@ export namespace MyNS {
 	/** SKU of the namespace. */
 	export interface SBSkuFormProperties {
 
-		/** The specified messaging units for the tier. For Premium tier, capacity are 1,2 and 4. */
+		/**
+		 * The specified messaging units for the tier. For Premium tier, capacity are 1,2 and 4.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/**

@@ -5,12 +5,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AccountBalance {
 
-		/** Current available funds in this account */
+		/**
+		 * Current available funds in this account
+		 * Type: double
+		 */
 		availableFunds?: number | null;
 
 		/**
 		 * Current balance of account
 		 * Required
+		 * Type: double
 		 */
 		balance: number;
 
@@ -20,17 +24,24 @@ export namespace MyNS {
 		 */
 		currencyCode: string;
 
-		/** Current withdrawable balance of this account */
+		/**
+		 * Current withdrawable balance of this account
+		 * Type: double
+		 */
 		withdrawableFunds?: number | null;
 	}
 	export interface AccountBalanceFormProperties {
 
-		/** Current available funds in this account */
+		/**
+		 * Current available funds in this account
+		 * Type: double
+		 */
 		availableFunds: FormControl<number | null | undefined>,
 
 		/**
 		 * Current balance of account
 		 * Required
+		 * Type: double
 		 */
 		balance: FormControl<number | null | undefined>,
 
@@ -40,7 +51,10 @@ export namespace MyNS {
 		 */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Current withdrawable balance of this account */
+		/**
+		 * Current withdrawable balance of this account
+		 * Type: double
+		 */
 		withdrawableFunds: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountBalanceFormGroup() {
@@ -391,13 +405,17 @@ export namespace MyNS {
 		/**
 		 * The amount of the payment
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
 		/** The channel through which the payment was made */
 		channel?: string | null;
 
-		/** The commision for the payment */
+		/**
+		 * The commision for the payment
+		 * Type: double
+		 */
 		commision?: number | null;
 
 		/**
@@ -438,13 +456,17 @@ export namespace MyNS {
 		/**
 		 * The amount of the payment
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The channel through which the payment was made */
 		channel: FormControl<string | null | undefined>,
 
-		/** The commision for the payment */
+		/**
+		 * The commision for the payment
+		 * Type: double
+		 */
 		commision: FormControl<number | null | undefined>,
 
 		/**
@@ -530,12 +552,16 @@ export namespace MyNS {
 
 	/** PIN object - if this object is not returned in plusCardDetails object then it has not been set. */
 	export interface PinStatus {
+
+		/** Type: double */
 		attemptsRemaining?: number | null;
 		blocked?: boolean | null;
 	}
 
 	/** PIN object - if this object is not returned in plusCardDetails object then it has not been set. */
 	export interface PinStatusFormProperties {
+
+		/** Type: double */
 		attemptsRemaining: FormControl<number | null | undefined>,
 		blocked: FormControl<boolean | null | undefined>,
 	}

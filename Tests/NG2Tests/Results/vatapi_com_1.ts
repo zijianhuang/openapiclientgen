@@ -8,18 +8,21 @@ export namespace MyNS {
 		/**
 		 * The number of api requests remaining in the current billing period
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		requests_remaining: number;
 
 		/**
 		 * The number of api requests consumed within the last 30 days
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		requests_used: number;
 
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 	}
@@ -28,18 +31,21 @@ export namespace MyNS {
 		/**
 		 * The number of api requests remaining in the current billing period
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		requests_remaining: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of api requests consumed within the last 30 days
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		requests_used: FormControl<number | null | undefined>,
 
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 	}
@@ -69,30 +75,35 @@ export namespace MyNS {
 		/**
 		 * The price excluding VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price_excl_vat: number;
 
 		/**
 		 * The price including VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price_incl_vat: number;
 
 		/**
 		 * The rate % for the country_rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rate: number;
 
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 
 		/**
 		 * The total amount of VAT applied
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vat: number;
 	}
@@ -113,30 +124,35 @@ export namespace MyNS {
 		/**
 		 * The price excluding VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price_excl_vat: FormControl<number | null | undefined>,
 
 		/**
 		 * The price including VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price_incl_vat: FormControl<number | null | undefined>,
 
 		/**
 		 * The rate % for the country_rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rate: FormControl<number | null | undefined>,
 
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 
 		/**
 		 * The total amount of VAT applied
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vat: FormControl<number | null | undefined>,
 	}
@@ -173,6 +189,7 @@ export namespace MyNS {
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 
@@ -199,6 +216,7 @@ export namespace MyNS {
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 
@@ -277,6 +295,7 @@ export namespace MyNS {
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 	}
@@ -285,6 +304,7 @@ export namespace MyNS {
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 	}
@@ -312,6 +332,7 @@ export namespace MyNS {
 		/**
 		 * The currency code you are converting to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		currency_to: number;
 
@@ -324,6 +345,7 @@ export namespace MyNS {
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 	}
@@ -344,6 +366,7 @@ export namespace MyNS {
 		/**
 		 * The currency code you are converting to
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		currency_to: FormControl<number | null | undefined>,
 
@@ -356,6 +379,7 @@ export namespace MyNS {
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 	}
@@ -391,6 +415,7 @@ export namespace MyNS {
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 
@@ -417,6 +442,7 @@ export namespace MyNS {
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 
@@ -450,7 +476,10 @@ export namespace MyNS {
 		 */
 		business_name: string;
 
-		/** The rate of conversion at time of supply */
+		/**
+		 * The rate of conversion at time of supply
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversion_rate?: number | null;
 
 		/**
@@ -477,18 +506,23 @@ export namespace MyNS {
 		 */
 		date: string;
 
-		/** The discount rate per item */
+		/**
+		 * The discount rate per item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discount_rate?: number | null;
 
 		/**
 		 * Total amount of discount
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		discount_total: number;
 
 		/**
 		 * A sequential invoice number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		invoice_number: number;
 
@@ -513,6 +547,7 @@ export namespace MyNS {
 		/**
 		 * Total amount excluding VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subtotal: number;
 
@@ -525,6 +560,7 @@ export namespace MyNS {
 		/**
 		 * Total amount of including VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
@@ -543,6 +579,7 @@ export namespace MyNS {
 		/**
 		 * Total amount of VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vat_total: number;
 	}
@@ -560,7 +597,10 @@ export namespace MyNS {
 		 */
 		business_name: FormControl<string | null | undefined>,
 
-		/** The rate of conversion at time of supply */
+		/**
+		 * The rate of conversion at time of supply
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversion_rate: FormControl<number | null | undefined>,
 
 		/**
@@ -587,18 +627,23 @@ export namespace MyNS {
 		 */
 		date: FormControl<string | null | undefined>,
 
-		/** The discount rate per item */
+		/**
+		 * The discount rate per item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discount_rate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total amount of discount
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		discount_total: FormControl<number | null | undefined>,
 
 		/**
 		 * A sequential invoice number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		invoice_number: FormControl<number | null | undefined>,
 
@@ -617,6 +662,7 @@ export namespace MyNS {
 		/**
 		 * Total amount excluding VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subtotal: FormControl<number | null | undefined>,
 
@@ -629,6 +675,7 @@ export namespace MyNS {
 		/**
 		 * Total amount of including VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -647,6 +694,7 @@ export namespace MyNS {
 		/**
 		 * Total amount of VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vat_total: FormControl<number | null | undefined>,
 	}
@@ -688,18 +736,21 @@ export namespace MyNS {
 		/**
 		 * The price of the individual item (Ex VAT)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price_each: number;
 
 		/**
 		 * The quantity of the item
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: number;
 
 		/**
 		 * The VAT rate at which the item is charged
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vat_rate: number;
 	}
@@ -714,18 +765,21 @@ export namespace MyNS {
 		/**
 		 * The price of the individual item (Ex VAT)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price_each: FormControl<number | null | undefined>,
 
 		/**
 		 * The quantity of the item
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/**
 		 * The VAT rate at which the item is charged
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vat_rate: FormControl<number | null | undefined>,
 	}
@@ -753,7 +807,10 @@ export namespace MyNS {
 		 */
 		business_name: string;
 
-		/** The rate of conversion at time of supply */
+		/**
+		 * The rate of conversion at time of supply
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversion_rate?: number | null;
 
 		/**
@@ -824,7 +881,10 @@ export namespace MyNS {
 		 */
 		business_name: FormControl<string | null | undefined>,
 
-		/** The rate of conversion at time of supply */
+		/**
+		 * The rate of conversion at time of supply
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversion_rate: FormControl<number | null | undefined>,
 
 		/**
@@ -937,7 +997,10 @@ export namespace MyNS {
 		 */
 		business_name: string;
 
-		/** The rate of conversion at time of supply */
+		/**
+		 * The rate of conversion at time of supply
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversion_rate?: number | null;
 
 		/**
@@ -964,18 +1027,23 @@ export namespace MyNS {
 		 */
 		date: string;
 
-		/** The discount rate per item */
+		/**
+		 * The discount rate per item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discount_rate?: number | null;
 
 		/**
 		 * Total amount of discount
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		discount_total: number;
 
 		/**
 		 * The invoice ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -1003,6 +1071,7 @@ export namespace MyNS {
 		/**
 		 * Total amount excluding VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subtotal: number;
 
@@ -1015,6 +1084,7 @@ export namespace MyNS {
 		/**
 		 * Total amount of including VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
@@ -1033,6 +1103,7 @@ export namespace MyNS {
 		/**
 		 * Total amount of VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vat_total: number;
 
@@ -1053,7 +1124,10 @@ export namespace MyNS {
 		 */
 		business_name: FormControl<string | null | undefined>,
 
-		/** The rate of conversion at time of supply */
+		/**
+		 * The rate of conversion at time of supply
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversion_rate: FormControl<number | null | undefined>,
 
 		/**
@@ -1080,18 +1154,23 @@ export namespace MyNS {
 		 */
 		date: FormControl<string | null | undefined>,
 
-		/** The discount rate per item */
+		/**
+		 * The discount rate per item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discount_rate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total amount of discount
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		discount_total: FormControl<number | null | undefined>,
 
 		/**
 		 * The invoice ID
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -1113,6 +1192,7 @@ export namespace MyNS {
 		/**
 		 * Total amount excluding VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		subtotal: FormControl<number | null | undefined>,
 
@@ -1125,6 +1205,7 @@ export namespace MyNS {
 		/**
 		 * Total amount of including VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -1143,6 +1224,7 @@ export namespace MyNS {
 		/**
 		 * Total amount of VAT
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vat_total: FormControl<number | null | undefined>,
 
@@ -1218,7 +1300,10 @@ export namespace MyNS {
 		 */
 		business_name: string;
 
-		/** The rate of conversion at time of supply */
+		/**
+		 * The rate of conversion at time of supply
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversion_rate?: number | null;
 
 		/**
@@ -1286,7 +1371,10 @@ export namespace MyNS {
 		 */
 		business_name: FormControl<string | null | undefined>,
 
-		/** The rate of conversion at time of supply */
+		/**
+		 * The rate of conversion at time of supply
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		conversion_rate: FormControl<number | null | undefined>,
 
 		/**
@@ -1366,6 +1454,7 @@ export namespace MyNS {
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 	}
@@ -1374,6 +1463,7 @@ export namespace MyNS {
 		/**
 		 * Response code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 	}
@@ -1408,6 +1498,7 @@ export namespace MyNS {
 		/**
 		 * The % VAT rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -1422,6 +1513,7 @@ export namespace MyNS {
 		/**
 		 * The % VAT rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -1444,6 +1536,7 @@ export namespace MyNS {
 		/**
 		 * The % VAT rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -1458,6 +1551,7 @@ export namespace MyNS {
 		/**
 		 * The % VAT rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -1480,6 +1574,7 @@ export namespace MyNS {
 		/**
 		 * The % VAT rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -1494,6 +1589,7 @@ export namespace MyNS {
 		/**
 		 * The % VAT rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -1510,6 +1606,7 @@ export namespace MyNS {
 		/**
 		 * The % VAT rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -1518,6 +1615,7 @@ export namespace MyNS {
 		/**
 		 * The % VAT rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -1539,6 +1637,7 @@ export namespace MyNS {
 		/**
 		 * The % VAT rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -1553,6 +1652,7 @@ export namespace MyNS {
 		/**
 		 * The % VAT rate
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}

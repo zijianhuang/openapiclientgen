@@ -264,12 +264,14 @@ export namespace MyNS {
 		/**
 		 * the amount being applied to the invoice
 		 * Required
+		 * Type: float
 		 */
 		AppliedAmount: number;
 
 		/**
 		 * The date the prepayment is applied YYYY-MM-DD (read-only). This will be the latter of the invoice date and the prepayment date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		Date: Date;
 
@@ -281,12 +283,14 @@ export namespace MyNS {
 		/**
 		 * the amount being applied to the invoice
 		 * Required
+		 * Type: float
 		 */
 		AppliedAmount: FormControl<number | null | undefined>,
 
 		/**
 		 * The date the prepayment is applied YYYY-MM-DD (read-only). This will be the latter of the invoice date and the prepayment date.
 		 * Required
+		 * Type: DateOnly
 		 */
 		Date: FormControl<Date | null | undefined>,
 	}
@@ -316,7 +320,10 @@ export namespace MyNS {
 		/** Xero generated unique identifier for attachment */
 		AttachmentId?: string | null;
 
-		/** The content length in bytes */
+		/**
+		 * The content length in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentLegth?: number | null;
 
 		/** The filename of the attachemnt */
@@ -336,7 +343,10 @@ export namespace MyNS {
 		/** Xero generated unique identifier for attachment */
 		AttachmentId: FormControl<string | null | undefined>,
 
-		/** The content length in bytes */
+		/**
+		 * The content length in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentLegth: FormControl<number | null | undefined>,
 
 		/** The filename of the attachemnt */
@@ -377,18 +387,30 @@ export namespace MyNS {
 
 	export interface BalancesElementAccountsPayable {
 
-		/** AP outstanding balance */
+		/**
+		 * AP outstanding balance
+		 * Type: float
+		 */
 		Outstanding?: number | null;
 
-		/** AP overdue balance */
+		/**
+		 * AP overdue balance
+		 * Type: float
+		 */
 		Overdue?: number | null;
 	}
 	export interface BalancesElementAccountsPayableFormProperties {
 
-		/** AP outstanding balance */
+		/**
+		 * AP outstanding balance
+		 * Type: float
+		 */
 		Outstanding: FormControl<number | null | undefined>,
 
-		/** AP overdue balance */
+		/**
+		 * AP overdue balance
+		 * Type: float
+		 */
 		Overdue: FormControl<number | null | undefined>,
 	}
 	export function CreateBalancesElementAccountsPayableFormGroup() {
@@ -401,18 +423,30 @@ export namespace MyNS {
 
 	export interface BalancesElementAccountsReceivable {
 
-		/** AR outstanding balance */
+		/**
+		 * AR outstanding balance
+		 * Type: float
+		 */
 		Outstanding?: number | null;
 
-		/** AR overdue balance */
+		/**
+		 * AR overdue balance
+		 * Type: float
+		 */
 		Overdue?: number | null;
 	}
 	export interface BalancesElementAccountsReceivableFormProperties {
 
-		/** AR outstanding balance */
+		/**
+		 * AR outstanding balance
+		 * Type: float
+		 */
 		Outstanding: FormControl<number | null | undefined>,
 
-		/** AR overdue balance */
+		/**
+		 * AR overdue balance
+		 * Type: float
+		 */
 		Overdue: FormControl<number | null | undefined>,
 	}
 	export function CreateBalancesElementAccountsReceivableFormGroup() {
@@ -469,10 +503,16 @@ export namespace MyNS {
 		/** The currency that bank transaction has been raised in */
 		CurrencyCode?: string | null;
 
-		/** The currency rate for a multicurrency bank transaction. If no rate is specified, the XE.com day rate is used. */
+		/**
+		 * The currency rate for a multicurrency bank transaction. If no rate is specified, the XE.com day rate is used.
+		 * Type: float
+		 */
 		CurrencyRate?: number | null;
 
-		/** Date bank transaction was made YYYY-MM-DD */
+		/**
+		 * Date bank transaction was made YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
 		/** boolean to indicate if the bank transaction has an attachment */
@@ -499,13 +539,22 @@ export namespace MyNS {
 		/** The status of the bank transaction */
 		Status?: BankTransactionStatus | null;
 
-		/** Total of bank transaction excluding taxes */
+		/**
+		 * Total of bank transaction excluding taxes
+		 * Type: float
+		 */
 		SubTotal?: number | null;
 
-		/** Total of bank transaction tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts */
+		/**
+		 * Total of bank transaction tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts
+		 * Type: float
+		 */
 		Total?: number | null;
 
-		/** Total tax on the bank transaction */
+		/**
+		 * Total tax on the bank transaction
+		 * Type: float
+		 */
 		Totaltax?: number | null;
 
 		/**
@@ -528,10 +577,16 @@ export namespace MyNS {
 		/** The currency that bank transaction has been raised in */
 		CurrencyCode: FormControl<string | null | undefined>,
 
-		/** The currency rate for a multicurrency bank transaction. If no rate is specified, the XE.com day rate is used. */
+		/**
+		 * The currency rate for a multicurrency bank transaction. If no rate is specified, the XE.com day rate is used.
+		 * Type: float
+		 */
 		CurrencyRate: FormControl<number | null | undefined>,
 
-		/** Date bank transaction was made YYYY-MM-DD */
+		/**
+		 * Date bank transaction was made YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
 		/** boolean to indicate if the bank transaction has an attachment */
@@ -555,13 +610,22 @@ export namespace MyNS {
 		/** The status of the bank transaction */
 		Status: FormControl<BankTransactionStatus | null | undefined>,
 
-		/** Total of bank transaction excluding taxes */
+		/**
+		 * Total of bank transaction excluding taxes
+		 * Type: float
+		 */
 		SubTotal: FormControl<number | null | undefined>,
 
-		/** Total of bank transaction tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts */
+		/**
+		 * Total of bank transaction tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 
-		/** Total tax on the bank transaction */
+		/**
+		 * Total tax on the bank transaction
+		 * Type: float
+		 */
 		Totaltax: FormControl<number | null | undefined>,
 
 		/**
@@ -644,29 +708,44 @@ export namespace MyNS {
 		 */
 		Description: string;
 
-		/** Percentage discount being applied to a line item (only supported on ACCREC invoices – ACC PAY invoices and credit notes in Xero do not support discounts */
+		/**
+		 * Percentage discount being applied to a line item (only supported on ACCREC invoices – ACC PAY invoices and credit notes in Xero do not support discounts
+		 * Type: float
+		 */
 		DiscountRate?: number | null;
 
 		/** Code of the item */
 		ItemCode?: string | null;
 
-		/** The line amount reflects the discounted price if a DiscountRate has been used i.e LineAmount = Quantity * Unit Amount * ((100 – DiscountRate)/100) */
+		/**
+		 * The line amount reflects the discounted price if a DiscountRate has been used i.e LineAmount = Quantity * Unit Amount * ((100 – DiscountRate)/100)
+		 * Type: float
+		 */
 		LineAmount?: number | null;
 
 		/** The Xero generated identifier for a LineItem. If LineItemIDs are not included with line items in an update request then the line items are deleted and recreated. */
 		LineItemID?: string | null;
 
-		/** LineItem Quantity */
+		/**
+		 * LineItem Quantity
+		 * Type: float
+		 */
 		Quantity?: number | null;
 
-		/** The tax amount is auto calculated as a percentage of the line amount based on the tax rate. This value can be overriden if the calculated TaxAmount is not correct. */
+		/**
+		 * The tax amount is auto calculated as a percentage of the line amount based on the tax rate. This value can be overriden if the calculated TaxAmount is not correct.
+		 * Type: float
+		 */
 		TaxAmount?: number | null;
 
 		/** Used as an override if the default Tax Code for the selected <AccountCode> is not correct */
 		TaxType?: string | null;
 		Tracking?: Tracking;
 
-		/** Lineitem unit amount. By default, unit amount will be rounded to two decimal places. You can opt in to use four decimal places by adding the querystring parameter unitdp=4 to your query. See the Rounding in Xero guide for more information. */
+		/**
+		 * Lineitem unit amount. By default, unit amount will be rounded to two decimal places. You can opt in to use four decimal places by adding the querystring parameter unitdp=4 to your query. See the Rounding in Xero guide for more information.
+		 * Type: float
+		 */
 		UnitAmount?: number | null;
 	}
 	export interface LineItemFormProperties {
@@ -680,28 +759,43 @@ export namespace MyNS {
 		 */
 		Description: FormControl<string | null | undefined>,
 
-		/** Percentage discount being applied to a line item (only supported on ACCREC invoices – ACC PAY invoices and credit notes in Xero do not support discounts */
+		/**
+		 * Percentage discount being applied to a line item (only supported on ACCREC invoices – ACC PAY invoices and credit notes in Xero do not support discounts
+		 * Type: float
+		 */
 		DiscountRate: FormControl<number | null | undefined>,
 
 		/** Code of the item */
 		ItemCode: FormControl<string | null | undefined>,
 
-		/** The line amount reflects the discounted price if a DiscountRate has been used i.e LineAmount = Quantity * Unit Amount * ((100 – DiscountRate)/100) */
+		/**
+		 * The line amount reflects the discounted price if a DiscountRate has been used i.e LineAmount = Quantity * Unit Amount * ((100 – DiscountRate)/100)
+		 * Type: float
+		 */
 		LineAmount: FormControl<number | null | undefined>,
 
 		/** The Xero generated identifier for a LineItem. If LineItemIDs are not included with line items in an update request then the line items are deleted and recreated. */
 		LineItemID: FormControl<string | null | undefined>,
 
-		/** LineItem Quantity */
+		/**
+		 * LineItem Quantity
+		 * Type: float
+		 */
 		Quantity: FormControl<number | null | undefined>,
 
-		/** The tax amount is auto calculated as a percentage of the line amount based on the tax rate. This value can be overriden if the calculated TaxAmount is not correct. */
+		/**
+		 * The tax amount is auto calculated as a percentage of the line amount based on the tax rate. This value can be overriden if the calculated TaxAmount is not correct.
+		 * Type: float
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
 		/** Used as an override if the default Tax Code for the selected <AccountCode> is not correct */
 		TaxType: FormControl<string | null | undefined>,
 
-		/** Lineitem unit amount. By default, unit amount will be rounded to two decimal places. You can opt in to use four decimal places by adding the querystring parameter unitdp=4 to your query. See the Rounding in Xero guide for more information. */
+		/**
+		 * Lineitem unit amount. By default, unit amount will be rounded to two decimal places. You can opt in to use four decimal places by adding the querystring parameter unitdp=4 to your query. See the Rounding in Xero guide for more information.
+		 * Type: float
+		 */
 		UnitAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateLineItemFormGroup() {
@@ -771,6 +865,7 @@ export namespace MyNS {
 		/**
 		 * Total of the bank transfer
 		 * Required
+		 * Type: float
 		 */
 		Amount: number;
 		Attachments?: Array<Attachment>;
@@ -778,10 +873,16 @@ export namespace MyNS {
 		/** Xero generated unique identifier for bank transfers */
 		BankTransferId?: string | null;
 
-		/** The currency rate for a multicurrency bank transfer. If no rate is specified, the XE.com day rate is used. */
+		/**
+		 * The currency rate for a multicurrency bank transfer. If no rate is specified, the XE.com day rate is used.
+		 * Type: float
+		 */
 		CurrencyRate?: number | null;
 
-		/** Date bank transfer was made YYYY-MM-DD */
+		/**
+		 * Date bank transfer was made YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
 		/** Required */
@@ -807,16 +908,23 @@ export namespace MyNS {
 		/**
 		 * Total of the bank transfer
 		 * Required
+		 * Type: float
 		 */
 		Amount: FormControl<number | null | undefined>,
 
 		/** Xero generated unique identifier for bank transfers */
 		BankTransferId: FormControl<string | null | undefined>,
 
-		/** The currency rate for a multicurrency bank transfer. If no rate is specified, the XE.com day rate is used. */
+		/**
+		 * The currency rate for a multicurrency bank transfer. If no rate is specified, the XE.com day rate is used.
+		 * Type: float
+		 */
 		CurrencyRate: FormControl<number | null | undefined>,
 
-		/** Date bank transfer was made YYYY-MM-DD */
+		/**
+		 * Date bank transfer was made YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
 		/** The Bank Transaction ID for the source account */
@@ -937,7 +1045,10 @@ export namespace MyNS {
 		/** Name of branding theme */
 		Name?: string | null;
 
-		/** Integer – ranked order of branding theme. The default branding theme has a value of 0 */
+		/**
+		 * Integer – ranked order of branding theme. The default branding theme has a value of 0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SortOrder?: number | null;
 	}
 	export interface BrandingThemeFormProperties {
@@ -951,7 +1062,10 @@ export namespace MyNS {
 		/** Name of branding theme */
 		Name: FormControl<string | null | undefined>,
 
-		/** Integer – ranked order of branding theme. The default branding theme has a value of 0 */
+		/**
+		 * Integer – ranked order of branding theme. The default branding theme has a value of 0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateBrandingThemeFormGroup() {
@@ -1417,13 +1531,22 @@ export namespace MyNS {
 		/** Currency used for the Credit Note */
 		CurrencyCode?: string | null;
 
-		/** The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used */
+		/**
+		 * The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used
+		 * Type: float
+		 */
 		CurrencyRate?: number | null;
 
-		/** The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
+		/**
+		 * The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
-		/** Date when credit note was fully paid */
+		/**
+		 * Date when credit note was fully paid
+		 * Type: DateOnly
+		 */
 		FullyPaidOnDate?: Date | null;
 
 		/** boolean to indicate if a credit note has an attachment */
@@ -1438,7 +1561,10 @@ export namespace MyNS {
 		/** ACCRECCREDIT only – additional reference number */
 		Reference?: string | null;
 
-		/** The remaining credit balance on the Credit Note */
+		/**
+		 * The remaining credit balance on the Credit Note
+		 * Type: float
+		 */
 		RemainingCredit?: number | null;
 
 		/** boolean to indicate if a credit note has been sent to a contact via the Xero app (currently read only) */
@@ -1447,13 +1573,22 @@ export namespace MyNS {
 		/** The Credit Note status */
 		Status?: CreditNoteStatus | null;
 
-		/** The subtotal of the credit note excluding taxes */
+		/**
+		 * The subtotal of the credit note excluding taxes
+		 * Type: float
+		 */
 		SubTotal?: number | null;
 
-		/** The total of the Credit Note(subtotal + total tax) */
+		/**
+		 * The total of the Credit Note(subtotal + total tax)
+		 * Type: float
+		 */
 		Total?: number | null;
 
-		/** The total tax on the credit note */
+		/**
+		 * The total tax on the credit note
+		 * Type: float
+		 */
 		TotalTax?: number | null;
 
 		/**
@@ -1479,13 +1614,22 @@ export namespace MyNS {
 		/** Currency used for the Credit Note */
 		CurrencyCode: FormControl<string | null | undefined>,
 
-		/** The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used */
+		/**
+		 * The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used
+		 * Type: float
+		 */
 		CurrencyRate: FormControl<number | null | undefined>,
 
-		/** The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
+		/**
+		 * The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
-		/** Date when credit note was fully paid */
+		/**
+		 * Date when credit note was fully paid
+		 * Type: DateOnly
+		 */
 		FullyPaidOnDate: FormControl<Date | null | undefined>,
 
 		/** boolean to indicate if a credit note has an attachment */
@@ -1497,7 +1641,10 @@ export namespace MyNS {
 		/** ACCRECCREDIT only – additional reference number */
 		Reference: FormControl<string | null | undefined>,
 
-		/** The remaining credit balance on the Credit Note */
+		/**
+		 * The remaining credit balance on the Credit Note
+		 * Type: float
+		 */
 		RemainingCredit: FormControl<number | null | undefined>,
 
 		/** boolean to indicate if a credit note has been sent to a contact via the Xero app (currently read only) */
@@ -1506,13 +1653,22 @@ export namespace MyNS {
 		/** The Credit Note status */
 		Status: FormControl<CreditNoteStatus | null | undefined>,
 
-		/** The subtotal of the credit note excluding taxes */
+		/**
+		 * The subtotal of the credit note excluding taxes
+		 * Type: float
+		 */
 		SubTotal: FormControl<number | null | undefined>,
 
-		/** The total of the Credit Note(subtotal + total tax) */
+		/**
+		 * The total of the Credit Note(subtotal + total tax)
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 
-		/** The total tax on the credit note */
+		/**
+		 * The total tax on the credit note
+		 * Type: float
+		 */
 		TotalTax: FormControl<number | null | undefined>,
 
 		/**
@@ -1554,7 +1710,10 @@ export namespace MyNS {
 
 	export interface CreditNoteSummary {
 
-		/** The total applied to the invoice */
+		/**
+		 * The total applied to the invoice
+		 * Type: float
+		 */
 		AppliedAmount?: number | null;
 
 		/** Xero generated unique identifier */
@@ -1563,15 +1722,24 @@ export namespace MyNS {
 		/** ACCRECCREDIT – Unique alpha numeric code identifying credit note (when missing will auto-generate from your Organisation Invoice Settings) */
 		CreditNoteNumber?: string | null;
 
-		/** The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
+		/**
+		 * The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
-		/** The total of the Credit Note(subtotal + total tax) */
+		/**
+		 * The total of the Credit Note(subtotal + total tax)
+		 * Type: float
+		 */
 		Total?: number | null;
 	}
 	export interface CreditNoteSummaryFormProperties {
 
-		/** The total applied to the invoice */
+		/**
+		 * The total applied to the invoice
+		 * Type: float
+		 */
 		AppliedAmount: FormControl<number | null | undefined>,
 
 		/** Xero generated unique identifier */
@@ -1580,10 +1748,16 @@ export namespace MyNS {
 		/** ACCRECCREDIT – Unique alpha numeric code identifying credit note (when missing will auto-generate from your Organisation Invoice Settings) */
 		CreditNoteNumber: FormControl<string | null | undefined>,
 
-		/** The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
+		/**
+		 * The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
-		/** The total of the Credit Note(subtotal + total tax) */
+		/**
+		 * The total of the Credit Note(subtotal + total tax)
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 	}
 	export function CreateCreditNoteSummaryFormGroup() {
@@ -1686,16 +1860,25 @@ export namespace MyNS {
 
 	export interface ExpenseClaim {
 
-		/** The amount due to be paid for an expense claim */
+		/**
+		 * The amount due to be paid for an expense claim
+		 * Type: float
+		 */
 		AmountDue?: number | null;
 
-		/** The amount still to pay for an expense claim */
+		/**
+		 * The amount still to pay for an expense claim
+		 * Type: float
+		 */
 		AmountPaid?: number | null;
 
 		/** Xero generated unique identifier for an expense claim */
 		ExpenseClaimID?: string | null;
 
-		/** The date when the expense claim is due to be paid YYYY-MM-DD */
+		/**
+		 * The date when the expense claim is due to be paid YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		PaymentDueDate?: Date | null;
 
 		/** Payments applied to the expense claim */
@@ -1707,13 +1890,19 @@ export namespace MyNS {
 		 */
 		Receipts: Array<Receipt>;
 
-		/** The date the expense claim will be reported in Xero YYYY-MM-DD */
+		/**
+		 * The date the expense claim will be reported in Xero YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		ReportingDate?: Date | null;
 
 		/** Current status of an expense claim */
 		Status?: ExpenseClaimStatus | null;
 
-		/** The total of an expense claim being paid */
+		/**
+		 * The total of an expense claim being paid
+		 * Type: float
+		 */
 		Total?: number | null;
 
 		/** Last modified date UTC format */
@@ -1724,25 +1913,40 @@ export namespace MyNS {
 	}
 	export interface ExpenseClaimFormProperties {
 
-		/** The amount due to be paid for an expense claim */
+		/**
+		 * The amount due to be paid for an expense claim
+		 * Type: float
+		 */
 		AmountDue: FormControl<number | null | undefined>,
 
-		/** The amount still to pay for an expense claim */
+		/**
+		 * The amount still to pay for an expense claim
+		 * Type: float
+		 */
 		AmountPaid: FormControl<number | null | undefined>,
 
 		/** Xero generated unique identifier for an expense claim */
 		ExpenseClaimID: FormControl<string | null | undefined>,
 
-		/** The date when the expense claim is due to be paid YYYY-MM-DD */
+		/**
+		 * The date when the expense claim is due to be paid YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		PaymentDueDate: FormControl<Date | null | undefined>,
 
-		/** The date the expense claim will be reported in Xero YYYY-MM-DD */
+		/**
+		 * The date the expense claim will be reported in Xero YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		ReportingDate: FormControl<Date | null | undefined>,
 
 		/** Current status of an expense claim */
 		Status: FormControl<ExpenseClaimStatus | null | undefined>,
 
-		/** The total of an expense claim being paid */
+		/**
+		 * The total of an expense claim being paid
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 
 		/** Last modified date UTC format */
@@ -1764,10 +1968,16 @@ export namespace MyNS {
 
 	export interface PaymentSummary {
 
-		/** The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice */
+		/**
+		 * The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice
+		 * Type: float
+		 */
 		Amount?: number | null;
 
-		/** Date the payment is being made (YYYY-MM-DD) */
+		/**
+		 * Date the payment is being made (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
 		/** The Xero identifier for an Payment */
@@ -1775,10 +1985,16 @@ export namespace MyNS {
 	}
 	export interface PaymentSummaryFormProperties {
 
-		/** The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice */
+		/**
+		 * The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice
+		 * Type: float
+		 */
 		Amount: FormControl<number | null | undefined>,
 
-		/** Date the payment is being made (YYYY-MM-DD) */
+		/**
+		 * Date the payment is being made (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
 		/** The Xero identifier for an Payment */
@@ -1801,6 +2017,7 @@ export namespace MyNS {
 		/**
 		 * Date of receipt – YYYY-MM-DD
 		 * Required
+		 * Type: DateOnly
 		 */
 		Date: Date;
 
@@ -1825,13 +2042,22 @@ export namespace MyNS {
 		/** Current status of receipt */
 		Status?: ReceiptStatus | null;
 
-		/** Total of receipt excluding taxes */
+		/**
+		 * Total of receipt excluding taxes
+		 * Type: float
+		 */
 		SubTotal?: number | null;
 
-		/** Total of receipt tax inclusive (i.e. SubTotal + TotalTax) */
+		/**
+		 * Total of receipt tax inclusive (i.e. SubTotal + TotalTax)
+		 * Type: float
+		 */
 		Total?: number | null;
 
-		/** Total tax on receipt */
+		/**
+		 * Total tax on receipt
+		 * Type: float
+		 */
 		TotalTax?: number | null;
 
 		/** Last modified date UTC format */
@@ -1848,6 +2074,7 @@ export namespace MyNS {
 		/**
 		 * Date of receipt – YYYY-MM-DD
 		 * Required
+		 * Type: DateOnly
 		 */
 		Date: FormControl<Date | null | undefined>,
 
@@ -1869,13 +2096,22 @@ export namespace MyNS {
 		/** Current status of receipt */
 		Status: FormControl<ReceiptStatus | null | undefined>,
 
-		/** Total of receipt excluding taxes */
+		/**
+		 * Total of receipt excluding taxes
+		 * Type: float
+		 */
 		SubTotal: FormControl<number | null | undefined>,
 
-		/** Total of receipt tax inclusive (i.e. SubTotal + TotalTax) */
+		/**
+		 * Total of receipt tax inclusive (i.e. SubTotal + TotalTax)
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 
-		/** Total tax on receipt */
+		/**
+		 * Total tax on receipt
+		 * Type: float
+		 */
 		TotalTax: FormControl<number | null | undefined>,
 
 		/** Last modified date UTC format */
@@ -1995,13 +2231,22 @@ export namespace MyNS {
 
 	export interface Invoice {
 
-		/** Sum of all credit notes, over-payments and pre-payments applied to invoice */
+		/**
+		 * Sum of all credit notes, over-payments and pre-payments applied to invoice
+		 * Type: float
+		 */
 		AmountCredited?: number | null;
 
-		/** Amount remaining to be paid on invoice */
+		/**
+		 * Amount remaining to be paid on invoice
+		 * Type: float
+		 */
 		AmountDue?: number | null;
 
-		/** Sum of payments received for invoice */
+		/**
+		 * Sum of payments received for invoice
+		 * Type: float
+		 */
 		AmountPaid?: number | null;
 		Attachments?: Array<Attachment>;
 
@@ -2015,19 +2260,34 @@ export namespace MyNS {
 		/** The currency that invoice has been raised in */
 		CurrencyCode?: string | null;
 
-		/** The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used. */
+		/**
+		 * The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used.
+		 * Type: float
+		 */
 		CurrencyRate?: number | null;
 
-		/** Date invoice was issued YYYY-MM-DD */
+		/**
+		 * Date invoice was issued YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
-		/** Date the invoice is due to be paid YYYY-MM-DD */
+		/**
+		 * Date the invoice is due to be paid YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		DueDate?: Date | null;
 
-		/** Shown on sales invoices (Accounts Receivable) when this has been set */
+		/**
+		 * Shown on sales invoices (Accounts Receivable) when this has been set
+		 * Type: DateOnly
+		 */
 		ExpectedPaymentDate?: Date | null;
 
-		/** The date the invoice was fully paid. Only returned on fully paid invoices */
+		/**
+		 * The date the invoice was fully paid. Only returned on fully paid invoices
+		 * Type: DateOnly
+		 */
 		FullyPaidOnDate?: Date | null;
 
 		/** boolean to indicate if an invoice has an attachment */
@@ -2052,7 +2312,10 @@ export namespace MyNS {
 		Overpayments?: Array<OverpaymentSummary>;
 		Payments?: Array<PaymentSummary>;
 
-		/** Shown on bills (Accounts Payable) when this has been set */
+		/**
+		 * Shown on bills (Accounts Payable) when this has been set
+		 * Type: DateOnly
+		 */
 		PlannedPaymentDate?: Date | null;
 		Prepayments?: Array<PrepaymentSummary>;
 
@@ -2065,16 +2328,28 @@ export namespace MyNS {
 		/** The status of the invoice */
 		Status?: CreditNoteStatus | null;
 
-		/** Total of invoice excluding taxes */
+		/**
+		 * Total of invoice excluding taxes
+		 * Type: float
+		 */
 		SubTotal?: number | null;
 
-		/** Total of Invoice tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts */
+		/**
+		 * Total of Invoice tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts
+		 * Type: float
+		 */
 		Total?: number | null;
 
-		/** Total of discounts applied on the invoice line items */
+		/**
+		 * Total of discounts applied on the invoice line items
+		 * Type: float
+		 */
 		TotalDiscount?: number | null;
 
-		/** Total tax on the invoice */
+		/**
+		 * Total tax on the invoice
+		 * Type: float
+		 */
 		Totaltax?: number | null;
 
 		/**
@@ -2091,13 +2366,22 @@ export namespace MyNS {
 	}
 	export interface InvoiceFormProperties {
 
-		/** Sum of all credit notes, over-payments and pre-payments applied to invoice */
+		/**
+		 * Sum of all credit notes, over-payments and pre-payments applied to invoice
+		 * Type: float
+		 */
 		AmountCredited: FormControl<number | null | undefined>,
 
-		/** Amount remaining to be paid on invoice */
+		/**
+		 * Amount remaining to be paid on invoice
+		 * Type: float
+		 */
 		AmountDue: FormControl<number | null | undefined>,
 
-		/** Sum of payments received for invoice */
+		/**
+		 * Sum of payments received for invoice
+		 * Type: float
+		 */
 		AmountPaid: FormControl<number | null | undefined>,
 
 		/** The identifier for the branding theme applied to the invoice */
@@ -2106,19 +2390,34 @@ export namespace MyNS {
 		/** The currency that invoice has been raised in */
 		CurrencyCode: FormControl<string | null | undefined>,
 
-		/** The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used. */
+		/**
+		 * The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used.
+		 * Type: float
+		 */
 		CurrencyRate: FormControl<number | null | undefined>,
 
-		/** Date invoice was issued YYYY-MM-DD */
+		/**
+		 * Date invoice was issued YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
-		/** Date the invoice is due to be paid YYYY-MM-DD */
+		/**
+		 * Date the invoice is due to be paid YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		DueDate: FormControl<Date | null | undefined>,
 
-		/** Shown on sales invoices (Accounts Receivable) when this has been set */
+		/**
+		 * Shown on sales invoices (Accounts Receivable) when this has been set
+		 * Type: DateOnly
+		 */
 		ExpectedPaymentDate: FormControl<Date | null | undefined>,
 
-		/** The date the invoice was fully paid. Only returned on fully paid invoices */
+		/**
+		 * The date the invoice was fully paid. Only returned on fully paid invoices
+		 * Type: DateOnly
+		 */
 		FullyPaidOnDate: FormControl<Date | null | undefined>,
 
 		/** boolean to indicate if an invoice has an attachment */
@@ -2138,7 +2437,10 @@ export namespace MyNS {
 		/** Line amounts are exclusive of tax by default if you don’t specify this element */
 		LineAmountTypes: FormControl<BankTransactionLineAmountTypes | null | undefined>,
 
-		/** Shown on bills (Accounts Payable) when this has been set */
+		/**
+		 * Shown on bills (Accounts Payable) when this has been set
+		 * Type: DateOnly
+		 */
 		PlannedPaymentDate: FormControl<Date | null | undefined>,
 
 		/** ACCREC only – additional reference number */
@@ -2150,16 +2452,28 @@ export namespace MyNS {
 		/** The status of the invoice */
 		Status: FormControl<CreditNoteStatus | null | undefined>,
 
-		/** Total of invoice excluding taxes */
+		/**
+		 * Total of invoice excluding taxes
+		 * Type: float
+		 */
 		SubTotal: FormControl<number | null | undefined>,
 
-		/** Total of Invoice tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts */
+		/**
+		 * Total of Invoice tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 
-		/** Total of discounts applied on the invoice line items */
+		/**
+		 * Total of discounts applied on the invoice line items
+		 * Type: float
+		 */
 		TotalDiscount: FormControl<number | null | undefined>,
 
-		/** Total tax on the invoice */
+		/**
+		 * Total tax on the invoice
+		 * Type: float
+		 */
 		Totaltax: FormControl<number | null | undefined>,
 
 		/**
@@ -2207,30 +2521,48 @@ export namespace MyNS {
 
 	export interface OverpaymentSummary {
 
-		/** The total applied to the invoice */
+		/**
+		 * The total applied to the invoice
+		 * Type: float
+		 */
 		AppliedAmount?: number | null;
 
-		/** The date the overpayment was made YYYY-MM-DD */
+		/**
+		 * The date the overpayment was made YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
 		/** Xero generated unique identifier */
 		OverpaymentID?: string | null;
 
-		/** The total of the Overpayment (subtotal + total tax) */
+		/**
+		 * The total of the Overpayment (subtotal + total tax)
+		 * Type: float
+		 */
 		Total?: number | null;
 	}
 	export interface OverpaymentSummaryFormProperties {
 
-		/** The total applied to the invoice */
+		/**
+		 * The total applied to the invoice
+		 * Type: float
+		 */
 		AppliedAmount: FormControl<number | null | undefined>,
 
-		/** The date the overpayment was made YYYY-MM-DD */
+		/**
+		 * The date the overpayment was made YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
 		/** Xero generated unique identifier */
 		OverpaymentID: FormControl<string | null | undefined>,
 
-		/** The total of the Overpayment (subtotal + total tax) */
+		/**
+		 * The total of the Overpayment (subtotal + total tax)
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 	}
 	export function CreateOverpaymentSummaryFormGroup() {
@@ -2245,30 +2577,48 @@ export namespace MyNS {
 
 	export interface PrepaymentSummary {
 
-		/** The total applied to the invoice */
+		/**
+		 * The total applied to the invoice
+		 * Type: float
+		 */
 		AppliedAmount?: number | null;
 
-		/** The date the prepayment is issued YYYY-MM-DD. */
+		/**
+		 * The date the prepayment is issued YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
 		/** Xero generated unique identifier */
 		PrepaymentID?: string | null;
 
-		/** The total of the Prepayment (subtotal + total tax) */
+		/**
+		 * The total of the Prepayment (subtotal + total tax)
+		 * Type: float
+		 */
 		Total?: number | null;
 	}
 	export interface PrepaymentSummaryFormProperties {
 
-		/** The total applied to the invoice */
+		/**
+		 * The total applied to the invoice
+		 * Type: float
+		 */
 		AppliedAmount: FormControl<number | null | undefined>,
 
-		/** The date the prepayment is issued YYYY-MM-DD. */
+		/**
+		 * The date the prepayment is issued YYYY-MM-DD.
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
 		/** Xero generated unique identifier */
 		PrepaymentID: FormControl<string | null | undefined>,
 
-		/** The total of the Prepayment (subtotal + total tax) */
+		/**
+		 * The total of the Prepayment (subtotal + total tax)
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 	}
 	export function CreatePrepaymentSummaryFormGroup() {
@@ -2370,11 +2720,17 @@ export namespace MyNS {
 		PurchaseDescription?: string | null;
 		PurchaseDetails?: PurchaseDetails;
 
-		/** The quantity of the item on hand */
+		/**
+		 * The quantity of the item on hand
+		 * Type: float
+		 */
 		QuantityOnHand?: number | null;
 		SalesDetails?: SalesDetails;
 
-		/** The value of the item on hand. Calculated using average cost accounting. */
+		/**
+		 * The value of the item on hand. Calculated using average cost accounting.
+		 * Type: float
+		 */
 		TotalCostPool?: number | null;
 
 		/** Last modified date in UTC format */
@@ -2422,10 +2778,16 @@ export namespace MyNS {
 		 */
 		PurchaseDescription: FormControl<string | null | undefined>,
 
-		/** The quantity of the item on hand */
+		/**
+		 * The quantity of the item on hand
+		 * Type: float
+		 */
 		QuantityOnHand: FormControl<number | null | undefined>,
 
-		/** The value of the item on hand. Calculated using average cost accounting. */
+		/**
+		 * The value of the item on hand. Calculated using average cost accounting.
+		 * Type: float
+		 */
 		TotalCostPool: FormControl<number | null | undefined>,
 
 		/** Last modified date in UTC format */
@@ -2460,7 +2822,10 @@ export namespace MyNS {
 		/** Used as an override if the default Tax Code for the selected AccountCode is not correct. */
 		TaxType?: string | null;
 
-		/** Unit Price of the item. By default UnitPrice is rounded to two decimal places. You can use 4 decimal places by adding the unitdp=4 querystring parameter to your request. */
+		/**
+		 * Unit Price of the item. By default UnitPrice is rounded to two decimal places. You can use 4 decimal places by adding the unitdp=4 querystring parameter to your request.
+		 * Type: float
+		 */
 		UnitPrice?: number | null;
 	}
 	export interface PurchaseDetailsFormProperties {
@@ -2474,7 +2839,10 @@ export namespace MyNS {
 		/** Used as an override if the default Tax Code for the selected AccountCode is not correct. */
 		TaxType: FormControl<string | null | undefined>,
 
-		/** Unit Price of the item. By default UnitPrice is rounded to two decimal places. You can use 4 decimal places by adding the unitdp=4 querystring parameter to your request. */
+		/**
+		 * Unit Price of the item. By default UnitPrice is rounded to two decimal places. You can use 4 decimal places by adding the unitdp=4 querystring parameter to your request.
+		 * Type: float
+		 */
 		UnitPrice: FormControl<number | null | undefined>,
 	}
 	export function CreatePurchaseDetailsFormGroup() {
@@ -2495,7 +2863,10 @@ export namespace MyNS {
 		/** Used as an override if the default Tax Code for the selected AccountCode is not correct . */
 		TaxType?: string | null;
 
-		/** Unit Price of the item. By default UnitPrice is rounded to two decimal places. You can use 4 decimal places by adding the unitdp=4 querystring parameter to your request. */
+		/**
+		 * Unit Price of the item. By default UnitPrice is rounded to two decimal places. You can use 4 decimal places by adding the unitdp=4 querystring parameter to your request.
+		 * Type: float
+		 */
 		UnitPrice?: number | null;
 	}
 	export interface SalesDetailsFormProperties {
@@ -2506,7 +2877,10 @@ export namespace MyNS {
 		/** Used as an override if the default Tax Code for the selected AccountCode is not correct . */
 		TaxType: FormControl<string | null | undefined>,
 
-		/** Unit Price of the item. By default UnitPrice is rounded to two decimal places. You can use 4 decimal places by adding the unitdp=4 querystring parameter to your request. */
+		/**
+		 * Unit Price of the item. By default UnitPrice is rounded to two decimal places. You can use 4 decimal places by adding the unitdp=4 querystring parameter to your request.
+		 * Type: float
+		 */
 		UnitPrice: FormControl<number | null | undefined>,
 	}
 	export function CreateSalesDetailsFormGroup() {
@@ -2523,7 +2897,10 @@ export namespace MyNS {
 		/** Created date UTC format */
 		CreatedDateUTC?: Date | null;
 
-		/** Date the journal was posted */
+		/**
+		 * Date the journal was posted
+		 * Type: DateOnly
+		 */
 		JournalDate?: Date | null;
 
 		/** Xero identifier */
@@ -2544,7 +2921,10 @@ export namespace MyNS {
 		/** Created date UTC format */
 		CreatedDateUTC: FormControl<Date | null | undefined>,
 
-		/** Date the journal was posted */
+		/**
+		 * Date the journal was posted
+		 * Type: DateOnly
+		 */
 		JournalDate: FormControl<Date | null | undefined>,
 
 		/** Xero identifier */
@@ -2579,10 +2959,16 @@ export namespace MyNS {
 		/** Description for journal line */
 		Description?: string | null;
 
-		/** Total for line. Debits are positive, credits are negative value */
+		/**
+		 * Total for line. Debits are positive, credits are negative value
+		 * Type: float
+		 */
 		LineAmount?: number | null;
 
-		/** The calculated tax amount based on the TaxType and LineAmount */
+		/**
+		 * The calculated tax amount based on the TaxType and LineAmount
+		 * Type: float
+		 */
 		TaxAmount?: number | null;
 
 		/** Used as an override if the default Tax Code for the selected AccountCode is not correct. */
@@ -2599,10 +2985,16 @@ export namespace MyNS {
 		/** Description for journal line */
 		Description: FormControl<string | null | undefined>,
 
-		/** Total for line. Debits are positive, credits are negative value */
+		/**
+		 * Total for line. Debits are positive, credits are negative value
+		 * Type: float
+		 */
 		LineAmount: FormControl<number | null | undefined>,
 
-		/** The calculated tax amount based on the TaxType and LineAmount */
+		/**
+		 * The calculated tax amount based on the TaxType and LineAmount
+		 * Type: float
+		 */
 		TaxAmount: FormControl<number | null | undefined>,
 
 		/** Used as an override if the default Tax Code for the selected AccountCode is not correct. */
@@ -2782,7 +3174,10 @@ export namespace MyNS {
 
 	export interface ManualJournal {
 
-		/** Date journal was posted – YYYY-MM-DD */
+		/**
+		 * Date journal was posted – YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
 		/** Boolean to indicate if a manual journal has an attachment */
@@ -2820,7 +3215,10 @@ export namespace MyNS {
 	}
 	export interface ManualJournalFormProperties {
 
-		/** Date journal was posted – YYYY-MM-DD */
+		/**
+		 * Date journal was posted – YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
 		/** Boolean to indicate if a manual journal has an attachment */
@@ -2907,7 +3305,10 @@ export namespace MyNS {
 		/** The default for LineAmountTypes on sales transactions */
 		DefaultSalesTax?: BankTransactionLineAmountTypes | null;
 
-		/** Shown if set */
+		/**
+		 * Shown if set
+		 * Type: DateOnly
+		 */
 		EndOfYearLockDate?: Date | null;
 
 		/** Organisation profile links for popular services such as Facebook, Twitter, GooglePlus and LinkedIn. You can also add link to your website here. Shown if Organisation settings  is updated in Xero. See ExternalLinks below */
@@ -2944,7 +3345,10 @@ export namespace MyNS {
 		/** Boolean to describe if organisation is registered with a local tax authority i.e. true, false */
 		PaysTax?: boolean | null;
 
-		/** Shown if set */
+		/**
+		 * Shown if set
+		 * Type: DateOnly
+		 */
 		PeriodLockDate?: Date | null;
 
 		/** Phones details for organisation */
@@ -2991,7 +3395,10 @@ export namespace MyNS {
 		/** The default for LineAmountTypes on sales transactions */
 		DefaultSalesTax: FormControl<BankTransactionLineAmountTypes | null | undefined>,
 
-		/** Shown if set */
+		/**
+		 * Shown if set
+		 * Type: DateOnly
+		 */
 		EndOfYearLockDate: FormControl<Date | null | undefined>,
 
 		/** Calendar day e.g. 0-31 */
@@ -3025,7 +3432,10 @@ export namespace MyNS {
 		/** Boolean to describe if organisation is registered with a local tax authority i.e. true, false */
 		PaysTax: FormControl<boolean | null | undefined>,
 
-		/** Shown if set */
+		/**
+		 * Shown if set
+		 * Type: DateOnly
+		 */
 		PeriodLockDate: FormControl<Date | null | undefined>,
 
 		/** Shows for New Zealand, Australian and UK organisations */
@@ -3096,10 +3506,16 @@ export namespace MyNS {
 		/** Currency used for the overpayment */
 		CurrencyCode?: string | null;
 
-		/** The currency rate for a multicurrency overpayment. If no rate is specified, the XE.com day rate is used */
+		/**
+		 * The currency rate for a multicurrency overpayment. If no rate is specified, the XE.com day rate is used
+		 * Type: float
+		 */
 		CurrencyRate?: number | null;
 
-		/** The date the overpayment is created YYYY-MM-DD */
+		/**
+		 * The date the overpayment is created YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
 		/** boolean to indicate if a overpayment has an attachment */
@@ -3115,19 +3531,31 @@ export namespace MyNS {
 		OverpaymentID?: string | null;
 		Payments?: Array<PaymentSummary>;
 
-		/** The remaining credit balance on the overpayment */
+		/**
+		 * The remaining credit balance on the overpayment
+		 * Type: float
+		 */
 		RemainingCredit?: number | null;
 
 		/** Overpayment Status */
 		Status?: OverpaymentStatus | null;
 
-		/** The subtotal of the overpayment excluding taxes */
+		/**
+		 * The subtotal of the overpayment excluding taxes
+		 * Type: float
+		 */
 		SubTotal?: number | null;
 
-		/** The total of the overpayment (subtotal + total tax) */
+		/**
+		 * The total of the overpayment (subtotal + total tax)
+		 * Type: float
+		 */
 		Total?: number | null;
 
-		/** The total tax on the overpayment */
+		/**
+		 * The total tax on the overpayment
+		 * Type: float
+		 */
 		TotalTax?: number | null;
 
 		/** The Overpayment Type */
@@ -3141,10 +3569,16 @@ export namespace MyNS {
 		/** Currency used for the overpayment */
 		CurrencyCode: FormControl<string | null | undefined>,
 
-		/** The currency rate for a multicurrency overpayment. If no rate is specified, the XE.com day rate is used */
+		/**
+		 * The currency rate for a multicurrency overpayment. If no rate is specified, the XE.com day rate is used
+		 * Type: float
+		 */
 		CurrencyRate: FormControl<number | null | undefined>,
 
-		/** The date the overpayment is created YYYY-MM-DD */
+		/**
+		 * The date the overpayment is created YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
 		/** boolean to indicate if a overpayment has an attachment */
@@ -3156,19 +3590,31 @@ export namespace MyNS {
 		/** Xero generated unique identifier */
 		OverpaymentID: FormControl<string | null | undefined>,
 
-		/** The remaining credit balance on the overpayment */
+		/**
+		 * The remaining credit balance on the overpayment
+		 * Type: float
+		 */
 		RemainingCredit: FormControl<number | null | undefined>,
 
 		/** Overpayment Status */
 		Status: FormControl<OverpaymentStatus | null | undefined>,
 
-		/** The subtotal of the overpayment excluding taxes */
+		/**
+		 * The subtotal of the overpayment excluding taxes
+		 * Type: float
+		 */
 		SubTotal: FormControl<number | null | undefined>,
 
-		/** The total of the overpayment (subtotal + total tax) */
+		/**
+		 * The total of the overpayment (subtotal + total tax)
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 
-		/** The total tax on the overpayment */
+		/**
+		 * The total tax on the overpayment
+		 * Type: float
+		 */
 		TotalTax: FormControl<number | null | undefined>,
 
 		/** The Overpayment Type */
@@ -3205,14 +3651,23 @@ export namespace MyNS {
 		/** The Account the payment was made from */
 		Account?: PaymentAccount;
 
-		/** The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice */
+		/**
+		 * The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice
+		 * Type: float
+		 */
 		Amount?: number | null;
 		CreditNote?: CreditNoteSummary;
 
-		/** Exchange rate when payment is received. Only used for non base currency invoices and credit notes. */
+		/**
+		 * Exchange rate when payment is received. Only used for non base currency invoices and credit notes.
+		 * Type: float
+		 */
 		CurrencyRate?: number | null;
 
-		/** Date the payment is being made (YYYY-MM-DD) */
+		/**
+		 * Date the payment is being made (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 		Invoice?: InvoiceSummary;
 
@@ -3238,13 +3693,22 @@ export namespace MyNS {
 	}
 	export interface PaymentFormProperties {
 
-		/** The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice */
+		/**
+		 * The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice
+		 * Type: float
+		 */
 		Amount: FormControl<number | null | undefined>,
 
-		/** Exchange rate when payment is received. Only used for non base currency invoices and credit notes. */
+		/**
+		 * Exchange rate when payment is received. Only used for non base currency invoices and credit notes.
+		 * Type: float
+		 */
 		CurrencyRate: FormControl<number | null | undefined>,
 
-		/** Date the payment is being made (YYYY-MM-DD) */
+		/**
+		 * Date the payment is being made (YYYY-MM-DD)
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
 		/** An optional parameter for the payment. A boolean indicating whether you would like the payment to be created as reconciled when using PUT, or whether a payment has been reconciled when using GET */
@@ -3357,10 +3821,16 @@ export namespace MyNS {
 		/** Currency used for the prepayment */
 		CurrencyCode?: string | null;
 
-		/** The currency rate for a multicurrency prepayment. If no rate is specified, the XE.com day rate is used */
+		/**
+		 * The currency rate for a multicurrency prepayment. If no rate is specified, the XE.com day rate is used
+		 * Type: float
+		 */
 		CurrencyRate?: number | null;
 
-		/** The date the prepayment is created YYYY-MM-DD */
+		/**
+		 * The date the prepayment is created YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
 		/** boolean to indicate if a prepayment has an attachment */
@@ -3373,19 +3843,31 @@ export namespace MyNS {
 		/** Xero generated unique identifier */
 		PrepaymentID?: string | null;
 
-		/** The remaining credit balance on the prepayment */
+		/**
+		 * The remaining credit balance on the prepayment
+		 * Type: float
+		 */
 		RemainingCredit?: number | null;
 
 		/** Prepayment Status Codes */
 		Status?: OverpaymentStatus | null;
 
-		/** The subtotal of the prepayment excluding taxes */
+		/**
+		 * The subtotal of the prepayment excluding taxes
+		 * Type: float
+		 */
 		SubTotal?: number | null;
 
-		/** The total of the prepayment(subtotal + total tax) */
+		/**
+		 * The total of the prepayment(subtotal + total tax)
+		 * Type: float
+		 */
 		Total?: number | null;
 
-		/** The total tax on the prepayment */
+		/**
+		 * The total tax on the prepayment
+		 * Type: float
+		 */
 		TotalTax?: number | null;
 
 		/** Prepayment Types */
@@ -3399,10 +3881,16 @@ export namespace MyNS {
 		/** Currency used for the prepayment */
 		CurrencyCode: FormControl<string | null | undefined>,
 
-		/** The currency rate for a multicurrency prepayment. If no rate is specified, the XE.com day rate is used */
+		/**
+		 * The currency rate for a multicurrency prepayment. If no rate is specified, the XE.com day rate is used
+		 * Type: float
+		 */
 		CurrencyRate: FormControl<number | null | undefined>,
 
-		/** The date the prepayment is created YYYY-MM-DD */
+		/**
+		 * The date the prepayment is created YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
 		/** boolean to indicate if a prepayment has an attachment */
@@ -3414,19 +3902,31 @@ export namespace MyNS {
 		/** Xero generated unique identifier */
 		PrepaymentID: FormControl<string | null | undefined>,
 
-		/** The remaining credit balance on the prepayment */
+		/**
+		 * The remaining credit balance on the prepayment
+		 * Type: float
+		 */
 		RemainingCredit: FormControl<number | null | undefined>,
 
 		/** Prepayment Status Codes */
 		Status: FormControl<OverpaymentStatus | null | undefined>,
 
-		/** The subtotal of the prepayment excluding taxes */
+		/**
+		 * The subtotal of the prepayment excluding taxes
+		 * Type: float
+		 */
 		SubTotal: FormControl<number | null | undefined>,
 
-		/** The total of the prepayment(subtotal + total tax) */
+		/**
+		 * The total of the prepayment(subtotal + total tax)
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 
-		/** The total tax on the prepayment */
+		/**
+		 * The total tax on the prepayment
+		 * Type: float
+		 */
 		TotalTax: FormControl<number | null | undefined>,
 
 		/** Prepayment Types */
@@ -3470,22 +3970,34 @@ export namespace MyNS {
 		/** The currency that purchase order has been raised in */
 		CurrencyCode?: string | null;
 
-		/** The currency rate for a multicurrency purchase order. As no rate can be specified, the XE.com day rate is used. */
+		/**
+		 * The currency rate for a multicurrency purchase order. As no rate can be specified, the XE.com day rate is used.
+		 * Type: float
+		 */
 		CurrencyRate?: number | null;
 
-		/** Date purchase order was issued – YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
+		/**
+		 * Date purchase order was issued – YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation
+		 * Type: DateOnly
+		 */
 		Date?: Date | null;
 
 		/** The address the goods are to be delivered to */
 		DeliveryAddress?: string | null;
 
-		/** Date the goods are to be delivered – YYYY-MM-DD */
+		/**
+		 * Date the goods are to be delivered – YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		DeliveryDate?: Date | null;
 
 		/** A free text feild for instructions (500 characters max) */
 		DeliveryInstructions?: string | null;
 
-		/** The date the goods are expected to arrive. */
+		/**
+		 * The date the goods are expected to arrive.
+		 * Type: DateOnly
+		 */
 		ExpectedArrivalDate?: Date | null;
 
 		/** boolean to indicate if a purchase order has an attachment */
@@ -3512,19 +4024,31 @@ export namespace MyNS {
 		/** Purchase Order Status Codes */
 		Status?: PurchaseOrderStatus | null;
 
-		/** Total of purchase order excluding taxes */
+		/**
+		 * Total of purchase order excluding taxes
+		 * Type: float
+		 */
 		SubTotal?: number | null;
 
 		/** The phone number for the person accepting the delivery */
 		Telephone?: string | null;
 
-		/** Total of Purchase Order tax inclusive (i.e. SubTotal + TotalTax) */
+		/**
+		 * Total of Purchase Order tax inclusive (i.e. SubTotal + TotalTax)
+		 * Type: float
+		 */
 		Total?: number | null;
 
-		/** Total of discounts applied on the purchase order line items */
+		/**
+		 * Total of discounts applied on the purchase order line items
+		 * Type: float
+		 */
 		TotalDiscount?: number | null;
 
-		/** Total tax on purchase order */
+		/**
+		 * Total tax on purchase order
+		 * Type: float
+		 */
 		TotalTax?: number | null;
 
 		/** Last modified date UTC format */
@@ -3541,22 +4065,34 @@ export namespace MyNS {
 		/** The currency that purchase order has been raised in */
 		CurrencyCode: FormControl<string | null | undefined>,
 
-		/** The currency rate for a multicurrency purchase order. As no rate can be specified, the XE.com day rate is used. */
+		/**
+		 * The currency rate for a multicurrency purchase order. As no rate can be specified, the XE.com day rate is used.
+		 * Type: float
+		 */
 		CurrencyRate: FormControl<number | null | undefined>,
 
-		/** Date purchase order was issued – YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
+		/**
+		 * Date purchase order was issued – YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation
+		 * Type: DateOnly
+		 */
 		Date: FormControl<Date | null | undefined>,
 
 		/** The address the goods are to be delivered to */
 		DeliveryAddress: FormControl<string | null | undefined>,
 
-		/** Date the goods are to be delivered – YYYY-MM-DD */
+		/**
+		 * Date the goods are to be delivered – YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		DeliveryDate: FormControl<Date | null | undefined>,
 
 		/** A free text feild for instructions (500 characters max) */
 		DeliveryInstructions: FormControl<string | null | undefined>,
 
-		/** The date the goods are expected to arrive. */
+		/**
+		 * The date the goods are expected to arrive.
+		 * Type: DateOnly
+		 */
 		ExpectedArrivalDate: FormControl<Date | null | undefined>,
 
 		/** boolean to indicate if a purchase order has an attachment */
@@ -3580,19 +4116,31 @@ export namespace MyNS {
 		/** Purchase Order Status Codes */
 		Status: FormControl<PurchaseOrderStatus | null | undefined>,
 
-		/** Total of purchase order excluding taxes */
+		/**
+		 * Total of purchase order excluding taxes
+		 * Type: float
+		 */
 		SubTotal: FormControl<number | null | undefined>,
 
 		/** The phone number for the person accepting the delivery */
 		Telephone: FormControl<string | null | undefined>,
 
-		/** Total of Purchase Order tax inclusive (i.e. SubTotal + TotalTax) */
+		/**
+		 * Total of Purchase Order tax inclusive (i.e. SubTotal + TotalTax)
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 
-		/** Total of discounts applied on the purchase order line items */
+		/**
+		 * Total of discounts applied on the purchase order line items
+		 * Type: float
+		 */
 		TotalDiscount: FormControl<number | null | undefined>,
 
-		/** Total tax on purchase order */
+		/**
+		 * Total tax on purchase order
+		 * Type: float
+		 */
 		TotalTax: FormControl<number | null | undefined>,
 
 		/** Last modified date UTC format */
@@ -3654,13 +4202,22 @@ export namespace MyNS {
 		/** One of the following : DRAFT or AUTHORISED */
 		Status?: RepeatingInvoiceStatus | null;
 
-		/** Total of invoice excluding taxes */
+		/**
+		 * Total of invoice excluding taxes
+		 * Type: float
+		 */
 		SubTotal?: number | null;
 
-		/** Total of Invoice tax inclusive (i.e. SubTotal + TotalTax) */
+		/**
+		 * Total of Invoice tax inclusive (i.e. SubTotal + TotalTax)
+		 * Type: float
+		 */
 		Total?: number | null;
 
-		/** Total tax on invoice */
+		/**
+		 * Total tax on invoice
+		 * Type: float
+		 */
 		TotalTax?: number | null;
 
 		/** Invoice Types */
@@ -3689,13 +4246,22 @@ export namespace MyNS {
 		/** One of the following : DRAFT or AUTHORISED */
 		Status: FormControl<RepeatingInvoiceStatus | null | undefined>,
 
-		/** Total of invoice excluding taxes */
+		/**
+		 * Total of invoice excluding taxes
+		 * Type: float
+		 */
 		SubTotal: FormControl<number | null | undefined>,
 
-		/** Total of Invoice tax inclusive (i.e. SubTotal + TotalTax) */
+		/**
+		 * Total of Invoice tax inclusive (i.e. SubTotal + TotalTax)
+		 * Type: float
+		 */
 		Total: FormControl<number | null | undefined>,
 
-		/** Total tax on invoice */
+		/**
+		 * Total tax on invoice
+		 * Type: float
+		 */
 		TotalTax: FormControl<number | null | undefined>,
 
 		/** Invoice Types */
@@ -3933,22 +4499,37 @@ export namespace MyNS {
 
 	export interface Schedule {
 
-		/** Integer used with due date type e.g 20 (of following month), 31 (of current month) */
+		/**
+		 * Integer used with due date type e.g 20 (of following month), 31 (of current month)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DueDate?: number | null;
 
 		/** Used with due date to describe when the invoice is due */
 		DueDateType?: ScheduleDueDateType | null;
 
-		/** Invoice end date – only returned if the template has an end date set */
+		/**
+		 * Invoice end date – only returned if the template has an end date set
+		 * Type: DateOnly
+		 */
 		EndDate?: Date | null;
 
-		/** The calendar date of the next invoice in the schedule to be generated */
+		/**
+		 * The calendar date of the next invoice in the schedule to be generated
+		 * Type: DateOnly
+		 */
 		NextScheduledDate?: Date | null;
 
-		/** Integer used with the unit e.g. 1 (every 1 week), 2 (every 2 months) */
+		/**
+		 * Integer used with the unit e.g. 1 (every 1 week), 2 (every 2 months)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Period?: number | null;
 
-		/** Date the first invoice of the current version of the repeating schedule was generated (changes when repeating invoice is edited) */
+		/**
+		 * Date the first invoice of the current version of the repeating schedule was generated (changes when repeating invoice is edited)
+		 * Type: DateOnly
+		 */
 		StartDate?: Date | null;
 
 		/** One of the following : WEEKLY or MONTHLY */
@@ -3956,22 +4537,37 @@ export namespace MyNS {
 	}
 	export interface ScheduleFormProperties {
 
-		/** Integer used with due date type e.g 20 (of following month), 31 (of current month) */
+		/**
+		 * Integer used with due date type e.g 20 (of following month), 31 (of current month)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DueDate: FormControl<number | null | undefined>,
 
 		/** Used with due date to describe when the invoice is due */
 		DueDateType: FormControl<ScheduleDueDateType | null | undefined>,
 
-		/** Invoice end date – only returned if the template has an end date set */
+		/**
+		 * Invoice end date – only returned if the template has an end date set
+		 * Type: DateOnly
+		 */
 		EndDate: FormControl<Date | null | undefined>,
 
-		/** The calendar date of the next invoice in the schedule to be generated */
+		/**
+		 * The calendar date of the next invoice in the schedule to be generated
+		 * Type: DateOnly
+		 */
 		NextScheduledDate: FormControl<Date | null | undefined>,
 
-		/** Integer used with the unit e.g. 1 (every 1 week), 2 (every 2 months) */
+		/**
+		 * Integer used with the unit e.g. 1 (every 1 week), 2 (every 2 months)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Period: FormControl<number | null | undefined>,
 
-		/** Date the first invoice of the current version of the repeating schedule was generated (changes when repeating invoice is edited) */
+		/**
+		 * Date the first invoice of the current version of the repeating schedule was generated (changes when repeating invoice is edited)
+		 * Type: DateOnly
+		 */
 		StartDate: FormControl<Date | null | undefined>,
 
 		/** One of the following : WEEKLY or MONTHLY */
@@ -4003,7 +4599,10 @@ export namespace MyNS {
 		/** Name of Tax Component */
 		Name?: string | null;
 
-		/** Tax Rate (up to 4dp) */
+		/**
+		 * Tax Rate (up to 4dp)
+		 * Type: float
+		 */
 		Rate?: number | null;
 	}
 	export interface TaxComponentFormProperties {
@@ -4017,7 +4616,10 @@ export namespace MyNS {
 		/** Name of Tax Component */
 		Name: FormControl<string | null | undefined>,
 
-		/** Tax Rate (up to 4dp) */
+		/**
+		 * Tax Rate (up to 4dp)
+		 * Type: float
+		 */
 		Rate: FormControl<number | null | undefined>,
 	}
 	export function CreateTaxComponentFormGroup() {
@@ -4047,10 +4649,16 @@ export namespace MyNS {
 		/** Boolean to describe if tax rate can be used for revenue accounts */
 		CanApplyToRevenue?: boolean | null;
 
-		/** Tax Rate (decimal to 4dp) e.g 12.5000 */
+		/**
+		 * Tax Rate (decimal to 4dp) e.g 12.5000
+		 * Type: float
+		 */
 		DisplayTaxRate?: number | null;
 
-		/** Effective Tax Rate (decimal to 4dp) e.g 12.5000 */
+		/**
+		 * Effective Tax Rate (decimal to 4dp) e.g 12.5000
+		 * Type: float
+		 */
 		EffectiveRate?: number | null;
 
 		/**
@@ -4088,10 +4696,16 @@ export namespace MyNS {
 		/** Boolean to describe if tax rate can be used for revenue accounts */
 		CanApplyToRevenue: FormControl<boolean | null | undefined>,
 
-		/** Tax Rate (decimal to 4dp) e.g 12.5000 */
+		/**
+		 * Tax Rate (decimal to 4dp) e.g 12.5000
+		 * Type: float
+		 */
 		DisplayTaxRate: FormControl<number | null | undefined>,
 
-		/** Effective Tax Rate (decimal to 4dp) e.g 12.5000 */
+		/**
+		 * Effective Tax Rate (decimal to 4dp) e.g 12.5000
+		 * Type: float
+		 */
 		EffectiveRate: FormControl<number | null | undefined>,
 
 		/**
@@ -5380,6 +5994,8 @@ export namespace MyNS {
 		 * Get PurchaseOrders
 		 * @param {string} order Order by any element returned
 		 * @param {number} page Page number e.g. page=1. Page size is 100. When using the page parameter full resource details will be returned (including line items).
+		 * @param {Date} DateFrom Type: DateOnly
+		 * @param {Date} DateTo Type: DateOnly
 		 * @return {PurchaseOrdersGetByOrderAndPageAndDateFromAndDateToAndStatusReturn} A successful response
 		 */
 		PurchaseOrdersGetByOrderAndPageAndDateFromAndDateToAndStatus(order: string | null | undefined, page: number | null | undefined, DateFrom: Date | null | undefined, DateTo: Date | null | undefined, Status: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<PurchaseOrdersGetByOrderAndPageAndDateFromAndDateToAndStatusReturn> {

@@ -64,10 +64,14 @@ export namespace MyNS {
 
 		/** For internal use only. */
 		about?: Array<Thing>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		commentCount?: number | null;
 
 		/** Defines a thing. */
 		copyrightHolder?: Thing;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		copyrightYear?: number | null;
 
 		/** Defines a thing. */
@@ -97,7 +101,11 @@ export namespace MyNS {
 
 	/** The most generic kind of creative work, including books, movies, photographs, software programs, etc. */
 	export interface CreativeWorkFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		commentCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		copyrightYear: FormControl<number | null | undefined>,
 		disclaimer: FormControl<string | null | undefined>,
 		discussionUrl: FormControl<string | null | undefined>,

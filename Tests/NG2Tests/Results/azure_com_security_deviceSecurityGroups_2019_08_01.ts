@@ -156,12 +156,14 @@ export namespace MyNS {
 		/**
 		 * The maximum threshold.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxThreshold: number;
 
 		/**
 		 * The minimum threshold.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minThreshold: number;
 	}
@@ -172,12 +174,14 @@ export namespace MyNS {
 		/**
 		 * The maximum threshold.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxThreshold: FormControl<number | null | undefined>,
 
 		/**
 		 * The minimum threshold.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minThreshold: FormControl<number | null | undefined>,
 	}

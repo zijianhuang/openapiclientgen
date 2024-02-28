@@ -15,8 +15,9 @@ export namespace MyNS {
 		 * If set to zero, capacity for this metric is unlimited on each node.
 		 * When creating a new application with application capacity defined, the product of MaximumNodes and this value must always be smaller than or equal to TotalApplicationCapacity.
 		 * When updating existing application with application capacity, the product of MaximumNodes and this value must always be smaller than or equal to TotalApplicationCapacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		maximumCapacity?: number | null;
+		maximumCapacity?: string | null;
 
 		/** The name of the metric. */
 		name?: string | null;
@@ -27,15 +28,17 @@ export namespace MyNS {
 		 * If MinimumNodes is specified, then the product of these values will be the capacity reserved in the cluster for the application.
 		 * If set to zero, no capacity is reserved for this metric.
 		 * When setting application capacity or when updating application capacity; this value must be smaller than or equal to MaximumCapacity for each metric.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		reservationCapacity?: number | null;
+		reservationCapacity?: string | null;
 
 		/**
 		 * The total metric capacity for Service Fabric application.
 		 * This is the total metric capacity for this application in the cluster. Service Fabric will try to limit the sum of loads of services within the application to this value.
 		 * When creating a new application with application capacity defined, the product of MaximumNodes and MaximumCapacity must always be smaller than or equal to this value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		totalApplicationCapacity?: number | null;
+		totalApplicationCapacity?: string | null;
 	}
 
 	/**
@@ -49,8 +52,9 @@ export namespace MyNS {
 		 * If set to zero, capacity for this metric is unlimited on each node.
 		 * When creating a new application with application capacity defined, the product of MaximumNodes and this value must always be smaller than or equal to TotalApplicationCapacity.
 		 * When updating existing application with application capacity, the product of MaximumNodes and this value must always be smaller than or equal to TotalApplicationCapacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		maximumCapacity: FormControl<number | null | undefined>,
+		maximumCapacity: FormControl<string | null | undefined>,
 
 		/** The name of the metric. */
 		name: FormControl<string | null | undefined>,
@@ -61,22 +65,24 @@ export namespace MyNS {
 		 * If MinimumNodes is specified, then the product of these values will be the capacity reserved in the cluster for the application.
 		 * If set to zero, no capacity is reserved for this metric.
 		 * When setting application capacity or when updating application capacity; this value must be smaller than or equal to MaximumCapacity for each metric.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		reservationCapacity: FormControl<number | null | undefined>,
+		reservationCapacity: FormControl<string | null | undefined>,
 
 		/**
 		 * The total metric capacity for Service Fabric application.
 		 * This is the total metric capacity for this application in the cluster. Service Fabric will try to limit the sum of loads of services within the application to this value.
 		 * When creating a new application with application capacity defined, the product of MaximumNodes and MaximumCapacity must always be smaller than or equal to this value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		totalApplicationCapacity: FormControl<number | null | undefined>,
+		totalApplicationCapacity: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationMetricDescriptionFormGroup() {
 		return new FormGroup<ApplicationMetricDescriptionFormProperties>({
-			maximumCapacity: new FormControl<number | null | undefined>(undefined),
+			maximumCapacity: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			reservationCapacity: new FormControl<number | null | undefined>(undefined),
-			totalApplicationCapacity: new FormControl<number | null | undefined>(undefined),
+			reservationCapacity: new FormControl<string | null | undefined>(undefined),
+			totalApplicationCapacity: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -162,8 +168,8 @@ export namespace MyNS {
 	}
 	export function CreateApplicationResourcePropertiesFormGroup() {
 		return new FormGroup<ApplicationResourcePropertiesFormProperties>({
-			maximumNodes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			minimumNodes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			maximumNodes: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			minimumNodes: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			removeApplicationCapacity: new FormControl<boolean | null | undefined>(undefined),
 			typeVersion: new FormControl<string | null | undefined>(undefined),
 			provisioningState: new FormControl<string | null | undefined>(undefined),
@@ -203,7 +209,7 @@ export namespace MyNS {
 		 * The maximum number of nodes where Service Fabric will reserve capacity for this application. Note that this does not mean that the services of this application will be placed on all of those nodes. By default, the value of this property is zero and it means that the services can be placed on any node.
 		 * Minimum: 0
 		 */
-		maximumNodes?: number | null;
+		maximumNodes?: string | null;
 
 		/** List of application capacity metric description. */
 		metrics?: Array<ApplicationMetricDescription>;
@@ -212,7 +218,7 @@ export namespace MyNS {
 		 * The minimum number of nodes where Service Fabric will reserve capacity for this application. Note that this does not mean that the services of this application will be placed on all of those nodes. If this property is set to zero, no capacity will be reserved. The value of this property cannot be more than the value of the MaximumNodes property.
 		 * Minimum: 0
 		 */
-		minimumNodes?: number | null;
+		minimumNodes?: string | null;
 
 		/** List of application parameters with overridden values from their default values specified in the application manifest. */
 		parameters?: ApplicationParameterList;
@@ -234,13 +240,13 @@ export namespace MyNS {
 		 * The maximum number of nodes where Service Fabric will reserve capacity for this application. Note that this does not mean that the services of this application will be placed on all of those nodes. By default, the value of this property is zero and it means that the services can be placed on any node.
 		 * Minimum: 0
 		 */
-		maximumNodes: FormControl<number | null | undefined>,
+		maximumNodes: FormControl<string | null | undefined>,
 
 		/**
 		 * The minimum number of nodes where Service Fabric will reserve capacity for this application. Note that this does not mean that the services of this application will be placed on all of those nodes. If this property is set to zero, no capacity will be reserved. The value of this property cannot be more than the value of the MaximumNodes property.
 		 * Minimum: 0
 		 */
-		minimumNodes: FormControl<number | null | undefined>,
+		minimumNodes: FormControl<string | null | undefined>,
 
 		/** Remove the current application capacity settings. */
 		removeApplicationCapacity: FormControl<boolean | null | undefined>,
@@ -250,8 +256,8 @@ export namespace MyNS {
 	}
 	export function CreateApplicationResourceUpdatePropertiesFormGroup() {
 		return new FormGroup<ApplicationResourceUpdatePropertiesFormProperties>({
-			maximumNodes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			minimumNodes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			maximumNodes: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			minimumNodes: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			removeApplicationCapacity: new FormControl<boolean | null | undefined>(undefined),
 			typeVersion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -475,6 +481,7 @@ export namespace MyNS {
 		 * The percentage represents the maximum tolerated percentage of deployed applications that can be unhealthy before the application is considered in error.
 		 * This is calculated by dividing the number of unhealthy deployed applications over the number of nodes where the application is currently deployed on in the cluster.
 		 * The computation rounds up to tolerate one failure on small numbers of nodes. Default percentage is zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxPercentUnhealthyDeployedApplications?: number | null;
 
@@ -501,6 +508,7 @@ export namespace MyNS {
 		 * The percentage represents the maximum tolerated percentage of deployed applications that can be unhealthy before the application is considered in error.
 		 * This is calculated by dividing the number of unhealthy deployed applications over the number of nodes where the application is currently deployed on in the cluster.
 		 * The computation rounds up to tolerate one failure on small numbers of nodes. Default percentage is zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxPercentUnhealthyDeployedApplications: FormControl<number | null | undefined>,
 	}
@@ -799,6 +807,7 @@ export namespace MyNS {
 		/**
 		 * The number of partitions.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: number;
 
@@ -815,6 +824,7 @@ export namespace MyNS {
 		/**
 		 * The number of partitions.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: FormControl<number | null | undefined>,
 	}
@@ -987,7 +997,10 @@ export namespace MyNS {
 	/** Specifies a metric to load balance a service during runtime. */
 	export interface ServiceLoadMetricDescription {
 
-		/** Used only for Stateless services. The default amount of load, as a number, that this service creates for this metric. */
+		/**
+		 * Used only for Stateless services. The default amount of load, as a number, that this service creates for this metric.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultLoad?: number | null;
 
 		/**
@@ -996,10 +1009,16 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Used only for Stateful services. The default amount of load, as a number, that this service creates for this metric when it is a Primary replica. */
+		/**
+		 * Used only for Stateful services. The default amount of load, as a number, that this service creates for this metric when it is a Primary replica.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primaryDefaultLoad?: number | null;
 
-		/** Used only for Stateful services. The default amount of load, as a number, that this service creates for this metric when it is a Secondary replica. */
+		/**
+		 * Used only for Stateful services. The default amount of load, as a number, that this service creates for this metric when it is a Secondary replica.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		secondaryDefaultLoad?: number | null;
 
 		/** Determines the metric weight relative to the other metrics that are configured for this service. During runtime, if two metrics end up in conflict, the Cluster Resource Manager prefers the metric with the higher weight. */
@@ -1009,7 +1028,10 @@ export namespace MyNS {
 	/** Specifies a metric to load balance a service during runtime. */
 	export interface ServiceLoadMetricDescriptionFormProperties {
 
-		/** Used only for Stateless services. The default amount of load, as a number, that this service creates for this metric. */
+		/**
+		 * Used only for Stateless services. The default amount of load, as a number, that this service creates for this metric.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultLoad: FormControl<number | null | undefined>,
 
 		/**
@@ -1018,10 +1040,16 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Used only for Stateful services. The default amount of load, as a number, that this service creates for this metric when it is a Primary replica. */
+		/**
+		 * Used only for Stateful services. The default amount of load, as a number, that this service creates for this metric when it is a Primary replica.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		primaryDefaultLoad: FormControl<number | null | undefined>,
 
-		/** Used only for Stateful services. The default amount of load, as a number, that this service creates for this metric when it is a Secondary replica. */
+		/**
+		 * Used only for Stateful services. The default amount of load, as a number, that this service creates for this metric when it is a Secondary replica.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		secondaryDefaultLoad: FormControl<number | null | undefined>,
 
 		/** Determines the metric weight relative to the other metrics that are configured for this service. During runtime, if two metrics end up in conflict, the Cluster Resource Manager prefers the metric with the higher weight. */
@@ -1487,6 +1515,7 @@ export namespace MyNS {
 		/**
 		 * The number of partitions.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: number;
 
@@ -1511,6 +1540,7 @@ export namespace MyNS {
 		/**
 		 * The number of partitions.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: FormControl<number | null | undefined>,
 

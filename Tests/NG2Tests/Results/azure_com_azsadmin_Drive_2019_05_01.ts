@@ -27,7 +27,10 @@ export namespace MyNS {
 		/** Detailed recommended action for HealthStatus/OperationalStatus. Empty if HealthStatus/OperationalStatus is Healthy/Ok. */
 		action?: string | null;
 
-		/** Total capacity in GB of the drive. */
+		/**
+		 * Total capacity in GB of the drive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacityGB?: number | null;
 
 		/** Detailed description for HealthStatus/OperationalStatus. Empty if HealthStatus/OperationalStatus is Healthy/Ok. */
@@ -76,7 +79,10 @@ export namespace MyNS {
 		/** Detailed recommended action for HealthStatus/OperationalStatus. Empty if HealthStatus/OperationalStatus is Healthy/Ok. */
 		action: FormControl<string | null | undefined>,
 
-		/** Total capacity in GB of the drive. */
+		/**
+		 * Total capacity in GB of the drive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacityGB: FormControl<number | null | undefined>,
 
 		/** Detailed description for HealthStatus/OperationalStatus. Empty if HealthStatus/OperationalStatus is Healthy/Ok. */

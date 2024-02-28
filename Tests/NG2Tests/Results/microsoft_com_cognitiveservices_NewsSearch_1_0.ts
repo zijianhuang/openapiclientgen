@@ -88,12 +88,18 @@ export namespace MyNS {
 
 	export interface Article {
 
-		/** The number of words in the text of the Article. */
+		/**
+		 * The number of words in the text of the Article.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wordCount?: number | null;
 	}
 	export interface ArticleFormProperties {
 
-		/** The number of words in the text of the Article. */
+		/**
+		 * The number of words in the text of the Article.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateArticleFormGroup() {
@@ -202,6 +208,8 @@ export namespace MyNS {
 		/** Defines an image */
 		thumbnail?: ImageObject;
 		videoId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		viewCount?: number | null;
 	}
 
@@ -214,6 +222,8 @@ export namespace MyNS {
 		motionThumbnailId: FormControl<string | null | undefined>,
 		motionThumbnailUrl: FormControl<string | null | undefined>,
 		videoId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		viewCount: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoObjectFormGroup() {
@@ -350,10 +360,16 @@ export namespace MyNS {
 		/** Original URL to retrieve the source (file) for the media object (e.g the source URL for the image). */
 		contentUrl?: string | null;
 
-		/** The height of the source media object, in pixels. */
+		/**
+		 * The height of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** The width of the source media object, in pixels. */
+		/**
+		 * The width of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -363,10 +379,16 @@ export namespace MyNS {
 		/** Original URL to retrieve the source (file) for the media object (e.g the source URL for the image). */
 		contentUrl: FormControl<string | null | undefined>,
 
-		/** The height of the source media object, in pixels. */
+		/**
+		 * The height of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The width of the source media object, in pixels. */
+		/**
+		 * The width of the source media object, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateMediaObjectFormGroup() {
@@ -523,19 +545,25 @@ export namespace MyNS {
 	/** Defines a search result answer. */
 	export interface SearchResultsAnswer {
 
-		/** The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results. */
-		totalEstimatedMatches?: number | null;
+		/**
+		 * The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalEstimatedMatches?: string | null;
 	}
 
 	/** Defines a search result answer. */
 	export interface SearchResultsAnswerFormProperties {
 
-		/** The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results. */
-		totalEstimatedMatches: FormControl<number | null | undefined>,
+		/**
+		 * The estimated number of webpages that are relevant to the query. Use this number along with the count and offset query parameters to page the results.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalEstimatedMatches: FormControl<string | null | undefined>,
 	}
 	export function CreateSearchResultsAnswerFormGroup() {
 		return new FormGroup<SearchResultsAnswerFormProperties>({
-			totalEstimatedMatches: new FormControl<number | null | undefined>(undefined),
+			totalEstimatedMatches: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -611,13 +639,13 @@ export namespace MyNS {
 		 * @param {number} offset The zero-based offset that indicates the number of news to skip before returning news. The default is 0. The offset should be less than ([totalEstimatedMatches](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-news-api-v7-reference#news-totalmatches) - count). Use this parameter along with the count parameter to page results. For example, if your user interface displays 20 news per page, set count to 20 and offset to 0 to get the first page of results. For each subsequent page, increment offset by 20 (for example, 0, 20, 40). It is possible for multiple pages to include some overlap in results.
 		 * @param {News_CategorySafeSearch} safeSearch Filter news for adult content. The following are the possible filter values. Off: Return news articles with adult text, images, or videos. Moderate: Return news articles with adult text but not adult images or videos. Strict: Do not return news articles with adult text, images, or videos. If the request comes from a market that Bing's adult policy requires that safeSearch is set to Strict, Bing ignores the safeSearch value and uses Strict. If you use the site: query operator, there is the chance that the response may contain adult content regardless of what the safeSearch query parameter is set to. Use site: only if you are aware of the content on the site and your scenario supports the possibility of adult content.
 		 * @param {string} setLang The language to use for user interface strings. Specify the language using the ISO 639-1 2-letter language code. For example, the language code for English is EN. The default is EN (English). Although optional, you should always specify the language. Typically, you set setLang to the same language specified by mkt unless the user wants the user interface strings displayed in a different language. This parameter and the [Accept-Language](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-news-api-v7-reference#acceptlanguage) header are mutually exclusive; do not specify both. A user interface string is a string that's used as a label in a user interface. There are few user interface strings in the JSON response objects. Also, any links to Bing.com properties in the response objects apply the specified language.
-		 * @param {number} since The Unix epoch time (Unix timestamp) that Bing uses to select the trending topics. Bing returns trending topics that it discovered on or after the specified date and time, not the date the topic was published. To use this parameter, also specify the sortBy parameter. Use this parameter only with the News Trending Topics API. Do not specify this parameter when calling the News Search API or News Category API.
+		 * @param {string} since The Unix epoch time (Unix timestamp) that Bing uses to select the trending topics. Bing returns trending topics that it discovered on or after the specified date and time, not the date the topic was published. To use this parameter, also specify the sortBy parameter. Use this parameter only with the News Trending Topics API. Do not specify this parameter when calling the News Search API or News Category API.
 		 * @param {string} sortBy The order to return the news in. The following are the possible case-insensitive values. Date: If the request is through the News Search API, the response returns news articles sorted by date from the most recent to the oldest. If the request is through the News Trending Topics API, the response returns trending topics sorted by date from the most recent to the oldest.
 		 * @param {boolean} textDecorations A Boolean value that determines whether display strings contain decoration markers such as hit highlighting characters. If true, the strings may include markers. The default is false. To specify whether to use Unicode characters or HTML tags as the markers, see the [textFormat](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-news-api-v7-reference#textformat) query parameter. For information about hit highlighting, see [Hit Highlighting](https://docs.microsoft.com/azure/cognitive-services/bing-news-search/hit-highlighting).
 		 * @param {News_CategoryTextFormat} textFormat The type of markers to use for text decorations (see the textDecorations query parameter). Possible values are Raw—Use Unicode characters to mark content that needs special formatting. The Unicode characters are in the range E000 through E019. For example, Bing uses E000 and E001 to mark the beginning and end of query terms for hit highlighting. HTML—Use HTML tags to mark content that needs special formatting. For example, use <b> tags to highlight query terms in display strings. The default is Raw. For display strings that contain escapable HTML characters such as <, >, and &, if textFormat is set to HTML, Bing escapes the characters as appropriate (for example, < is escaped to &lt;).
 		 * @return {TrendingTopics} Success.
 		 */
-		News_Trending(cc: string | null | undefined, count: number | null | undefined, mkt: string | null | undefined, offset: number | null | undefined, safeSearch: News_CategorySafeSearch | null | undefined, setLang: string | null | undefined, since: number | null | undefined, sortBy: string | null | undefined, textDecorations: boolean | null | undefined, textFormat: News_CategoryTextFormat | null | undefined): Observable<TrendingTopics> {
+		News_Trending(cc: string | null | undefined, count: number | null | undefined, mkt: string | null | undefined, offset: number | null | undefined, safeSearch: News_CategorySafeSearch | null | undefined, setLang: string | null | undefined, since: string | null | undefined, sortBy: string | null | undefined, textDecorations: boolean | null | undefined, textFormat: News_CategoryTextFormat | null | undefined): Observable<TrendingTopics> {
 			return this.http.get<TrendingTopics>(this.baseUri + 'news/trendingtopics?cc=' + (cc == null ? '' : encodeURIComponent(cc)) + '&count=' + count + '&mkt=' + (mkt == null ? '' : encodeURIComponent(mkt)) + '&offset=' + offset + '&safeSearch=' + safeSearch + '&setLang=' + (setLang == null ? '' : encodeURIComponent(setLang)) + '&since=' + since + '&sortBy=' + (sortBy == null ? '' : encodeURIComponent(sortBy)) + '&textDecorations=' + textDecorations + '&textFormat=' + textFormat, {});
 		}
 	}

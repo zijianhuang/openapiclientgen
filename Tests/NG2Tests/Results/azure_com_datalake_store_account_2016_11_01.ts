@@ -7,10 +7,16 @@ export namespace MyNS {
 	/** Subscription-level properties and limits for Data Lake Store. */
 	export interface CapabilityInformation {
 
-		/** The current number of accounts under this subscription. */
+		/**
+		 * The current number of accounts under this subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountCount?: number | null;
 
-		/** The maximum supported number of accounts under this subscription. */
+		/**
+		 * The maximum supported number of accounts under this subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAccountCount?: number | null;
 
 		/** The Boolean value of true or false to indicate the maintenance state. */
@@ -26,10 +32,16 @@ export namespace MyNS {
 	/** Subscription-level properties and limits for Data Lake Store. */
 	export interface CapabilityInformationFormProperties {
 
-		/** The current number of accounts under this subscription. */
+		/**
+		 * The current number of accounts under this subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountCount: FormControl<number | null | undefined>,
 
-		/** The maximum supported number of accounts under this subscription. */
+		/**
+		 * The maximum supported number of accounts under this subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAccountCount: FormControl<number | null | undefined>,
 
 		/** The Boolean value of true or false to indicate the maintenance state. */
@@ -1513,13 +1525,19 @@ export namespace MyNS {
 	/** Describes the Resource Usage. */
 	export interface Usage {
 
-		/** Gets the current count of the allocated resources in the subscription. */
+		/**
+		 * Gets the current count of the allocated resources in the subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue?: number | null;
 
 		/** Resource identifier. */
 		id?: string | null;
 
-		/** Gets the maximum count of the resources that can be allocated in the subscription. */
+		/**
+		 * Gets the maximum count of the resources that can be allocated in the subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** The usage names that can be used. */
@@ -1532,13 +1550,19 @@ export namespace MyNS {
 	/** Describes the Resource Usage. */
 	export interface UsageFormProperties {
 
-		/** Gets the current count of the allocated resources in the subscription. */
+		/**
+		 * Gets the current count of the allocated resources in the subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue: FormControl<number | null | undefined>,
 
 		/** Resource identifier. */
 		id: FormControl<string | null | undefined>,
 
-		/** Gets the maximum count of the resources that can be allocated in the subscription. */
+		/**
+		 * Gets the maximum count of the resources that can be allocated in the subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Gets the unit of measurement. */

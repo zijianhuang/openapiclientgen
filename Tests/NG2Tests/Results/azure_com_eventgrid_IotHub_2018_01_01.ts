@@ -100,7 +100,10 @@ export namespace MyNS {
 		/** Authentication type used for this device: either SAS, SelfSigned, or CertificateAuthority. */
 		authenticationType?: string | null;
 
-		/** Count of cloud to device messages sent to this device. */
+		/**
+		 * Count of cloud to device messages sent to this device.
+		 * Type: double
+		 */
 		cloudToDeviceMessageCount?: number | null;
 
 		/** Whether the device is connected or disconnected. */
@@ -124,7 +127,10 @@ export namespace MyNS {
 		/** The ISO8601 timestamp of the last device twin status update. */
 		statusUpdateTime?: string | null;
 
-		/** An integer that is incremented by one each time the device twin is updated. */
+		/**
+		 * An integer that is incremented by one each time the device twin is updated.
+		 * Type: double
+		 */
 		version?: number | null;
 
 		/** The thumbprint is a unique value for the x509 certificate, commonly used to find a particular certificate in a certificate store. The thumbprint is dynamically generated using the SHA1 algorithm, and does not physically exist in the certificate. */
@@ -137,7 +143,10 @@ export namespace MyNS {
 		/** Authentication type used for this device: either SAS, SelfSigned, or CertificateAuthority. */
 		authenticationType: FormControl<string | null | undefined>,
 
-		/** Count of cloud to device messages sent to this device. */
+		/**
+		 * Count of cloud to device messages sent to this device.
+		 * Type: double
+		 */
 		cloudToDeviceMessageCount: FormControl<number | null | undefined>,
 
 		/** Whether the device is connected or disconnected. */
@@ -158,7 +167,10 @@ export namespace MyNS {
 		/** The ISO8601 timestamp of the last device twin status update. */
 		statusUpdateTime: FormControl<string | null | undefined>,
 
-		/** An integer that is incremented by one each time the device twin is updated. */
+		/**
+		 * An integer that is incremented by one each time the device twin is updated.
+		 * Type: double
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceTwinInfoFormGroup() {
@@ -199,14 +211,20 @@ export namespace MyNS {
 		/** Metadata information for the properties JSON document. */
 		metadata?: DeviceTwinMetadata;
 
-		/** Version of device twin properties. */
+		/**
+		 * Version of device twin properties.
+		 * Type: double
+		 */
 		version?: number | null;
 	}
 
 	/** A portion of the properties that can be written only by the application back-end, and read by the device. */
 	export interface DeviceTwinPropertiesFormProperties {
 
-		/** Version of device twin properties. */
+		/**
+		 * Version of device twin properties.
+		 * Type: double
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceTwinPropertiesFormGroup() {

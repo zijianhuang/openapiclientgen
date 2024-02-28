@@ -229,7 +229,10 @@ export namespace MyNS {
 	/** this is the management partner operations response */
 	export interface PartnerResponse {
 
-		/** Type of the partner */
+		/**
+		 * Type of the partner
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		etag?: number | null;
 
 		/** Identifier of the partner */
@@ -248,7 +251,10 @@ export namespace MyNS {
 	/** this is the management partner operations response */
 	export interface PartnerResponseFormProperties {
 
-		/** Type of the partner */
+		/**
+		 * Type of the partner
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		etag: FormControl<number | null | undefined>,
 
 		/** Identifier of the partner */

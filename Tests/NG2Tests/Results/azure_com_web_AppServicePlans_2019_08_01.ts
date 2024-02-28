@@ -601,7 +601,10 @@ export namespace MyNS {
 		/** Capabilities of the SKU, e.g., is traffic manager enabled? */
 		AppServicePlans_ListReturnValueSkuCapabilities?: Array<AppServicePlans_ListReturnValueSkuCapabilities>;
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Family code of the resource SKU. */
@@ -624,7 +627,10 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_ListReturnValueSkuFormProperties {
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Family code of the resource SKU. */
@@ -683,13 +689,22 @@ export namespace MyNS {
 
 	export interface AppServicePlans_ListReturnValueSkuSkuCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -697,13 +712,22 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_ListReturnValueSkuSkuCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -767,7 +791,10 @@ export namespace MyNS {
 		/** Capabilities of the SKU, e.g., is traffic manager enabled? */
 		AppServicePlans_ListByResourceGroupReturnValueSkuCapabilities?: Array<AppServicePlans_ListByResourceGroupReturnValueSkuCapabilities>;
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Family code of the resource SKU. */
@@ -790,7 +817,10 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_ListByResourceGroupReturnValueSkuFormProperties {
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Family code of the resource SKU. */
@@ -849,13 +879,22 @@ export namespace MyNS {
 
 	export interface AppServicePlans_ListByResourceGroupReturnValueSkuSkuCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -863,13 +902,22 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_ListByResourceGroupReturnValueSkuSkuCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -910,7 +958,10 @@ export namespace MyNS {
 		/** Capabilities of the SKU, e.g., is traffic manager enabled? */
 		AppServicePlans_GetReturnSkuCapabilities?: Array<AppServicePlans_GetReturnSkuCapabilities>;
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Family code of the resource SKU. */
@@ -933,7 +984,10 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_GetReturnSkuFormProperties {
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Family code of the resource SKU. */
@@ -992,13 +1046,22 @@ export namespace MyNS {
 
 	export interface AppServicePlans_GetReturnSkuSkuCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -1006,13 +1069,22 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_GetReturnSkuSkuCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -1053,7 +1125,10 @@ export namespace MyNS {
 		/** Capabilities of the SKU, e.g., is traffic manager enabled? */
 		AppServicePlans_CreateOrUpdatePutBodySkuCapabilities?: Array<AppServicePlans_CreateOrUpdatePutBodySkuCapabilities>;
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Family code of the resource SKU. */
@@ -1076,7 +1151,10 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_CreateOrUpdatePutBodySkuFormProperties {
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Family code of the resource SKU. */
@@ -1135,13 +1213,22 @@ export namespace MyNS {
 
 	export interface AppServicePlans_CreateOrUpdatePutBodySkuSkuCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -1149,13 +1236,22 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_CreateOrUpdatePutBodySkuSkuCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -1196,7 +1292,10 @@ export namespace MyNS {
 		/** Capabilities of the SKU, e.g., is traffic manager enabled? */
 		AppServicePlans_CreateOrUpdateReturnSkuCapabilities?: Array<AppServicePlans_CreateOrUpdateReturnSkuCapabilities>;
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Family code of the resource SKU. */
@@ -1219,7 +1318,10 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_CreateOrUpdateReturnSkuFormProperties {
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Family code of the resource SKU. */
@@ -1278,13 +1380,22 @@ export namespace MyNS {
 
 	export interface AppServicePlans_CreateOrUpdateReturnSkuSkuCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -1292,13 +1403,22 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_CreateOrUpdateReturnSkuSkuCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -1339,7 +1459,10 @@ export namespace MyNS {
 		/** Capabilities of the SKU, e.g., is traffic manager enabled? */
 		AppServicePlans_UpdateReturnSkuCapabilities?: Array<AppServicePlans_UpdateReturnSkuCapabilities>;
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Family code of the resource SKU. */
@@ -1362,7 +1485,10 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_UpdateReturnSkuFormProperties {
 
-		/** Current number of instances assigned to the resource. */
+		/**
+		 * Current number of instances assigned to the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Family code of the resource SKU. */
@@ -1421,13 +1547,22 @@ export namespace MyNS {
 
 	export interface AppServicePlans_UpdateReturnSkuSkuCapacity {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default?: number | null;
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum?: number | null;
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum?: number | null;
 
 		/** Available scale configurations for an App Service plan. */
@@ -1435,13 +1570,22 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_UpdateReturnSkuSkuCapacityFormProperties {
 
-		/** Default number of workers for this App Service plan SKU. */
+		/**
+		 * Default number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default: FormControl<number | null | undefined>,
 
-		/** Maximum number of workers for this App Service plan SKU. */
+		/**
+		 * Maximum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum number of workers for this App Service plan SKU. */
+		/**
+		 * Minimum number of workers for this App Service plan SKU.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Available scale configurations for an App Service plan. */
@@ -1637,11 +1781,17 @@ export namespace MyNS {
 
 	export interface AppServicePlans_ListUsagesReturnValue {
 
-		/** The current value of the resource counter. */
-		currentValue?: number | null;
+		/**
+		 * The current value of the resource counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue?: string | null;
 
-		/** The resource limit. */
-		limit?: number | null;
+		/**
+		 * The resource limit.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit?: string | null;
 
 		/** Localizable string object containing the name and a localized value. */
 		name?: AppServicePlans_ListUsagesReturnValueName;
@@ -1654,11 +1804,17 @@ export namespace MyNS {
 	}
 	export interface AppServicePlans_ListUsagesReturnValueFormProperties {
 
-		/** The current value of the resource counter. */
-		currentValue: FormControl<number | null | undefined>,
+		/**
+		 * The current value of the resource counter.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue: FormControl<string | null | undefined>,
 
-		/** The resource limit. */
-		limit: FormControl<number | null | undefined>,
+		/**
+		 * The resource limit.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit: FormControl<string | null | undefined>,
 
 		/** Next reset time for the resource counter. */
 		nextResetTime: FormControl<Date | null | undefined>,
@@ -1668,8 +1824,8 @@ export namespace MyNS {
 	}
 	export function CreateAppServicePlans_ListUsagesReturnValueFormGroup() {
 		return new FormGroup<AppServicePlans_ListUsagesReturnValueFormProperties>({
-			currentValue: new FormControl<number | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			currentValue: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			nextResetTime: new FormControl<Date | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 		});

@@ -24,14 +24,20 @@ export namespace MyNS {
 	/** All properties of a storage pool. */
 	export interface StoragePoolModel {
 
-		/** Amount of space in the storage pool in GB. */
+		/**
+		 * Amount of space in the storage pool in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGB?: number | null;
 	}
 
 	/** All properties of a storage pool. */
 	export interface StoragePoolModelFormProperties {
 
-		/** Amount of space in the storage pool in GB. */
+		/**
+		 * Amount of space in the storage pool in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGB: FormControl<number | null | undefined>,
 	}
 	export function CreateStoragePoolModelFormGroup() {

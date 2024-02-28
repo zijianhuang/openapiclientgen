@@ -36,13 +36,19 @@ export namespace MyNS {
 		/** Operational status of the volume. */
 		operationalStatus?: string | null;
 
-		/** Remaining capacity in GB of the volume. */
+		/**
+		 * Remaining capacity in GB of the volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remainingCapacityGB?: number | null;
 
 		/** Repair status of the volume. Empty if no repair job running, something like 'Running, 90%' when repairing. */
 		repairStatus?: string | null;
 
-		/** Total capacity in GB of the volume. */
+		/**
+		 * Total capacity in GB of the volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCapacityGB?: number | null;
 
 		/** Volume label. */
@@ -64,13 +70,19 @@ export namespace MyNS {
 		/** Operational status of the volume. */
 		operationalStatus: FormControl<string | null | undefined>,
 
-		/** Remaining capacity in GB of the volume. */
+		/**
+		 * Remaining capacity in GB of the volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remainingCapacityGB: FormControl<number | null | undefined>,
 
 		/** Repair status of the volume. Empty if no repair job running, something like 'Running, 90%' when repairing. */
 		repairStatus: FormControl<string | null | undefined>,
 
-		/** Total capacity in GB of the volume. */
+		/**
+		 * Total capacity in GB of the volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCapacityGB: FormControl<number | null | undefined>,
 
 		/** Volume label. */

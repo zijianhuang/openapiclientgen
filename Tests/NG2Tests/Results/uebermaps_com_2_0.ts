@@ -4,12 +4,18 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Attachment {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachable_id?: number | null;
 		attachable_type?: string | null;
 		created_at?: Date | null;
 		description?: string | null;
 		file_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		map_id?: number | null;
 		sizes?: string | null;
 		spot?: Spot;
@@ -17,12 +23,18 @@ export namespace MyNS {
 		user?: User;
 	}
 	export interface AttachmentFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachable_id: FormControl<number | null | undefined>,
 		attachable_type: FormControl<string | null | undefined>,
 		created_at: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		file_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		map_id: FormControl<number | null | undefined>,
 		sizes: FormControl<string | null | undefined>,
 		status: FormControl<AttachmentStatus | null | undefined>,
@@ -47,21 +59,33 @@ export namespace MyNS {
 	export interface Collaborator {
 		created_at?: Date | null;
 		group?: CollaboratorGroup | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		is_admin?: boolean | null;
 		map?: Map;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		map_id?: number | null;
 		updated_at?: Date | null;
 		user?: User;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 	}
 	export interface CollaboratorFormProperties {
 		created_at: FormControl<Date | null | undefined>,
 		group: FormControl<CollaboratorGroup | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		is_admin: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		map_id: FormControl<number | null | undefined>,
 		updated_at: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateCollaboratorFormGroup() {
@@ -97,6 +121,8 @@ export namespace MyNS {
 		created_at?: Date | null;
 		email?: string | null;
 		group?: CollaboratorGroup | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		invited_by_user?: User;
 		map?: Map;
@@ -109,6 +135,8 @@ export namespace MyNS {
 		created_at: FormControl<Date | null | undefined>,
 		email: FormControl<string | null | undefined>,
 		group: FormControl<CollaboratorGroup | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		sent: FormControl<boolean | null | undefined>,
 		updated_at: FormControl<Date | null | undefined>,
@@ -129,12 +157,16 @@ export namespace MyNS {
 	export interface CollaboratorInvitationCreate {
 		emails?: string | null;
 		is_admin?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		map_id?: number | null;
 		user_ids?: string | null;
 	}
 	export interface CollaboratorInvitationCreateFormProperties {
 		emails: FormControl<string | null | undefined>,
 		is_admin: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		map_id: FormControl<number | null | undefined>,
 		user_ids: FormControl<string | null | undefined>,
 	}
@@ -151,6 +183,8 @@ export namespace MyNS {
 	export interface Comment {
 		body?: string | null;
 		created_at?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		status?: AttachmentStatus | null;
 		updated_at?: Date | null;
@@ -159,6 +193,8 @@ export namespace MyNS {
 	export interface CommentFormProperties {
 		body: FormControl<string | null | undefined>,
 		created_at: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		status: FormControl<AttachmentStatus | null | undefined>,
 		updated_at: FormControl<Date | null | undefined>,
@@ -192,9 +228,17 @@ export namespace MyNS {
 		created_at?: Date | null;
 		description?: string | null;
 		ends_at?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lon?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owner_id?: number | null;
 		picture_url?: string | null;
 		spot?: Spot;
@@ -208,9 +252,17 @@ export namespace MyNS {
 		created_at: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		ends_at: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owner_id: FormControl<number | null | undefined>,
 		picture_url: FormControl<string | null | undefined>,
 		starts_at: FormControl<Date | null | undefined>,
@@ -237,11 +289,19 @@ export namespace MyNS {
 	}
 
 	export interface EventCounts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachments?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comments?: number | null;
 	}
 	export interface EventCountsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachments: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comments: FormControl<number | null | undefined>,
 	}
 	export function CreateEventCountsFormGroup() {
@@ -255,23 +315,35 @@ export namespace MyNS {
 	export interface EventEditable {
 		description?: string | null;
 		ends_at?: Date | null;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lon?: number | null;
 		picture?: string | null;
 		starts_at?: Date | null;
 		time_zone?: string | null;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 	}
 	export interface EventEditableFormProperties {
 		description: FormControl<string | null | undefined>,
 		ends_at: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
 		picture: FormControl<string | null | undefined>,
 		starts_at: FormControl<Date | null | undefined>,
 		time_zone: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateEventEditableFormGroup() {
@@ -293,8 +365,12 @@ export namespace MyNS {
 		counts?: MapCounts;
 		created_at?: Date | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		map_settings?: MapSettings;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owner_id?: number | null;
 		picture_url?: string | null;
 		title?: string | null;
@@ -304,7 +380,11 @@ export namespace MyNS {
 	export interface MapFormProperties {
 		created_at: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owner_id: FormControl<number | null | undefined>,
 		picture_url: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
@@ -328,19 +408,43 @@ export namespace MyNS {
 	export enum MapVisibility { public = 0, link = 1, private = 2 }
 
 	export interface MapCounts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachments?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comments?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		impressions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		respots?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		spots?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscriptions?: number | null;
 	}
 	export interface MapCountsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachments: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comments: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		impressions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		respots: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		spots: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		subscriptions: FormControl<number | null | undefined>,
 	}
 	export function CreateMapCountsFormGroup() {
@@ -422,7 +526,11 @@ export namespace MyNS {
 		counts?: MapCounts;
 		created_at?: Date | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owner_id?: number | null;
 		picture_url?: string | null;
 		title?: string | null;
@@ -433,7 +541,11 @@ export namespace MyNS {
 	export interface MapWithAuthTokenFormProperties {
 		created_at: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owner_id: FormControl<number | null | undefined>,
 		picture_url: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
@@ -460,8 +572,12 @@ export namespace MyNS {
 		counts?: MapCounts;
 		created_at?: Date | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		map_settings?: MapSettings;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owner_id?: number | null;
 		picture_url?: string | null;
 		relation?: MapRelation;
@@ -472,7 +588,11 @@ export namespace MyNS {
 	export interface MapWithRelationFormProperties {
 		created_at: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owner_id: FormControl<number | null | undefined>,
 		picture_url: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
@@ -495,8 +615,12 @@ export namespace MyNS {
 
 	export interface Respot {
 		created_at?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		map?: Map;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		map_id?: number | null;
 		spot?: Spot;
 		updated_at?: Date | null;
@@ -504,7 +628,11 @@ export namespace MyNS {
 	}
 	export interface RespotFormProperties {
 		created_at: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		map_id: FormControl<number | null | undefined>,
 		updated_at: FormControl<Date | null | undefined>,
 	}
@@ -522,9 +650,17 @@ export namespace MyNS {
 		counts?: SpotCounts;
 		created_at?: Date | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lon?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		map_id?: number | null;
 		picture_url?: string | null;
 		status?: AttachmentStatus | null;
@@ -536,9 +672,17 @@ export namespace MyNS {
 	export interface SpotFormProperties {
 		created_at: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		map_id: FormControl<number | null | undefined>,
 		picture_url: FormControl<string | null | undefined>,
 		status: FormControl<AttachmentStatus | null | undefined>,
@@ -564,13 +708,25 @@ export namespace MyNS {
 	}
 
 	export interface SpotCounts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachments?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comments?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		respot?: number | null;
 	}
 	export interface SpotCountsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachments: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comments: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		respot: FormControl<number | null | undefined>,
 	}
 	export function CreateSpotCountsFormGroup() {
@@ -584,7 +740,11 @@ export namespace MyNS {
 
 	export interface SpotEditable {
 		description?: string | null;
+
+		/** Type: double */
 		lat?: number | null;
+
+		/** Type: double */
 		lon?: number | null;
 		picture?: string | null;
 		time_zone?: string | null;
@@ -592,7 +752,11 @@ export namespace MyNS {
 	}
 	export interface SpotEditableFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lat: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lon: FormControl<number | null | undefined>,
 		picture: FormControl<string | null | undefined>,
 		time_zone: FormControl<string | null | undefined>,
@@ -612,16 +776,24 @@ export namespace MyNS {
 
 	export interface Subscription {
 		created_at?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		map?: Map;
 		updated_at?: Date | null;
 		user?: User;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 	}
 	export interface SubscriptionFormProperties {
 		created_at: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		updated_at: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionFormGroup() {
@@ -638,6 +810,8 @@ export namespace MyNS {
 		about?: string | null;
 		counts?: any;
 		header_picture?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		location?: string | null;
 		name?: string | null;
@@ -649,6 +823,8 @@ export namespace MyNS {
 		about: FormControl<string | null | undefined>,
 		counts: FormControl<any | null | undefined>,
 		header_picture: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		location: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,

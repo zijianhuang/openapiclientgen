@@ -7,13 +7,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an CertificateExpired event. */
 	export interface KeyVaultCertificateExpiredEventData {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp?: number | null;
 
 		/** The id of the object that triggered this event. */
 		id?: string | null;
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf?: number | null;
 
 		/** The name of the object that triggered this event */
@@ -32,13 +38,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an CertificateExpired event. */
 	export interface KeyVaultCertificateExpiredEventDataFormProperties {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp: FormControl<number | null | undefined>,
 
 		/** The id of the object that triggered this event. */
 		id: FormControl<string | null | undefined>,
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf: FormControl<number | null | undefined>,
 
 		/** The name of the object that triggered this event */
@@ -70,13 +82,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an CertificateNearExpiry event. */
 	export interface KeyVaultCertificateNearExpiryEventData {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp?: number | null;
 
 		/** The id of the object that triggered this event. */
 		id?: string | null;
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf?: number | null;
 
 		/** The name of the object that triggered this event */
@@ -95,13 +113,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an CertificateNearExpiry event. */
 	export interface KeyVaultCertificateNearExpiryEventDataFormProperties {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp: FormControl<number | null | undefined>,
 
 		/** The id of the object that triggered this event. */
 		id: FormControl<string | null | undefined>,
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf: FormControl<number | null | undefined>,
 
 		/** The name of the object that triggered this event */
@@ -133,13 +157,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an CertificateNewVersionCreated event. */
 	export interface KeyVaultCertificateNewVersionCreatedEventData {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp?: number | null;
 
 		/** The id of the object that triggered this event. */
 		id?: string | null;
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf?: number | null;
 
 		/** The name of the object that triggered this event */
@@ -158,13 +188,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an CertificateNewVersionCreated event. */
 	export interface KeyVaultCertificateNewVersionCreatedEventDataFormProperties {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp: FormControl<number | null | undefined>,
 
 		/** The id of the object that triggered this event. */
 		id: FormControl<string | null | undefined>,
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf: FormControl<number | null | undefined>,
 
 		/** The name of the object that triggered this event */
@@ -196,13 +232,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an KeyExpired event. */
 	export interface KeyVaultKeyExpiredEventData {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp?: number | null;
 
 		/** The id of the object that triggered this event. */
 		id?: string | null;
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf?: number | null;
 
 		/** The name of the object that triggered this event */
@@ -221,13 +263,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an KeyExpired event. */
 	export interface KeyVaultKeyExpiredEventDataFormProperties {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp: FormControl<number | null | undefined>,
 
 		/** The id of the object that triggered this event. */
 		id: FormControl<string | null | undefined>,
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf: FormControl<number | null | undefined>,
 
 		/** The name of the object that triggered this event */
@@ -259,13 +307,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an KeyNearExpiry event. */
 	export interface KeyVaultKeyNearExpiryEventData {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp?: number | null;
 
 		/** The id of the object that triggered this event. */
 		id?: string | null;
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf?: number | null;
 
 		/** The name of the object that triggered this event */
@@ -284,13 +338,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an KeyNearExpiry event. */
 	export interface KeyVaultKeyNearExpiryEventDataFormProperties {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp: FormControl<number | null | undefined>,
 
 		/** The id of the object that triggered this event. */
 		id: FormControl<string | null | undefined>,
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf: FormControl<number | null | undefined>,
 
 		/** The name of the object that triggered this event */
@@ -322,13 +382,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an KeyNewVersionCreated event. */
 	export interface KeyVaultKeyNewVersionCreatedEventData {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp?: number | null;
 
 		/** The id of the object that triggered this event. */
 		id?: string | null;
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf?: number | null;
 
 		/** The name of the object that triggered this event */
@@ -347,13 +413,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an KeyNewVersionCreated event. */
 	export interface KeyVaultKeyNewVersionCreatedEventDataFormProperties {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp: FormControl<number | null | undefined>,
 
 		/** The id of the object that triggered this event. */
 		id: FormControl<string | null | undefined>,
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf: FormControl<number | null | undefined>,
 
 		/** The name of the object that triggered this event */
@@ -385,13 +457,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an SecretExpired event. */
 	export interface KeyVaultSecretExpiredEventData {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp?: number | null;
 
 		/** The id of the object that triggered this event. */
 		id?: string | null;
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf?: number | null;
 
 		/** The name of the object that triggered this event */
@@ -410,13 +488,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an SecretExpired event. */
 	export interface KeyVaultSecretExpiredEventDataFormProperties {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp: FormControl<number | null | undefined>,
 
 		/** The id of the object that triggered this event. */
 		id: FormControl<string | null | undefined>,
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf: FormControl<number | null | undefined>,
 
 		/** The name of the object that triggered this event */
@@ -448,13 +532,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an SecretNearExpiry event. */
 	export interface KeyVaultSecretNearExpiryEventData {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp?: number | null;
 
 		/** The id of the object that triggered this event. */
 		id?: string | null;
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf?: number | null;
 
 		/** The name of the object that triggered this event */
@@ -473,13 +563,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an SecretNearExpiry event. */
 	export interface KeyVaultSecretNearExpiryEventDataFormProperties {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp: FormControl<number | null | undefined>,
 
 		/** The id of the object that triggered this event. */
 		id: FormControl<string | null | undefined>,
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf: FormControl<number | null | undefined>,
 
 		/** The name of the object that triggered this event */
@@ -511,13 +607,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an SecretNewVersionCreated event. */
 	export interface KeyVaultSecretNewVersionCreatedEventData {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp?: number | null;
 
 		/** The id of the object that triggered this event. */
 		id?: string | null;
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf?: number | null;
 
 		/** The name of the object that triggered this event */
@@ -536,13 +638,19 @@ export namespace MyNS {
 	/** Schema of the Data property of an EventGridEvent for an SecretNewVersionCreated event. */
 	export interface KeyVaultSecretNewVersionCreatedEventDataFormProperties {
 
-		/** The expiration date of the object that triggered this event */
+		/**
+		 * The expiration date of the object that triggered this event
+		 * Type: double
+		 */
 		exp: FormControl<number | null | undefined>,
 
 		/** The id of the object that triggered this event. */
 		id: FormControl<string | null | undefined>,
 
-		/** Not before date of the object that triggered this event */
+		/**
+		 * Not before date of the object that triggered this event
+		 * Type: double
+		 */
 		nbf: FormControl<number | null | undefined>,
 
 		/** The name of the object that triggered this event */

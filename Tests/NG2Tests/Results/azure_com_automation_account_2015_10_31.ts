@@ -302,7 +302,10 @@ export namespace MyNS {
 	/** The account SKU. */
 	export interface Sku {
 
-		/** Gets or sets the SKU capacity. */
+		/**
+		 * Gets or sets the SKU capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** Gets or sets the SKU family. */
@@ -318,7 +321,10 @@ export namespace MyNS {
 	/** The account SKU. */
 	export interface SkuFormProperties {
 
-		/** Gets or sets the SKU capacity. */
+		/**
+		 * Gets or sets the SKU capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** Gets or sets the SKU family. */
@@ -348,8 +354,11 @@ export namespace MyNS {
 		/** Gets the property value of the statistic. */
 		counterProperty?: string | null;
 
-		/** Gets the value of the statistic. */
-		counterValue?: number | null;
+		/**
+		 * Gets the value of the statistic.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		counterValue?: string | null;
 
 		/** Gets the endTime of the statistic. */
 		endTime?: Date | null;
@@ -367,8 +376,11 @@ export namespace MyNS {
 		/** Gets the property value of the statistic. */
 		counterProperty: FormControl<string | null | undefined>,
 
-		/** Gets the value of the statistic. */
-		counterValue: FormControl<number | null | undefined>,
+		/**
+		 * Gets the value of the statistic.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		counterValue: FormControl<string | null | undefined>,
 
 		/** Gets the endTime of the statistic. */
 		endTime: FormControl<Date | null | undefined>,
@@ -382,7 +394,7 @@ export namespace MyNS {
 	export function CreateStatisticsFormGroup() {
 		return new FormGroup<StatisticsFormProperties>({
 			counterProperty: new FormControl<string | null | undefined>(undefined),
-			counterValue: new FormControl<number | null | undefined>(undefined),
+			counterValue: new FormControl<string | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined),
@@ -411,14 +423,20 @@ export namespace MyNS {
 	/** Definition of Usage. */
 	export interface Usage {
 
-		/** Gets or sets the current usage value. */
+		/**
+		 * Gets or sets the current usage value.
+		 * Type: double
+		 */
 		currentValue?: number | null;
 
 		/** Gets or sets the id of the resource. */
 		id?: string | null;
 
-		/** Gets or sets max limit. -1 for unlimited */
-		limit?: number | null;
+		/**
+		 * Gets or sets max limit. -1 for unlimited
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit?: string | null;
 
 		/** Definition of usage counter name. */
 		name?: UsageCounterName;
@@ -433,14 +451,20 @@ export namespace MyNS {
 	/** Definition of Usage. */
 	export interface UsageFormProperties {
 
-		/** Gets or sets the current usage value. */
+		/**
+		 * Gets or sets the current usage value.
+		 * Type: double
+		 */
 		currentValue: FormControl<number | null | undefined>,
 
 		/** Gets or sets the id of the resource. */
 		id: FormControl<string | null | undefined>,
 
-		/** Gets or sets max limit. -1 for unlimited */
-		limit: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets max limit. -1 for unlimited
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		limit: FormControl<string | null | undefined>,
 
 		/** Gets or sets the throttle status. */
 		throttleStatus: FormControl<string | null | undefined>,
@@ -452,7 +476,7 @@ export namespace MyNS {
 		return new FormGroup<UsageFormProperties>({
 			currentValue: new FormControl<number | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			limit: new FormControl<string | null | undefined>(undefined),
 			throttleStatus: new FormControl<string | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 		});

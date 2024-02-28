@@ -35,7 +35,10 @@ export namespace MyNS {
 
 	export interface ChangePointDetectRequest {
 
-		/** Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}. */
+		/**
+		 * Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customInterval?: number | null;
 
 		/**
@@ -44,7 +47,10 @@ export namespace MyNS {
 		 */
 		granularity: ChangePointDetectRequestGranularity;
 
-		/** Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically. */
+		/**
+		 * Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period?: number | null;
 
 		/**
@@ -53,15 +59,24 @@ export namespace MyNS {
 		 */
 		series: Array<Point>;
 
-		/** Optional argument, advanced model parameter, a default stableTrendWindow will be used in detection. */
+		/**
+		 * Optional argument, advanced model parameter, a default stableTrendWindow will be used in detection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stableTrendWindow?: number | null;
 
-		/** Optional argument, advanced model parameter, between 0.0-1.0, the lower the value is, the larger the trend error will be which means less change point will be accepted. */
+		/**
+		 * Optional argument, advanced model parameter, between 0.0-1.0, the lower the value is, the larger the trend error will be which means less change point will be accepted.
+		 * Type: float
+		 */
 		threshold?: number | null;
 	}
 	export interface ChangePointDetectRequestFormProperties {
 
-		/** Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}. */
+		/**
+		 * Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customInterval: FormControl<number | null | undefined>,
 
 		/**
@@ -70,13 +85,22 @@ export namespace MyNS {
 		 */
 		granularity: FormControl<ChangePointDetectRequestGranularity | null | undefined>,
 
-		/** Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically. */
+		/**
+		 * Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period: FormControl<number | null | undefined>,
 
-		/** Optional argument, advanced model parameter, a default stableTrendWindow will be used in detection. */
+		/**
+		 * Optional argument, advanced model parameter, a default stableTrendWindow will be used in detection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stableTrendWindow: FormControl<number | null | undefined>,
 
-		/** Optional argument, advanced model parameter, between 0.0-1.0, the lower the value is, the larger the trend error will be which means less change point will be accepted. */
+		/**
+		 * Optional argument, advanced model parameter, between 0.0-1.0, the lower the value is, the larger the trend error will be which means less change point will be accepted.
+		 * Type: float
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateChangePointDetectRequestFormGroup() {
@@ -103,6 +127,7 @@ export namespace MyNS {
 		/**
 		 * The measurement of that point, should be float.
 		 * Required
+		 * Type: float
 		 */
 		value: number;
 	}
@@ -117,6 +142,7 @@ export namespace MyNS {
 		/**
 		 * The measurement of that point, should be float.
 		 * Required
+		 * Type: float
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -145,6 +171,7 @@ export namespace MyNS {
 		/**
 		 * Frequency extracted from the series, zero means no recurrent pattern has been found.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: number;
 	}
@@ -153,6 +180,7 @@ export namespace MyNS {
 		/**
 		 * Frequency extracted from the series, zero means no recurrent pattern has been found.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: FormControl<number | null | undefined>,
 	}
@@ -198,6 +226,7 @@ export namespace MyNS {
 		/**
 		 * Frequency extracted from the series, zero means no recurrent pattern has been found.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: number;
 
@@ -212,6 +241,7 @@ export namespace MyNS {
 		/**
 		 * Frequency extracted from the series, zero means no recurrent pattern has been found.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: FormControl<number | null | undefined>,
 	}
@@ -231,6 +261,7 @@ export namespace MyNS {
 		/**
 		 * Expected value of the latest point.
 		 * Required
+		 * Type: float
 		 */
 		expectedValue: number;
 
@@ -255,24 +286,28 @@ export namespace MyNS {
 		/**
 		 * Lower margin of the latest point. LowerMargin is used to calculate lowerBoundary, which equals to expectedValue - (100 - marginScale)*lowerMargin.
 		 * Required
+		 * Type: float
 		 */
 		lowerMargin: number;
 
 		/**
 		 * Frequency extracted from the series, zero means no recurrent pattern has been found.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: number;
 
 		/**
 		 * Suggested input series points needed for detecting the latest point.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		suggestedWindow: number;
 
 		/**
 		 * Upper margin of the latest point. UpperMargin is used to calculate upperBoundary, which equals to expectedValue + (100 - marginScale)*upperMargin. If the value of latest point is between upperBoundary and lowerBoundary, it should be treated as normal value. By adjusting marginScale value, anomaly status of latest point can be changed.
 		 * Required
+		 * Type: float
 		 */
 		upperMargin: number;
 	}
@@ -281,6 +316,7 @@ export namespace MyNS {
 		/**
 		 * Expected value of the latest point.
 		 * Required
+		 * Type: float
 		 */
 		expectedValue: FormControl<number | null | undefined>,
 
@@ -305,24 +341,28 @@ export namespace MyNS {
 		/**
 		 * Lower margin of the latest point. LowerMargin is used to calculate lowerBoundary, which equals to expectedValue - (100 - marginScale)*lowerMargin.
 		 * Required
+		 * Type: float
 		 */
 		lowerMargin: FormControl<number | null | undefined>,
 
 		/**
 		 * Frequency extracted from the series, zero means no recurrent pattern has been found.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		period: FormControl<number | null | undefined>,
 
 		/**
 		 * Suggested input series points needed for detecting the latest point.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		suggestedWindow: FormControl<number | null | undefined>,
 
 		/**
 		 * Upper margin of the latest point. UpperMargin is used to calculate upperBoundary, which equals to expectedValue + (100 - marginScale)*upperMargin. If the value of latest point is between upperBoundary and lowerBoundary, it should be treated as normal value. By adjusting marginScale value, anomaly status of latest point can be changed.
 		 * Required
+		 * Type: float
 		 */
 		upperMargin: FormControl<number | null | undefined>,
 	}
@@ -342,7 +382,10 @@ export namespace MyNS {
 
 	export interface Request {
 
-		/** Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}. */
+		/**
+		 * Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customInterval?: number | null;
 
 		/**
@@ -351,13 +394,22 @@ export namespace MyNS {
 		 */
 		granularity: ChangePointDetectRequestGranularity;
 
-		/** Optional argument, advanced model parameter, max anomaly ratio in a time series. */
+		/**
+		 * Optional argument, advanced model parameter, max anomaly ratio in a time series.
+		 * Type: float
+		 */
 		maxAnomalyRatio?: number | null;
 
-		/** Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically. */
+		/**
+		 * Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period?: number | null;
 
-		/** Optional argument, advanced model parameter, between 0-99, the lower the value is, the larger the margin value will be which means less anomalies will be accepted. */
+		/**
+		 * Optional argument, advanced model parameter, between 0-99, the lower the value is, the larger the margin value will be which means less anomalies will be accepted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sensitivity?: number | null;
 
 		/**
@@ -368,7 +420,10 @@ export namespace MyNS {
 	}
 	export interface RequestFormProperties {
 
-		/** Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}. */
+		/**
+		 * Custom Interval is used to set non-standard time interval, for example, if the series is 5 minutes, request can be set as {"granularity":"minutely", "customInterval":5}.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		customInterval: FormControl<number | null | undefined>,
 
 		/**
@@ -377,13 +432,22 @@ export namespace MyNS {
 		 */
 		granularity: FormControl<ChangePointDetectRequestGranularity | null | undefined>,
 
-		/** Optional argument, advanced model parameter, max anomaly ratio in a time series. */
+		/**
+		 * Optional argument, advanced model parameter, max anomaly ratio in a time series.
+		 * Type: float
+		 */
 		maxAnomalyRatio: FormControl<number | null | undefined>,
 
-		/** Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically. */
+		/**
+		 * Optional argument, periodic value of a time series. If the value is null or does not present, the API will determine the period automatically.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		period: FormControl<number | null | undefined>,
 
-		/** Optional argument, advanced model parameter, between 0-99, the lower the value is, the larger the margin value will be which means less anomalies will be accepted. */
+		/**
+		 * Optional argument, advanced model parameter, between 0-99, the lower the value is, the larger the margin value will be which means less anomalies will be accepted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sensitivity: FormControl<number | null | undefined>,
 	}
 	export function CreateRequestFormGroup() {

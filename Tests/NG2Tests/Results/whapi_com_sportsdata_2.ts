@@ -177,13 +177,19 @@ export namespace MyNS {
 
 	export interface Competitor {
 
-		/** The age of the horse */
+		/**
+		 * The age of the horse
+		 * Type: double
+		 */
 		age?: number | null;
 
 		/** The colour of the horse (There are 5 colours. b = Bay. bl = Black. br = Brown. ch = Chestnut. gr = Grey) */
 		colour?: string | null;
 
-		/** The stall number that the horse is allocated and will start from */
+		/**
+		 * The stall number that the horse is allocated and will start from
+		 * Type: double
+		 */
 		drawNumber?: number | null;
 
 		/** The form of a horse is a record of significant events, mainly its performance in previous races. For example: The value 874-1 means that the horse finished 8th, then 7th in the next race, then 4th, hyphen here means he did not finish in the race, and was 1st in the last race he was running in. */
@@ -192,6 +198,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the competitor in the event
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
@@ -227,13 +234,19 @@ export namespace MyNS {
 	}
 	export interface CompetitorFormProperties {
 
-		/** The age of the horse */
+		/**
+		 * The age of the horse
+		 * Type: double
+		 */
 		age: FormControl<number | null | undefined>,
 
 		/** The colour of the horse (There are 5 colours. b = Bay. bl = Black. br = Brown. ch = Chestnut. gr = Grey) */
 		colour: FormControl<string | null | undefined>,
 
-		/** The stall number that the horse is allocated and will start from */
+		/**
+		 * The stall number that the horse is allocated and will start from
+		 * Type: double
+		 */
 		drawNumber: FormControl<number | null | undefined>,
 
 		/** The form of a horse is a record of significant events, mainly its performance in previous races. For example: The value 874-1 means that the horse finished 8th, then 7th in the next race, then 4th, hyphen here means he did not finish in the race, and was 1st in the last race he was running in. */
@@ -242,6 +255,7 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the competitor in the event
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -863,6 +877,7 @@ export namespace MyNS {
 		/**
 		 * The selection price, in decimal format
 		 * Required
+		 * Type: decimal
 		 */
 		oddsDecimal: number;
 
@@ -941,6 +956,7 @@ export namespace MyNS {
 		/**
 		 * The selection price, in decimal format
 		 * Required
+		 * Type: decimal
 		 */
 		oddsDecimal: FormControl<number | null | undefined>,
 
@@ -1001,7 +1017,10 @@ export namespace MyNS {
 		/** The price in American format */
 		american?: string | null;
 
-		/** The decimal format of the price */
+		/**
+		 * The decimal format of the price
+		 * Type: double
+		 */
 		decimal?: number | null;
 
 		/** The fractional format of the price or EVS when the price evens. */
@@ -1012,7 +1031,10 @@ export namespace MyNS {
 		/** The price in American format */
 		american: FormControl<string | null | undefined>,
 
-		/** The decimal format of the price */
+		/**
+		 * The decimal format of the price
+		 * Type: double
+		 */
 		decimal: FormControl<number | null | undefined>,
 
 		/** The fractional format of the price or EVS when the price evens. */

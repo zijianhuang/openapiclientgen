@@ -54,16 +54,25 @@ export namespace MyNS {
 		/** ID of the device. */
 		deviceId?: string | null;
 
-		/** Distance from the coordinate to the closest border of the geofence. Positive means the coordinate is outside of the geofence. If the coordinate is outside of the geofence, but more than the value of searchBuffer away from the closest geofence border, then the value is 999. Negative means the coordinate is inside of the geofence. If the coordinate is inside the polygon, but more than the value of searchBuffer away from the closest geofencing border,then the value is -999. A value of 999 means that there is great confidence the coordinate is well outside the geofence. A value of -999 means that there is great confidence the coordinate is well within the geofence. */
+		/**
+		 * Distance from the coordinate to the closest border of the geofence. Positive means the coordinate is outside of the geofence. If the coordinate is outside of the geofence, but more than the value of searchBuffer away from the closest geofence border, then the value is 999. Negative means the coordinate is inside of the geofence. If the coordinate is inside the polygon, but more than the value of searchBuffer away from the closest geofencing border,then the value is -999. A value of 999 means that there is great confidence the coordinate is well outside the geofence. A value of -999 means that there is great confidence the coordinate is well within the geofence.
+		 * Type: double
+		 */
 		distance?: number | null;
 
 		/** The unique ID for the geofence geometry. */
 		geometryId?: string | null;
 
-		/** Latitude of the nearest point of the geometry. */
+		/**
+		 * Latitude of the nearest point of the geometry.
+		 * Type: double
+		 */
 		nearestLat?: number | null;
 
-		/** Longitude of the nearest point of the geometry. */
+		/**
+		 * Longitude of the nearest point of the geometry.
+		 * Type: double
+		 */
 		nearestLon?: number | null;
 
 		/** The unique id returned from user upload service when uploading a geofence. Will not be included in geofencing post API. */
@@ -76,16 +85,25 @@ export namespace MyNS {
 		/** ID of the device. */
 		deviceId: FormControl<string | null | undefined>,
 
-		/** Distance from the coordinate to the closest border of the geofence. Positive means the coordinate is outside of the geofence. If the coordinate is outside of the geofence, but more than the value of searchBuffer away from the closest geofence border, then the value is 999. Negative means the coordinate is inside of the geofence. If the coordinate is inside the polygon, but more than the value of searchBuffer away from the closest geofencing border,then the value is -999. A value of 999 means that there is great confidence the coordinate is well outside the geofence. A value of -999 means that there is great confidence the coordinate is well within the geofence. */
+		/**
+		 * Distance from the coordinate to the closest border of the geofence. Positive means the coordinate is outside of the geofence. If the coordinate is outside of the geofence, but more than the value of searchBuffer away from the closest geofence border, then the value is 999. Negative means the coordinate is inside of the geofence. If the coordinate is inside the polygon, but more than the value of searchBuffer away from the closest geofencing border,then the value is -999. A value of 999 means that there is great confidence the coordinate is well outside the geofence. A value of -999 means that there is great confidence the coordinate is well within the geofence.
+		 * Type: double
+		 */
 		distance: FormControl<number | null | undefined>,
 
 		/** The unique ID for the geofence geometry. */
 		geometryId: FormControl<string | null | undefined>,
 
-		/** Latitude of the nearest point of the geometry. */
+		/**
+		 * Latitude of the nearest point of the geometry.
+		 * Type: double
+		 */
 		nearestLat: FormControl<number | null | undefined>,
 
-		/** Longitude of the nearest point of the geometry. */
+		/**
+		 * Longitude of the nearest point of the geometry.
+		 * Type: double
+		 */
 		nearestLon: FormControl<number | null | undefined>,
 
 		/** The unique id returned from user upload service when uploading a geofence. Will not be included in geofencing post API. */

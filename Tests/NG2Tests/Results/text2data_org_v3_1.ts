@@ -5,10 +5,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Category {
 		CategoryName?: string | null;
+
+		/** Type: double */
 		Score?: number | null;
 	}
 	export interface CategoryFormProperties {
 		CategoryName: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Score: FormControl<number | null | undefined>,
 	}
 	export function CreateCategoryFormGroup() {
@@ -25,6 +29,8 @@ export namespace MyNS {
 		IsTwitterContent?: boolean | null;
 		PrivateKey?: string | null;
 		Secret?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SerializeFormat?: number | null;
 		UserCategoryModelName?: string | null;
 	}
@@ -34,6 +40,8 @@ export namespace MyNS {
 		IsTwitterContent: FormControl<boolean | null | undefined>,
 		PrivateKey: FormControl<string | null | undefined>,
 		Secret: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SerializeFormat: FormControl<number | null | undefined>,
 		UserCategoryModelName: FormControl<string | null | undefined>,
 	}
@@ -58,23 +66,39 @@ export namespace MyNS {
 		DetectedLanguage?: string | null;
 		DocSentimentPolarity?: string | null;
 		DocSentimentResultString?: string | null;
+
+		/** Type: double */
 		DocSentimentValue?: number | null;
 		Entities?: Array<SentencePart>;
 		ErrorMessage?: string | null;
 		Keywords?: Array<SentencePart>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NegativePhraseCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NeutralPhraseCount?: number | null;
 		PartsOfSpeech?: Array<PartOfSpeech>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PositivePhraseCount?: number | null;
 		ResultTextHtml?: string | null;
 		SlangWords?: Array<SlangWord>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Status?: number | null;
 		Subjectivity?: string | null;
 		Summarization?: string | null;
 		SwearWords?: Array<SlangWord>;
 		Themes?: Array<SentencePart>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TransactionCurrentDay?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TransactionDailyLimit?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TransactionTotalCreditsLeft?: number | null;
 		TransactionUseByDate?: Date | null;
 		UserCategories?: Array<Category>;
@@ -84,17 +108,33 @@ export namespace MyNS {
 		DetectedLanguage: FormControl<string | null | undefined>,
 		DocSentimentPolarity: FormControl<string | null | undefined>,
 		DocSentimentResultString: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DocSentimentValue: FormControl<number | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NegativePhraseCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NeutralPhraseCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PositivePhraseCount: FormControl<number | null | undefined>,
 		ResultTextHtml: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Status: FormControl<number | null | undefined>,
 		Subjectivity: FormControl<string | null | undefined>,
 		Summarization: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TransactionCurrentDay: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TransactionDailyLimit: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TransactionTotalCreditsLeft: FormControl<number | null | undefined>,
 		TransactionUseByDate: FormControl<Date | null | undefined>,
 	}
@@ -123,21 +163,29 @@ export namespace MyNS {
 
 	export interface SentencePart {
 		KeywordType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Mentions?: number | null;
 		SentencePartType?: string | null;
 		SentenceText?: string | null;
 		SentimentPolarity?: string | null;
 		SentimentResult?: string | null;
+
+		/** Type: double */
 		SentimentValue?: number | null;
 		Text?: string | null;
 	}
 	export interface SentencePartFormProperties {
 		KeywordType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Mentions: FormControl<number | null | undefined>,
 		SentencePartType: FormControl<string | null | undefined>,
 		SentenceText: FormControl<string | null | undefined>,
 		SentimentPolarity: FormControl<string | null | undefined>,
 		SentimentResult: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		SentimentValue: FormControl<number | null | undefined>,
 		Text: FormControl<string | null | undefined>,
 	}
@@ -156,18 +204,30 @@ export namespace MyNS {
 	}
 
 	export interface Sentence {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Relevance?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SentenceNumber?: number | null;
 		SentimentPolarity?: string | null;
 		SentimentResultString?: string | null;
+
+		/** Type: double */
 		SentimentValue?: number | null;
 		Text?: string | null;
 	}
 	export interface SentenceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Relevance: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SentenceNumber: FormControl<number | null | undefined>,
 		SentimentPolarity: FormControl<string | null | undefined>,
 		SentimentResultString: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		SentimentValue: FormControl<number | null | undefined>,
 		Text: FormControl<string | null | undefined>,
 	}
@@ -188,6 +248,8 @@ export namespace MyNS {
 		Object?: string | null;
 		ObjectSentimentPolarity?: string | null;
 		ObjectSentimentResultString?: string | null;
+
+		/** Type: double */
 		ObjectSentimentValue?: number | null;
 		Subject?: string | null;
 		Text?: string | null;
@@ -197,6 +259,8 @@ export namespace MyNS {
 		Object: FormControl<string | null | undefined>,
 		ObjectSentimentPolarity: FormControl<string | null | undefined>,
 		ObjectSentimentResultString: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ObjectSentimentValue: FormControl<number | null | undefined>,
 		Subject: FormControl<string | null | undefined>,
 		Text: FormControl<string | null | undefined>,

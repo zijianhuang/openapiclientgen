@@ -88,7 +88,10 @@ export namespace MyNS {
 		/** The current provisioning state. */
 		provisioningState?: ExpressRouteConnectionPropertiesProvisioningState | null;
 
-		/** The routing weight associated to the connection. */
+		/**
+		 * The routing weight associated to the connection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		routingWeight?: number | null;
 	}
 
@@ -101,7 +104,10 @@ export namespace MyNS {
 		/** The current provisioning state. */
 		provisioningState: FormControl<ExpressRouteConnectionPropertiesProvisioningState | null | undefined>,
 
-		/** The routing weight associated to the connection. */
+		/**
+		 * The routing weight associated to the connection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		routingWeight: FormControl<number | null | undefined>,
 	}
 	export function CreateExpressRouteConnectionPropertiesFormGroup() {

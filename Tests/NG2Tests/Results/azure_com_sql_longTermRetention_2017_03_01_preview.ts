@@ -27,7 +27,10 @@ export namespace MyNS {
 		/** The monthly retention policy for an LTR backup in an ISO 8601 format. */
 		monthlyRetention?: string | null;
 
-		/** The week of year to take the yearly backup in an ISO 8601 format. */
+		/**
+		 * The week of year to take the yearly backup in an ISO 8601 format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weekOfYear?: number | null;
 
 		/** The weekly retention policy for an LTR backup in an ISO 8601 format. */
@@ -43,7 +46,10 @@ export namespace MyNS {
 		/** The monthly retention policy for an LTR backup in an ISO 8601 format. */
 		monthlyRetention: FormControl<string | null | undefined>,
 
-		/** The week of year to take the yearly backup in an ISO 8601 format. */
+		/**
+		 * The week of year to take the yearly backup in an ISO 8601 format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weekOfYear: FormControl<number | null | undefined>,
 
 		/** The weekly retention policy for an LTR backup in an ISO 8601 format. */

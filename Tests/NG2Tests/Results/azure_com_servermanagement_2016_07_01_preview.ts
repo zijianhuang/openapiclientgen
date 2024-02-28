@@ -32,6 +32,8 @@ export namespace MyNS {
 
 	/** Error message. */
 	export interface Error {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		fields?: string | null;
 		message?: string | null;
@@ -39,6 +41,8 @@ export namespace MyNS {
 
 	/** Error message. */
 	export interface ErrorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		fields: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -211,7 +215,10 @@ export namespace MyNS {
 
 	export interface GatewayResourceProperties {
 
-		/** Number of active messages. */
+		/**
+		 * Number of active messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeMessageCount?: number | null;
 
 		/** UTC date and time when gateway was first added to management service. */
@@ -243,7 +250,10 @@ export namespace MyNS {
 	}
 	export interface GatewayResourcePropertiesFormProperties {
 
-		/** Number of active messages. */
+		/**
+		 * Number of active messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeMessageCount: FormControl<number | null | undefined>,
 
 		/** UTC date and time when gateway was first added to management service. */
@@ -289,13 +299,19 @@ export namespace MyNS {
 	/** Expanded gateway status information. */
 	export interface GatewayStatus {
 
-		/** Active message count. */
+		/**
+		 * Active message count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeMessageCount?: number | null;
 
 		/** Status of the allowGatewayGroupPolicy setting. */
 		allowGatewayGroupPolicyStatus?: boolean | null;
 
-		/** The available memory on the gateway host machine in megabytes. */
+		/**
+		 * The available memory on the gateway host machine in megabytes.
+		 * Type: double
+		 */
 		availableMemoryMByte?: number | null;
 
 		/** Thumbprint of the encryption certificate. */
@@ -320,7 +336,10 @@ export namespace MyNS {
 		/** The version of the gateway that is installed on the system. */
 		gatewayVersion?: string | null;
 
-		/** The working set size of the gateway process in megabytes. */
+		/**
+		 * The working set size of the gateway process in megabytes.
+		 * Type: double
+		 */
 		gatewayWorkingSetMByte?: number | null;
 
 		/** The group policy error. */
@@ -332,7 +351,10 @@ export namespace MyNS {
 		/** Latest published version of the gateway install MSI. */
 		latestPublishedMsiVersion?: string | null;
 
-		/** Number of logical processors in the gateway system. */
+		/**
+		 * Number of logical processors in the gateway system.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logicalProcessorCount?: number | null;
 
 		/** The computer name of the gateway system. */
@@ -353,20 +375,29 @@ export namespace MyNS {
 		/** UTC date and time when gateway status was last updated. */
 		statusUpdated?: Date | null;
 
-		/** CPU Utilization of the whole system. */
+		/**
+		 * CPU Utilization of the whole system.
+		 * Type: double
+		 */
 		totalCpuUtilizationPercent?: number | null;
 	}
 
 	/** Expanded gateway status information. */
 	export interface GatewayStatusFormProperties {
 
-		/** Active message count. */
+		/**
+		 * Active message count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeMessageCount: FormControl<number | null | undefined>,
 
 		/** Status of the allowGatewayGroupPolicy setting. */
 		allowGatewayGroupPolicyStatus: FormControl<boolean | null | undefined>,
 
-		/** The available memory on the gateway host machine in megabytes. */
+		/**
+		 * The available memory on the gateway host machine in megabytes.
+		 * Type: double
+		 */
 		availableMemoryMByte: FormControl<number | null | undefined>,
 
 		/** Thumbprint of the encryption certificate. */
@@ -388,7 +419,10 @@ export namespace MyNS {
 		/** The version of the gateway that is installed on the system. */
 		gatewayVersion: FormControl<string | null | undefined>,
 
-		/** The working set size of the gateway process in megabytes. */
+		/**
+		 * The working set size of the gateway process in megabytes.
+		 * Type: double
+		 */
 		gatewayWorkingSetMByte: FormControl<number | null | undefined>,
 
 		/** The group policy error. */
@@ -400,7 +434,10 @@ export namespace MyNS {
 		/** Latest published version of the gateway install MSI. */
 		latestPublishedMsiVersion: FormControl<string | null | undefined>,
 
-		/** Number of logical processors in the gateway system. */
+		/**
+		 * Number of logical processors in the gateway system.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logicalProcessorCount: FormControl<number | null | undefined>,
 
 		/** The computer name of the gateway system. */
@@ -418,7 +455,10 @@ export namespace MyNS {
 		/** UTC date and time when gateway status was last updated. */
 		statusUpdated: FormControl<Date | null | undefined>,
 
-		/** CPU Utilization of the whole system. */
+		/**
+		 * CPU Utilization of the whole system.
+		 * Type: double
+		 */
 		totalCpuUtilizationPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGatewayStatusFormGroup() {
@@ -671,19 +711,28 @@ export namespace MyNS {
 		/** Collection of PromptFieldDescription objects that contains the user input. */
 		descriptions?: Array<PromptFieldDescription>;
 
-		/** The exit code from a executable that was called from PowerShell. */
+		/**
+		 * The exit code from a executable that was called from PowerShell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** The HTML color string representing the foreground color. */
 		foregroundColor?: string | null;
 
-		/** ID of the prompt message. */
+		/**
+		 * ID of the prompt message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Text of the prompt. */
 		message?: string | null;
 
-		/** The type of message. */
+		/**
+		 * The type of message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageType?: number | null;
 
 		/** The interactive prompt message. */
@@ -702,19 +751,28 @@ export namespace MyNS {
 		/** Text that precedes the prompt. */
 		caption: FormControl<string | null | undefined>,
 
-		/** The exit code from a executable that was called from PowerShell. */
+		/**
+		 * The exit code from a executable that was called from PowerShell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 
 		/** The HTML color string representing the foreground color. */
 		foregroundColor: FormControl<string | null | undefined>,
 
-		/** ID of the prompt message. */
+		/**
+		 * ID of the prompt message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Text of the prompt. */
 		message: FormControl<string | null | undefined>,
 
-		/** The type of message. */
+		/**
+		 * The type of message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messageType: FormControl<number | null | undefined>,
 
 		/** The interactive prompt message. */
@@ -1163,44 +1221,80 @@ export namespace MyNS {
 	/** A multipart-numeric version number. */
 	export interface Version {
 
-		/** The third number of the version. */
+		/**
+		 * The third number of the version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		build?: number | null;
 
-		/** The leftmost number of the version. */
+		/**
+		 * The leftmost number of the version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major?: number | null;
 
-		/** The MSW of the fourth part. */
+		/**
+		 * The MSW of the fourth part.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		majorRevision?: number | null;
 
-		/** The second leftmost number of the version. */
+		/**
+		 * The second leftmost number of the version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor?: number | null;
 
-		/** The LSW of the fourth part. */
+		/**
+		 * The LSW of the fourth part.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minorRevision?: number | null;
 
-		/** The fourth number of the version. */
+		/**
+		 * The fourth number of the version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 	}
 
 	/** A multipart-numeric version number. */
 	export interface VersionFormProperties {
 
-		/** The third number of the version. */
+		/**
+		 * The third number of the version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		build: FormControl<number | null | undefined>,
 
-		/** The leftmost number of the version. */
+		/**
+		 * The leftmost number of the version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		major: FormControl<number | null | undefined>,
 
-		/** The MSW of the fourth part. */
+		/**
+		 * The MSW of the fourth part.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		majorRevision: FormControl<number | null | undefined>,
 
-		/** The second leftmost number of the version. */
+		/**
+		 * The second leftmost number of the version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor: FormControl<number | null | undefined>,
 
-		/** The LSW of the fourth part. */
+		/**
+		 * The LSW of the fourth part.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minorRevision: FormControl<number | null | undefined>,
 
-		/** The fourth number of the version. */
+		/**
+		 * The fourth number of the version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 	}
 	export function CreateVersionFormGroup() {

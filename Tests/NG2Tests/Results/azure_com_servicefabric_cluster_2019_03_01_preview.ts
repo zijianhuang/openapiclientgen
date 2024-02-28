@@ -927,6 +927,7 @@ export namespace MyNS {
 		/**
 		 * The TCP cluster management endpoint port.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		clientConnectionEndpointPort: number;
 
@@ -944,6 +945,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP cluster management endpoint port.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		httpGatewayEndpointPort: number;
 
@@ -962,7 +964,10 @@ export namespace MyNS {
 		/** The placement tags applied to nodes in the node type, which can be used to indicate where certain services (workload) should run. */
 		placementProperties?: {[id: string]: string };
 
-		/** The endpoint used by reverse proxy. */
+		/**
+		 * The endpoint used by reverse proxy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reverseProxyEndpointPort?: number | null;
 
 		/**
@@ -983,6 +988,7 @@ export namespace MyNS {
 		/**
 		 * The TCP cluster management endpoint port.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		clientConnectionEndpointPort: FormControl<number | null | undefined>,
 
@@ -997,6 +1003,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP cluster management endpoint port.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		httpGatewayEndpointPort: FormControl<number | null | undefined>,
 
@@ -1015,7 +1022,10 @@ export namespace MyNS {
 		/** The placement tags applied to nodes in the node type, which can be used to indicate where certain services (workload) should run. */
 		placementProperties: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** The endpoint used by reverse proxy. */
+		/**
+		 * The endpoint used by reverse proxy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reverseProxyEndpointPort: FormControl<number | null | undefined>,
 
 		/**
@@ -1468,12 +1478,14 @@ export namespace MyNS {
 		/**
 		 * End port of a range of ports
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		endPort: number;
 
 		/**
 		 * Starting port of a range of ports
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startPort: number;
 	}
@@ -1484,12 +1496,14 @@ export namespace MyNS {
 		/**
 		 * End port of a range of ports
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		endPort: FormControl<number | null | undefined>,
 
 		/**
 		 * Starting port of a range of ports
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startPort: FormControl<number | null | undefined>,
 	}

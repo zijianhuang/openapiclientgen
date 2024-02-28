@@ -117,7 +117,10 @@ export namespace MyNS {
 		/** The encrypted key. */
 		encryptedKey?: string | null;
 
-		/** The next child resource consistency job limit. */
+		/**
+		 * The next child resource consistency job limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChildResourceConsistencyJobLimit?: number | null;
 
 		/** The subscription identifier. */
@@ -133,7 +136,10 @@ export namespace MyNS {
 		/** The encrypted key. */
 		encryptedKey: FormControl<string | null | undefined>,
 
-		/** The next child resource consistency job limit. */
+		/**
+		 * The next child resource consistency job limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxChildResourceConsistencyJobLimit: FormControl<number | null | undefined>,
 
 		/** The subscription identifier. */
@@ -204,7 +210,10 @@ export namespace MyNS {
 		/** The name. */
 		name?: string | null;
 
-		/** The obsolete bundles bitmask. */
+		/**
+		 * The obsolete bundles bitmask.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		obsoleteBundlesBitmask?: number | null;
 
 		/** The extension properties definition. */
@@ -223,7 +232,10 @@ export namespace MyNS {
 		/** The name. */
 		name: FormControl<string | null | undefined>,
 
-		/** The obsolete bundles bitmask. */
+		/**
+		 * The obsolete bundles bitmask.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		obsoleteBundlesBitmask: FormControl<number | null | undefined>,
 
 		/** The Uri */

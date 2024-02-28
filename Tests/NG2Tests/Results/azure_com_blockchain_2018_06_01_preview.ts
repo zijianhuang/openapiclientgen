@@ -215,14 +215,20 @@ export namespace MyNS {
 	/** Payload of the blockchain member nodes Sku for a blockchain member. */
 	export interface BlockchainMemberNodesSku {
 
-		/** Gets or sets the nodes capacity. */
+		/**
+		 * Gets or sets the nodes capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 	}
 
 	/** Payload of the blockchain member nodes Sku for a blockchain member. */
 	export interface BlockchainMemberNodesSkuFormProperties {
 
-		/** Gets or sets the nodes capacity. */
+		/**
+		 * Gets or sets the nodes capacity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 	}
 	export function CreateBlockchainMemberNodesSkuFormGroup() {

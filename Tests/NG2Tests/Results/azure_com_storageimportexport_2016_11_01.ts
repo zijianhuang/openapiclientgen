@@ -38,8 +38,11 @@ export namespace MyNS {
 		/** The BitLocker key used to encrypt the drive. */
 		bitLockerKey?: string | null;
 
-		/** Bytes successfully transferred for the drive. */
-		bytesSucceeded?: number | null;
+		/**
+		 * Bytes successfully transferred for the drive.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bytesSucceeded?: string | null;
 
 		/** Detailed status about the data transfer process. This field is not returned in the response until the drive is in the Transferring state. */
 		copyStatus?: string | null;
@@ -62,7 +65,10 @@ export namespace MyNS {
 		/** A URI that points to the blob containing the drive manifest file. */
 		manifestUri?: string | null;
 
-		/** Percentage completed for the drive. */
+		/**
+		 * Percentage completed for the drive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete?: number | null;
 
 		/** The drive's current state. */
@@ -78,8 +84,11 @@ export namespace MyNS {
 		/** The BitLocker key used to encrypt the drive. */
 		bitLockerKey: FormControl<string | null | undefined>,
 
-		/** Bytes successfully transferred for the drive. */
-		bytesSucceeded: FormControl<number | null | undefined>,
+		/**
+		 * Bytes successfully transferred for the drive.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bytesSucceeded: FormControl<string | null | undefined>,
 
 		/** Detailed status about the data transfer process. This field is not returned in the response until the drive is in the Transferring state. */
 		copyStatus: FormControl<string | null | undefined>,
@@ -102,7 +111,10 @@ export namespace MyNS {
 		/** A URI that points to the blob containing the drive manifest file. */
 		manifestUri: FormControl<string | null | undefined>,
 
-		/** Percentage completed for the drive. */
+		/**
+		 * Percentage completed for the drive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** The drive's current state. */
@@ -114,7 +126,7 @@ export namespace MyNS {
 	export function CreateDriveStatusFormGroup() {
 		return new FormGroup<DriveStatusFormProperties>({
 			bitLockerKey: new FormControl<string | null | undefined>(undefined),
-			bytesSucceeded: new FormControl<number | null | undefined>(undefined),
+			bytesSucceeded: new FormControl<string | null | undefined>(undefined),
 			copyStatus: new FormControl<string | null | undefined>(undefined),
 			driveHeaderHash: new FormControl<string | null | undefined>(undefined),
 			driveId: new FormControl<string | null | undefined>(undefined),
@@ -228,7 +240,10 @@ export namespace MyNS {
 		/** Default value is Error. Indicates whether error logging or verbose logging will be enabled. */
 		logLevel?: string | null;
 
-		/** Overall percentage completed for the job. */
+		/**
+		 * Overall percentage completed for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete?: number | null;
 
 		/** Specifies the provisioning state of the job. */
@@ -274,7 +289,10 @@ export namespace MyNS {
 		/** Default value is Error. Indicates whether error logging or verbose logging will be enabled. */
 		logLevel: FormControl<string | null | undefined>,
 
-		/** Overall percentage completed for the job. */
+		/**
+		 * Overall percentage completed for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentComplete: FormControl<number | null | undefined>,
 
 		/** Specifies the provisioning state of the job. */
@@ -507,6 +525,7 @@ export namespace MyNS {
 		/**
 		 * The number of drives included in the package.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		driveCount: number;
 
@@ -535,6 +554,7 @@ export namespace MyNS {
 		/**
 		 * The number of drives included in the package.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		driveCount: FormControl<number | null | undefined>,
 

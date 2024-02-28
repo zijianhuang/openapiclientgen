@@ -252,19 +252,31 @@ export namespace MyNS {
 
 	export interface JobCollectionQuota {
 
-		/** Gets or set the maximum job count. */
+		/**
+		 * Gets or set the maximum job count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxJobCount?: number | null;
 
-		/** Gets or sets the maximum job occurrence. */
+		/**
+		 * Gets or sets the maximum job occurrence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxJobOccurrence?: number | null;
 		maxRecurrence?: JobMaxRecurrence;
 	}
 	export interface JobCollectionQuotaFormProperties {
 
-		/** Gets or set the maximum job count. */
+		/**
+		 * Gets or set the maximum job count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxJobCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the maximum job occurrence. */
+		/**
+		 * Gets or sets the maximum job occurrence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxJobOccurrence: FormControl<number | null | undefined>,
 	}
 	export function CreateJobCollectionQuotaFormGroup() {
@@ -379,10 +391,16 @@ export namespace MyNS {
 		/** Gets the message for the job history. */
 		message?: string | null;
 
-		/** Gets the repeat count for the job. */
+		/**
+		 * Gets the repeat count for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeatCount?: number | null;
 
-		/** Gets the retry count for job. */
+		/**
+		 * Gets the retry count for job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retryCount?: number | null;
 
 		/** Gets the start time for this job. */
@@ -405,10 +423,16 @@ export namespace MyNS {
 		/** Gets the message for the job history. */
 		message: FormControl<string | null | undefined>,
 
-		/** Gets the repeat count for the job. */
+		/**
+		 * Gets the repeat count for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeatCount: FormControl<number | null | undefined>,
 
-		/** Gets the retry count for job. */
+		/**
+		 * Gets the retry count for job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retryCount: FormControl<number | null | undefined>,
 
 		/** Gets the start time for this job. */
@@ -495,7 +519,10 @@ export namespace MyNS {
 		/** Gets or sets the frequency of recurrence (second, minute, hour, day, week, month). */
 		frequency?: JobMaxRecurrenceFrequency | null;
 
-		/** Gets or sets the interval between retries. */
+		/**
+		 * Gets or sets the interval between retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval?: number | null;
 	}
 	export interface JobMaxRecurrenceFormProperties {
@@ -503,7 +530,10 @@ export namespace MyNS {
 		/** Gets or sets the frequency of recurrence (second, minute, hour, day, week, month). */
 		frequency: FormControl<JobMaxRecurrenceFrequency | null | undefined>,
 
-		/** Gets or sets the interval between retries. */
+		/**
+		 * Gets or sets the interval between retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: FormControl<number | null | undefined>,
 	}
 	export function CreateJobMaxRecurrenceFormGroup() {
@@ -547,7 +577,10 @@ export namespace MyNS {
 
 	export interface JobRecurrence {
 
-		/** Gets or sets the maximum number of times that the job should run. */
+		/**
+		 * Gets or sets the maximum number of times that the job should run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Gets or sets the time at which the job will complete. */
@@ -556,13 +589,19 @@ export namespace MyNS {
 		/** Gets or sets the frequency of recurrence (second, minute, hour, day, week, month). */
 		frequency?: JobMaxRecurrenceFrequency | null;
 
-		/** Gets or sets the interval between retries. */
+		/**
+		 * Gets or sets the interval between retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval?: number | null;
 		schedule?: JobRecurrenceSchedule;
 	}
 	export interface JobRecurrenceFormProperties {
 
-		/** Gets or sets the maximum number of times that the job should run. */
+		/**
+		 * Gets or sets the maximum number of times that the job should run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Gets or sets the time at which the job will complete. */
@@ -571,7 +610,10 @@ export namespace MyNS {
 		/** Gets or sets the frequency of recurrence (second, minute, hour, day, week, month). */
 		frequency: FormControl<JobMaxRecurrenceFrequency | null | undefined>,
 
-		/** Gets or sets the interval between retries. */
+		/**
+		 * Gets or sets the interval between retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interval: FormControl<number | null | undefined>,
 	}
 	export function CreateJobRecurrenceFormGroup() {
@@ -611,7 +653,10 @@ export namespace MyNS {
 
 	export interface JobRecurrenceScheduleMonthlyOccurrence {
 
-		/** Gets or sets the occurrence. Must be between -5 and 5. */
+		/**
+		 * Gets or sets the occurrence. Must be between -5 and 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Occurrence?: number | null;
 
 		/** Gets or sets the day. Must be one of monday, tuesday, wednesday, thursday, friday, saturday, sunday. */
@@ -619,7 +664,10 @@ export namespace MyNS {
 	}
 	export interface JobRecurrenceScheduleMonthlyOccurrenceFormProperties {
 
-		/** Gets or sets the occurrence. Must be between -5 and 5. */
+		/**
+		 * Gets or sets the occurrence. Must be between -5 and 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Occurrence: FormControl<number | null | undefined>,
 
 		/** Gets or sets the day. Must be one of monday, tuesday, wednesday, thursday, friday, saturday, sunday. */
@@ -658,13 +706,22 @@ export namespace MyNS {
 
 	export interface JobStatus {
 
-		/** Gets the number of times this job has executed. */
+		/**
+		 * Gets the number of times this job has executed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executionCount?: number | null;
 
-		/** Gets the number of times this job has failed. */
+		/**
+		 * Gets the number of times this job has failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureCount?: number | null;
 
-		/** Gets the number of faulted occurrences (occurrences that were retried and failed as many times as the retry policy states). */
+		/**
+		 * Gets the number of faulted occurrences (occurrences that were retried and failed as many times as the retry policy states).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		faultedCount?: number | null;
 
 		/** Gets the time the last occurrence executed in ISO-8601 format.  Could be empty if job has not run yet. */
@@ -675,13 +732,22 @@ export namespace MyNS {
 	}
 	export interface JobStatusFormProperties {
 
-		/** Gets the number of times this job has executed. */
+		/**
+		 * Gets the number of times this job has executed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executionCount: FormControl<number | null | undefined>,
 
-		/** Gets the number of times this job has failed. */
+		/**
+		 * Gets the number of times this job has failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureCount: FormControl<number | null | undefined>,
 
-		/** Gets the number of faulted occurrences (occurrences that were retried and failed as many times as the retry policy states). */
+		/**
+		 * Gets the number of faulted occurrences (occurrences that were retried and failed as many times as the retry policy states).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		faultedCount: FormControl<number | null | undefined>,
 
 		/** Gets the time the last occurrence executed in ISO-8601 format.  Could be empty if job has not run yet. */
@@ -746,7 +812,10 @@ export namespace MyNS {
 
 	export interface RetryPolicy {
 
-		/** Gets or sets the number of times a retry should be attempted. */
+		/**
+		 * Gets or sets the number of times a retry should be attempted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retryCount?: number | null;
 
 		/** Gets or sets the retry interval between retries, specify duration in ISO 8601 format. */
@@ -757,7 +826,10 @@ export namespace MyNS {
 	}
 	export interface RetryPolicyFormProperties {
 
-		/** Gets or sets the number of times a retry should be attempted. */
+		/**
+		 * Gets or sets the number of times a retry should be attempted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retryCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the retry interval between retries, specify duration in ISO 8601 format. */

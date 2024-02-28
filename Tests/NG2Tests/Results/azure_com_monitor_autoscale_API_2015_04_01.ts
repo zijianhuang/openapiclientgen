@@ -343,6 +343,7 @@ export namespace MyNS {
 		/**
 		 * the threshold of the metric that triggers the scale action.
 		 * Required
+		 * Type: double
 		 */
 		threshold: number;
 
@@ -395,6 +396,7 @@ export namespace MyNS {
 		/**
 		 * the threshold of the metric that triggers the scale action.
 		 * Required
+		 * Type: double
 		 */
 		threshold: FormControl<number | null | undefined>,
 

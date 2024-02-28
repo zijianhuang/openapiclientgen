@@ -62,20 +62,32 @@ export namespace MyNS {
 	/** The capacity information for a virtual machine. */
 	export interface InfraRoleInstanceSize {
 
-		/** The number of cores assigned to the virtual machine. */
+		/**
+		 * The number of cores assigned to the virtual machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cores?: number | null;
 
-		/** The amount of memory, in GB, currently assigned to the virtual machine. */
+		/**
+		 * The amount of memory, in GB, currently assigned to the virtual machine.
+		 * Type: float
+		 */
 		memoryGb?: number | null;
 	}
 
 	/** The capacity information for a virtual machine. */
 	export interface InfraRoleInstanceSizeFormProperties {
 
-		/** The number of cores assigned to the virtual machine. */
+		/**
+		 * The number of cores assigned to the virtual machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cores: FormControl<number | null | undefined>,
 
-		/** The amount of memory, in GB, currently assigned to the virtual machine. */
+		/**
+		 * The amount of memory, in GB, currently assigned to the virtual machine.
+		 * Type: float
+		 */
 		memoryGb: FormControl<number | null | undefined>,
 	}
 	export function CreateInfraRoleInstanceSizeFormGroup() {

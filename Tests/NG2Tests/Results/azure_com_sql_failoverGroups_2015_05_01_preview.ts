@@ -156,7 +156,10 @@ export namespace MyNS {
 		 */
 		failoverPolicy: FailoverGroupReadWriteEndpointFailoverPolicy;
 
-		/** Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required. */
+		/**
+		 * Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failoverWithDataLossGracePeriodMinutes?: number | null;
 	}
 
@@ -169,7 +172,10 @@ export namespace MyNS {
 		 */
 		failoverPolicy: FormControl<FailoverGroupReadWriteEndpointFailoverPolicy | null | undefined>,
 
-		/** Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required. */
+		/**
+		 * Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failoverWithDataLossGracePeriodMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateFailoverGroupReadWriteEndpointFormGroup() {

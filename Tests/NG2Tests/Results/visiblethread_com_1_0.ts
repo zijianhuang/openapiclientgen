@@ -4,12 +4,20 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AdverbsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
 		text?: string | null;
 	}
 	export interface AdverbsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 	}
@@ -37,21 +45,49 @@ export namespace MyNS {
 	}
 
 	export interface Stats {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		avgSentenceLength?: number | null;
+
+		/** Type: float */
 		fleschKincaidGradeLevel?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fleschReadingLevel?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		longSentenceCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		passiveSentenceCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sentenceCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wordCount?: number | null;
 	}
 	export interface StatsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		avgSentenceLength: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		fleschKincaidGradeLevel: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		fleschReadingLevel: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		longSentenceCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		passiveSentenceCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sentenceCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateStatsFormGroup() {
@@ -68,16 +104,20 @@ export namespace MyNS {
 	}
 
 	export interface DocumentListSummary {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 	}
 	export interface DocumentListSummaryFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentListSummaryFormGroup() {
 		return new FormGroup<DocumentListSummaryFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -86,7 +126,9 @@ export namespace MyNS {
 	export interface DocumentResponseDetailed {
 		completed?: Date | null;
 		eta?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		DocumentResponseDetailedParagraphs?: Array<DocumentResponseDetailedParagraphs>;
 		scanSettings?: DocumentResponseDetailedScanSettings;
 		started?: Date | null;
@@ -96,7 +138,9 @@ export namespace MyNS {
 	export interface DocumentResponseDetailedFormProperties {
 		completed: FormControl<Date | null | undefined>,
 		eta: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		started: FormControl<Date | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -104,7 +148,7 @@ export namespace MyNS {
 		return new FormGroup<DocumentResponseDetailedFormProperties>({
 			completed: new FormControl<Date | null | undefined>(undefined),
 			eta: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			started: new FormControl<Date | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
 		});
@@ -112,13 +156,21 @@ export namespace MyNS {
 	}
 
 	export interface DocumentResponseDetailedParagraphs {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paragraphCounter?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paragraphIndex?: number | null;
 		stats?: DocumentResponseDetailedParagraphsStats;
 		text?: string | null;
 	}
 	export interface DocumentResponseDetailedParagraphsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paragraphCounter: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paragraphIndex: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 	}
@@ -147,14 +199,22 @@ export namespace MyNS {
 	}
 
 	export interface HiddenVerbsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		noun?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
 		text?: string | null;
 	}
 	export interface HiddenVerbsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		noun: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 	}
@@ -169,13 +229,25 @@ export namespace MyNS {
 	}
 
 	export interface LongSentencesElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wordCount?: number | null;
 	}
 	export interface LongSentencesElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateLongSentencesElementFormGroup() {
@@ -188,14 +260,22 @@ export namespace MyNS {
 	}
 
 	export interface PassivesElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		passivePiece?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
 		verb?: string | null;
 	}
 	export interface PassivesElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		passivePiece: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
 		verb: FormControl<string | null | undefined>,
 	}
@@ -210,13 +290,25 @@ export namespace MyNS {
 	}
 
 	export interface VeryLongSentencesElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wordCount?: number | null;
 	}
 	export interface VeryLongSentencesElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		wordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateVeryLongSentencesElementFormGroup() {
@@ -229,11 +321,19 @@ export namespace MyNS {
 	}
 
 	export interface DocumentResponseDetailedScanSettings {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		longSentenceWordCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		veryLongSentenceWordCount?: number | null;
 	}
 	export interface DocumentResponseDetailedScanSettingsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		longSentenceWordCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		veryLongSentenceWordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentResponseDetailedScanSettingsFormGroup() {
@@ -246,18 +346,22 @@ export namespace MyNS {
 
 	export interface DocumentResponseNotReady {
 		eta?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		started?: Date | null;
 	}
 	export interface DocumentResponseNotReadyFormProperties {
 		eta: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		started: FormControl<Date | null | undefined>,
 	}
 	export function CreateDocumentResponseNotReadyFormGroup() {
 		return new FormGroup<DocumentResponseNotReadyFormProperties>({
 			eta: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			started: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -265,8 +369,11 @@ export namespace MyNS {
 
 	export interface NewDocumentResponse {
 
-		/** Required */
-		docId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		docId: string;
 
 		/** Required */
 		scanSettings: NewDocumentResponseScanSettings;
@@ -276,26 +383,37 @@ export namespace MyNS {
 	}
 	export interface NewDocumentResponseFormProperties {
 
-		/** Required */
-		docId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		docId: FormControl<string | null | undefined>,
 
 		/** Required */
 		task: FormControl<string | null | undefined>,
 	}
 	export function CreateNewDocumentResponseFormGroup() {
 		return new FormGroup<NewDocumentResponseFormProperties>({
-			docId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			docId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			task: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface NewDocumentResponseScanSettings {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		longSentenceWordCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		veryLongSentenceWordCount?: number | null;
 	}
 	export interface NewDocumentResponseScanSettingsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		longSentenceWordCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		veryLongSentenceWordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateNewDocumentResponseScanSettingsFormGroup() {
@@ -328,11 +446,19 @@ export namespace MyNS {
 	}
 
 	export interface NewScanScanSettings {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		longSentenceWordCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		veryLongSentenceWordCount?: number | null;
 	}
 	export interface NewScanScanSettingsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		longSentenceWordCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		veryLongSentenceWordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateNewScanScanSettingsFormGroup() {
@@ -362,8 +488,11 @@ export namespace MyNS {
 
 	export interface NewScanResponse {
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
 		/** Required */
 		title: string;
@@ -373,15 +502,18 @@ export namespace MyNS {
 	}
 	export interface NewScanResponseFormProperties {
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Required */
 		title: FormControl<string | null | undefined>,
 	}
 	export function CreateNewScanResponseFormGroup() {
 		return new FormGroup<NewScanResponseFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -389,23 +521,29 @@ export namespace MyNS {
 
 	export interface NewScanResponseWebUrls {
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
 		/** Required */
 		url: string;
 	}
 	export interface NewScanResponseWebUrlsFormProperties {
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Required */
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateNewScanResponseWebUrlsFormGroup() {
 		return new FormGroup<NewScanResponseWebUrlsFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -443,7 +581,7 @@ export namespace MyNS {
 	}
 	export function CreateWebUrlFormGroup() {
 		return new FormGroup<WebUrlFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -452,21 +590,25 @@ export namespace MyNS {
 	export interface ScanResponseDetailed {
 		completed?: Date | null;
 		eta?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		scan?: ScanDetailed;
 		started?: Date | null;
 	}
 	export interface ScanResponseDetailedFormProperties {
 		completed: FormControl<Date | null | undefined>,
 		eta: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		started: FormControl<Date | null | undefined>,
 	}
 	export function CreateScanResponseDetailedFormGroup() {
 		return new FormGroup<ScanResponseDetailedFormProperties>({
 			completed: new FormControl<Date | null | undefined>(undefined),
 			eta: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			started: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -475,21 +617,25 @@ export namespace MyNS {
 	export interface ScanResponseSummary {
 		completed?: Date | null;
 		eta?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		scan?: ScanSummary;
 		started?: Date | null;
 	}
 	export interface ScanResponseSummaryFormProperties {
 		completed: FormControl<Date | null | undefined>,
 		eta: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		started: FormControl<Date | null | undefined>,
 	}
 	export function CreateScanResponseSummaryFormGroup() {
 		return new FormGroup<ScanResponseSummaryFormProperties>({
 			completed: new FormControl<Date | null | undefined>(undefined),
 			eta: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			started: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -517,23 +663,29 @@ export namespace MyNS {
 
 	export interface WebUrlHeader {
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
 		/** Required */
 		url: string;
 	}
 	export interface WebUrlHeaderFormProperties {
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Required */
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateWebUrlHeaderFormGroup() {
 		return new FormGroup<WebUrlHeaderFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -541,42 +693,58 @@ export namespace MyNS {
 
 	export interface Search {
 
-		/** Required */
-		dictId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dictId: string;
 
-		/** Required */
-		docId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		docId: string;
 	}
 	export interface SearchFormProperties {
 
-		/** Required */
-		dictId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dictId: FormControl<string | null | undefined>,
 
-		/** Required */
-		docId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		docId: FormControl<string | null | undefined>,
 	}
 	export function CreateSearchFormGroup() {
 		return new FormGroup<SearchFormProperties>({
-			dictId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			docId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			dictId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			docId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface WebResponseNotReady {
 		eta?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		started?: Date | null;
 	}
 	export interface WebResponseNotReadyFormProperties {
 		eta: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		started: FormControl<Date | null | undefined>,
 	}
 	export function CreateWebResponseNotReadyFormGroup() {
 		return new FormGroup<WebResponseNotReadyFormProperties>({
 			eta: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			started: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -611,13 +779,21 @@ export namespace MyNS {
 	}
 
 	export interface WebUrlDetailParagraphs {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paragraphCounter?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paragraphIndex?: number | null;
 		stats?: WebUrlDetailParagraphsStats;
 		text?: string | null;
 	}
 	export interface WebUrlDetailParagraphsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paragraphCounter: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paragraphIndex: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 	}
@@ -674,10 +850,10 @@ export namespace MyNS {
 		 * Get data from a previously submitted document
 		 * Get data from a previously submitted document identified by ***docId***
 		 * Get documents/{docId}
-		 * @param {number} docId Id of document to fetch
+		 * @param {string} docId Id of document to fetch
 		 * @return {DocumentResponseDetailed} document response contained readability details for the document
 		 */
-		Documents_docIdGet(docId: number, headersHandler?: () => HttpHeaders): Observable<DocumentResponseDetailed> {
+		Documents_docIdGet(docId: string, headersHandler?: () => HttpHeaders): Observable<DocumentResponseDetailed> {
 			return this.http.get<DocumentResponseDetailed>(this.baseUri + 'documents/' + docId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -706,12 +882,12 @@ export namespace MyNS {
 		 * Gets search results for a particular document/dictionary
 		 * Get detailed results for a scan/url (readability, long sentence and passive language instances), identified by **scanId** & **urlId**
 		 * Get searches/{docId}/{dictionaryId}
-		 * @param {number} docId Id of document
-		 * @param {number} dictionaryId Id of dictionary
+		 * @param {string} docId Id of document
+		 * @param {string} dictionaryId Id of dictionary
 		 * @param {boolean} matchingOnly Only returning paragraphs containing a match
 		 * @return {void} scan response
 		 */
-		Searches_docId_dictionaryIdGetByMatchingOnly(docId: number, dictionaryId: number, matchingOnly: boolean, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		Searches_docId_dictionaryIdGetByMatchingOnly(docId: string, dictionaryId: string, matchingOnly: boolean, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'searches/' + docId + '/' + dictionaryId + '?matchingOnly=' + matchingOnly, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -742,10 +918,10 @@ export namespace MyNS {
 		 * Get data from a previously run scan
 		 * Get data from a previously run scan, identified by **scanId**
 		 * Get webscans/{scanId}
-		 * @param {number} scanId Id of scan to fetch
+		 * @param {string} scanId Id of scan to fetch
 		 * @return {ScanResponseDetailed} scan response
 		 */
-		Webscans_scanIdGet(scanId: number, headersHandler?: () => HttpHeaders): Observable<ScanResponseDetailed> {
+		Webscans_scanIdGet(scanId: string, headersHandler?: () => HttpHeaders): Observable<ScanResponseDetailed> {
 			return this.http.get<ScanResponseDetailed>(this.baseUri + 'webscans/' + scanId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -753,11 +929,11 @@ export namespace MyNS {
 		 * Gets data for a particular scan/webUrl
 		 * Get detailed results for a scan/url (readability, long sentence and passive language instances), identified by **scanId** & **urlId**
 		 * Get webscans/{scanId}/webUrls/{urlId}
-		 * @param {number} scanId Id of scan
-		 * @param {number} urlId Id of url to fetch
+		 * @param {string} scanId Id of scan
+		 * @param {string} urlId Id of url to fetch
 		 * @return {WebUrlDetail} scan response
 		 */
-		Webscans_scanIdWebUrls_urlIdGet(scanId: number, urlId: number, headersHandler?: () => HttpHeaders): Observable<WebUrlDetail> {
+		Webscans_scanIdWebUrls_urlIdGet(scanId: string, urlId: string, headersHandler?: () => HttpHeaders): Observable<WebUrlDetail> {
 			return this.http.get<WebUrlDetail>(this.baseUri + 'webscans/' + scanId + '/webUrls/' + urlId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}

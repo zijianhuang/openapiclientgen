@@ -128,16 +128,24 @@ export namespace MyNS {
 	}
 
 	export interface BulkSmsResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		acceptedCount?: number | null;
 		batchId?: string | null;
 		clientBatchId?: string | null;
 		messages?: Array<SmsResponse>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rejectedCount?: number | null;
 	}
 	export interface BulkSmsResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		acceptedCount: FormControl<number | null | undefined>,
 		batchId: FormControl<string | null | undefined>,
 		clientBatchId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rejectedCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBulkSmsResponseFormGroup() {
@@ -187,12 +195,16 @@ export namespace MyNS {
 	}
 
 	export interface ErrorResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		errorId?: string | null;
 		message?: string | null;
 		timestamp?: Date | null;
 	}
 	export interface ErrorResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		errorId: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,

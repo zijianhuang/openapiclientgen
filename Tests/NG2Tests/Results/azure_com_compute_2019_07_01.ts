@@ -308,10 +308,16 @@ export namespace MyNS {
 	/** The instance view of a resource. */
 	export interface AvailabilitySetProperties {
 
-		/** Fault Domain count. */
+		/**
+		 * Fault Domain count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformFaultDomainCount?: number | null;
 
-		/** Update Domain count. */
+		/**
+		 * Update Domain count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformUpdateDomainCount?: number | null;
 		proximityPlacementGroup?: SubResource;
 
@@ -325,10 +331,16 @@ export namespace MyNS {
 	/** The instance view of a resource. */
 	export interface AvailabilitySetPropertiesFormProperties {
 
-		/** Fault Domain count. */
+		/**
+		 * Fault Domain count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformFaultDomainCount: FormControl<number | null | undefined>,
 
-		/** Update Domain count. */
+		/**
+		 * Update Domain count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformUpdateDomainCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAvailabilitySetPropertiesFormGroup() {
@@ -436,14 +448,20 @@ export namespace MyNS {
 	/** Specifies the billing related details of a Azure Spot VM or VMSS. <br><br>Minimum api-version: 2019-03-01. */
 	export interface BillingProfile {
 
-		/** Specifies the maximum price you are willing to pay for a Azure Spot VM/VMSS. This price is in US Dollars. <br><br> This price will be compared with the current Azure Spot price for the VM size. Also, the prices are compared at the time of create/update of Azure Spot VM/VMSS and the operation will only succeed if  the maxPrice is greater than the current Azure Spot price. <br><br> The maxPrice will also be used for evicting a Azure Spot VM/VMSS if the current Azure Spot price goes beyond the maxPrice after creation of VM/VMSS. <br><br> Possible values are: <br><br> - Any decimal value greater than zero. Example: 0.01538 <br><br> -1 – indicates default price to be up-to on-demand. <br><br> You can set the maxPrice to -1 to indicate that the Azure Spot VM/VMSS should not be evicted for price reasons. Also, the default max price is -1 if it is not provided by you. <br><br>Minimum api-version: 2019-03-01. */
+		/**
+		 * Specifies the maximum price you are willing to pay for a Azure Spot VM/VMSS. This price is in US Dollars. <br><br> This price will be compared with the current Azure Spot price for the VM size. Also, the prices are compared at the time of create/update of Azure Spot VM/VMSS and the operation will only succeed if  the maxPrice is greater than the current Azure Spot price. <br><br> The maxPrice will also be used for evicting a Azure Spot VM/VMSS if the current Azure Spot price goes beyond the maxPrice after creation of VM/VMSS. <br><br> Possible values are: <br><br> - Any decimal value greater than zero. Example: 0.01538 <br><br> -1 – indicates default price to be up-to on-demand. <br><br> You can set the maxPrice to -1 to indicate that the Azure Spot VM/VMSS should not be evicted for price reasons. Also, the default max price is -1 if it is not provided by you. <br><br>Minimum api-version: 2019-03-01.
+		 * Type: double
+		 */
 		maxPrice?: number | null;
 	}
 
 	/** Specifies the billing related details of a Azure Spot VM or VMSS. <br><br>Minimum api-version: 2019-03-01. */
 	export interface BillingProfileFormProperties {
 
-		/** Specifies the maximum price you are willing to pay for a Azure Spot VM/VMSS. This price is in US Dollars. <br><br> This price will be compared with the current Azure Spot price for the VM size. Also, the prices are compared at the time of create/update of Azure Spot VM/VMSS and the operation will only succeed if  the maxPrice is greater than the current Azure Spot price. <br><br> The maxPrice will also be used for evicting a Azure Spot VM/VMSS if the current Azure Spot price goes beyond the maxPrice after creation of VM/VMSS. <br><br> Possible values are: <br><br> - Any decimal value greater than zero. Example: 0.01538 <br><br> -1 – indicates default price to be up-to on-demand. <br><br> You can set the maxPrice to -1 to indicate that the Azure Spot VM/VMSS should not be evicted for price reasons. Also, the default max price is -1 if it is not provided by you. <br><br>Minimum api-version: 2019-03-01. */
+		/**
+		 * Specifies the maximum price you are willing to pay for a Azure Spot VM/VMSS. This price is in US Dollars. <br><br> This price will be compared with the current Azure Spot price for the VM size. Also, the prices are compared at the time of create/update of Azure Spot VM/VMSS and the operation will only succeed if  the maxPrice is greater than the current Azure Spot price. <br><br> The maxPrice will also be used for evicting a Azure Spot VM/VMSS if the current Azure Spot price goes beyond the maxPrice after creation of VM/VMSS. <br><br> Possible values are: <br><br> - Any decimal value greater than zero. Example: 0.01538 <br><br> -1 – indicates default price to be up-to on-demand. <br><br> You can set the maxPrice to -1 to indicate that the Azure Spot VM/VMSS should not be evicted for price reasons. Also, the default max price is -1 if it is not provided by you. <br><br>Minimum api-version: 2019-03-01.
+		 * Type: double
+		 */
 		maxPrice: FormControl<number | null | undefined>,
 	}
 	export function CreateBillingProfileFormGroup() {
@@ -640,13 +658,22 @@ export namespace MyNS {
 		 */
 		createOption: CreateOption;
 
-		/** Specifies the Read-Write IOPS for the managed disk when StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the VirtualMachine Scale Set. */
-		diskIOPSReadWrite?: number | null;
+		/**
+		 * Specifies the Read-Write IOPS for the managed disk when StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the VirtualMachine Scale Set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskIOPSReadWrite?: string | null;
 
-		/** Specifies the bandwidth in MB per second for the managed disk when StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the VirtualMachine Scale Set. */
-		diskMBpsReadWrite?: number | null;
+		/**
+		 * Specifies the bandwidth in MB per second for the managed disk when StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the VirtualMachine Scale Set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskMBpsReadWrite?: string | null;
 
-		/** Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 
 		/** Describes the uri of a disk. */
@@ -655,6 +682,7 @@ export namespace MyNS {
 		/**
 		 * Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lun: number;
 
@@ -686,18 +714,28 @@ export namespace MyNS {
 		 */
 		createOption: FormControl<CreateOption | null | undefined>,
 
-		/** Specifies the Read-Write IOPS for the managed disk when StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the VirtualMachine Scale Set. */
-		diskIOPSReadWrite: FormControl<number | null | undefined>,
+		/**
+		 * Specifies the Read-Write IOPS for the managed disk when StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the VirtualMachine Scale Set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskIOPSReadWrite: FormControl<string | null | undefined>,
 
-		/** Specifies the bandwidth in MB per second for the managed disk when StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the VirtualMachine Scale Set. */
-		diskMBpsReadWrite: FormControl<number | null | undefined>,
+		/**
+		 * Specifies the bandwidth in MB per second for the managed disk when StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the VirtualMachine Scale Set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskMBpsReadWrite: FormControl<string | null | undefined>,
 
-		/** Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/**
 		 * Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lun: FormControl<number | null | undefined>,
 
@@ -714,8 +752,8 @@ export namespace MyNS {
 		return new FormGroup<DataDiskFormProperties>({
 			caching: new FormControl<Caching | null | undefined>(undefined),
 			createOption: new FormControl<CreateOption | null | undefined>(undefined, [Validators.required]),
-			diskIOPSReadWrite: new FormControl<number | null | undefined>(undefined),
-			diskMBpsReadWrite: new FormControl<number | null | undefined>(undefined),
+			diskIOPSReadWrite: new FormControl<string | null | undefined>(undefined),
+			diskMBpsReadWrite: new FormControl<string | null | undefined>(undefined),
 			diskSizeGB: new FormControl<number | null | undefined>(undefined),
 			lun: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -729,14 +767,20 @@ export namespace MyNS {
 	/** Contains the data disk images information. */
 	export interface DataDiskImage {
 
-		/** Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM. */
+		/**
+		 * Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lun?: number | null;
 	}
 
 	/** Contains the data disk images information. */
 	export interface DataDiskImageFormProperties {
 
-		/** Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM. */
+		/**
+		 * Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lun: FormControl<number | null | undefined>,
 	}
 	export function CreateDataDiskImageFormGroup() {
@@ -778,7 +822,10 @@ export namespace MyNS {
 	/** Represents the dedicated host unutilized capacity in terms of a specific VM size. */
 	export interface DedicatedHostAllocatableVM {
 
-		/** Maximum number of VMs of size vmSize that can fit in the dedicated host's remaining capacity. */
+		/**
+		 * Maximum number of VMs of size vmSize that can fit in the dedicated host's remaining capacity.
+		 * Type: double
+		 */
 		count?: number | null;
 
 		/** VM size in terms of which the unutilized capacity is represented. */
@@ -788,7 +835,10 @@ export namespace MyNS {
 	/** Represents the dedicated host unutilized capacity in terms of a specific VM size. */
 	export interface DedicatedHostAllocatableVMFormProperties {
 
-		/** Maximum number of VMs of size vmSize that can fit in the dedicated host's remaining capacity. */
+		/**
+		 * Maximum number of VMs of size vmSize that can fit in the dedicated host's remaining capacity.
+		 * Type: double
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** VM size in terms of which the unutilized capacity is represented. */
@@ -1255,6 +1305,7 @@ export namespace MyNS {
 		/**
 		 * Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lun: number;
 	}
@@ -1265,6 +1316,7 @@ export namespace MyNS {
 		/**
 		 * Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lun: FormControl<number | null | undefined>,
 	}
@@ -1292,7 +1344,10 @@ export namespace MyNS {
 		/** Describes the parameter of customer managed disk encryption set resource id that can be specified for disk. <br><br> NOTE: The disk encryption set resource id can only be specified for managed disk. Please refer https://aka.ms/mdssewithcmkoverview for more details. */
 		diskEncryptionSet?: DiskEncryptionSetParameters;
 
-		/** Specifies the size of empty data disks in gigabytes. This element can be used to overwrite the name of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of empty data disks in gigabytes. This element can be used to overwrite the name of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 		managedDisk?: SubResource;
 		snapshot?: SubResource;
@@ -1310,7 +1365,10 @@ export namespace MyNS {
 		/** Specifies the caching requirements. <br><br> Possible values are: <br><br> **None** <br><br> **ReadOnly** <br><br> **ReadWrite** <br><br> Default: **None for Standard storage. ReadOnly for Premium storage** */
 		caching: FormControl<Caching | null | undefined>,
 
-		/** Specifies the size of empty data disks in gigabytes. This element can be used to overwrite the name of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of empty data disks in gigabytes. This element can be used to overwrite the name of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/** Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks. It cannot be used with OS Disk. Standard_LRS uses Standard HDD. StandardSSD_LRS uses Standard SSD. Premium_LRS uses Premium SSD. UltraSSD_LRS uses Ultra disk. For more information regarding disks supported for Windows Virtual Machines, refer to https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-types and, for Linux Virtual Machines, refer to https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disks-types */
@@ -1683,14 +1741,16 @@ export namespace MyNS {
 		/**
 		 * The current usage of the resource.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		currentValue: number;
 
 		/**
 		 * The maximum permitted usage of the resource.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		limit: number;
+		limit: string;
 
 		/**
 		 * The Usage Names.
@@ -1711,14 +1771,16 @@ export namespace MyNS {
 		/**
 		 * The current usage of the resource.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		currentValue: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum permitted usage of the resource.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		limit: FormControl<number | null | undefined>,
+		limit: FormControl<string | null | undefined>,
 
 		/**
 		 * An enum describing the unit of usage measurement.
@@ -1729,7 +1791,7 @@ export namespace MyNS {
 	export function CreateUsageFormGroup() {
 		return new FormGroup<UsageFormProperties>({
 			currentValue: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			limit: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			limit: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			unit: new FormControl<UsageUnit | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2011,7 +2073,10 @@ export namespace MyNS {
 		/** Describes the parameters of ephemeral disk settings that can be specified for operating system disk. <br><br> NOTE: The ephemeral disk settings can only be specified for managed disk. */
 		diffDiskSettings?: DiffDiskSettings;
 
-		/** Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 
 		/** Describes a Encryption Settings for a Disk */
@@ -2048,7 +2113,10 @@ export namespace MyNS {
 		 */
 		createOption: FormControl<CreateOption | null | undefined>,
 
-		/** Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/** The disk name. */
@@ -2421,7 +2489,10 @@ export namespace MyNS {
 	/** Response after calling a manual recovery walk */
 	export interface RecoveryWalkResponse {
 
-		/** The next update domain that needs to be walked. Null means walk spanning all update domains has been completed */
+		/**
+		 * The next update domain that needs to be walked. Null means walk spanning all update domains has been completed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nextPlatformUpdateDomain?: number | null;
 
 		/** Whether the recovery walk was performed */
@@ -2431,7 +2502,10 @@ export namespace MyNS {
 	/** Response after calling a manual recovery walk */
 	export interface RecoveryWalkResponseFormProperties {
 
-		/** The next update domain that needs to be walked. Null means walk spanning all update domains has been completed */
+		/**
+		 * The next update domain that needs to be walked. Null means walk spanning all update domains has been completed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nextPlatformUpdateDomain: FormControl<number | null | undefined>,
 
 		/** Whether the recovery walk was performed */
@@ -2539,23 +2613,35 @@ export namespace MyNS {
 	/** Information about rollback on failed VM instances after a OS Upgrade operation. */
 	export interface RollbackStatusInfo {
 
-		/** The number of instances which failed to rollback. */
+		/**
+		 * The number of instances which failed to rollback.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedRolledbackInstanceCount?: number | null;
 
 		/** Api error. */
 		rollbackError?: ApiError;
 
-		/** The number of instances which have been successfully rolled back. */
+		/**
+		 * The number of instances which have been successfully rolled back.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfullyRolledbackInstanceCount?: number | null;
 	}
 
 	/** Information about rollback on failed VM instances after a OS Upgrade operation. */
 	export interface RollbackStatusInfoFormProperties {
 
-		/** The number of instances which failed to rollback. */
+		/**
+		 * The number of instances which failed to rollback.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedRolledbackInstanceCount: FormControl<number | null | undefined>,
 
-		/** The number of instances which have been successfully rolled back. */
+		/**
+		 * The number of instances which have been successfully rolled back.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfullyRolledbackInstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateRollbackStatusInfoFormGroup() {
@@ -2636,32 +2722,56 @@ export namespace MyNS {
 	/** Information about the number of virtual machine instances in each upgrade state. */
 	export interface RollingUpgradeProgressInfo {
 
-		/** The number of instances that have failed to be upgraded successfully. */
+		/**
+		 * The number of instances that have failed to be upgraded successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedInstanceCount?: number | null;
 
-		/** The number of instances that are currently being upgraded. */
+		/**
+		 * The number of instances that are currently being upgraded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inProgressInstanceCount?: number | null;
 
-		/** The number of instances that have not yet begun to be upgraded. */
+		/**
+		 * The number of instances that have not yet begun to be upgraded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pendingInstanceCount?: number | null;
 
-		/** The number of instances that have been successfully upgraded. */
+		/**
+		 * The number of instances that have been successfully upgraded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulInstanceCount?: number | null;
 	}
 
 	/** Information about the number of virtual machine instances in each upgrade state. */
 	export interface RollingUpgradeProgressInfoFormProperties {
 
-		/** The number of instances that have failed to be upgraded successfully. */
+		/**
+		 * The number of instances that have failed to be upgraded successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedInstanceCount: FormControl<number | null | undefined>,
 
-		/** The number of instances that are currently being upgraded. */
+		/**
+		 * The number of instances that are currently being upgraded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inProgressInstanceCount: FormControl<number | null | undefined>,
 
-		/** The number of instances that have not yet begun to be upgraded. */
+		/**
+		 * The number of instances that have not yet begun to be upgraded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pendingInstanceCount: FormControl<number | null | undefined>,
 
-		/** The number of instances that have been successfully upgraded. */
+		/**
+		 * The number of instances that have been successfully upgraded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successfulInstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateRollingUpgradeProgressInfoFormGroup() {
@@ -2824,8 +2934,11 @@ export namespace MyNS {
 	/** Describes a virtual machine scale set sku. */
 	export interface Sku {
 
-		/** Specifies the number of virtual machines in the scale set. */
-		capacity?: number | null;
+		/**
+		 * Specifies the number of virtual machines in the scale set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		capacity?: string | null;
 
 		/** The sku name. */
 		name?: string | null;
@@ -2837,8 +2950,11 @@ export namespace MyNS {
 	/** Describes a virtual machine scale set sku. */
 	export interface SkuFormProperties {
 
-		/** Specifies the number of virtual machines in the scale set. */
-		capacity: FormControl<number | null | undefined>,
+		/**
+		 * Specifies the number of virtual machines in the scale set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		capacity: FormControl<string | null | undefined>,
 
 		/** The sku name. */
 		name: FormControl<string | null | undefined>,
@@ -2848,7 +2964,7 @@ export namespace MyNS {
 	}
 	export function CreateSkuFormGroup() {
 		return new FormGroup<SkuFormProperties>({
-			capacity: new FormControl<number | null | undefined>(undefined),
+			capacity: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			tier: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3881,10 +3997,16 @@ export namespace MyNS {
 		/** The version of Operating System running on the virtual machine. */
 		osVersion?: string | null;
 
-		/** Specifies the fault domain of the virtual machine. */
+		/**
+		 * Specifies the fault domain of the virtual machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformFaultDomain?: number | null;
 
-		/** Specifies the update domain of the virtual machine. */
+		/**
+		 * Specifies the update domain of the virtual machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformUpdateDomain?: number | null;
 
 		/** The Remote desktop certificate thumbprint. */
@@ -3912,10 +4034,16 @@ export namespace MyNS {
 		/** The version of Operating System running on the virtual machine. */
 		osVersion: FormControl<string | null | undefined>,
 
-		/** Specifies the fault domain of the virtual machine. */
+		/**
+		 * Specifies the fault domain of the virtual machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformFaultDomain: FormControl<number | null | undefined>,
 
-		/** Specifies the update domain of the virtual machine. */
+		/**
+		 * Specifies the update domain of the virtual machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformUpdateDomain: FormControl<number | null | undefined>,
 
 		/** The Remote desktop certificate thumbprint. */
@@ -4110,18 +4238,28 @@ export namespace MyNS {
 		 */
 		createOption: CreateOption;
 
-		/** Specifies the Read-Write IOPS for the managed disk. Should be used only when StorageAccountType is UltraSSD_LRS. If not specified, a default value would be assigned based on diskSizeGB. */
-		diskIOPSReadWrite?: number | null;
+		/**
+		 * Specifies the Read-Write IOPS for the managed disk. Should be used only when StorageAccountType is UltraSSD_LRS. If not specified, a default value would be assigned based on diskSizeGB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskIOPSReadWrite?: string | null;
 
-		/** Specifies the bandwidth in MB per second for the managed disk. Should be used only when StorageAccountType is UltraSSD_LRS. If not specified, a default value would be assigned based on diskSizeGB. */
-		diskMBpsReadWrite?: number | null;
+		/**
+		 * Specifies the bandwidth in MB per second for the managed disk. Should be used only when StorageAccountType is UltraSSD_LRS. If not specified, a default value would be assigned based on diskSizeGB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskMBpsReadWrite?: string | null;
 
-		/** Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 
 		/**
 		 * Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lun: number;
 
@@ -4147,18 +4285,28 @@ export namespace MyNS {
 		 */
 		createOption: FormControl<CreateOption | null | undefined>,
 
-		/** Specifies the Read-Write IOPS for the managed disk. Should be used only when StorageAccountType is UltraSSD_LRS. If not specified, a default value would be assigned based on diskSizeGB. */
-		diskIOPSReadWrite: FormControl<number | null | undefined>,
+		/**
+		 * Specifies the Read-Write IOPS for the managed disk. Should be used only when StorageAccountType is UltraSSD_LRS. If not specified, a default value would be assigned based on diskSizeGB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskIOPSReadWrite: FormControl<string | null | undefined>,
 
-		/** Specifies the bandwidth in MB per second for the managed disk. Should be used only when StorageAccountType is UltraSSD_LRS. If not specified, a default value would be assigned based on diskSizeGB. */
-		diskMBpsReadWrite: FormControl<number | null | undefined>,
+		/**
+		 * Specifies the bandwidth in MB per second for the managed disk. Should be used only when StorageAccountType is UltraSSD_LRS. If not specified, a default value would be assigned based on diskSizeGB.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskMBpsReadWrite: FormControl<string | null | undefined>,
 
-		/** Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/**
 		 * Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lun: FormControl<number | null | undefined>,
 
@@ -4172,8 +4320,8 @@ export namespace MyNS {
 		return new FormGroup<VirtualMachineScaleSetDataDiskFormProperties>({
 			caching: new FormControl<Caching | null | undefined>(undefined),
 			createOption: new FormControl<CreateOption | null | undefined>(undefined, [Validators.required]),
-			diskIOPSReadWrite: new FormControl<number | null | undefined>(undefined),
-			diskMBpsReadWrite: new FormControl<number | null | undefined>(undefined),
+			diskIOPSReadWrite: new FormControl<string | null | undefined>(undefined),
+			diskMBpsReadWrite: new FormControl<string | null | undefined>(undefined),
 			diskSizeGB: new FormControl<number | null | undefined>(undefined),
 			lun: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -4562,7 +4710,10 @@ export namespace MyNS {
 		/** The instance view status code. */
 		code?: string | null;
 
-		/** The number of instances having a particular status code. */
+		/**
+		 * The number of instances having a particular status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 	}
 
@@ -4572,7 +4723,10 @@ export namespace MyNS {
 		/** The instance view status code. */
 		code: FormControl<string | null | undefined>,
 
-		/** The number of instances having a particular status code. */
+		/**
+		 * The number of instances having a particular status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateVirtualMachineStatusCodeCountFormGroup() {
@@ -4916,7 +5070,10 @@ export namespace MyNS {
 		/** Describes the parameters of ephemeral disk settings that can be specified for operating system disk. <br><br> NOTE: The ephemeral disk settings can only be specified for managed disk. */
 		diffDiskSettings?: DiffDiskSettings;
 
-		/** Specifies the size of the operating system disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of the operating system disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 
 		/** Describes the uri of a disk. */
@@ -4950,7 +5107,10 @@ export namespace MyNS {
 		 */
 		createOption: FormControl<CreateOption | null | undefined>,
 
-		/** Specifies the size of the operating system disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of the operating system disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/** The disk name. */
@@ -5041,7 +5201,10 @@ export namespace MyNS {
 		/** Specifies whether the Virtual Machine Scale Set should be overprovisioned. */
 		overprovision?: boolean | null;
 
-		/** Fault Domain count for each placement group. */
+		/**
+		 * Fault Domain count for each placement group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformFaultDomainCount?: number | null;
 
 		/** The provisioning state, which only appears in the response. */
@@ -5076,7 +5239,10 @@ export namespace MyNS {
 		/** Specifies whether the Virtual Machine Scale Set should be overprovisioned. */
 		overprovision: FormControl<boolean | null | undefined>,
 
-		/** Fault Domain count for each placement group. */
+		/**
+		 * Fault Domain count for each placement group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformFaultDomainCount: FormControl<number | null | undefined>,
 
 		/** The provisioning state, which only appears in the response. */
@@ -5168,7 +5334,10 @@ export namespace MyNS {
 		/** Describes a virtual machines scale sets network configuration's DNS settings. */
 		dnsSettings?: VirtualMachineScaleSetPublicIPAddressConfigurationDnsSettings;
 
-		/** The idle timeout of the public IP address. */
+		/**
+		 * The idle timeout of the public IP address.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeoutInMinutes?: number | null;
 
 		/** The list of IP tags associated with the public IP address. */
@@ -5182,7 +5351,10 @@ export namespace MyNS {
 	/** Describes a virtual machines scale set IP Configuration's PublicIPAddress configuration */
 	export interface VirtualMachineScaleSetPublicIPAddressConfigurationPropertiesFormProperties {
 
-		/** The idle timeout of the public IP address. */
+		/**
+		 * The idle timeout of the public IP address.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeoutInMinutes: FormControl<number | null | undefined>,
 
 		/** Available from Api-Version 2019-07-01 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible values are: 'IPv4' and 'IPv6'. */
@@ -5217,14 +5389,23 @@ export namespace MyNS {
 	/** Describes scaling information of a sku. */
 	export interface VirtualMachineScaleSetSkuCapacity {
 
-		/** The default capacity. */
-		defaultCapacity?: number | null;
+		/**
+		 * The default capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		defaultCapacity?: string | null;
 
-		/** The maximum capacity that can be set. */
-		maximum?: number | null;
+		/**
+		 * The maximum capacity that can be set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximum?: string | null;
 
-		/** The minimum capacity. */
-		minimum?: number | null;
+		/**
+		 * The minimum capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minimum?: string | null;
 
 		/** The scale type applicable to the sku. */
 		scaleType?: VirtualMachineScaleSetSkuCapacityScaleType | null;
@@ -5233,23 +5414,32 @@ export namespace MyNS {
 	/** Describes scaling information of a sku. */
 	export interface VirtualMachineScaleSetSkuCapacityFormProperties {
 
-		/** The default capacity. */
-		defaultCapacity: FormControl<number | null | undefined>,
+		/**
+		 * The default capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		defaultCapacity: FormControl<string | null | undefined>,
 
-		/** The maximum capacity that can be set. */
-		maximum: FormControl<number | null | undefined>,
+		/**
+		 * The maximum capacity that can be set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximum: FormControl<string | null | undefined>,
 
-		/** The minimum capacity. */
-		minimum: FormControl<number | null | undefined>,
+		/**
+		 * The minimum capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minimum: FormControl<string | null | undefined>,
 
 		/** The scale type applicable to the sku. */
 		scaleType: FormControl<VirtualMachineScaleSetSkuCapacityScaleType | null | undefined>,
 	}
 	export function CreateVirtualMachineScaleSetSkuCapacityFormGroup() {
 		return new FormGroup<VirtualMachineScaleSetSkuCapacityFormProperties>({
-			defaultCapacity: new FormControl<number | null | undefined>(undefined),
-			maximum: new FormControl<number | null | undefined>(undefined),
-			minimum: new FormControl<number | null | undefined>(undefined),
+			defaultCapacity: new FormControl<string | null | undefined>(undefined),
+			maximum: new FormControl<string | null | undefined>(undefined),
+			minimum: new FormControl<string | null | undefined>(undefined),
 			scaleType: new FormControl<VirtualMachineScaleSetSkuCapacityScaleType | null | undefined>(undefined),
 		});
 
@@ -5472,7 +5662,10 @@ export namespace MyNS {
 		/** Specifies the caching requirements. <br><br> Possible values are: <br><br> **None** <br><br> **ReadOnly** <br><br> **ReadWrite** <br><br> Default: **None for Standard storage. ReadOnly for Premium storage** */
 		caching?: Caching | null;
 
-		/** Specifies the size of the operating system disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of the operating system disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 
 		/** Describes the uri of a disk. */
@@ -5494,7 +5687,10 @@ export namespace MyNS {
 		/** Specifies the caching requirements. <br><br> Possible values are: <br><br> **None** <br><br> **ReadOnly** <br><br> **ReadWrite** <br><br> Default: **None for Standard storage. ReadOnly for Premium storage** */
 		caching: FormControl<Caching | null | undefined>,
 
-		/** Specifies the size of the operating system disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB */
+		/**
+		 * Specifies the size of the operating system disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> This value cannot be larger than 1023 GB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/** Specifies whether writeAccelerator should be enabled or disabled on the disk. */
@@ -5621,14 +5817,20 @@ export namespace MyNS {
 		/** Describes a virtual machines scale sets network configuration's DNS settings. */
 		dnsSettings?: VirtualMachineScaleSetPublicIPAddressConfigurationDnsSettings;
 
-		/** The idle timeout of the public IP address. */
+		/**
+		 * The idle timeout of the public IP address.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeoutInMinutes?: number | null;
 	}
 
 	/** Describes a virtual machines scale set IP Configuration's PublicIPAddress configuration */
 	export interface VirtualMachineScaleSetUpdatePublicIPAddressConfigurationPropertiesFormProperties {
 
-		/** The idle timeout of the public IP address. */
+		/**
+		 * The idle timeout of the public IP address.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		idleTimeoutInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateVirtualMachineScaleSetUpdatePublicIPAddressConfigurationPropertiesFormGroup() {
@@ -5798,10 +6000,16 @@ export namespace MyNS {
 		/** The placement group in which the VM is running. If the VM is deallocated it will not have a placementGroupId. */
 		placementGroupId?: string | null;
 
-		/** The Fault Domain count. */
+		/**
+		 * The Fault Domain count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformFaultDomain?: number | null;
 
-		/** The Update Domain count. */
+		/**
+		 * The Update Domain count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformUpdateDomain?: number | null;
 
 		/** The Remote desktop certificate thumbprint. */
@@ -5823,10 +6031,16 @@ export namespace MyNS {
 		/** The placement group in which the VM is running. If the VM is deallocated it will not have a placementGroupId. */
 		placementGroupId: FormControl<string | null | undefined>,
 
-		/** The Fault Domain count. */
+		/**
+		 * The Fault Domain count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformFaultDomain: FormControl<number | null | undefined>,
 
-		/** The Update Domain count. */
+		/**
+		 * The Update Domain count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platformUpdateDomain: FormControl<number | null | undefined>,
 
 		/** The Remote desktop certificate thumbprint. */
@@ -6063,44 +6277,74 @@ export namespace MyNS {
 	/** Describes the properties of a VM size. */
 	export interface VirtualMachineSize {
 
-		/** The maximum number of data disks that can be attached to the virtual machine size. */
+		/**
+		 * The maximum number of data disks that can be attached to the virtual machine size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDataDiskCount?: number | null;
 
-		/** The amount of memory, in MB, supported by the virtual machine size. */
+		/**
+		 * The amount of memory, in MB, supported by the virtual machine size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryInMB?: number | null;
 
 		/** The name of the virtual machine size. */
 		name?: string | null;
 
-		/** The number of cores supported by the virtual machine size. */
+		/**
+		 * The number of cores supported by the virtual machine size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCores?: number | null;
 
-		/** The OS disk size, in MB, allowed by the virtual machine size. */
+		/**
+		 * The OS disk size, in MB, allowed by the virtual machine size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		osDiskSizeInMB?: number | null;
 
-		/** The resource disk size, in MB, allowed by the virtual machine size. */
+		/**
+		 * The resource disk size, in MB, allowed by the virtual machine size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourceDiskSizeInMB?: number | null;
 	}
 
 	/** Describes the properties of a VM size. */
 	export interface VirtualMachineSizeFormProperties {
 
-		/** The maximum number of data disks that can be attached to the virtual machine size. */
+		/**
+		 * The maximum number of data disks that can be attached to the virtual machine size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDataDiskCount: FormControl<number | null | undefined>,
 
-		/** The amount of memory, in MB, supported by the virtual machine size. */
+		/**
+		 * The amount of memory, in MB, supported by the virtual machine size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryInMB: FormControl<number | null | undefined>,
 
 		/** The name of the virtual machine size. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of cores supported by the virtual machine size. */
+		/**
+		 * The number of cores supported by the virtual machine size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCores: FormControl<number | null | undefined>,
 
-		/** The OS disk size, in MB, allowed by the virtual machine size. */
+		/**
+		 * The OS disk size, in MB, allowed by the virtual machine size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		osDiskSizeInMB: FormControl<number | null | undefined>,
 
-		/** The resource disk size, in MB, allowed by the virtual machine size. */
+		/**
+		 * The resource disk size, in MB, allowed by the virtual machine size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourceDiskSizeInMB: FormControl<number | null | undefined>,
 	}
 	export function CreateVirtualMachineSizeFormGroup() {
@@ -6359,6 +6603,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/publishers/{publisherName}/artifacttypes/vmextension/types/{type}/versions
 		 * @param {string} location The name of a supported Azure region.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {Array<VirtualMachineExtensionImage>} OK
@@ -6414,6 +6659,7 @@ export namespace MyNS {
 		 * @param {string} offer A valid image publisher offer.
 		 * @param {string} skus A valid image SKU.
 		 * @param {string} filter The filter to apply on the operation.
+		 * @param {number} top Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {Array<VirtualMachineImageResource>} OK

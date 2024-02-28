@@ -81,10 +81,16 @@ export namespace MyNS {
 		/** The list of alternative IP addresses. */
 		alternativeIpAddresses?: Array<string>;
 
-		/** The key length. */
+		/**
+		 * The key length.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keyLength?: number | null;
 
-		/** The minimum password length is 8 characters, and the maximum password length is 128 characters. */
+		/**
+		 * The minimum password length is 8 characters, and the maximum password length is 128 characters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordLength?: number | null;
 
 		/** Password validation regular expression. */
@@ -106,10 +112,16 @@ export namespace MyNS {
 		/** The allowed characters in the password */
 		allowedCharacters: FormControl<string | null | undefined>,
 
-		/** The key length. */
+		/**
+		 * The key length.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keyLength: FormControl<number | null | undefined>,
 
-		/** The minimum password length is 8 characters, and the maximum password length is 128 characters. */
+		/**
+		 * The minimum password length is 8 characters, and the maximum password length is 128 characters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		passwordLength: FormControl<number | null | undefined>,
 
 		/** Password validation regular expression. */

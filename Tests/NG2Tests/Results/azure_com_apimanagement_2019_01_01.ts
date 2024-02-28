@@ -125,8 +125,11 @@ export namespace MyNS {
 	/** Lists Regions operation response details. */
 	export interface RegionListResult {
 
-		/** Total record count number across all pages. */
-		count?: number | null;
+		/**
+		 * Total record count number across all pages.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count?: string | null;
 
 		/** Next page link if any. */
 		nextLink?: string | null;
@@ -138,15 +141,18 @@ export namespace MyNS {
 	/** Lists Regions operation response details. */
 	export interface RegionListResultFormProperties {
 
-		/** Total record count number across all pages. */
-		count: FormControl<number | null | undefined>,
+		/**
+		 * Total record count number across all pages.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: FormControl<string | null | undefined>,
 
 		/** Next page link if any. */
 		nextLink: FormControl<string | null | undefined>,
 	}
 	export function CreateRegionListResultFormGroup() {
 		return new FormGroup<RegionListResultFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<string | null | undefined>(undefined),
 			nextLink: new FormControl<string | null | undefined>(undefined),
 		});
 

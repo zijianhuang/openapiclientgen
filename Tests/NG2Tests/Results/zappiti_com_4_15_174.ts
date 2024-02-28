@@ -67,7 +67,10 @@ export namespace MyNS {
 		/** Server's IP */
 		ServerIp?: string | null;
 
-		/** Port used by the server */
+		/**
+		 * Port used by the server
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ServerPort?: number | null;
 	}
 	export interface ConnectionDetailsResultFormProperties {
@@ -85,7 +88,10 @@ export namespace MyNS {
 		/** Server's IP */
 		ServerIp: FormControl<string | null | undefined>,
 
-		/** Port used by the server */
+		/**
+		 * Port used by the server
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ServerPort: FormControl<number | null | undefined>,
 	}
 	export function CreateConnectionDetailsResultFormGroup() {
@@ -183,10 +189,16 @@ export namespace MyNS {
 		Actors?: Array<string>;
 		BackgroundUrl?: string | null;
 		Directors?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Episode?: number | null;
 		ErrorCode?: CheckZappitiServiceResultErrorCode | null;
 		PosterUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Runtime?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
 		Synopsis?: string | null;
 		Title?: string | null;
@@ -194,10 +206,16 @@ export namespace MyNS {
 	}
 	export interface LastMediaResultFormProperties {
 		BackgroundUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Episode: FormControl<number | null | undefined>,
 		ErrorCode: FormControl<CheckZappitiServiceResultErrorCode | null | undefined>,
 		PosterUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Runtime: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
 		Synopsis: FormControl<string | null | undefined>,
 		Title: FormControl<string | null | undefined>,
@@ -235,7 +253,10 @@ export namespace MyNS {
 		/** Id of the video to start */
 		MediaId?: string | null;
 
-		/** Server Port */
+		/**
+		 * Server Port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Port?: number | null;
 	}
 	export interface StartVideoRequestFormProperties {
@@ -255,7 +276,10 @@ export namespace MyNS {
 		/** Id of the video to start */
 		MediaId: FormControl<string | null | undefined>,
 
-		/** Server Port */
+		/**
+		 * Server Port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Port: FormControl<number | null | undefined>,
 	}
 	export function CreateStartVideoRequestFormGroup() {

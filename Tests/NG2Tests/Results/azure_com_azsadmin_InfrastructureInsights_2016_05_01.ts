@@ -7,20 +7,32 @@ export namespace MyNS {
 	/** Summary of the alerts. */
 	export interface AlertSummary {
 
-		/** The number of critical alerts for the service. */
+		/**
+		 * The number of critical alerts for the service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		criticalAlertCount?: number | null;
 
-		/** The number of warning alerts for the service. */
+		/**
+		 * The number of warning alerts for the service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		warningAlertCount?: number | null;
 	}
 
 	/** Summary of the alerts. */
 	export interface AlertSummaryFormProperties {
 
-		/** The number of critical alerts for the service. */
+		/**
+		 * The number of critical alerts for the service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		criticalAlertCount: FormControl<number | null | undefined>,
 
-		/** The number of warning alerts for the service. */
+		/**
+		 * The number of warning alerts for the service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		warningAlertCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAlertSummaryFormGroup() {
@@ -154,7 +166,10 @@ export namespace MyNS {
 		/** The unit of the metric. */
 		unit?: MetricsUnit | null;
 
-		/** Name of the usage metric. */
+		/**
+		 * Name of the usage metric.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -179,7 +194,10 @@ export namespace MyNS {
 		/** The unit of the metric. */
 		unit: FormControl<MetricsUnit | null | undefined>,
 
-		/** Name of the usage metric. */
+		/**
+		 * Name of the usage metric.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricsFormGroup() {

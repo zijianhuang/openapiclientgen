@@ -166,6 +166,7 @@ export namespace MyNS {
 		 * @param {string} language Filter by programming language
 		 * @param {string} project_version Filter down by project version
 		 * @param {string} post_filter Post processing filter. Possible values are 'ALL', 'duplicates_only', 'show_duplicates'
+		 * @param {number} orga_name Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Returns the inventory list of the organisation
 		 */
 		GetOrganisationsOrgaNameInventory(team_name: string | null | undefined, language: string | null | undefined, project_version: string | null | undefined, post_filter: string | null | undefined, orga_name: number): Observable<HttpResponse<string>> {
@@ -176,6 +177,7 @@ export namespace MyNS {
 		 * Returns the inventory diff object
 		 * Get organisations/{orga_name}/inventory_diff
 		 * @param {string} inventory_diff_id ID of the inventory diff object
+		 * @param {number} orga_name Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Returns the inventory diff object
 		 */
 		GetOrganisationsOrgaNameInventoryDiff(inventory_diff_id: string | null | undefined, orga_name: number): Observable<HttpResponse<string>> {
@@ -188,6 +190,7 @@ export namespace MyNS {
 		 * The diff object contains wich items have been removed and/or added compared to the inventory1 filter.
 		 * The response of this Endpoint is the ID of the diff object, which is calculated async in the background.
 		 * Post organisations/{orga_name}/inventory_diff
+		 * @param {number} orga_name Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PostOrganisationsOrgaNameInventoryDiff(orga_name: number, requestBody: PostOrganisationsOrgaNameInventoryDiffPostBody): Observable<HttpResponse<string>> {
@@ -198,6 +201,7 @@ export namespace MyNS {
 		 * Returns the list of projects
 		 * Returns the list of projects
 		 * Get organisations/{orga_name}/projects
+		 * @param {number} orga_name Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Returns the list of projects
 		 */
 		GetOrganisationsOrgaNameProjects(orga_name: number): Observable<HttpResponse<string>> {
@@ -208,6 +212,7 @@ export namespace MyNS {
 		 * Returns the list of teams
 		 * Returns the list of teams
 		 * Get organisations/{orga_name}/teams
+		 * @param {number} orga_name Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Returns the list of teams
 		 */
 		GetOrganisationsOrgaNameTeams(orga_name: number): Observable<HttpResponse<string>> {
@@ -236,6 +241,7 @@ export namespace MyNS {
 		 * search by SHA value
 		 * This Endpoint expects a SHA value and returns the corresponding product to it, if available.
 		 * Get products/sha/{sha}
+		 * @param {number} sha Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} search by SHA value
 		 */
 		GetProductsShaSha(sha: number): Observable<HttpResponse<string>> {

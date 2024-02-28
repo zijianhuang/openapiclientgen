@@ -24,40 +24,58 @@ export namespace MyNS {
 	/** Object which holds information related to edge gateways. */
 	export interface EdgeGatewayModel {
 
-		/** The available network capacity. */
-		availableCapacity?: number | null;
+		/**
+		 * The available network capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		availableCapacity?: string | null;
 
-		/** The current number of connections. */
+		/**
+		 * The current number of connections.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfConnections?: number | null;
 
 		/** The current state of the edge gateway. */
 		state?: string | null;
 
-		/** The total network capacity. */
-		totalCapacity?: number | null;
+		/**
+		 * The total network capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity?: string | null;
 	}
 
 	/** Object which holds information related to edge gateways. */
 	export interface EdgeGatewayModelFormProperties {
 
-		/** The available network capacity. */
-		availableCapacity: FormControl<number | null | undefined>,
+		/**
+		 * The available network capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		availableCapacity: FormControl<string | null | undefined>,
 
-		/** The current number of connections. */
+		/**
+		 * The current number of connections.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfConnections: FormControl<number | null | undefined>,
 
 		/** The current state of the edge gateway. */
 		state: FormControl<string | null | undefined>,
 
-		/** The total network capacity. */
-		totalCapacity: FormControl<number | null | undefined>,
+		/**
+		 * The total network capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalCapacity: FormControl<string | null | undefined>,
 	}
 	export function CreateEdgeGatewayModelFormGroup() {
 		return new FormGroup<EdgeGatewayModelFormProperties>({
-			availableCapacity: new FormControl<number | null | undefined>(undefined),
+			availableCapacity: new FormControl<string | null | undefined>(undefined),
 			numberOfConnections: new FormControl<number | null | undefined>(undefined),
 			state: new FormControl<string | null | undefined>(undefined),
-			totalCapacity: new FormControl<number | null | undefined>(undefined),
+			totalCapacity: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

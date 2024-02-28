@@ -590,7 +590,10 @@ export namespace MyNS {
 		/** The Event Hub-compatible endpoint. */
 		endpoint?: string | null;
 
-		/** The number of partitions for receiving device-to-cloud messages in the Event Hub-compatible endpoint. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages. */
+		/**
+		 * The number of partitions for receiving device-to-cloud messages in the Event Hub-compatible endpoint. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		partitionCount?: number | null;
 
 		/** The partition ids in the Event Hub-compatible endpoint. */
@@ -599,8 +602,11 @@ export namespace MyNS {
 		/** The Event Hub-compatible name. */
 		path?: string | null;
 
-		/** The retention time for device-to-cloud messages in days. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages */
-		retentionTimeInDays?: number | null;
+		/**
+		 * The retention time for device-to-cloud messages in days. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		retentionTimeInDays?: string | null;
 	}
 
 	/** The properties of the provisioned Event Hub-compatible endpoint used by the IoT hub. */
@@ -609,21 +615,27 @@ export namespace MyNS {
 		/** The Event Hub-compatible endpoint. */
 		endpoint: FormControl<string | null | undefined>,
 
-		/** The number of partitions for receiving device-to-cloud messages in the Event Hub-compatible endpoint. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages. */
+		/**
+		 * The number of partitions for receiving device-to-cloud messages in the Event Hub-compatible endpoint. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		partitionCount: FormControl<number | null | undefined>,
 
 		/** The Event Hub-compatible name. */
 		path: FormControl<string | null | undefined>,
 
-		/** The retention time for device-to-cloud messages in days. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages */
-		retentionTimeInDays: FormControl<number | null | undefined>,
+		/**
+		 * The retention time for device-to-cloud messages in days. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		retentionTimeInDays: FormControl<string | null | undefined>,
 	}
 	export function CreateEventHubPropertiesFormGroup() {
 		return new FormGroup<EventHubPropertiesFormProperties>({
 			endpoint: new FormControl<string | null | undefined>(undefined),
 			partitionCount: new FormControl<number | null | undefined>(undefined),
 			path: new FormControl<string | null | undefined>(undefined),
-			retentionTimeInDays: new FormControl<number | null | undefined>(undefined),
+			retentionTimeInDays: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -803,18 +815,24 @@ export namespace MyNS {
 	/** IoT Hub capacity information. */
 	export interface IotHubCapacity {
 
-		/** The default number of units. */
-		default?: number | null;
+		/**
+		 * The default number of units.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		default?: string | null;
 
-		/** The maximum number of units. */
-		maximum?: number | null;
+		/**
+		 * The maximum number of units.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximum?: string | null;
 
 		/**
 		 * The minimum number of units.
 		 * Minimum: 1
 		 * Maximum: 1
 		 */
-		minimum?: number | null;
+		minimum?: string | null;
 
 		/** The type of the scaling enabled. */
 		scaleType?: IotHubCapacityScaleType | null;
@@ -823,27 +841,33 @@ export namespace MyNS {
 	/** IoT Hub capacity information. */
 	export interface IotHubCapacityFormProperties {
 
-		/** The default number of units. */
-		default: FormControl<number | null | undefined>,
+		/**
+		 * The default number of units.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		default: FormControl<string | null | undefined>,
 
-		/** The maximum number of units. */
-		maximum: FormControl<number | null | undefined>,
+		/**
+		 * The maximum number of units.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximum: FormControl<string | null | undefined>,
 
 		/**
 		 * The minimum number of units.
 		 * Minimum: 1
 		 * Maximum: 1
 		 */
-		minimum: FormControl<number | null | undefined>,
+		minimum: FormControl<string | null | undefined>,
 
 		/** The type of the scaling enabled. */
 		scaleType: FormControl<IotHubCapacityScaleType | null | undefined>,
 	}
 	export function CreateIotHubCapacityFormGroup() {
 		return new FormGroup<IotHubCapacityFormProperties>({
-			default: new FormControl<number | null | undefined>(undefined),
-			maximum: new FormControl<number | null | undefined>(undefined),
-			minimum: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1)]),
+			default: new FormControl<string | null | undefined>(undefined),
+			maximum: new FormControl<string | null | undefined>(undefined),
+			minimum: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(1)]),
 			scaleType: new FormControl<IotHubCapacityScaleType | null | undefined>(undefined),
 		});
 
@@ -1607,8 +1631,11 @@ export namespace MyNS {
 	/** Information about the SKU of the IoT hub. */
 	export interface IotHubSkuInfo {
 
-		/** The number of provisioned IoT Hub units. See: https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits. */
-		capacity?: number | null;
+		/**
+		 * The number of provisioned IoT Hub units. See: https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		capacity?: string | null;
 
 		/**
 		 * The name of the SKU.
@@ -1623,8 +1650,11 @@ export namespace MyNS {
 	/** Information about the SKU of the IoT hub. */
 	export interface IotHubSkuInfoFormProperties {
 
-		/** The number of provisioned IoT Hub units. See: https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits. */
-		capacity: FormControl<number | null | undefined>,
+		/**
+		 * The number of provisioned IoT Hub units. See: https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		capacity: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the SKU.
@@ -1637,7 +1667,7 @@ export namespace MyNS {
 	}
 	export function CreateIotHubSkuInfoFormGroup() {
 		return new FormGroup<IotHubSkuInfoFormProperties>({
-			capacity: new FormControl<number | null | undefined>(undefined),
+			capacity: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<IotHubSkuInfoName | null | undefined>(undefined, [Validators.required]),
 			tier: new FormControl<IotHubSkuInfoTier | null | undefined>(undefined),
 		});
@@ -1713,11 +1743,17 @@ export namespace MyNS {
 	/** Quota metrics properties. */
 	export interface IotHubQuotaMetricInfo {
 
-		/** The current value for the quota metric. */
-		currentValue?: number | null;
+		/**
+		 * The current value for the quota metric.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue?: string | null;
 
-		/** The maximum value of the quota metric. */
-		maxValue?: number | null;
+		/**
+		 * The maximum value of the quota metric.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxValue?: string | null;
 
 		/** The name of the quota metric. */
 		name?: string | null;
@@ -1726,19 +1762,25 @@ export namespace MyNS {
 	/** Quota metrics properties. */
 	export interface IotHubQuotaMetricInfoFormProperties {
 
-		/** The current value for the quota metric. */
-		currentValue: FormControl<number | null | undefined>,
+		/**
+		 * The current value for the quota metric.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentValue: FormControl<string | null | undefined>,
 
-		/** The maximum value of the quota metric. */
-		maxValue: FormControl<number | null | undefined>,
+		/**
+		 * The maximum value of the quota metric.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxValue: FormControl<string | null | undefined>,
 
 		/** The name of the quota metric. */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateIotHubQuotaMetricInfoFormGroup() {
 		return new FormGroup<IotHubQuotaMetricInfoFormProperties>({
-			currentValue: new FormControl<number | null | undefined>(undefined),
-			maxValue: new FormControl<number | null | undefined>(undefined),
+			currentValue: new FormControl<string | null | undefined>(undefined),
+			maxValue: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2051,33 +2093,51 @@ export namespace MyNS {
 	/** Identity registry statistics. */
 	export interface RegistryStatistics {
 
-		/** The count of disabled devices in the identity registry. */
-		disabledDeviceCount?: number | null;
+		/**
+		 * The count of disabled devices in the identity registry.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		disabledDeviceCount?: string | null;
 
-		/** The count of enabled devices in the identity registry. */
-		enabledDeviceCount?: number | null;
+		/**
+		 * The count of enabled devices in the identity registry.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		enabledDeviceCount?: string | null;
 
-		/** The total count of devices in the identity registry. */
-		totalDeviceCount?: number | null;
+		/**
+		 * The total count of devices in the identity registry.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalDeviceCount?: string | null;
 	}
 
 	/** Identity registry statistics. */
 	export interface RegistryStatisticsFormProperties {
 
-		/** The count of disabled devices in the identity registry. */
-		disabledDeviceCount: FormControl<number | null | undefined>,
+		/**
+		 * The count of disabled devices in the identity registry.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		disabledDeviceCount: FormControl<string | null | undefined>,
 
-		/** The count of enabled devices in the identity registry. */
-		enabledDeviceCount: FormControl<number | null | undefined>,
+		/**
+		 * The count of enabled devices in the identity registry.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		enabledDeviceCount: FormControl<string | null | undefined>,
 
-		/** The total count of devices in the identity registry. */
-		totalDeviceCount: FormControl<number | null | undefined>,
+		/**
+		 * The total count of devices in the identity registry.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		totalDeviceCount: FormControl<string | null | undefined>,
 	}
 	export function CreateRegistryStatisticsFormGroup() {
 		return new FormGroup<RegistryStatisticsFormProperties>({
-			disabledDeviceCount: new FormControl<number | null | undefined>(undefined),
-			enabledDeviceCount: new FormControl<number | null | undefined>(undefined),
-			totalDeviceCount: new FormControl<number | null | undefined>(undefined),
+			disabledDeviceCount: new FormControl<string | null | undefined>(undefined),
+			enabledDeviceCount: new FormControl<string | null | undefined>(undefined),
+			totalDeviceCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2192,20 +2252,32 @@ export namespace MyNS {
 	/** Position where the route error happened */
 	export interface RouteErrorPosition {
 
-		/** Column where the route error happened */
+		/**
+		 * Column where the route error happened
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		column?: number | null;
 
-		/** Line where the route error happened */
+		/**
+		 * Line where the route error happened
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line?: number | null;
 	}
 
 	/** Position where the route error happened */
 	export interface RouteErrorPositionFormProperties {
 
-		/** Column where the route error happened */
+		/**
+		 * Column where the route error happened
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		column: FormControl<number | null | undefined>,
 
-		/** Line where the route error happened */
+		/**
+		 * Line where the route error happened
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line: FormControl<number | null | undefined>,
 	}
 	export function CreateRouteErrorPositionFormGroup() {
@@ -2439,13 +2511,19 @@ export namespace MyNS {
 	/** User subscription quota response */
 	export interface UserSubscriptionQuota {
 
-		/** Current number of IotHub type */
+		/**
+		 * Current number of IotHub type
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue?: number | null;
 
 		/** IotHub type id */
 		id?: string | null;
 
-		/** Numerical limit on IotHub type */
+		/**
+		 * Numerical limit on IotHub type
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** Name of Iot Hub type */
@@ -2461,13 +2539,19 @@ export namespace MyNS {
 	/** User subscription quota response */
 	export interface UserSubscriptionQuotaFormProperties {
 
-		/** Current number of IotHub type */
+		/**
+		 * Current number of IotHub type
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue: FormControl<number | null | undefined>,
 
 		/** IotHub type id */
 		id: FormControl<string | null | undefined>,
 
-		/** Numerical limit on IotHub type */
+		/**
+		 * Numerical limit on IotHub type
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Response type */

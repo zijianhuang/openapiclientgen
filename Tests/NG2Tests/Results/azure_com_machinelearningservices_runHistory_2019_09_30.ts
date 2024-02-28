@@ -571,12 +571,16 @@ export namespace MyNS {
 		/** The parent of the run if the run is hierarchical; otherwise, Null. */
 		parentRunId?: string | null;
 		properties?: {[id: string]: string };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revision?: number | null;
 		rootRunId?: string | null;
 		runDefinition?: string | null;
 
 		/** The identifier for the run. Run IDs must be less than 256 characters and contain only alphanumeric characters with dashes and underscores. */
 		runId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		runNumber?: number | null;
 		runType?: string | null;
 		scriptName?: string | null;
@@ -624,12 +628,16 @@ export namespace MyNS {
 		/** The parent of the run if the run is hierarchical; otherwise, Null. */
 		parentRunId: FormControl<string | null | undefined>,
 		properties: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revision: FormControl<number | null | undefined>,
 		rootRunId: FormControl<string | null | undefined>,
 		runDefinition: FormControl<string | null | undefined>,
 
 		/** The identifier for the run. Run IDs must be less than 256 characters and contain only alphanumeric characters with dashes and underscores. */
 		runId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		runNumber: FormControl<number | null | undefined>,
 		runType: FormControl<string | null | undefined>,
 		scriptName: FormControl<string | null | undefined>,
@@ -836,6 +844,8 @@ export namespace MyNS {
 		metricId?: string | null;
 		metricType?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numCells?: number | null;
 		schema?: MetricSchema;
 	}
@@ -848,6 +858,8 @@ export namespace MyNS {
 		metricId: FormControl<string | null | undefined>,
 		metricType: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numCells: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricFormGroup() {
@@ -866,10 +878,14 @@ export namespace MyNS {
 	}
 
 	export interface MetricSchema {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numProperties?: number | null;
 		properties?: Array<MetricSchemaProperty>;
 	}
 	export interface MetricSchemaFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numProperties: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricSchemaFormGroup() {
@@ -1127,6 +1143,8 @@ export namespace MyNS {
 		metricId?: string | null;
 		metricType?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numCells?: number | null;
 		runId?: string | null;
 		schema?: MetricSchema;
@@ -1140,6 +1158,8 @@ export namespace MyNS {
 		metricId: FormControl<string | null | undefined>,
 		metricType: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numCells: FormControl<number | null | undefined>,
 		runId: FormControl<string | null | undefined>,
 	}
@@ -1182,6 +1202,7 @@ export namespace MyNS {
 		/**
 		 * The maximum number of items in the resource collection to be included in the result.
 		 * If not specified, all items are returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		top?: number | null;
 	}
@@ -1208,6 +1229,7 @@ export namespace MyNS {
 		/**
 		 * The maximum number of items in the resource collection to be included in the result.
 		 * If not specified, all items are returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		top: FormControl<number | null | undefined>,
 	}
@@ -1237,6 +1259,8 @@ export namespace MyNS {
 
 		/** The properties dictionary for the run. Properties are immutable. */
 		properties?: {[id: string]: string };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revision?: number | null;
 
 		/** The run definition specification. */
@@ -1273,6 +1297,8 @@ export namespace MyNS {
 
 		/** The properties dictionary for the run. Properties are immutable. */
 		properties: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revision: FormControl<number | null | undefined>,
 
 		/** The run definition specification. */

@@ -71,118 +71,232 @@ export namespace MyNS {
 		/** The suffixes of URI of hosts in data center. */
 		dataCenterUriHostSuffixes?: string | null;
 
-		/** Default egress threshold (in Gbps). */
+		/**
+		 * Default egress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultEgressThresholdInGbps?: number | null;
 
-		/** Default ingress threshold (in Gbps). */
+		/**
+		 * Default ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultIngressThresholdInGbps?: number | null;
 
-		/** Default Intranet egress threshold (in Gbps). */
+		/**
+		 * Default Intranet egress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultIntranetEgressThresholdInGbps?: number | null;
 
-		/** Default Intranet ingress threshold (in Gbps). */
+		/**
+		 * Default Intranet ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultIntranetIngressThresholdInGbps?: number | null;
 
-		/** Default request threshold (in TPS). */
+		/**
+		 * Default request threshold (in TPS).
+		 * Type: float
+		 */
 		defaultRequestThresholdInTps?: number | null;
 
-		/** Interval (in seconds) of default throttle probability decay. */
+		/**
+		 * Interval (in seconds) of default throttle probability decay.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultThrottleProbabilityDecayIntervalInSeconds?: number | null;
 
-		/** Default total egress threshold (in Gbps). */
+		/**
+		 * Default total egress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultTotalEgressThresholdInGbps?: number | null;
 
-		/** Default total ingress threshold (in Gbps). */
+		/**
+		 * Default total ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultTotalIngressThresholdInGbps?: number | null;
 
-		/** Interval (in seconds) of feedback refresh. */
+		/**
+		 * Interval (in seconds) of feedback refresh.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		feedbackRefreshIntervalInSeconds?: number | null;
 
-		/** Grace period for full throttling in refresh intervals. */
+		/**
+		 * Grace period for full throttling in refresh intervals.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gracePeriodForFullThrottlingInRefreshIntervals?: number | null;
 
-		/** Maximum probability of throttle in grace period. */
+		/**
+		 * Maximum probability of throttle in grace period.
+		 * Type: float
+		 */
 		gracePeriodMaxThrottleProbability?: number | null;
 
-		/** Host style HTTP port. */
+		/**
+		 * Host style HTTP port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hostStyleHttpPort?: number | null;
 
-		/** Host style HTTPs port. */
+		/**
+		 * Host style HTTPs port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hostStyleHttpsPort?: number | null;
 
-		/** Minimum egress threshold (in Gbps). */
+		/**
+		 * Minimum egress threshold (in Gbps).
+		 * Type: float
+		 */
 		minimumEgressThresholdInGbps?: number | null;
 
-		/** Minimum ingress threshold (in Gbps). */
+		/**
+		 * Minimum ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		minimumIngressThresholdInGbps?: number | null;
 
-		/** Minimum Intranet egress threshold (in Gbps). */
+		/**
+		 * Minimum Intranet egress threshold (in Gbps).
+		 * Type: float
+		 */
 		minimumIntranetEgressThresholdInGbps?: number | null;
 
-		/** Minimum Intranet ingress threshold (in Gbps). */
+		/**
+		 * Minimum Intranet ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		minimumIntranetIngressThresholdInGbps?: number | null;
 
-		/** Minimum request threshold (in TPS). */
+		/**
+		 * Minimum request threshold (in TPS).
+		 * Type: float
+		 */
 		minimumRequestThresholdInTps?: number | null;
 
-		/** Minimum total egress threshold (in Gbp */
+		/**
+		 * Minimum total egress threshold (in Gbp
+		 * Type: float
+		 */
 		minimumTotalEgressThresholdInGbps?: number | null;
 
-		/** Minimum total ingress threshold (in Gbps). */
+		/**
+		 * Minimum total ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		minimumTotalIngressThresholdInGbps?: number | null;
 
-		/** Number of accounts to sync. */
+		/**
+		 * Number of accounts to sync.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfAccountsToSync?: number | null;
 
-		/** Overall egress threshold (in Gbps). */
+		/**
+		 * Overall egress threshold (in Gbps).
+		 * Type: float
+		 */
 		overallEgressThresholdInGbps?: number | null;
 
-		/** Overall ingress threshold (in Gbps) */
+		/**
+		 * Overall ingress threshold (in Gbps)
+		 * Type: float
+		 */
 		overallIngressThresholdInGbps?: number | null;
 
-		/** Overall Intranet egress threshold (in Gbps). */
+		/**
+		 * Overall Intranet egress threshold (in Gbps).
+		 * Type: float
+		 */
 		overallIntranetEgressThresholdInGbps?: number | null;
 
-		/** Overall Intranet ingress threshold (in Gbps). */
+		/**
+		 * Overall Intranet ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		overallIntranetIngressThresholdInGbps?: number | null;
 
-		/** Overall request threshold (in TPS). */
+		/**
+		 * Overall request threshold (in TPS).
+		 * Type: float
+		 */
 		overallRequestThresholdInTps?: number | null;
 
-		/** Overall total egress threshold (in Gbps). */
+		/**
+		 * Overall total egress threshold (in Gbps).
+		 * Type: float
+		 */
 		overallTotalEgressThresholdInGbps?: number | null;
 
-		/** Overall total ingress threshold (in Gbps). */
+		/**
+		 * Overall total ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		overallTotalIngressThresholdInGbps?: number | null;
 
-		/** The retention period (in days) for deleted storage account. */
+		/**
+		 * The retention period (in days) for deleted storage account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionPeriodForDeletedStorageAccountsInDays?: number | null;
 
-		/** The polling interval (in second). */
+		/**
+		 * The polling interval (in second).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		settingsPollingIntervalInSecond?: number | null;
 
-		/** Tolerance factor for egress. */
+		/**
+		 * Tolerance factor for egress.
+		 * Type: float
+		 */
 		toleranceFactorForEgress?: number | null;
 
-		/** Tolerance factor for ingress. */
+		/**
+		 * Tolerance factor for ingress.
+		 * Type: float
+		 */
 		toleranceFactorForIngress?: number | null;
 
-		/** Tolerance factor for Intranet egress. */
+		/**
+		 * Tolerance factor for Intranet egress.
+		 * Type: float
+		 */
 		toleranceFactorForIntranetEgress?: number | null;
 
-		/** Tolerance factor for Intranet ingress. */
+		/**
+		 * Tolerance factor for Intranet ingress.
+		 * Type: float
+		 */
 		toleranceFactorForIntranetIngress?: number | null;
 
-		/** Tolerance factor for total egress. */
+		/**
+		 * Tolerance factor for total egress.
+		 * Type: float
+		 */
 		toleranceFactorForTotalEgress?: number | null;
 
-		/** Tolerance factor for total ingress. */
+		/**
+		 * Tolerance factor for total ingress.
+		 * Type: float
+		 */
 		toleranceFactorForTotalIngress?: number | null;
 
-		/** Tolerance factor for TPS. */
+		/**
+		 * Tolerance factor for TPS.
+		 * Type: float
+		 */
 		toleranceFactorForTps?: number | null;
 
-		/** Interval (in seconds) of storage usage collection. */
+		/**
+		 * Interval (in seconds) of storage usage collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		usageCollectionIntervalInSeconds?: number | null;
 	}
 
@@ -198,118 +312,232 @@ export namespace MyNS {
 		/** The suffixes of URI of hosts in data center. */
 		dataCenterUriHostSuffixes: FormControl<string | null | undefined>,
 
-		/** Default egress threshold (in Gbps). */
+		/**
+		 * Default egress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultEgressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Default ingress threshold (in Gbps). */
+		/**
+		 * Default ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultIngressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Default Intranet egress threshold (in Gbps). */
+		/**
+		 * Default Intranet egress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultIntranetEgressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Default Intranet ingress threshold (in Gbps). */
+		/**
+		 * Default Intranet ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultIntranetIngressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Default request threshold (in TPS). */
+		/**
+		 * Default request threshold (in TPS).
+		 * Type: float
+		 */
 		defaultRequestThresholdInTps: FormControl<number | null | undefined>,
 
-		/** Interval (in seconds) of default throttle probability decay. */
+		/**
+		 * Interval (in seconds) of default throttle probability decay.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultThrottleProbabilityDecayIntervalInSeconds: FormControl<number | null | undefined>,
 
-		/** Default total egress threshold (in Gbps). */
+		/**
+		 * Default total egress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultTotalEgressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Default total ingress threshold (in Gbps). */
+		/**
+		 * Default total ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		defaultTotalIngressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Interval (in seconds) of feedback refresh. */
+		/**
+		 * Interval (in seconds) of feedback refresh.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		feedbackRefreshIntervalInSeconds: FormControl<number | null | undefined>,
 
-		/** Grace period for full throttling in refresh intervals. */
+		/**
+		 * Grace period for full throttling in refresh intervals.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gracePeriodForFullThrottlingInRefreshIntervals: FormControl<number | null | undefined>,
 
-		/** Maximum probability of throttle in grace period. */
+		/**
+		 * Maximum probability of throttle in grace period.
+		 * Type: float
+		 */
 		gracePeriodMaxThrottleProbability: FormControl<number | null | undefined>,
 
-		/** Host style HTTP port. */
+		/**
+		 * Host style HTTP port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hostStyleHttpPort: FormControl<number | null | undefined>,
 
-		/** Host style HTTPs port. */
+		/**
+		 * Host style HTTPs port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hostStyleHttpsPort: FormControl<number | null | undefined>,
 
-		/** Minimum egress threshold (in Gbps). */
+		/**
+		 * Minimum egress threshold (in Gbps).
+		 * Type: float
+		 */
 		minimumEgressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Minimum ingress threshold (in Gbps). */
+		/**
+		 * Minimum ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		minimumIngressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Minimum Intranet egress threshold (in Gbps). */
+		/**
+		 * Minimum Intranet egress threshold (in Gbps).
+		 * Type: float
+		 */
 		minimumIntranetEgressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Minimum Intranet ingress threshold (in Gbps). */
+		/**
+		 * Minimum Intranet ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		minimumIntranetIngressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Minimum request threshold (in TPS). */
+		/**
+		 * Minimum request threshold (in TPS).
+		 * Type: float
+		 */
 		minimumRequestThresholdInTps: FormControl<number | null | undefined>,
 
-		/** Minimum total egress threshold (in Gbp */
+		/**
+		 * Minimum total egress threshold (in Gbp
+		 * Type: float
+		 */
 		minimumTotalEgressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Minimum total ingress threshold (in Gbps). */
+		/**
+		 * Minimum total ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		minimumTotalIngressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Number of accounts to sync. */
+		/**
+		 * Number of accounts to sync.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfAccountsToSync: FormControl<number | null | undefined>,
 
-		/** Overall egress threshold (in Gbps). */
+		/**
+		 * Overall egress threshold (in Gbps).
+		 * Type: float
+		 */
 		overallEgressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Overall ingress threshold (in Gbps) */
+		/**
+		 * Overall ingress threshold (in Gbps)
+		 * Type: float
+		 */
 		overallIngressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Overall Intranet egress threshold (in Gbps). */
+		/**
+		 * Overall Intranet egress threshold (in Gbps).
+		 * Type: float
+		 */
 		overallIntranetEgressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Overall Intranet ingress threshold (in Gbps). */
+		/**
+		 * Overall Intranet ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		overallIntranetIngressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Overall request threshold (in TPS). */
+		/**
+		 * Overall request threshold (in TPS).
+		 * Type: float
+		 */
 		overallRequestThresholdInTps: FormControl<number | null | undefined>,
 
-		/** Overall total egress threshold (in Gbps). */
+		/**
+		 * Overall total egress threshold (in Gbps).
+		 * Type: float
+		 */
 		overallTotalEgressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** Overall total ingress threshold (in Gbps). */
+		/**
+		 * Overall total ingress threshold (in Gbps).
+		 * Type: float
+		 */
 		overallTotalIngressThresholdInGbps: FormControl<number | null | undefined>,
 
-		/** The retention period (in days) for deleted storage account. */
+		/**
+		 * The retention period (in days) for deleted storage account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionPeriodForDeletedStorageAccountsInDays: FormControl<number | null | undefined>,
 
-		/** The polling interval (in second). */
+		/**
+		 * The polling interval (in second).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		settingsPollingIntervalInSecond: FormControl<number | null | undefined>,
 
-		/** Tolerance factor for egress. */
+		/**
+		 * Tolerance factor for egress.
+		 * Type: float
+		 */
 		toleranceFactorForEgress: FormControl<number | null | undefined>,
 
-		/** Tolerance factor for ingress. */
+		/**
+		 * Tolerance factor for ingress.
+		 * Type: float
+		 */
 		toleranceFactorForIngress: FormControl<number | null | undefined>,
 
-		/** Tolerance factor for Intranet egress. */
+		/**
+		 * Tolerance factor for Intranet egress.
+		 * Type: float
+		 */
 		toleranceFactorForIntranetEgress: FormControl<number | null | undefined>,
 
-		/** Tolerance factor for Intranet ingress. */
+		/**
+		 * Tolerance factor for Intranet ingress.
+		 * Type: float
+		 */
 		toleranceFactorForIntranetIngress: FormControl<number | null | undefined>,
 
-		/** Tolerance factor for total egress. */
+		/**
+		 * Tolerance factor for total egress.
+		 * Type: float
+		 */
 		toleranceFactorForTotalEgress: FormControl<number | null | undefined>,
 
-		/** Tolerance factor for total ingress. */
+		/**
+		 * Tolerance factor for total ingress.
+		 * Type: float
+		 */
 		toleranceFactorForTotalIngress: FormControl<number | null | undefined>,
 
-		/** Tolerance factor for TPS. */
+		/**
+		 * Tolerance factor for TPS.
+		 * Type: float
+		 */
 		toleranceFactorForTps: FormControl<number | null | undefined>,
 
-		/** Interval (in seconds) of storage usage collection. */
+		/**
+		 * Interval (in seconds) of storage usage collection.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		usageCollectionIntervalInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateFarmSettingsFormGroup() {
@@ -701,16 +929,28 @@ export namespace MyNS {
 
 	export interface Farms_ListMetricsReturnValueMetricValues {
 
-		/** Average value of metric. */
+		/**
+		 * Average value of metric.
+		 * Type: float
+		 */
 		average?: number | null;
 
-		/** Count of metric values. */
+		/**
+		 * Count of metric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Maximum value of metric. */
+		/**
+		 * Maximum value of metric.
+		 * Type: float
+		 */
 		maximum?: number | null;
 
-		/** Minimum value of metric. */
+		/**
+		 * Minimum value of metric.
+		 * Type: float
+		 */
 		minimum?: number | null;
 
 		/** Metric value properties. */
@@ -719,21 +959,36 @@ export namespace MyNS {
 		/** Timestamp of metric value. */
 		timeStamp?: Date | null;
 
-		/** Total value of metric. */
+		/**
+		 * Total value of metric.
+		 * Type: float
+		 */
 		total?: number | null;
 	}
 	export interface Farms_ListMetricsReturnValueMetricValuesFormProperties {
 
-		/** Average value of metric. */
+		/**
+		 * Average value of metric.
+		 * Type: float
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Count of metric values. */
+		/**
+		 * Count of metric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Maximum value of metric. */
+		/**
+		 * Maximum value of metric.
+		 * Type: float
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Minimum value of metric. */
+		/**
+		 * Minimum value of metric.
+		 * Type: float
+		 */
 		minimum: FormControl<number | null | undefined>,
 
 		/** Metric value properties. */
@@ -742,7 +997,10 @@ export namespace MyNS {
 		/** Timestamp of metric value. */
 		timeStamp: FormControl<Date | null | undefined>,
 
-		/** Total value of metric. */
+		/**
+		 * Total value of metric.
+		 * Type: float
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateFarms_ListMetricsReturnValueMetricValuesFormGroup() {

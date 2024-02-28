@@ -4,150 +4,346 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Game {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Attendance?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayRotationNumber?: number | null;
 		AwayTeam?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamErrors?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamHits?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamMoneyLine?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamProbablePitcherID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamRuns?: number | null;
 		AwayTeamStartingPitcher?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamStartingPitcherID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Balls?: number | null;
 		Channel?: string | null;
 		CurrentHitter?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrentHitterID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrentHittingTeamID?: number | null;
 		CurrentPitcher?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrentPitcherID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrentPitchingTeamID?: number | null;
 		DateTime?: string | null;
 		Day?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DueUpHitterID1?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DueUpHitterID2?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DueUpHitterID3?: number | null;
 		ForecastDescription?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastTempHigh?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastTempLow?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastWindChill?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastWindDirection?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastWindSpeed?: number | null;
 		GameEndDateTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalAwayTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalHomeTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeRotationNumber?: number | null;
 		HomeTeam?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamErrors?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamHits?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamMoneyLine?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamProbablePitcherID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamRuns?: number | null;
 		HomeTeamStartingPitcher?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamStartingPitcherID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Inning?: number | null;
 		InningHalf?: string | null;
 		Innings?: Array<Inning>;
 		IsClosed?: boolean | null;
 		LastPlay?: string | null;
 		LosingPitcher?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		LosingPitcherID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Outs?: number | null;
+
+		/** Type: double */
 		OverUnder?: number | null;
+
+		/** Type: double */
 		PointSpread?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PointSpreadAwayTeamMoneyLine?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PointSpreadHomeTeamMoneyLine?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RescheduledFromGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RescheduledGameID?: number | null;
 		RunnerOnFirst?: boolean | null;
 		RunnerOnSecond?: boolean | null;
 		RunnerOnThird?: boolean | null;
 		SavingPitcher?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SavingPitcherID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StadiumID?: number | null;
 		Status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Strikes?: number | null;
 		Updated?: string | null;
 		WinningPitcher?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WinningPitcherID?: number | null;
 	}
 	export interface GameFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Attendance: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayRotationNumber: FormControl<number | null | undefined>,
 		AwayTeam: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamErrors: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamHits: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamMoneyLine: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamProbablePitcherID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamRuns: FormControl<number | null | undefined>,
 		AwayTeamStartingPitcher: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamStartingPitcherID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Balls: FormControl<number | null | undefined>,
 		Channel: FormControl<string | null | undefined>,
 		CurrentHitter: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrentHitterID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrentHittingTeamID: FormControl<number | null | undefined>,
 		CurrentPitcher: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrentPitcherID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		CurrentPitchingTeamID: FormControl<number | null | undefined>,
 		DateTime: FormControl<string | null | undefined>,
 		Day: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DueUpHitterID1: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DueUpHitterID2: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DueUpHitterID3: FormControl<number | null | undefined>,
 		ForecastDescription: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastTempHigh: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastTempLow: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastWindChill: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastWindDirection: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ForecastWindSpeed: FormControl<number | null | undefined>,
 		GameEndDateTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalAwayTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GlobalHomeTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeRotationNumber: FormControl<number | null | undefined>,
 		HomeTeam: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamErrors: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamHits: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamMoneyLine: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamProbablePitcherID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamRuns: FormControl<number | null | undefined>,
 		HomeTeamStartingPitcher: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamStartingPitcherID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Inning: FormControl<number | null | undefined>,
 		InningHalf: FormControl<string | null | undefined>,
 		IsClosed: FormControl<boolean | null | undefined>,
 		LastPlay: FormControl<string | null | undefined>,
 		LosingPitcher: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		LosingPitcherID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Outs: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		OverUnder: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PointSpread: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PointSpreadAwayTeamMoneyLine: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PointSpreadHomeTeamMoneyLine: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RescheduledFromGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RescheduledGameID: FormControl<number | null | undefined>,
 		RunnerOnFirst: FormControl<boolean | null | undefined>,
 		RunnerOnSecond: FormControl<boolean | null | undefined>,
 		RunnerOnThird: FormControl<boolean | null | undefined>,
 		SavingPitcher: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SavingPitcherID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StadiumID: FormControl<number | null | undefined>,
 		Status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Strikes: FormControl<number | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
 		WinningPitcher: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WinningPitcherID: FormControl<number | null | undefined>,
 	}
 	export function CreateGameFormGroup() {
@@ -228,17 +424,37 @@ export namespace MyNS {
 	}
 
 	export interface Inning {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamRuns?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamRuns?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InningID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InningNumber?: number | null;
 	}
 	export interface InningFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamRuns: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamRuns: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InningID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InningNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateInningFormGroup() {
@@ -254,31 +470,63 @@ export namespace MyNS {
 
 	export interface Pitch {
 		Ball?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BallsBeforePitch?: number | null;
 		Foul?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HitterID?: number | null;
 		Looking?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Outs?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitchID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitchNumberThisAtBat?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitcherID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayID?: number | null;
 		Strike?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StrikesBeforePitch?: number | null;
 		Swinging?: boolean | null;
 	}
 	export interface PitchFormProperties {
 		Ball: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BallsBeforePitch: FormControl<number | null | undefined>,
 		Foul: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HitterID: FormControl<number | null | undefined>,
 		Looking: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Outs: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitchID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitchNumberThisAtBat: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitcherID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayID: FormControl<number | null | undefined>,
 		Strike: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StrikesBeforePitch: FormControl<number | null | undefined>,
 		Swinging: FormControl<boolean | null | undefined>,
 	}
@@ -303,77 +551,157 @@ export namespace MyNS {
 
 	export interface Play {
 		AtBat?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamRuns?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Balls?: number | null;
 		Description?: string | null;
 		Error?: boolean | null;
 		Hit?: boolean | null;
 		HitterBatHand?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HitterID?: number | null;
 		HitterName?: string | null;
 		HitterPosition?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HitterTeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamRuns?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InningBatterNumber?: number | null;
 		InningHalf?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InningID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InningNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NumberOfOutsOnPlay?: number | null;
 		Out?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Outs?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitchNumberThisAtBat?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitcherID?: number | null;
 		PitcherName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitcherTeamID?: number | null;
 		PitcherThrowHand?: string | null;
 		Pitches?: Array<Pitch>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayNumber?: number | null;
 		Result?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Runner1ID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Runner2ID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Runner3ID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RunsBattedIn?: number | null;
 		Sacrifice?: boolean | null;
 		Strikeout?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Strikes?: number | null;
 		Updated?: string | null;
 		Walk?: boolean | null;
 	}
 	export interface PlayFormProperties {
 		AtBat: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AwayTeamRuns: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Balls: FormControl<number | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 		Error: FormControl<boolean | null | undefined>,
 		Hit: FormControl<boolean | null | undefined>,
 		HitterBatHand: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HitterID: FormControl<number | null | undefined>,
 		HitterName: FormControl<string | null | undefined>,
 		HitterPosition: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HitterTeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HomeTeamRuns: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InningBatterNumber: FormControl<number | null | undefined>,
 		InningHalf: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InningID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InningNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NumberOfOutsOnPlay: FormControl<number | null | undefined>,
 		Out: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Outs: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitchNumberThisAtBat: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitcherID: FormControl<number | null | undefined>,
 		PitcherName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PitcherTeamID: FormControl<number | null | undefined>,
 		PitcherThrowHand: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayNumber: FormControl<number | null | undefined>,
 		Result: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Runner1ID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Runner2ID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Runner3ID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RunsBattedIn: FormControl<number | null | undefined>,
 		Sacrifice: FormControl<boolean | null | undefined>,
 		Strikeout: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Strikes: FormControl<number | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
 		Walk: FormControl<boolean | null | undefined>,
@@ -442,7 +770,6 @@ export namespace MyNS {
 		 * Get {format}/PlayByPlay/{gameid}
 		 * @param {PlayByPlayFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} gameid The GameID of an MLB game.  GameIDs can be found in the Games API.  Valid entries are <code>14620</code> or <code>16905</code>
-		 * @return {PlayByPlay} 
 		 */
 		PlayByPlay(format: PlayByPlayFormat, gameid: string): Observable<PlayByPlay> {
 			return this.http.get<PlayByPlay>(this.baseUri + format + '/PlayByPlay/' + (gameid == null ? '' : encodeURIComponent(gameid)) + '', {});
@@ -456,7 +783,6 @@ export namespace MyNS {
 		 * <br>Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.
 		 * @param {string} minutes Only returns plays that have changed in the last X minutes.  You specify how many minutes in time to go back.  Valid entries are:
 		 * <code>1</code>, <code>2</code> ... <code>all</code>.
-		 * @return {Array<PlayByPlay>} 
 		 */
 		PlayByPlayDelta(format: PlayByPlayFormat, date: string, minutes: string): Observable<Array<PlayByPlay>> {
 			return this.http.get<Array<PlayByPlay>>(this.baseUri + format + '/PlayByPlayDelta/' + (date == null ? '' : encodeURIComponent(date)) + '/' + (minutes == null ? '' : encodeURIComponent(minutes)) + '', {});

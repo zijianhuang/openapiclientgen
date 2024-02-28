@@ -13,7 +13,10 @@ export namespace MyNS {
 		/** Indicates the status of this request. */
 		status?: API401ResponseStatus | null;
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts?: number | null;
 	}
 
@@ -26,7 +29,10 @@ export namespace MyNS {
 		/** Indicates the status of this request. */
 		status: FormControl<API401ResponseStatus | null | undefined>,
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts: FormControl<number | null | undefined>,
 	}
 	export function CreateAPI401ResponseFormGroup() {
@@ -50,7 +56,10 @@ export namespace MyNS {
 		/** Indicates the status of this request. */
 		status?: API404ResponseStatus | null;
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts?: number | null;
 	}
 
@@ -63,7 +72,10 @@ export namespace MyNS {
 		/** Indicates the status of this request. */
 		status: FormControl<API404ResponseStatus | null | undefined>,
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts: FormControl<number | null | undefined>,
 	}
 	export function CreateAPI404ResponseFormGroup() {
@@ -154,18 +166,21 @@ export namespace MyNS {
 		/**
 		 * The unique ID for this location.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
 		/**
 		 * The latitude of the approximate point of this location.
 		 * Required
+		 * Type: double
 		 */
 		lat: number;
 
 		/**
 		 * The longitude of the approximate point of this location.
 		 * Required
+		 * Type: double
 		 */
 		lng: number;
 
@@ -178,6 +193,7 @@ export namespace MyNS {
 		/**
 		 * The ID for the parent location. If a location has no parent this value is `0`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pid: number;
 
@@ -195,18 +211,21 @@ export namespace MyNS {
 		/**
 		 * The unique ID for this location.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The latitude of the approximate point of this location.
 		 * Required
+		 * Type: double
 		 */
 		lat: FormControl<number | null | undefined>,
 
 		/**
 		 * The longitude of the approximate point of this location.
 		 * Required
+		 * Type: double
 		 */
 		lng: FormControl<number | null | undefined>,
 
@@ -219,6 +238,7 @@ export namespace MyNS {
 		/**
 		 * The ID for the parent location. If a location has no parent this value is `0`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pid: FormControl<number | null | undefined>,
 
@@ -243,12 +263,18 @@ export namespace MyNS {
 
 	export interface FeedLatest {
 
-		/** Indicates the timestamp of the latest feed version (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp of the latest feed version (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts?: number | null;
 	}
 	export interface FeedLatestFormProperties {
 
-		/** Indicates the timestamp of the latest feed version (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp of the latest feed version (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts: FormControl<number | null | undefined>,
 	}
 	export function CreateFeedLatestFormGroup() {
@@ -319,12 +345,14 @@ export namespace MyNS {
 		/**
 		 * The filesize in bytes of the feed version when compressed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: number;
 
 		/**
 		 * The timestamp of when this feed version was registered in the TransitFeeds.com system (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ts: number;
 
@@ -351,12 +379,14 @@ export namespace MyNS {
 		/**
 		 * The filesize in bytes of the feed version when compressed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
 		/**
 		 * The timestamp of when this feed version was registered in the TransitFeeds.com system (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ts: FormControl<number | null | undefined>,
 
@@ -463,7 +493,10 @@ export namespace MyNS {
 		 */
 		status?: GetFeedVersionsResponseStatus | null;
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts?: number | null;
 	}
 
@@ -483,7 +516,10 @@ export namespace MyNS {
 		 */
 		status: FormControl<GetFeedVersionsResponseStatus | null | undefined>,
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFeedVersionsResponseFormGroup() {
@@ -506,18 +542,26 @@ export namespace MyNS {
 		/**
 		 * The maximum number of feed versions that can be returned in this response. If the final page is being
 		 * requested then this number may be larger than the number of feed versions returned in `versions`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit?: number | null;
 
-		/** The number of pages available, based on the `total` and `limit`. */
+		/**
+		 * The number of pages available, based on the `total` and `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPages?: number | null;
 
-		/** The page number being requested, based on the maximum number than can be returned from in `limit`. */
+		/**
+		 * The page number being requested, based on the maximum number than can be returned from in `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
 		/**
 		 * The total number of feed versions found based on the request input. Note that this number may be larger
 		 * than the number of feed versions returned in `versions`, based on the values for `limit` and `page`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total?: number | null;
 	}
@@ -529,18 +573,26 @@ export namespace MyNS {
 		/**
 		 * The maximum number of feed versions that can be returned in this response. If the final page is being
 		 * requested then this number may be larger than the number of feed versions returned in `versions`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** The number of pages available, based on the `total` and `limit`. */
+		/**
+		 * The number of pages available, based on the `total` and `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPages: FormControl<number | null | undefined>,
 
-		/** The page number being requested, based on the maximum number than can be returned from in `limit`. */
+		/**
+		 * The page number being requested, based on the maximum number than can be returned from in `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of feed versions found based on the request input. Note that this number may be larger
 		 * than the number of feed versions returned in `versions`, based on the values for `limit` and `page`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -576,7 +628,10 @@ export namespace MyNS {
 		 */
 		status?: GetFeedsResponseStatus | null;
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts?: number | null;
 	}
 
@@ -595,7 +650,10 @@ export namespace MyNS {
 		 */
 		status: FormControl<GetFeedsResponseStatus | null | undefined>,
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFeedsResponseFormGroup() {
@@ -618,18 +676,26 @@ export namespace MyNS {
 		/**
 		 * The maximum number of feeds that can be returned in this response. If the final page is being
 		 * requested then this number may be larger than the number of feeds returned in `feeds`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit?: number | null;
 
-		/** The number of pages available, based on the `total` and `limit`. */
+		/**
+		 * The number of pages available, based on the `total` and `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPages?: number | null;
 
-		/** The page number being requested, based on the maximum number than can be returned from in `limit`. */
+		/**
+		 * The page number being requested, based on the maximum number than can be returned from in `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
 		/**
 		 * The total number of feeds found based on the request input. Note that this number may be larger
 		 * than the number of feeds returned in `feeds`, based on the values for `limit` and `page`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total?: number | null;
 	}
@@ -641,18 +707,26 @@ export namespace MyNS {
 		/**
 		 * The maximum number of feeds that can be returned in this response. If the final page is being
 		 * requested then this number may be larger than the number of feeds returned in `feeds`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** The number of pages available, based on the `total` and `limit`. */
+		/**
+		 * The number of pages available, based on the `total` and `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPages: FormControl<number | null | undefined>,
 
-		/** The page number being requested, based on the maximum number than can be returned from in `limit`. */
+		/**
+		 * The page number being requested, based on the maximum number than can be returned from in `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of feeds found based on the request input. Note that this number may be larger
 		 * than the number of feeds returned in `feeds`, based on the values for `limit` and `page`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -690,7 +764,10 @@ export namespace MyNS {
 		 */
 		status?: GetLatestFeedVersionResponseStatus | null;
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts?: number | null;
 	}
 
@@ -711,7 +788,10 @@ export namespace MyNS {
 		 */
 		status: FormControl<GetLatestFeedVersionResponseStatus | null | undefined>,
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLatestFeedVersionResponseFormGroup() {
@@ -734,18 +814,26 @@ export namespace MyNS {
 		/**
 		 * The maximum number of feed versions that can be returned in this response. If the final page is being
 		 * requested then this number may be larger than the number of feed versions returned in `versions`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit?: number | null;
 
-		/** The number of pages available, based on the `total` and `limit`. */
+		/**
+		 * The number of pages available, based on the `total` and `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPages?: number | null;
 
-		/** The page number being requested, based on the maximum number than can be returned from in `limit`. */
+		/**
+		 * The page number being requested, based on the maximum number than can be returned from in `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
 		/**
 		 * The total number of feed versions found based on the request input. Note that this number may be larger
 		 * than the number of feed versions returned in `versions`, based on the values for `limit` and `page`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total?: number | null;
 	}
@@ -757,18 +845,26 @@ export namespace MyNS {
 		/**
 		 * The maximum number of feed versions that can be returned in this response. If the final page is being
 		 * requested then this number may be larger than the number of feed versions returned in `versions`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** The number of pages available, based on the `total` and `limit`. */
+		/**
+		 * The number of pages available, based on the `total` and `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPages: FormControl<number | null | undefined>,
 
-		/** The page number being requested, based on the maximum number than can be returned from in `limit`. */
+		/**
+		 * The page number being requested, based on the maximum number than can be returned from in `limit`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of feed versions found based on the request input. Note that this number may be larger
 		 * than the number of feed versions returned in `versions`, based on the values for `limit` and `page`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -804,7 +900,10 @@ export namespace MyNS {
 		 */
 		status?: GetFeedsResponseStatus | null;
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts?: number | null;
 	}
 
@@ -823,7 +922,10 @@ export namespace MyNS {
 		 */
 		status: FormControl<GetFeedsResponseStatus | null | undefined>,
 
-		/** Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT). */
+		/**
+		 * Indicates the timestamp (in number of seconds since the epoch (January 1 1970 00:00:00 GMT).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ts: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLocationsResponseFormGroup() {

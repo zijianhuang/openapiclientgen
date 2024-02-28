@@ -196,7 +196,10 @@ export namespace MyNS {
 		/** The version of the template. */
 		manifestVersion?: string | null;
 
-		/** The order of the template in the templates list. */
+		/**
+		 * The order of the template in the templates list.
+		 * Type: double
+		 */
 		order?: number | null;
 
 		/** The title of the template. */
@@ -218,7 +221,10 @@ export namespace MyNS {
 		/** The version of the template. */
 		manifestVersion: FormControl<string | null | undefined>,
 
-		/** The order of the template in the templates list. */
+		/**
+		 * The order of the template in the templates list.
+		 * Type: double
+		 */
 		order: FormControl<number | null | undefined>,
 
 		/** The title of the template. */

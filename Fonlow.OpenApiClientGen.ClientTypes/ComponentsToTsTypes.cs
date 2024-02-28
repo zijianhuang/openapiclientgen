@@ -464,10 +464,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				return s;
 			}
-			else if (!string.IsNullOrEmpty(s) && float.TryParse(s, out _)) {
+			else if (!string.IsNullOrEmpty(s) && float.TryParse(s, out _))
+			{
 				return Renamer.RefineEnumMemberName(s).Replace("'", "\\'");
 			}
-			
+
 			return $"'{s.Replace("'", "\\'")}'";
 		}
 
@@ -478,7 +479,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (d is OpenApiPrimitive<string> dString)
 				{
 #if DEBUG
-					if (dString.Value== "-1")
+					if (dString.Value == "-1")
 					{
 						Debug.WriteLine("hahhaah");
 					}
@@ -496,7 +497,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}).ToArray();
 		}
 
-		void SetClientPropertyTypeInfo(CodeMemberField p, bool isComplex, bool isArray, Type clrPrimitiveType=null)
+		void SetClientPropertyTypeInfo(CodeMemberField p, bool isComplex, bool isArray, Type clrPrimitiveType = null)
 		{
 			p.Type.UserData.Add(Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo,
 			new FieldTypeInfo
@@ -560,6 +561,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					ss.Insert(0, typeComment);
 				}
 
+				if (!ComponentsHelper.FieldSchemaContainsValueConstraints(memberSchema))
+				{
+					var fieldTypeInfo = property.Type.UserData.Contains(Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo) ?
+					property.Type.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] as FieldTypeInfo
+					: null;
+					if (fieldTypeInfo != null && fieldTypeInfo.ClrType != null && dotNetTypeCommentDic.TryGetValue(fieldTypeInfo.ClrType, out string ctm))
+					{
+						ss.Add(ctm);
+					}
+				}
+
 				if (ss.Count > 0)
 				{
 					property.Comments.Add(new CodeCommentStatement(Fonlow.DocComment.StringFunctions.IndentedArrayToString(ss), true));
@@ -570,14 +582,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (!string.IsNullOrEmpty(typeComment))
 				{
 					property.Comments.Add(new CodeCommentStatement(typeComment, true));
-				}
-			}
-
-			if (property.Comments.Count==0){
-				var fieldTypeInfo = property.Type.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] as FieldTypeInfo;
-				if (fieldTypeInfo!=null && fieldTypeInfo.ClrType!=null && dotNetTypeCommentDic.TryGetValue(fieldTypeInfo.ClrType, out string ctm))
-				{
-					property.Comments.Add(new CodeCommentStatement(ctm, true));
 				}
 			}
 		}
@@ -682,12 +686,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (enumMember is OpenApiString stringMember)
 				{
 #if DEBUG
-					if (stringMember.Value== "15.10")
+					if (stringMember.Value == "15.10")
 					{
 						Debug.WriteLine("haha");
 					}
 #endif
-					var memberName= RefineTsEnumMemberName(stringMember.Value);
+					var memberName = RefineTsEnumMemberName(stringMember.Value);
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{

@@ -47,7 +47,10 @@ export namespace MyNS {
 		 */
 		severity: AlertSeverity;
 
-		/** time (in minutes) for which Alerts should be throttled or suppressed. */
+		/**
+		 * time (in minutes) for which Alerts should be throttled or suppressed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		throttlingInMin?: number | null;
 
 		/**
@@ -66,7 +69,10 @@ export namespace MyNS {
 		 */
 		severity: FormControl<AlertSeverity | null | undefined>,
 
-		/** time (in minutes) for which Alerts should be throttled or suppressed. */
+		/**
+		 * time (in minutes) for which Alerts should be throttled or suppressed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		throttlingInMin: FormControl<number | null | undefined>,
 	}
 	export function CreateAlertingActionFormGroup() {
@@ -118,6 +124,7 @@ export namespace MyNS {
 		/**
 		 * Result or count threshold based on which rule should be triggered.
 		 * Required
+		 * Type: double
 		 */
 		threshold: number;
 
@@ -134,6 +141,7 @@ export namespace MyNS {
 		/**
 		 * Result or count threshold based on which rule should be triggered.
 		 * Required
+		 * Type: double
 		 */
 		threshold: FormControl<number | null | undefined>,
 
@@ -161,7 +169,10 @@ export namespace MyNS {
 		/** Metric Trigger Evaluation Type */
 		metricTriggerType?: LogMetricTriggerMetricTriggerType | null;
 
-		/** The threshold of the metric trigger. */
+		/**
+		 * The threshold of the metric trigger.
+		 * Type: double
+		 */
 		threshold?: number | null;
 
 		/** Result Condition Evaluation criteria. Supported Values - 'GreaterThan' or 'LessThan' or 'Equal'. */
@@ -177,7 +188,10 @@ export namespace MyNS {
 		/** Metric Trigger Evaluation Type */
 		metricTriggerType: FormControl<LogMetricTriggerMetricTriggerType | null | undefined>,
 
-		/** The threshold of the metric trigger. */
+		/**
+		 * The threshold of the metric trigger.
+		 * Type: double
+		 */
 		threshold: FormControl<number | null | undefined>,
 
 		/** Result Condition Evaluation criteria. Supported Values - 'GreaterThan' or 'LessThan' or 'Equal'. */
@@ -375,12 +389,14 @@ export namespace MyNS {
 		/**
 		 * frequency (in minutes) at which rule condition should be evaluated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frequencyInMinutes: number;
 
 		/**
 		 * Time window for which data needs to be fetched for query (should be greater than or equal to frequencyInMinutes).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeWindowInMinutes: number;
 	}
@@ -391,12 +407,14 @@ export namespace MyNS {
 		/**
 		 * frequency (in minutes) at which rule condition should be evaluated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		frequencyInMinutes: FormControl<number | null | undefined>,
 
 		/**
 		 * Time window for which data needs to be fetched for query (should be greater than or equal to frequencyInMinutes).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeWindowInMinutes: FormControl<number | null | undefined>,
 	}

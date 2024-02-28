@@ -104,11 +104,17 @@ export namespace MyNS {
 	/** The regional quota capacity. */
 	export interface RegionalQuotaCapability {
 
-		/** The number of courses available in the region. */
-		cores_available?: number | null;
+		/**
+		 * The number of courses available in the region.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cores_available?: string | null;
 
-		/** The number of cores used in the region. */
-		cores_used?: number | null;
+		/**
+		 * The number of cores used in the region.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cores_used?: string | null;
 
 		/** The region name. */
 		region_name?: string | null;
@@ -117,19 +123,25 @@ export namespace MyNS {
 	/** The regional quota capacity. */
 	export interface RegionalQuotaCapabilityFormProperties {
 
-		/** The number of courses available in the region. */
-		cores_available: FormControl<number | null | undefined>,
+		/**
+		 * The number of courses available in the region.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cores_available: FormControl<string | null | undefined>,
 
-		/** The number of cores used in the region. */
-		cores_used: FormControl<number | null | undefined>,
+		/**
+		 * The number of cores used in the region.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cores_used: FormControl<string | null | undefined>,
 
 		/** The region name. */
 		region_name: FormControl<string | null | undefined>,
 	}
 	export function CreateRegionalQuotaCapabilityFormGroup() {
 		return new FormGroup<RegionalQuotaCapabilityFormProperties>({
-			cores_available: new FormControl<number | null | undefined>(undefined),
-			cores_used: new FormControl<number | null | undefined>(undefined),
+			cores_available: new FormControl<string | null | undefined>(undefined),
+			cores_used: new FormControl<string | null | undefined>(undefined),
 			region_name: new FormControl<string | null | undefined>(undefined),
 		});
 

@@ -419,7 +419,10 @@ export namespace MyNS {
 		/** Keywords to be used for generating domain recommendations. */
 		keywords?: string | null;
 
-		/** Maximum number of recommendations. */
+		/**
+		 * Maximum number of recommendations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDomainRecommendations?: number | null;
 	}
 
@@ -429,7 +432,10 @@ export namespace MyNS {
 		/** Keywords to be used for generating domain recommendations. */
 		keywords: FormControl<string | null | undefined>,
 
-		/** Maximum number of recommendations. */
+		/**
+		 * Maximum number of recommendations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDomainRecommendations: FormControl<number | null | undefined>,
 	}
 	export function CreateDomainRecommendationSearchParametersFormGroup() {

@@ -20,6 +20,7 @@ export namespace MyNS {
 		/**
 		 * A confidence score between 0 and 1. Scores close to 1 indicate 100% certainty that the identified language is true.
 		 * Required
+		 * Type: double
 		 */
 		score: number;
 	}
@@ -40,6 +41,7 @@ export namespace MyNS {
 		/**
 		 * A confidence score between 0 and 1. Scores close to 1 indicate 100% certainty that the identified language is true.
 		 * Required
+		 * Type: double
 		 */
 		score: FormControl<number | null | undefined>,
 	}
@@ -89,18 +91,21 @@ export namespace MyNS {
 		/**
 		 * Length (in Unicode characters) for the entity text.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		length: number;
 
 		/**
 		 * Start position (in Unicode characters) for the entity text.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		offset: number;
 
 		/**
 		 * Confidence score between 0 and 1 of the extracted entity.
 		 * Required
+		 * Type: double
 		 */
 		score: number;
 
@@ -124,18 +129,21 @@ export namespace MyNS {
 		/**
 		 * Length (in Unicode characters) for the entity text.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		length: FormControl<number | null | undefined>,
 
 		/**
 		 * Start position (in Unicode characters) for the entity text.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		offset: FormControl<number | null | undefined>,
 
 		/**
 		 * Confidence score between 0 and 1 of the extracted entity.
 		 * Required
+		 * Type: double
 		 */
 		score: FormControl<number | null | undefined>,
 
@@ -173,12 +181,14 @@ export namespace MyNS {
 		/**
 		 * Number of text elements recognized in the document.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		charactersCount: number;
 
 		/**
 		 * Number of transactions for the document.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transactionsCount: number;
 	}
@@ -189,12 +199,14 @@ export namespace MyNS {
 		/**
 		 * Number of text elements recognized in the document.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		charactersCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of transactions for the document.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transactionsCount: FormControl<number | null | undefined>,
 	}
@@ -510,18 +522,21 @@ export namespace MyNS {
 		/**
 		 * Length (in Unicode characters) for the entity match text.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		length: number;
 
 		/**
 		 * Start position (in Unicode characters) for the entity match text.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		offset: number;
 
 		/**
 		 * If a well-known item is recognized, a decimal number denoting the confidence level between 0 and 1 will be returned.
 		 * Required
+		 * Type: double
 		 */
 		score: number;
 
@@ -536,18 +551,21 @@ export namespace MyNS {
 		/**
 		 * Length (in Unicode characters) for the entity match text.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		length: FormControl<number | null | undefined>,
 
 		/**
 		 * Start position (in Unicode characters) for the entity match text.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		offset: FormControl<number | null | undefined>,
 
 		/**
 		 * If a well-known item is recognized, a decimal number denoting the confidence level between 0 and 1 will be returned.
 		 * Required
+		 * Type: double
 		 */
 		score: FormControl<number | null | undefined>,
 
@@ -622,26 +640,44 @@ export namespace MyNS {
 	/** Represents the confidence scores between 0 and 1 across all sentiment classes: positive, neutral, negative. */
 	export interface SentimentConfidenceScorePerLabel {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		negative: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		neutral: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		positive: number;
 	}
 
 	/** Represents the confidence scores between 0 and 1 across all sentiment classes: positive, neutral, negative. */
 	export interface SentimentConfidenceScorePerLabelFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		negative: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		neutral: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		positive: FormControl<number | null | undefined>,
 	}
 	export function CreateSentimentConfidenceScorePerLabelFormGroup() {
@@ -658,12 +694,14 @@ export namespace MyNS {
 		/**
 		 * The length of the sentence by Unicode standard.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		length: number;
 
 		/**
 		 * The sentence offset from the start of the document.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		offset: number;
 
@@ -687,12 +725,14 @@ export namespace MyNS {
 		/**
 		 * The length of the sentence by Unicode standard.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		length: FormControl<number | null | undefined>,
 
 		/**
 		 * The sentence offset from the start of the document.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		offset: FormControl<number | null | undefined>,
 
@@ -760,24 +800,28 @@ export namespace MyNS {
 		/**
 		 * Number of documents submitted in the request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		documentsCount: number;
 
 		/**
 		 * Number of invalid documents. This includes empty, over-size limit or non-supported languages documents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		erroneousDocumentsCount: number;
 
 		/**
 		 * Number of transactions for the request.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		transactionsCount: number;
+		transactionsCount: string;
 
 		/**
 		 * Number of valid documents. This excludes empty, over-size limit or non-supported languages documents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		validDocumentsCount: number;
 	}
@@ -788,24 +832,28 @@ export namespace MyNS {
 		/**
 		 * Number of documents submitted in the request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		documentsCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of invalid documents. This includes empty, over-size limit or non-supported languages documents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		erroneousDocumentsCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of transactions for the request.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		transactionsCount: FormControl<number | null | undefined>,
+		transactionsCount: FormControl<string | null | undefined>,
 
 		/**
 		 * Number of valid documents. This excludes empty, over-size limit or non-supported languages documents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		validDocumentsCount: FormControl<number | null | undefined>,
 	}
@@ -813,7 +861,7 @@ export namespace MyNS {
 		return new FormGroup<RequestStatisticsFormProperties>({
 			documentsCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			erroneousDocumentsCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			transactionsCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			transactionsCount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			validDocumentsCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 

@@ -35,19 +35,28 @@ export namespace MyNS {
 	/** ARM usage. */
 	export interface Usage {
 
-		/** Usage current value. */
+		/**
+		 * Usage current value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue?: number | null;
 
 		/** Resource ID. */
 		id?: string | null;
 
-		/** Usage limit. */
+		/**
+		 * Usage limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** ARM Usage Name */
 		name?: Name;
 
-		/** Usage requested limit. */
+		/**
+		 * Usage requested limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedLimit?: number | null;
 
 		/** Resource type. */
@@ -60,16 +69,25 @@ export namespace MyNS {
 	/** ARM usage. */
 	export interface UsageFormProperties {
 
-		/** Usage current value. */
+		/**
+		 * Usage current value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentValue: FormControl<number | null | undefined>,
 
 		/** Resource ID. */
 		id: FormControl<string | null | undefined>,
 
-		/** Usage limit. */
+		/**
+		 * Usage limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** Usage requested limit. */
+		/**
+		 * Usage requested limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedLimit: FormControl<number | null | undefined>,
 
 		/** Resource type. */

@@ -329,10 +329,16 @@ export namespace MyNS {
 		/** URL pointing to the documentation of the monitor */
 		documentationURL?: string | null;
 
-		/** Frequency at which monitor condition is evaluated */
+		/**
+		 * Frequency at which monitor condition is evaluated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency?: number | null;
 
-		/** The duration in minutes in the past during which the monitor is evaluated */
+		/**
+		 * The duration in minutes in the past during which the monitor is evaluated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lookbackDuration?: number | null;
 
 		/** Category of the monitor */
@@ -387,10 +393,16 @@ export namespace MyNS {
 		/** URL pointing to the documentation of the monitor */
 		documentationURL: FormControl<string | null | undefined>,
 
-		/** Frequency at which monitor condition is evaluated */
+		/**
+		 * Frequency at which monitor condition is evaluated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: FormControl<number | null | undefined>,
 
-		/** The duration in minutes in the past during which the monitor is evaluated */
+		/**
+		 * The duration in minutes in the past during which the monitor is evaluated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lookbackDuration: FormControl<number | null | undefined>,
 
 		/** Category of the monitor */
@@ -459,7 +471,10 @@ export namespace MyNS {
 		/** Target health state of the criteria */
 		healthState?: ComponentPropertiesHealthState | null;
 
-		/** Threshold value for this criteria */
+		/**
+		 * Threshold value for this criteria
+		 * Type: double
+		 */
 		threshold?: number | null;
 	}
 
@@ -472,7 +487,10 @@ export namespace MyNS {
 		/** Target health state of the criteria */
 		healthState: FormControl<ComponentPropertiesHealthState | null | undefined>,
 
-		/** Threshold value for this criteria */
+		/**
+		 * Threshold value for this criteria
+		 * Type: double
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateMonitorCriteriaFormGroup() {

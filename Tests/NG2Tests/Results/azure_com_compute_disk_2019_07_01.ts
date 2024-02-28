@@ -142,8 +142,11 @@ export namespace MyNS {
 		/** Required if createOption is Import. The Azure Resource Manager identifier of the storage account containing the blob to import as a disk. */
 		storageAccountId?: string | null;
 
-		/** If createOption is Upload, this is the size of the contents of the upload including the VHD footer. This value should be between 20972032 (20 MiB + 512 bytes for the VHD footer) and 35183298347520 bytes (32 TiB + 512 bytes for the VHD footer). */
-		uploadSizeBytes?: number | null;
+		/**
+		 * If createOption is Upload, this is the size of the contents of the upload including the VHD footer. This value should be between 20972032 (20 MiB + 512 bytes for the VHD footer) and 35183298347520 bytes (32 TiB + 512 bytes for the VHD footer).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		uploadSizeBytes?: string | null;
 	}
 
 	/** Data used when creating a disk. */
@@ -167,8 +170,11 @@ export namespace MyNS {
 		/** Required if createOption is Import. The Azure Resource Manager identifier of the storage account containing the blob to import as a disk. */
 		storageAccountId: FormControl<string | null | undefined>,
 
-		/** If createOption is Upload, this is the size of the contents of the upload including the VHD footer. This value should be between 20972032 (20 MiB + 512 bytes for the VHD footer) and 35183298347520 bytes (32 TiB + 512 bytes for the VHD footer). */
-		uploadSizeBytes: FormControl<number | null | undefined>,
+		/**
+		 * If createOption is Upload, this is the size of the contents of the upload including the VHD footer. This value should be between 20972032 (20 MiB + 512 bytes for the VHD footer) and 35183298347520 bytes (32 TiB + 512 bytes for the VHD footer).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		uploadSizeBytes: FormControl<string | null | undefined>,
 	}
 	export function CreateCreationDataFormGroup() {
 		return new FormGroup<CreationDataFormProperties>({
@@ -177,7 +183,7 @@ export namespace MyNS {
 			sourceUniqueId: new FormControl<string | null | undefined>(undefined),
 			sourceUri: new FormControl<string | null | undefined>(undefined),
 			storageAccountId: new FormControl<string | null | undefined>(undefined),
-			uploadSizeBytes: new FormControl<number | null | undefined>(undefined),
+			uploadSizeBytes: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -347,16 +353,28 @@ export namespace MyNS {
 		 */
 		creationData: CreationData;
 
-		/** The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes. */
-		diskIOPSReadWrite?: number | null;
+		/**
+		 * The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskIOPSReadWrite?: string | null;
 
-		/** The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10. */
+		/**
+		 * The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskMBpsReadWrite?: number | null;
 
-		/** The size of the disk in bytes. This field is read only. */
-		diskSizeBytes?: number | null;
+		/**
+		 * The size of the disk in bytes. This field is read only.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskSizeBytes?: string | null;
 
-		/** If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size. */
+		/**
+		 * If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 
 		/** The state of the disk. */
@@ -387,16 +405,28 @@ export namespace MyNS {
 	/** Disk resource properties. */
 	export interface DiskPropertiesFormProperties {
 
-		/** The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes. */
-		diskIOPSReadWrite: FormControl<number | null | undefined>,
+		/**
+		 * The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskIOPSReadWrite: FormControl<string | null | undefined>,
 
-		/** The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10. */
+		/**
+		 * The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskMBpsReadWrite: FormControl<number | null | undefined>,
 
-		/** The size of the disk in bytes. This field is read only. */
-		diskSizeBytes: FormControl<number | null | undefined>,
+		/**
+		 * The size of the disk in bytes. This field is read only.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskSizeBytes: FormControl<string | null | undefined>,
 
-		/** If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size. */
+		/**
+		 * If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/** The state of the disk. */
@@ -419,9 +449,9 @@ export namespace MyNS {
 	}
 	export function CreateDiskPropertiesFormGroup() {
 		return new FormGroup<DiskPropertiesFormProperties>({
-			diskIOPSReadWrite: new FormControl<number | null | undefined>(undefined),
+			diskIOPSReadWrite: new FormControl<string | null | undefined>(undefined),
 			diskMBpsReadWrite: new FormControl<number | null | undefined>(undefined),
-			diskSizeBytes: new FormControl<number | null | undefined>(undefined),
+			diskSizeBytes: new FormControl<string | null | undefined>(undefined),
 			diskSizeGB: new FormControl<number | null | undefined>(undefined),
 			diskState: new FormControl<DiskPropertiesDiskState | null | undefined>(undefined),
 			hyperVGeneration: new FormControl<DiskPropertiesHyperVGeneration | null | undefined>(undefined),
@@ -500,13 +530,22 @@ export namespace MyNS {
 	/** Disk resource update properties. */
 	export interface DiskUpdateProperties {
 
-		/** The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes. */
-		diskIOPSReadWrite?: number | null;
+		/**
+		 * The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskIOPSReadWrite?: string | null;
 
-		/** The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10. */
+		/**
+		 * The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskMBpsReadWrite?: number | null;
 
-		/** If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size. */
+		/**
+		 * If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 
 		/** Encryption at rest settings for disk or snapshot */
@@ -522,13 +561,22 @@ export namespace MyNS {
 	/** Disk resource update properties. */
 	export interface DiskUpdatePropertiesFormProperties {
 
-		/** The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes. */
-		diskIOPSReadWrite: FormControl<number | null | undefined>,
+		/**
+		 * The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskIOPSReadWrite: FormControl<string | null | undefined>,
 
-		/** The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10. */
+		/**
+		 * The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskMBpsReadWrite: FormControl<number | null | undefined>,
 
-		/** If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size. */
+		/**
+		 * If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/** the Operating System type. */
@@ -536,7 +584,7 @@ export namespace MyNS {
 	}
 	export function CreateDiskUpdatePropertiesFormGroup() {
 		return new FormGroup<DiskUpdatePropertiesFormProperties>({
-			diskIOPSReadWrite: new FormControl<number | null | undefined>(undefined),
+			diskIOPSReadWrite: new FormControl<string | null | undefined>(undefined),
 			diskMBpsReadWrite: new FormControl<number | null | undefined>(undefined),
 			diskSizeGB: new FormControl<number | null | undefined>(undefined),
 			osType: new FormControl<DiskPropertiesOsType | null | undefined>(undefined),
@@ -740,6 +788,7 @@ export namespace MyNS {
 		/**
 		 * Time duration in seconds until the SAS access expires.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		durationInSeconds: number;
 	}
@@ -753,6 +802,7 @@ export namespace MyNS {
 		/**
 		 * Time duration in seconds until the SAS access expires.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		durationInSeconds: FormControl<number | null | undefined>,
 	}
@@ -776,7 +826,10 @@ export namespace MyNS {
 		 */
 		id: string;
 
-		/** If the disk is created from an image's data disk, this is an index that indicates which of the data disks in the image to use. For OS disks, this field is null. */
+		/**
+		 * If the disk is created from an image's data disk, this is an index that indicates which of the data disks in the image to use. For OS disks, this field is null.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lun?: number | null;
 	}
 
@@ -789,7 +842,10 @@ export namespace MyNS {
 		 */
 		id: FormControl<string | null | undefined>,
 
-		/** If the disk is created from an image's data disk, this is an index that indicates which of the data disks in the image to use. For OS disks, this field is null. */
+		/**
+		 * If the disk is created from an image's data disk, this is an index that indicates which of the data disks in the image to use. For OS disks, this field is null.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lun: FormControl<number | null | undefined>,
 	}
 	export function CreateImageDiskReferenceFormGroup() {
@@ -985,10 +1041,16 @@ export namespace MyNS {
 		 */
 		creationData: CreationData;
 
-		/** The size of the disk in bytes. This field is read only. */
-		diskSizeBytes?: number | null;
+		/**
+		 * The size of the disk in bytes. This field is read only.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskSizeBytes?: string | null;
 
-		/** If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size. */
+		/**
+		 * If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 
 		/** Encryption at rest settings for disk or snapshot */
@@ -1019,10 +1081,16 @@ export namespace MyNS {
 	/** Snapshot resource properties. */
 	export interface SnapshotPropertiesFormProperties {
 
-		/** The size of the disk in bytes. This field is read only. */
-		diskSizeBytes: FormControl<number | null | undefined>,
+		/**
+		 * The size of the disk in bytes. This field is read only.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		diskSizeBytes: FormControl<string | null | undefined>,
 
-		/** If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size. */
+		/**
+		 * If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/** The hypervisor generation of the Virtual Machine. Applicable to OS disks only. */
@@ -1045,7 +1113,7 @@ export namespace MyNS {
 	}
 	export function CreateSnapshotPropertiesFormGroup() {
 		return new FormGroup<SnapshotPropertiesFormProperties>({
-			diskSizeBytes: new FormControl<number | null | undefined>(undefined),
+			diskSizeBytes: new FormControl<string | null | undefined>(undefined),
 			diskSizeGB: new FormControl<number | null | undefined>(undefined),
 			hyperVGeneration: new FormControl<DiskPropertiesHyperVGeneration | null | undefined>(undefined),
 			incremental: new FormControl<boolean | null | undefined>(undefined),
@@ -1118,7 +1186,10 @@ export namespace MyNS {
 	/** Snapshot resource update properties. */
 	export interface SnapshotUpdateProperties {
 
-		/** If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size. */
+		/**
+		 * If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB?: number | null;
 
 		/** Encryption at rest settings for disk or snapshot */
@@ -1134,7 +1205,10 @@ export namespace MyNS {
 	/** Snapshot resource update properties. */
 	export interface SnapshotUpdatePropertiesFormProperties {
 
-		/** If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size. */
+		/**
+		 * If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGB: FormControl<number | null | undefined>,
 
 		/** the Operating System type. */

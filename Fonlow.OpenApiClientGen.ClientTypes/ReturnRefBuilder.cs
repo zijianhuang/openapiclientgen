@@ -36,6 +36,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						codeTypeReference = com2CodeDom.PropertySchemaToCodeTypeReference(content.Schema, actionName, "Return");
+						Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
+						codeTypeReference.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] = new Fonlow.TypeScriptCodeDom.FieldTypeInfo
+						{
+							ClrType = simpleType, // client codes won't care about the other properties
+						};
+
 					}
 					catch (ArgumentException ex)
 					{

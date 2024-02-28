@@ -67,7 +67,10 @@ export namespace MyNS {
 		/** The link (url) to the next page of results. */
 		nextLink?: string | null;
 
-		/** Total number of data for the dimension. */
+		/**
+		 * Total number of data for the dimension.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 
 		/** Usage end. */
@@ -93,7 +96,10 @@ export namespace MyNS {
 		/** The link (url) to the next page of results. */
 		nextLink: FormControl<string | null | undefined>,
 
-		/** Total number of data for the dimension. */
+		/**
+		 * Total number of data for the dimension.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 
 		/** Usage end. */

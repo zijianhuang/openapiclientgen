@@ -666,6 +666,7 @@ export namespace MyNS {
 		/**
 		 * count of nodes to create
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodesCount: number;
 
@@ -724,6 +725,7 @@ export namespace MyNS {
 		/**
 		 * count of nodes to create
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodesCount: FormControl<number | null | undefined>,
 
@@ -869,7 +871,10 @@ export namespace MyNS {
 		/** indicates whether account onboarded or not in a given region */
 		isAccountOnboarded?: DedicatedCloudServicePropertiesIsAccountOnboarded | null;
 
-		/** total nodes purchased */
+		/**
+		 * total nodes purchased
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodes?: number | null;
 
 		/** link to a service management web portal */
@@ -888,7 +893,10 @@ export namespace MyNS {
 		/** indicates whether account onboarded or not in a given region */
 		isAccountOnboarded: FormControl<DedicatedCloudServicePropertiesIsAccountOnboarded | null | undefined>,
 
-		/** total nodes purchased */
+		/**
+		 * total nodes purchased
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodes: FormControl<number | null | undefined>,
 
 		/** link to a service management web portal */
@@ -1170,7 +1178,10 @@ export namespace MyNS {
 		/** Availability Zone name, e.g. "Availability Zone 1" */
 		availabilityZoneName?: string | null;
 
-		/** Number of clusters */
+		/**
+		 * Number of clusters
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clustersNumber?: number | null;
 
 		/** User's emails who created cloud */
@@ -1203,16 +1214,28 @@ export namespace MyNS {
 		/** Private Cloud state, e.g. "operational" */
 		state?: string | null;
 
-		/** Number of cores */
+		/**
+		 * Number of cores
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCpuCores?: number | null;
 
-		/** Number of nodes */
+		/**
+		 * Number of nodes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalNodes?: number | null;
 
-		/** Memory size */
+		/**
+		 * Memory size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRam?: number | null;
 
-		/** Disk space in TB */
+		/**
+		 * Disk space in TB
+		 * Type: double
+		 */
 		totalStorage?: number | null;
 
 		/** Virtualization type e.g. "vSphere" */
@@ -1246,7 +1269,10 @@ export namespace MyNS {
 		/** Availability Zone name, e.g. "Availability Zone 1" */
 		availabilityZoneName: FormControl<string | null | undefined>,
 
-		/** Number of clusters */
+		/**
+		 * Number of clusters
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clustersNumber: FormControl<number | null | undefined>,
 
 		/** User's emails who created cloud */
@@ -1273,16 +1299,28 @@ export namespace MyNS {
 		/** Private Cloud state, e.g. "operational" */
 		state: FormControl<string | null | undefined>,
 
-		/** Number of cores */
+		/**
+		 * Number of cores
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCpuCores: FormControl<number | null | undefined>,
 
-		/** Number of nodes */
+		/**
+		 * Number of nodes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalNodes: FormControl<number | null | undefined>,
 
-		/** Memory size */
+		/**
+		 * Memory size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRam: FormControl<number | null | undefined>,
 
-		/** Disk space in TB */
+		/**
+		 * Disk space in TB
+		 * Type: double
+		 */
 		totalStorage: FormControl<number | null | undefined>,
 
 		/** Virtualization type e.g. "vSphere" */
@@ -1606,6 +1644,7 @@ export namespace MyNS {
 		/**
 		 * indicates how many resources of a given SKU is available in a AZ->PG
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: number;
 
@@ -1637,6 +1676,7 @@ export namespace MyNS {
 		/**
 		 * indicates how many resources of a given SKU is available in a AZ->PG
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: FormControl<number | null | undefined>,
 
@@ -1748,12 +1788,14 @@ export namespace MyNS {
 		/**
 		 * The current usage value
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		currentValue: number;
 
 		/**
 		 * limit of a given sku in a region for a subscription. The maximum permitted value for the usage quota. If there is no limit, this value will be -1
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: number;
 
@@ -1770,12 +1812,14 @@ export namespace MyNS {
 		/**
 		 * The current usage value
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		currentValue: FormControl<number | null | undefined>,
 
 		/**
 		 * limit of a given sku in a region for a subscription. The maximum permitted value for the usage quota. If there is no limit, this value will be -1
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: FormControl<number | null | undefined>,
 
@@ -1864,6 +1908,7 @@ export namespace MyNS {
 		/**
 		 * Disk's total size
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalSize: number;
 
@@ -1892,6 +1937,7 @@ export namespace MyNS {
 		/**
 		 * Disk's total size
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalSize: FormControl<number | null | undefined>,
 
@@ -2041,6 +2087,7 @@ export namespace MyNS {
 		/**
 		 * The amount of memory
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amountOfRam: number;
 
@@ -2074,6 +2121,7 @@ export namespace MyNS {
 		/**
 		 * The number of CPU cores
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfCores: number;
 
@@ -2120,6 +2168,7 @@ export namespace MyNS {
 		/**
 		 * The amount of memory
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amountOfRam: FormControl<number | null | undefined>,
 
@@ -2141,6 +2190,7 @@ export namespace MyNS {
 		/**
 		 * The number of CPU cores
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfCores: FormControl<number | null | undefined>,
 
@@ -2320,7 +2370,10 @@ export namespace MyNS {
 	/** Properties of virtual machine template */
 	export interface VirtualMachineTemplateProperties {
 
-		/** The amount of memory */
+		/**
+		 * The amount of memory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amountOfRam?: number | null;
 
 		/** The list of Virtual Disk Controllers */
@@ -2344,7 +2397,10 @@ export namespace MyNS {
 		/** The list of Virtual NICs */
 		nics?: Array<VirtualNic>;
 
-		/** The number of CPU cores */
+		/**
+		 * The number of CPU cores
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCores?: number | null;
 
 		/** path to folder */
@@ -2369,7 +2425,10 @@ export namespace MyNS {
 	/** Properties of virtual machine template */
 	export interface VirtualMachineTemplatePropertiesFormProperties {
 
-		/** The amount of memory */
+		/**
+		 * The amount of memory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amountOfRam: FormControl<number | null | undefined>,
 
 		/** The description of Virtual Machine Template */
@@ -2384,7 +2443,10 @@ export namespace MyNS {
 		/** The Guest OS types */
 		guestOSType: FormControl<string | null | undefined>,
 
-		/** The number of CPU cores */
+		/**
+		 * The number of CPU cores
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfCores: FormControl<number | null | undefined>,
 
 		/** path to folder */

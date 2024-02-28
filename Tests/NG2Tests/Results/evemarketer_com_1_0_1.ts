@@ -34,49 +34,91 @@ export namespace MyNS {
 
 	export interface TypeStatXML {
 
-		/** Weighted Average Price */
+		/**
+		 * Weighted Average Price
+		 * Type: double
+		 */
 		avg?: number | null;
 
-		/** Maximum Price */
+		/**
+		 * Maximum Price
+		 * Type: double
+		 */
 		max?: number | null;
 
-		/** Median Price */
+		/**
+		 * Median Price
+		 * Type: double
+		 */
 		median?: number | null;
 
-		/** Minimum Price */
+		/**
+		 * Minimum Price
+		 * Type: double
+		 */
 		min?: number | null;
 
-		/** 5% Price */
+		/**
+		 * 5% Price
+		 * Type: double
+		 */
 		percentile?: number | null;
 
-		/** Standard Deviation */
+		/**
+		 * Standard Deviation
+		 * Type: double
+		 */
 		stddev?: number | null;
 
-		/** Order Volume */
-		volume?: number | null;
+		/**
+		 * Order Volume
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		volume?: string | null;
 	}
 	export interface TypeStatXMLFormProperties {
 
-		/** Weighted Average Price */
+		/**
+		 * Weighted Average Price
+		 * Type: double
+		 */
 		avg: FormControl<number | null | undefined>,
 
-		/** Maximum Price */
+		/**
+		 * Maximum Price
+		 * Type: double
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** Median Price */
+		/**
+		 * Median Price
+		 * Type: double
+		 */
 		median: FormControl<number | null | undefined>,
 
-		/** Minimum Price */
+		/**
+		 * Minimum Price
+		 * Type: double
+		 */
 		min: FormControl<number | null | undefined>,
 
-		/** 5% Price */
+		/**
+		 * 5% Price
+		 * Type: double
+		 */
 		percentile: FormControl<number | null | undefined>,
 
-		/** Standard Deviation */
+		/**
+		 * Standard Deviation
+		 * Type: double
+		 */
 		stddev: FormControl<number | null | undefined>,
 
-		/** Order Volume */
-		volume: FormControl<number | null | undefined>,
+		/**
+		 * Order Volume
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		volume: FormControl<string | null | undefined>,
 	}
 	export function CreateTypeStatXMLFormGroup() {
 		return new FormGroup<TypeStatXMLFormProperties>({
@@ -86,7 +128,7 @@ export namespace MyNS {
 			min: new FormControl<number | null | undefined>(undefined),
 			percentile: new FormControl<number | null | undefined>(undefined),
 			stddev: new FormControl<number | null | undefined>(undefined),
-			volume: new FormControl<number | null | undefined>(undefined),
+			volume: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -96,10 +138,16 @@ export namespace MyNS {
 		/** is buy? */
 		bid?: boolean | null;
 
-		/** always 0 */
+		/**
+		 * always 0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** always 0 */
+		/**
+		 * always 0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minq?: number | null;
 
 		/** Region IDs */
@@ -116,10 +164,16 @@ export namespace MyNS {
 		/** is buy? */
 		bid: FormControl<boolean | null | undefined>,
 
-		/** always 0 */
+		/**
+		 * always 0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** always 0 */
+		/**
+		 * always 0
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minq: FormControl<number | null | undefined>,
 	}
 	export function CreateForQueryFormGroup() {
@@ -157,67 +211,119 @@ export namespace MyNS {
 
 	export interface TypeStat {
 
-		/** Average Price */
+		/**
+		 * Average Price
+		 * Type: double
+		 */
 		avg?: number | null;
+
+		/** Type: double */
 		fivePercent?: number | null;
 		forQuery?: ForQuery;
 
-		/** Generated at (UNIX Timestamp msec) */
-		generated?: number | null;
+		/**
+		 * Generated at (UNIX Timestamp msec)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		generated?: string | null;
 		highToLow?: boolean | null;
+
+		/** Type: double */
 		max?: number | null;
 
-		/** Median Price */
+		/**
+		 * Median Price
+		 * Type: double
+		 */
 		median?: number | null;
+
+		/** Type: double */
 		min?: number | null;
 
-		/** Standard Deviation */
+		/**
+		 * Standard Deviation
+		 * Type: double
+		 */
 		stdDev?: number | null;
+
+		/** Type: double */
 		variance?: number | null;
 
-		/** Order Volume */
-		volume?: number | null;
+		/**
+		 * Order Volume
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		volume?: string | null;
 
-		/** Weighted Average Price */
+		/**
+		 * Weighted Average Price
+		 * Type: double
+		 */
 		wavg?: number | null;
 	}
 	export interface TypeStatFormProperties {
 
-		/** Average Price */
+		/**
+		 * Average Price
+		 * Type: double
+		 */
 		avg: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fivePercent: FormControl<number | null | undefined>,
 
-		/** Generated at (UNIX Timestamp msec) */
-		generated: FormControl<number | null | undefined>,
+		/**
+		 * Generated at (UNIX Timestamp msec)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		generated: FormControl<string | null | undefined>,
 		highToLow: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		max: FormControl<number | null | undefined>,
 
-		/** Median Price */
+		/**
+		 * Median Price
+		 * Type: double
+		 */
 		median: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		min: FormControl<number | null | undefined>,
 
-		/** Standard Deviation */
+		/**
+		 * Standard Deviation
+		 * Type: double
+		 */
 		stdDev: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		variance: FormControl<number | null | undefined>,
 
-		/** Order Volume */
-		volume: FormControl<number | null | undefined>,
+		/**
+		 * Order Volume
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		volume: FormControl<string | null | undefined>,
 
-		/** Weighted Average Price */
+		/**
+		 * Weighted Average Price
+		 * Type: double
+		 */
 		wavg: FormControl<number | null | undefined>,
 	}
 	export function CreateTypeStatFormGroup() {
 		return new FormGroup<TypeStatFormProperties>({
 			avg: new FormControl<number | null | undefined>(undefined),
 			fivePercent: new FormControl<number | null | undefined>(undefined),
-			generated: new FormControl<number | null | undefined>(undefined),
+			generated: new FormControl<string | null | undefined>(undefined),
 			highToLow: new FormControl<boolean | null | undefined>(undefined),
 			max: new FormControl<number | null | undefined>(undefined),
 			median: new FormControl<number | null | undefined>(undefined),
 			min: new FormControl<number | null | undefined>(undefined),
 			stdDev: new FormControl<number | null | undefined>(undefined),
 			variance: new FormControl<number | null | undefined>(undefined),
-			volume: new FormControl<number | null | undefined>(undefined),
+			volume: new FormControl<string | null | undefined>(undefined),
 			wavg: new FormControl<number | null | undefined>(undefined),
 		});
 

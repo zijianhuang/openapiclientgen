@@ -4,13 +4,9 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Pet extends NewPet {
-
-		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id: string;
 	}
 	export interface PetFormProperties extends NewPetFormProperties {
-
-		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreatePetFormGroup() {
@@ -39,14 +35,10 @@ export namespace MyNS {
 	}
 
 	export interface Error {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: number;
 		message: string;
 	}
 	export interface ErrorFormProperties {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}

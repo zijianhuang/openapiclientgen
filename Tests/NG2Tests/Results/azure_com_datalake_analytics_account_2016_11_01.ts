@@ -162,10 +162,16 @@ export namespace MyNS {
 	/** Subscription-level properties and limits for Data Lake Analytics. */
 	export interface CapabilityInformation {
 
-		/** The current number of accounts under this subscription. */
+		/**
+		 * The current number of accounts under this subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountCount?: number | null;
 
-		/** The maximum supported number of accounts under this subscription. */
+		/**
+		 * The maximum supported number of accounts under this subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAccountCount?: number | null;
 
 		/** The Boolean value of true or false to indicate the maintenance state. */
@@ -181,10 +187,16 @@ export namespace MyNS {
 	/** Subscription-level properties and limits for Data Lake Analytics. */
 	export interface CapabilityInformationFormProperties {
 
-		/** The current number of accounts under this subscription. */
+		/**
+		 * The current number of accounts under this subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountCount: FormControl<number | null | undefined>,
 
-		/** The maximum supported number of accounts under this subscription. */
+		/**
+		 * The maximum supported number of accounts under this subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAccountCount: FormControl<number | null | undefined>,
 
 		/** The Boolean value of true or false to indicate the maintenance state. */
@@ -860,10 +872,16 @@ export namespace MyNS {
 		/** The list of Azure Blob Storage accounts associated with this account. */
 		storageAccounts?: Array<StorageAccountInformation>;
 
-		/** The system defined maximum supported degree of parallelism for this account, which restricts the maximum value of parallelism the user can set for the account. */
+		/**
+		 * The system defined maximum supported degree of parallelism for this account, which restricts the maximum value of parallelism the user can set for the account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		systemMaxDegreeOfParallelism?: number | null;
 
-		/** The system defined maximum supported jobs running under the account at the same time, which restricts the maximum number of running jobs the user can set for the account. */
+		/**
+		 * The system defined maximum supported jobs running under the account at the same time, which restricts the maximum number of running jobs the user can set for the account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		systemMaxJobCount?: number | null;
 	}
 
@@ -916,10 +934,16 @@ export namespace MyNS {
 		 */
 		queryStoreRetention: FormControl<number | null | undefined>,
 
-		/** The system defined maximum supported degree of parallelism for this account, which restricts the maximum value of parallelism the user can set for the account. */
+		/**
+		 * The system defined maximum supported degree of parallelism for this account, which restricts the maximum value of parallelism the user can set for the account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		systemMaxDegreeOfParallelism: FormControl<number | null | undefined>,
 
-		/** The system defined maximum supported jobs running under the account at the same time, which restricts the maximum number of running jobs the user can set for the account. */
+		/**
+		 * The system defined maximum supported jobs running under the account at the same time, which restricts the maximum number of running jobs the user can set for the account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		systemMaxJobCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDataLakeAnalyticsAccountPropertiesFormGroup() {

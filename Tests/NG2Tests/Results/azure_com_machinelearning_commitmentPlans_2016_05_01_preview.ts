@@ -85,14 +85,23 @@ export namespace MyNS {
 	/** Describes scaling information of a SKU. */
 	export interface SkuCapacity {
 
-		/** The default capacity. */
-		default?: number | null;
+		/**
+		 * The default capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		default?: string | null;
 
-		/** The maximum capacity that can be set. */
-		maximum?: number | null;
+		/**
+		 * The maximum capacity that can be set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximum?: string | null;
 
-		/** The minimum capacity. */
-		minimum?: number | null;
+		/**
+		 * The minimum capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minimum?: string | null;
 
 		/** The scale type applicable to the sku. */
 		scaleType?: SkuCapacityScaleType | null;
@@ -101,23 +110,32 @@ export namespace MyNS {
 	/** Describes scaling information of a SKU. */
 	export interface SkuCapacityFormProperties {
 
-		/** The default capacity. */
-		default: FormControl<number | null | undefined>,
+		/**
+		 * The default capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		default: FormControl<string | null | undefined>,
 
-		/** The maximum capacity that can be set. */
-		maximum: FormControl<number | null | undefined>,
+		/**
+		 * The maximum capacity that can be set.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maximum: FormControl<string | null | undefined>,
 
-		/** The minimum capacity. */
-		minimum: FormControl<number | null | undefined>,
+		/**
+		 * The minimum capacity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minimum: FormControl<string | null | undefined>,
 
 		/** The scale type applicable to the sku. */
 		scaleType: FormControl<SkuCapacityScaleType | null | undefined>,
 	}
 	export function CreateSkuCapacityFormGroup() {
 		return new FormGroup<SkuCapacityFormProperties>({
-			default: new FormControl<number | null | undefined>(undefined),
-			maximum: new FormControl<number | null | undefined>(undefined),
-			minimum: new FormControl<number | null | undefined>(undefined),
+			default: new FormControl<string | null | undefined>(undefined),
+			maximum: new FormControl<string | null | undefined>(undefined),
+			minimum: new FormControl<string | null | undefined>(undefined),
 			scaleType: new FormControl<SkuCapacityScaleType | null | undefined>(undefined),
 		});
 
@@ -135,8 +153,11 @@ export namespace MyNS {
 		/** The meter used for this part of a SKU's cost. */
 		meterID?: string | null;
 
-		/** The multiplier for the meter ID. */
-		quantity?: number | null;
+		/**
+		 * The multiplier for the meter ID.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quantity?: string | null;
 	}
 
 	/** Describes metadata for SKU cost info. */
@@ -148,14 +169,17 @@ export namespace MyNS {
 		/** The meter used for this part of a SKU's cost. */
 		meterID: FormControl<string | null | undefined>,
 
-		/** The multiplier for the meter ID. */
-		quantity: FormControl<number | null | undefined>,
+		/**
+		 * The multiplier for the meter ID.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		quantity: FormControl<string | null | undefined>,
 	}
 	export function CreateSkuCostFormGroup() {
 		return new FormGroup<SkuCostFormProperties>({
 			extendedUnit: new FormControl<string | null | undefined>(undefined),
 			meterID: new FormControl<string | null | undefined>(undefined),
-			quantity: new FormControl<number | null | undefined>(undefined),
+			quantity: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -321,19 +345,31 @@ export namespace MyNS {
 		/** The included resource quantities this plan gives you. */
 		includedQuantities?: {[id: string]: PlanQuantity };
 
-		/** The maximum number of commitment associations that can be children of this commitment plan. */
+		/**
+		 * The maximum number of commitment associations that can be children of this commitment plan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAssociationLimit?: number | null;
 
-		/** The maximum scale-out capacity for this commitment plan. */
+		/**
+		 * The maximum scale-out capacity for this commitment plan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxCapacityLimit?: number | null;
 
-		/** The minimum scale-out capacity for this commitment plan. */
+		/**
+		 * The minimum scale-out capacity for this commitment plan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minCapacityLimit?: number | null;
 
 		/** The Azure meter which will be used to charge for this commitment plan. */
 		planMeter?: string | null;
 
-		/** The frequency at which this commitment plan's included quantities are refilled. */
+		/**
+		 * The frequency at which this commitment plan's included quantities are refilled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refillFrequencyInDays?: number | null;
 
 		/** Indicates whether this commitment plan will be moved into a suspended state if usage goes beyond the commitment plan's included quantities. */
@@ -355,19 +391,31 @@ export namespace MyNS {
 		/** The included resource quantities this plan gives you. */
 		includedQuantities: FormControl<{[id: string]: PlanQuantity } | null | undefined>,
 
-		/** The maximum number of commitment associations that can be children of this commitment plan. */
+		/**
+		 * The maximum number of commitment associations that can be children of this commitment plan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAssociationLimit: FormControl<number | null | undefined>,
 
-		/** The maximum scale-out capacity for this commitment plan. */
+		/**
+		 * The maximum scale-out capacity for this commitment plan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxCapacityLimit: FormControl<number | null | undefined>,
 
-		/** The minimum scale-out capacity for this commitment plan. */
+		/**
+		 * The minimum scale-out capacity for this commitment plan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minCapacityLimit: FormControl<number | null | undefined>,
 
 		/** The Azure meter which will be used to charge for this commitment plan. */
 		planMeter: FormControl<string | null | undefined>,
 
-		/** The frequency at which this commitment plan's included quantities are refilled. */
+		/**
+		 * The frequency at which this commitment plan's included quantities are refilled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refillFrequencyInDays: FormControl<number | null | undefined>,
 
 		/** Indicates whether this commitment plan will be moved into a suspended state if usage goes beyond the commitment plan's included quantities. */
@@ -393,10 +441,16 @@ export namespace MyNS {
 	/** Represents the quantity a commitment plan provides of a metered resource. */
 	export interface PlanQuantity {
 
-		/** The quantity added to the commitment plan at an interval specified by its allowance frequency. */
+		/**
+		 * The quantity added to the commitment plan at an interval specified by its allowance frequency.
+		 * Type: double
+		 */
 		allowance?: number | null;
 
-		/** The quantity available to the plan the last time usage was calculated. */
+		/**
+		 * The quantity available to the plan the last time usage was calculated.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The Azure meter for usage against included quantities. */
@@ -409,10 +463,16 @@ export namespace MyNS {
 	/** Represents the quantity a commitment plan provides of a metered resource. */
 	export interface PlanQuantityFormProperties {
 
-		/** The quantity added to the commitment plan at an interval specified by its allowance frequency. */
+		/**
+		 * The quantity added to the commitment plan at an interval specified by its allowance frequency.
+		 * Type: double
+		 */
 		allowance: FormControl<number | null | undefined>,
 
-		/** The quantity available to the plan the last time usage was calculated. */
+		/**
+		 * The quantity available to the plan the last time usage was calculated.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The Azure meter for usage against included quantities. */
@@ -435,7 +495,10 @@ export namespace MyNS {
 	/** The SKU of a resource. */
 	export interface ResourceSku {
 
-		/** The scale-out capacity of the resource. 1 is 1x, 2 is 2x, etc. This impacts the quantities and cost of any commitment plan resource. */
+		/**
+		 * The scale-out capacity of the resource. 1 is 1x, 2 is 2x, etc. This impacts the quantities and cost of any commitment plan resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** The SKU name. Along with tier, uniquely identifies the SKU. */
@@ -448,7 +511,10 @@ export namespace MyNS {
 	/** The SKU of a resource. */
 	export interface ResourceSkuFormProperties {
 
-		/** The scale-out capacity of the resource. 1 is 1x, 2 is 2x, etc. This impacts the quantities and cost of any commitment plan resource. */
+		/**
+		 * The scale-out capacity of the resource. 1 is 1x, 2 is 2x, etc. This impacts the quantities and cost of any commitment plan resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** The SKU name. Along with tier, uniquely identifies the SKU. */
