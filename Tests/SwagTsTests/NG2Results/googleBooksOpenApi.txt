@@ -1656,6 +1656,7 @@ export namespace MyNS {
 		 * @param {string} layerId The layer ID to limit annotation by.
 		 * @param {Array<string>} layerIds The layer ID(s) to limit annotation by.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0    Maximum: 40
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @param {boolean} showDeleted Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.
 		 * @param {string} source String to identify the originator of this request.
@@ -1765,6 +1766,7 @@ export namespace MyNS {
 		 * @param {string} shelf ID of bookshelf with the volume.
 		 * @param {string} volumeId ID of volume to move.
 		 * @param {number} volumePosition Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
@@ -1791,11 +1793,13 @@ export namespace MyNS {
 		 * @param {string} shelf The bookshelf ID or name retrieve volumes for.
 		 * @param {string} country ISO-3166-1 code to override the IP-based location.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0
 		 * @param {Books_mylibrary_bookshelves_volumes_listProjection} projection Restrict information returned to a set of selected fields.
 		 * @param {string} q Full-text search query string in this bookshelf.
 		 * @param {boolean} showPreorders Set to true to show pre-ordered books. Defaults to false.
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} startIndex Index of the first element to return (starts at 0)
+		 *     Minimum: 0
 		 * @return {void} Successful response
 		 */
 		Books_mylibrary_bookshelves_volumes_list(shelf: string, country: string | null | undefined, maxResults: number | null | undefined, projection: Books_mylibrary_bookshelves_volumes_listProjection | null | undefined, q: string | null | undefined, showPreorders: boolean | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1859,6 +1863,7 @@ export namespace MyNS {
 		 * @param {string} locale ISO-639-1 language and ISO-3166-1 country code. Default is en-US if unset.
 		 * @param {Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating} maxAllowedMaturityRating The maximum allowed maturity rating of returned volumes. Books with a higher maturity rating are filtered out.
 		 * @param {number} pageSize Number of maximum results per page to be included in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @return {void} Successful response
 		 */
@@ -1938,6 +1943,7 @@ export namespace MyNS {
 		 * Get series/membership/get
 		 * @param {string} series_id String that identifies the series
 		 * @param {number} page_size Number of maximum results per page to be included in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} page_token The value of the nextToken from the previous page.
 		 * @return {void} Successful response
 		 */
@@ -1974,9 +1980,11 @@ export namespace MyNS {
 		 * @param {string} userId ID of user for whom to retrieve bookshelf volumes.
 		 * @param {string} shelf ID of bookshelf to retrieve volumes.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0
 		 * @param {boolean} showPreorders Set to true to show pre-ordered books. Defaults to false.
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} startIndex Index of the first element to return (starts at 0)
+		 *     Minimum: 0
 		 * @return {void} Successful response
 		 */
 		Books_bookshelves_volumes_list(userId: string, shelf: string, maxResults: number | null | undefined, showPreorders: boolean | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -1993,6 +2001,7 @@ export namespace MyNS {
 		 * @param {Books_volumes_listLibraryRestrict} libraryRestrict Restrict search to this user's library.
 		 * @param {Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating} maxAllowedMaturityRating The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 0    Maximum: 40
 		 * @param {Books_volumes_listOrderBy} orderBy Sort search results.
 		 * @param {string} partner Restrict and brand results for partner ID.
 		 * @param {Books_volumes_listPrintType} printType Restrict to books or magazines.
@@ -2000,6 +2009,7 @@ export namespace MyNS {
 		 * @param {boolean} showPreorders Set to true to show books available for preorder. Defaults to false.
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} startIndex Index of the first result to return (starts at 0)
+		 *     Minimum: 0
 		 * @return {void} Successful response
 		 */
 		Books_volumes_list(q: string, download: Books_volumes_listDownload | null | undefined, filter: Books_volumes_listFilter | null | undefined, langRestrict: string | null | undefined, libraryRestrict: Books_volumes_listLibraryRestrict | null | undefined, maxAllowedMaturityRating: Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating | null | undefined, maxResults: number | null | undefined, orderBy: Books_volumes_listOrderBy | null | undefined, partner: string | null | undefined, printType: Books_volumes_listPrintType | null | undefined, projection: Books_mylibrary_bookshelves_volumes_listProjection | null | undefined, showPreorders: boolean | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2013,9 +2023,11 @@ export namespace MyNS {
 		 * @param {string} country ISO-3166-1 code to override the IP-based location.
 		 * @param {string} locale ISO-639-1 language and ISO-3166-1 country code. Ex:'en_US'. Used for generating recommendations.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {Array<string>} processingState The processing state of the user uploaded volumes to be returned. Applicable only if the UPLOADED is specified in the acquireMethod.
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} startIndex Index of the first result to return (starts at 0)
+		 *     Minimum: 0
 		 * @return {void} Successful response
 		 */
 		Books_volumes_mybooks_list(acquireMethod: Array<string> | null | undefined, country: string | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, processingState: Array<string> | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2052,9 +2064,11 @@ export namespace MyNS {
 		 * Get volumes/useruploaded
 		 * @param {string} locale ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 0    Maximum: 40
 		 * @param {Array<string>} processingState The processing state of the user uploaded volumes to be returned.
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} startIndex Index of the first result to return (starts at 0)
+		 *     Minimum: 0
 		 * @param {Array<string>} volumeId The ids of the volumes to be returned. If not specified all that match the processingState are returned.
 		 * @return {void} Successful response
 		 */
@@ -2101,6 +2115,7 @@ export namespace MyNS {
 		 * @param {string} endPosition The end position to end retrieving data from.
 		 * @param {string} locale The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0    Maximum: 200
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @param {boolean} showDeleted Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.
 		 * @param {string} source String to identify the originator of this request.
@@ -2137,14 +2152,18 @@ export namespace MyNS {
 		 * @param {string} contentVersion The content version for the requested volume.
 		 * @param {Array<string>} annotationDataId The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.
 		 * @param {number} h The requested pixel height for any images. If height is provided width must also be provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} locale The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0    Maximum: 200
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @param {number} scale The requested scale for the image.
+		 *     Minimum: 0
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {string} updatedMax RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
 		 * @param {string} updatedMin RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
 		 * @param {number} w The requested pixel width for any images. If width is provided height must also be provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Books_layers_annotationData_list(volumeId: string, layerId: string, contentVersion: string, annotationDataId: Array<string> | null | undefined, h: number | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, scale: number | null | undefined, source: string | null | undefined, updatedMax: string | null | undefined, updatedMin: string | null | undefined, w: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2160,10 +2179,13 @@ export namespace MyNS {
 		 * @param {string} contentVersion The content version for the volume you are trying to retrieve.
 		 * @param {boolean} allowWebDefinitions For the dictionary layer. Whether or not to allow web definitions.
 		 * @param {number} h The requested pixel height for any images. If height is provided width must also be provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} locale The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
 		 * @param {number} scale The requested scale for the image.
+		 *     Minimum: 0
 		 * @param {string} source String to identify the originator of this request.
 		 * @param {number} w The requested pixel width for any images. If width is provided height must also be provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Books_layers_annotationData_get(volumeId: string, layerId: string, annotationDataId: string, contentVersion: string, allowWebDefinitions: boolean | null | undefined, h: number | null | undefined, locale: string | null | undefined, scale: number | null | undefined, source: string | null | undefined, w: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2176,6 +2198,7 @@ export namespace MyNS {
 		 * @param {string} volumeId The volume to retrieve layers for.
 		 * @param {string} contentVersion The content version for the requested volume.
 		 * @param {number} maxResults Maximum number of results to return
+		 *     Minimum: 0    Maximum: 200
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response

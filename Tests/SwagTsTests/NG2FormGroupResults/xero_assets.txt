@@ -671,7 +671,9 @@ export namespace MyNS {
 		 * Get Assets
 		 * @param {AssetStatusQueryParam} status Required when retrieving a collection of assets. See Asset Status Codes
 		 * @param {number} page Results are paged. This specifies which page of the results to return. The default page is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize The number of records returned per page. By default the number of records returned is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetAssetsOrderBy} orderBy Requests can be ordered by AssetType, AssetName, AssetNumber, PurchaseDate and PurchasePrice. If the asset status is DISPOSED it also allows DisposalDate and DisposalPrice.
 		 * @param {GetAssetsSortDirection} sortDirection ASC or DESC
 		 * @param {GetAssetsFilterBy} filterBy A string that can be used to filter the list to only return assets containing the text. Checks it against the AssetName, AssetNumber, Description and AssetTypeName fields.

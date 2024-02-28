@@ -2804,6 +2804,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 – Up to 100 employees will be returned in a single API call
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Employees} search results matching criteria
 		 */
 		GetEmployees(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<Employees> {
@@ -2846,6 +2847,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 – Up to 100 objects will be returned in a single API call
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {LeaveApplications} search results matching criteria
 		 */
 		GetLeaveApplications(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<LeaveApplications> {
@@ -2887,6 +2889,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 – Up to 100 objects will be returned in a single API call
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PayItems} search results matching criteria
 		 */
 		GetPayItems(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PayItems> {
@@ -2908,6 +2911,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 – Up to 100 objects will be returned in a single API call
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PayrollCalendars} search results matching criteria
 		 */
 		GetPayrollCalendars(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PayrollCalendars> {
@@ -2939,6 +2943,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 – Up to 100 PayRuns will be returned in a single API call
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PayRuns} search results matching criteria
 		 */
 		GetPayRuns(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PayRuns> {
@@ -3011,6 +3016,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 – Up to 100 SuperFunds will be returned in a single API call
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SuperFunds} search results matching criteria
 		 */
 		GetSuperfunds(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<SuperFunds> {
@@ -3064,6 +3070,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 – Up to 100 timesheets will be returned in a single API call
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Timesheets} search results matching criteria
 		 */
 		GetTimesheets(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<Timesheets> {

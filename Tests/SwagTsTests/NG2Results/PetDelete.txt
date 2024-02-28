@@ -11,6 +11,7 @@ export namespace MyNS {
 		 * Deletes a pet
 		 * Delete pet/{petId}
 		 * @param {string} petId Pet id to delete
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
 		DeletePet(petId: string): Observable<HttpResponse<string>> {

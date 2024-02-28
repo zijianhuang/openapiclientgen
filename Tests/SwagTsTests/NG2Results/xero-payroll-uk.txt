@@ -1834,6 +1834,7 @@ export namespace MyNS {
 		 * @param {string} firstName Filter by first name
 		 * @param {string} lastName Filter by last name
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Employees} search results matching criteria
 		 */
 		GetEmployees(firstName: string | null | undefined, lastName: string | null | undefined, page: number | null | undefined): Observable<Employees> {
@@ -1988,6 +1989,7 @@ export namespace MyNS {
 		 * @param {string} EmployeeId Employee id for single object
 		 * @param {string} LeaveType Filter by the type of statutory leave
 		 * @param {Date} AsOfDate The date from which to calculate balance remaining. If not specified, current date UTC is used.
+		 *     Type: DateOnly
 		 * @return {EmployeeStatutoryLeaveBalanceObject} search results matching criteria
 		 */
 		GetEmployeeStatutoryLeaveBalances(EmployeeId: string, LeaveType: string | null | undefined, AsOfDate: Date | null | undefined): Observable<EmployeeStatutoryLeaveBalanceObject> {
@@ -2029,7 +2031,9 @@ export namespace MyNS {
 		 * Get Employees/{EmployeeId}/LeavePeriods
 		 * @param {string} EmployeeId Employee id for single object
 		 * @param {Date} startDate Filter by start date
+		 *     Type: DateOnly
 		 * @param {Date} endDate Filter by end date
+		 *     Type: DateOnly
 		 * @return {LeavePeriods} search results matching criteria
 		 */
 		GetEmployeeLeavePeriods(EmployeeId: string, startDate: Date | null | undefined, endDate: Date | null | undefined): Observable<LeavePeriods> {
@@ -2132,6 +2136,7 @@ export namespace MyNS {
 		 * searches benefits
 		 * Get Benefits
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Benefits} search results matching criteria
 		 */
 		GetBenefits(page: number | null | undefined): Observable<Benefits> {
@@ -2161,6 +2166,7 @@ export namespace MyNS {
 		 * searches deductions
 		 * Get Deductions
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Deductions} search results matching criteria
 		 */
 		GetDeductions(page: number | null | undefined): Observable<Deductions> {
@@ -2190,6 +2196,7 @@ export namespace MyNS {
 		 * searches earnings orders
 		 * Get EarningsOrders
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EarningsOrders} search results matching criteria
 		 */
 		GetEarningsOrders(page: number | null | undefined): Observable<EarningsOrders> {
@@ -2210,6 +2217,7 @@ export namespace MyNS {
 		 * searches earnings rates
 		 * Get EarningsRates
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EarningsRates} search results matching criteria
 		 */
 		GetEarningsRates(page: number | null | undefined): Observable<EarningsRates> {
@@ -2239,6 +2247,7 @@ export namespace MyNS {
 		 * searches leave types
 		 * Get LeaveTypes
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} ActiveOnly Filters leave types by active status. By default the API returns all leave types.
 		 * @return {LeaveTypes} search results matching criteria
 		 */
@@ -2269,6 +2278,7 @@ export namespace MyNS {
 		 * searches reimbursements
 		 * Get Reimbursements
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Reimbursements} search results matching criteria
 		 */
 		GetReimbursements(page: number | null | undefined): Observable<Reimbursements> {
@@ -2298,6 +2308,7 @@ export namespace MyNS {
 		 * searches timesheets
 		 * Get Timesheets
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} employeeId By default get Timesheets will return the timesheets for all employees in an organization. You can add GET https://…/timesheets?filter=employeeId=={EmployeeId} to get only the timesheets of a particular employee.
 		 * @param {string} payrollCalendarId By default get Timesheets will return all the timesheets for an organization. You can add GET https://…/timesheets?filter=payrollCalendarId=={PayrollCalendarID} to filter the timesheets by payroll calendar id
 		 * @return {Timesheets} search results matching criteria
@@ -2391,6 +2402,7 @@ export namespace MyNS {
 		 * searches payrun calendars
 		 * Get PayRunCalendars
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PayRunCalendars} search results matching criteria
 		 */
 		GetPayRunCalendars(page: number | null | undefined): Observable<PayRunCalendars> {
@@ -2421,6 +2433,7 @@ export namespace MyNS {
 		 * Get Employees/{EmployeeId}/SalaryAndWages
 		 * @param {string} EmployeeId Employee id for single object
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SalaryAndWages} search results matching criteria
 		 */
 		GetEmployeeSalaryAndWages(EmployeeId: string, page: number | null | undefined): Observable<SalaryAndWages> {
@@ -2474,6 +2487,7 @@ export namespace MyNS {
 		 * searches pay runs
 		 * Get PayRuns
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {PayRunPayRunStatus} status By default get payruns will return all the payruns for an organization. You can add GET https://api.xero.com/payroll.xro/2.0/payRuns?statu={PayRunStatus} to filter the payruns by status.
 		 * @return {PayRuns} search results matching criteria
 		 */
@@ -2505,6 +2519,7 @@ export namespace MyNS {
 		 * searches payslips
 		 * Get Payslips
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} PayRunID PayrunID which specifies the containing payrun of payslips to retrieve. By default, the API does not group payslips by payrun.
 		 * @return {Payslips} search results matching criteria
 		 */

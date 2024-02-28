@@ -17,7 +17,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="modelSchema"></param>
 		/// <param name="excludePattern">JsDoc does not support regex yet.</param>
 		/// <returns></returns>
-		public static List<string> GetCommentsFromAnnotations(OpenApiSchema fieldSchema, string key, OpenApiSchema modelSchema, bool excludePattern=false)
+		public static List<string> GetCommentsFromAnnotations(OpenApiSchema fieldSchema, string key, OpenApiSchema modelSchema, bool excludePattern = false)
 		{
 			List<string> ss = new();
 			if (modelSchema.Required.Count > 0)
@@ -29,6 +29,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
+			ValidationsToComments(ss, fieldSchema, excludePattern);
+			return ss;
+		}
+
+		public static List<string> GetParamCommentsFromAnnotations(OpenApiSchema fieldSchema, bool excludePattern = false)
+		{
+			List<string> ss = new();
+			ValidationsToComments(ss, fieldSchema, excludePattern);
+			return ss;
+		}
+
+		static void ValidationsToComments(IList<string> ss, OpenApiSchema fieldSchema, bool excludePattern = false)
+		{
 			if (fieldSchema.MaxLength.HasValue)
 			{
 				ss.Add(String.Format(CultureInfo.CurrentCulture, "Max length: {0}", fieldSchema.MaxLength.Value));
@@ -63,11 +76,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				ss.Add(String.Format(CultureInfo.CurrentCulture, "Pattern: {0}", fieldSchema.Pattern));
 			}
-
-			return ss;
 		}
 
-		public static bool FieldSchemaContainsValueConstraints(OpenApiSchema fieldSchema){
+		public static bool FieldSchemaContainsValueConstraints(OpenApiSchema fieldSchema)
+		{
 			return fieldSchema.MaxLength.HasValue || fieldSchema.MinLength.HasValue || fieldSchema.Minimum.HasValue || fieldSchema.Maximum.HasValue || fieldSchema.MinItems.HasValue || fieldSchema.MaxItems.HasValue;
 		}
 

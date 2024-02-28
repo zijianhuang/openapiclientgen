@@ -35,6 +35,8 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		readonly IDictionary<Type, string> dotNetTypeCommentDic;
 
+		ISettings settings;
+
 		protected ClientApiTsFunctionGenAbstract()
 		{
 			renamer = new TypeScriptRenamer();
@@ -49,6 +51,7 @@ namespace Fonlow.CodeDom.Web.Ts
 				return null;
 			}
 
+			this.settings = settings;
 			this.nameComposer = new NameComposer(settings, renamer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
@@ -148,25 +151,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			builder.AppendLine(HttpMethod + " " + RelativePath);
 			foreach (ParameterDescription item in this.ParameterDescriptions)
 			{
-				CodeTypeReference tsParameterType = item.ParameterTypeReference;
-				if (!String.IsNullOrEmpty(item.Documentation))
-				{
-					var funky = item.Documentation.Contains("*/");
-					var docComment = funky ? item.Documentation.Replace("*/", "") : item.Documentation;
-					builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}}} {item.Name} {docComment}");
-					if (funky)
-					{
-						Trace.TraceWarning($"param {TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}  {item.Name} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
-					}
-				}
-				else
-				{
-					bool paramTypeCommentExists = dotNetTypeCommentDic.TryGetValue(item.ParameterDescriptor.ParameterType, out string paramTypeComment);
-					if (paramTypeCommentExists)
-					{
-						builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}}} {item.Name} {paramTypeComment}");
-					}
-				}
+				ParameterDescriptionToDocComment(builder, item);
 			}
 
 			if (!String.IsNullOrEmpty(requestBodyComment))
@@ -183,16 +168,30 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			string returnTypeOfResponse = ReturnTypeReference == null ? "void" : TypeMapper.MapCodeTypeReferenceToTsText(ReturnTypeReference);
 			var returnComment = NameComposer.GetOperationReturnComment(apiOperation);
-			if (string.IsNullOrEmpty(returnComment))
+			if (settings.DataAnnotationsToComments)
 			{
 				if (ReturnTypeReference != null)
 				{
-					var fieldTypeInfo = ReturnTypeReference.UserData.Contains(Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo) ?
-					ReturnTypeReference.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] as FieldTypeInfo
-					: null;
+					var fieldTypeInfo = ReturnTypeReference.UserData.Contains(Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo)
+						?
+						ReturnTypeReference.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] as FieldTypeInfo
+						: null;
+
+					List<string> ss = new();
+					if (!string.IsNullOrEmpty(returnComment))
+					{
+						ss.Add(returnComment);
+					}
+
 					if (fieldTypeInfo != null && fieldTypeInfo.ClrType != null && dotNetTypeCommentDic.TryGetValue(fieldTypeInfo.ClrType, out string ctm))
 					{
-						builder.AppendLine($"@return {{{returnTypeOfResponse}}} {ctm}");
+						ss.Add(ctm);
+					}
+
+					if (ss.Count > 0)
+					{
+						var linesOfParamComment = LinesToIndentedLines(ss);
+						builder.AppendLine($"@return {{{returnTypeOfResponse}}} {linesOfParamComment}");
 					}
 				}
 				else
@@ -206,6 +205,81 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			Method.Comments.Add(new CodeCommentStatement(builder.ToString(), true));
+		}
+
+		void ParameterDescriptionToDocComment(StringBuilder builder, ParameterDescription item)
+		{
+			var memberSchema = item.ParameterDescriptor.Schema;
+			string memberComment = item.Documentation; //memberSchema.Description is always null
+			if (!String.IsNullOrEmpty(memberComment))
+			{
+				bool funky = memberComment.Contains("*/");
+				if (funky)
+				{
+					memberComment = memberComment.Replace("*/", "");
+					Trace.TraceWarning($"{item.Name} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
+				}
+			}
+
+			CodeTypeReference tsParameterType = item.ParameterTypeReference;
+			if (settings.DataAnnotationsToComments)
+			{
+				List<string> ss = ComponentsHelper.GetParamCommentsFromAnnotations(memberSchema, true);
+				if (!String.IsNullOrEmpty(memberComment))
+				{
+					ss.Insert(0, memberComment);
+				}
+
+				if (!ComponentsHelper.FieldSchemaContainsValueConstraints(item.ParameterDescriptor.Schema))
+				{
+					bool paramTypeCommentExists = dotNetTypeCommentDic.TryGetValue(item.ParameterDescriptor.ParameterType, out string paramTypeComment);
+					if (paramTypeCommentExists)
+					{
+						ss.Add(paramTypeComment);
+					}
+				}
+
+				if (ss.Count > 0)
+				{
+					var linesOfParamComment = LinesToIndentedLines(ss);
+					builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}}} {item.Name} {linesOfParamComment}");
+				}
+			}
+			else
+			{
+				if (!string.IsNullOrEmpty(memberComment))
+				{
+					builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}}} {item.Name} {memberComment}");
+				}
+			}
+		}
+
+		/// <summary>
+		/// Wraping according to https://google.github.io/styleguide/jsguide.html#jsdoc-line-wrapping. 
+		/// </summary>
+		/// <param name="lines"></param>
+		/// <returns></returns>
+		static string LinesToIndentedLines(IList<string> lines)
+		{
+			if (lines == null || lines.Count == 0)
+			{
+				return null;
+			}
+
+			if (lines.Count == 1)
+			{
+				return lines[0];
+			}
+
+			StringBuilder builder = new();
+			builder.AppendLine(lines[0]);
+			for (int i = 1; i < lines.Count; i++)
+			{
+				builder.Append("    ");
+				builder.Append(lines[i]);
+			}
+
+			return builder.ToString();
 		}
 
 		protected static string RemoveTrialEmptyString(string s)

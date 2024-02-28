@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.Serialization;
 using System.CodeDom;
+using Microsoft.OpenApi.Models;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	[Serializable]
 	public class ParameterDescription
 	{
-		public string Documentation
-		{ get; set; }
+		public string Documentation { get; set; }
 
 		public string Name
 		{ get; set; }
@@ -34,6 +34,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{ get; set; }
 
 		public Type ParameterType
+		{ get; set; }
+
+		public OpenApiSchema Schema
 		{ get; set; }
 
 		public ParameterBinder ParameterBinder

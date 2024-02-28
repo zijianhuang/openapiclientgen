@@ -36,12 +36,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					Name = refinedName, //azure.com\apimanagement-apimapis has $ in query parameter
 					QName = p.Name,
-					Documentation = p.Description,
+					Documentation=p.Description,
 					ParameterDescriptor = new ParameterDescriptor()
 					{
 						IsRequired = p.Required,
 						ParameterName = p.Name, // what appear in the HTTP query name, for example: "?api-version=" + api_version
 						ParameterType = p.Schema == null ? typeof(string) : TypeRefHelper.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
+						Schema=p.Schema, //p.Schema.Description is always null
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},
 

@@ -33,6 +33,12 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestPetReturnNumber()
+		{
+			helper.GenerateAndAssertAndBuild("SwagMock\\petReturnNumber.yaml", "NG2Results\\PetReturnNumber.txt");
+		}
+
+		[Fact]
 		public void TestPetByTags()
 		{
 			helper.GenerateAndAssertAndBuild("SwagMock\\petByTags.yaml", "NG2Results\\PetByTags.txt");

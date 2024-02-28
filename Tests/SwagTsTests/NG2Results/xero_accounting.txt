@@ -2986,7 +2986,9 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page Up to 100 bank transactions will be returned in a single API call with line items details
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BankTransactions} Success - return response of type BankTransactions array with 0 to n BankTransaction
 		 */
 		GetBankTransactions(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, unitdp: number | null | undefined): Observable<BankTransactions> {
@@ -2998,6 +3000,7 @@ export namespace MyNS {
 		 * Put BankTransactions
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BankTransactions} requestBody BankTransactions with an array of BankTransaction objects in body of request
 		 * @return {BankTransactions} Success - return response of type BankTransactions array with new BankTransaction
 		 */
@@ -3010,6 +3013,7 @@ export namespace MyNS {
 		 * Post BankTransactions
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BankTransactions} Success - return response of type BankTransactions array with new BankTransaction
 		 */
 		UpdateOrCreateBankTransactions(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: BankTransactions): Observable<BankTransactions> {
@@ -3021,6 +3025,7 @@ export namespace MyNS {
 		 * Get BankTransactions/{BankTransactionID}
 		 * @param {string} BankTransactionID Xero generated unique identifier for a bank transaction
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BankTransactions} Success - return response of type BankTransactions array with a specific BankTransaction
 		 */
 		GetBankTransaction(BankTransactionID: string, unitdp: number | null | undefined): Observable<BankTransactions> {
@@ -3032,6 +3037,7 @@ export namespace MyNS {
 		 * Post BankTransactions/{BankTransactionID}
 		 * @param {string} BankTransactionID Xero generated unique identifier for a bank transaction
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BankTransactions} Success - return response of type BankTransactions array with updated BankTransaction
 		 */
 		UpdateBankTransaction(BankTransactionID: string, unitdp: number | null | undefined, requestBody: BankTransactions): Observable<BankTransactions> {
@@ -3221,6 +3227,7 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @param {Array<string>} IDs Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call.
 		 * @param {number} page e.g. page=1 - Up to 100 contacts will be returned in a single API call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeArchived e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response
 		 * @return {Contacts} Success - return response of type Contacts array with 0 to N Contact
 		 */
@@ -3422,7 +3429,9 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 � Up to 100 credit notes will be returned in a single API call with line items shown for each credit note
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CreditNotes} Success - return response of type Credit Notes array of CreditNote
 		 */
 		GetCreditNotes(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, unitdp: number | null | undefined): Observable<CreditNotes> {
@@ -3434,6 +3443,7 @@ export namespace MyNS {
 		 * Put CreditNotes
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CreditNotes} requestBody Credit Notes with array of CreditNote object in body of request
 		 * @return {CreditNotes} Success - return response of type Credit Notes array of newly created CreditNote
 		 */
@@ -3446,6 +3456,7 @@ export namespace MyNS {
 		 * Post CreditNotes
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CreditNotes} requestBody an array of Credit Notes with a single CreditNote object.
 		 * @return {CreditNotes} Success - return response of type Credit Notes array of newly created CreditNote
 		 */
@@ -3458,6 +3469,7 @@ export namespace MyNS {
 		 * Get CreditNotes/{CreditNoteID}
 		 * @param {string} CreditNoteID Unique identifier for a Credit Note
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CreditNotes} Success - return response of type Credit Notes array with a unique CreditNote
 		 */
 		GetCreditNote(CreditNoteID: string, unitdp: number | null | undefined): Observable<CreditNotes> {
@@ -3469,6 +3481,7 @@ export namespace MyNS {
 		 * Post CreditNotes/{CreditNoteID}
 		 * @param {string} CreditNoteID Unique identifier for a Credit Note
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CreditNotes} requestBody an array of Credit Notes containing credit note details to update
 		 * @return {CreditNotes} Success - return response of type Credit Notes array with updated CreditNote
 		 */
@@ -3686,9 +3699,11 @@ export namespace MyNS {
 		 * @param {Array<string>} ContactIDs Filter by a comma-separated list of ContactIDs.
 		 * @param {Array<string>} Statuses Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter.
 		 * @param {number} page e.g. page=1 � Up to 100 invoices will be returned in a single API call with line items shown for each invoice
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeArchived e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response
 		 * @param {boolean} createdByMyApp When set to true you'll only retrieve Invoices created by your app
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Invoices} Success - return response of type Invoices array with all Invoices
 		 */
 		GetInvoices(where: string | null | undefined, order: string | null | undefined, IDs: Array<string> | null | undefined, InvoiceNumbers: Array<string> | null | undefined, ContactIDs: Array<string> | null | undefined, Statuses: Array<string> | null | undefined, page: number | null | undefined, includeArchived: boolean | null | undefined, createdByMyApp: boolean | null | undefined, unitdp: number | null | undefined): Observable<Invoices> {
@@ -3700,6 +3715,7 @@ export namespace MyNS {
 		 * Put Invoices
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Invoices} requestBody Invoices with an array of invoice objects in body of request
 		 * @return {Invoices} Success - return response of type Invoices array with newly created Invoice
 		 */
@@ -3712,6 +3728,7 @@ export namespace MyNS {
 		 * Post Invoices
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Invoices} Success - return response of type Invoices array with newly created Invoice
 		 */
 		UpdateOrCreateInvoices(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: Invoices): Observable<Invoices> {
@@ -3723,6 +3740,7 @@ export namespace MyNS {
 		 * Get Invoices/{InvoiceID}
 		 * @param {string} InvoiceID Unique identifier for an Invoice
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Invoices} Success - return response of type Invoices array with specified Invoices
 		 */
 		GetInvoice(InvoiceID: string, unitdp: number | null | undefined): Observable<Invoices> {
@@ -3734,6 +3752,7 @@ export namespace MyNS {
 		 * Post Invoices/{InvoiceID}
 		 * @param {string} InvoiceID Unique identifier for an Invoice
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Invoices} Success - return response of type Invoices array with updated Invoice
 		 */
 		UpdateInvoice(InvoiceID: string, unitdp: number | null | undefined, requestBody: Invoices): Observable<Invoices> {
@@ -3838,6 +3857,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Items} Success - return response of type Items array with all Item
 		 */
 		GetItems(where: string | null | undefined, order: string | null | undefined, unitdp: number | null | undefined): Observable<Items> {
@@ -3849,6 +3869,7 @@ export namespace MyNS {
 		 * Put Items
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Items} requestBody Items with an array of Item objects in body of request
 		 * @return {Items} Success - return response of type Items array with newly created Item
 		 */
@@ -3861,6 +3882,7 @@ export namespace MyNS {
 		 * Post Items
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Items} Success - return response of type Items array with newly created Item
 		 */
 		UpdateOrCreateItems(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: Items): Observable<Items> {
@@ -3872,6 +3894,7 @@ export namespace MyNS {
 		 * Get Items/{ItemID}
 		 * @param {string} ItemID Unique identifier for an Item
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Items} Success - return response of type Items array with specified Item
 		 */
 		GetItem(ItemID: string, unitdp: number | null | undefined): Observable<Items> {
@@ -3883,6 +3906,7 @@ export namespace MyNS {
 		 * Post Items/{ItemID}
 		 * @param {string} ItemID Unique identifier for an Item
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Items} Success - return response of type Items array with updated Item
 		 */
 		UpdateItem(ItemID: string, unitdp: number | null | undefined, requestBody: Items): Observable<Items> {
@@ -3924,6 +3948,7 @@ export namespace MyNS {
 		 * Allows you to retrieve any journals.
 		 * Get Journals
 		 * @param {number} offset Offset by a specified journal number. e.g. journals with a JournalNumber greater than the offset will be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} paymentsOnly Filter to retrieve journals on a cash basis. Journals are returned on an accrual basis by default.
 		 * @return {Journals} Success - return response of type Journals array with all Journals
 		 */
@@ -3945,6 +3970,7 @@ export namespace MyNS {
 		 * Retrieve linked transactions (billable expenses)
 		 * Get LinkedTransactions
 		 * @param {number} page Up to 100 linked transactions will be returned in a single API call. Use the page parameter to specify the page to be returned e.g. page=1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} LinkedTransactionID The Xero identifier for an Linked Transaction
 		 * @param {string} SourceTransactionID Filter by the SourceTransactionID. Get the linked transactions created from a particular ACCPAY invoice
 		 * @param {string} ContactID Filter by the ContactID. Get all the linked transactions that have been assigned to a particular customer.
@@ -4002,6 +4028,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 � Up to 100 manual journals will be returned in a single API call with line items shown for each overpayment
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ManualJournals} Success - return response of type ManualJournals array with a all ManualJournals
 		 */
 		GetManualJournals(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<ManualJournals> {
@@ -4107,7 +4134,9 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 � Up to 100 overpayments will be returned in a single API call with line items shown for each overpayment
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Overpayments} Success - return response of type Overpayments array with all Overpayments
 		 */
 		GetOverpayments(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, unitdp: number | null | undefined): Observable<Overpayments> {
@@ -4163,6 +4192,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page Up to 100 payments will be returned in a single API call
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Payments} Success - return response of type Payments array for all Payments
 		 */
 		GetPayments(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<Payments> {
@@ -4256,7 +4286,9 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} page e.g. page=1 � Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Prepayments} Success - return response of type Prepayments array for all Prepayment
 		 */
 		GetPrepayments(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, unitdp: number | null | undefined): Observable<Prepayments> {
@@ -4314,6 +4346,7 @@ export namespace MyNS {
 		 * @param {string} DateTo Filter by purchase order date (e.g. GET https://.../PurchaseOrders?DateFrom=2015-12-01&DateTo=2015-12-31
 		 * @param {string} order Order by an any element
 		 * @param {number} page To specify a page, append the page parameter to the URL e.g. ?page=1. If there are 100 records in the response you will need to check if there is any more data by fetching the next page e.g ?page=2 and continuing this process until no more results are returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PurchaseOrders} Success - return response of type PurchaseOrder array of all PurchaseOrder
 		 */
 		GetPurchaseOrders(Status: PurchaseOrderStatus | null | undefined, DateFrom: string | null | undefined, DateTo: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PurchaseOrders> {
@@ -4406,12 +4439,17 @@ export namespace MyNS {
 		 * Allows you to retrieve any sales quotes
 		 * Get Quotes
 		 * @param {Date} DateFrom Filter for quotes after a particular date
+		 *     Type: DateOnly
 		 * @param {Date} DateTo Filter for quotes before a particular date
+		 *     Type: DateOnly
 		 * @param {Date} ExpiryDateFrom Filter for quotes expiring after a particular date
+		 *     Type: DateOnly
 		 * @param {Date} ExpiryDateTo Filter for quotes before a particular date
+		 *     Type: DateOnly
 		 * @param {string} ContactID Filter for quotes belonging to a particular contact
 		 * @param {string} Status Filter for quotes of a particular Status
 		 * @param {number} page e.g. page=1 � Up to 100 Quotes will be returned in a single API call with line items shown for each quote
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} order Order by an any element
 		 * @return {Quotes} Success - return response of type quotes array with all quotes
 		 */
@@ -4529,6 +4567,7 @@ export namespace MyNS {
 		 * @param {string} where Filter by an any element
 		 * @param {string} order Order by an any element
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Receipts} Success - return response of type Receipts array for all Receipt
 		 */
 		GetReceipts(where: string | null | undefined, order: string | null | undefined, unitdp: number | null | undefined): Observable<Receipts> {
@@ -4539,6 +4578,7 @@ export namespace MyNS {
 		 * Allows you to create draft expense claim receipts for any user
 		 * Put Receipts
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Receipts} requestBody Receipts with an array of Receipt object in body of request
 		 * @return {Receipts} Success - return response of type Receipts array for newly created Receipt
 		 */
@@ -4551,6 +4591,7 @@ export namespace MyNS {
 		 * Get Receipts/{ReceiptID}
 		 * @param {string} ReceiptID Unique identifier for a Receipt
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Receipts} Success - return response of type Receipts array for a specified Receipt
 		 */
 		GetReceipt(ReceiptID: string, unitdp: number | null | undefined): Observable<Receipts> {
@@ -4562,6 +4603,7 @@ export namespace MyNS {
 		 * Post Receipts/{ReceiptID}
 		 * @param {string} ReceiptID Unique identifier for a Receipt
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Receipts} Success - return response of type Receipts array for updated Receipt
 		 */
 		UpdateReceipt(ReceiptID: string, unitdp: number | null | undefined, requestBody: Receipts): Observable<Receipts> {
@@ -4710,8 +4752,11 @@ export namespace MyNS {
 		 * Get Reports/AgedPayablesByContact
 		 * @param {string} contactId Unique identifier for a Contact
 		 * @param {Date} date The date of the Aged Payables By Contact report
+		 *     Type: DateOnly
 		 * @param {Date} fromDate The from date of the Aged Payables By Contact report
+		 *     Type: DateOnly
 		 * @param {Date} toDate The to date of the Aged Payables By Contact report
+		 *     Type: DateOnly
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
 		GetReportAgedPayablesByContact(contactId: string, date: Date | null | undefined, fromDate: Date | null | undefined, toDate: Date | null | undefined): Observable<ReportWithRows> {
@@ -4723,8 +4768,11 @@ export namespace MyNS {
 		 * Get Reports/AgedReceivablesByContact
 		 * @param {string} contactId Unique identifier for a Contact
 		 * @param {Date} date The date of the Aged Receivables By Contact report
+		 *     Type: DateOnly
 		 * @param {Date} fromDate The from date of the Aged Receivables By Contact report
+		 *     Type: DateOnly
 		 * @param {Date} toDate The to date of the Aged Receivables By Contact report
+		 *     Type: DateOnly
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
 		GetReportAgedReceivablesByContact(contactId: string, date: Date | null | undefined, fromDate: Date | null | undefined, toDate: Date | null | undefined): Observable<ReportWithRows> {
@@ -4736,6 +4784,7 @@ export namespace MyNS {
 		 * Get Reports/BalanceSheet
 		 * @param {string} date The date of the Balance Sheet report
 		 * @param {number} periods The number of periods for the Balance Sheet report
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetReportBalanceSheetTimeframe} timeframe The period size to compare to (MONTH, QUARTER, YEAR)
 		 * @param {string} trackingOptionID1 The tracking option 1 for the Balance Sheet report
 		 * @param {string} trackingOptionID2 The tracking option 2 for the Balance Sheet report
@@ -4751,7 +4800,9 @@ export namespace MyNS {
 		 * Allows you to retrieve report for BankSummary
 		 * Get Reports/BankSummary
 		 * @param {Date} fromDate The from date for the Bank Summary report e.g. 2018-03-31
+		 *     Type: DateOnly
 		 * @param {Date} toDate The to date for the Bank Summary report e.g. 2018-03-31
+		 *     Type: DateOnly
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
 		GetReportBankSummary(fromDate: Date | null | undefined, toDate: Date | null | undefined): Observable<ReportWithRows> {
@@ -4781,8 +4832,11 @@ export namespace MyNS {
 		 * Allows you to retrieve report for Budget Summary
 		 * Get Reports/BudgetSummary
 		 * @param {Date} date The date for the Bank Summary report e.g. 2018-03-31
+		 *     Type: DateOnly
 		 * @param {number} period The number of periods to compare (integer between 1 and 12)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeframe The period size to compare to (1=month, 3=quarter, 12=year)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReportWithRows} success- return a Report with Rows object
 		 */
 		GetReportBudgetSummary(date: Date | null | undefined, period: number | null | undefined, timeframe: number | null | undefined): Observable<ReportWithRows> {
@@ -4793,6 +4847,7 @@ export namespace MyNS {
 		 * Allows you to retrieve report for ExecutiveSummary
 		 * Get Reports/ExecutiveSummary
 		 * @param {Date} date The date for the Bank Summary report e.g. 2018-03-31
+		 *     Type: DateOnly
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
 		GetReportExecutiveSummary(date: Date | null | undefined): Observable<ReportWithRows> {
@@ -4803,8 +4858,11 @@ export namespace MyNS {
 		 * Allows you to retrieve report for ProfitAndLoss
 		 * Get Reports/ProfitAndLoss
 		 * @param {Date} fromDate The from date for the ProfitAndLoss report e.g. 2018-03-31
+		 *     Type: DateOnly
 		 * @param {Date} toDate The to date for the ProfitAndLoss report e.g. 2018-03-31
+		 *     Type: DateOnly
 		 * @param {number} periods The number of periods to compare (integer between 1 and 12)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetReportBalanceSheetTimeframe} timeframe The period size to compare to (MONTH, QUARTER, YEAR)
 		 * @param {string} trackingCategoryID The trackingCategory 1 for the ProfitAndLoss report
 		 * @param {string} trackingCategoryID2 The trackingCategory 2 for the ProfitAndLoss report
@@ -4822,6 +4880,7 @@ export namespace MyNS {
 		 * Allows you to retrieve report for TrialBalance
 		 * Get Reports/TrialBalance
 		 * @param {Date} date The date for the Trial Balance report e.g. 2018-03-31
+		 *     Type: DateOnly
 		 * @param {boolean} paymentsOnly Return cash only basis for the Trial Balance report
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */

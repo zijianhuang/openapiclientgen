@@ -542,13 +542,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected override void CreateMemberDocComment(string refId, OpenApiSchema memberSchema, CodeMemberField property, OpenApiSchema modelSchema)
 		{
-			string typeComment = memberSchema.Description;
-			if (!String.IsNullOrEmpty(typeComment))
+			string memberComment = memberSchema.Description;
+			if (!String.IsNullOrEmpty(memberComment))
 			{
-				bool funky = typeComment.Contains("*/");
+				bool funky = memberComment.Contains("*/");
 				if (funky)
 				{
-					typeComment = typeComment.Replace("*/", "");
+					memberComment = memberComment.Replace("*/", "");
 					Trace.TraceWarning($"Component {refId} with property {property.Name} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
 				}
 			}
@@ -556,9 +556,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (settings.DataAnnotationsToComments)
 			{
 				List<string> ss = ComponentsHelper.GetCommentsFromAnnotations(memberSchema, refId, modelSchema, true);
-				if (!String.IsNullOrEmpty(typeComment))
+				if (!String.IsNullOrEmpty(memberComment))
 				{
-					ss.Insert(0, typeComment);
+					ss.Insert(0, memberComment);
 				}
 
 				if (!ComponentsHelper.FieldSchemaContainsValueConstraints(memberSchema))
@@ -579,9 +579,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 			else
 			{
-				if (!string.IsNullOrEmpty(typeComment))
+				if (!string.IsNullOrEmpty(memberComment))
 				{
-					property.Comments.Add(new CodeCommentStatement(typeComment, true));
+					property.Comments.Add(new CodeCommentStatement(memberComment, true));
 				}
 			}
 		}

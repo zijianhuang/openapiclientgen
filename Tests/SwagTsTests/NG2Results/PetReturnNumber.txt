@@ -1,5 +1,6 @@
-import {HttpClient} from 'aurelia-fetch-client';
-import {autoinject} from 'aurelia-framework';
+import { Injectable, Inject } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface ApiResponse {
 
@@ -185,9 +186,9 @@ export namespace MyNS {
 		userStatus?: number | null;
 	}
 
-	@autoinject()
-	export class PetClient {
-		constructor(private http: HttpClient) {
+	@Injectable()
+	export class MyClient {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -197,8 +198,8 @@ export namespace MyNS {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		AddPet(requestBody: Pet): Promise<Response> {
-			return this.http.post('pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		AddPet(requestBody: Pet): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -207,8 +208,8 @@ export namespace MyNS {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		UpdatePet(requestBody: Pet): Promise<Response> {
-			return this.http.put('pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		UpdatePet(requestBody: Pet): Observable<HttpResponse<string>> {
+			return this.http.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -219,8 +220,8 @@ export namespace MyNS {
 		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Pet} successful operation
 		 */
-		GetPetById(petId: string): Promise<Pet> {
-			return this.http.get('pet/' + petId, {}).then(d => d.json());
+		GetPetById(petId: string): Observable<Pet> {
+			return this.http.get<Pet>(this.baseUri + 'pet/' + petId, {});
 		}
 
 		/**
@@ -230,8 +231,8 @@ export namespace MyNS {
 		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		DeletePet(petId: string): Promise<Response> {
-			return this.http.delete('pet/' + petId, {});
+		DeletePet(petId: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'pet/' + petId, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -242,8 +243,8 @@ export namespace MyNS {
 		 *     Minimum items: 1    Maximum items: 3
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByStatus(status: Array<PetStatus>): Promise<Array<Pet>> {
-			return this.http.get('pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), {}).then(d => d.json());
+		FindPetsByStatus(status: Array<PetStatus>): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), {});
 		}
 
 		/**
@@ -253,14 +254,8 @@ export namespace MyNS {
 		 * @param {Array<string>} tags Tags to filter by
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByTags(tags: Array<string>): Promise<Array<Pet>> {
-			return this.http.get('pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), {}).then(d => d.json());
-		}
-	}
-
-	@autoinject()
-	export class StoreClient {
-		constructor(private http: HttpClient) {
+		FindPetsByTags(tags: Array<string>): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
 		/**
@@ -269,8 +264,8 @@ export namespace MyNS {
 		 * Get store/inventory
 		 * @return {{[id: string]: number }} successful operation
 		 */
-		GetInventory(): Promise<{[id: string]: number }> {
-			return this.http.get('store/inventory', {}).then(d => d.json());
+		GetInventory(): Observable<{[id: string]: number }> {
+			return this.http.get<{[id: string]: number }>(this.baseUri + 'store/inventory', {});
 		}
 
 		/**
@@ -279,8 +274,8 @@ export namespace MyNS {
 		 * @param {Order} requestBody order placed for purchasing the pet
 		 * @return {Order} successful operation
 		 */
-		PlaceOrder(requestBody: Order): Promise<Order> {
-			return this.http.post('store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+		PlaceOrder(requestBody: Order): Observable<Order> {
+			return this.http.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -291,8 +286,8 @@ export namespace MyNS {
 		 *     Minimum: 1    Maximum: 5
 		 * @return {Order} successful operation
 		 */
-		GetOrderById(orderId: string): Promise<Order> {
-			return this.http.get('store/order/' + orderId, {}).then(d => d.json());
+		GetOrderById(orderId: string): Observable<Order> {
+			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, {});
 		}
 
 		/**
@@ -303,14 +298,8 @@ export namespace MyNS {
 		 *     Minimum: 1
 		 * @return {void} 
 		 */
-		DeleteOrder(orderId: string): Promise<Response> {
-			return this.http.delete('store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), {});
-		}
-	}
-
-	@autoinject()
-	export class UserClient {
-		constructor(private http: HttpClient) {
+		DeleteOrder(orderId: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -320,8 +309,8 @@ export namespace MyNS {
 		 * @param {User} requestBody Created user object
 		 * @return {void} 
 		 */
-		CreateUser(requestBody: User): Promise<Response> {
-			return this.http.post('user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateUser(requestBody: User): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -330,8 +319,8 @@ export namespace MyNS {
 		 * @param {string} username The name that needs to be fetched. Use user1 for testing. 
 		 * @return {User} successful operation
 		 */
-		GetUserByName(username: string): Promise<User> {
-			return this.http.get('user/' + (username == null ? '' : encodeURIComponent(username)), {}).then(d => d.json());
+		GetUserByName(username: string): Observable<User> {
+			return this.http.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), {});
 		}
 
 		/**
@@ -342,8 +331,8 @@ export namespace MyNS {
 		 * @param {User} requestBody Updated user object
 		 * @return {void} 
 		 */
-		UpdateUser(username: string, requestBody: User): Promise<Response> {
-			return this.http.put('user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		UpdateUser(username: string, requestBody: User): Observable<HttpResponse<string>> {
+			return this.http.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -353,8 +342,8 @@ export namespace MyNS {
 		 * @param {string} username The name that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteUser(username: string): Promise<Response> {
-			return this.http.delete('user/' + (username == null ? '' : encodeURIComponent(username)), {});
+		DeleteUser(username: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -363,8 +352,8 @@ export namespace MyNS {
 		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithArrayInput(requestBody: Array<User>): Promise<Response> {
-			return this.http.post('user/createWithArray', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateUsersWithArrayInput(requestBody: Array<User>): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -373,19 +362,19 @@ export namespace MyNS {
 		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithListInput(requestBody: Array<User>): Promise<Response> {
-			return this.http.post('user/createWithList', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateUsersWithListInput(requestBody: Array<User>): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Logs user into the system
 		 * Get user/login
-		 * @param {string} username The user name for login
-		 * @param {string} password The password for login in clear text
-		 * @return {string} successful operation
+		 * @param {string} username The user name for loginKKK
+		 * @param {string} password The password for login in clear textPPP
+		 * @return {string} Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		LoginUser(username: string, password: string): Promise<string> {
-			return this.http.get('user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), {}).then(d => d.text());
+		LoginUser(username: string, password: string): Observable<string> {
+			return this.http.get<string>(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), {});
 		}
 
 		/**
@@ -393,8 +382,8 @@ export namespace MyNS {
 		 * Get user/logout
 		 * @return {void} 
 		 */
-		LogoutUser(): Promise<Response> {
-			return this.http.get('user/logout', {});
+		LogoutUser(): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'user/logout', { observe: 'response', responseType: 'text' });
 		}
 	}
 
