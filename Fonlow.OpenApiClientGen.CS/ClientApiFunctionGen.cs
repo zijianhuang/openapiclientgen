@@ -175,12 +175,12 @@ namespace Fonlow.OpenApiClientGen.CS
 				method.Comments.Add(new CodeCommentStatement("<" + elementName + ">" + doc + "</" + elementName + ">", true));
 			}
 
-			void CreateParamDocComment(string paramName, string doc)
+			void CreateParamDocComment(ParameterDescription item)
 			{
-				if (String.IsNullOrWhiteSpace(doc))
+				if (String.IsNullOrWhiteSpace(item.Documentation))
 					return;
 
-				method.Comments.Add(new CodeCommentStatement("<param name=\"" + paramName + "\">" + doc + "</param>", true));
+				method.Comments.Add(new CodeCommentStatement("<param name=\"" + item.Name + "\">" + item.Documentation + "</param>", true));
 			}
 
 			method.Comments.Add(new CodeCommentStatement("<summary>", true));
@@ -200,12 +200,12 @@ namespace Fonlow.OpenApiClientGen.CS
 			method.Comments.Add(new CodeCommentStatement("</summary>", true));
 			foreach (ParameterDescription item in parameterDescriptions)
 			{
-				CreateParamDocComment(item.Name, item.Documentation);
+				CreateParamDocComment(item);
 			}
 
 			if (!String.IsNullOrEmpty(requestBodyComment))
 			{
-				CreateParamDocComment("requestBody", requestBodyComment);
+				method.Comments.Add(new CodeCommentStatement("<param name=\"requestBody\">" + requestBodyComment + "</param>", true));
 			}
 
 			CreateDocComment("returns", NameComposer.GetOperationReturnComment(apiOperation));

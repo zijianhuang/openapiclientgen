@@ -99,11 +99,14 @@ namespace MyNamespace
 		/// <summary>Finds Pets by tags</summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		[System.Obsolete]
 		[HttpGet, Route("pet/findByTags")]
-		public async Task<ActionResult<System.Collections.Generic.ICollection<Pet>>> FindPetsByTags([FromQuery] System.Collections.Generic.IEnumerable<string> tags)
+		public async Task<ActionResult<System.Collections.Generic.ICollection<Pet>>> FindPetsByTags([FromQuery, System.ComponentModel.DataAnnotations.MinLength(1), System.ComponentModel.DataAnnotations.MaxLength(3)] System.Collections.Generic.IEnumerable<string> tags)
 		{
-			return PetData.Instance.Dic.Values.Where(d => tags.Intersect(d.Tags.Select(k=>k.Name)).Count()>0).ToArray();
+			if (!ModelState.IsValid){
+				return BadRequest();
+			}
+
+			return PetData.Instance.Dic.Values.Where(d => tags.Intersect(d.Tags?.Select(k=>k.Name)).Count()>0).ToArray();
 		}
 
 		/// <summary>Returns pet inventories by status</summary>
@@ -570,16 +573,16 @@ namespace MyNamespace
 		private PetData()
 		{
 			Dic = new ConcurrentDictionary<long, Pet>(new KeyValuePair<long, Pet>[] {
-				new KeyValuePair<long, Pet>(11, new Pet {Id=11, Name="Nice" }),
-				new KeyValuePair<long, Pet>(12, new Pet {Id=12, Name="Narco", Status= PetStatus.sold }),
-				new KeyValuePair<long, Pet>(13, new Pet {Id=13, Name="Bombasto" }),
-				new KeyValuePair<long, Pet>(14, new Pet {Id=14, Name="Celeritas" }),
-				new KeyValuePair<long, Pet>(15, new Pet {Id=15, Name="Magneta", Status= PetStatus.sold }),
-				new KeyValuePair<long, Pet>(16, new Pet {Id=16, Name="RubberMan" }),
-				new KeyValuePair<long, Pet>(17, new Pet {Id=17, Name="Dynama" }),
-				new KeyValuePair<long, Pet>(18, new Pet {Id=18, Name="IQ", Status= PetStatus.sold}),
-				new KeyValuePair<long, Pet>(19, new Pet {Id=19, Name="Magma" }),
-				new KeyValuePair<long, Pet>(20, new Pet {Id=29, Name="Tornado" }),
+				new KeyValuePair<long, Pet>(11, new Pet {Id=11, Name="Nice", Tags= Array.Empty<Tag>() }),
+				new KeyValuePair<long, Pet>(12, new Pet {Id=12, Name="Narco", Status= PetStatus.sold, Tags= Array.Empty<Tag>() }),
+				new KeyValuePair<long, Pet>(13, new Pet {Id=13, Name="Bombasto", Tags= Array.Empty<Tag>() }),
+				new KeyValuePair<long, Pet>(14, new Pet {Id=14, Name="Celeritas", Tags= Array.Empty<Tag>() }),
+				new KeyValuePair<long, Pet>(15, new Pet {Id=15, Name="Magneta", Status= PetStatus.sold, Tags= Array.Empty<Tag>() }),
+				new KeyValuePair<long, Pet>(16, new Pet {Id=16, Name="RubberMan", Tags= Array.Empty<Tag>() }),
+				new KeyValuePair<long, Pet>(17, new Pet {Id=17, Name="Dynama", Tags= Array.Empty<Tag>() }),
+				new KeyValuePair<long, Pet>(18, new Pet {Id=18, Name="IQ", Status= PetStatus.sold, Tags= Array.Empty<Tag>()}),
+				new KeyValuePair<long, Pet>(19, new Pet {Id=19, Name="Magma", Tags= Array.Empty<Tag>() }),
+				new KeyValuePair<long, Pet>(20, new Pet {Id=29, Name="Tornado", Tags= Array.Empty<Tag>() }),
 
 				});
 		}

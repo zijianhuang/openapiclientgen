@@ -68,6 +68,25 @@ namespace IntegrationTests
 		}
 
 		[Fact]
+		public async Task TestFindPetsByTags()
+		{
+			Pet[] aa = await api.FindPetsByTagsAsync(["something", "nothing"]);
+			Assert.Empty(aa);
+		}
+
+		[Fact]
+		public async Task TestFindPetsByEmptyTags()
+		{
+			await Assert.ThrowsAsync<Fonlow.Net.Http.WebApiRequestException>(() => api.FindPetsByTagsAsync([]));
+		}
+
+		[Fact]
+		public async Task TestFindPetsBy4Tags()
+		{
+			await Assert.ThrowsAsync<Fonlow.Net.Http.WebApiRequestException>(() => api.FindPetsByTagsAsync(["1", "2", "3", "4"]));
+		}
+
+		[Fact]
 		public async Task TestGetPet()
 		{
 			Pet d = await api.GetPetByIdAsync(12);
