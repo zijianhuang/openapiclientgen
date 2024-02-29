@@ -11,9 +11,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <NeutralLanguage>en</NeutralLanguage>
     <Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
-    <Version>3.0.2</Version>
+    <Version>3.1</Version>
     <PackageTags>Swagger, Open API Specification, C#, .NET Core, Web API, TypeScript, Angular, YAML</PackageTags>
-    <PackageReleaseNotes>* Angular FormGroup; * optional null type.</PackageReleaseNotes>
+    <PackageReleaseNotes>Better support for Int64 in JS. More doc comments generated.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

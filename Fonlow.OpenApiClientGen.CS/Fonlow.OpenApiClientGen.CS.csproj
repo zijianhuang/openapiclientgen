@@ -3,14 +3,14 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <NeutralLanguage>en</NeutralLanguage>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Zijian Huang</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
-    <Version>3.0.2</Version>
+    <Version>3.0.4</Version>
     <Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
     <Description>Generate C# client API codes</Description>
-    <PackageReleaseNotes>.NET 7</PackageReleaseNotes>
+    <PackageReleaseNotes>More Doc comments generated.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

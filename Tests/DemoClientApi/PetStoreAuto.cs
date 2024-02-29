@@ -750,8 +750,7 @@ namespace My.Pet.Client
 		/// Get user by user name
 		/// GetUserByName user/{username}
 		/// </summary>
-		/// <param name="username">The name that needs to be 
-		/// fetched. Use user1 for testing. </param>
+		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
 		/// <returns>successful operation</returns>
 		public async Task<User> GetUserByNameAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

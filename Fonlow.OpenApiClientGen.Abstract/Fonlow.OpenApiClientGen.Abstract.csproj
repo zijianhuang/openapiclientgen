@@ -8,7 +8,7 @@
     <Authors>Zijian Huang</Authors>
     <NeutralLanguage>en</NeutralLanguage>
     <Description>Shared component for plugins that generate TypeScript client API codes</Description>
-    <Version>3.0.2</Version>
+    <Version>3.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
