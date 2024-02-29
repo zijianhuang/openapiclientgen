@@ -826,16 +826,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					ss.Insert(0, typeComment);
 				}
 
-				AddDocComments(ss, property.Comments);
+				AddLinesAsSummaryDocComments(property.Comments, ss);
 			}
 			else
 			{
-				AddDocComments(typeComment, property.Comments);
+				AddDescriptionAsSummaryDocComments(property.Comments, typeComment);
 			}
 
 		}
 
-		static void AddDocComments(string description, CodeCommentStatementCollection comments)
+		static void AddDescriptionAsSummaryDocComments(CodeCommentStatementCollection comments, string description)
 		{
 			if (description != null && comments != null)
 			{
@@ -845,7 +845,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		static void AddDocComments(List<string> ss, CodeCommentStatementCollection comments)
+		static void AddLinesAsSummaryDocComments(CodeCommentStatementCollection comments, List<string> ss)
 		{
 			if (ss != null && ss.Count > 0 && comments != null)
 			{
@@ -863,7 +863,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
-			AddDocComments(typeComment, typeDeclaration.Comments);
+			AddDescriptionAsSummaryDocComments(typeDeclaration.Comments, typeComment);
 
 		}
 

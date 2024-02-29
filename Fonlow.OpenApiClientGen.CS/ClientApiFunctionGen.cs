@@ -1,9 +1,11 @@
 ﻿using Fonlow.CodeDom.Web;
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Fonlow.Reflection;
+using Fonlow.TypeScriptCodeDom;
 using Microsoft.OpenApi.Models;
 using System;
 using System.CodeDom;
+using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Linq;
@@ -64,7 +66,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			this.RelativePath = RemovePrefixSlash(relativePath);
 			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(RelativePath);
 #if DEBUG
-			if (this.RelativePath== "admin/serviceAnnouncement/healthOverviews/{serviceHealth_id}/issues/{serviceHealthIssue_id}/microsoft.graph.incidentReport()")
+			if (this.RelativePath == "admin/serviceAnnouncement/healthOverviews/{serviceHealth_id}/issues/{serviceHealthIssue_id}/microsoft.graph.incidentReport()")
 			{
 				Debug.WriteLine("ffff");
 			}
@@ -177,10 +179,28 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			void CreateParamDocComment(ParameterDescription item)
 			{
-				if (String.IsNullOrWhiteSpace(item.Documentation))
-					return;
+				var memberSchema = item.ParameterDescriptor.Schema;
+				CodeTypeReference tsParameterType = item.ParameterTypeReference;
+				if (settings.DataAnnotationsToComments)
+				{
+					List<string> ss = ComponentsHelper.GetParamCommentsFromAnnotations(memberSchema, true);
+					if (!String.IsNullOrEmpty(item.Documentation))
+					{
+						ss.Insert(0, item.Documentation);
+					}
 
-				method.Comments.Add(new CodeCommentStatement("<param name=\"" + item.Name + "\">" + item.Documentation + "</param>", true));
+					if (ss.Count > 0)
+					{
+						AddLinesAsParamDocComment(method.Comments, item.Name, ss);
+					}
+				}
+				else
+				{
+					if (!string.IsNullOrEmpty(item.Documentation))
+					{
+						AddDescriptionAsParamDocComment(method.Comments, item.Name, item.Documentation);
+					}
+				}
 			}
 
 			method.Comments.Add(new CodeCommentStatement("<summary>", true));
@@ -205,10 +225,37 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			if (!String.IsNullOrEmpty(requestBodyComment))
 			{
-				method.Comments.Add(new CodeCommentStatement("<param name=\"requestBody\">" + requestBodyComment + "</param>", true));
+				AddDescriptionAsParamDocComment(method.Comments, "requestBody", requestBodyComment);
 			}
 
 			CreateDocComment("returns", NameComposer.GetOperationReturnComment(apiOperation));
+		}
+
+		static void AddDescriptionAsParamDocComment(CodeCommentStatementCollection comments, string paramName, string description)
+		{
+			comments.Add(new CodeCommentStatement("<param name=\"" + paramName + "\">" + description + "</param>", true));
+		}
+
+		static void AddLinesAsParamDocComment(CodeCommentStatementCollection comments, string paramName, IReadOnlyList<string> lines)
+		{
+			if (lines.Count == 0)
+			{
+				return;
+			}
+
+			if (lines.Count == 1)
+			{
+				comments.Add(new CodeCommentStatement("<param name=\"" + paramName + "\">" + lines[0] + "</param>", true));
+				return;
+			}
+
+			comments.Add(new CodeCommentStatement("<param name=\"" + paramName + "\">" + lines[0], true));
+			for (int i = 1; i < lines.Count; i++)
+			{
+				comments.Add(new CodeCommentStatement(lines[i], true));
+			}
+
+			comments.Add(new CodeCommentStatement("</param>"));
 		}
 
 		void RenderGetOrDeleteImplementation(OperationType httpMethod)
@@ -291,9 +338,9 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		void AddResponseMessageSendAsync(CodeMemberMethod method)
 		{
-			var cancellationToken = settings.CancellationTokenEnabled? ", cancellationToken" : String.Empty;
+			var cancellationToken = settings.CancellationTokenEnabled ? ", cancellationToken" : String.Empty;
 			method.Statements.Add(new CodeVariableDeclarationStatement(
-				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression($"await httpClient.SendAsync(httpRequestMessage{cancellationToken})") 
+				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression($"await httpClient.SendAsync(httpRequestMessage{cancellationToken})")
 				: new CodeSnippetExpression($"httpClient.SendAsync(httpRequestMessage{cancellationToken}).Result")));
 		}
 

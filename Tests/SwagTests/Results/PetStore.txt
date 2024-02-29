@@ -17,14 +17,100 @@ namespace MyNS
 	using Fonlow.Net.Http;
 	
 	
+	public class Order
+	{
+		
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		public System.Nullable<System.Int64> PetId { get; set; }
+		
+		public System.Nullable<System.Int32> Quantity { get; set; }
+		
+		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
+		
+		/// <summary>
+		/// Order Status
+		/// </summary>
+		public System.Nullable<OrderStatus> Status { get; set; }
+		
+		public System.Nullable<System.Boolean> Complete { get; set; }
+	}
+	
+	public enum OrderStatus
+	{
+		
+		placed = 0,
+		
+		approved = 1,
+		
+		delivered = 2,
+	}
+	
+	public class Customer
+	{
+		
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		public string Username { get; set; }
+		
+		public Address[] Address { get; set; }
+	}
+	
+	public class Address
+	{
+		
+		public string Street { get; set; }
+		
+		public string City { get; set; }
+		
+		public string State { get; set; }
+		
+		public string Zip { get; set; }
+	}
+	
+	public class Category
+	{
+		
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		public string Name { get; set; }
+	}
+	
+	public class User
+	{
+		
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		public string Username { get; set; }
+		
+		public string FirstName { get; set; }
+		
+		public string LastName { get; set; }
+		
+		public string Email { get; set; }
+		
+		public string Password { get; set; }
+		
+		public string Phone { get; set; }
+		
+		/// <summary>
+		/// User Status
+		/// </summary>
+		public System.Nullable<System.Int32> UserStatus { get; set; }
+	}
+	
+	public class Tag
+	{
+		
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		public string Name { get; set; }
+	}
+	
 	public class Pet
 	{
 		
-		/// <summary>
-		/// Required
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -32,22 +118,39 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }
 		
-		public string Tag { get; set; }
+		public Category Category { get; set; }
+		
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public string[] PhotoUrls { get; set; }
+		
+		public Tag[] Tags { get; set; }
+		
+		/// <summary>
+		/// pet status in the store
+		/// </summary>
+		public System.Nullable<PetStatus> Status { get; set; }
 	}
 	
-	public class Error
+	public enum PetStatus
 	{
 		
-		/// <summary>
-		/// Required
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public int Code { get; set; }
+		available = 0,
 		
-		/// <summary>
-		/// Required
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
+		pending = 1,
+		
+		sold = 2,
+	}
+	
+	public class ApiResponse
+	{
+		
+		public System.Nullable<System.Int32> Code { get; set; }
+		
+		public string Type { get; set; }
+		
 		public string Message { get; set; }
 	}
 	
@@ -71,14 +174,163 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// List all pets
-		/// ListPets pets
+		/// Update an existing pet
+		/// Update an existing pet by Id
+		/// UpdatePet pet
 		/// </summary>
-		/// <param name="limit">How many items to return at one time (max 100)</param>
-		/// <returns>A paged array of pets</returns>
-		public async Task<Pet[]> ListPetsAsync(int limit)
+		/// <param name="requestBody">Update an existent pet in the store</param>
+		/// <returns>Successful operation</returns>
+		public async Task<Pet> UpdatePetAsync(Pet requestBody)
 		{
-			var requestUri = "pets?limit="+limit;
+			var requestUri = "pet";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Pet>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update an existing pet
+		/// Update an existing pet by Id
+		/// UpdatePet pet
+		/// </summary>
+		/// <param name="requestBody">Update an existent pet in the store</param>
+		/// <returns>Successful operation</returns>
+		public Pet UpdatePet(Pet requestBody)
+		{
+			var requestUri = "pet";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Pet>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Add a new pet to the store
+		/// Add a new pet to the store
+		/// AddPet pet
+		/// </summary>
+		/// <param name="requestBody">Create a new pet in the store</param>
+		/// <returns>Successful operation</returns>
+		public async Task<Pet> AddPetAsync(Pet requestBody)
+		{
+			var requestUri = "pet";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Pet>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Add a new pet to the store
+		/// Add a new pet to the store
+		/// AddPet pet
+		/// </summary>
+		/// <param name="requestBody">Create a new pet in the store</param>
+		/// <returns>Successful operation</returns>
+		public Pet AddPet(Pet requestBody)
+		{
+			var requestUri = "pet";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Pet>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Finds Pets by status
+		/// Multiple status values can be provided with comma separated strings
+		/// FindPetsByStatus pet/findByStatus
+		/// </summary>
+		/// <param name="status">Status values that need to be considered for filter</param>
+		/// <returns>successful operation</returns>
+		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus status)
+		{
+			var requestUri = "pet/findByStatus?status=" + status;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -100,14 +352,15 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// List all pets
-		/// ListPets pets
+		/// Finds Pets by status
+		/// Multiple status values can be provided with comma separated strings
+		/// FindPetsByStatus pet/findByStatus
 		/// </summary>
-		/// <param name="limit">How many items to return at one time (max 100)</param>
-		/// <returns>A paged array of pets</returns>
-		public Pet[] ListPets(int limit)
+		/// <param name="status">Status values that need to be considered for filter</param>
+		/// <returns>successful operation</returns>
+		public Pet[] FindPetsByStatus(PetStatus status)
 		{
-			var requestUri = "pets?limit="+limit;
+			var requestUri = "pet/findByStatus?status=" + status;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
@@ -129,18 +382,27 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Create a pet
-		/// CreatePets pets
+		/// Finds Pets by tags
+		/// Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+		/// FindPetsByTags pet/findByTags
 		/// </summary>
-		public async Task CreatePetsAsync()
+		/// <param name="tags">Tags to filter by</param>
+		/// <returns>successful operation</returns>
+		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags)
 		{
-			var requestUri = "pets";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			var requestUri = "pet/findByTags?"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Pet[]>(jsonReader);
+				}
 			}
 			finally
 			{
@@ -150,18 +412,27 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Create a pet
-		/// CreatePets pets
+		/// Finds Pets by tags
+		/// Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+		/// FindPetsByTags pet/findByTags
 		/// </summary>
-		public void CreatePets()
+		/// <param name="tags">Tags to filter by</param>
+		/// <returns>successful operation</returns>
+		public Pet[] FindPetsByTags(string[] tags)
 		{
-			var requestUri = "pets";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			var requestUri = "pet/findByTags?"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Pet[]>(jsonReader);
+				}
 			}
 			finally
 			{
@@ -171,14 +442,15 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Info for a specific pet
-		/// ShowPetById pets/{petId}
+		/// Find pet by ID
+		/// Returns a single pet
+		/// GetPetById pet/{petId}
 		/// </summary>
-		/// <param name="petId">The id of the pet to retrieve</param>
-		/// <returns>Expected response to a valid request</returns>
-		public async Task<Pet> ShowPetByIdAsync(string petId)
+		/// <param name="petId">ID of pet to return</param>
+		/// <returns>successful operation</returns>
+		public async Task<Pet> GetPetByIdAsync(long petId)
 		{
-			var requestUri = "pets/"+ (petId==null? "" : System.Uri.EscapeDataString(petId));
+			var requestUri = "pet/"+petId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -200,14 +472,15 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Info for a specific pet
-		/// ShowPetById pets/{petId}
+		/// Find pet by ID
+		/// Returns a single pet
+		/// GetPetById pet/{petId}
 		/// </summary>
-		/// <param name="petId">The id of the pet to retrieve</param>
-		/// <returns>Expected response to a valid request</returns>
-		public Pet ShowPetById(string petId)
+		/// <param name="petId">ID of pet to return</param>
+		/// <returns>successful operation</returns>
+		public Pet GetPetById(long petId)
 		{
-			var requestUri = "pets/"+ (petId==null? "" : System.Uri.EscapeDataString(petId));
+			var requestUri = "pet/"+petId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
@@ -220,6 +493,734 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a pet in the store with form data
+		/// UpdatePetWithForm pet/{petId}
+		/// </summary>
+		/// <param name="petId">ID of pet that needs to be updated</param>
+		/// <param name="name">Name of pet that needs to be updated</param>
+		/// <param name="status">Status of pet that needs to be updated</param>
+		public async Task UpdatePetWithFormAsync(long petId, string name, string status)
+		{
+			var requestUri = "pet/"+petId+"?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a pet in the store with form data
+		/// UpdatePetWithForm pet/{petId}
+		/// </summary>
+		/// <param name="petId">ID of pet that needs to be updated</param>
+		/// <param name="name">Name of pet that needs to be updated</param>
+		/// <param name="status">Status of pet that needs to be updated</param>
+		public void UpdatePetWithForm(long petId, string name, string status)
+		{
+			var requestUri = "pet/"+petId+"?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Deletes a pet
+		/// delete a pet
+		/// DeletePet pet/{petId}
+		/// </summary>
+		/// <param name="petId">Pet id to delete</param>
+		public async Task DeletePetAsync(long petId)
+		{
+			var requestUri = "pet/"+petId;
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Deletes a pet
+		/// delete a pet
+		/// DeletePet pet/{petId}
+		/// </summary>
+		/// <param name="petId">Pet id to delete</param>
+		public void DeletePet(long petId)
+		{
+			var requestUri = "pet/"+petId;
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns pet inventories by status
+		/// Returns a map of status codes to quantities
+		/// GetInventory store/inventory
+		/// </summary>
+		/// <returns>successful operation</returns>
+		public async Task<System.Collections.Generic.Dictionary<string, int>> GetInventoryAsync()
+		{
+			var requestUri = "store/inventory";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns pet inventories by status
+		/// Returns a map of status codes to quantities
+		/// GetInventory store/inventory
+		/// </summary>
+		/// <returns>successful operation</returns>
+		public System.Collections.Generic.Dictionary<string, int> GetInventory()
+		{
+			var requestUri = "store/inventory";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Place an order for a pet
+		/// Place a new order in the store
+		/// PlaceOrder store/order
+		/// </summary>
+		/// <returns>successful operation</returns>
+		public async Task<Order> PlaceOrderAsync(Order requestBody)
+		{
+			var requestUri = "store/order";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Order>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Place an order for a pet
+		/// Place a new order in the store
+		/// PlaceOrder store/order
+		/// </summary>
+		/// <returns>successful operation</returns>
+		public Order PlaceOrder(Order requestBody)
+		{
+			var requestUri = "store/order";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Order>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Find purchase order by ID
+		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
+		/// GetOrderById store/order/{orderId}
+		/// </summary>
+		/// <param name="orderId">ID of order that needs to be fetched</param>
+		/// <returns>successful operation</returns>
+		public async Task<Order> GetOrderByIdAsync(long orderId)
+		{
+			var requestUri = "store/order/"+orderId;
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Order>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Find purchase order by ID
+		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
+		/// GetOrderById store/order/{orderId}
+		/// </summary>
+		/// <param name="orderId">ID of order that needs to be fetched</param>
+		/// <returns>successful operation</returns>
+		public Order GetOrderById(long orderId)
+		{
+			var requestUri = "store/order/"+orderId;
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Order>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete purchase order by ID
+		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
+		/// DeleteOrder store/order/{orderId}
+		/// </summary>
+		/// <param name="orderId">ID of the order that needs to be deleted</param>
+		public async Task DeleteOrderAsync(long orderId)
+		{
+			var requestUri = "store/order/"+orderId;
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete purchase order by ID
+		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
+		/// DeleteOrder store/order/{orderId}
+		/// </summary>
+		/// <param name="orderId">ID of the order that needs to be deleted</param>
+		public void DeleteOrder(long orderId)
+		{
+			var requestUri = "store/order/"+orderId;
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Create user
+		/// This can only be done by the logged in user.
+		/// CreateUser user
+		/// </summary>
+		/// <param name="requestBody">Created user object</param>
+		public async Task CreateUserAsync(User requestBody)
+		{
+			var requestUri = "user";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Create user
+		/// This can only be done by the logged in user.
+		/// CreateUser user
+		/// </summary>
+		/// <param name="requestBody">Created user object</param>
+		public void CreateUser(User requestBody)
+		{
+			var requestUri = "user";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Creates list of users with given input array
+		/// Creates list of users with given input array
+		/// CreateUsersWithListInput user/createWithList
+		/// </summary>
+		/// <returns>Successful operation</returns>
+		public async Task<User> CreateUsersWithListInputAsync(User[] requestBody)
+		{
+			var requestUri = "user/createWithList";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<User>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Creates list of users with given input array
+		/// Creates list of users with given input array
+		/// CreateUsersWithListInput user/createWithList
+		/// </summary>
+		/// <returns>Successful operation</returns>
+		public User CreateUsersWithListInput(User[] requestBody)
+		{
+			var requestUri = "user/createWithList";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<User>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Logs user into the system
+		/// LoginUser user/login
+		/// </summary>
+		/// <param name="username">The user name for login</param>
+		/// <param name="password">The password for login in clear text</param>
+		/// <returns>successful operation</returns>
+		public async Task<string> LoginUserAsync(string username, string password)
+		{
+			var requestUri = "user/login?username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&password=" + (password==null? "" : System.Uri.EscapeDataString(password));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				return jsonReader.ReadAsString();
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Logs user into the system
+		/// LoginUser user/login
+		/// </summary>
+		/// <param name="username">The user name for login</param>
+		/// <param name="password">The password for login in clear text</param>
+		/// <returns>successful operation</returns>
+		public string LoginUser(string username, string password)
+		{
+			var requestUri = "user/login?username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&password=" + (password==null? "" : System.Uri.EscapeDataString(password));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				return jsonReader.ReadAsString();
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Logs out current logged in user session
+		/// LogoutUser user/logout
+		/// </summary>
+		public async Task LogoutUserAsync()
+		{
+			var requestUri = "user/logout";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Logs out current logged in user session
+		/// LogoutUser user/logout
+		/// </summary>
+		public void LogoutUser()
+		{
+			var requestUri = "user/logout";
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get user by user name
+		/// GetUserByName user/{username}
+		/// </summary>
+		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
+		/// <returns>successful operation</returns>
+		public async Task<User> GetUserByNameAsync(string username)
+		{
+			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<User>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get user by user name
+		/// GetUserByName user/{username}
+		/// </summary>
+		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
+		/// <returns>successful operation</returns>
+		public User GetUserByName(string username)
+		{
+			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
+			{
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<User>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update user
+		/// This can only be done by the logged in user.
+		/// UpdateUser user/{username}
+		/// </summary>
+		/// <param name="username">name that need to be deleted</param>
+		/// <param name="requestBody">Update an existent user in the store</param>
+		public async Task UpdateUserAsync(string username, User requestBody)
+		{
+			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update user
+		/// This can only be done by the logged in user.
+		/// UpdateUser user/{username}
+		/// </summary>
+		/// <param name="username">name that need to be deleted</param>
+		/// <param name="requestBody">Update an existent user in the store</param>
+		public void UpdateUser(string username, User requestBody)
+		{
+			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete user
+		/// This can only be done by the logged in user.
+		/// DeleteUser user/{username}
+		/// </summary>
+		/// <param name="username">The name that needs to be deleted</param>
+		public async Task DeleteUserAsync(string username)
+		{
+			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete user
+		/// This can only be done by the logged in user.
+		/// DeleteUser user/{username}
+		/// </summary>
+		/// <param name="username">The name that needs to be deleted</param>
+		public void DeleteUser(string username)
+		{
+			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{

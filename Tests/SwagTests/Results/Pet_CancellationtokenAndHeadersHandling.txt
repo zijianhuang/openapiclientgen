@@ -581,7 +581,10 @@ namespace MyNS
 		/// Multiple status values can be provided with comma separated strings
 		/// FindPetsByStatus pet/findByStatus
 		/// </summary>
-		/// <param name="status">Status values that need to be considered for filter</param>
+		/// <param name="status">Status values that need to be considered for filter
+		/// Minimum items: 1
+		/// Maximum items: 3
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status, System.Threading.CancellationToken cancellationToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -616,7 +619,10 @@ namespace MyNS
 		/// Multiple status values can be provided with comma separated strings
 		/// FindPetsByStatus pet/findByStatus
 		/// </summary>
-		/// <param name="status">Status values that need to be considered for filter</param>
+		/// <param name="status">Status values that need to be considered for filter
+		/// Minimum items: 1
+		/// Maximum items: 3
+		// </param>
 		/// <returns>successful operation</returns>
 		public Pet[] FindPetsByStatus(PetStatus[] status, System.Threading.CancellationToken cancellationToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -871,7 +877,10 @@ namespace MyNS
 		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 		/// GetOrderById store/order/{orderId}
 		/// </summary>
-		/// <param name="orderId">ID of pet that needs to be fetched</param>
+		/// <param name="orderId">ID of pet that needs to be fetched
+		/// Minimum: 1
+		/// Maximum: 5
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<Order> GetOrderByIdAsync(long orderId, System.Threading.CancellationToken cancellationToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -906,7 +915,10 @@ namespace MyNS
 		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 		/// GetOrderById store/order/{orderId}
 		/// </summary>
-		/// <param name="orderId">ID of pet that needs to be fetched</param>
+		/// <param name="orderId">ID of pet that needs to be fetched
+		/// Minimum: 1
+		/// Maximum: 5
+		// </param>
 		/// <returns>successful operation</returns>
 		public Order GetOrderById(long orderId, System.Threading.CancellationToken cancellationToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -941,7 +953,9 @@ namespace MyNS
 		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
 		/// DeleteOrder store/order/{orderId}
 		/// </summary>
-		/// <param name="orderId">ID of the order that needs to be deleted</param>
+		/// <param name="orderId">ID of the order that needs to be deleted
+		/// Minimum: 1
+		// </param>
 		public async Task DeleteOrderAsync(string orderId, System.Threading.CancellationToken cancellationToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "store/order/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId));
@@ -969,7 +983,9 @@ namespace MyNS
 		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
 		/// DeleteOrder store/order/{orderId}
 		/// </summary>
-		/// <param name="orderId">ID of the order that needs to be deleted</param>
+		/// <param name="orderId">ID of the order that needs to be deleted
+		/// Minimum: 1
+		// </param>
 		public void DeleteOrder(string orderId, System.Threading.CancellationToken cancellationToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "store/order/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId));
